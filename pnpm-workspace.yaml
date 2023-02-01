@@ -1,0 +1,5 @@
+packages:
+  - 'gf-server-api'
+  - 'gf-server-resources'
+  - 'gf-webapp'
+  - 'gf-webapp-admin'
