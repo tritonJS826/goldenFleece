@@ -1,0 +1,1 @@
+# goldenFleece server for managing resources

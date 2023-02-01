@@ -1,0 +1,1 @@
+Folder for app's models. This file will be deleted
