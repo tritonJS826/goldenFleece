@@ -1,0 +1,57 @@
+version: "3.3"
+services:
+  gf-webapp:
+    build:
+      context: ./gf-webapp
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+
+  gf-webapp-admin:
+    build:
+      context: ./gf-webapp-admin
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+
+  gf-server-api:
+    build:
+      context: ./gf-server-api
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports: 
+      - "3600:3600"
+    networks:
+      - app-network
+
+  gf-server-resources:
+    build:
+      context: ./gf-server-resources
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports: 
+      - "3500:3500"
+      - "3501:3501"
+    networks:
+      - app-network
+
+#  mongo:
+#    image: mongo
+#    volumes:
+#      - ./data:/data/db
+#    ports:
+#      - "27017:27017"
+
+#    networks:
+#      - app-network
+
+networks:
+  app-network:
+    driver: bridge

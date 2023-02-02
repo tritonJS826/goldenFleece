@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js File Uploader</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+            background-color: #333;
+            color: whitesmoke;
+        }
+
+        input,
+        button {
+            font: inherit;
+            width: max-content;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            /* flex-flow: column nowrap; */
+            gap: 1.5rem;
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>gf-server-resources temporal sandbox</h1>
+    <div>
+        <p>getting image sky.png from static server</p>
+        <img src="http://localhost:${READ_SERVER_PORT}/sky.png">
+    </div>
+    
+    <div>
+
+        <p>post files form </p>
+        <form id="uploadForm">
+            <input type="file" id="myFiles" accept="image/*" multiple />
+            <button>Submit</button>
+        </form>
+
+        <script>
+            const form = document.getElementById('uploadForm')
+
+            const postFile = async () => {
+                const myFiles = document.getElementById('myFiles').files
+
+                const formData = new FormData()
+
+                Object.keys(myFiles).forEach(key => {
+                    formData.append(myFiles.item(key).name, myFiles.item(key))
+                })
+
+                const response = await fetch('http://localhost:${WRITE_SERVER_PORT}/resource', {
+                    method: 'POST',
+                    body: formData
+                })
+
+                const json = await response.json()
+                console.log(json)
+            }
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                postFile()
+            })
+        </script>
+    </div>
+
+    <div>
+
+        <p>post put files form </p>
+        <form id="putForm">
+            <input type="file" id="myPutFiles" accept="image/*" multiple />
+            <button>Submit</button>
+        </form>
+        
+        <script>
+            const putForm = document.getElementById('putForm')
+        
+            const putFile = async () => {
+                const myPutFiles = document.getElementById('myPutFiles').files
+                
+                const formData = new FormData()
+        
+                Object.keys(myPutFiles).forEach(key => {
+                    formData.append(myPutFiles.item(key).name, myPutFiles.item(key))
+                })
+                
+                const response = await fetch('http://localhost:${WRITE_SERVER_PORT}/resource', {
+                    method: 'PUT',
+                    body: formData
+                })
+        
+                const json = await response.json()
+                console.log(json)
+            }
+        
+            putForm.addEventListener('submit', (e) => {
+                e.preventDefault()
+                putFile()
+            })
+        </script>
+    </div>
+
+    <div>
+        <p>delete files form </p>
+        <form id="deleteForm">
+            <input type="text" id="myDeleteFilesId1" placeholder="file id 1" />
+            <input type="text" id="myDeleteFilesId2" placeholder="file id 2" />
+            <button>Submit</button>
+        </form>
+        
+        <script>
+            const deleteForm = document.getElementById('deleteForm')
+        
+            const deleteFiles = async () => {
+                const myDeleteFile1 = document.getElementById('myDeleteFilesId1').value
+                const myDeleteFile2 = document.getElementById('myDeleteFilesId2').value
+                
+                const response = await fetch(
+                    `http://localhost:${WRITE_SERVER_PORT}/resource/?files=${myDeleteFile1},${myDeleteFile2}`,
+                    {
+                        method: 'DELETE',
+                    }
+                );
+        
+                const json = await response.json()
+                console.log(json)
+            }
+        
+            deleteForm.addEventListener('submit', (e) => {
+                e.preventDefault()
+                deleteFiles()
+            })
+        </script>
+    </div>
+</body>
+
+</html>
