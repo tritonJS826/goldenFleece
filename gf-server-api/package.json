@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "hello": "echo \"hello from gf-server-api\"",
-    "build": "webpack",
-    "start": "concurrently \"webpack --watch\" \"nodemon\" \"serve files -p 3600 \""
+    "start": "concurrently \"webpack --watch\" \"nodemon\"",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",

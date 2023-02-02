@@ -1,6 +1,5 @@
 import path from "path";
 import UglifyJsPlugin from "uglifyjs-webpack-plugin";
-import CopyWebpackPlugin from "copy-webpack-plugin";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import webpack from "webpack";
 
@@ -43,6 +42,5 @@ export default {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin({}),
-    new CopyWebpackPlugin({patterns: [{from: "./static", to: "./static"}]}),
   ],
 };

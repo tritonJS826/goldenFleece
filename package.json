@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "helloAll": "pnpm run -r hello",
     "startAll": "pnpm run -r start",
     "buildAll": "pnpm run -r build"
   },

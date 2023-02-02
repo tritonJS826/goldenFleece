@@ -5,7 +5,6 @@
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
-    "hello": "echo \"hello from gf-webapp\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
