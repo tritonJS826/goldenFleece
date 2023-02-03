@@ -1,15 +1,10 @@
 import React from "react";
-import {Slider} from "../../component/Slider/Slider";
-import {SliderVideo} from "../../component/SliderVideo/SliderVideo";
+import {PageBorder} from "../../component/PageBorder/PageBorder";
 
 export const MainPage = () => {
   return (
     <div className="App">
-      <h1>
-        Main
-      </h1>
-      <Slider />
-      <SliderVideo />
+      <PageBorder />
     </div>
   );
 };
