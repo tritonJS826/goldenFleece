@@ -1,6 +1,6 @@
 {
-  "name": "gf-webapp",
-  "version": "0.1.0",
+  "name": "gf-webapp-admin",
+  "version": "1.0.0",
   "private": true,
   "description": "",
   "main": "src/index.tsx",
@@ -28,6 +28,7 @@
   "license": "ISC",
   "eslintConfig": {
     "extends": [
+      "../.eslintrc",
       "react-app",
       "react-app/jest"
     ]

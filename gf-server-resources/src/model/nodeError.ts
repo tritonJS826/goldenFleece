@@ -1,0 +1,1 @@
+export type nodeError = NodeJS.ErrnoException | null;
