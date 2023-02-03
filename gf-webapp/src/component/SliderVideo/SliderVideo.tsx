@@ -2,9 +2,9 @@ import React from "react";
 import {useRef, useState} from "react";
 import styles from "./SliderVideo.module.scss";
 import {Swiper, SwiperSlide} from "swiper/react";
-import video1 from "../../resources/SwiperVideos/sample_1280x720.mp4";
-import video2 from "../../resources/SwiperVideos/SampleVideo_1280x720_5mb.mp4";
-import video3 from "../../resources/SwiperVideos/SampleVideo_1280x720_10mb.mp4";
+import video1 from "../../resources/swiperVideos/sample_1280x720.mp4";
+import video2 from "../../resources/swiperVideos/SampleVideo_1280x720_5mb.mp4";
+import video3 from "../../resources/swiperVideos/SampleVideo_1280x720_10mb.mp4";
 // import ReactPlayer from "react-player/lazy";
 
 import "swiper/css";

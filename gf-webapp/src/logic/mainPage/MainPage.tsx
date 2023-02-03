@@ -1,5 +1,5 @@
 import React from "react";
-import {PageBorder} from "../../component/PageBorder/PageBorder";
+import {PageBorder} from "../../component/pageBorder/PageBorder";
 
 export const MainPage = () => {
   return (

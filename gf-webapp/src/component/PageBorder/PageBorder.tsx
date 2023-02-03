@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./PageBorder.module.scss";
 import logo from "../../resources/icons/logo.svg";
-import {Slider} from "../Slider/Slider";
-import {SliderVideo} from "../SliderVideo/SliderVideo";
+import {Slider} from "../sliderImage/Slider";
+import {SliderVideo} from "../sliderVideo/SliderVideo";
 
 export function PageBorder() {
   return (
