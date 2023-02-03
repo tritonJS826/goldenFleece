@@ -13,6 +13,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import {Autoplay, Pagination, Navigation, Keyboard} from "swiper";
 
+// TODO: render any quantity of images
+
 export function Slider() {
   return (
     <Swiper
