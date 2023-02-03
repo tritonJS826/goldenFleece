@@ -44,25 +44,24 @@ export function SliderVideo() {
   //   setIsPlaying(!isPlaying);
   // };
   return (
-    <>
-      <Swiper
-        // onSlideChange={() => {
-        //   setIsPlaying(NaN);
-        // }}
-        spaceBetween={30}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 15000,
-          disableOnInteraction: false,
-        }}
-        pagination={{clickable: true}}
-        navigation={true}
-        keyboard={{enabled: true}}
-        modules={[Autoplay, Pagination, Navigation, Keyboard]}
-        className={styles.swiper}
-      >
-        {/* {videoData.map((data) => (
+    <Swiper
+      // onSlideChange={() => {
+      //   setIsPlaying(NaN);
+      // }}
+      spaceBetween={30}
+      centeredSlides={true}
+      loop={true}
+      autoplay={{
+        delay: 15000,
+        disableOnInteraction: false,
+      }}
+      pagination={{clickable: true}}
+      navigation={true}
+      keyboard={{enabled: true}}
+      modules={[Autoplay, Pagination, Navigation, Keyboard]}
+      className={styles.swiper}
+    >
+      {/* {videoData.map((data) => (
           <SwiperSlide key={data.id}>
             <ReactPlayer key={data.id}
               url={data.url}
@@ -76,43 +75,42 @@ export function SliderVideo() {
             />
           </SwiperSlide>
         ))} */}
-        <SwiperSlide className={styles.swiperSlide}>
-          <video src="https://file-examples.com/storage/feeb72b10363daaeba4c0c9/2017/04/file_example_MP4_1280_10MG.mp4"
-            ref={videoRef}
-            autoPlay={true}
-            controls={true}
-            muted={true}
-            loop={true}
-          />
-        </SwiperSlide>
-        <SwiperSlide className={styles.swiperSlide}>
-          <video src={video1}
-            ref={videoRef}
-            autoPlay={true}
-            controls={true}
-            muted={true}
-            loop={true}
-          />
-        </SwiperSlide>
-        <SwiperSlide className={styles.swiperSlide}>
-          <video src={video2}
-            ref={videoRef}
-            autoPlay={true}
-            controls={true}
-            muted={true}
-            loop={true}
-          />
-        </SwiperSlide>
-        <SwiperSlide className={styles.swiperSlide}>
-          <video src={video3}
-            ref={videoRef}
-            autoPlay={true}
-            controls={true}
-            muted={true}
-            loop={true}
-          />
-        </SwiperSlide>
-      </Swiper>
-    </>
+      <SwiperSlide className={styles.swiperSlide}>
+        <video src="https://file-examples.com/storage/feeb72b10363daaeba4c0c9/2017/04/file_example_MP4_1280_10MG.mp4"
+          ref={videoRef}
+          autoPlay={true}
+          controls={true}
+          muted={true}
+          loop={true}
+        />
+      </SwiperSlide>
+      <SwiperSlide className={styles.swiperSlide}>
+        <video src={video1}
+          ref={videoRef}
+          autoPlay={true}
+          controls={true}
+          muted={true}
+          loop={true}
+        />
+      </SwiperSlide>
+      <SwiperSlide className={styles.swiperSlide}>
+        <video src={video2}
+          ref={videoRef}
+          autoPlay={true}
+          controls={true}
+          muted={true}
+          loop={true}
+        />
+      </SwiperSlide>
+      <SwiperSlide className={styles.swiperSlide}>
+        <video src={video3}
+          ref={videoRef}
+          autoPlay={true}
+          controls={true}
+          muted={true}
+          loop={true}
+        />
+      </SwiperSlide>
+    </Swiper>
   );
 }

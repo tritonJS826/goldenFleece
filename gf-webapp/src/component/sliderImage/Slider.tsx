@@ -15,52 +15,50 @@ import {Autoplay, Pagination, Navigation, Keyboard} from "swiper";
 
 export function Slider() {
   return (
-    <>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{clickable: true}}
-        navigation={true}
-        keyboard={{enabled: true}}
-        modules={[Autoplay, Pagination, Navigation, Keyboard]}
-        className={styles.swiper}
-      >
-        <SwiperSlide>
-          <img className={styles.image}
-            src={image1}
-            alt="image1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className={styles.image}
-            src={image2}
-            alt="image2"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className={styles.image}
-            src={image3}
-            alt="image3"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className={styles.image}
-            src={image4}
-            alt="image4"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className={styles.image}
-            src={image5}
-            alt="image5"
-          />
-        </SwiperSlide>
-      </Swiper>
-    </>
+    <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      loop={true}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      pagination={{clickable: true}}
+      navigation={true}
+      keyboard={{enabled: true}}
+      modules={[Autoplay, Pagination, Navigation, Keyboard]}
+      className={styles.swiper}
+    >
+      <SwiperSlide>
+        <img className={styles.image}
+          src={image1}
+          alt="image1"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className={styles.image}
+          src={image2}
+          alt="image2"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className={styles.image}
+          src={image3}
+          alt="image3"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className={styles.image}
+          src={image4}
+          alt="image4"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className={styles.image}
+          src={image5}
+          alt="image5"
+        />
+      </SwiperSlide>
+    </Swiper>
   );
 }
