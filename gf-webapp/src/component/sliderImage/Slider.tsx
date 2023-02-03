@@ -1,5 +1,4 @@
 import React from "react";
-// import {useRef, useState} from "react";
 import styles from "./Slider.module.scss";
 import {Swiper, SwiperSlide} from "swiper/react";
 import image1 from "../../resources/swiperImages/autumn_forest_trees_129892_1920x1080.jpg";
