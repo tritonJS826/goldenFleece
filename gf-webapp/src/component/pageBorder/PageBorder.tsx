@@ -3,11 +3,12 @@ import styles from "./PageBorder.module.scss";
 import logo from "../../resources/icons/logo.svg";
 import {Slider} from "../sliderImage/Slider";
 import {SliderVideo} from "../sliderVideo/SliderVideo";
+import {Map} from "../map/Map";
 
 export function PageBorder() {
   return (
     <div className={styles.wrapper}>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <nav className={styles.nav}>
           <ul className={styles.list}>
             <li>
@@ -34,10 +35,11 @@ export function PageBorder() {
             </li>
           </ul>
         </nav>
-      </header>
+      </header> */}
       <main className={styles.main}>
-        <Slider />
-        <SliderVideo />
+        {/* <Slider />
+        <SliderVideo /> */}
+        <Map />
       </main>
       <footer className={styles.footer} />
     </div>
