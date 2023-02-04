@@ -17,3 +17,19 @@
   --color-gray-light: #f1f3f2;
   --color-hover: #e47209;
 }
+
+body {
+  overflow: overlay;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($color: #484848, $alpha: .5);
+
+  &:hover {
+    background: rgba($color: #484848, $alpha: .85);
+  }
+}
