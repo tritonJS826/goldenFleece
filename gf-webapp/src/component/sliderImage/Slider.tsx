@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Slider.module.scss";
 import {Swiper, SwiperSlide} from "swiper/react";
-import image1 from "../../resources/swiperImages/autumn_forest_trees_129892_1920x1080.jpg";
-import image2 from "../../resources/swiperImages/forest_fog_trees_132037_1920x1080.jpg";
-import image3 from "../../resources/swiperImages/landscape_mountains_sun_140434_1920x1080.jpg";
-import image4 from "../../resources/swiperImages/ocean_beach_aerial_view_134429_1920x1080.jpg";
-import image5 from "../../resources/swiperImages/starry_sky_boat_reflection_125803_1920x1080.jpg";
+import image1 from "../../resources/sliderImages/autumn_forest_trees_129892_1920x1080.jpg";
+import image2 from "../../resources/sliderImages/forest_fog_trees_132037_1920x1080.jpg";
+import image3 from "../../resources/sliderImages/landscape_mountains_sun_140434_1920x1080.jpg";
+import image4 from "../../resources/sliderImages/ocean_beach_aerial_view_134429_1920x1080.jpg";
+import image5 from "../../resources/sliderImages/starry_sky_boat_reflection_125803_1920x1080.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
