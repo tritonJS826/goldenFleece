@@ -2,9 +2,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% * 1.5);
-  height: calc(100% * 3);
-  background-image: url('../../../resources/map/golden-fleece-map.png');
+  // width: calc(100% * 1.5);
+  width: 1800px;
+  // height: calc(100% * 3);
+  height: 800px;
+  background-image: url('../../../resources/map/golden-fleece-map.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: grab;

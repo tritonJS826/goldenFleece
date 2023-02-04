@@ -1,11 +1,14 @@
 import React, {useState} from "react";
 import {MapContent} from "./mapContent/MapContent";
 import styles from "./map.module.scss";
+import {MapMenu} from "./mapMenu/MapMenu";
 
 export const Map = () => {
   const [dragging, setDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+  console.log("startX", startX);
   const [startY, setStartY] = useState(0);
+  console.log("startY", startY);
 
   const mouseDownHandler = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
@@ -36,6 +39,7 @@ export const Map = () => {
       className={styles.map}
     >
       <MapContent mouseDownHandler={mouseDownHandler} />
+      <MapMenu />
     </div>
   );
 };

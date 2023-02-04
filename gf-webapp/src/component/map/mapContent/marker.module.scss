@@ -1,0 +1,23 @@
+.main,
+.food,
+.park {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.main {
+  border-radius: 50%;
+  background-color: red;
+}
+
+.food {
+  border-radius: 50%;
+  background-color: #5b984a;
+}
+
+.park {
+  background-color: #07b607;
+}
