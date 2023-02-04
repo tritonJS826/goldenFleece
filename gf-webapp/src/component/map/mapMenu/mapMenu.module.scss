@@ -1,0 +1,25 @@
+.menu {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background-color: rgba($color: #fff, $alpha: .6);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 1002;
+  user-select: none;
+  border-radius: 10px;
+}
+
+.menuItem {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all .2s linear;
+
+  &:hover {
+    background-color: #98e395;
+  }
+}
