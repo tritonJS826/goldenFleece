@@ -4,7 +4,7 @@ import logo from "../../resources/icons/logo.svg";
 import {Slider} from "../sliderImage/Slider";
 import {SliderVideo} from "../sliderVideo/SliderVideo";
 import footerImage from "../../resources/sliderImages/landscape_mountains_sun_140434_1920x1080.jpg";
-import {useScrollPosition} from "../../hooks/useScrollPosition";
+import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
 
