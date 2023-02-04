@@ -1,11 +1,10 @@
 import React from "react";
+import {PageBorder} from "../../component/pageBorder/PageBorder";
 
 export const MainPage = () => {
   return (
     <div className="App">
-      <h1>
-        Main
-      </h1>
+      <PageBorder />
     </div>
   );
 };
