@@ -16,15 +16,10 @@ const router = express.Router();
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: array
- *                   items:
- *                     type: object
- *                     ref: #/shema/Room
+ *               type: array
+ *               items:
+ *                 $ref: '#components/schema/Room'
 */
 router.get("/api/rooms", roomsService.getRooms);
 
 export {router};
-// roomsRoutes

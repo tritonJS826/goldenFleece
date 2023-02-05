@@ -25,12 +25,26 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      type: object
-                      ref: null
-components: {}
+                type: array
+                items:
+                  $ref: "#components/schema/Room"
+components:
+  schema:
+    Room:
+      type: object
+      properties:
+        apartmentsType:
+          type: string
+          description: The room's type.
+          example: Single
+        services:
+          type: array
+          items:
+            type: string
+            description: The room's services.
+            example: WiFi
+        id:
+          type: string
+          description: The room's ID.
+          example: 0
 tags: []

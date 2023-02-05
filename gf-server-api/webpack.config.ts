@@ -1,5 +1,5 @@
 import path from "path";
-import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import webpack from "webpack";
@@ -19,7 +19,7 @@ export default {
   devServer: {
     static: "./build",
     hot: true,
-    port: process.env.PORT,
+    port: process.env.GF_SERVER_API_PORT,
   },
   module: {
     rules: [
@@ -39,7 +39,10 @@ export default {
     path: BUILD_DIRECTORY,
     clean: true,
   },
-  optimization: {minimizer: [new UglifyJsPlugin({include: /\.min\.js$/})]},
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin({}),
