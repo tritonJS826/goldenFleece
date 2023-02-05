@@ -20,6 +20,10 @@
   transition: all .2s linear;
 
   &:hover {
-    background-color: #98e395;
+    background-color: #cff1ce;
   }
+}
+
+.checked {
+  background-color: #adeaaa;
 }

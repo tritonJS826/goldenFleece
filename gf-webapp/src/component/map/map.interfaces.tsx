@@ -4,6 +4,8 @@ export interface IMarker {
   x: number,
   y: number,
   markerType: string
+  img: string;
+  description: string;
 }
 
 
@@ -14,6 +16,7 @@ export type mapContent = {
 export interface IMapContext {
   markers: IMarker[];
   menuItem: IMarker | null;
+  setMenuItem: React.Dispatch<React.SetStateAction<IMarker | null>>;
 }
 
 export interface IMapMenuProps {

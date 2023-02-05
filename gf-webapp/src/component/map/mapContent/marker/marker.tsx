@@ -5,16 +5,17 @@ import styleMarker from "./marker.module.scss";
 
 export const Marker = (props: IMarker) => {
   const [isClicked, setIsClicked] = useState(false);
-  const {menuItem} = useContext(MapContext);
+  const {menuItem, setMenuItem} = useContext(MapContext);
 
   const clickHandler = () => {
-    setIsClicked(!isClicked);
+    setIsClicked(prev => !prev);
+    setMenuItem(props);
   };
 
   return (
     <div onClick={clickHandler}
       className={`${styleMarker[props.markerType]} ${menuItem?.id === props.id ? styleMarker.checked : null}`}
-      style={{top: `${props.y}px`, left: `${props.x}px`}}
+      style={{bottom: `${props.y}px`, left: `${props.x}px`}}
     >
       <svg
         version="1.1"

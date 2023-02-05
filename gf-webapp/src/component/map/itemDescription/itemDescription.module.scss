@@ -1,0 +1,24 @@
+.container {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+  background-color: rgba($color: #fff, $alpha: 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1001;
+}
+
+.image {
+  height: 250px;
+  border-radius: 5px;
+}
+
+.description {
+  text-align: center;
+  font-size: 1.1rem;
+}

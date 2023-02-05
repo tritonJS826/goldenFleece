@@ -4,59 +4,86 @@ import styles from "./map.module.scss";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
 import {IMarker} from "./map.interfaces";
+import {ItemDescription} from "./itemDescription/ItemDescription";
 
 export const Map = () => {
   const markers = [
     {
       id: 1,
       name: "Golden fleece",
-      x: 523,
-      y: 600,
+      x: 1329,
+      y: 230,
       markerType: "main",
-      // eslint-disable-next-line max-len
-      descriprion: "Located in Kutaisi, 4.9 km from WhiteBridge, Hotel Golden Fleece provides accommodation with a seasonal outdoor swimming pool, free private parking, a terrace and a bar",
+      img: "golden-fleece.jpg",
+      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
+      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
+      swimming pool, free private parking, a terrace and a bar",
     },
     {
       id: 2,
       name: "Cake club",
-      x: 645,
-      y: 670,
+      x: 1525,
+      y: 110,
       markerType: "food",
+      img: "golden-fleece.jpg",
+      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
+      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
+      swimming pool, free private parking, a terrace and a bar",
     },
     {
       id: 3,
       name: "Shedevri",
-      x: 680,
-      y: 350,
+      x: 1590,
+      y: 630,
       markerType: "food",
+      img: "golden-fleece.jpg",
+      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
+      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
+      swimming pool, free private parking, a terrace and a bar",
     },
     {
       id: 4,
       name: "Green yard",
-      x: 840,
-      y: 430,
+      x: 1855,
+      y: 540,
       markerType: "food",
+      img: "golden-fleece.jpg",
+      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
+      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
+      swimming pool, free private parking, a terrace and a bar",
     },
     {
       id: 5,
       name: "Youth park",
-      x: 580,
-      y: 440,
+      x: 1424,
+      y: 500,
       markerType: "park",
+      img: "golden-fleece.jpg",
+      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
+      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
+      swimming pool, free private parking, a terrace and a bar",
     },
     {
       id: 6,
       name: "Tennis cort",
-      x: 724,
-      y: 170,
+      x: 1650,
+      y: 980,
       markerType: "park",
+      img: "golden-fleece.jpg",
+      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
+      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
+      swimming pool, free private parking, a terrace and a bar",
     },
     {
       id: 7,
       name: "Ramaz Shengelia Stadium",
-      x: 680,
-      y: 90,
+      x: 1522,
+      y: 1100,
       markerType: "park",
+      img: "golden-fleece.jpg",
+      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
+      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
+      swimming pool, free private parking, a terrace and a bar",
     },
   ];
   const [dragging, setDragging] = useState(false);
@@ -85,7 +112,7 @@ export const Map = () => {
     const LEFT = 0;
     const BOTTOM = 0;
     const TOP = target.offsetHeight - (target.parentElement?.offsetHeight || 0);
-    const RIGTH = (target.parentElement?.offsetWidth || 0) - target.offsetWidth;
+    const RIGTH = ((target.parentElement?.offsetWidth || 0) - target.offsetWidth);
 
     if (target.dataset.name === "map-content") {
       let x = e.pageX - startX;
@@ -118,7 +145,7 @@ export const Map = () => {
   };
 
   return (
-    <MapContext.Provider value={{markers, menuItem}}>
+    <MapContext.Provider value={{markers, menuItem, setMenuItem}}>
       <div
         onMouseMove={(e) => mouseMoveHandler(e)}
         onMouseUp={mouseUpHandler}
@@ -126,6 +153,7 @@ export const Map = () => {
       >
         <MapContent mouseDownHandler={mouseDownHandler} />
         <MapMenu menuItemHandler={menuItemHandler} />
+        <ItemDescription />
       </div>
     </MapContext.Provider>
 
