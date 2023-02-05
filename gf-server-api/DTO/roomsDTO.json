@@ -1,16 +1,16 @@
 [
   {
-    "apartments": "Single",
+    "apartmentsType": "Single",
     "services": "Free WiFi, Laundry",
     "id": "0"
   },
   {
-    "apartments": "Double room",
+    "apartmentsType": "Double room",
     "services": "Free WiFi, Laundry, Tea/coffee maker, Heating",
     "id": "1"
   },
   {
-    "apartments": "Twin",
+    "apartmentsType": "Twin",
     "services": "Free WiFi, Laundry, Tea/coffee maker, Heating, Airport shuttle (free) ",
     "id": "2"
   }
