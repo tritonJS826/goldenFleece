@@ -47,7 +47,7 @@ export interface Room {
    */
   images: string[],
   /**
-   * Rating can be from 0 to 10
+   * Rating can be from 1 to 10
    */
   rating: number;
 
@@ -60,8 +60,10 @@ enum Apartments {
 }
 
 enum Services {
-  Common = "WiFi, Laundry",
-  Addition = " Tea/coffee maker, Heating",
-  VIP = "Airport shuttle (free)"
+  WiFi,
+  Laundry,
+  TeaCoffeeMaker,
+  Heating,
+  AirportShuttle
 }
 
