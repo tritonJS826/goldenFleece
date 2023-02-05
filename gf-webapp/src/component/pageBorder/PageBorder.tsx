@@ -3,7 +3,6 @@ import styles from "./PageBorder.module.scss";
 import logo from "../../resources/icons/logo.svg";
 import {Slider} from "../sliderImage/Slider";
 import {SliderVideo} from "../sliderVideo/SliderVideo";
-import footerImage from "../../resources/sliderImages/landscape_mountains_sun_140434_1920x1080.jpg";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
@@ -12,6 +11,10 @@ export function PageBorder() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
+  };
+  const [contacts, setContacts] = useState(false);
+  const handleContacts = () => {
+    setContacts(!contacts);
   };
   const scrollPosition = useScrollPosition();
 
@@ -25,8 +28,39 @@ export function PageBorder() {
               <div />
               <div />
             </li>
-            <li>
-              Contact
+            <li onMouseEnter={() => setContacts(true)}
+              onMouseLeave={() => setContacts(false)}
+              onClick={handleContacts}
+              className={styles.contacts}
+            >
+              <div
+                className={styles.contact}
+              >
+                <p className={styles.contact_text}>
+                  Contact
+                </p>
+                <svg className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="35"
+                  width="35"
+                >
+                  <path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"
+                    fill="#ffffff"
+                  />
+                </svg>
+              </div>
+              <nav className={contacts ? styles.contact_links : `${styles.contact_links} ${styles.hidden}`}>
+                <a className={styles.link}
+                  href="#"
+                >
+                  +1324536432453
+                </a>
+                <a className={styles.link}
+                  href="#"
+                >
+                  adfg@dasfs.ec
+                </a>
+              </nav>
             </li>
             <li>
               <div className={styles.logo}>
@@ -42,7 +76,7 @@ export function PageBorder() {
               <p className={styles.english}>
                 EN
               </p>
-              {open ? (<p className={`${styles.hidden} ${styles.russian}`}>
+              {open ? (<p className={`${styles.ru} ${styles.hidden}`}>
                 RU
               </p>) : null}
             </li>

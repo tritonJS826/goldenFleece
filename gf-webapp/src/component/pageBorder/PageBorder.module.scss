@@ -14,8 +14,8 @@
     justify-content: center;
     background-color: rgba($color: white, $alpha: 1);
     color: black;
-    font-size: 1.3rem;
-    transition: all 0.5s;
+    font-size: 1.2rem;
+    transition: all 0.3s;
     width: calc(100vw - (100vw - 100%));
 
     .list {
@@ -28,6 +28,7 @@
         align-items: center;
         border: 1px solid black;
         padding: 5px;
+        transition: background .3s;
 
         &:hover {
           background-color: rgba($color: #efefef, $alpha: .7);
@@ -53,7 +54,7 @@
       div:nth-child(2) {
         border: 1px solid black;
         width: 15px;
-        transition: all .3s;
+        transition: width .3s;
       }
 
       div:last-child {
@@ -83,6 +84,7 @@
 
       .logo {
         font-family: Montserrat Regular;
+        font-size: 2rem;
       }
 
       img {
@@ -125,8 +127,8 @@
     justify-content: center;
     background-color: rgba($color: #000000, $alpha: .25);
     color: white;
-    font-size: 1.3rem;
-    transition: all 0.5s;
+    font-size: 1.2rem;
+    transition: all 0.3s;
     width: calc(100vw - (100vw - 100%));
 
     .list {
@@ -139,6 +141,7 @@
         align-items: center;
         border: 1px solid white;
         padding: 5px;
+        transition: background .3s;
 
         &:hover {
           background-color: rgba($color: #909090, $alpha: .7);
@@ -164,7 +167,7 @@
       div:nth-child(2) {
         border: 1px solid white;
         width: 15px;
-        transition: all .3s;
+        transition: width .3s;
       }
 
       div:last-child {
@@ -188,17 +191,18 @@
     .list li:nth-child(3) {
       width: 65vw;
       text-align: center;
-      flex-direction: column;
+      flex-direction: row-reverse;
       border-left: none;
       border-right: none;
 
       .logo {
         font-family: Montserrat Regular;
+        font-size: 2rem;
       }
 
       img {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 50px;
       }
 
       &:hover {
@@ -280,7 +284,7 @@
         text-decoration: none;
         font-size: 20px;
         margin-right: 10px;
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
 
         &:hover {
           color: var(--color-hover);
@@ -307,7 +311,7 @@
           height: 20px;
           margin-left: 5px;
           opacity: 0.8;
-          transition: 0.4s ease;
+          transition: 0.3s ease;
         }
       }
 
@@ -323,7 +327,7 @@
         background-repeat: no-repeat;
         height: 32px;
         opacity: 0.8;
-        transition: 0.4s ease;
+        transition: 0.3s ease;
 
         &:hover {
           color: var(--color-hover);
@@ -340,5 +344,60 @@
         }
       }
     }
+  }
+
+  .contacts {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .contact {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact_links {
+      position: absolute;
+      margin-top: 61px;
+      top: 0%;
+      display: flex;
+      flex-direction: column;
+
+      .link {
+        width: 12vw;
+        min-width: 130px;
+        padding: 10px;
+        background-color: white;
+        text-decoration: none;
+        color: black;
+        font-size: 0.8rem;
+
+        &:hover {
+          background-color: #efefef;
+        }
+      }
+    }
+  }
+
+  .expand_arrow {
+    margin-bottom: 5px;
+    scale: 0.6;
+    path {
+      fill: white;
+    }
+  }
+
+  .expand_arrow_scroll {
+    margin-bottom: 5px;
+    scale: 0.6;
+    path {
+      fill: black;
+    }
+  }
+
+  .hidden {
+    visibility: hidden;
   }
 }
