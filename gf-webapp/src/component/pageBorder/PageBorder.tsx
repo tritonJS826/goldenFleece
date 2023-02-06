@@ -1,20 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, PropsWithChildren, ReactNode, ReactElement} from "react";
 import styles from "./PageBorder.module.scss";
 import logo from "../../resources/icons/logo.svg";
-import {Slider} from "../sliderImage/Slider";
-import {SliderVideo} from "../sliderVideo/SliderVideo";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
 
-export function PageBorder() {
+interface PageBorderProps {
+  children: ReactNode
+}
+
+export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
-  };
-  const [contacts, setContacts] = useState(false);
-  const handleContacts = () => {
-    setContacts(!contacts);
   };
   const scrollPosition = useScrollPosition();
 
@@ -28,39 +26,8 @@ export function PageBorder() {
               <div />
               <div />
             </li>
-            <li onMouseEnter={() => setContacts(true)}
-              onMouseLeave={() => setContacts(false)}
-              onClick={handleContacts}
-              className={styles.contacts}
-            >
-              <div
-                className={styles.contact}
-              >
-                <p className={styles.contact_text}>
-                  Contact
-                </p>
-                <svg className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="35"
-                  width="35"
-                >
-                  <path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"
-                    fill="#ffffff"
-                  />
-                </svg>
-              </div>
-              <nav className={contacts ? styles.contact_links : `${styles.contact_links} ${styles.hidden}`}>
-                <a className={styles.link}
-                  href="#"
-                >
-                  +1324536432453
-                </a>
-                <a className={styles.link}
-                  href="#"
-                >
-                  adfg@dasfs.ec
-                </a>
-              </nav>
+            <li>
+              Contact
             </li>
             <li>
               <div className={styles.logo}>
@@ -76,7 +43,7 @@ export function PageBorder() {
               <p className={styles.english}>
                 EN
               </p>
-              {open ? (<p className={`${styles.ru} ${styles.hidden}`}>
+              {open ? (<p className={`${styles.hidden} ${styles.russian}`}>
                 RU
               </p>) : null}
             </li>
@@ -87,8 +54,7 @@ export function PageBorder() {
         </nav>
       </header>
       <main className={styles.main}>
-        <Slider />
-        <SliderVideo />
+        {props.children}
       </main>
       <footer className={styles.footer}>
         <div className={styles.footer_container}>
