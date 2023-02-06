@@ -1,18 +1,29 @@
 import React, {useContext} from "react";
-import {IMapMenuProps} from "../map.interfaces";
+import {IMapMenuProps} from "../../../model/map.interfaces";
 import {MapContext} from "../MapContext";
 import styles from "./mapMenu.module.scss";
 
 export const MapMenu = (props: IMapMenuProps) => {
   const {markers, menuItem} = useContext(MapContext);
+  const markerGroups = Array.from(new Set(markers.map(marker => marker.markerGroup)));
 
   return (<ul className={styles.menu}>
-    {markers.map(marker => (
-      <li onClick={() => props.menuItemHandler(marker)}
-        className={`${styles.menuItem} ${marker.id === menuItem?.id ? styles.checked : ""}`}
-        key={marker.id}
+    {markerGroups.map((markerGroup, index) => (
+      <li
+        key={index}
       >
-        {marker.name}
+        <p className={styles.groupName}>
+          {markerGroup !== "Main hotel" && markerGroup}
+        </p>
+        {markers.map(marker => (
+          markerGroup === marker.markerGroup &&
+          <span onClick={() => props.menuItemHandler(marker)}
+            className={`${styles.menuItem} ${marker.id === menuItem?.id ? styles.checked : ""}`}
+            key={marker.id}
+          >
+            {marker.name}
+          </span>
+        ))}
       </li>
     ))}
   </ul>);

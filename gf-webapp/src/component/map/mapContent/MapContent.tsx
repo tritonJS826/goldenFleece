@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {mapContent} from "../map.interfaces";
+import {mapContent} from "../../../model/map.interfaces";
 import {MapContext} from "../MapContext";
 import styles from "./mapContent.module.scss";
 import {Marker} from "./marker/marker";

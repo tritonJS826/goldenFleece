@@ -1,19 +1,32 @@
 import React, {useContext, useState} from "react";
-import {IMarker} from "../../map.interfaces";
+import {IMarker} from "../../../../model/map.interfaces";
 import {MapContext} from "../../MapContext";
 import styleMarker from "./marker.module.scss";
 
 export const Marker = (props: IMarker) => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isMouseOver, setIsMouseOver] = useState(false);
   const {menuItem, setMenuItem} = useContext(MapContext);
 
+  const mouseOverHandler = (e: React.MouseEvent) => {
+    const target = (e.target as HTMLElement).closest("div")?.dataset.name === "marker";
+    target && setIsMouseOver(true);
+  };
+
+  const mouseLeaveHandler = (e: React.MouseEvent) => {
+    const target = (e.target as HTMLElement).closest("div")?.dataset.name === "marker";
+    target && setIsMouseOver(false);
+  };
+
   const clickHandler = () => {
-    setIsClicked(prev => !prev);
     setMenuItem(props);
   };
 
+
   return (
-    <div onClick={clickHandler}
+    <div data-name='marker'
+      onClick={clickHandler}
+      onMouseEnter={mouseOverHandler}
+      onMouseLeave={mouseLeaveHandler}
       className={`${styleMarker[props.markerType]} ${menuItem?.id === props.id ? styleMarker.checked : null}`}
       style={{bottom: `${props.y}px`, left: `${props.x}px`}}
     >
@@ -35,7 +48,7 @@ export const Marker = (props: IMarker) => {
           />
         </g>
       </svg>
-      {isClicked && <span className={styleMarker.name}>
+      {isMouseOver && <span className={styleMarker.name}>
         {props.name}
       </span>}
     </div>);

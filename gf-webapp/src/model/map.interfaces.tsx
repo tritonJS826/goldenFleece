@@ -1,9 +1,10 @@
 export interface IMarker {
-  id: number,
-  name: string,
-  x: number,
-  y: number,
-  markerType: string
+  id: number;
+  name: string;
+  x: number;
+  y: number;
+  markerType: string;
+  markerGroup: string;
   img: string;
   description: string;
 }

@@ -3,89 +3,11 @@ import {MapContent} from "./mapContent/MapContent";
 import styles from "./map.module.scss";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
-import {IMarker} from "./map.interfaces";
+import {IMarker} from "../../model/map.interfaces";
 import {ItemDescription} from "./itemDescription/ItemDescription";
+import {markers} from "../../service/map.services";
 
 export const Map = () => {
-  const markers = [
-    {
-      id: 1,
-      name: "Golden fleece",
-      x: 1329,
-      y: 230,
-      markerType: "main",
-      img: "golden-fleece.jpg",
-      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
-      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
-      swimming pool, free private parking, a terrace and a bar",
-    },
-    {
-      id: 2,
-      name: "Cake club",
-      x: 1525,
-      y: 110,
-      markerType: "food",
-      img: "golden-fleece.jpg",
-      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
-      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
-      swimming pool, free private parking, a terrace and a bar",
-    },
-    {
-      id: 3,
-      name: "Shedevri",
-      x: 1590,
-      y: 630,
-      markerType: "food",
-      img: "golden-fleece.jpg",
-      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
-      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
-      swimming pool, free private parking, a terrace and a bar",
-    },
-    {
-      id: 4,
-      name: "Green yard",
-      x: 1855,
-      y: 540,
-      markerType: "food",
-      img: "golden-fleece.jpg",
-      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
-      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
-      swimming pool, free private parking, a terrace and a bar",
-    },
-    {
-      id: 5,
-      name: "Youth park",
-      x: 1424,
-      y: 500,
-      markerType: "park",
-      img: "golden-fleece.jpg",
-      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
-      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
-      swimming pool, free private parking, a terrace and a bar",
-    },
-    {
-      id: 6,
-      name: "Tennis cort",
-      x: 1650,
-      y: 980,
-      markerType: "park",
-      img: "golden-fleece.jpg",
-      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
-      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
-      swimming pool, free private parking, a terrace and a bar",
-    },
-    {
-      id: 7,
-      name: "Ramaz Shengelia Stadium",
-      x: 1522,
-      y: 1100,
-      markerType: "park",
-      img: "golden-fleece.jpg",
-      description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
-      Hotel Golden Fleece provides accommodation with a seasonal outdoor\
-      swimming pool, free private parking, a terrace and a bar",
-    },
-  ];
   const [dragging, setDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);

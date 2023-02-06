@@ -3,10 +3,16 @@ import styles from "./itemDescription.module.scss";
 import {MapContext} from "../MapContext";
 
 export const ItemDescription = () => {
-  const {menuItem} = useContext(MapContext);
+  const {menuItem, setMenuItem} = useContext(MapContext);
+
+  const closeHandler = () => {
+    setMenuItem(null);
+  };
 
   return menuItem && (
-    <div className={styles.container}>
+    <div onClick={closeHandler}
+      className={styles.container}
+    >
       <img className={styles.image}
         src={require(`../../../resources/map/${menuItem.img}`)}
         alt="golden-fleece"
