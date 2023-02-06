@@ -9,9 +9,7 @@ export const MapMenu = (props: IMapMenuProps) => {
 
   return (<ul className={styles.menu}>
     {markerGroups.map((markerGroup, index) => (
-      <li
-        key={index}
-      >
+      <li key={index}>
         <p className={styles.groupName}>
           {markerGroup !== "Main hotel" && markerGroup}
         </p>

@@ -18,13 +18,14 @@
   li:not(:first-child) {
     span{
       font-size: 1.1rem;
-      padding: 8px 10px;
+      margin-left: 10px;
     }
     p {
       font-size: 1.2rem;
       margin-top: 15px;
       margin-bottom: 5px;
       font-weight: 500;
+      margin-left: 10px;
     }
   }
 }
@@ -35,6 +36,7 @@
   font-size: 1.2rem;
   cursor: pointer;
   transition: all .2s linear;
+  padding: 8px 10px;
 
   &:hover {
     background-color: #cff1ce;
