@@ -1,0 +1,1 @@
+{"openapi":"3.0.0","info":{"title":"Golden Fleece API","version":"1.0.0","description":"A simple REST API for providing basic CRUD-access to the employees in a Golden Fleece database."},"servers":[{"url":"http://localhost:3600","description":"gf-server-api"}],"schemes":["http","https"],"apis":["./src/routes/*.ts"]}

@@ -1,0 +1,50 @@
+openapi: 3.0.0
+info:
+  title: Golden Fleece API
+  version: 1.0.0
+  description: A simple REST API for providing basic CRUD-access to the employees
+    in a Golden Fleece database.
+servers:
+  - url: http://localhost:3600
+    description: gf-server-api
+schemes:
+  - http
+  - https
+apis:
+  - ./src/routes/*.ts
+paths:
+  /api/rooms:
+    get:
+      tags:
+        - Rooms
+      summary: List of rooms
+      description: Retrieve a list of all rooms
+      responses:
+        "200":
+          description: A list of rooms.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#components/schema/Room"
+components:
+  schema:
+    Room:
+      type: object
+      properties:
+        apartmentsType:
+          type: string
+          description: The room's type.
+          example: Single
+        services:
+          type: array
+          items:
+            type: string
+            description: The room's services.
+            example: WiFi
+        id:
+          type: string
+          description: The room's ID.
+          example: 0
+tags: []
