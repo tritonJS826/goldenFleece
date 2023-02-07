@@ -3,9 +3,14 @@ import {config} from "dotenv";
 import {PORT, listenServer} from "./utils/listenServer";
 import {checkStatusCallback} from "./utils/checkStatusCallback";
 import {router} from "./routes/routes";
+import swaggerUi from "swagger-ui-express";
+import {apiSpec} from "../swagger";
 
 config();
 const app: Express = express();
+
+app.get("/swagger.json", (_req, res) => res.json(apiSpec));
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(apiSpec));
 
 // App status check
 app.get("/", checkStatusCallback);

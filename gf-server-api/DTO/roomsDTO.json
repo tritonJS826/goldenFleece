@@ -1,0 +1,35 @@
+[
+  {
+    "apartmentsType": "Single",
+    "services": "Free WiFi, Laundry",
+    "id": "0",
+    "description": "A small room",
+    "price": 200,
+    "images": [
+      "SingleRoom1.jpg", "SingleRoom2.jpg"
+    ],
+    "rating": 8
+  },
+  {
+    "apartmentsType": "Double room",
+    "services": "Free WiFi, Laundry, Tea/coffee maker, Heating",
+    "id": "1",
+    "description": "A comfortable room",
+    "price": 300,
+    "images": [
+      "DoubleRoom1.jpg", "DoubleRoom2.jpg"
+    ],
+    "rating": 10
+  },
+  {
+    "apartmentsType": "Twin",
+    "services": "Free WiFi, Laundry, Tea/coffee maker, Heating, Airport shuttle (free) ",
+    "id": "2",
+    "description": "A beautiful room",
+    "price": 500,
+    "images": [
+      "TwinRoom1.jpg", "TwinRoom2.jpg"
+    ],
+    "rating": 9
+  }
+]

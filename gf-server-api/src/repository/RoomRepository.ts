@@ -1,4 +1,4 @@
-import {Room} from "../type/type";
+import {Room} from "../model/Room";
 import {readFile} from "../utils/readFile";
 
 const PATH_TO_FILE_WITH_ROOMS = "./static/roomsDTO.json";

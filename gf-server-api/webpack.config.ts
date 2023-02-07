@@ -1,6 +1,7 @@
 import path from "path";
-import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import webpack from "webpack";
 
 const BUILD_DIRECTORY = path.resolve("./build");
@@ -18,7 +19,7 @@ export default {
   devServer: {
     static: "./build",
     hot: true,
-    port: process.env.PORT,
+    port: process.env.GF_SERVER_API_PORT,
   },
   module: {
     rules: [
@@ -38,9 +39,23 @@ export default {
     path: BUILD_DIRECTORY,
     clean: true,
   },
-  optimization: {minimizer: [new UglifyJsPlugin({include: /\.min\.js$/})]},
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin({}),
+    new CopyWebpackPlugin({
+      patterns: [
+      /**
+       * Workaround with swagger-ui-express - without this file static swagger files not visible
+       * issues:
+       * https://github.com/scottie1984/swagger-ui-express/issues/90
+       * https://stackoverflow.com/questions/62136515/swagger-ui-express-plugin-issue-with-webpack-bundling-in-production-mode
+       */
+        {from: "static/swagger", to: "."},
+      ],
+    }),
   ],
 };

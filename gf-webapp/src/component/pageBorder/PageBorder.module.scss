@@ -6,6 +6,119 @@
   display: flex;
   flex-direction: column;
 
+  .header_scroll {
+    position: fixed;
+    z-index: 10;
+    justify-self: flex-start;
+    display: flex;
+    justify-content: center;
+    background-color: rgba($color: white, $alpha: 1);
+    color: black;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    width: calc(100vw - (100vw - 100%));
+
+    .list {
+      display: flex;
+      list-style: none;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        padding: 5px;
+        transition: background .3s;
+
+        &:hover {
+          background-color: rgba($color: #efefef, $alpha: .7);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .list li:first-child {
+      width: 10vw;
+      text-align: center;
+      border-left: none;
+      border-right: none;
+      display: flex;
+      flex-direction: column;
+
+      div:first-child {
+        margin-bottom: 10px;
+        border: 1px solid black;
+        width: 30px;
+      }
+
+      div:nth-child(2) {
+        border: 1px solid black;
+        width: 15px;
+        transition: width .3s;
+      }
+
+      div:last-child {
+        margin-top: 10px;
+        border: 1px solid black;
+        width: 30px;
+      }
+
+      &:hover {
+        div:nth-child(2) {
+          width: 30px;
+        }
+      }
+    }
+
+    .list li:nth-child(2) {
+      width: 10vw;
+      text-align: center;
+    }
+
+    .list li:nth-child(3) {
+      width: 65vw;
+      text-align: center;
+      flex-direction: row-reverse;
+      border-left: none;
+      border-right: none;
+
+      .logo {
+        font-family: Montserrat Regular;
+        font-size: 2rem;
+      }
+
+      img {
+        width: 45px;
+        height: 50px;
+      }
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+
+    .list li:nth-child(4) {
+      width: 5vw;
+      text-align: center;
+    }
+
+    .list li:last-child {
+      width: 10vw;
+      text-align: center;
+      border-left: none;
+      border-right: none;
+    }
+
+    .languages {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   .header {
     position: fixed;
     z-index: 10;
@@ -14,7 +127,9 @@
     justify-content: center;
     background-color: rgba($color: #000000, $alpha: .25);
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    width: calc(100vw - (100vw - 100%));
 
     .list {
       display: flex;
@@ -26,7 +141,7 @@
         align-items: center;
         border: 1px solid white;
         padding: 5px;
-        transition: all 0.5s;
+        transition: background .3s;
 
         &:hover {
           background-color: rgba($color: #909090, $alpha: .7);
@@ -52,7 +167,7 @@
       div:nth-child(2) {
         border: 1px solid white;
         width: 15px;
-        transition: all .3s;
+        transition: width .3s;
       }
 
       div:last-child {
@@ -62,7 +177,6 @@
       }
 
       &:hover {
-
         div:nth-child(2) {
           width: 30px;
         }
@@ -77,13 +191,18 @@
     .list li:nth-child(3) {
       width: 65vw;
       text-align: center;
-      flex-direction: column;
+      flex-direction: row-reverse;
       border-left: none;
       border-right: none;
 
+      .logo {
+        font-family: Montserrat Regular;
+        font-size: 2rem;
+      }
+
       img {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 50px;
       }
 
       &:hover {
@@ -103,5 +222,182 @@
       border-left: none;
       border-right: none;
     }
+
+    .languages {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .main {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40vh;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100vw - (100vw - 100%));
+    height: 40vh;
+    background-color: #FFFDFA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    .footer_container {
+      width: calc(100vw - (100vw - 100%));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 15px;
+      padding: 10px;
+
+      ul {
+        list-style: none;
+      }
+    }
+
+    .line {
+      width: 80vw;
+      border: 1px solid black;
+    }
+
+    .creators {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 10px;
+
+      a {
+        color: black  ;
+      }
+
+      .github {
+        text-decoration: none;
+        font-size: 20px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--color-hover);
+
+          .githubLogo {
+            opacity: 1;
+          }
+        }
+
+        &:focus {
+          color: var(--color-hover);
+
+          .githubLogo {
+            opacity: 1;
+          }
+        }
+
+        &:active {
+          color: var(--color-active);
+        }
+
+        .githubLogo {
+          width: 20px;
+          height: 20px;
+          margin-left: 5px;
+          opacity: 0.8;
+          transition: 0.3s ease;
+        }
+      }
+
+      .year {
+        font-size: 20px;
+        text-align: center;
+        margin-right: 10px;
+      }
+
+      .course {
+        align-self: flex-end;
+        min-width: 80px;
+        background-repeat: no-repeat;
+        height: 32px;
+        opacity: 0.8;
+        transition: 0.3s ease;
+
+        &:hover {
+          color: var(--color-hover);
+          opacity: 1;
+        }
+
+        &:focus {
+          color: var(--color-hover);
+          opacity: 1;
+        }
+
+        &:active {
+          color: var(--color-active);
+        }
+      }
+    }
+  }
+
+  .contacts {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .contact {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact_links {
+      position: absolute;
+      margin-top: 61px;
+      top: 0%;
+      display: flex;
+      flex-direction: column;
+
+      .link {
+        width: 12vw;
+        min-width: 130px;
+        padding: 10px;
+        background-color: white;
+        text-decoration: none;
+        color: black;
+        font-size: 0.8rem;
+
+        &:hover {
+          background-color: #efefef;
+        }
+      }
+    }
+  }
+
+  .expand_arrow {
+    margin-bottom: 5px;
+    scale: 0.6;
+    path {
+      fill: white;
+    }
+  }
+
+  .expand_arrow_scroll {
+    margin-bottom: 5px;
+    scale: 0.6;
+    path {
+      fill: black;
+    }
+  }
+
+  .hidden {
+    visibility: hidden;
   }
 }

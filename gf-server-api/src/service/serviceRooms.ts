@@ -1,5 +1,5 @@
 import {roomsRepository} from "../repository/RoomRepository";
-import {Room} from "../type/type";
+import {Room} from "../model/Room";
 import {Response, Request} from "express";
 
 
