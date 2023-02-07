@@ -1,14 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, PropsWithChildren, ReactNode, ReactElement} from "react";
 import styles from "./PageBorder.module.scss";
 import logo from "../../resources/icons/logo.svg";
 import {Slider} from "../sliderImage/Slider";
 import {SliderVideo} from "../sliderVideo/SliderVideo";
-import {Map} from "../map/Map";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
 
-export function PageBorder() {
+interface PageBorderProps {
+  children: ReactNode
+}
+
+export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
@@ -77,7 +80,7 @@ export function PageBorder() {
               <p className={styles.english}>
                 EN
               </p>
-              {open ? (<p className={`${styles.ru} ${styles.hidden}`}>
+              {open ? (<p className={`${styles.hidden} ${styles.russian}`}>
                 RU
               </p>) : null}
             </li>
@@ -88,9 +91,7 @@ export function PageBorder() {
         </nav>
       </header>
       <main className={styles.main}>
-        <Slider />
-        <SliderVideo />
-        <Map />
+        {props.children}
       </main>
       <footer className={styles.footer}>
         <div className={styles.footer_container}>
