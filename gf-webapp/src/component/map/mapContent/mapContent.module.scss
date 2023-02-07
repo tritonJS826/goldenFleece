@@ -1,0 +1,13 @@
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3000px;
+  height: 1321px;
+  background-image: url('../../../resources/map/golden-fleece-map.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: grab;
+  z-index: 1000;
+  transform: translateX(-25%);
+}

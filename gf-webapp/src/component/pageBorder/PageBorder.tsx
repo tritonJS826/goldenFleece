@@ -3,6 +3,7 @@ import styles from "./PageBorder.module.scss";
 import logo from "../../resources/icons/logo.svg";
 import {Slider} from "../sliderImage/Slider";
 import {SliderVideo} from "../sliderVideo/SliderVideo";
+import {Map} from "../map/Map";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
@@ -89,6 +90,7 @@ export function PageBorder() {
       <main className={styles.main}>
         <Slider />
         <SliderVideo />
+        <Map />
       </main>
       <footer className={styles.footer}>
         <div className={styles.footer_container}>
