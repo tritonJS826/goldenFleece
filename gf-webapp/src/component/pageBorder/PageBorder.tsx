@@ -1,6 +1,8 @@
 import React, {useState, PropsWithChildren, ReactNode, ReactElement} from "react";
 import styles from "./PageBorder.module.scss";
 import logo from "../../resources/icons/logo.svg";
+import {Slider} from "../sliderImage/Slider";
+import {SliderVideo} from "../sliderVideo/SliderVideo";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
