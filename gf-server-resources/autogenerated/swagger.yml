@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: Golden Fleece API
+  version: 1.0.0
+  description: A simple REST API for providing basic CRUD-access to the employees
+    in a Golden Fleece database.
+servers:
+  - url: http://localhost:3501
+    description: gf-server-resources
+schemes:
+  - http
+  - https
+apis:
+  - ./src/routes/*.ts
+paths:
+  /resources:
+    post:
+      tags:
+        - Resources
+      summary: Add a new file
+      description: Create a new file
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+        - Resources
+      summary: Update a file
+      description: Update a file
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+        - Resources
+      summary: Delete a file
+      description: Delete a file
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                type: object
+components: {}
+tags: []

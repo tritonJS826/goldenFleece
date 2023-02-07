@@ -1,6 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
+import swaggerUi from "swagger-ui-express";
+import {apiSpec} from "../swagger";
 
 import {sandboxRouter} from "./routes/sandboxRoute";
 import {resourcesRouter} from "./routes/resourcesRoute";
@@ -11,6 +13,8 @@ const port = process.env.WRITE_SERVER_PORT;
 
 const app = express();
 
+app.get("/swagger.json", (_req, res) => res.json(apiSpec));
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(apiSpec));
 
 // Temporal sandbox page
 app.use(sandboxRouter);

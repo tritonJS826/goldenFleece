@@ -24,7 +24,11 @@ ___
 
 ```pnpm i```
 
-3. run application's modules
+3. generate code from backend
+
+``` pnpm run swagger:generateAll```
+
+4. run application's modules
 
 ```pnpm run startAll```
 
