@@ -5,7 +5,7 @@ export interface IMarker {
   y: number;
   markerType: string;
   markerGroup: string;
-  img: string;
+  imgUrl: string;
   description: string;
 }
 

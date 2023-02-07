@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import {IMarker} from "../../../../model/map.interfaces";
+import {IMarker} from "../../mapInterfaces";
 import {MapContext} from "../../MapContext";
 import styleMarker from "./marker.module.scss";
 

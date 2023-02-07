@@ -1,4 +1,4 @@
 import {createContext} from "react";
-import {IMapContext} from "../../model/map.interfaces";
+import {IMapContext} from "./mapInterfaces";
 
 export const MapContext = createContext<IMapContext>({} as IMapContext);

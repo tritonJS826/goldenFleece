@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {IMapMenuProps} from "../../../model/map.interfaces";
+import {IMapMenuProps} from "../mapInterfaces";
 import {MapContext} from "../MapContext";
 import styles from "./mapMenu.module.scss";
 

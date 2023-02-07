@@ -14,7 +14,7 @@ export const ItemDescription = () => {
       className={styles.container}
     >
       <img className={styles.image}
-        src={require(`../../../resources/map/${menuItem.img}`)}
+        src={menuItem.imgUrl}
         alt="golden-fleece"
       />
       <h3>

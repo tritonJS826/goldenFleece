@@ -3,9 +3,9 @@ import {MapContent} from "./mapContent/MapContent";
 import styles from "./map.module.scss";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
-import {IMarker} from "../../model/map.interfaces";
+import {IMarker} from "./mapInterfaces";
 import {ItemDescription} from "./itemDescription/ItemDescription";
-import {markers} from "../../service/map.services";
+import {markers} from "./mapMarkersList";
 
 export const Map = () => {
   const [dragging, setDragging] = useState(false);
@@ -78,6 +78,5 @@ export const Map = () => {
         <ItemDescription />
       </div>
     </MapContext.Provider>
-
   );
 };
