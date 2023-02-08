@@ -14,3 +14,6 @@
 ### Run build locally
 
 ```pnpm run build```
+
+### Run autogenerate swagger file locally
+```pnpm run swagger:generateSpec```

@@ -47,6 +47,6 @@ export default {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin({}),
-    new CopyWebpackPlugin({patterns: [{from: "./static", to: "./static"}]}),
+    new CopyWebpackPlugin({patterns: [{from: "./static", to: "./static"}, {from: "static/swagger", to: "."}]}),
   ],
 };

@@ -1,0 +1,18 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Golden Fleece API",
+    "version": "1.0.0",
+    "description":
+    "A simple REST API for providing basic CRUD-access to the employees in a Golden Fleece database."
+  },
+  "servers": [
+    {
+      "url": "${GF_SERVER_RESOURCES_HOST}:${GF_SERVER_RESOURCES_PORT}",
+      "description": "gf-server-resources"
+    }
+  ],
+  "schemes":["http", "https"],
+  "apis": ["./src/routes/*.ts"]
+}
+
