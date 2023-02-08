@@ -400,4 +400,39 @@
   .hidden {
     visibility: hidden;
   }
+
+  .burger {
+    position: fixed;
+    left: 0;
+    top: 61px;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: .3s;
+    border-top: 1px solid white;
+
+    .burger_content {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ul {
+        display: flex;
+        gap: 20px;
+
+        .burger_item {
+          color: white;
+          list-style: none;
+        }
+      }
+    }
+  }
+
+  .burger.active {
+    transform: translateX(0);
+  }
+
 }

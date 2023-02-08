@@ -19,13 +19,14 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     setContacts(!contacts);
   };
   const scrollPosition = useScrollPosition();
+  const [burgerActive, setBurgerActive] = useState(false);
 
   return (
     <div className={styles.wrapper}>
       <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
         <nav className={styles.nav}>
           <ul className={styles.list}>
-            <li>
+            <li onClick={() => setBurgerActive(!burgerActive)}>
               <div />
               <div />
               <div />
@@ -87,6 +88,25 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
             </li>
           </ul>
         </nav>
+        <div className={burgerActive ? `${styles.burger} ${styles.active}` : styles.burger}
+          onClick={() => setBurgerActive(false)}
+        >
+          <div className={styles.burger_content}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ul>
+              <li className={styles.burger_item}>
+                Main
+              </li>
+              <li className={styles.burger_item}>
+                Contacts
+              </li>
+              <li className={styles.burger_item}>
+                About Us
+              </li>
+            </ul>
+          </div>
+        </div>
       </header>
       <main className={styles.main}>
         {props.children}
