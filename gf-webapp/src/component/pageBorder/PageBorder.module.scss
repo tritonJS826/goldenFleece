@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .wrapper {
   position: relative;
   overflow-x: hidden;
@@ -287,7 +289,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          color: var(--color-hover);
+          color: $color-hover;
 
           .githubLogo {
             opacity: 1;
@@ -295,7 +297,7 @@
         }
 
         &:focus {
-          color: var(--color-hover);
+          color: $color-hover;
 
           .githubLogo {
             opacity: 1;
@@ -303,7 +305,7 @@
         }
 
         &:active {
-          color: var(--color-active);
+          color: $color-active;
         }
 
         .githubLogo {
@@ -330,17 +332,17 @@
         transition: 0.3s ease;
 
         &:hover {
-          color: var(--color-hover);
+          color: $color-hover;
           opacity: 1;
         }
 
         &:focus {
-          color: var(--color-hover);
+          color: $color-hover;
           opacity: 1;
         }
 
         &:active {
-          color: var(--color-active);
+          color: $color-active;
         }
       }
     }
