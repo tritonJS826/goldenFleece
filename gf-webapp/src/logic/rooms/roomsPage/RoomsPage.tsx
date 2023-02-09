@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {PageBorder} from "../../../component/pageBorder/PageBorder";
 
 export const RoomsPage = () => {
   const [rooms, setRooms] = useState([]);
@@ -18,11 +19,14 @@ export const RoomsPage = () => {
 
   return (
     <div>
-      <h1>
-        {`Rooms: ${rooms.map((item) => {
-          return item["apartmentsType"];
-        })}`}
-      </h1>
+      <PageBorder>
+        <h1>
+          {`Rooms: ${rooms.map((item) => {
+            return item["apartmentsType"];
+          })}`}
+        </h1>
+      </PageBorder>
     </div>
   );
 };
+
