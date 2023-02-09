@@ -11,7 +11,7 @@ swaggerDefinition.servers[0].url = `${GF_SERVER_RESOURCES_HOST}:${GF_SERVER_RESO
 
 const swaggerJsDocOptions = {
   swaggerDefinition,
-  apis: ["./src/routes/*.ts"],
+  apis: ["./src/routes/*.ts", "./src/model/*.ts"],
 };
 
 export const apiSpec = swaggerJsDoc(swaggerJsDocOptions);

@@ -5,9 +5,12 @@ import {checkStatusCallback} from "./utils/checkStatusCallback";
 import {router} from "./routes/routes";
 import swaggerUi from "swagger-ui-express";
 import {apiSpec} from "../swagger";
+import cors from "cors";
 
 config();
 const app: Express = express();
+
+app.use(cors());
 
 app.get("/swagger.json", (_req, res) => res.json(apiSpec));
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(apiSpec));
