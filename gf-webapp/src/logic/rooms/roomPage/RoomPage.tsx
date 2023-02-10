@@ -1,11 +1,20 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {PageBorder} from "../../../component/pageBorder/PageBorder";
-import {Swiper, SwiperSlide} from "swiper/react";
+import {RoomSlider} from "./roomSlider/RoomSlider";
+import {RoomPromo} from "./roomPromo/RoomPromo";
+import {RoomsBlock} from "./roomsBlock/RoomsBlock";
+import {ServicesBlock} from "./servicesBlock/ServicesBlock";
 import styles from "./roomPage.module.scss";
-import "swiper/css";
-import "swiper/css/navigation";
-import {Keyboard} from "swiper";
+
+
+import {NavLink} from "react-router-dom";
+import room1 from "../../../resources/rooms/1.jpg";
+import room2 from "../../../resources/rooms/2.jpg";
+import room3 from "../../../resources/rooms/3.jpg";
+import room4 from "../../../resources/rooms/4.jpg";
+import room5 from "../../../resources/rooms/5.jpg";
+
 
 type RoomParams = {
   id: string;
@@ -46,70 +55,22 @@ export const RoomPage = () => {
 
   return (
     <PageBorder>
-      <div className={styles.wrapper}>
-        <img className={styles.promo}
-          src={room.promo}
-          alt="Promo image"
-        />
-        <h1 className={styles.title}>
-          {room.description}
-        </h1>
-      </div>
-      <div className={styles.container}>
-        <div className={styles.description}>
-          {`Apartment type: ${room.apartmentsType} Apartment type: ${room.apartmentsType}`}
-        </div>
-        <div className={styles.description}>
-          {`Price: ${room.price}$ Price: ${room.price}$`}
-        </div>
-      </div>
+      <RoomPromo promo={room.promo}
+        description={room.description}
+        apartmentsType={room.apartmentsType}
+        price={room.price}
+      />
       <div className={styles.about}>
         {room.descriptionLong}
       </div>
-      <Swiper className={styles.swiper}
-        spaceBetween={30}
-        slidesPerView={1}
-        loop={true}
-        grabCursor={true}
-        keyboard={{enabled: true}}
-        modules={[Keyboard]}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>
-          <img className={styles.slide}
-            src={room.slider}
-            alt="Slider image"
-          />
-          <p className={styles.number}>
-            01
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className={styles.slide}
-            src={room.promo}
-            alt="Slider image"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className={styles.slide}
-            src={room.slider2}
-            alt="Slider image"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className={styles.slide}
-            src={room.slider3}
-            alt="Slider image"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className={styles.slide}
-            src={room.slider4}
-            alt="Slider image"
-          />
-        </SwiperSlide>
-      </Swiper>
+      <RoomSlider promo={room.promo}
+        slider={room.slider}
+        slider2={room.slider2}
+        slider3={room.slider3}
+        slider4={room.slider4}
+      />
+      <RoomsBlock />
+      <ServicesBlock />
     </PageBorder>
   );
 };
