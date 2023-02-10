@@ -75,3 +75,26 @@
   color: $color-primary;
   transition: all 0.6s linear;
 }
+
+.link {
+  pointer-events: none;
+  cursor: default;
+  color: $color-primary;
+}
+
+.link > .room {
+  cursor:initial;
+}
+
+.link > .title3 {
+  color: $color-primary;
+}
+
+.link > .spanLink {
+  display: none;
+}
+
+.link > .roomImage {
+  opacity: 0.7;
+  pointer-events:none;
+}

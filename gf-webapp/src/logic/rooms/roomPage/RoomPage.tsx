@@ -5,16 +5,8 @@ import {RoomSlider} from "./roomSlider/RoomSlider";
 import {RoomPromo} from "./roomPromo/RoomPromo";
 import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "./servicesBlock/ServicesBlock";
+import {BookBlock} from "./bookBlock/BookBlock";
 import styles from "./roomPage.module.scss";
-
-
-import {NavLink} from "react-router-dom";
-import room1 from "../../../resources/rooms/1.jpg";
-import room2 from "../../../resources/rooms/2.jpg";
-import room3 from "../../../resources/rooms/3.jpg";
-import room4 from "../../../resources/rooms/4.jpg";
-import room5 from "../../../resources/rooms/5.jpg";
-
 
 type RoomParams = {
   id: string;
@@ -71,6 +63,7 @@ export const RoomPage = () => {
       />
       <RoomsBlock />
       <ServicesBlock />
+      <BookBlock />
     </PageBorder>
   );
 };

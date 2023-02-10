@@ -15,8 +15,9 @@ export const RoomsBlock = () => {
       </h2>
       <div className={styles.rooms}>
         <div className={styles.room}>
-          <NavLink className={styles.link}
-            to="/rooms/1"
+          <NavLink to="/rooms/1"
+            className={({isActive}) =>
+              isActive ? styles.link : undefined}
           >
             <img className={styles.roomImage}
               src={room1}
@@ -31,8 +32,9 @@ export const RoomsBlock = () => {
           </NavLink>
         </div>
         <div className={styles.room}>
-          <NavLink className={styles.link}
-            to="/rooms/2"
+          <NavLink to="/rooms/2"
+            className={({isActive}) =>
+              isActive ? styles.link : undefined}
           >
             <img className={styles.roomImage}
               src={room2}
@@ -47,8 +49,9 @@ export const RoomsBlock = () => {
           </NavLink>
         </div>
         <div className={styles.room}>
-          <NavLink className={styles.link}
-            to="/rooms/3"
+          <NavLink to="/rooms/3"
+            className={({isActive}) =>
+              isActive ? styles.link : undefined}
           >
             <img className={styles.roomImage}
               src={room3}
@@ -63,8 +66,9 @@ export const RoomsBlock = () => {
           </NavLink>
         </div>
         <div className={styles.room}>
-          <NavLink className={styles.link}
-            to="/rooms/4"
+          <NavLink to="/rooms/4"
+            className={({isActive}) =>
+              isActive ? styles.link : undefined}
           >
             <img className={styles.roomImage}
               src={room4}
@@ -79,8 +83,9 @@ export const RoomsBlock = () => {
           </NavLink>
         </div>
         <div className={styles.room}>
-          <NavLink className={styles.link}
-            to="/rooms/5"
+          <NavLink to="/rooms/5"
+            className={({isActive}) =>
+              isActive ? styles.link : undefined}
           >
             <img className={styles.roomImage}
               src={room5}
