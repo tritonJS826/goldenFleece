@@ -29,10 +29,18 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     setLangOpen(false);
   };
 
-  const [contacts, setContacts] = useState(false);
-  const handleContacts = () => {
-    setContacts(!contacts);
+  const [contactsOpen, setContactsOpen] = useState(false);
+  const contactsList: {[key: string]: string;} = {phone: "+123456789", email: "goldenFleece@gmain.com"};
+  const conatctsArray = Object.keys(contactsList);
+
+  const contactsHoverHandler = () => {
+    setContactsOpen(prev => !prev);
   };
+
+  const onContactChoose = () => {
+    setContactsOpen(false);
+  };
+
   const scrollPosition = useScrollPosition();
   const [burgerActive, setBurgerActive] = useState(false);
 
@@ -48,9 +56,9 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               <div />
               <div />
             </li>
-            <li onMouseEnter={() => setContacts(true)}
-              onMouseLeave={() => setContacts(false)}
-              onClick={handleContacts}
+            <li onMouseEnter={contactsHoverHandler}
+              onMouseLeave={contactsHoverHandler}
+              onClick={onContactChoose}
               className={`${styles.contacts} ${styles.listItem}`}
             >
               <div
@@ -69,18 +77,18 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                   />
                 </svg>
               </div>
-              <nav className={contacts ? styles.contact_links : `${styles.contact_links} ${styles.hidden}`}>
-                <a className={styles.link}
-                  href="#"
-                >
-                  +1324536432453
-                </a>
-                <a className={styles.link}
-                  href="#"
-                >
-                  adfg@dasfs.ec
-                </a>
-              </nav>
+              <ul className={styles.contact_links}>
+                {contactsOpen && conatctsArray.map((contact, i) => (
+                  <li key={i}>
+                    <a className={styles.link}
+                      href="#"
+                    >
+                      {contactsList[contact]}
+                    </a>
+                  </li>
+                ))}
+
+              </ul>
             </li>
             <li className={styles.listItem}>
               <div className={styles.logo}>
