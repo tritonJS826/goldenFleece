@@ -1,7 +1,7 @@
 import {Room} from "../model/Room";
 import {readFile} from "../utils/readFile";
 
-const PATH_TO_FILE_WITH_ROOMS = "./static/roomsDTO.json";
+const PATH_TO_FILE_WITH_ROOMS = "./DTO/roomsDTO.json";
 
 class RoomsRepository {
 

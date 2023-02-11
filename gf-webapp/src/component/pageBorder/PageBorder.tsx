@@ -86,9 +86,9 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               <div className={styles.logo}>
                 Golden Fleece
               </div>
-              <img src={logo}
+              {/* <img src={logo}
                 alt="Golden Fleece logo"
-              />
+              /> */}
             </li>
             <li className={`${styles.languages} ${styles.listItem}`}
               onMouseEnter={langHoverHandler}
@@ -137,247 +137,87 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
       <main className={styles.main}>
         {props.children}
       </main>
-      <footer className={styles.footer}>
-        <div className={styles.footer_container}>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-        </div>
-        <div className={styles.line} />
-        <div className={styles.creators}>
-          <a
-            href="https://github.com/Ekaterina1994"
-            className={styles.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ekaterina1994
-            <img
-              className={styles.githubLogo}
-              src={githubLogo}
-              alt="GitHub"
-            />
-          </a>
-          <a
-            href="https://github.com/scorpigg"
-            className={styles.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            scorpigg
-            <img
-              className={styles.githubLogo}
-              src={githubLogo}
-              alt="GitHub"
-            />
-          </a>
-          <a
-            href="https://github.com/SergioAJS"
-            className={styles.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            SergioAJS
-            <img
-              className={styles.githubLogo}
-              src={githubLogo}
-              alt="GitHub"
-            />
-          </a>
-          <div className={styles.year}>
-            © 2022
+      <div className={styles.footerWrap}>
+        <footer className={styles.footer}>
+          <div className={styles.footer_container}>
+            <ul className={styles.footerList}>
+              <li>
+                dfghj
+              </li>
+              <li>
+                lkjhgv
+              </li>
+              <li>
+                kjhn
+              </li>
+              <li>
+                mnvb
+              </li>
+              <li>
+                mmnbvb
+              </li>
+              <li>
+                jkhghb
+              </li>
+            </ul>
           </div>
-          <a
-            href="https://rs.school/js/"
-            className={styles.course}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={rsSchoolLogo}
-              alt="rsSchool"
-            />
-          </a>
-        </div>
-      </footer>
+          <div className={styles.line} />
+          <div className={styles.creators}>
+            <a
+              href="https://github.com/Ekaterina1994"
+              className={styles.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ekaterina1994
+              <img
+                className={styles.githubLogo}
+                src={githubLogo}
+                alt="GitHub"
+              />
+            </a>
+            <a
+              href="https://github.com/scorpigg"
+              className={styles.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              scorpigg
+              <img
+                className={styles.githubLogo}
+                src={githubLogo}
+                alt="GitHub"
+              />
+            </a>
+            <a
+              href="https://github.com/SergioAJS"
+              className={styles.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              SergioAJS
+              <img
+                className={styles.githubLogo}
+                src={githubLogo}
+                alt="GitHub"
+              />
+            </a>
+            <div className={styles.year}>
+              © 2022
+            </div>
+            <a
+              href="https://rs.school/js/"
+              className={styles.course}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={rsSchoolLogo}
+                alt="rsSchool"
+              />
+            </a>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }

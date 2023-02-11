@@ -20,6 +20,7 @@ importers:
 
   gf-server-api:
     specifiers:
+      '@types/cors': ^2.8.13
       '@types/express': ^4.17.17
       '@types/node': ^18.11.18
       '@types/swagger-jsdoc': ^6.0.1
@@ -33,6 +34,7 @@ importers:
       clean-webpack-plugin: ^4.0.0
       concurrently: ^7.6.0
       copy-webpack-plugin: ^11.0.0
+      cors: ^2.8.5
       dotenv: ^16.0.3
       eslint: ^8.33.0
       eslint-config-prettier: ^8.6.0
@@ -54,9 +56,11 @@ importers:
       webpack-shell-plugin: ^0.5.0
     dependencies:
       concurrently: 7.6.0
+      cors: 2.8.5
       dotenv: 16.0.3
       express: 4.18.2
     devDependencies:
+      '@types/cors': 2.8.13
       '@types/express': 4.17.17
       '@types/node': 18.11.18
       '@types/swagger-jsdoc': 6.0.1
@@ -2676,6 +2680,12 @@ packages:
     dependencies:
       '@types/node': 18.11.18
 
+  /@types/cors/2.8.13:
+    resolution: {integrity: sha512-RG8AStHlUiV5ysZQKq97copd2UmVYw3/pRMLefISZ3S1hK104Cwm7iLQ3fTKx+lsUH2CE8FlLaYeEA2LSeqYUA==}
+    dependencies:
+      '@types/node': 18.11.18
+    dev: true
+
   /@types/eslint-scope/3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
@@ -4500,6 +4510,7 @@ packages:
   /commander/9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
+    requiresBuild: true
     dev: true
 
   /common-path-prefix/3.0.0:
@@ -4670,6 +4681,14 @@ packages:
 
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+
+  /cors/2.8.5:
+    resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
+    engines: {node: '>= 0.10'}
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
+    dev: false
 
   /cosmiconfig/6.0.0:
     resolution: {integrity: sha512-xb3ZL6+L8b9JLLCx3ZdoZy4+2ECphCMo2PwqgP1tlfVq6M6YReyzBJtvWWtbDSpNr9hn96pkCiZqUcFEc+54Qg==}
