@@ -4,10 +4,14 @@
     "services": "Free WiFi, Laundry",
     "id": "0",
     "description": "A small room",
+    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
     "price": 200,
-    "images": [
-      "SingleRoom1.jpg", "SingleRoom2.jpg"
-    ],
+    "promo": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "slider": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
+    "slider2": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "slider3": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
+    "slider4": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f3402c0f83c81a3cba_drz_grand-forest-metsovo_0120.jpg",
+    "slider5": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f7655107ce9b86c051_drz_grand-forest-metsovo_0151.jpg",
     "rating": 8
   },
   {
@@ -15,10 +19,14 @@
     "services": "Free WiFi, Laundry, Tea/coffee maker, Heating",
     "id": "1",
     "description": "A comfortable room",
+    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
     "price": 300,
-    "images": [
-      "DoubleRoom1.jpg", "DoubleRoom2.jpg"
-    ],
+    "promo": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "slider": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
+    "slider2": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "slider3": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
+    "slider4": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f3402c0f83c81a3cba_drz_grand-forest-metsovo_0120.jpg",
+    "slider5": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f7655107ce9b86c051_drz_grand-forest-metsovo_0151.jpg",
     "rating": 10
   },
   {
@@ -26,10 +34,14 @@
     "services": "Free WiFi, Laundry, Tea/coffee maker, Heating, Airport shuttle (free) ",
     "id": "2",
     "description": "A beautiful room",
+    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
     "price": 500,
-    "images": [
-      "TwinRoom1.jpg", "TwinRoom2.jpg"
-    ],
+    "promo": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "slider": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
+    "slider2": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "slider3": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
+    "slider4": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f3402c0f83c81a3cba_drz_grand-forest-metsovo_0120.jpg",
+    "slider5": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f7655107ce9b86c051_drz_grand-forest-metsovo_0151.jpg",
     "rating": 9
   }
 ]
