@@ -52,7 +52,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   return (
     <div className={styles.wrapper}>
       <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
-        <nav className={styles.nav}>
+        <nav className={scrollPosition > 100 ? styles.nav_scroll : styles.nav}>
           <ul className={styles.list}>
             <li className={styles.listItem}
               onClick={burgerOpenHandler}

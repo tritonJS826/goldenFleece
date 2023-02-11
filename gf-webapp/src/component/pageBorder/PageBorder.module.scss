@@ -3,6 +3,13 @@
 .nav {
   max-width: 1980px;
   z-index: 100;
+
+}
+
+.nav_scroll {
+  max-width: 1980px;
+  z-index: 100;
+  background-color: $color-white;
 }
 
 .wrapper {
