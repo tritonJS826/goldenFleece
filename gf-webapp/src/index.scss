@@ -19,7 +19,9 @@ $color-back: #efeee8;
 $color-gray-smoky: #ababab;
 $color-gray-light: #f1f3f2;
 $color-hover: #e47209;
-
+$color-header-hover-background: #909090;
+$color-disabled: #ccc;
+$color-text-disabled: rgba(0, 0, 0, 0.5);
 
 
 body {
@@ -36,4 +38,8 @@ body {
   &:hover {
     background: rgba($color: #484848, $alpha: .85);
   }
+}
+
+ul {
+  list-style: none;
 }

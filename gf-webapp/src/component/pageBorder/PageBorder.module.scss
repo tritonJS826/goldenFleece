@@ -4,6 +4,8 @@
   max-width: 1980px;
 }
 
+@import "../../index.scss";
+
 .wrapper {
   position: relative;
   overflow-x: hidden;
@@ -20,7 +22,7 @@
     justify-self: flex-start;
     display: flex;
     justify-content: center;
-    background-color: rgba($color: white, $alpha: 1);
+    background-color: rgba($color: $color-white, $alpha: 1);
     color: $color-text;
     font-size: 1.2rem;
     transition: all 0.3s;
@@ -29,7 +31,7 @@
       display: flex;
       list-style: none;
 
-      li {
+      .listItem {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -44,7 +46,7 @@
       }
     }
 
-    .list li:first-child {
+    .list .listItem:first-child {
       width: 5vw;
       text-align: center;
       border-left: none;
@@ -54,19 +56,19 @@
 
       div:first-child {
         margin-bottom: 10px;
-        border: 1px solid black;
+        border: 1px solid $color-black;
         width: 30px;
       }
 
       div:nth-child(2) {
-        border: 1px solid black;
+        border: 1px solid $color-black;
         width: 15px;
         transition: width .3s;
       }
 
       div:last-child {
         margin-top: 10px;
-        border: 1px solid black;
+        border: 1px solid $color-black;
         width: 30px;
       }
 
@@ -77,12 +79,12 @@
       }
     }
 
-    .list li:nth-child(2) {
+    .list .listItem:nth-child(2) {
       width: 10vw;
       text-align: center;
     }
 
-    .list li:nth-child(3) {
+    .list .listItem:nth-child(3) {
       width: 70vw;
       text-align: center;
       flex-direction: row-reverse;
@@ -105,12 +107,12 @@
       }
     }
 
-    .list li:nth-child(4) {
+    .list .listItem:nth-child(4) {
       width: 5vw;
       text-align: center;
     }
 
-    .list li:last-child {
+    .list .listItem:last-child {
       width: 10vw;
       text-align: center;
       border-left: none;
@@ -124,6 +126,27 @@
       justify-content: center;
       align-items: center;
     }
+
+    .langAdditional {
+      position: absolute;
+      top: 100%;
+      background-color: $color-white;
+      color: $color-black;
+      width: 100%;
+      
+      li {
+        padding: 6px;
+        &:hover {
+          background-color: $color-gray-light;
+        }
+      }
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    background-color: $color-disabled;
+    color: $color-text-disabled;
   }
 
   .header {
@@ -132,8 +155,8 @@
     justify-self: flex-start;
     display: flex;
     justify-content: center;
-    background-color: rgba($color: $color-text, $alpha: .25);
-    color: white;
+    background-color: rgba($color: $color-black, $alpha: .25);
+    color: $color-white;
     font-size: 1.2rem;
     transition: all 0.3s;
 
@@ -141,22 +164,22 @@
       display: flex;
       list-style: none;
 
-      li {
+      .listItem {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid white;
+        border: 1px solid $color-white;
         padding: 5px;
         transition: background .3s;
 
         &:hover {
-          background-color: rgba($color: #909090, $alpha: .7);
+          background-color: rgba($color: $color-header-hover-background, $alpha: .7);
           cursor: pointer;
         }
       }
     }
 
-    .list li:first-child {
+    .list .listItem:first-child {
       width: 5vw;
       text-align: center;
       border-left: none;
@@ -166,19 +189,19 @@
 
       div:first-child {
         margin-bottom: 10px;
-        border: 1px solid white;
+        border: 1px solid $color-white;
         width: 30px;
       }
 
       div:nth-child(2) {
-        border: 1px solid white;
+        border: 1px solid $color-white;
         width: 15px;
         transition: width .3s;
       }
 
       div:last-child {
         margin-top: 10px;
-        border: 1px solid white;
+        border: 1px solid $color-white;
         width: 30px;
       }
 
@@ -189,12 +212,12 @@
       }
     }
 
-    .list li:nth-child(2) {
+    .list .listItem:nth-child(2) {
       width: 10vw;
       text-align: center;
     }
 
-    .list li:nth-child(3) {
+    .list .listItem:nth-child(3) {
       width: 70vw;
       text-align: center;
       flex-direction: row-reverse;
@@ -217,12 +240,12 @@
       }
     }
 
-    .list li:nth-child(4) {
+    .list .listItem:nth-child(4) {
       width: 5vw;
       text-align: center;
     }
 
-    .list li:last-child {
+    .list .listItem:last-child {
       width: 10vw;
       text-align: center;
       border-left: none;
@@ -235,6 +258,21 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    .langAdditional {
+      position: absolute;
+      top: 100%;
+      background-color: $color-white;
+      color: $color-black;
+      width: 100%;
+
+      li {
+        padding: 6px;
+        &:hover {
+          background-color: $color-gray-light;
+        }
+      }
     }
   }
 
