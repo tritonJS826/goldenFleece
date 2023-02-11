@@ -6,6 +6,8 @@ import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
 import {useTranslation} from "react-i18next";
 import i18next from "i18next";
+import cookies from "js-cookie";
+
 interface PageBorderProps {
   children: ReactNode
 }
@@ -13,17 +15,17 @@ interface PageBorderProps {
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
   const {t} = useTranslation();
   const [langOpen, setLangOpen] = useState(false);
-  const [langSelected, setLangSelected] = useState(0);
+  const currentLang = cookies.get("i18next") || "en";
+  const [langSelected, setLangSelected] = useState(currentLang);
   const langList = ["en", "ru"];
-  const selectedLang = langList[langSelected];
 
   const langHoverHandler = () => {
     setLangOpen(prev => !prev);
   };
 
-  const onLangChoose = (id: number) => {
-    i18next.changeLanguage(langList[id]);
-    setLangSelected(id);
+  const onLangChoose = (lang: string) => {
+    i18next.changeLanguage(lang);
+    setLangSelected(lang);
     setLangOpen(false);
   };
 
@@ -55,7 +57,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 className={styles.contact}
               >
                 <p className={styles.contact_text}>
-                  {t("Contacts")}
+                  {t("contacts")}
                 </p>
                 <svg className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
                   xmlns="http://www.w3.org/2000/svg"
@@ -93,12 +95,13 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               onMouseLeave={langHoverHandler}
             >
               <p>
-                {selectedLang.toUpperCase()}
+                {langSelected.toUpperCase()}
               </p>
               <ul className={styles.langAdditional}>
-                {langOpen && langList.map((lang, i) => (
-                  <li key={i}
-                    onClick={() => onLangChoose(i)}
+                {langOpen && langList.map(lang => (
+                  <li key={lang}
+                    onClick={() => onLangChoose(lang)}
+                    className={currentLang === lang ? `${styles.disabled}` : ""}
                   >
                     {lang.toUpperCase()}
                   </li>
@@ -107,7 +110,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
 
             </li>
             <li className={styles.listItem}>
-              Book now
+              {t("book-now")}
             </li>
           </ul>
         </nav>
@@ -119,13 +122,13 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
           >
             <ul>
               <li className={styles.burger_item}>
-                Main
+                {t("main")}
               </li>
               <li className={styles.burger_item}>
-                Contacts
+                {t("contacts")}
               </li>
               <li className={styles.burger_item}>
-                About Us
+                {t("about-us")}
               </li>
             </ul>
           </div>

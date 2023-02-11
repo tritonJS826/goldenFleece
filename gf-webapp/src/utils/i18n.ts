@@ -8,7 +8,7 @@ i18n
   .use(initReactI18next)
   .use(HttpApi)
   .init({
-    debug: true,
+    debug: false,
     supportedLngs: ["en", "ru"],
     fallbackLng: "ru",
     detection: {order: ["cookie", "localStorage"], caches: ["cookie"]},

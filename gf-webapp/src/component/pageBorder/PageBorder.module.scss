@@ -136,6 +136,12 @@
     }
   }
 
+  .disabled {
+    pointer-events: none;
+    background-color: $color-disabled;
+    color: $color-text-disabled;
+  }
+
   .header {
     position: fixed;
     z-index: 10;

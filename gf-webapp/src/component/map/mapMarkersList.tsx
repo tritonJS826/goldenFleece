@@ -16,9 +16,7 @@ export const markers: IMarker[] = [
     markerType: "main",
     markerGroup: "Main hotel",
     imgUrl: goldenFleeceImg,
-    description: "Located in Kutaisi, 4.9 km from WhiteBridge,\
-    Hotel Golden Fleece provides accommodation with a seasonal outdoor\
-    swimming pool, free private parking, a terrace and a bar",
+    description: "goldenFleeceDescr",
   },
   {
     id: 2,
@@ -28,10 +26,7 @@ export const markers: IMarker[] = [
     markerType: "food",
     markerGroup: "Food and drink",
     imgUrl: cakeClubImg,
-    description: "Soft, melt-in-your-mouth biscuit, butter cream,\
-    an abundance of various fillings in cakes, pastries and pastries,\
-    a variety of confectionery: confectionery Cake club is the best taste\
-    of traditional pastries made only from natural ingredients.",
+    description: "cakeClubDescr",
   },
   {
     id: 3,
@@ -41,7 +36,7 @@ export const markers: IMarker[] = [
     markerType: "food",
     markerGroup: "Food and drink",
     imgUrl: shedevriImg,
-    description: "Shedevri offers you Georgian, traditional dishes, high quality, and guarantees the best taste!",
+    description: "shedevriDescr",
   },
   {
     id: 4,
@@ -51,7 +46,7 @@ export const markers: IMarker[] = [
     markerType: "food",
     markerGroup: "Food and drink",
     imgUrl: tomasWineCellarImg,
-    description: "This is family winery, where already 50 year we are doing wine by our family technologies",
+    description: "tomasDescr",
   },
   {
     id: 5,
@@ -61,9 +56,7 @@ export const markers: IMarker[] = [
     markerType: "park",
     markerGroup: "Park zones",
     imgUrl: youthParkImg,
-    description: "Youth park is 3.5 km south from Colchis \
-    fountain along Chavchavadze avenue. Circumference is 1.4 km.\
-    Large by Kutaisi standards and excellent for running and to some extent cycling",
+    description: "youthParkDescr",
   },
   {
     id: 6,
@@ -73,8 +66,7 @@ export const markers: IMarker[] = [
     markerType: "park",
     markerGroup: "Park zones",
     imgUrl: tennisCourtImg,
-    description: "A modern sports complex for adults and children (4+), where all\
-    the necessary conditions for a full-fledged training process of a tennis player are created",
+    description: "tennisCourtDescr",
   },
   {
     id: 7,
@@ -84,7 +76,6 @@ export const markers: IMarker[] = [
     markerType: "park",
     markerGroup: "Park zones",
     imgUrl: stadiumImg,
-    description: "It is a multi-use stadium in Kutaisi, Georgia used mostly for football\
-    matches. It is the home stadium of FC Torpedo Kutaisi. The stadium is able to hold 12,000 people.",
+    description: "shengeliaStadiumDescr",
   },
 ];
