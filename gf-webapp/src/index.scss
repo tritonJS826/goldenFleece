@@ -7,16 +7,15 @@
   font-family: Lato Regular, sans-serif, system-ui;
 }
 
-:root {
-  --color-white: #fff;
-  --color-black: #000;
-  --color-7a: #7a7a7a;
-  --color-active: #4b9200;
-  --color-back: #efeee8;
-  --color-gray-smoky: #ababab;
-  --color-gray-light: #f1f3f2;
-  --color-hover: #e47209;
-}
+$color-white: #fff;
+$color-black: #000;
+$color-7a: #7a7a7a;
+$color-active: #4b9200;
+$color-back: #efeee8;
+$color-gray-smoky: #ababab;
+$color-gray-light: #f1f3f2;
+$color-hover: #e47209;
+$color-header-hover-background: #909090;
 
 body {
   overflow: overlay;
@@ -32,4 +31,8 @@ body {
   &:hover {
     background: rgba($color: #484848, $alpha: .85);
   }
+}
+
+ul {
+  list-style: none;
 }

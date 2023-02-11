@@ -4,16 +4,29 @@ import logo from "../../resources/icons/logo.svg";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
-
+import {useTranslation} from "react-i18next";
+import i18next from "i18next";
 interface PageBorderProps {
   children: ReactNode
 }
 
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(!open);
+  const {t} = useTranslation();
+  const [langOpen, setLangOpen] = useState(false);
+  const [langSelected, setLangSelected] = useState(0);
+  const langList = ["en", "ru"];
+  const selectedLang = langList[langSelected];
+
+  const langHoverHandler = () => {
+    setLangOpen(prev => !prev);
   };
+
+  const onLangChoose = (id: number) => {
+    i18next.changeLanguage(langList[id]);
+    setLangSelected(id);
+    setLangOpen(false);
+  };
+
   const [contacts, setContacts] = useState(false);
   const handleContacts = () => {
     setContacts(!contacts);
@@ -26,7 +39,9 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
       <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
         <nav className={styles.nav}>
           <ul className={styles.list}>
-            <li onClick={() => setBurgerActive(!burgerActive)}>
+            <li className={styles.listItem}
+              onClick={() => setBurgerActive(!burgerActive)}
+            >
               <div />
               <div />
               <div />
@@ -34,13 +49,13 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
             <li onMouseEnter={() => setContacts(true)}
               onMouseLeave={() => setContacts(false)}
               onClick={handleContacts}
-              className={styles.contacts}
+              className={`${styles.contacts} ${styles.listItem}`}
             >
               <div
                 className={styles.contact}
               >
                 <p className={styles.contact_text}>
-                  Contact
+                  {t("Contacts")}
                 </p>
                 <svg className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +80,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 </a>
               </nav>
             </li>
-            <li>
+            <li className={styles.listItem}>
               <div className={styles.logo}>
                 Golden Fleece
               </div>
@@ -73,17 +88,25 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 alt="Golden Fleece logo"
               />
             </li>
-            <li className={styles.languages}
-              onClick={handleOpen}
+            <li className={`${styles.languages} ${styles.listItem}`}
+              onMouseEnter={langHoverHandler}
+              onMouseLeave={langHoverHandler}
             >
-              <p className={styles.english}>
-                EN
+              <p>
+                {selectedLang.toUpperCase()}
               </p>
-              {open ? (<p className={`${styles.hidden} ${styles.russian}`}>
-                RU
-              </p>) : null}
+              <ul className={styles.langAdditional}>
+                {langOpen && langList.map((lang, i) => (
+                  <li key={i}
+                    onClick={() => onLangChoose(i)}
+                  >
+                    {lang.toUpperCase()}
+                  </li>
+                ))}
+              </ul>
+
             </li>
-            <li>
+            <li className={styles.listItem}>
               Book now
             </li>
           </ul>
