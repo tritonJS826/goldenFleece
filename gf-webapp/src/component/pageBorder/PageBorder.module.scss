@@ -281,7 +281,6 @@
   .main {
     position: relative;
     z-index: 1;
-    margin-bottom: 20vh;
   }
 
   .footerWrap {
@@ -289,17 +288,15 @@
   }
 
   .footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     max-width: 1980px;
-    height: 20vh;
     background-color: #FFFDFA;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 15px;
+    padding: 50px 0;
 
     .footer_container {
       max-width: 1980px;
