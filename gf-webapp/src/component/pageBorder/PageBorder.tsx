@@ -17,7 +17,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   const [langOpen, setLangOpen] = useState(false);
   const currentLang = cookies.get("i18next") || "en";
   const [langSelected, setLangSelected] = useState(currentLang);
-  const langList = ["en", "ru"];
+  const langList = ["en", "ru", "ka"];
 
   const langHoverHandler = () => {
     setLangOpen(prev => !prev);
