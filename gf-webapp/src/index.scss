@@ -28,6 +28,10 @@ body {
   overflow: overlay;
 }
 
+body.notScrollable {
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   background: transparent;
 }
