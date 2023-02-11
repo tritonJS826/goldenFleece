@@ -4,8 +4,6 @@
   max-width: 1980px;
 }
 
-@import "../../index.scss";
-
 .wrapper {
   position: relative;
   overflow-x: hidden;
@@ -137,6 +135,8 @@
       
       li {
         padding: 6px;
+        border-bottom: 1px solid $color-disabled;
+
         &:hover {
           background-color: $color-gray-light;
         }
@@ -271,6 +271,7 @@
 
       li {
         padding: 6px;
+        border-bottom: 1px solid $color-disabled;
         &:hover {
           background-color: $color-gray-light;
         }
@@ -431,6 +432,7 @@
         font-size: 0.8rem;
         padding: 10px;
         word-wrap: break-word;
+        border-bottom: 1px solid $color-disabled;
 
         &:hover {
           background-color: #efefef;
@@ -484,6 +486,12 @@
         .burger_item {
           color: white;
           list-style: none;
+          cursor: pointer;
+          transition: color 0.3s linear;
+
+          &:hover {
+            color: $color-hover;
+          }
         }
       }
     }
