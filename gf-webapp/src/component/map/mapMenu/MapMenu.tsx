@@ -2,19 +2,21 @@ import React, {useContext} from "react";
 import {IMapMenuProps} from "../mapInterfaces";
 import {MapContext} from "../MapContext";
 import styles from "./mapMenu.module.scss";
+import {useTranslation} from "react-i18next";
 
 export const MapMenu = (props: IMapMenuProps) => {
+  const {t} = useTranslation();
   const {markers, menuItem} = useContext(MapContext);
-  const markerGroups = Array.from(new Set(markers.map(marker => marker.markerGroup)));
+  const markerTypes = Array.from(new Set(markers.map(marker => marker.markerType)));
 
   return (<ul className={styles.menu}>
-    {markerGroups.map((markerGroup, index) => (
+    {markerTypes.map((markerType, index) => (
       <li key={index}>
         <p className={styles.groupName}>
-          {markerGroup !== "Main hotel" && markerGroup}
+          {markerType !== "main" && t(markerType)}
         </p>
         {markers.map(marker => (
-          markerGroup === marker.markerGroup &&
+          markerType === marker.markerType &&
           <span onClick={() => props.menuItemHandler(marker)}
             className={`${styles.menuItem} ${marker.id === menuItem?.id ? styles.checked : ""}`}
             key={marker.id}
