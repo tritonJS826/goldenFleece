@@ -1,11 +1,10 @@
 import React from "react";
+import {AuthModal} from "../../component/authModal/AuthModal";
 
 export const MainPage = () => {
   return (
     <div className="App">
-      <h1>
-        Main1
-      </h1>
+      <AuthModal />
     </div>
   );
 };
