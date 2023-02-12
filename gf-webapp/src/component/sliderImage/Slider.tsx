@@ -17,6 +17,8 @@ import {Autoplay, Pagination, Navigation, Keyboard} from "swiper";
 export function Slider() {
   return (
     <Swiper
+      observer={true}
+      observeParents={true}
       spaceBetween={30}
       centeredSlides={true}
       loop={true}

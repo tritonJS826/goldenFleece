@@ -1,4 +1,5 @@
-import React, {useState, PropsWithChildren, ReactNode, ReactElement} from "react";
+import React, {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
+import {NavLink} from "react-router-dom";
 import styles from "./PageBorder.module.scss";
 import logo from "../../resources/icons/logo.svg";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
@@ -7,6 +8,7 @@ import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
 import {useTranslation} from "react-i18next";
 import i18next from "i18next";
 import cookies from "js-cookie";
+import {useLocation} from "react-router-dom";
 
 interface PageBorderProps {
   children: ReactNode
@@ -43,6 +45,12 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
 
   const scrollPosition = useScrollPosition();
   const [burgerActive, setBurgerActive] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    document.body.classList.remove("notScrollable");
+  }, [location]);
 
   const burgerOpenHandler = () => {
     setBurgerActive(prev => !prev);
@@ -137,13 +145,40 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
           >
             <ul>
               <li className={styles.burger_item}>
-                {t("main")}
+                <NavLink to="/"
+                  className={({isActive}) =>
+                    isActive ? styles.burger_item_active : styles.burger_item
+                  }
+                >
+                  {t("main")}
+                </NavLink>
               </li>
               <li className={styles.burger_item}>
-                {t("contacts")}
+                <NavLink to="/rooms"
+                  className={({isActive}) =>
+                    isActive ? styles.burger_item_active : styles.burger_item
+                  }
+                >
+                  {t("rooms")}
+                </NavLink>
               </li>
               <li className={styles.burger_item}>
-                {t("about-us")}
+                <NavLink to="/contacts"
+                  className={({isActive}) =>
+                    isActive ? styles.burger_item_active : styles.burger_item
+                  }
+                >
+                  {t("contacts")}
+                </NavLink>
+              </li>
+              <li className={styles.burger_item}>
+                <NavLink to="/about"
+                  className={({isActive}) =>
+                    isActive ? styles.burger_item_active : styles.burger_item
+                  }
+                >
+                  {t("about-us")}
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -156,23 +191,41 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
         <footer className={styles.footer}>
           <div className={styles.footer_container}>
             <ul className={styles.footerList}>
-              <li>
-                dfghj
+              <li className={styles.burger_item}>
+                <NavLink to="/"
+                  className={({isActive}) =>
+                    isActive ? styles.footer_link_active : styles.footer_link
+                  }
+                >
+                  {t("main")}
+                </NavLink>
               </li>
-              <li>
-                lkjhgv
+              <li className={styles.burger_item}>
+                <NavLink to="/rooms"
+                  className={({isActive}) =>
+                    isActive ? styles.footer_link_active : styles.footer_link
+                  }
+                >
+                  {t("rooms")}
+                </NavLink>
               </li>
-              <li>
-                kjhn
+              <li className={styles.burger_item}>
+                <NavLink to="/contacts"
+                  className={({isActive}) =>
+                    isActive ? styles.footer_link_active : styles.footer_link
+                  }
+                >
+                  {t("contacts")}
+                </NavLink>
               </li>
-              <li>
-                mnvb
-              </li>
-              <li>
-                mmnbvb
-              </li>
-              <li>
-                jkhghb
+              <li className={styles.burger_item}>
+                <NavLink to="/about"
+                  className={({isActive}) =>
+                    isActive ? styles.footer_link_active : styles.footer_link
+                  }
+                >
+                  {t("about-us")}
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -218,7 +271,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               />
             </a>
             <div className={styles.year}>
-              © 2022
+              © 2023
             </div>
             <a
               href="https://rs.school/js/"

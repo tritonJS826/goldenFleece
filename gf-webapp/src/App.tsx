@@ -4,10 +4,13 @@ import {MainPage} from "./logic/mainPage/MainPage";
 import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
 import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
 import {RoomPage} from "./logic/rooms/roomPage/RoomPage";
+import {ContactsPage} from "./logic/contactsPage/ContactsPage";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <Routes>
         <Route path="/"
           element={<MainPage />}
@@ -17,6 +20,9 @@ function App() {
         />
         <Route path="/rooms"
           element={<RoomsPage />}
+        />
+        <Route path="/contacts"
+          element={<ContactsPage />}
         />
         <Route path="/rooms/:id"
           element={<RoomPage />}
