@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./aboutUs.module.scss";
 import frontImg from "../../resources/about-us/kutaisi.jpg";
 import {motion} from "framer-motion";
+import {useTranslation} from "react-i18next";
 
 const textAnimation = {
   hidden: {
@@ -28,6 +29,7 @@ const imageAnimation = {
 };
 
 export const AboutUs = () => {
+  const {t} = useTranslation();
   return (
     <div className={styles.wrapper}>
       <motion.div
@@ -38,12 +40,10 @@ export const AboutUs = () => {
         className={styles.container}
       >
         <h2 className={styles.title}>
-          We always welcome new guests
+          {t("about-us-title")}
         </h2>
         <p className={styles.text}>
-          This property features a restaurant, free private parking, a seasonal
-          outdoor pool and a bar. It offers family rooms and a terrace. It offers
-          a 24-hour front desk, a shuttle service, a shared kitchen and free Wi-Fi.
+          {t("about-us-text")}
         </p>
       </motion.div>
       <motion.div

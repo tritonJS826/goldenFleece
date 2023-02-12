@@ -5,7 +5,6 @@ import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
 import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
 import {RoomPage} from "./logic/rooms/roomPage/RoomPage";
 
-
 function App() {
   return (
     <div className="app">

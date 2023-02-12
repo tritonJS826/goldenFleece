@@ -1,8 +1,10 @@
 import React, {useContext} from "react";
 import styles from "./itemDescription.module.scss";
 import {MapContext} from "../MapContext";
+import {useTranslation} from "react-i18next";
 
 export const ItemDescription = () => {
+  const {t} = useTranslation();
   const {menuItem, setMenuItem} = useContext(MapContext);
 
   const closeHandler = () => {
@@ -21,7 +23,7 @@ export const ItemDescription = () => {
         {menuItem.name}
       </h3>
       <p className={styles.description}>
-        {menuItem.description}
+        {t(menuItem.description)}
       </p>
     </div>
   );

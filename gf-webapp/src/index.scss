@@ -7,6 +7,14 @@
   font-family: Lato Regular, sans-serif, system-ui;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+$color-primary: #bda785;
+$color-secondary: #1a4531;
+$color-text: #383838;
+$color-background: #faf7f1;
 $color-white: #fff;
 $color-black: #000;
 $color-7a: #7a7a7a;
@@ -15,11 +23,17 @@ $color-back: #efeee8;
 $color-gray-smoky: #ababab;
 $color-gray-light: #f1f3f2;
 $color-hover: #e47209;
-
+$color-header-hover-background: #909090;
+$color-disabled: #ccc;
+$color-text-disabled: rgba(0, 0, 0, 0.5);
 
 
 body {
   overflow: overlay;
+}
+
+body.notScrollable {
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -32,4 +46,8 @@ body {
   &:hover {
     background: rgba($color: #484848, $alpha: .85);
   }
+}
+
+ul {
+  list-style: none;
 }

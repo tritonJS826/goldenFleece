@@ -4,43 +4,72 @@ import logo from "../../resources/icons/logo.svg";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import githubLogo from "../../resources/icons/githubLogo.svg";
 import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
+import {useTranslation} from "react-i18next";
+import i18next from "i18next";
+import cookies from "js-cookie";
 
 interface PageBorderProps {
   children: ReactNode
 }
 
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(!open);
+  const {t} = useTranslation();
+  const [langOpen, setLangOpen] = useState(false);
+  const currentLang = cookies.get("i18next") || "en";
+  const [langSelected, setLangSelected] = useState(currentLang);
+  const langList = ["en", "ru", "ka"];
+
+  const langHoverHandler = () => {
+    setLangOpen(prev => !prev);
   };
-  const [contacts, setContacts] = useState(false);
-  const handleContacts = () => {
-    setContacts(!contacts);
+
+  const onLangChoose = (lang: string) => {
+    i18next.changeLanguage(lang);
+    setLangSelected(lang);
+    setLangOpen(false);
   };
+
+  const [contactsOpen, setContactsOpen] = useState(false);
+  const contactsList: {[key: string]: string;} = {phone: "+123456789", email: "goldenFleece@gmain.com"};
+  const conatctsArray = Object.keys(contactsList);
+
+  const contactsHoverHandler = () => {
+    setContactsOpen(prev => !prev);
+  };
+
+  const onContactChoose = () => {
+    setContactsOpen(false);
+  };
+
   const scrollPosition = useScrollPosition();
   const [burgerActive, setBurgerActive] = useState(false);
+
+  const burgerOpenHandler = () => {
+    setBurgerActive(prev => !prev);
+    document.body.classList.toggle("notScrollable");
+  };
 
   return (
     <div className={styles.wrapper}>
       <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
-        <nav className={styles.nav}>
+        <nav className={scrollPosition > 100 ? styles.nav_scroll : styles.nav}>
           <ul className={styles.list}>
-            <li onClick={() => setBurgerActive(!burgerActive)}>
+            <li className={styles.listItem}
+              onClick={burgerOpenHandler}
+            >
               <div />
               <div />
               <div />
             </li>
-            <li onMouseEnter={() => setContacts(true)}
-              onMouseLeave={() => setContacts(false)}
-              onClick={handleContacts}
-              className={styles.contacts}
+            <li onMouseEnter={contactsHoverHandler}
+              onMouseLeave={contactsHoverHandler}
+              className={`${styles.contacts} ${styles.listItem}`}
             >
               <div
                 className={styles.contact}
               >
                 <p className={styles.contact_text}>
-                  Contact
+                  {t("contacts")}
                 </p>
                 <svg className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
                   xmlns="http://www.w3.org/2000/svg"
@@ -52,43 +81,55 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                   />
                 </svg>
               </div>
-              <nav className={contacts ? styles.contact_links : `${styles.contact_links} ${styles.hidden}`}>
-                <a className={styles.link}
-                  href="#"
-                >
-                  +1324536432453
-                </a>
-                <a className={styles.link}
-                  href="#"
-                >
-                  adfg@dasfs.ec
-                </a>
-              </nav>
+              <ul className={styles.contact_links}>
+                {contactsOpen && conatctsArray.map((contact, i) => (
+                  <li onClick={onContactChoose}
+                    key={i}
+                  >
+                    <a className={styles.link}
+                      href="#"
+                    >
+                      {contactsList[contact]}
+                    </a>
+                  </li>
+                ))}
+
+              </ul>
             </li>
-            <li>
+            <li className={styles.listItem}>
               <div className={styles.logo}>
                 Golden Fleece
               </div>
-              <img src={logo}
+              {/* <img src={logo}
                 alt="Golden Fleece logo"
-              />
+              /> */}
             </li>
-            <li className={styles.languages}
-              onClick={handleOpen}
+            <li className={`${styles.languages} ${styles.listItem}`}
+              onMouseEnter={langHoverHandler}
+              onMouseLeave={langHoverHandler}
             >
-              <p className={styles.english}>
-                EN
+              <p>
+                {langSelected.toUpperCase()}
               </p>
-              {open ? (<p className={`${styles.hidden} ${styles.russian}`}>
-                RU
-              </p>) : null}
+              <ul className={styles.langAdditional}>
+                {langOpen && langList.map(lang => (
+                  <li key={lang}
+                    onClick={() => onLangChoose(lang)}
+                    className={currentLang === lang ? `${styles.disabled}` : ""}
+                  >
+                    {lang.toUpperCase()}
+                  </li>
+                ))}
+              </ul>
+
             </li>
-            <li>
-              Book now
+            <li className={styles.listItem}>
+              {t("book-now")}
             </li>
           </ul>
         </nav>
-        <div className={burgerActive ? `${styles.burger} ${styles.active}` : styles.burger}
+        <div
+          className={burgerActive ? `${styles.burger} ${styles.active}` : styles.burger}
           onClick={() => setBurgerActive(false)}
         >
           <div className={styles.burger_content}
@@ -96,13 +137,13 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
           >
             <ul>
               <li className={styles.burger_item}>
-                Main
+                {t("main")}
               </li>
               <li className={styles.burger_item}>
-                Contacts
+                {t("contacts")}
               </li>
               <li className={styles.burger_item}>
-                About Us
+                {t("about-us")}
               </li>
             </ul>
           </div>
@@ -111,247 +152,87 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
       <main className={styles.main}>
         {props.children}
       </main>
-      <footer className={styles.footer}>
-        <div className={styles.footer_container}>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-          <ul>
-            <li>
-              dfghj
-            </li>
-            <li>
-              lkjhgv
-            </li>
-            <li>
-              kjhn
-            </li>
-            <li>
-              mnvb
-            </li>
-            <li>
-              mmnbvb
-            </li>
-            <li>
-              jkhghb
-            </li>
-          </ul>
-        </div>
-        <div className={styles.line} />
-        <div className={styles.creators}>
-          <a
-            href="https://github.com/Ekaterina1994"
-            className={styles.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ekaterina1994
-            <img
-              className={styles.githubLogo}
-              src={githubLogo}
-              alt="GitHub"
-            />
-          </a>
-          <a
-            href="https://github.com/scorpigg"
-            className={styles.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            scorpigg
-            <img
-              className={styles.githubLogo}
-              src={githubLogo}
-              alt="GitHub"
-            />
-          </a>
-          <a
-            href="https://github.com/SergioAJS"
-            className={styles.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            SergioAJS
-            <img
-              className={styles.githubLogo}
-              src={githubLogo}
-              alt="GitHub"
-            />
-          </a>
-          <div className={styles.year}>
-            © 2022
+      <div className={styles.footerWrap}>
+        <footer className={styles.footer}>
+          <div className={styles.footer_container}>
+            <ul className={styles.footerList}>
+              <li>
+                dfghj
+              </li>
+              <li>
+                lkjhgv
+              </li>
+              <li>
+                kjhn
+              </li>
+              <li>
+                mnvb
+              </li>
+              <li>
+                mmnbvb
+              </li>
+              <li>
+                jkhghb
+              </li>
+            </ul>
           </div>
-          <a
-            href="https://rs.school/js/"
-            className={styles.course}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={rsSchoolLogo}
-              alt="rsSchool"
-            />
-          </a>
-        </div>
-      </footer>
+          <div className={styles.line} />
+          <div className={styles.creators}>
+            <a
+              href="https://github.com/Ekaterina1994"
+              className={styles.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ekaterina1994
+              <img
+                className={styles.githubLogo}
+                src={githubLogo}
+                alt="GitHub"
+              />
+            </a>
+            <a
+              href="https://github.com/scorpigg"
+              className={styles.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              scorpigg
+              <img
+                className={styles.githubLogo}
+                src={githubLogo}
+                alt="GitHub"
+              />
+            </a>
+            <a
+              href="https://github.com/SergioAJS"
+              className={styles.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              SergioAJS
+              <img
+                className={styles.githubLogo}
+                src={githubLogo}
+                alt="GitHub"
+              />
+            </a>
+            <div className={styles.year}>
+              © 2022
+            </div>
+            <a
+              href="https://rs.school/js/"
+              className={styles.course}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={rsSchoolLogo}
+                alt="rsSchool"
+              />
+            </a>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
