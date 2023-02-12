@@ -2,6 +2,14 @@
 
 .nav {
   max-width: 1980px;
+  z-index: 100;
+
+}
+
+.nav_scroll {
+  max-width: 1980px;
+  z-index: 100;
+  background-color: $color-white;
 }
 
 .wrapper {
@@ -123,7 +131,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 100;
     }
 
     .langAdditional {
@@ -259,7 +266,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 100;
     }
 
     .langAdditional {
@@ -464,7 +470,7 @@
   .burger {
     position: fixed;
     left: 0;
-    top: 52px;
+    top: 0;
     width: 100vw;
     height: 100vh;
     transform: translateX(-100%);

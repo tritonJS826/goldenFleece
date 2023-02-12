@@ -44,13 +44,18 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   const scrollPosition = useScrollPosition();
   const [burgerActive, setBurgerActive] = useState(false);
 
+  const burgerOpenHandler = () => {
+    setBurgerActive(prev => !prev);
+    document.body.classList.toggle("notScrollable");
+  };
+
   return (
     <div className={styles.wrapper}>
       <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
-        <nav className={styles.nav}>
+        <nav className={scrollPosition > 100 ? styles.nav_scroll : styles.nav}>
           <ul className={styles.list}>
             <li className={styles.listItem}
-              onClick={() => setBurgerActive(!burgerActive)}
+              onClick={burgerOpenHandler}
             >
               <div />
               <div />
@@ -58,7 +63,6 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
             </li>
             <li onMouseEnter={contactsHoverHandler}
               onMouseLeave={contactsHoverHandler}
-              onClick={onContactChoose}
               className={`${styles.contacts} ${styles.listItem}`}
             >
               <div
@@ -79,7 +83,9 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               </div>
               <ul className={styles.contact_links}>
                 {contactsOpen && conatctsArray.map((contact, i) => (
-                  <li key={i}>
+                  <li onClick={onContactChoose}
+                    key={i}
+                  >
                     <a className={styles.link}
                       href="#"
                     >
@@ -122,7 +128,8 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
             </li>
           </ul>
         </nav>
-        <div className={burgerActive ? `${styles.burger} ${styles.active}` : styles.burger}
+        <div
+          className={burgerActive ? `${styles.burger} ${styles.active}` : styles.burger}
           onClick={() => setBurgerActive(false)}
         >
           <div className={styles.burger_content}
