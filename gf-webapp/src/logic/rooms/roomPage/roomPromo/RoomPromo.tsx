@@ -22,10 +22,10 @@ export const RoomPromo = (props: RoomPromo) => {
       </div>
       <div className={styles.container}>
         <div className={styles.description}>
-          {`Apartment type: ${props.apartmentsType} Apartment type: ${props.apartmentsType}`}
+          {`Apartment type: ${props.apartmentsType}`}
         </div>
         <div className={styles.description}>
-          {`Price: ${props.price}$ Price: ${props.price}$`}
+          {`Price: ${props.price}$`}
         </div>
       </div>
     </div>

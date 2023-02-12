@@ -1,7 +1,7 @@
-@import '../../../../index.scss';
+@import '../../index.scss';
 
 .book {
-  background-image: url("../../../../resources/rooms/1.jpg");
+  background-image: url("../../resources/rooms/1.jpg");
   display: flex;
 }
 
@@ -121,6 +121,6 @@
   }
 
   to {
-    margin-left: 85%;
+    margin-left: 70%;
   }
 }
