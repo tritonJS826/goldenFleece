@@ -25,31 +25,31 @@ export interface Room {
   /**
    * Apartment's type
    */
-  apartments?: Apartments,
+  apartments: Apartments,
   /**
    * Available services for room
    */
-  services?: Services,
+  services: Services,
   /**
    * Room's ID
    */
-  id?: string,
+  id: string,
   /**
    * Description about room
    */
-  description?: string,
+  description: string,
   /**
    * Price
    */
-  price?: number,
+  price: number,
   /**
    * Array of paths to images of room
    */
-  images?: string[],
+  images: string[],
   /**
    * Rating can be from 1 to 10
    */
-  rating?: number;
+  rating: number;
 
 }
 

@@ -21,6 +21,7 @@ class RoomsService {
       apartments: req.body.apartments,
       services: req.body.services,
       description: req.body.description,
+      images: req.body.images,
       price: req.body.price,
       rating: req.body.rating,
     };

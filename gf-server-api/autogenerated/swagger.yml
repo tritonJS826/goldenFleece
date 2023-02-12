@@ -5,7 +5,7 @@ info:
   description: A simple REST API for providing basic CRUD-access to the employees
     in a Golden Fleece database.
 servers:
-  - url: http://localhost:3600
+  - url: undefined:undefined
     description: gf-server-api
 schemes:
   - http
