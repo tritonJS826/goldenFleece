@@ -37,6 +37,21 @@ export interface RoomsApiInterface {
      */
     apiRoomsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<object>>;
 
+    /**
+     * Retrieve a list of all rooms
+     * @summary List of rooms
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RoomsApiInterface
+     */
+    apiRoomsPostRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<object>>>;
+
+    /**
+     * Retrieve a list of all rooms
+     * List of rooms
+     */
+    apiRoomsPost(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<object>>;
+
 }
 
 /**
@@ -69,6 +84,34 @@ export class RoomsApi extends runtime.BaseAPI implements RoomsApiInterface {
      */
     async apiRoomsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<object>> {
         const response = await this.apiRoomsGetRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Retrieve a list of all rooms
+     * List of rooms
+     */
+    async apiRoomsPostRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<object>>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/rooms`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     * Retrieve a list of all rooms
+     * List of rooms
+     */
+    async apiRoomsPost(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<object>> {
+        const response = await this.apiRoomsPostRaw(initOverrides);
         return await response.value();
     }
 

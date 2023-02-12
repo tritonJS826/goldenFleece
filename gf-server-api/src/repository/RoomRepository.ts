@@ -1,5 +1,6 @@
 import {Room} from "../model/Room";
 import {readFile} from "../utils/readFile";
+import {writeFile} from "../utils/writeFile";
 
 const PATH_TO_FILE_WITH_ROOMS = "./DTO/roomsDTO.json";
 
@@ -11,9 +12,19 @@ class RoomsRepository {
    */
   public async getRooms(): Promise<Room[]> {
     const rawRooms: string = await readFile(PATH_TO_FILE_WITH_ROOMS);
-    const rooms = JSON.parse(rawRooms);
+    const rooms = await JSON.parse(rawRooms);
     return rooms;
   }
+
+  public async postRooms(room: object): Promise<Room[]> {
+    const rawRooms: string = await readFile(PATH_TO_FILE_WITH_ROOMS);
+    const rooms = await JSON.parse(rawRooms);
+    await rooms.push(room);
+    const postRoomsRaw = await JSON.stringify(rooms);
+    await writeFile(PATH_TO_FILE_WITH_ROOMS, postRoomsRaw);
+    return rooms;
+  }
+
 
 }
 
