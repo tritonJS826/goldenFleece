@@ -1,28 +1,22 @@
-import React from "react";
-import {Routes, Route} from "react-router-dom";
-import {MainPage} from "./logic/mainPage/MainPage";
-import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
-import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
-import {LoginPage} from "./logic/loginPage/LoginPage";
+import React, {useContext} from "react";
+import {BrowserRouter} from "react-router-dom";
+import {AppContext} from "./appContext";
+import {AppRouter} from "./component/AppRouter";
+import {useAuthState} from "react-firebase-hooks/auth";
+import {Loader} from "./component/loader/Loader";
 
 function App() {
+  const {auth} = useContext(AppContext);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [user, loading, error] = useAuthState(auth);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
-    <div>
-      <Routes>
-        <Route path="/"
-          element={<MainPage />}
-        />
-        <Route path="/login"
-          element={<LoginPage />}
-        />
-        <Route path="/about"
-          element={<AboutUsPage />}
-        />
-        <Route path="/rooms"
-          element={<RoomsPage />}
-        />
-      </Routes>
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 

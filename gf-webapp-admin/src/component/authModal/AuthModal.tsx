@@ -1,31 +1,20 @@
-import React, {FormEvent, useState} from "react";
-import {useDispatch} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import React, {FormEvent, useContext, useState} from "react";
 import styles from "./authModal.module.scss";
-import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
-import {app} from "../../firebase";
-import {setUser} from "../../store/slices/userSlice";
-
+import {AppContext} from "../../appContext";
+import {signInWithEmailAndPassword} from "firebase/auth";
 
 export const AuthModal = () => {
-  const dispatch = useDispatch();
-  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const auth = getAuth(app);
-  const navigate = useNavigate();
+  const {auth} = useContext(AppContext);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
-    signInWithEmailAndPassword(auth, login, password)
-      .then(({user}) => {
-        dispatch(setUser({
-          email: user.email,
-          id: user.uid,
-        }));
-        navigate("/");
-      }).catch(err => console.log(err));
-
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      console.log(error);
+    }
 
   };
 
@@ -39,15 +28,16 @@ export const AuthModal = () => {
         </h2>
         <ul className={styles.fields}>
           <li className={styles.field}>
-            <label htmlFor="auth-login">
+            <label htmlFor="auth-email">
               Login
             </label>
-            <input id="auth-login"
-              onChange={(e) => setLogin(e.target.value)}
-              name="login"
-              type="text"
-              value={login}
-              placeholder="Enter your login"
+            <input id="auth-email"
+              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              type="email"
+              value={email}
+              placeholder="Enter your email"
+              required
             />
           </li>
           <li className={styles.field}>
@@ -57,9 +47,10 @@ export const AuthModal = () => {
             <input id="auth-pass"
               onChange={(e) => setPassword(e.target.value)}
               name="password"
-              type="text"
+              type="password"
               value={password}
               placeholder="Enter your password"
+              required
             />
           </li>
         </ul>

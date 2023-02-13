@@ -1,8 +1,9 @@
 import React from "react";
-import {Navigate} from "react-router-dom";
+import {LogOutBtn} from "../../component/logOut/LogOut";
 
 export const MainPage = () => {
+
   return (
-    <Navigate to="/login" />
-  );
+    <LogOutBtn />);
 };
+
