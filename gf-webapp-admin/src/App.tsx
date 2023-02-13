@@ -3,6 +3,7 @@ import {Routes, Route} from "react-router-dom";
 import {MainPage} from "./logic/mainPage/MainPage";
 import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
 import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
+import {LoginPage} from "./logic/loginPage/LoginPage";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       <Routes>
         <Route path="/"
           element={<MainPage />}
+        />
+        <Route path="/login"
+          element={<LoginPage />}
         />
         <Route path="/about"
           element={<AboutUsPage />}

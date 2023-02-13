@@ -1,10 +1,8 @@
 import React from "react";
-import {AuthModal} from "../../component/authModal/AuthModal";
+import {Navigate} from "react-router-dom";
 
 export const MainPage = () => {
   return (
-    <div className="App">
-      <AuthModal />
-    </div>
+    <Navigate to="/login" />
   );
 };
