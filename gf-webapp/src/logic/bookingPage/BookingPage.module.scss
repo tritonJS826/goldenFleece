@@ -1,0 +1,49 @@
+@import '../../index.scss';
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: 1px solid $color-secondary;
+  cursor: pointer;
+}
+
+.block:disabled {
+  color: white;
+  background-color: $color-primary;
+  cursor: not-allowed;
+}
+
+.row {
+  display: flex;
+}
+
+.book {
+  background-image: url("../../resources/rooms/1.jpg");
+  display: flex;
+}
+
+.leftSide {
+  width: 60%;
+  background-color: $color-secondary;
+  padding: 100px 5%;
+}
+
+.titleLeft {
+  color: $color-white;
+  font-size: 60px;
+  font-family: Montserrat Regular;
+  padding-bottom: 50px;
+}
+
+.rightSide {
+  width: 40%;
+  margin: 50px 5%;
+  padding: 30px;
+  background-color: $color-white;
+}

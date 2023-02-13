@@ -4,7 +4,7 @@ import {RoomsPromo} from "./roomsPromo/RoomsPromo";
 import {Navigation} from "./navigation/navigation";
 import styles from "./roomsPage.module.scss";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
-import {BookBlock} from "../../../component/bookBlock/BookBlock";
+import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
 
 export const RoomsPage = () => {
   const [room, setRoom] = useState({
@@ -53,7 +53,7 @@ export const RoomsPage = () => {
           our premium mountain suites offer a memorable experience unlike anywhere else in Greece.
         </div>
         <ServicesBlock />
-        <BookBlock />
+        <BookingBlock />
       </PageBorder>
     </div>
   );

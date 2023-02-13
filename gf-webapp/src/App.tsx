@@ -5,6 +5,7 @@ import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
 import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
 import {RoomPage} from "./logic/rooms/roomPage/RoomPage";
 import {ContactsPage} from "./logic/contactsPage/ContactsPage";
+import {BookingPage} from "./logic/bookingPage/BookingPage";
 import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
@@ -21,12 +22,16 @@ function App() {
         <Route path="/rooms"
           element={<RoomsPage />}
         />
-        <Route path="/contacts"
-          element={<ContactsPage />}
-        />
         <Route path="/rooms/:id"
           element={<RoomPage />}
         />
+        <Route path="/booking"
+          element={<BookingPage />}
+        />
+        <Route path="/contacts"
+          element={<ContactsPage />}
+        />
+
       </Routes>
     </div>
   );

@@ -6,14 +6,14 @@ import styles from "./Main.module.scss";
 export const MainPage = () => {
   return (
     <div className="App">
-      {/* <div className={styles.stub}>
+      <div className={styles.stub}>
         <div className={styles.title}>
           Golden Fleece
         </div>
         <div className={styles.spinner}>
           <div className={styles.loading} />
         </div>
-      </div> */}
+      </div>
       <PageBorder>
         <Main />
       </PageBorder>
