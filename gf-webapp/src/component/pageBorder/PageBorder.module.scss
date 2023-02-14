@@ -119,6 +119,11 @@
       text-align: center;
       border-left: none;
       border-right: none;
+
+      .bookingLink {
+        text-decoration: none;
+        color: $color-text;
+      }
     }
 
     .languages {
@@ -254,6 +259,11 @@
       text-align: center;
       border-left: none;
       border-right: none;
+
+      .bookingLink {
+        text-decoration: none;
+        color: $color-white;
+      }
     }
 
     .languages {
@@ -485,11 +495,11 @@
 
       ul {
         display: flex;
-        gap: 50px;
+        justify-content: space-evenly;
 
         .burger_item {
           color: white;
-          padding: 10px 20px;
+          padding: 10px 15px;
           text-decoration: none;
           list-style: none;
           font-size: 32px;
@@ -527,4 +537,18 @@
   font-weight: bold;
   text-decoration: none;
   cursor: default;
+}
+
+@media (max-width: 615px) {
+  .wrapper {
+    .burger {
+      .burger_content {
+        ul {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
 }

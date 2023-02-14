@@ -26,8 +26,8 @@ export function Slider() {
         delay: 5000,
         disableOnInteraction: false,
       }}
-      pagination={{clickable: true}}
-      navigation={true}
+      // pagination={{clickable: true}}
+      // navigation={true}
       keyboard={{enabled: true}}
       modules={[Autoplay, Pagination, Navigation, Keyboard]}
       className={styles.swiper}

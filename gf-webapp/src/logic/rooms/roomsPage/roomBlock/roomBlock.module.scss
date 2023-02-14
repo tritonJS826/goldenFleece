@@ -143,3 +143,64 @@
   border-bottom: 1px solid $color-primary;
   top: 50%;
 }
+
+@media (max-width: 768px) {
+  .roomAbout {
+    width: 50%;
+    padding: 30px;
+  }
+
+  .titleBook {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .settingsRoom {
+    padding-bottom: 20px;
+  }
+
+  .description {
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 615px) {
+  .wrap {
+    padding: 50px 10% 120px;
+  }
+  
+  .backImageWrap {
+    width: 100%;
+  }
+
+  .wrap:nth-child(odd) .backImageWrap {
+    margin-left: 0;
+  } 
+  
+  .roomAbout {
+    width: 70%;
+    margin-left: 5%;
+    padding: 20px 30px;
+    top: 170px;
+  }
+
+  .wrap:nth-child(2n) .roomAbout {
+    right: 15%;
+  }
+
+  .titleBook {
+    font-size: 32px;
+  }
+
+  .roomLink {
+    margin-top: 10px;
+    height: 40px;
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  .roomAbout {
+    top: 100px;
+  }
+}

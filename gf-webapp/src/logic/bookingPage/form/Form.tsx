@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {send} from "emailjs-com";
 import styles from "./Form.module.scss";
-import {useModalVisibilityContext} from "../context/Context";
+import {useModalVisibilityContext} from "../../../context/Context";
 
 export const Form = () => {
   const {modalActive, setModalActive} = useModalVisibilityContext();
@@ -116,7 +116,7 @@ export const Form = () => {
               Room
             </label>
             <input type="text"
-              className={styles.input2}
+              className={styles.input}
               id="rooms"
               name="room_number"
               value={toSend.room_number}
@@ -144,7 +144,7 @@ export const Form = () => {
                 Adults
               </label>
               <input type="text"
-                className={styles.input2}
+                className={styles.input}
                 id="adults"
                 name="adults_number"
                 value={toSend.adults_number}
@@ -160,7 +160,7 @@ export const Form = () => {
                 Children
               </label>
               <input type="text"
-                className={styles.input2}
+                className={styles.input}
                 id="children"
                 name="children_number"
                 value={toSend.children_number}

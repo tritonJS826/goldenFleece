@@ -132,7 +132,11 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
 
             </li>
             <li className={styles.listItem}>
-              {t("book-now")}
+              <NavLink to="/booking"
+                className={styles.bookingLink}
+              >
+                {t("book-now")}
+              </NavLink>
             </li>
           </ul>
         </nav>
