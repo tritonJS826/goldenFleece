@@ -17,7 +17,7 @@ paths:
     get:
       tags:
         - Rooms
-      summary: List of rooms
+      summary: Get list of rooms
       description: Retrieve a list of all rooms
       responses:
         "200":
@@ -31,17 +31,91 @@ paths:
     post:
       tags:
         - Rooms
-      summary: List of rooms
-      description: Retrieve a list of all rooms
+      summary: Add new room
+      description: Add new room
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#components/schema/Room"
       responses:
         "200":
-          description: A list of rooms.
+          description: New room.
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#components/schema/Room"
+                type: object
+                $ref: "#components/schema/Room"
+  "/api/rooms/{room_id}":
+    get:
+      tags:
+        - Room
+      summary: Get room by ID
+      description: Retrieve a room by ID
+      parameters:
+        - name: room_id
+          in: path
+          required: true
+          description: room ID
+          schema:
+            type: string
+          example: 0
+      responses:
+        "200":
+          description: Room.
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#components/schema/Room"
+    put:
+      tags:
+        - Room
+      summary: Update room information by ID
+      description: Update room by ID
+      parameters:
+        - name: room_id
+          in: path
+          required: true
+          description: room ID
+          schema:
+            type: string
+          example: 0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#components/schema/Room"
+      responses:
+        "200":
+          description: Room.
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#components/schema/Room"
+    delete:
+      tags:
+        - Room
+      summary: Delete room by ID
+      description: Delete a room by ID
+      parameters:
+        - name: room_id
+          in: path
+          required: true
+          description: room ID
+          schema:
+            type: string
+          example: 0
+      responses:
+        "200":
+          description: Successful room delete.
+          content:
+            application/json: {}
 components:
   schema:
     Room:
@@ -49,16 +123,67 @@ components:
       properties:
         apartmentsType:
           type: string
+          enum:
+            - Single
+            - Double
+            - Twin
           description: The room's type.
           example: Single
         services:
-          type: array
-          items:
-            type: string
-            description: The room's services.
-            example: WiFi
+          type: string
+          enum:
+            - WiFi
+            - Laundry
+            - TeaCoffeeMaker
+            - Heating
+            - AirportShuttle
+          description: The room's services.
+          example: WiFi, TeaCoffeeMaker
         id:
           type: string
           description: The room's ID.
           example: 0
+        description:
+          type: string
+          description: Short room's description.
+          example: A small room
+        descriptionLong:
+          type: string
+          description: The room's description.
+          example: Dressed in soothing natural colour palettes with designs inspired by
+            the natural landscape, our garden view suites are a warm and
+            relaxing oasis overlooking the Grand Forest Metsovo garden and
+            surrounding pine forest.
+        price:
+          type: number
+          description: The room's price.
+          example: 300
+        promo:
+          type: string
+          description: The room's promo image URL.
+          example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+        slider:
+          type: string
+          description: The room's slider 1 image URL.
+          example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+        slider2:
+          type: string
+          description: The room's slider 2 image URL.
+          example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+        slider3:
+          type: string
+          description: The room's slider 3 image URL.
+          example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+        slider4:
+          type: string
+          description: The room's slider 4 image URL.
+          example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+        slider5:
+          type: string
+          description: The room's slider 5 image URL.
+          example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+        rating:
+          type: number
+          description: The room's rating.
+          example: 10
 tags: []

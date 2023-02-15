@@ -15,6 +15,10 @@
 
 import * as runtime from '../runtime';
 
+export interface ApiRoomsPostRequest {
+    body: object;
+}
+
 /**
  * RoomsApi - interface
  * 
@@ -24,7 +28,7 @@ import * as runtime from '../runtime';
 export interface RoomsApiInterface {
     /**
      * Retrieve a list of all rooms
-     * @summary List of rooms
+     * @summary Get list of rooms
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoomsApiInterface
@@ -33,24 +37,25 @@ export interface RoomsApiInterface {
 
     /**
      * Retrieve a list of all rooms
-     * List of rooms
+     * Get list of rooms
      */
     apiRoomsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<object>>;
 
     /**
-     * Retrieve a list of all rooms
-     * @summary List of rooms
+     * Add new room
+     * @summary Add new room
+     * @param {object} body 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoomsApiInterface
      */
-    apiRoomsPostRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<object>>>;
+    apiRoomsPostRaw(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
 
     /**
-     * Retrieve a list of all rooms
-     * List of rooms
+     * Add new room
+     * Add new room
      */
-    apiRoomsPost(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<object>>;
+    apiRoomsPost(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
 
 }
 
@@ -61,7 +66,7 @@ export class RoomsApi extends runtime.BaseAPI implements RoomsApiInterface {
 
     /**
      * Retrieve a list of all rooms
-     * List of rooms
+     * Get list of rooms
      */
     async apiRoomsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<object>>> {
         const queryParameters: any = {};
@@ -80,7 +85,7 @@ export class RoomsApi extends runtime.BaseAPI implements RoomsApiInterface {
 
     /**
      * Retrieve a list of all rooms
-     * List of rooms
+     * Get list of rooms
      */
     async apiRoomsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<object>> {
         const response = await this.apiRoomsGetRaw(initOverrides);
@@ -88,30 +93,37 @@ export class RoomsApi extends runtime.BaseAPI implements RoomsApiInterface {
     }
 
     /**
-     * Retrieve a list of all rooms
-     * List of rooms
+     * Add new room
+     * Add new room
      */
-    async apiRoomsPostRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<object>>> {
+    async apiRoomsPostRaw(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling apiRoomsPost.');
+        }
+
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
             path: `/api/rooms`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
+            body: requestParameters.body as any,
         }, initOverrides);
 
         return new runtime.JSONApiResponse<any>(response);
     }
 
     /**
-     * Retrieve a list of all rooms
-     * List of rooms
+     * Add new room
+     * Add new room
      */
-    async apiRoomsPost(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<object>> {
-        const response = await this.apiRoomsPostRaw(initOverrides);
+    async apiRoomsPost(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.apiRoomsPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
