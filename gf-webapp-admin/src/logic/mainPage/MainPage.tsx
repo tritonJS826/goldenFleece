@@ -1,9 +1,9 @@
 import React from "react";
-import {LogOutBtn} from "../../component/logOut/LogOut";
+import {SideMenu} from "../../component/sideMenu/sideMenu";
 
 export const MainPage = () => {
 
   return (
-    <LogOutBtn />);
+    <SideMenu />
+  );
 };
-

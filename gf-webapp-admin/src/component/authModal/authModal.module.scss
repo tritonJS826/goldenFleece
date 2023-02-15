@@ -87,3 +87,10 @@
   left: 0;
   background-color: rgba($color: #000000, $alpha: .5);
 }
+
+.error {
+  position: absolute;
+  top: 0;
+  color: $color-error;
+  padding: 8px 0;
+}

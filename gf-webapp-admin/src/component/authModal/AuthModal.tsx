@@ -7,15 +7,28 @@ export const AuthModal = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const {auth} = useContext(AppContext);
+  const [error, setError] = useState(false);
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (error) {
-      console.log(error);
-    }
+    signInWithEmailAndPassword(auth, email, password)
+      .catch(err => {
+        if (err.code === "auth/user-not-found") {
+          setError(true);
+        }
+      });
+  };
 
+  const emailHandler = (e:React.ChangeEvent) => {
+    const target = e.target as HTMLInputElement;
+    setEmail(target.value);
+    setError(false);
+  };
+
+  const passwordHandler = (e:React.ChangeEvent) => {
+    const target = e.target as HTMLInputElement;
+    setPassword(target.value);
+    setError(false);
   };
 
   return (
@@ -23,6 +36,9 @@ export const AuthModal = () => {
       <form onSubmit={handleSubmit}
         className={styles.form}
       >
+        {error && (<div className={styles.error}>
+          Enter correct email and password
+        </div>)}
         <h2 className={styles.title}>
           Authorization
         </h2>
@@ -32,7 +48,7 @@ export const AuthModal = () => {
               Login
             </label>
             <input id="auth-email"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => emailHandler(e)}
               name="email"
               type="email"
               value={email}
@@ -45,7 +61,7 @@ export const AuthModal = () => {
               Password
             </label>
             <input id="auth-pass"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => passwordHandler(e)}
               name="password"
               type="password"
               value={password}
