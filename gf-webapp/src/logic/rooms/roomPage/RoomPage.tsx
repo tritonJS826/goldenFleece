@@ -5,7 +5,7 @@ import {RoomSlider} from "./roomSlider/RoomSlider";
 import {RoomPromo} from "./roomPromo/RoomPromo";
 import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
-import {BookBlock} from "../../../component/bookBlock/BookBlock";
+import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
 import styles from "./roomPage.module.scss";
 
 type RoomParams = {
@@ -63,7 +63,7 @@ export const RoomPage = () => {
       />
       <RoomsBlock />
       <ServicesBlock />
-      <BookBlock />
+      <BookingBlock />
     </PageBorder>
   );
 };

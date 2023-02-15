@@ -1,9 +1,8 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
 .nav {
   max-width: 1980px;
   z-index: 100;
-
 }
 
 .nav_scroll {
@@ -14,13 +13,10 @@
 
 .wrapper {
   position: relative;
-  // overflow-x: hidden;
   max-width: 1980px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
-
 
   .header_scroll {
     position: fixed;
@@ -28,10 +24,10 @@
     justify-self: flex-start;
     display: flex;
     justify-content: center;
-    background-color: rgba($color: $color-white, $alpha: 1);
+    background-color: $color-white;
     color: $color-text;
     font-size: 1.2rem;
-    transition: all 0.3s;
+    transition: all 0.6s;
 
     .list {
       display: flex;
@@ -43,10 +39,10 @@
         align-items: center;
         border: 1px solid $color-text;
         padding: 5px;
-        transition: background .3s;
+        transition: background 0.3s;
 
         &:hover {
-          background-color: rgba($color: #efefef, $alpha: .7);
+          background-color: $color-primary;
           cursor: pointer;
         }
       }
@@ -62,19 +58,19 @@
 
       div:first-child {
         margin-bottom: 10px;
-        border: 1px solid $color-black;
+        border-top: 1px solid $color-text;
         width: 30px;
       }
 
       div:nth-child(2) {
-        border: 1px solid $color-black;
+        border-top: 1px solid $color-text;
         width: 15px;
-        transition: width .3s;
+        transition: width 0.3s;
       }
 
       div:last-child {
         margin-top: 10px;
-        border: 1px solid $color-black;
+        border-top: 1px solid $color-text;
         width: 30px;
       }
 
@@ -86,12 +82,12 @@
     }
 
     .list .listItem:nth-child(2) {
-      width: 10vw;
+      width: 15vw;
       text-align: center;
     }
 
     .list .listItem:nth-child(3) {
-      width: 70vw;
+      width: 60vw;
       text-align: center;
       flex-direction: row-reverse;
       border-left: none;
@@ -119,10 +115,15 @@
     }
 
     .list .listItem:last-child {
-      width: 10vw;
+      width: 15vw;
       text-align: center;
       border-left: none;
       border-right: none;
+
+      .bookingLink {
+        text-decoration: none;
+        color: $color-text;
+      }
     }
 
     .languages {
@@ -137,15 +138,15 @@
       position: absolute;
       top: 100%;
       background-color: $color-white;
-      color: $color-black;
+      color: $color-text;
       width: 100%;
-      
+
       li {
         padding: 6px;
         border-bottom: 1px solid $color-disabled;
 
         &:hover {
-          background-color: $color-gray-light;
+          background-color: $color-background;
         }
       }
     }
@@ -163,7 +164,7 @@
     justify-self: flex-start;
     display: flex;
     justify-content: center;
-    background-color: rgba($color: $color-black, $alpha: .25);
+    background-color: rgba($color: $color-black, $alpha: 0.25);
     color: $color-white;
     font-size: 1.2rem;
     transition: all 0.3s;
@@ -178,10 +179,10 @@
         align-items: center;
         border: 1px solid $color-white;
         padding: 5px;
-        transition: background .3s;
+        transition: background 0.3s;
 
         &:hover {
-          background-color: rgba($color: $color-header-hover-background, $alpha: .7);
+          background-color: $color-secondary;
           cursor: pointer;
         }
       }
@@ -197,19 +198,19 @@
 
       div:first-child {
         margin-bottom: 10px;
-        border: 1px solid $color-white;
+        border-top: 1px solid $color-white;
         width: 30px;
       }
 
       div:nth-child(2) {
-        border: 1px solid $color-white;
+        border-top: 1px solid $color-white;
         width: 15px;
-        transition: width .3s;
+        transition: width 0.3s;
       }
 
       div:last-child {
         margin-top: 10px;
-        border: 1px solid $color-white;
+        border-top: 1px solid $color-white;
         width: 30px;
       }
 
@@ -221,12 +222,12 @@
     }
 
     .list .listItem:nth-child(2) {
-      width: 10vw;
+      width: 15vw;
       text-align: center;
     }
 
     .list .listItem:nth-child(3) {
-      width: 70vw;
+      width: 60vw;
       text-align: center;
       flex-direction: row-reverse;
       border-left: none;
@@ -254,10 +255,15 @@
     }
 
     .list .listItem:last-child {
-      width: 10vw;
+      width: 15vw;
       text-align: center;
       border-left: none;
       border-right: none;
+
+      .bookingLink {
+        text-decoration: none;
+        color: $color-white;
+      }
     }
 
     .languages {
@@ -272,14 +278,14 @@
       position: absolute;
       top: 100%;
       background-color: $color-white;
-      color: $color-black;
+      color: $color-text;
       width: 100%;
 
       li {
         padding: 6px;
         border-bottom: 1px solid $color-disabled;
         &:hover {
-          background-color: $color-gray-light;
+          background-color: $color-background;
         }
       }
     }
@@ -287,7 +293,7 @@
 
   .main {
     position: relative;
-    background-color: white;
+    background-color: $color-white;
     z-index: 1;
   }
 
@@ -298,7 +304,7 @@
   .footer {
     width: 100%;
     max-width: 1980px;
-    background-color: #FFFDFA;
+    background-color: $color-white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -308,7 +314,7 @@
 
     .footer_container {
       max-width: 1980px;
-      width: 100%; 
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
@@ -350,7 +356,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          color: $color-hover;
+          color: $color-primary;
 
           .githubLogo {
             opacity: 1;
@@ -358,7 +364,7 @@
         }
 
         &:focus {
-          color: $color-hover;
+          color: $color-primary;
 
           .githubLogo {
             opacity: 1;
@@ -380,6 +386,7 @@
 
       .year {
         font-size: 20px;
+        color: $color-text;
         text-align: center;
         margin-right: 10px;
       }
@@ -393,12 +400,12 @@
         transition: 0.3s ease;
 
         &:hover {
-          color: $color-hover;
+          color: $color-primary;
           opacity: 1;
         }
 
         &:focus {
-          color: $color-hover;
+          color: $color-primary;
           opacity: 1;
         }
 
@@ -442,7 +449,7 @@
         border-bottom: 1px solid $color-disabled;
 
         &:hover {
-          background-color: #efefef;
+          background-color: $color-background;
         }
       }
     }
@@ -452,7 +459,7 @@
     margin-bottom: 5px;
     scale: 0.6;
     path {
-      fill: white;
+      fill: $color-white;
     }
   }
 
@@ -460,7 +467,7 @@
     margin-bottom: 5px;
     scale: 0.6;
     path {
-      fill: black;
+      fill: $color-text;
     }
   }
 
@@ -475,29 +482,33 @@
     width: 100vw;
     height: 100vh;
     transform: translateX(-100%);
-    transition: .3s;
+    transition: 0.3s;
     border-top: 1px solid white;
 
     .burger_content {
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: $color-secondary;
       display: flex;
       justify-content: center;
       align-items: center;
 
       ul {
         display: flex;
-        gap: 20px;
+        justify-content: space-evenly;
 
         .burger_item {
           color: white;
+          padding: 10px 15px;
+          text-decoration: none;
           list-style: none;
+          font-size: 32px;
+          font-family: Montserrat Regular;
           cursor: pointer;
           transition: color 0.3s linear;
 
           &:hover {
-            color: $color-hover;
+            color: $color-primary;
           }
         }
       }
@@ -507,5 +518,37 @@
   .burger.active {
     transform: translateX(0);
   }
+}
 
+.burger_item_active {
+  text-decoration: none;
+  color: $color-primary;
+  cursor: default;
+}
+
+.footer_link {
+  color: $color-text;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.footer_link_active {
+  color: $color-text;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    .burger {
+      .burger_content {
+        ul {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
 }

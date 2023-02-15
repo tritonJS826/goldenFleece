@@ -124,3 +124,74 @@
     margin-left: 70%;
   }
 }
+
+
+@media (max-width: 768px) {
+  .leftSide {
+    padding: 50px 5%;
+  }
+  
+  .titleLeft {
+    font-size: 40px;
+    padding-bottom: 30px;
+  }
+
+  .textLeft {
+    margin-bottom: 30px;
+  }
+
+  .rightSide {
+    margin: 50px 5%;
+    padding: 25px;
+  }
+
+  .titleBook {
+    font-size: 32px;
+    padding-bottom: 30px;
+  }
+
+  .list {
+    padding: 0 0 0 25px;
+  }
+
+  .listItem {
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+  
+  .text {
+    padding-top: 10px;
+  }
+  
+  .bookLink {
+    display: block;
+    text-decoration: none;
+    font-family: Montserrat Regular;
+    font-size: 20px;
+    color: $color-white;
+    padding: 20px 30px;
+    border: 1px solid $color-secondary;
+    background-color: $color-secondary;
+    width: 100%;
+    transition: all 0.6s linear;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 615px) {
+  .book {
+    flex-direction: column;
+  }
+
+  .leftSide {
+    width: 100%;
+    background-color: $color-secondary;
+    padding: 100px 5%;
+  }
+
+  .rightSide {
+    width: 90%;
+    margin: 50px 5%;
+  } 
+}

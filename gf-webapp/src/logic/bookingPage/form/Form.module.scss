@@ -1,0 +1,85 @@
+@import '../../../index.scss';
+
+.button {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-family: Montserrat Regular;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: $color-text;
+  background: $color-primary;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  padding: 10px;
+  margin: 20px 0;
+  border: none;
+  }
+
+.button:hover,
+.button:focus {
+  color: $color-background;
+  background-color: $color-secondary;
+}
+
+.label {
+  font-size: 24px;
+  color: $color-text;
+  margin-right: 30px;
+}
+
+.input {
+  margin: 10px 0 20px;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: Montserrat Regular;
+  border: 2px solid $color-primary;
+}
+
+.input2 {
+  margin: 10px 0 20px;
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  font-size: 18px;
+  font-family: Montserrat Regular;
+  border: 2px solid $color-primary;
+}
+
+.input:focus,
+.input2:focus {
+  outline: none;
+  border: 2px solid $color-secondary;
+}
+
+.row {
+  display: flex;
+  max-width: 100%;
+  gap: 5px;
+}
+
+.select {
+  background-color: white;
+}
+
+select:active {
+  background-color: $color-primary;
+}
+
+option {
+  font-size: 18px;
+  background-color: $color-white;
+  cursor: pointer;
+  font-family: Montserrat Regular;
+}
+
+option:hover {
+  outline:0 !important;
+  background-color: #fff !important;
+}
+
+option:checked { 
+  font-family: Montserrat Regular;
+}

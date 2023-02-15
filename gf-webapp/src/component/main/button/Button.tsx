@@ -5,7 +5,7 @@ import styles from "./button.module.scss";
 export const Button = () => {
   return (
     <div className={styles.wrap}>
-      <NavLink to="/book"
+      <NavLink to="/booking"
         className={styles.button}
       >
         Book now

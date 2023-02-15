@@ -1,9 +1,9 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import styles from "./bookBlock.module.scss";
+import styles from "./bookingBlock.module.scss";
 
 
-export const BookBlock = () => {
+export const BookingBlock = () => {
   return (
     <div className={styles.book}>
       <div className={styles.leftSide}>
@@ -52,7 +52,7 @@ export const BookBlock = () => {
             </p>
           </li>
         </ul>
-        <NavLink to="/book"
+        <NavLink to="/booking"
           className={styles.bookLink}
         >
           <span className={styles.linkText}>
