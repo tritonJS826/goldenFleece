@@ -11,6 +11,7 @@ config();
 const app: Express = express();
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/swagger.json", (_req, res) => res.json(apiSpec));
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(apiSpec));

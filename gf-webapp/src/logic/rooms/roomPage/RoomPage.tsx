@@ -4,8 +4,8 @@ import {PageBorder} from "../../../component/pageBorder/PageBorder";
 import {RoomSlider} from "./roomSlider/RoomSlider";
 import {RoomPromo} from "./roomPromo/RoomPromo";
 import {RoomsBlock} from "./roomsBlock/RoomsBlock";
-import {ServicesBlock} from "./servicesBlock/ServicesBlock";
-import {BookBlock} from "./bookBlock/BookBlock";
+import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
+import {BookBlock} from "../../../component/bookBlock/BookBlock";
 import styles from "./roomPage.module.scss";
 
 type RoomParams = {

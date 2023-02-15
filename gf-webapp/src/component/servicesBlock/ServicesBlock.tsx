@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./servicesBlock.module.scss";
 import {NavLink} from "react-router-dom";
-import room1 from "../../../../resources/rooms/1.jpg";
+import room1 from "../../resources/rooms/1.jpg";
 
 export const ServicesBlock = () => {
   return (
