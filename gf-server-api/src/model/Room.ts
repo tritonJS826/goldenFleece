@@ -8,24 +8,72 @@
  *         properties:
  *           apartmentsType:
  *             type: string
+ *             enum:
+ *               - Single
+ *               - Double
+ *               - Twin
  *             description: The room's type.
  *             example: Single
  *           services:
- *             type: array
- *             items:
- *               type: string
- *               description: The room's services.
- *               example: WiFi
+ *             type: string
+ *             enum:
+ *               - WiFi
+ *               - Laundry
+ *               - TeaCoffeeMaker
+ *               - Heating
+ *               - AirportShuttle
+ *             description: The room's services.
+ *             example: WiFi, TeaCoffeeMaker
  *           id:
  *             type: string
  *             description: The room's ID.
  *             example: 0
+ *           description:
+ *             type: string
+ *             description: Short room's description.
+ *             example: A small room
+ *           descriptionLong:
+ *             type: string
+ *             description: The room's description.
+ *             example: Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.
+ *           price:
+ *             type: number
+ *             description: The room's price.
+ *             example: 300
+ *           promo:
+ *             type: string
+ *             description: The room's promo image URL.
+ *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+ *           slider:
+ *             type: string
+ *             description: The room's slider 1 image URL.
+ *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+ *           slider2:
+ *             type: string
+ *             description: The room's slider 2 image URL.
+ *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+ *           slider3:
+ *             type: string
+ *             description: The room's slider 3 image URL.
+ *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+ *           slider4:
+ *             type: string
+ *             description: The room's slider 4 image URL.
+ *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+ *           slider5:
+ *             type: string
+ *             description: The room's slider 5 image URL.
+ *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+ *           rating:
+ *             type: number
+ *             description: The room's rating.
+ *             example: 10
  */
 export interface Room {
   /**
    * Apartment's type
    */
-  apartments: Apartments,
+  apartmentsType: Apartments,
   /**
    * Available services for room
    */
@@ -35,17 +83,41 @@ export interface Room {
    */
   id: string,
   /**
-   * Description about room
+   * Short description about room
    */
   description: string,
+  /**
+   * Description about room
+   */
+  descriptionLong: string,
   /**
    * Price
    */
   price: number,
   /**
-   * Array of paths to images of room
+   * Promo image URL of the room
    */
-  images: string[],
+  promo: string,
+  /**
+   * 1 slider image URL of the room
+   */
+  slider: string,
+  /**
+   * 2 slider image URL of the room
+   */
+  slider2: string,
+  /**
+   * 3 slider image URL of the room
+   */
+  slider3: string,
+  /**
+   * 4 slider image URL of the room
+   */
+  slider4: string,
+  /**
+   * 5 slider image URL of the room
+   */
+  slider5: string,
   /**
    * Rating can be from 1 to 10
    */
