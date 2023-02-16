@@ -41,10 +41,10 @@ body.notScrollable {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba($color: #484848, $alpha: .5);
+  background: $color-primary;
 
   &:hover {
-    background: rgba($color: #484848, $alpha: .85);
+    background: $color-secondary;
   }
 }
 

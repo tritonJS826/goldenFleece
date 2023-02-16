@@ -30,6 +30,7 @@ const imageAnimation = {
 
 export const AboutUs = () => {
   const {t} = useTranslation();
+
   return (
     <div className={styles.wrapper}>
       <motion.div

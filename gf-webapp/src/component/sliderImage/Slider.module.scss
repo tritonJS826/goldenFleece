@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .swiper {
   user-select: none;
 
@@ -9,3 +11,35 @@
   }
 }
 
+.number {
+  position: absolute;
+  left: 5%;
+  right: 0;
+  bottom: 10%;
+  color: $color-white;
+  font-size: 60px;
+}
+
+.span {
+  position: relative;
+  font-family: Montserrat Regular;
+}
+
+.span:after {
+  display: block;
+  width: 100vw;
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid $color-white;
+  top:50%;
+  left: 110px; 
+}
+
+@media (max-width: 768px) {
+  .swiper {
+  
+    .image {
+      height: auto;
+    }
+  }
+}

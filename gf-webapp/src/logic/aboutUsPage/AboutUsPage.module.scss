@@ -1,0 +1,19 @@
+@import '../../index.scss';
+
+.wrap {
+  background-color: $color-background;
+  padding: 100px 15%;
+}
+
+.title {
+  text-align: center;
+  font-size: 35px;
+  color: $color-text;
+  font-family: Montserrat Regular;
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 50px 10%;
+  }
+}

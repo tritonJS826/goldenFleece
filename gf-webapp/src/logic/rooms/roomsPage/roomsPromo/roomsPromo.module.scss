@@ -33,3 +33,12 @@
   font-family: Montserrat Regular;
 }
 
+@media (max-width: 768px) {
+  .promo {
+    margin-top: -10px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+}

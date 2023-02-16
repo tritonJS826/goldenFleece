@@ -1,4 +1,4 @@
-@import '../../../../index.scss';
+@import '../../../index.scss';
 
 .wrapper {
   max-height: 100vh;
@@ -32,21 +32,6 @@
   font-size: 60px;
   font-family: Montserrat Regular;
 }
-
-.container {
-  background: $color-primary;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.description {
-  color: $color-text;
-  text-align: center;
-  font-weight: bold;
-}
-
 
 @media (max-width: 768px) {
   .promo {

@@ -19,7 +19,7 @@ export const ItemDescription = () => {
         src={menuItem.imgUrl}
         alt="golden-fleece"
       />
-      <h3>
+      <h3 className={styles.title}>
         {menuItem.name}
       </h3>
       <p className={styles.description}>
