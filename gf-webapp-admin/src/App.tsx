@@ -7,10 +7,9 @@ import {Loader} from "./component/loader/Loader";
 
 function App() {
   const {auth} = useContext(AppContext);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
-  if (loading) {
+  if (!user && loading) {
     return <Loader />;
   }
   return (

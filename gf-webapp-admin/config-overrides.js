@@ -1,9 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require("path");
+import * as path from "path";
 
-module.exports = {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  paths: function (paths, env) {
+export default{
+  paths: function (paths) {
     paths.appSrc = path.resolve(__dirname);
     return paths;
   },
