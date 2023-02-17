@@ -36,26 +36,6 @@ export const Navigation = () => {
               Twin room
             </a>
           </li>
-          <p className={styles.line}>
-            |
-          </p>
-          <li className={styles.listItem}>
-            <a href="#4person"
-              className={styles.link}
-            >
-              4-person room
-            </a>
-          </li>
-          <p className={styles.line}>
-            |
-          </p>
-          <li className={styles.listItem}>
-            <a href="#6person"
-              className={styles.link}
-            >
-              6-person room
-            </a>
-          </li>
         </ul>
       </nav>
       <RoomBlock />

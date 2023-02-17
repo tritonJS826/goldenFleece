@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Slider.module.scss";
 import {Swiper, SwiperSlide} from "swiper/react";
-import image1 from "../../resources/sliderImages/autumn_forest_trees_129892_1920x1080.jpg";
-import image2 from "../../resources/sliderImages/forest_fog_trees_132037_1920x1080.jpg";
-import image3 from "../../resources/sliderImages/landscape_mountains_sun_140434_1920x1080.jpg";
-import image4 from "../../resources/sliderImages/ocean_beach_aerial_view_134429_1920x1080.jpg";
-import image5 from "../../resources/sliderImages/starry_sky_boat_reflection_125803_1920x1080.jpg";
+import image1 from "../../resources/sliderImages/Promo1.jpg";
+import image2 from "../../resources/sliderImages/Promo2.jpg";
+import image3 from "../../resources/sliderImages/Promo3.jpg";
+import image4 from "../../resources/sliderImages/Promo4.jpg";
+import image5 from "../../resources/sliderImages/Promo5.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -37,30 +37,55 @@ export function Slider() {
           src={image1}
           alt="image1"
         />
+        <p className={styles.number}>
+          <span className={styles.span}>
+            01
+          </span>
+        </p>
       </SwiperSlide>
       <SwiperSlide>
         <img className={styles.image}
           src={image2}
           alt="image2"
         />
+        <p className={styles.number}>
+          <span className={styles.span}>
+            02
+          </span>
+        </p>
       </SwiperSlide>
       <SwiperSlide>
         <img className={styles.image}
           src={image3}
           alt="image3"
         />
+        <p className={styles.number}>
+          <span className={styles.span}>
+            03
+          </span>
+        </p>
       </SwiperSlide>
       <SwiperSlide>
         <img className={styles.image}
           src={image4}
           alt="image4"
         />
+        <p className={styles.number}>
+          <span className={styles.span}>
+            04
+          </span>
+        </p>
       </SwiperSlide>
       <SwiperSlide>
         <img className={styles.image}
           src={image5}
           alt="image5"
         />
+        <p className={styles.number}>
+          <span className={styles.span}>
+            05
+          </span>
+        </p>
       </SwiperSlide>
     </Swiper>
   );

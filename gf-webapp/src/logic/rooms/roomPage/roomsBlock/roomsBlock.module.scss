@@ -98,3 +98,13 @@
   opacity: 0.7;
   pointer-events:none;
 }
+
+@media (max-width: 768px) {
+  .roomsWrap {
+    padding: 50px 10%;
+  }
+
+  .room {
+    width: 100%;
+  }
+}
