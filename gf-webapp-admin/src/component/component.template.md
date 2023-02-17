@@ -1,1 +1,0 @@
-Folder for app's components. This file will be deleted
