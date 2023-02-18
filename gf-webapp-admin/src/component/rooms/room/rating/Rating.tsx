@@ -1,32 +1,30 @@
-import * as React from "react";
+import React, {useState} from "react";
 import {IRoom} from "../../../../model/room";
-import {useState} from "react";
-import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
+import {EditBtn} from "../editBtn/EditBtn";
 
-export const Price = ({room}:{room:IRoom}) => {
-  const [price, setPrice] = useState(String(room.price));
+export const Rating = ({room}:{room:IRoom}) => {
+  const [rating, setRating] = useState(String(room.rating));
   const [isDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    room.price = +price;
+    room.rating = +rating;
     saveRoom(room);
   };
 
   const disabledHandler = () => {
     setIsDisabled(false);
   };
-
   return (
     <li>
-      <label htmlFor={`price-${room.id}`}>
-        Room price
+      <label htmlFor={`rating-${room.id}`}>
+        Room rating
       </label>
       <input type="number"
-        id={`price-${room.id}`}
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
+        id={`rating-${room.id}`}
+        value={rating}
+        onChange={(e) => setRating(e.target.value)}
         disabled={isDisabled}
       />
       <EditBtn isDisabled={isDisabled}

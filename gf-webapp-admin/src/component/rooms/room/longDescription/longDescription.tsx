@@ -1,32 +1,30 @@
-import * as React from "react";
+import React, {useState} from "react";
 import {IRoom} from "../../../../model/room";
-import {useState} from "react";
-import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
+import {EditBtn} from "../editBtn/EditBtn";
 
-export const Price = ({room}:{room:IRoom}) => {
-  const [price, setPrice] = useState(String(room.price));
+export const LongDescription = ({room}: {room:IRoom}) => {
+  const [desc, setDesc] = useState(String(room.descriptionLong));
   const [isDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    room.price = +price;
+    room.descriptionLong = desc;
     saveRoom(room);
   };
 
   const disabledHandler = () => {
     setIsDisabled(false);
   };
-
   return (
     <li>
-      <label htmlFor={`price-${room.id}`}>
-        Room price
+      <label htmlFor={`desc-long-${room.id}`}>
+        Room long description
       </label>
-      <input type="number"
-        id={`price-${room.id}`}
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
+      <textarea
+        id={`desc-long-${room.id}`}
+        value={desc}
+        onChange={(e) => setDesc(e.target.value)}
         disabled={isDisabled}
       />
       <EditBtn isDisabled={isDisabled}
