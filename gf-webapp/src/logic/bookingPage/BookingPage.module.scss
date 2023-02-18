@@ -33,6 +33,7 @@
 
 .row {
   display: flex;
+  width: 100%;
 }
 
 .book {
@@ -60,6 +61,15 @@
   background-color: $color-white;
 }
 
+@media (max-width: 1300px) {
+  .leftSide {
+    display: none;
+  }
+
+  .rightSide {
+    width: 100%;
+  }
+}
 
 @media (max-width: 768px) {
   .wrapper {
@@ -68,5 +78,23 @@
   
   .title {
     padding: 50px 10% 0;
+  }
+}
+
+@media (max-width: 615px) {
+  .book {
+    background: transparent;
+  }
+
+  .rightSide {
+    margin: 0;
+    padding: 30px;
+  }
+  
+}
+
+@media (max-width: 550px) {
+  .title {
+    font-size: 30px;
   }
 }

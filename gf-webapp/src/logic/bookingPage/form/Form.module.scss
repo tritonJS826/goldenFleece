@@ -60,6 +60,10 @@
   gap: 5px;
 }
 
+.formGoup {
+  width: 100%;
+}
+
 .select {
   background-color: white;
 }
@@ -83,3 +87,10 @@ option:hover {
 option:checked { 
   font-family: Montserrat Regular;
 }
+
+@media (max-width: 615px) {
+  .row {
+    flex-direction: column;
+  }
+}
+

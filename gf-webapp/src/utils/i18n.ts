@@ -9,7 +9,7 @@ i18n
   .use(HttpApi)
   .init({
     debug: false,
-    supportedLngs: ["en", "ru", "ka"],
+    supportedLngs: ["en", "ru", "ge"],
     fallbackLng: "en",
     detection: {order: ["cookie", "localStorage"], caches: ["cookie"]},
     backend: {loadPath: "/locales/{{lng}}/translation.json"},

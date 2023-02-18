@@ -1,0 +1,17 @@
+[] border refactoring (styles, decompose component)
+[] remove RSSchool block from footer
+[] change slider frequency (10s)
+[] change lang "Ka" block (add flag, or full country name)
+[] center on beacon on map
+[] ability to scale map
+[] add mobile styles for map (vertical)
+[] rooms page: styles for rooms list in subheader
+[] rooms page: check cards list styles for mobile
+[] rooms page: add price, think about info
+[] room page: add dynamic info (back)
+[] adjust booking process
+[] room info: add structure
+[] contactus scroll fix bug
+[] change contants title font
+[] add component with interactive hotel plan 
+[] adjust book modal
