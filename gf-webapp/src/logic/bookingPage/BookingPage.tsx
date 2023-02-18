@@ -6,8 +6,10 @@ import {ModalVisibilityContext} from "../../context/Context";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
 import {BookingPromo} from "./bookingPromo/BookingPromo";
 import {HotelPlan} from "./hotelPlan/HotelPLan";
+import {useTranslation} from "react-i18next";
 
 export const BookingPage = () => {
+  const {t} = useTranslation();
   const [modalActive, setModalActive] = useState(false);
 
   const isBooking = (event: React.MouseEvent): void => {
@@ -32,7 +34,7 @@ export const BookingPage = () => {
             <div className={styles.book}>
               <div className={styles.leftSide}>
                 <h1 className={styles.titleLeft}>
-                  Book direct for the best price guaranteed, exclusive offers and no hidden fees.
+                  {t("bookDirect")}
                 </h1>
               </div>
               <div className={styles.rightSide}>
@@ -41,7 +43,7 @@ export const BookingPage = () => {
             </div>
           </Modal>
           <h2 className={styles.title}>
-            Choose one of room
+            {t("chooseRoom")}
           </h2>
           <div className={styles.wrapper}
             onClick={isBooking}
