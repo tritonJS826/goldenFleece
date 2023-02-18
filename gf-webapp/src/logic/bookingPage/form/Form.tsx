@@ -111,7 +111,7 @@ export const Form = () => {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.formGoup}>
+          <div className={styles.formGroup}>
             <label className={styles.label}
               htmlFor="rooms"
             >
@@ -139,7 +139,7 @@ export const Form = () => {
             </input>
           </div>
           <div className={styles.row}>
-            <div className={styles.formGoup}>
+            <div className={styles.formGroup}>
               <label className={styles.label}
                 htmlFor="adults"
               >
@@ -155,7 +155,7 @@ export const Form = () => {
             </div>
           </div>
           <div className={styles.row}>
-            <div className={styles.formGoup}>
+            <div className={styles.formGroup}>
               <label className={styles.label}
                 htmlFor="children"
               >

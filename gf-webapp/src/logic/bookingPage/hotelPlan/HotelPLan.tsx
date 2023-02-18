@@ -1,6 +1,7 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 import styles from "./HotelPlan.module.scss";
+import hotelPlan from "../../../resources/hotelPlan/hotelPlan.jpg";
 
 export const HotelPlan = () => {
   const {t} = useTranslation();
@@ -8,62 +9,19 @@ export const HotelPlan = () => {
     <div className={styles.wrapper}>
       <div className={styles.single}>
         <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block1}`}>
-          {t("doubleRoom")}
-        </button>
-      </div>
-      <div className={styles.double}>
-        <button className={`${styles.block} ${styles.block2}`}>
           {t("singleRoom")}
         </button>
-        <button className={`${styles.block} ${styles.block2}`}>
-          {t("singleRoom")}
+        <button className={`${styles.block} ${styles.block1}`}>
+          {t("doubleRoom")}
         </button>
-        <button className={`${styles.block} ${styles.block2}`}>
-          {t("singleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block2}`}>
-          {t("singleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block2}`}>
-          {t("singleRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block2}`}>
-          {t("singleRoom")}
-        </button>
-        <div className={styles.pool}>
-          {t("swimmingPool")}
-        </div>
-        <button className={`${styles.block} ${styles.block3}`}>
-          {t("twinRoom")}
-        </button>
-        <button className={`${styles.block} ${styles.block3}`}>
+        <button className={`${styles.block} ${styles.block1}`}>
           {t("twinRoom")}
         </button>
       </div>
+      <img className={styles.plan}
+        src={hotelPlan}
+        alt="Hotel plan"
+      />
     </div>
   );
 };

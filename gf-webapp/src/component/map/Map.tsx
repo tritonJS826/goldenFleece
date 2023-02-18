@@ -68,14 +68,14 @@ export const Map = () => {
 
   return (
     <MapContext.Provider value={{markers, menuItem, setMenuItem}}>
+      <MapMenu menuItemHandler={menuItemHandler} />
+      <ItemDescription />
       <div
         onMouseMove={(e) => mouseMoveHandler(e)}
         onMouseUp={mouseUpHandler}
         className={styles.map}
       >
         <MapContent mouseDownHandler={mouseDownHandler} />
-        <MapMenu menuItemHandler={menuItemHandler} />
-        <ItemDescription />
       </div>
     </MapContext.Provider>
   );
