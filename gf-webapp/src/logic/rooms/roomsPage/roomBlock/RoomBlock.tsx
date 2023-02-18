@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 import styles from "./roomBlock.module.scss";
 import imgPromo from "../../../../resources/rooms/rooms.jpg";
 import {motion} from "framer-motion";
+import {useTranslation} from "react-i18next";
 
 const textAnimation = {
   hidden: {
@@ -17,6 +18,7 @@ const textAnimation = {
 };
 
 export const RoomBlock = () => {
+  const {t} = useTranslation();
   return (
     <div>
       <div className={styles.wrap}
@@ -39,24 +41,28 @@ export const RoomBlock = () => {
             01
           </span>
           <h3 className={styles.titleBook}>
-            Single room
+            {t("singleRoom")}
           </h3>
           <div className={styles.settingsRoom}>
-            30 m
+            30
+            {" "}
+            {t("dimension")}
             <span className={styles.sub}>
               2
             </span>
             {" "}
-            / 1 adults
+            / 1
+            {" "}
+            {t("adults1")}
           </div>
           <div className={styles.description}>
-            Wake up to the breathtaking beauty of the Pindus mountians.
+            {t("wakeUp")}
           </div>
           <NavLink to="/rooms/0"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              Read more
+              {t("readMore")}
             </span>
           </NavLink>
         </motion.div>
@@ -81,24 +87,28 @@ export const RoomBlock = () => {
             02
           </span>
           <h3 className={styles.titleBook}>
-            Double room
+            {t("doubleRoom")}
           </h3>
           <div className={styles.settingsRoom}>
-            40 m
+            40
+            {" "}
+            {t("dimension")}
             <span className={styles.sub}>
               2
             </span>
             {" "}
-            / 2 adults
+            / 2
+            {" "}
+            {t("adults")}
           </div>
           <div className={styles.description}>
-            Wake up to the breathtaking beauty of the Pindus mountians.
+            {t("wakeUp")}
           </div>
           <NavLink to="/rooms/1"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              Read more
+              {t("readMore")}
             </span>
           </NavLink>
         </motion.div>
@@ -123,24 +133,28 @@ export const RoomBlock = () => {
             03
           </span>
           <h3 className={styles.titleBook}>
-            Twin room
+            {t("twinRoom")}
           </h3>
           <div className={styles.settingsRoom}>
-            35 m
+            35
+            {" "}
+            {t("dimension")}
             <span className={styles.sub}>
               2
             </span>
             {" "}
-            / 2 adults
+            / 2
+            {" "}
+            {t("adults")}
           </div>
           <div className={styles.description}>
-            Wake up to the breathtaking beauty of the Pindus mountians.
+            {t("wakeUp")}
           </div>
           <NavLink to="/rooms/2"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              Read more
+              {t("readMore")}
             </span>
           </NavLink>
         </motion.div>
