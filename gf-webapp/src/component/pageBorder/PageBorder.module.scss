@@ -558,3 +558,131 @@
     padding: 10px;
   }
 }
+
+@media (max-width: 800px) {
+  .wrapper {
+
+    .header_scroll {
+      font-size: 1rem;
+
+      .list .listItem:first-child {
+        width: 10vw;
+        border-right: 1px solid $color-text;
+
+        div:first-child {
+          margin-bottom: 5px;
+          width: 15px;
+        }
+
+        div:nth-child(2) {
+          width: 10px;
+        }
+
+        div:last-child {
+          margin-top: 5px;
+          width: 15px;
+        }
+
+        &:hover {
+          div:nth-child(2) {
+            width: 15px;
+          }
+        }
+      }
+
+      .list .listItem:nth-child(2) {
+        display: none;
+      }
+
+      .list .listItem:nth-child(3) {
+        width: 80vw;
+
+        .logo {
+          font-size: 1.7rem;
+        }
+
+        img {
+          width: 45px;
+          height: 50px;
+        }
+
+        &:hover {
+          background-color: transparent;
+          cursor: default;
+        }
+      }
+
+      .list .listItem:nth-child(4) {
+        width: 10vw;
+        border-right: none;
+      }
+
+      .list .listItem:last-child {
+        display: none;
+      }
+    }
+
+    .header {
+      font-size: 1rem;
+
+      .list .listItem:first-child {
+        width: 10vw;
+        border-right: 1px solid $color-white;
+
+        div:first-child {
+          margin-bottom: 5px;
+          width: 15px;
+        }
+
+        div:nth-child(2) {
+          width: 10px;
+          transition: width 0.3s;
+        }
+
+        div:last-child {
+          margin-top: 5px;
+          width: 15px;
+        }
+
+        &:hover {
+          div:nth-child(2) {
+            width: 15px;
+          }
+        }
+      }
+
+      .list .listItem:nth-child(2) {
+        display: none;
+      }
+
+      .list .listItem:nth-child(3) {
+        width: 80vw;
+        border-right: none;
+
+        .logo {
+          font-size: 1.7rem;
+        }
+
+        img {
+          width: 45px;
+          height: 50px;
+        }
+
+        &:hover {
+          background-color: transparent;
+          cursor: default;
+        }
+      }
+
+      .list .listItem:nth-child(4) {
+        width: 10vw;
+        border-right: none;
+      }
+
+      .list .listItem:last-child {
+        display: none;
+      }
+
+    }
+  }
+}
