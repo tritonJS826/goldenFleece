@@ -5,8 +5,10 @@ import {Navigation} from "./navigation/navigation";
 import styles from "./roomsPage.module.scss";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
+import {useTranslation} from "react-i18next";
 
 export const RoomsPage = () => {
+  const {t} = useTranslation();
   const [room, setRoom] = useState({
     id: "",
     services: "",
@@ -44,13 +46,11 @@ export const RoomsPage = () => {
       <PageBorder>
         <RoomsPromo />
         <div className={styles.about}>
-          With breathtaking views, exceptional design inspired by nature and sumptuous amenities –
-          our premium mountain suites offer a memorable experience unlike anywhere else in Greece.
+          {t("roomsAbout")}
         </div>
         <Navigation />
         <div className={styles.about}>
-          With breathtaking views, exceptional design inspired by nature and sumptuous amenities –
-          our premium mountain suites offer a memorable experience unlike anywhere else in Greece.
+          {t("roomsAbout")}
         </div>
         <ServicesBlock />
         <BookingBlock />

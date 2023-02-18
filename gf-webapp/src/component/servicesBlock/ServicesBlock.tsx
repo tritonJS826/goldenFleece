@@ -2,8 +2,10 @@ import React from "react";
 import styles from "./servicesBlock.module.scss";
 import {NavLink} from "react-router-dom";
 import room1 from "../../resources/rooms/1.jpg";
+import {useTranslation} from "react-i18next";
 
 export const ServicesBlock = () => {
+  const {t} = useTranslation();
   return (
     <div className={styles.services}>
       <div className={styles.service}>
@@ -15,10 +17,10 @@ export const ServicesBlock = () => {
             alt="Gastronomy"
           />
           <h3 className={styles.titleService}>
-            Gastronomy
+            {t("Gastronomy")}
           </h3>
           <span className={styles.spanLink}>
-            More
+            {t("More")}
           </span>
         </NavLink>
       </div>
@@ -28,13 +30,13 @@ export const ServicesBlock = () => {
         >
           <img className={styles.serviceImage}
             src={room1}
-            alt="Expierences"
+            alt="Experiences"
           />
           <h3 className={styles.titleService}>
-            Expierences
+            {t("Experiences")}
           </h3>
           <span className={styles.spanLink}>
-            More
+            {t("More")}
           </span>
         </NavLink>
       </div>
@@ -47,10 +49,10 @@ export const ServicesBlock = () => {
             alt="Spa"
           />
           <h3 className={styles.titleService}>
-            Spa
+            {t("Spa")}
           </h3>
           <span className={styles.spanLink}>
-            More
+            {t("More")}
           </span>
         </NavLink>
       </div>

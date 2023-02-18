@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import {send} from "emailjs-com";
 import styles from "./Form.module.scss";
 import {useModalVisibilityContext} from "../../../context/Context";
+import {useTranslation} from "react-i18next";
 
 export const Form = () => {
+  const {t} = useTranslation();
   const {modalActive, setModalActive} = useModalVisibilityContext();
 
   const [toSend, setToSend] = useState({
@@ -49,7 +51,7 @@ export const Form = () => {
           <label className={styles.label}
             htmlFor="email"
           >
-            Email address
+            {t("email")}
           </label>
           <input type="email"
             className={styles.input}
@@ -65,7 +67,7 @@ export const Form = () => {
           <label className={styles.label}
             htmlFor="text"
           >
-            Your name
+            {t("name")}
           </label>
           <input type="text"
             className={styles.input}
@@ -82,7 +84,7 @@ export const Form = () => {
             <label className={styles.label}
               htmlFor="dateIn"
             >
-              Date in
+              {t("dateIn")}
             </label>
             <input type="date"
               className={styles.input2}
@@ -97,7 +99,7 @@ export const Form = () => {
             <label className={styles.label}
               htmlFor="dateOut"
             >
-              Date out
+              {t("dateOut")}
             </label>
             <input type="date"
               className={styles.input2}
@@ -113,7 +115,7 @@ export const Form = () => {
             <label className={styles.label}
               htmlFor="rooms"
             >
-              Room
+              {t("room")}
             </label>
             <input type="text"
               className={styles.input}
@@ -141,7 +143,7 @@ export const Form = () => {
               <label className={styles.label}
                 htmlFor="adults"
               >
-                Adults
+                {t("adults")}
               </label>
               <input type="text"
                 className={styles.input}
@@ -157,7 +159,7 @@ export const Form = () => {
               <label className={styles.label}
                 htmlFor="children"
               >
-                Children
+                {t("children")}
               </label>
               <input type="text"
                 className={styles.input}
@@ -172,7 +174,7 @@ export const Form = () => {
         <button type="submit"
           className={styles.button}
         >
-          Book now
+          {t("book-now")}
         </button>
       </form>
     </div>

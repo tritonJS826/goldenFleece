@@ -1,54 +1,56 @@
 import React from "react";
+import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
 import styles from "./bookingBlock.module.scss";
 
 
 export const BookingBlock = () => {
+  const {t} = useTranslation();
   return (
     <div className={styles.book}>
       <div className={styles.leftSide}>
         <p className={styles.textLeft}>
           <span className={styles.span}>
-            Reservations
+            {t("reservations")}
           </span>
         </p>
         <h2 className={styles.titleLeft}>
-          Book your escape to Grand Forest Metsovo today
+          {t("bookToday")}
         </h2>
         <p className={styles.textLeft}>
-          Book direct for the best price, exclusive offers and no hidden fees.
+          {t("bookDirect")}
         </p>
         <span className={styles.spanLink}>
-          More
+          {t("More")}
         </span>
       </div>
       <div className={styles.rightSide}>
         <h3 className={styles.titleBook}>
-          Why book direct?
+          {t("whyBookDirect")}
         </h3>
         <ul className={styles.list}>
           <li className={styles.listItem}>
             <h4>
-              Best price guarantee
+              {t("bestPrice")}
             </h4>
             <p className={styles.text}>
-              Book direct and enjoy the lowest rates available!
+              {t("enjoy")}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              Exclusive offers
+              {t("exclusiveOffers")}
             </h4>
             <p className={styles.text}>
-              Book direct and enjoy exclusive offers
+              {t("bookEnjoy")}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              No hidden fees
+              {t("fees")}
             </h4>
             <p className={styles.text}>
-              Many websites charge extra fees for bookings; we do not.
+              {t("extraFees")}
             </p>
           </li>
         </ul>
@@ -56,7 +58,7 @@ export const BookingBlock = () => {
           className={styles.bookLink}
         >
           <span className={styles.linkText}>
-            Book now
+            {t("book-now")}
           </span>
         </NavLink>
       </div>
