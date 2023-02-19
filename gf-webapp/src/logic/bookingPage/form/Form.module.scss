@@ -64,30 +64,6 @@
   width: 100%;
 }
 
-.select {
-  background-color: white;
-}
-
-select:active {
-  background-color: $color-primary;
-}
-
-option {
-  font-size: 18px;
-  background-color: $color-white;
-  cursor: pointer;
-  font-family: Montserrat Regular;
-}
-
-option:hover {
-  outline:0 !important;
-  background-color: #fff !important;
-}
-
-option:checked { 
-  font-family: Montserrat Regular;
-}
-
 @media (max-width: 615px) {
   .row {
     flex-direction: column;

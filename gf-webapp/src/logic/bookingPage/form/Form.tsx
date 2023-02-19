@@ -4,7 +4,11 @@ import styles from "./Form.module.scss";
 import {useModalVisibilityContext} from "../../../context/Context";
 import {useTranslation} from "react-i18next";
 
-export const Form = () => {
+type Roo = {
+  roomNumber: string;
+}
+
+export const Form = (props: Roo) => {
   const {t} = useTranslation();
   const {modalActive, setModalActive} = useModalVisibilityContext();
 
@@ -40,6 +44,10 @@ export const Form = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setToSend({...toSend, [e.target.name]: e.target.value});
+  };
+
+  const handleChangeRoom = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setToSend({...toSend, [e.target.name]: props.roomNumber});
   };
 
   return (
@@ -121,22 +129,11 @@ export const Form = () => {
               className={styles.input}
               id="rooms"
               name="room_number"
+              placeholder={props.roomNumber}
               value={toSend.room_number}
-              onChange={handleChange}
-            >
-              {/* <option value="1">
-                1
-              </option>
-              <option value="2">
-                2
-              </option>
-              <option value="3">
-                3
-              </option>
-              <option value="4">
-                4
-              </option> */}
-            </input>
+              onChange={handleChangeRoom}
+              required
+            />
           </div>
           <div className={styles.row}>
             <div className={styles.formGroup}>
@@ -151,6 +148,7 @@ export const Form = () => {
                 name="adults_number"
                 value={toSend.adults_number}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -167,6 +165,7 @@ export const Form = () => {
                 name="children_number"
                 value={toSend.children_number}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
