@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
+import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 
-export const Rating = ({room}:{room:IRoom}) => {
+export const Rating = ({room}: RoomType) => {
   const [rating, setRating] = useState(String(room.rating));
   const [isDisabled, setIsDisabled] = useState(true);
 
@@ -17,7 +17,7 @@ export const Rating = ({room}:{room:IRoom}) => {
     setIsDisabled(false);
   };
   return (
-    <li>
+    <div>
       <label htmlFor={`rating-${room.id}`}>
         Room rating
       </label>
@@ -31,6 +31,6 @@ export const Rating = ({room}:{room:IRoom}) => {
         saveHandler={saveHandler}
         disabledHandler={disabledHandler}
       />
-    </li>
+    </div>
   );
 };

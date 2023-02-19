@@ -1,13 +1,13 @@
 import * as React from "react";
-import {IRoom} from "../../../../model/room";
+import {RoomType} from "../../../../model/room";
 import {Slide} from "./slide/Slide";
 import styles from "./slider.module.scss";
 
-export const Slider = ({room}:{room:IRoom}) => {
+export const Slider = ({room}: RoomType) => {
   const slider = Object.keys(room).filter(key => key.includes("slider"));
 
   return (
-    <li className={styles.slider}>
+    <div className={styles.slider}>
       <p>
         Slider
       </p>
@@ -19,6 +19,6 @@ export const Slider = ({room}:{room:IRoom}) => {
           />
         ))}
       </ul>
-    </li>
+    </div>
   );
 };

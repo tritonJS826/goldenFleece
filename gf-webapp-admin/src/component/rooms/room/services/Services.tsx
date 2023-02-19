@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
+import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {BASE_SERVICES} from "../../../../utils/consts";
 import {EditBtn} from "../editBtn/EditBtn";
 import styles from "./services.module.scss";
 
-export const Services = ({room}:{room:IRoom}) => {
+export const Services = ({room}: RoomType) => {
 
   const roomServices = room.services?.split(",").map(el => el.trim());
   const [services, setServices] = useState(roomServices);
@@ -31,7 +31,7 @@ export const Services = ({room}:{room:IRoom}) => {
   };
 
   return (
-    <li className={styles.services}>
+    <div className={styles.services}>
       <p>
         Room services
       </p>
@@ -57,6 +57,6 @@ export const Services = ({room}:{room:IRoom}) => {
         saveHandler={saveHandler}
         disabledHandler={disabledHandler}
       />
-    </li>
+    </div>
   );
 };

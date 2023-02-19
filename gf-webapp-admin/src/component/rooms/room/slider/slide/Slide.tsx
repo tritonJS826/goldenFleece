@@ -26,14 +26,13 @@ export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
     target.classList.contains(styles.imgSrc) && setImgChangeModal(prev => !prev);
   };
   return(
-    <li>
+    <li className={styles.slide}>
       <div className={styles.container}>
         <div className={styles.imgContainer}
           onMouseEnter={hoverHandler}
           onMouseLeave={hoverHandler}
         >
-          <img width={200}
-            height={200}
+          <img className={styles.image}
             src={String(room[(slide as keyof IRoom)])}
             alt="slide"
           />

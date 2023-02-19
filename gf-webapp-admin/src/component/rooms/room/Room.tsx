@@ -1,5 +1,5 @@
 import React from "react";
-import {IRoom} from "../../../model/room";
+import {RoomType} from "../../../model/room";
 import {ApartmentsType} from "./apartmentType/ApartmentType";
 import {Description} from "./description/Description";
 import {LongDescription} from "./longDescription/longDescription";
@@ -10,9 +10,9 @@ import styles from "./room.module.scss";
 import {Services} from "./services/Services";
 import {Slider} from "./slider/Slider";
 
-export const Room = ({room}: {room:IRoom}) => {
+export const Room = ({room}: RoomType) => {
   return (
-    <ul className={styles.room}>
+    <div className={styles.room}>
       <ApartmentsType room={room} />
       <Description room={room} />
       <LongDescription room={room} />
@@ -21,6 +21,6 @@ export const Room = ({room}: {room:IRoom}) => {
       <Price room={room} />
       <Promo room={room} />
       <Slider room={room} />
-    </ul>
+    </div>
   );
 };

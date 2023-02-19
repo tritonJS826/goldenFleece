@@ -13,3 +13,7 @@ export interface IRoom {
   slider4?: string,
   slider5?: string,
 }
+
+export type RoomType = {
+  room:IRoom;
+}

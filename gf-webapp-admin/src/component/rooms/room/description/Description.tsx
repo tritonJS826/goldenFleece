@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
+import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 
-export const Description = ({room}: {room:IRoom}) => {
+export const Description = ({room}: RoomType) => {
   const [desc, setDesc] = useState(String(room.description));
   const [isDisabled, setIsDisabled] = useState(true);
 
@@ -18,7 +18,7 @@ export const Description = ({room}: {room:IRoom}) => {
   };
 
   return (
-    <li>
+    <div>
       <label htmlFor={`desc-${room.id}`}>
         Room description
       </label>
@@ -32,6 +32,6 @@ export const Description = ({room}: {room:IRoom}) => {
         saveHandler={saveHandler}
         disabledHandler={disabledHandler}
       />
-    </li>
+    </div>
   );
 };

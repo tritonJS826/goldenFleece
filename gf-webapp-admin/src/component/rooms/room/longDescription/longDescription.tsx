@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
+import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 
-export const LongDescription = ({room}: {room:IRoom}) => {
+export const LongDescription = ({room}: RoomType) => {
   const [desc, setDesc] = useState(String(room.descriptionLong));
   const [isDisabled, setIsDisabled] = useState(true);
 
@@ -17,7 +17,7 @@ export const LongDescription = ({room}: {room:IRoom}) => {
     setIsDisabled(false);
   };
   return (
-    <li>
+    <div>
       <label htmlFor={`desc-long-${room.id}`}>
         Room long description
       </label>
@@ -31,6 +31,6 @@ export const LongDescription = ({room}: {room:IRoom}) => {
         saveHandler={saveHandler}
         disabledHandler={disabledHandler}
       />
-    </li>
+    </div>
   );
 };

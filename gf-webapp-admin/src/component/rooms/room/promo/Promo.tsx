@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
+import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import styles from "./promo.module.scss";
 
-export const Promo = ({room}:{room:IRoom}) => {
+export const Promo = ({room}: RoomType) => {
   const [isHover, setIsHover] = useState(false);
   const [imgChangeModal, setImgChangeModal] = useState(false);
   const [promoUrl, setPromoUrl] = useState("");
@@ -25,7 +25,7 @@ export const Promo = ({room}:{room:IRoom}) => {
   };
 
   return (
-    <li className={styles.promo}>
+    <div className={styles.promo}>
       <p>
         Promo
       </p>
@@ -71,6 +71,6 @@ export const Promo = ({room}:{room:IRoom}) => {
           )
         }
       </div>
-    </li>
+    </div>
   );
 };

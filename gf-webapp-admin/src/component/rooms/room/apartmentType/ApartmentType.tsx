@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
+import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {ROOM_TYPES} from "../../../../utils/consts";
 import {EditBtn} from "../editBtn/EditBtn";
 
 
-export const ApartmentsType = ({room}:{room:IRoom}) => {
+export const ApartmentsType = ({room}:RoomType) => {
 
   const [type, setType] = useState(room.apartmentsType);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -22,7 +22,7 @@ export const ApartmentsType = ({room}:{room:IRoom}) => {
   };
 
   return (
-    <li>
+    <div>
       <p>
         Room type
       </p>
@@ -42,6 +42,6 @@ export const ApartmentsType = ({room}:{room:IRoom}) => {
         saveHandler={saveHandler}
         disabledHandler={disabledHandler}
       />
-    </li>
+    </div>
   );
 };

@@ -1,10 +1,10 @@
 import * as React from "react";
-import {IRoom} from "../../../../model/room";
+import {RoomType} from "../../../../model/room";
 import {useState} from "react";
 import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
 
-export const Price = ({room}:{room:IRoom}) => {
+export const Price = ({room}: RoomType) => {
   const [price, setPrice] = useState(String(room.price));
   const [isDisabled, setIsDisabled] = useState(true);
 
@@ -19,7 +19,7 @@ export const Price = ({room}:{room:IRoom}) => {
   };
 
   return (
-    <li>
+    <div>
       <label htmlFor={`price-${room.id}`}>
         Room price
       </label>
@@ -33,6 +33,6 @@ export const Price = ({room}:{room:IRoom}) => {
         saveHandler={saveHandler}
         disabledHandler={disabledHandler}
       />
-    </li>
+    </div>
   );
 };
