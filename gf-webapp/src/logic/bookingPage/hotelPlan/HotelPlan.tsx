@@ -4,13 +4,12 @@ import {Modal} from "../modal/Modal";
 import {ModalVisibilityContext} from "../../../context/Context";
 import {Form} from "../form/Form";
 import {useTranslation} from "react-i18next";
-
 import hotelPlan from "../../../resources/hotelPlan/hotelPlan.jpg";
 
 export const HotelPlan = () => {
   const {t} = useTranslation();
 
-  const [modalActive, setModalActive] = useState(false);
+  const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [roomNumber, setRoomNumber] = useState<string>("");
 
   const isBooking = (event: React.MouseEvent): void => {
@@ -21,7 +20,7 @@ export const HotelPlan = () => {
       } else {
         event.preventDefault();
         setRoomNumber(element.id);
-        setModalActive(true);
+        setIsModalActive(true);
       }
     }
 
@@ -29,12 +28,11 @@ export const HotelPlan = () => {
 
   return (
     <ModalVisibilityContext.Provider
-      value={{modalActive, setModalActive}}
+      value={{isModalActive, setIsModalActive}}
     >
       <div className={styles.wrapper}>
-
-        <Modal active={modalActive}
-          setActive={setModalActive}
+        <Modal active={isModalActive}
+          setActive={setIsModalActive}
         >
           <div className={styles.book}>
             <div className={styles.leftSide}>

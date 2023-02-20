@@ -5,14 +5,14 @@ const STUB_BOOLEAN = false;
 const STUB_STRING = "";
 
 export type ModalVisibility = {
-  modalActive: boolean,
-  setModalActive: (modalActive: boolean) => void,
+  isModalActive: boolean,
+  setIsModalActive: (modalActive: boolean) => void,
 }
 
 
 export const ModalVisibilityContext = createContext<ModalVisibility>({
-  modalActive: STUB_BOOLEAN,
-  setModalActive: STUB_FUNCTION,
+  isModalActive: STUB_BOOLEAN,
+  setIsModalActive: STUB_FUNCTION,
 } as ModalVisibility);
 
 export const useModalVisibilityContext = () => useContext(ModalVisibilityContext);

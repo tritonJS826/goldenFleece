@@ -4,13 +4,13 @@ import styles from "./Form.module.scss";
 import {useModalVisibilityContext} from "../../../context/Context";
 import {useTranslation} from "react-i18next";
 
-type Roo = {
+type RoomProps = {
   roomNumber: string;
 }
 
-export const Form = (props: Roo) => {
+export const Form = (props: RoomProps) => {
   const {t} = useTranslation();
-  const {modalActive, setModalActive} = useModalVisibilityContext();
+  const {isModalActive, setIsModalActive} = useModalVisibilityContext();
 
   const [toSend, setToSend] = useState({
     // from_name: "",
@@ -20,8 +20,8 @@ export const Form = (props: Roo) => {
     check_in: "",
     check_out: "",
     room_number: "",
-    adults_number: "",
-    children_number: "",
+    adults_amount: "",
+    children_amount: "",
   });
 
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -39,7 +39,7 @@ export const Form = (props: Roo) => {
         console.log("FAILED...", err);
       });
     e.target.reset();
-    setModalActive(false);
+    setIsModalActive(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -145,8 +145,8 @@ export const Form = (props: Roo) => {
               <input type="text"
                 className={styles.input}
                 id="adults"
-                name="adults_number"
-                value={toSend.adults_number}
+                name="adults_amount"
+                value={toSend.adults_amount}
                 onChange={handleChange}
                 required
               />
@@ -162,8 +162,8 @@ export const Form = (props: Roo) => {
               <input type="text"
                 className={styles.input}
                 id="children"
-                name="children_number"
-                value={toSend.children_number}
+                name="children_amount"
+                value={toSend.children_amount}
                 onChange={handleChange}
                 required
               />
