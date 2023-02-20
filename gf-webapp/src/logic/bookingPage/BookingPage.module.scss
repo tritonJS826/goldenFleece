@@ -19,6 +19,12 @@
   font-size: 40px;
 }
 
+@media (max-width: 615px) {
+  .title {
+    padding: 50px 10%;
+  }
+}
+
 @media (max-width: 550px) {
   .title {
     font-size: 30px;

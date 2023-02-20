@@ -16,10 +16,13 @@ export const HotelPlan = () => {
   const isBooking = (event: React.MouseEvent): void => {
     const element = event.target as HTMLElement;
     if (element.className.includes("planRoom")) {
-      event.preventDefault();
-      element.setAttribute("disabled", "");
-      setRoomNumber(element.id);
-      setModalActive(true);
+      if (element.className.includes("disabled")) {
+        event.stopPropagation();
+      } else {
+        event.preventDefault();
+        setRoomNumber(element.id);
+        setModalActive(true);
+      }
     }
 
   };
@@ -72,7 +75,7 @@ export const HotelPlan = () => {
             Twin room №4
           </div>
           <div id="5"
-            className={`${styles.planRoom} ${styles.five}`}
+            className={`${styles.planRoom} ${styles.five} ${styles.disabled}`}
           >
             Double room №5
           </div>
