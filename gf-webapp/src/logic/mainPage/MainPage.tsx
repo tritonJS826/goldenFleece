@@ -7,7 +7,7 @@ import styles from "./Main.module.scss";
 export const MainPage = () => {
   return (
     <div>
-      {/* <Spinner /> */}
+      <Spinner />
       <PageBorder>
         <Main />
       </PageBorder>

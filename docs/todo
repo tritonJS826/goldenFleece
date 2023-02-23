@@ -1,0 +1,24 @@
+[] border refactoring (styles, decompose component)
+[] remove RSSchool block from footer
+[x] change slider frequency (10s)
+[x] change lang "Ka" block (add flag, or full country name)
+[] center on beacon on map
+[] ability to scale map
+[x] add mobile styles for map (vertical)
+[x] rooms page: styles for rooms list in subheader
+[x] rooms page: check cards list styles for mobile
+[] rooms page: add price, think about info
+[] room page: add dynamic info (back)
+[] adjust booking process
+[] room info: add structure
+[x] contactus scroll fix bug
+[x] change contants title font
+[x] add component with interactive hotel plan 
+[x] adjust book modal
+[] change React-app-rewired to Craco
+[] finish Admin part
+[] add filters by date and free rooms
+[] change custom map to MapBox?
+[] add unit tests?
+[] add storybook?
+[] add fields to rooms from server side

@@ -2,9 +2,15 @@ import React, {useState} from "react";
 import {send} from "emailjs-com";
 import styles from "./Form.module.scss";
 import {useModalVisibilityContext} from "../../../context/Context";
+import {useTranslation} from "react-i18next";
 
-export const Form = () => {
-  const {modalActive, setModalActive} = useModalVisibilityContext();
+type RoomProps = {
+  roomNumber: string;
+}
+
+export const Form = (props: RoomProps) => {
+  const {t} = useTranslation();
+  const {isModalActive, setIsModalActive} = useModalVisibilityContext();
 
   const [toSend, setToSend] = useState({
     // from_name: "",
@@ -14,8 +20,8 @@ export const Form = () => {
     check_in: "",
     check_out: "",
     room_number: "",
-    adults_number: "",
-    children_number: "",
+    adults_amount: "",
+    children_amount: "",
   });
 
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -33,11 +39,15 @@ export const Form = () => {
         console.log("FAILED...", err);
       });
     e.target.reset();
-    setModalActive(false);
+    setIsModalActive(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setToSend({...toSend, [e.target.name]: e.target.value});
+  };
+
+  const handleChangeRoom = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setToSend({...toSend, [e.target.name]: props.roomNumber});
   };
 
   return (
@@ -49,7 +59,7 @@ export const Form = () => {
           <label className={styles.label}
             htmlFor="email"
           >
-            Email address
+            {t("email")}
           </label>
           <input type="email"
             className={styles.input}
@@ -65,7 +75,7 @@ export const Form = () => {
           <label className={styles.label}
             htmlFor="text"
           >
-            Your name
+            {t("name")}
           </label>
           <input type="text"
             className={styles.input}
@@ -82,7 +92,7 @@ export const Form = () => {
             <label className={styles.label}
               htmlFor="dateIn"
             >
-              Date in
+              {t("dateIn")}
             </label>
             <input type="date"
               className={styles.input2}
@@ -97,7 +107,7 @@ export const Form = () => {
             <label className={styles.label}
               htmlFor="dateOut"
             >
-              Date out
+              {t("dateOut")}
             </label>
             <input type="date"
               className={styles.input2}
@@ -109,62 +119,53 @@ export const Form = () => {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.formGoup}>
+          <div className={styles.formGroup}>
             <label className={styles.label}
               htmlFor="rooms"
             >
-              Room
+              {t("room")}
             </label>
             <input type="text"
               className={styles.input}
               id="rooms"
               name="room_number"
+              placeholder={props.roomNumber}
               value={toSend.room_number}
-              onChange={handleChange}
-            >
-              {/* <option value="1">
-                1
-              </option>
-              <option value="2">
-                2
-              </option>
-              <option value="3">
-                3
-              </option>
-              <option value="4">
-                4
-              </option> */}
-            </input>
+              onChange={handleChangeRoom}
+              required
+            />
           </div>
           <div className={styles.row}>
-            <div className={styles.formGoup}>
+            <div className={styles.formGroup}>
               <label className={styles.label}
                 htmlFor="adults"
               >
-                Adults
+                {t("adults")}
               </label>
               <input type="text"
                 className={styles.input}
                 id="adults"
-                name="adults_number"
-                value={toSend.adults_number}
+                name="adults_amount"
+                value={toSend.adults_amount}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
           <div className={styles.row}>
-            <div className={styles.formGoup}>
+            <div className={styles.formGroup}>
               <label className={styles.label}
                 htmlFor="children"
               >
-                Children
+                {t("children")}
               </label>
               <input type="text"
                 className={styles.input}
                 id="children"
-                name="children_number"
-                value={toSend.children_number}
+                name="children_amount"
+                value={toSend.children_amount}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -172,7 +173,7 @@ export const Form = () => {
         <button type="submit"
           className={styles.button}
         >
-          Book now
+          {t("book-now")}
         </button>
       </form>
     </div>

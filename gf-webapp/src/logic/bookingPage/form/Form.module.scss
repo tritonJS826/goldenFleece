@@ -60,26 +60,13 @@
   gap: 5px;
 }
 
-.select {
-  background-color: white;
+.formGoup {
+  width: 100%;
 }
 
-select:active {
-  background-color: $color-primary;
+@media (max-width: 615px) {
+  .row {
+    flex-direction: column;
+  }
 }
 
-option {
-  font-size: 18px;
-  background-color: $color-white;
-  cursor: pointer;
-  font-family: Montserrat Regular;
-}
-
-option:hover {
-  outline:0 !important;
-  background-color: #fff !important;
-}
-
-option:checked { 
-  font-family: Montserrat Regular;
-}

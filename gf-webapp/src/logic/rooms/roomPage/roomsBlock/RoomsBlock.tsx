@@ -6,12 +6,14 @@ import room2 from "../../../../resources/rooms/2.jpg";
 import room3 from "../../../../resources/rooms/3.jpg";
 import room4 from "../../../../resources/rooms/4.jpg";
 import room5 from "../../../../resources/rooms/5.jpg";
+import {useTranslation} from "react-i18next";
 
 export const RoomsBlock = () => {
+  const {t} = useTranslation();
   return (
     <div className={styles.roomsWrap}>
       <h2 className={styles.title2}>
-        More rooms
+        {t("moreRooms")}
       </h2>
       <div className={styles.rooms}>
         <div className={styles.room}>
@@ -24,10 +26,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              Single room
+              {t("singleRoom")}
             </h3>
             <span className={styles.spanLink}>
-              More
+              {t("More")}
             </span>
           </NavLink>
         </div>
@@ -41,10 +43,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              Single room
+              {t("singleRoom")}
             </h3>
             <span className={styles.spanLink}>
-              More
+              {t("More")}
             </span>
           </NavLink>
         </div>
@@ -58,10 +60,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              Single room
+              {t("singleRoom")}
             </h3>
             <span className={styles.spanLink}>
-              More
+              {t("More")}
             </span>
           </NavLink>
         </div>
@@ -75,10 +77,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              Single room
+              {t("singleRoom")}
             </h3>
             <span className={styles.spanLink}>
-              More
+              {t("More")}
             </span>
           </NavLink>
         </div>
@@ -92,10 +94,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              Single room
+              {t("singleRoom")}
             </h3>
             <span className={styles.spanLink}>
-              More
+              {t("More")}
             </span>
           </NavLink>
         </div>

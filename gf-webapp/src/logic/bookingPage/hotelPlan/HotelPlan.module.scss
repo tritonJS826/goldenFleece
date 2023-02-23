@@ -1,6 +1,7 @@
-@import '../../../index.scss';
+@import "../../../index.scss";
 
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -8,77 +9,191 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
-.title {
-  padding: 100px 10% 0;
-  text-align: center;
-  font-family: montserrat Regular;
-  color: $color-text;
-  font-size: 40px;
-}
-
-.block {
-  background-color: transparent;
-  border: 1px solid $color-secondary;
-  cursor: pointer;
-}
-
-.block:disabled {
-  color: white;
-  background-color: $color-primary;
-  cursor: not-allowed;
-}
-
-.single {
+.row {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
 }
 
-.block1 {
-  width: 7%;
-  height: 70px;
-  background-color: transparent;
-  border: 1px solid $color-secondary;
-  cursor: pointer;
-}
-
-.double {
+.book {
+  background-image: url("../../../resources/rooms/1.jpg");
   display: flex;
-  width: 100%;
-  justify-content: space-between;
 }
 
-.block2 {
-  width: 5%;
-  height: 100px;
-  background-color: transparent;
-  border: 1px solid $color-secondary;
-  cursor: pointer;
+.leftSide {
+  width: 60%;
+  background-color: $color-secondary;
+  padding: 100px 5%;
 }
 
-.block3 {
-  width: 10%;
-  height: 100px;
-  background-color: transparent;
-  border: 1px solid $color-secondary;
-  cursor: pointer;
+.titleLeft {
+  color: $color-white;
+  font-size: 60px;
+  font-family: Montserrat Regular;
+  padding-bottom: 50px;
 }
 
-.pool {
+.rightSide {
   width: 40%;
-  height: 100px;
-  background-color: transparent;
+  margin: 50px 5%;
+  padding: 30px;
+  background-color: $color-white;
+}
+
+.hotelPlan {
+  width: 100%;
+  // height: 1110px;
+  height: 50vw;
+}
+
+.divs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.planRoom {
+  position: absolute;
+  background-color: rgba($color-secondary, 0.8);
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid $color-secondary;
-  cursor: pointer;
+  color: $color-white;
+  font-size: 28px;
+  font-family: Montserrat Regular;
+  padding: 20px;
+  text-align: center;
 }
 
-@media (max-width: 768px) {  
-  .block {
-    font-size: 11px;
+.disabled {
+  background-color: $color-primary;
+  color: $color-text;
+  cursor: not-allowed;
+}
+
+.one {
+  top: 27.5%;
+  left: 0;
+  width: 17.5%;
+  height: 11.5%;
+}
+
+.two {
+  top: 39%;
+  left: 0;
+  width: 17.5%;
+  height: 12%;
+}
+
+.three {
+  top: 51%;
+  left: 0;
+  width: 17.5%;
+  height: 17.4%;
+}
+
+.four {
+  top: 68.5%;
+  left: 0;
+  width: 17.5%;
+  height: 31%;
+}
+
+.five {
+  top: 21.5%;
+  left: 80%;
+  width: 10%;
+  height: 31.4%;
+}
+
+.six {
+  top: 21.5%;
+  left: 90%;
+  width: 9.8%;
+  height: 31.4%;
+}
+
+@media (max-width: 1300px) {
+  .leftSide {
+    display: none;
+  }
+
+  .rightSide {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    overflow-x: scroll;
+  }
+
+  .hotelPlan {
+    width: 768px;
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .planRoom {
+    font-size: 14px;
+  }
+
+  .one {
+    top: 27.5%;
+    left: 0;
+    width: 135px;
+    height: 11.5%;
+  }
+
+  .two {
+    top: 39%;
+    left: 0;
+    width: 135px;
+    height: 12%;
+  }
+
+  .three {
+    top: 51%;
+    left: 0;
+    width: 135px;
+    height: 17.4%;
+  }
+
+  .four {
+    top: 68.5%;
+    left: 0;
+    width: 135px;
+    height: 31%;
+  }
+
+  .five {
+    top: 21.5%;
+    left: 615px;
+    width: 75px;
+    height: 31.4%;
+  }
+
+  .six {
+    top: 21.5%;
+    left: 690px;
+    width: 75px;
+    height: 31.4%;
+  }
+}
+
+@media (max-width: 615px) {
+  .book {
+    background: transparent;
+  }
+
+  .rightSide {
+    margin: 0;
+    padding: 30px;
   }
 }
