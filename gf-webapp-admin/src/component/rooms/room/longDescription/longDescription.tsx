@@ -1,0 +1,36 @@
+import React, {useState} from "react";
+import {RoomType} from "../../../../model/room";
+import {saveRoom} from "../../../../service/room";
+import {EditBtn} from "../editBtn/EditBtn";
+
+export const LongDescription = ({room}: RoomType) => {
+  const [description, setDescription] = useState(String(room.descriptionLong));
+  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
+
+  const saveHandler = () => {
+    setIsEditFieldDisabled(true);
+    room.descriptionLong = description;
+    saveRoom(room);
+  };
+
+  const fieldEditHandler = () => {
+    setIsEditFieldDisabled(false);
+  };
+  return (
+    <div>
+      <label htmlFor={`description-long-${room.id}`}>
+        Room long description
+      </label>
+      <textarea
+        id={`description-long-${room.id}`}
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        disabled={isEditFieldDisabled}
+      />
+      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
+        saveHandler={saveHandler}
+        fieldEditHandler={fieldEditHandler}
+      />
+    </div>
+  );
+};

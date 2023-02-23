@@ -1,0 +1,21 @@
+@import "../../../index.scss";
+
+.roomSimplified {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  &:hover > img {
+    transform: scale(1.2);
+  }
+  
+  img {
+    width: 100%;
+    transition: all .2s linear;
+  }
+}

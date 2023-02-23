@@ -1,0 +1,22 @@
+@import '../../../../../index.scss';
+
+.deleteBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: $color-black;
+  font-size: 1rem;
+  line-height: 1rem;
+  background-color: $color-disabled;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: $color-background;
+  }
+}

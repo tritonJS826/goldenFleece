@@ -1,0 +1,8 @@
+@import '../../../index.scss';
+
+.room {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border: 1px solid $color-black;
+}

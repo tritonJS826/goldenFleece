@@ -1,0 +1,32 @@
+@import '../../../../index.scss';
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  color: $color-gray-light;
+  background-color: $color-overlay;
+  padding: 20px;
+
+  h3 {
+    margin-bottom: 10px;
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+}

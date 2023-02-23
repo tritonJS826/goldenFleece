@@ -1,0 +1,37 @@
+@import '../../../index.scss';
+
+.addRoom {
+  background-color: $color-light-opacity70;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all .2s linear;
+
+  &:hover {
+    background-color: $color-white;
+  }
+}
+
+.cross {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: $color-black;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+}

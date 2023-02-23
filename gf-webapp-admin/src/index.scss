@@ -21,8 +21,9 @@ $color-gray-light: #f1f3f2;
 $color-hover: #e47209;
 $color-header-hover-background: #909090;
 $color-disabled: #ccc;
-$color-text-disabled: rgba(0, 0, 0, 0.5);
 $color-error: red;
+$color-overlay: rgba(0,0,0, 0.5);
+$color-light-opacity70: rgba(255,255,255, 0.7);
 
 
 body {
@@ -50,5 +51,6 @@ ul {
 }
 
 a {
+  color: $color-back;
   text-decoration: none;
 }
