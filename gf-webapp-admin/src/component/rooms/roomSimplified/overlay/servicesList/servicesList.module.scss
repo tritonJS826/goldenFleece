@@ -1,0 +1,12 @@
+.services {
+  width: 100%;
+  display: flex;
+  list-style: circle;
+  flex-direction: column;
+  gap: 5px;
+  align-self: flex-start;
+
+  li {
+    margin-left: 20px;
+  }
+}

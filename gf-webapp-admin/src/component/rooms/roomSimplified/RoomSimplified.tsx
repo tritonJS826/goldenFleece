@@ -8,7 +8,8 @@ export const RoomSimplified = ({room}: RoomType) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div onMouseEnter={() => setIsHovered(true)}
+    <div
+      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={styles.roomSimplified}
     >
@@ -16,9 +17,7 @@ export const RoomSimplified = ({room}: RoomType) => {
         <img src={room.promo}
           alt="room-promo"
         />
-        {
-          isHovered && <Overlay room={room} />
-        }
+        {isHovered && <Overlay room={room} />}
       </div>
     </div>
   );

@@ -18,3 +18,15 @@ export const getRooms = async () => {
   const res = await roomsApi.apiRoomsGet();
   return res;
 };
+
+export const getRoom = async (id:string) => {
+  const roomApi = new RoomApi;
+  const res = await roomApi.apiRoomsRoomIdGet({roomId: id});
+  return res;
+};
+
+export const deleteRoom = async (id: string) => {
+  const roomApi = new RoomApi;
+  const res = await roomApi.apiRoomsRoomIdDelete({roomId: id});
+  return res;
+};

@@ -9,7 +9,6 @@ export const ApartmentsType = ({room}:RoomType) => {
 
   const [type, setType] = useState(room.apartmentsType);
   const [isDisabled, setIsDisabled] = useState(true);
-  const roomTypes = ROOM_TYPES;
 
   const saveHandler = async () => {
     setIsDisabled(true);
@@ -30,7 +29,7 @@ export const ApartmentsType = ({room}:RoomType) => {
         disabled={isDisabled}
         onChange={(e) => setType(e.target.value)}
       >
-        {roomTypes.map(roomType => (
+        {ROOM_TYPES.map(roomType => (
           <option key={roomType}
             value={roomType}
           >

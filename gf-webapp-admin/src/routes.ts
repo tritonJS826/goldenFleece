@@ -1,6 +1,7 @@
 import {LoginPage} from "./logic/loginPage/LoginPage";
 import {MainPage} from "./logic/mainPage/MainPage";
-import {LOGIN_ROUTE, MAIN_PAGE_ROUTE} from "./utils/consts";
+import {RoomPage} from "./logic/roomPage/RoomPage";
+import {LOGIN_ROUTE, MAIN_PAGE_ROUTE, ROOM_PAGE_ROUTE} from "./utils/consts";
 
 interface IRoute {
   path:string;
@@ -18,5 +19,9 @@ export const privateRoutes:IRoute[] = [
   {
     path: MAIN_PAGE_ROUTE,
     component: MainPage,
+  },
+  {
+    path: ROOM_PAGE_ROUTE,
+    component: RoomPage,
   },
 ];

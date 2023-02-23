@@ -1,10 +1,6 @@
 @import '../../../../index.scss';
 
 .overlay {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
   position: absolute;
   top: 0;
   left: 0;
@@ -12,8 +8,12 @@
   height: 100%;
   font-size: 1rem;
   color: $color-gray-light;
-  background-color: rgba($color: #000000, $alpha: 0.5);
+  background-color: $color-overlay;
   padding: 20px;
+
+  h3 {
+    margin-bottom: 10px;
+  }
 }
 
 .container {
@@ -23,15 +23,10 @@
   margin-top: auto;
 }
 
-.services {
-  width: 100%;
+.info {
   display: flex;
-  list-style: circle;
   flex-direction: column;
-  gap: 5px;
-  align-self: flex-start;
-
-  li {
-    margin-left: 20px;
-  }
+  align-items: center;
+  gap: 15px;
+  height: 100%;
 }

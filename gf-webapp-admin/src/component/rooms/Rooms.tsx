@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {IRoom} from "../../model/room";
 import styles from "./rooms.module.scss";
-import {Room} from "./room/Room";
 import {getRooms} from "../../service/room";
-import {RoomSimplified} from "./roomSimplified/RoomSimplified";
+import {Loader} from "../loader/Loader";
+import {RoomsList} from "./roomsList/RoomsList";
 
 export const Rooms = () => {
   const [rooms, setRooms] = useState<IRoom[]>([]);
@@ -15,19 +15,16 @@ export const Rooms = () => {
     })();
   }, []);
 
+  if(!rooms.length) {
+    return <Loader />;
+  }
+
   return (
     <div className={styles.rooms}>
       <h2>
         Rooms
       </h2>
-      <div className={styles.container}>
-        {rooms.map(room => (
-          <RoomSimplified key={room.id}
-            room={room}
-          />
-        ))}
-      </div>
-
+      <RoomsList rooms={rooms} />
     </div>
   );
 };

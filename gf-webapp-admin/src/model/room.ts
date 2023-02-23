@@ -17,3 +17,7 @@ export interface IRoom {
 export type RoomType = {
   room:IRoom;
 }
+
+export type RoomsType = {
+  rooms:IRoom[]
+}
