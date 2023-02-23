@@ -5,23 +5,23 @@ import styles from "./promo.module.scss";
 
 export const Promo = ({room}: RoomType) => {
   const [isHover, setIsHover] = useState(false);
-  const [imgChangeModal, setImgChangeModal] = useState(false);
-  const [promoUrl, setPromoUrl] = useState("");
+  const [isImgModalShow, setIsImgModalShow] = useState(false);
+  const [newPromoImageUrl, setNewPromoImageUrl] = useState("");
 
   const hoverHandler = () => {
     setIsHover(prev => !prev);
   };
 
   const saveHandler = () => {
-    setImgChangeModal(prev => !prev);
-    room.promo = promoUrl;
+    setIsImgModalShow(prev => !prev);
+    room.promo = newPromoImageUrl;
     saveRoom(room);
-    setPromoUrl("");
+    setNewPromoImageUrl("");
   };
 
   const closeModal = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    target.classList.contains(styles.imgSrc) && setImgChangeModal(prev => !prev);
+    target.classList.contains(styles.imgSrc) && setIsImgModalShow(prev => !prev);
   };
 
   return (
@@ -40,7 +40,7 @@ export const Promo = ({room}: RoomType) => {
           />
           {isHover &&
             (
-              <div onClick={() => setImgChangeModal(prev => !prev)}
+              <div onClick={() => setIsImgModalShow(prev => !prev)}
                 className={styles.overlay}
               >
                 <span>
@@ -51,14 +51,14 @@ export const Promo = ({room}: RoomType) => {
           }
         </div>
 
-        {imgChangeModal &&
+        {isImgModalShow &&
           (
             <div className={styles.imgSrc}
               onClick={(e) => closeModal(e)}
             >
-              <input value={promoUrl}
+              <input value={newPromoImageUrl}
                 type="text"
-                onChange={(e) => setPromoUrl(e.target.value)}
+                onChange={(e) => setNewPromoImageUrl(e.target.value)}
                 placeholder="Enter URL"
               />
               <button

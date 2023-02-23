@@ -1,33 +1,30 @@
 import React, {useState} from "react";
 import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
-import {BASE_SERVICES} from "../../../../utils/consts";
+import {BASE_SERVICES} from "../../../../utils/roomConstants";
 import {EditBtn} from "../editBtn/EditBtn";
 import styles from "./services.module.scss";
+import {changeRoomServices} from "./roomServices";
 
 export const Services = ({room}: RoomType) => {
 
   const roomServices = room.services?.split(",").map(el => el.trim());
   const [services, setServices] = useState(roomServices);
-  const [isDisabled, setIsDisabled] = useState(true);
-  const baseServices = BASE_SERVICES;
+  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const saveHandler = async () => {
-    setIsDisabled(true);
+    setIsEditFieldDisabled(true);
     room.services = services?.join(", ").trim();
     saveRoom(room);
   };
 
-  const disabledHandler = () => {
-    setIsDisabled(false);
+  const fieldEditHandler = () => {
+    setIsEditFieldDisabled(false);
   };
 
-  const handleChange = (e:React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setServices(prev => prev?.indexOf(target.value) === -1 ?
-      [...prev, target.value]
-      :
-      prev?.filter(value => value !== target.value));
+  const onChangeRoomServices = (e:React.ChangeEvent) => {
+    const selectedService = e.target as HTMLInputElement;
+    setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService.value));
   };
 
   return (
@@ -36,7 +33,7 @@ export const Services = ({room}: RoomType) => {
         Room services
       </p>
       <ul className={styles.servicesContainer}>
-        {baseServices.map(service => (
+        {BASE_SERVICES.map(service => (
           <li className={styles.service}
             key={service}
           >
@@ -44,8 +41,8 @@ export const Services = ({room}: RoomType) => {
               type="checkbox"
               value={service}
               defaultChecked={services?.indexOf(service) !== -1}
-              onChange={(e) => handleChange(e)}
-              disabled={isDisabled}
+              onChange={onChangeRoomServices}
+              disabled={isEditFieldDisabled}
             />
             <label htmlFor={`${service}-service-${room.id}`}>
               {service}
@@ -53,9 +50,9 @@ export const Services = ({room}: RoomType) => {
           </li>
         ))}
       </ul>
-      <EditBtn isDisabled={isDisabled}
+      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
         saveHandler={saveHandler}
-        disabledHandler={disabledHandler}
+        fieldEditHandler={fieldEditHandler}
       />
     </div>
   );

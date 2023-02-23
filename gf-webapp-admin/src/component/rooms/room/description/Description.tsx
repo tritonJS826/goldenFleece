@@ -4,33 +4,33 @@ import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 
 export const Description = ({room}: RoomType) => {
-  const [desc, setDesc] = useState(String(room.description));
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [description, setDescription] = useState(String(room.description));
+  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const saveHandler = async () => {
-    setIsDisabled(true);
-    room.description = desc;
+    setIsEditFieldDisabled(true);
+    room.description = description;
     saveRoom(room);
   };
 
-  const disabledHandler = () => {
-    setIsDisabled(false);
+  const fieldEditHandler = () => {
+    setIsEditFieldDisabled(false);
   };
 
   return (
     <div>
-      <label htmlFor={`desc-${room.id}`}>
+      <label htmlFor={`description-${room.id}`}>
         Room description
       </label>
       <input type="text"
-        id={`desc-${room.id}`}
-        value={desc}
-        onChange={(e) => setDesc(e.target.value)}
-        disabled={isDisabled}
+        id={`description-${room.id}`}
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        disabled={isEditFieldDisabled}
       />
-      <EditBtn isDisabled={isDisabled}
+      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
         saveHandler={saveHandler}
-        disabledHandler={disabledHandler}
+        fieldEditHandler={fieldEditHandler}
       />
     </div>
   );

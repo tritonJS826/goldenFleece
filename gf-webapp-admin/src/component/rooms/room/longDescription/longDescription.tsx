@@ -4,32 +4,32 @@ import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 
 export const LongDescription = ({room}: RoomType) => {
-  const [desc, setDesc] = useState(String(room.descriptionLong));
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [description, setDescription] = useState(String(room.descriptionLong));
+  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const saveHandler = () => {
-    setIsDisabled(true);
-    room.descriptionLong = desc;
+    setIsEditFieldDisabled(true);
+    room.descriptionLong = description;
     saveRoom(room);
   };
 
-  const disabledHandler = () => {
-    setIsDisabled(false);
+  const fieldEditHandler = () => {
+    setIsEditFieldDisabled(false);
   };
   return (
     <div>
-      <label htmlFor={`desc-long-${room.id}`}>
+      <label htmlFor={`description-long-${room.id}`}>
         Room long description
       </label>
       <textarea
-        id={`desc-long-${room.id}`}
-        value={desc}
-        onChange={(e) => setDesc(e.target.value)}
-        disabled={isDisabled}
+        id={`description-long-${room.id}`}
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        disabled={isEditFieldDisabled}
       />
-      <EditBtn isDisabled={isDisabled}
+      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
         saveHandler={saveHandler}
-        disabledHandler={disabledHandler}
+        fieldEditHandler={fieldEditHandler}
       />
     </div>
   );

@@ -6,7 +6,7 @@ import {saveRoom} from "../../../../service/room";
 
 export const Price = ({room}: RoomType) => {
   const [price, setPrice] = useState(String(room.price));
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
@@ -14,7 +14,7 @@ export const Price = ({room}: RoomType) => {
     saveRoom(room);
   };
 
-  const disabledHandler = () => {
+  const fieldEditHandler = () => {
     setIsDisabled(false);
   };
 
@@ -27,11 +27,11 @@ export const Price = ({room}: RoomType) => {
         id={`price-${room.id}`}
         value={price}
         onChange={(e) => setPrice(e.target.value)}
-        disabled={isDisabled}
+        disabled={isEditFieldDisabled}
       />
-      <EditBtn isDisabled={isDisabled}
+      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
         saveHandler={saveHandler}
-        disabledHandler={disabledHandler}
+        fieldEditHandler={fieldEditHandler}
       />
     </div>
   );

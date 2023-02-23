@@ -5,16 +5,16 @@ import {EditBtn} from "../editBtn/EditBtn";
 
 export const Rating = ({room}: RoomType) => {
   const [rating, setRating] = useState(String(room.rating));
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const saveHandler = () => {
-    setIsDisabled(true);
+    setIsEditFieldDisabled(true);
     room.rating = +rating;
     saveRoom(room);
   };
 
-  const disabledHandler = () => {
-    setIsDisabled(false);
+  const fieldEditHandler = () => {
+    setIsEditFieldDisabled(false);
   };
   return (
     <div>
@@ -25,11 +25,11 @@ export const Rating = ({room}: RoomType) => {
         id={`rating-${room.id}`}
         value={rating}
         onChange={(e) => setRating(e.target.value)}
-        disabled={isDisabled}
+        disabled={isEditFieldDisabled}
       />
-      <EditBtn isDisabled={isDisabled}
+      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
         saveHandler={saveHandler}
-        disabledHandler={disabledHandler}
+        fieldEditHandler={fieldEditHandler}
       />
     </div>
   );

@@ -1,15 +1,15 @@
 import React from "react";
 
 interface IEditBtn {
-  isDisabled: boolean;
+  isEditFieldDisabled: boolean;
   saveHandler:() => void;
-  disabledHandler: () => void;
+  fieldEditHandler: () => void;
 }
 
-export const EditBtn = ({isDisabled, saveHandler, disabledHandler}: IEditBtn) => {
-  return isDisabled ?
+export const EditBtn = ({isEditFieldDisabled, saveHandler, fieldEditHandler}: IEditBtn) => {
+  return isEditFieldDisabled ?
     (
-      <button onClick={disabledHandler}>
+      <button onClick={fieldEditHandler}>
         Edit
       </button>
     )

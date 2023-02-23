@@ -1,23 +1,28 @@
 import React, {useState} from "react";
 import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
-import {ROOM_TYPES} from "../../../../utils/consts";
 import {EditBtn} from "../editBtn/EditBtn";
+import {ApartmentsList} from "./apartmentsList/ApartmentsList";
 
 
 export const ApartmentsType = ({room}:RoomType) => {
 
   const [type, setType] = useState(room.apartmentsType);
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const saveHandler = async () => {
-    setIsDisabled(true);
+    setIsEditFieldDisabled(true);
     room.apartmentsType = type;
     saveRoom(room);
   };
 
-  const disabledHandler = () => {
-    setIsDisabled(false);
+  const onChangeApatrmentType = (e: React.ChangeEvent) => {
+    const target = e.target as HTMLSelectElement;
+    setType(target.value);
+  };
+
+  const fieldEditHandler = () => {
+    setIsEditFieldDisabled(false);
   };
 
   return (
@@ -25,21 +30,13 @@ export const ApartmentsType = ({room}:RoomType) => {
       <p>
         Room type
       </p>
-      <select value={type}
-        disabled={isDisabled}
-        onChange={(e) => setType(e.target.value)}
-      >
-        {ROOM_TYPES.map(roomType => (
-          <option key={roomType}
-            value={roomType}
-          >
-            {roomType}
-          </option>
-        ))}
-      </select>
-      <EditBtn isDisabled={isDisabled}
+      <ApartmentsList type={type}
+        isEditFieldDisabled={isEditFieldDisabled}
+        onChangeApatrmentType={onChangeApatrmentType}
+      />
+      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
         saveHandler={saveHandler}
-        disabledHandler={disabledHandler}
+        fieldEditHandler={fieldEditHandler}
       />
     </div>
   );

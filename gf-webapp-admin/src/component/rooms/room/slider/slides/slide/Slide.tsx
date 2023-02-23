@@ -1,12 +1,12 @@
 import * as React from "react";
 import {useState} from "react";
-import {IRoom} from "../../../../../model/room";
-import {saveRoom} from "../../../../../service/room";
+import {IRoom} from "../../../../../../model/room";
+import {saveRoom} from "../../../../../../service/room";
 import styles from "./slide.module.scss";
 
 export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
   const [isHover, setIsHover] = useState(false);
-  const [imgChangeModal, setImgChangeModal] = useState(false);
+  const [isImgModalShow, setIsImgModalShow] = useState(false);
   const [promoUrl, setPromoUrl] = useState("");
 
   const hoverHandler = () => {
@@ -14,7 +14,7 @@ export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
   };
 
   const saveHandler = () => {
-    setImgChangeModal(prev => !prev);
+    setIsImgModalShow(prev => !prev);
     // room.slide = promoUrl;
 
     saveRoom(room);
@@ -23,7 +23,7 @@ export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
 
   const closeModal = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    target.classList.contains(styles.imgSrc) && setImgChangeModal(prev => !prev);
+    target.classList.contains(styles.imgSrc) && setIsImgModalShow(prev => !prev);
   };
   return(
     <li className={styles.slide}>
@@ -38,7 +38,7 @@ export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
           />
           {isHover &&
             (
-              <div onClick={() => setImgChangeModal(prev => !prev)}
+              <div onClick={() => setIsImgModalShow(prev => !prev)}
                 className={styles.overlay}
               >
                 <span>
@@ -49,7 +49,7 @@ export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
           }
         </div>
 
-        {imgChangeModal &&
+        {isImgModalShow &&
           (
             <div className={styles.imgSrc}
               onClick={(e) => closeModal(e)}
