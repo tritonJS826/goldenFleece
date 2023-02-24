@@ -7,11 +7,7 @@ export interface IRoom {
   promo?: string,
   rating?: number
   services?: string,
-  slider?: string,
-  slider2?: string,
-  slider3?: string,
-  slider4?: string,
-  slider5?: string,
+  slider?: string[],
 }
 
 export type RoomType = {
