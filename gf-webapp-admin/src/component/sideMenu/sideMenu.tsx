@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./sideMenu.module.scss";
 import {LogOutBtn} from "../../component/logOut/LogOut";
 import {Link} from "react-router-dom";
-import {AddRoom} from "./addRoom/AddRoom";
+import {AddRoomBtn} from "./addRoomBtn/AddRoomBtn";
 
 export const SideMenu = () => {
   return (
@@ -11,7 +11,7 @@ export const SideMenu = () => {
       <Link to="/">
         Rooms
       </Link>
-      <AddRoom />
+      <AddRoomBtn />
     </div>
   );
 };
