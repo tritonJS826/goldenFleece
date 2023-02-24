@@ -23,11 +23,7 @@ export const RoomPage = () => {
     descriptionLong: "",
     price: 200,
     promo: "",
-    slider: "",
-    slider2: "",
-    slider3: "",
-    slider4: "",
-    slider5: "",
+    slider: [],
     rating: 8,
   });
 
@@ -55,12 +51,7 @@ export const RoomPage = () => {
       <div className={styles.about}>
         {room.descriptionLong}
       </div>
-      <RoomSlider promo={room.promo}
-        slider={room.slider}
-        slider2={room.slider2}
-        slider3={room.slider3}
-        slider4={room.slider4}
-      />
+      <RoomSlider slider={room.slider} />
       <RoomsBlock />
       <ServicesBlock />
       <BookingBlock />

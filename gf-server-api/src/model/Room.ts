@@ -77,7 +77,7 @@ export interface Room {
   /**
    * Available services for room
    */
-  services: Services,
+  services: Set<Services>,
   /**
    * Room's ID
    */
@@ -99,25 +99,9 @@ export interface Room {
    */
   promo: string,
   /**
-   * 1 slider image URL of the room
+   * slider images URL of the rooms
    */
-  slider: string,
-  /**
-   * 2 slider image URL of the room
-   */
-  slider2: string,
-  /**
-   * 3 slider image URL of the room
-   */
-  slider3: string,
-  /**
-   * 4 slider image URL of the room
-   */
-  slider4: string,
-  /**
-   * 5 slider image URL of the room
-   */
-  slider5: string,
+  slider: string[],
   /**
    * Rating can be from 1 to 10
    */
