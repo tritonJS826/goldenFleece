@@ -16,7 +16,7 @@ export const Slide = ({slideImageURL, index, saveSliderImages}: ISlide) => {
   const [newImageUrl, setNewImageUrl] = useState("");
 
   const hoverHandler = () => {
-    setIsHover(prev => !prev);
+    setIsHover(!isHover);
   };
 
   const saveImageHandler = () => {
@@ -28,7 +28,7 @@ export const Slide = ({slideImageURL, index, saveSliderImages}: ISlide) => {
 
   const closeModal = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    target.classList.contains(styles.imgSrc) && setIsImgModalShow(prev => !prev);
+    target.classList.contains(styles.imgSrc) && setIsImgModalShow(!isImgModalShow);
   };
 
   return(
