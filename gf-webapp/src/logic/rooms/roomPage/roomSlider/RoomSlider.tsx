@@ -17,7 +17,7 @@ export const RoomSlider = ({slider}: RoomSlider) => {
       loop={true}
       autoplay={{
         delay: 5000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       }}
       grabCursor={true}
       keyboard={{enabled: true}}
