@@ -1,3 +1,5 @@
+/**swagger model and room model will be separate soon*/
+
 /**
  * Room model
  * @swagger
@@ -45,25 +47,17 @@
  *             description: The room's promo image URL.
  *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
  *           slider:
- *             type: string
- *             description: The room's slider 1 image URL.
- *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
- *           slider2:
- *             type: string
- *             description: The room's slider 2 image URL.
- *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
- *           slider3:
- *             type: string
- *             description: The room's slider 3 image URL.
- *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
- *           slider4:
- *             type: string
- *             description: The room's slider 4 image URL.
- *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
- *           slider5:
- *             type: string
- *             description: The room's slider 5 image URL.
- *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+ *             type: array
+ *             items:
+ *              type:string
+ *             example: [
+ *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
+ *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
+ *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
+ *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
+ *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
+ *             ]
+ *             description: The rooms slider images URL.
  *           rating:
  *             type: number
  *             description: The room's rating.
@@ -77,7 +71,7 @@ export interface Room {
   /**
    * Available services for room
    */
-  services: Services,
+  services: Set<Services>,
   /**
    * Room's ID
    */
@@ -99,25 +93,9 @@ export interface Room {
    */
   promo: string,
   /**
-   * 1 slider image URL of the room
+   * slider images URL of the rooms
    */
-  slider: string,
-  /**
-   * 2 slider image URL of the room
-   */
-  slider2: string,
-  /**
-   * 3 slider image URL of the room
-   */
-  slider3: string,
-  /**
-   * 4 slider image URL of the room
-   */
-  slider4: string,
-  /**
-   * 5 slider image URL of the room
-   */
-  slider5: string,
+  slider: string[],
   /**
    * Rating can be from 1 to 10
    */

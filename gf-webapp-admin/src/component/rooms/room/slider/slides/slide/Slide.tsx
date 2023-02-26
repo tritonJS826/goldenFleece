@@ -1,30 +1,36 @@
-import * as React from "react";
+import React from "react";
 import {useState} from "react";
-import {IRoom} from "../../../../../../model/room";
-import {saveRoom} from "../../../../../../service/room";
 import styles from "./slide.module.scss";
 
-export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
+interface ISlide {
+  slideImageURL: string;
+  index: number;
+  saveSliderImages:(imageURL: string, index: number) => void;
+}
+
+export const Slide = ({slideImageURL, index, saveSliderImages}: ISlide) => {
+
   const [isHover, setIsHover] = useState(false);
   const [isImgModalShow, setIsImgModalShow] = useState(false);
-  const [promoUrl, setPromoUrl] = useState("");
+  const [currentImageUrl, setCurrentImageURL] = useState(slideImageURL);
+  const [newImageUrl, setNewImageUrl] = useState("");
 
   const hoverHandler = () => {
-    setIsHover(prev => !prev);
+    setIsHover(!isHover);
   };
 
-  const saveHandler = () => {
+  const saveImageHandler = () => {
     setIsImgModalShow(prev => !prev);
-    // room.slide = promoUrl;
-
-    saveRoom(room);
-    setPromoUrl("");
+    saveSliderImages(newImageUrl, index);
+    setCurrentImageURL(newImageUrl);
+    setNewImageUrl("");
   };
 
   const closeModal = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    target.classList.contains(styles.imgSrc) && setIsImgModalShow(prev => !prev);
+    target.classList.contains(styles.imgSrc) && setIsImgModalShow(!isImgModalShow);
   };
+
   return(
     <li className={styles.slide}>
       <div className={styles.container}>
@@ -33,7 +39,7 @@ export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
           onMouseLeave={hoverHandler}
         >
           <img className={styles.image}
-            src={String(room[(slide as keyof IRoom)])}
+            src={currentImageUrl}
             alt="slide"
           />
           {isHover &&
@@ -54,13 +60,13 @@ export const Slide = ({room, slide}:{room: IRoom, slide: string}) => {
             <div className={styles.imgSrc}
               onClick={(e) => closeModal(e)}
             >
-              <input value={promoUrl}
+              <input value={newImageUrl}
                 type="text"
-                onChange={(e) => setPromoUrl(e.target.value)}
+                onChange={(e) => setNewImageUrl(e.target.value)}
                 placeholder="Enter URL"
               />
               <button
-                onClick={saveHandler}
+                onClick={saveImageHandler}
                 className={styles.btnSave}
               >
                 Save
