@@ -30,3 +30,9 @@ export const deleteRoom = async (id: string) => {
   const res = await roomApi.apiRoomsRoomIdDelete({roomId: id});
   return res;
 };
+
+export const postRoom = async (room: IRoom) => {
+  const roomsApi = new RoomsApi;
+  const res = await roomsApi.apiRoomsPost({body: room});
+  return res;
+};

@@ -1,12 +1,21 @@
 @import '../../index';
 
 .sideMenu {
-  width: 150px;
-  height: 100vh;
-  background-color: $color-primary;
+  min-width: 180px;
+  min-height: 100%;
+  background-color: $color-secondary;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 0 20px;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.mainLink{
+  font-size: 1.2rem;
+
+  &:hover {
+    color: $color-hover;
+    transition: all .2s linear;
+  }
 }

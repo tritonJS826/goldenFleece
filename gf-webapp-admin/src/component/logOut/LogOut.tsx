@@ -12,7 +12,7 @@ export const LogOutBtn = () => {
         <button className={styles.btn}
           onClick={() => auth.signOut()}
         >
-          LogOut
+          Logout
         </button>
       </NavLink>
     </div>);

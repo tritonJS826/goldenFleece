@@ -1,0 +1,9 @@
+.servicesContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.service {
+  display: flex;
+  gap: 10px
+}

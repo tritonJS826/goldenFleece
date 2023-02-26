@@ -1,0 +1,10 @@
+@import '../../../index.scss';
+
+.addRoomModal {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $color-gray-smoky;
+  z-index: 10;
+}

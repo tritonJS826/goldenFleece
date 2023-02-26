@@ -3,12 +3,22 @@
 .container {
   display: flex;
   position: relative;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.2);
 }
 
 .image {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   min-height: 100px;
 }
 
@@ -19,13 +29,14 @@
   justify-content: center;
   align-items: center;
   color: $color-gray-light;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba($color: #000000, $alpha: 0.5);
+  height: 20%;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  cursor: pointer;
 }
 
 .imgSrc {

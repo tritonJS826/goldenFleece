@@ -3,7 +3,7 @@ import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 import {ApartmentsList} from "./apartmentsList/ApartmentsList";
-
+import styles from "./apartmentType.module.scss";
 
 export const ApartmentsType = ({room}:RoomType) => {
 
@@ -26,18 +26,20 @@ export const ApartmentsType = ({room}:RoomType) => {
   };
 
   return (
-    <div>
-      <p>
+    <div className={styles.apartments}>
+      <h4 className={styles.apartmentsTitle}>
         Room type
-      </p>
-      <ApartmentsList type={type}
-        isEditFieldDisabled={isEditFieldDisabled}
-        onChangeApatrmentType={onChangeApatrmentType}
-      />
-      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-        saveHandler={saveHandler}
-        fieldEditHandler={fieldEditHandler}
-      />
+      </h4>
+      <div className={styles.container}>
+        <ApartmentsList type={type}
+          isEditFieldDisabled={isEditFieldDisabled}
+          onChangeApatrmentType={onChangeApatrmentType}
+        />
+        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
+          saveHandler={saveHandler}
+          fieldEditHandler={fieldEditHandler}
+        />
+      </div>
     </div>
   );
 };

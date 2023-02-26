@@ -1,6 +1,6 @@
 import React from "react";
 import {ROOM_TYPES} from "../../../../../utils/roomConstants";
-
+import styles from "./apartmentsList.module.scss";
 interface IApartments {
   type: string | undefined;
   isEditFieldDisabled: boolean;
@@ -9,7 +9,8 @@ interface IApartments {
 
 export const ApartmentsList = ({type, isEditFieldDisabled, onChangeApatrmentType}: IApartments) => {
   return (
-    <select value={type}
+    <select className={styles.list}
+      value={type}
       disabled={isEditFieldDisabled}
       onChange={onChangeApatrmentType}
     >

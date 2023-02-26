@@ -3,13 +3,19 @@
 .addRoomBtn {
   background-color: $color-light-opacity70;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
   transition: all .2s linear;
 
   &:hover {
+    background-color: $color-hover;
+    color: $color-white;
+  }
+
+  &:hover > .cross::after,
+  &:hover > .cross::before {
     background-color: $color-white;
   }
 }
@@ -19,6 +25,7 @@
   width: 15px;
   height: 15px;
   margin-right: 10px;
+  
 
   &::before,
   &::after {
@@ -29,6 +36,7 @@
     height: 2px;
     width: 100%;
     background-color: $color-black;
+    transition: all .2s linear;
   }
 
   &::after {

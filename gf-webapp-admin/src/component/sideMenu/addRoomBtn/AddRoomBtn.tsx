@@ -1,18 +1,15 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./addRoomBtn.module.scss";
 
-export const AddRoomBtn = () => {
-  const [addRoom, setAddRoom] = useState(false);
-
+export const AddRoomBtn = ({showModal}: {showModal:() => void}) => {
   return (
-    <div className={styles.addRoomBtn}>
+    <div onClick={showModal}
+      className={styles.addRoomBtn}
+    >
       <span className={styles.cross} />
-      <span onClick={() => setAddRoom(prev => !prev)}>
-        AddRoom
+      <span>
+        Add room
       </span>
-      {addRoom && (<div>
-        add
-      </div>)}
     </div>
   );
 };

@@ -13,6 +13,9 @@ import {Slider} from "./slider/Slider";
 export const Room = ({room}: RoomType) => {
   return (
     <div className={styles.room}>
+      <h2 className={styles.title}>
+        {`Room #${Number(room.id) + 1}`}
+      </h2>
       <ApartmentsType room={room} />
       <Description room={room} />
       <LongDescription room={room} />

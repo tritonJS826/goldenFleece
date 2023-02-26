@@ -29,10 +29,10 @@ export const Services = ({room}: RoomType) => {
 
   return (
     <div className={styles.services}>
-      <p>
+      <p className={styles.title}>
         Room services
       </p>
-      <ul className={styles.servicesContainer}>
+      <ul className={styles.container}>
         {BASE_SERVICES.map(service => (
           <li className={styles.service}
             key={service}
