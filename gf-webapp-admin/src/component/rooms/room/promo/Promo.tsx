@@ -9,11 +9,11 @@ export const Promo = ({room}: RoomType) => {
   const [newPromoImageUrl, setNewPromoImageUrl] = useState("");
 
   const hoverHandler = () => {
-    setIsHover(prev => !prev);
+    setIsHover(!isHover);
   };
 
   const saveHandler = () => {
-    setIsImgModalShow(prev => !prev);
+    setIsImgModalShow(!isImgModalShow);
     room.promo = newPromoImageUrl;
     saveRoom(room);
     setNewPromoImageUrl("");
@@ -21,12 +21,12 @@ export const Promo = ({room}: RoomType) => {
 
   const closeModal = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    target.classList.contains(styles.imgSrc) && setIsImgModalShow(prev => !prev);
+    target.classList.contains(styles.imgSrc) && setIsImgModalShow(!isImgModalShow);
   };
 
   return (
     <div className={styles.promo}>
-      <p>
+      <p className={styles.title}>
         Promo
       </p>
       <div className={styles.container}>
@@ -34,13 +34,21 @@ export const Promo = ({room}: RoomType) => {
           onMouseEnter={hoverHandler}
           onMouseLeave={hoverHandler}
         >
-          <img className={styles.image}
-            src={room.promo}
-            alt="room-promo"
-          />
+          {room.promo ?
+            (
+              <img className={styles.image}
+                src={room.promo}
+                alt="room-promo"
+              />
+            ) : (
+              <p className={styles.addImage}>
+                Add Image
+              </p>
+            )}
+
           {isHover &&
             (
-              <div onClick={() => setIsImgModalShow(prev => !prev)}
+              <div onClick={() => setIsImgModalShow(!isImgModalShow)}
                 className={styles.overlay}
               >
                 <span>
@@ -59,7 +67,7 @@ export const Promo = ({room}: RoomType) => {
               <input value={newPromoImageUrl}
                 type="text"
                 onChange={(e) => setNewPromoImageUrl(e.target.value)}
-                placeholder="Enter URL"
+                placeholder="Enter image URL"
               />
               <button
                 onClick={saveHandler}

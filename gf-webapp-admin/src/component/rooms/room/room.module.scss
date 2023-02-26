@@ -1,8 +1,26 @@
 @import '../../../index.scss';
 
 .room {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  border: 1px solid $color-black;
+  gap: 10px;
+  padding: 20px;
+  background-color: $color-background;
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+}
+
+.title {
+  width: 100%;
+  align-self: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $color-disabled;
+  padding-bottom: 5px;
+  text-align: center;
 }

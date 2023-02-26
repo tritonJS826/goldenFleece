@@ -1,0 +1,19 @@
+.servicesContainer {
+  display: flex;
+  flex-direction: column;
+  
+  .label {
+    font-weight: 400;
+  }
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.service {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}

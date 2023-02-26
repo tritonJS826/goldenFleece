@@ -3,6 +3,7 @@ import {RoomType} from "../../../../model/room";
 import {useState} from "react";
 import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
+import styles from "./price.module.scss";
 
 export const Price = ({room}: RoomType) => {
   const [price, setPrice] = useState(String(room.price));
@@ -19,20 +20,22 @@ export const Price = ({room}: RoomType) => {
   };
 
   return (
-    <div>
+    <div className={styles.price}>
       <label htmlFor={`price-${room.id}`}>
         Room price
       </label>
-      <input type="number"
-        id={`price-${room.id}`}
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
-        disabled={isEditFieldDisabled}
-      />
-      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-        saveHandler={saveHandler}
-        fieldEditHandler={fieldEditHandler}
-      />
+      <div className={styles.container}>
+        <input type="number"
+          id={`price-${room.id}`}
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          disabled={isEditFieldDisabled}
+        />
+        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
+          saveHandler={saveHandler}
+          fieldEditHandler={fieldEditHandler}
+        />
+      </div>
     </div>
   );
 };

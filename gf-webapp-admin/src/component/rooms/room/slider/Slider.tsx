@@ -6,8 +6,8 @@ import {Slides} from "./slides/Slides";
 export const Slider = ({room}: RoomType) => {
   return (
     <div className={styles.slider}>
-      <p>
-        Slider
+      <p className={styles.title}>
+        Room slider
       </p>
       <Slides room={room} />
     </div>

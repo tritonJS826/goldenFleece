@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
+import styles from "./longDescription.module.scss";
 
 export const LongDescription = ({room}: RoomType) => {
   const [description, setDescription] = useState(String(room.descriptionLong));
@@ -17,20 +18,23 @@ export const LongDescription = ({room}: RoomType) => {
     setIsEditFieldDisabled(false);
   };
   return (
-    <div>
+    <div className={styles.longDescription}>
       <label htmlFor={`description-long-${room.id}`}>
         Room long description
       </label>
-      <textarea
-        id={`description-long-${room.id}`}
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        disabled={isEditFieldDisabled}
-      />
-      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-        saveHandler={saveHandler}
-        fieldEditHandler={fieldEditHandler}
-      />
+      <div className={styles.container}>
+        <textarea
+          id={`description-long-${room.id}`}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          disabled={isEditFieldDisabled}
+          placeholder="Enter full description"
+        />
+        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
+          saveHandler={saveHandler}
+          fieldEditHandler={fieldEditHandler}
+        />
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./editBtn.module.scss";
 
 interface IEditBtn {
   isEditFieldDisabled: boolean;
@@ -9,13 +10,17 @@ interface IEditBtn {
 export const EditBtn = ({isEditFieldDisabled, saveHandler, fieldEditHandler}: IEditBtn) => {
   return isEditFieldDisabled ?
     (
-      <button onClick={fieldEditHandler}>
+      <button className={styles.editBtn}
+        onClick={fieldEditHandler}
+      >
         Edit
       </button>
     )
     :
     (
-      <button onClick={saveHandler}>
+      <button className={styles.editBtn}
+        onClick={saveHandler}
+      >
         Save
       </button>
     );

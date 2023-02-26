@@ -1,17 +1,30 @@
-import * as React from "react";
+import React, {useState} from "react";
 import styles from "./sideMenu.module.scss";
-import {LogOutBtn} from "../../component/logOut/LogOut";
+import {LogOutBtn} from "../logOut/LogOut";
 import {Link} from "react-router-dom";
-import {AddRoom} from "./addRoom/AddRoom";
+import {AddRoomBtn} from "./addRoomBtn/AddRoomBtn";
+import {AddRoomModal} from "./addRoomModal/AddRoomModal";
+import {Registration} from "../registration/Registration";
 
 export const SideMenu = () => {
+  const [isModalShown, setIsModalShown] = useState(false);
+
+  const showModal = () => {
+    setIsModalShown(!isModalShown);
+    document.body.classList.toggle("notScrollable");
+  };
+
   return (
     <div className={styles.sideMenu}>
-      <LogOutBtn />
-      <Link to="/">
-        Rooms
+      <Link className={styles.mainLink}
+        to="/"
+      >
+        Main page
       </Link>
-      <AddRoom />
+      <AddRoomBtn showModal={showModal} />
+      <Registration />
+      {isModalShown && <AddRoomModal showModal={showModal} />}
+      <LogOutBtn />
     </div>
   );
 };

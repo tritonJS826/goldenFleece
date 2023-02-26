@@ -21,7 +21,7 @@ export const Rooms = () => {
 
   return (
     <div className={styles.rooms}>
-      <h2>
+      <h2 className={styles.title}>
         Rooms
       </h2>
       <RoomsList rooms={rooms} />

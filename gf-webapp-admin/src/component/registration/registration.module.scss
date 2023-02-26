@@ -1,0 +1,42 @@
+@import '../../index.scss';
+
+
+
+.form,
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  color: $color-back;
+}
+
+.title {
+  text-align: center;
+}
+
+.field {
+  label{
+    margin-bottom: 5px;
+  }
+  input {
+    padding: 5px;
+    width: 160px;
+    border: none;
+    outline: none;
+  }
+}
+
+.registrationBtn {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+  font-size: 1.1rem;
+
+  &:hover {
+    background-color: $color-hover;
+  }
+}

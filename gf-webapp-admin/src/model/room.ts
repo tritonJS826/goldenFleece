@@ -17,3 +17,14 @@ export type RoomType = {
 export type RoomsType = {
   rooms:IRoom[]
 }
+
+export interface IAddRoom {
+  apartmentsType: string,
+  description: string,
+  descriptionLong: string,
+  price: number,
+  promo: string,
+  rating: number
+  services: string,
+  slider: string[],
+}
