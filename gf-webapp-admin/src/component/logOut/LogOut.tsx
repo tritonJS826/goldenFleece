@@ -7,7 +7,7 @@ import styles from "./logOut.module.scss";
 export const LogOutBtn = () => {
   const {auth} = useContext(AppContext);
   return (
-    <div>
+    <div className={styles.logOut}>
       <NavLink to={LOGIN_ROUTE}>
         <button className={styles.btn}
           onClick={() => auth.signOut()}

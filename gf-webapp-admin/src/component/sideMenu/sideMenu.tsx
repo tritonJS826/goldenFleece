@@ -4,6 +4,7 @@ import {LogOutBtn} from "../logOut/LogOut";
 import {Link} from "react-router-dom";
 import {AddRoomBtn} from "./addRoomBtn/AddRoomBtn";
 import {AddRoomModal} from "./addRoomModal/AddRoomModal";
+import {Registration} from "../registration/Registration";
 
 export const SideMenu = () => {
   const [isModalShown, setIsModalShown] = useState(false);
@@ -15,14 +16,15 @@ export const SideMenu = () => {
 
   return (
     <div className={styles.sideMenu}>
-      <LogOutBtn />
       <Link className={styles.mainLink}
         to="/"
       >
         Main page
       </Link>
       <AddRoomBtn showModal={showModal} />
+      <Registration />
       {isModalShown && <AddRoomModal showModal={showModal} />}
+      <LogOutBtn />
     </div>
   );
 };

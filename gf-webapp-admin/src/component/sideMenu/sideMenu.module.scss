@@ -1,14 +1,14 @@
 @import '../../index';
 
 .sideMenu {
-  min-width: 180px;
+  min-width: 200px;
   min-height: 100%;
   background-color: $color-secondary;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .mainLink{
