@@ -6,6 +6,7 @@ import {AddRoomBtn} from "./addRoomBtn/AddRoomBtn";
 import {AddRoomModal} from "./addRoomModal/AddRoomModal";
 import {Registration} from "../registration/Registration";
 
+/**SideMenu */
 export const SideMenu = () => {
   const [isModalShown, setIsModalShown] = useState(false);
 
