@@ -29,6 +29,7 @@ export const Description = ({room}: RoomType) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           disabled={isEditFieldDisabled}
+          placeholder="Enter short description"
         />
         <EditBtn isEditFieldDisabled={isEditFieldDisabled}
           saveHandler={saveHandler}

@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import {ROOM_TYPES} from "../../../../../utils/roomConstants";
 import {AddRoomContext} from "../../addRoomContext";
+import styles from "./apartmentList.module.scss";
 
 export const ApartmentsList = () => {
   const {room} = useContext(AddRoomContext);
@@ -17,7 +18,8 @@ export const ApartmentsList = () => {
   }, [apartmentType]);
 
   return (
-    <select value={apartmentType}
+    <select className={styles.list}
+      value={apartmentType}
       onChange={onChangeApatrmentType}
     >
       {ROOM_TYPES.map(roomType => (

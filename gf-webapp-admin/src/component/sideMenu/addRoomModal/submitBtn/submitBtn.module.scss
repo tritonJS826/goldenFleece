@@ -1,0 +1,16 @@
+@import '../../../../index.scss';
+
+.submitBtn {
+  font-size: 1rem;
+  padding: 5px 20px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: $color-hover;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-active;
+  }
+}

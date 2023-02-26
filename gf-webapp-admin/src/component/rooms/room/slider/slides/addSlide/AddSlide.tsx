@@ -17,7 +17,7 @@ export const AddSlide = ({addSlide}: IAddSlide) => {
     <li className={styles.addSlide}>
       Add image
       <input type="text"
-        placeholder="Enter your URL"
+        placeholder="Enter image URL"
         value={slideURL}
         onChange={(e) => setSlideURL(e.target.value)}
       />

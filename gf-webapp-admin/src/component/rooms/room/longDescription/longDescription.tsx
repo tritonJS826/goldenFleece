@@ -28,6 +28,7 @@ export const LongDescription = ({room}: RoomType) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           disabled={isEditFieldDisabled}
+          placeholder="Enter full description"
         />
         <EditBtn isEditFieldDisabled={isEditFieldDisabled}
           saveHandler={saveHandler}

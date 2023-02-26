@@ -52,7 +52,7 @@ export const AuthModal = () => {
               name="email"
               type="email"
               value={email}
-              placeholder="Enter admin@ya.ru"
+              placeholder="Enter your email"
               required
             />
           </li>
@@ -65,7 +65,7 @@ export const AuthModal = () => {
               name="password"
               type="text"
               value={password}
-              placeholder="Enter 123456"
+              placeholder="Enter your password"
               required
             />
           </li>

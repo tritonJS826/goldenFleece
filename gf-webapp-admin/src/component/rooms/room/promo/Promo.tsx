@@ -67,7 +67,7 @@ export const Promo = ({room}: RoomType) => {
               <input value={newPromoImageUrl}
                 type="text"
                 onChange={(e) => setNewPromoImageUrl(e.target.value)}
-                placeholder="Enter URL"
+                placeholder="Enter image URL"
               />
               <button
                 onClick={saveHandler}

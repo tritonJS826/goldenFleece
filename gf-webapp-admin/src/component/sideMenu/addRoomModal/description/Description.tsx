@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import {AddRoomContext} from "../addRoomContext";
+import styles from "./descriprion.module.scss";
 
 export const Description = () => {
   const {room, errors} = useContext(AddRoomContext);
@@ -20,7 +21,7 @@ export const Description = () => {
   }, [description]);
 
   return (
-    <div>
+    <div className={styles.description}>
       <label htmlFor='description'>
         Room description
       </label>
@@ -28,7 +29,7 @@ export const Description = () => {
         id='description'
         value={description}
         onChange={onChangeDescription}
-        placeholder='Enter description'
+        placeholder='Enter short description'
       />
     </div>
   );

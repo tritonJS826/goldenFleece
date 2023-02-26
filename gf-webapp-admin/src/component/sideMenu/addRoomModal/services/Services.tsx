@@ -21,7 +21,7 @@ export const Services = () => {
 
   return (
     <div className={styles.services}>
-      <p>
+      <p className={styles.title}>
         Room services
       </p>
       <ul className={styles.servicesContainer}>
@@ -34,7 +34,9 @@ export const Services = () => {
               value={service}
               onChange={onChangeRoomServices}
             />
-            <label htmlFor={`${service}-service`}>
+            <label className={styles.label}
+              htmlFor={`${service}-service`}
+            >
               {service}
             </label>
           </li>

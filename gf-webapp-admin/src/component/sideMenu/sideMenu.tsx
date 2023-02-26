@@ -7,8 +7,10 @@ import {AddRoomModal} from "./addRoomModal/AddRoomModal";
 
 export const SideMenu = () => {
   const [isModalShown, setIsModalShown] = useState(false);
+
   const showModal = () => {
     setIsModalShown(!isModalShown);
+    document.body.classList.toggle("notScrollable");
   };
 
   return (
@@ -20,7 +22,7 @@ export const SideMenu = () => {
         Main page
       </Link>
       <AddRoomBtn showModal={showModal} />
-      {isModalShown && <AddRoomModal />}
+      {isModalShown && <AddRoomModal showModal={showModal} />}
     </div>
   );
 };

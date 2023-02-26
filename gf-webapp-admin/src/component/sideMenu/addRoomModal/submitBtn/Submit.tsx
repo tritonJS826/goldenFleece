@@ -1,20 +1,21 @@
 import React, {useContext} from "react";
 import {postRoom} from "../../../../service/room";
 import {AddRoomContext} from "../addRoomContext";
+import styles from "./submitBtn.module.scss";
 
 export const SubmitBtn = () => {
-  const {room, errors} = useContext(AddRoomContext);
+  const {room} = useContext(AddRoomContext);
 
 
   const addRoom = async () => {
-    const errs = Object.values(errors);
-    console.log("errs", errs);
     await postRoom(room);
     location.reload();
   };
 
   return (
-    <button onClick={addRoom}>
+    <button className={styles.submitBtn}
+      onClick={addRoom}
+    >
       Submit
     </button>
   );

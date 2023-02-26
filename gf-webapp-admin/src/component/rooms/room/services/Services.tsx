@@ -44,7 +44,9 @@ export const Services = ({room}: RoomType) => {
               onChange={onChangeRoomServices}
               disabled={isEditFieldDisabled}
             />
-            <label htmlFor={`${service}-service-${room.id}`}>
+            <label className={styles.label}
+              htmlFor={`${service}-service-${room.id}`}
+            >
               {service}
             </label>
           </li>

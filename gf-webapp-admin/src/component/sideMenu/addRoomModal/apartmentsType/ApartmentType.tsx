@@ -4,9 +4,9 @@ import {ApartmentsList} from "./apartmentsList/ApartmentsList";
 export const ApartmentsType = () => {
   return (
     <div>
-      <p>
+      <h4>
         Room type
-      </p>
+      </h4>
       <ApartmentsList />
     </div>
   );
