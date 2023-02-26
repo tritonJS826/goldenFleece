@@ -5,7 +5,7 @@
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "react-app-rewired start & pnpm run storybook",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
