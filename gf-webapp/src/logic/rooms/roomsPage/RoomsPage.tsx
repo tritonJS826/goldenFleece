@@ -9,37 +9,6 @@ import {useTranslation} from "react-i18next";
 
 export const RoomsPage = () => {
   const {t} = useTranslation();
-  const [room, setRoom] = useState({
-    id: "",
-    services: "",
-    images: {},
-    apartmentsType: "",
-    description: "",
-    descriptionLong: "",
-    price: 200,
-    promo: "",
-    slider: "",
-    slider2: "",
-    slider3: "",
-    slider4: "",
-    slider5: "",
-    rating: 8,
-  });
-
-  const url = "http://localhost:3600/api/rooms";
-
-  const fetchData = async () => {
-    const res = await fetch(url);
-    const final = await res.json();
-    console.log(final);
-    setRoom(final);
-    return final;
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
 
   return (
     <div>
