@@ -5,8 +5,9 @@ import imgPromo from "../../../../resources/rooms/rooms.jpg";
 import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
 import {RoomBlockContext} from "./RoomBlockContext";
-import {getRooms} from "../../../../service/rooms";
+import {getRooms} from "../../../../service/roomsApi";
 import {Room} from "../../../../model/Room";
+import {Loader} from "../../../../component/loader/Loader";
 
 const textAnimation = {
   hidden: {
@@ -31,6 +32,10 @@ export const RoomBlock = () => {
       setRooms(roomsList);
     })();
   }, []);
+
+  if(!rooms.length) {
+    return <Loader />;
+  }
 
   return (
     <RoomBlockContext.Provider value={{rooms}}>
