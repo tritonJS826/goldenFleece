@@ -144,46 +144,36 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
           className={burgerActive ? `${styles.burger} ${styles.active}` : styles.burger}
           onClick={() => setBurgerActive(false)}
         >
-          <div className={styles.burger_content}
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className={styles.burger_content}>
             <ul>
-              <li className={styles.burger_item}>
-                <NavLink to="/"
-                  className={({isActive}) =>
-                    isActive ? styles.burger_item_active : styles.burger_item
-                  }
-                >
-                  {t("main")}
-                </NavLink>
-              </li>
-              <li className={styles.burger_item}>
-                <NavLink to="/rooms"
-                  className={({isActive}) =>
-                    isActive ? styles.burger_item_active : styles.burger_item
-                  }
-                >
-                  {t("rooms")}
-                </NavLink>
-              </li>
-              <li className={styles.burger_item}>
-                <NavLink to="/contacts"
-                  className={({isActive}) =>
-                    isActive ? styles.burger_item_active : styles.burger_item
-                  }
-                >
-                  {t("contacts")}
-                </NavLink>
-              </li>
-              <li className={styles.burger_item}>
-                <NavLink to="/about"
-                  className={({isActive}) =>
-                    isActive ? styles.burger_item_active : styles.burger_item
-                  }
-                >
-                  {t("about-us")}
-                </NavLink>
-              </li>
+              <NavLink to="/"
+                className={({isActive}) =>
+                  isActive ? styles.burger_item_active : styles.burger_item
+                }
+              >
+                {t("main")}
+              </NavLink>
+              <NavLink to="/rooms"
+                className={({isActive}) =>
+                  isActive ? styles.burger_item_active : styles.burger_item
+                }
+              >
+                {t("rooms")}
+              </NavLink>
+              <NavLink to="/contacts"
+                className={({isActive}) =>
+                  isActive ? styles.burger_item_active : styles.burger_item
+                }
+              >
+                {t("contacts")}
+              </NavLink>
+              <NavLink to="/about"
+                className={({isActive}) =>
+                  isActive ? styles.burger_item_active : styles.burger_item
+                }
+              >
+                {t("about-us")}
+              </NavLink>
             </ul>
           </div>
         </div>

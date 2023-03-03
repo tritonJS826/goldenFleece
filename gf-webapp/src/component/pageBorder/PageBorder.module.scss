@@ -498,18 +498,27 @@
         justify-content: space-evenly;
 
         .burger_item {
+          text-decoration: none;
           color: white;
           padding: 10px 15px;
-          text-decoration: none;
+          cursor: pointer;
           list-style: none;
           font-size: 32px;
           font-family: Montserrat Regular;
-          cursor: pointer;
           transition: color 0.3s linear;
 
           &:hover {
             color: $color-primary;
           }
+        }
+
+        .burger_item_active {
+          text-decoration: none;
+          color: $color-primary;
+          cursor: default;
+          padding: 10px 15px;
+          font-size: 32px;
+          font-family: Montserrat Regular;
         }
       }
     }
@@ -520,11 +529,6 @@
   }
 }
 
-.burger_item_active {
-  text-decoration: none;
-  color: $color-primary;
-  cursor: default;
-}
 
 .footer_link {
   color: $color-text;
