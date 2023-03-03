@@ -5,10 +5,11 @@ export const Square = () => {
   const {room} = useContext(AddRoomContext);
   const [square, setSquare] = useState(String(room.square));
 
-  const onChangePrice = (e: React.ChangeEvent) => {
+  const onChangeSquare = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
     setSquare(target.value);
   };
+
   useEffect(() => {
     room.square = +square;
   }, [square]);
@@ -21,7 +22,7 @@ export const Square = () => {
       <input type="number"
         id='square'
         value={square}
-        onChange={onChangePrice}
+        onChange={onChangeSquare}
       />
     </div>
   );

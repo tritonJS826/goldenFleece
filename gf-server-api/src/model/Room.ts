@@ -53,7 +53,7 @@
  *             required: true
  *             description: The room's square.
  *             example: 30
- *           audits:
+ *           adults:
  *             type: number
  *             required: true
  *             description: The room's audits number.

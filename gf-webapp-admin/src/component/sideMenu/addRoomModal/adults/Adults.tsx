@@ -6,10 +6,11 @@ export const Adults = () => {
   const {room} = useContext(AddRoomContext);
   const [adults, setAdults] = useState(String(room.adults));
 
-  const onChangePrice = (e: React.ChangeEvent) => {
+  const onChangeAdults = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
     setAdults(target.value);
   };
+
   useEffect(() => {
     room.adults = +adults;
   }, [adults]);
@@ -22,7 +23,7 @@ export const Adults = () => {
       <input type="number"
         id='adults'
         value={adults}
-        onChange={onChangePrice}
+        onChange={onChangeAdults}
       />
     </div>
   );
