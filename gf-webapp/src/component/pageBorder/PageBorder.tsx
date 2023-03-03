@@ -233,61 +233,6 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               </li>
             </ul>
           </div>
-          <div className={styles.line} />
-          <div className={styles.creators}>
-            <a
-              href="https://github.com/Ekaterina1994"
-              className={styles.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ekaterina1994
-              <img
-                className={styles.githubLogo}
-                src={githubLogo}
-                alt="GitHub"
-              />
-            </a>
-            <a
-              href="https://github.com/scorpigg"
-              className={styles.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              scorpigg
-              <img
-                className={styles.githubLogo}
-                src={githubLogo}
-                alt="GitHub"
-              />
-            </a>
-            <a
-              href="https://github.com/SergioAJS"
-              className={styles.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              SergioAJS
-              <img
-                className={styles.githubLogo}
-                src={githubLogo}
-                alt="GitHub"
-              />
-            </a>
-            <div className={styles.year}>
-              © 2023
-            </div>
-            <a
-              href="https://rs.school/js/"
-              className={styles.course}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={rsSchoolLogo}
-                alt="rsSchool"
-              />
-            </a>
-          </div>
         </footer>
       </div>
     </div>
