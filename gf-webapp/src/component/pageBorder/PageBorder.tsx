@@ -142,7 +142,10 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
         </nav>
         <div
           className={burgerActive ? `${styles.burger} ${styles.active}` : styles.burger}
-          onClick={() => setBurgerActive(false)}
+          onClick={() => {
+            setBurgerActive(false);
+            document.body.classList.remove("notScrollable");
+          }}
         >
           <div className={styles.burger_content}>
             <ul>
