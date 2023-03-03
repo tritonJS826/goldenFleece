@@ -4,6 +4,8 @@ export interface IRoom {
   descriptionLong?: string,
   id?: string,
   price?: number,
+  square?: number,
+  adults?: number,
   promo?: string,
   rating?: number
   services?: string,
@@ -23,6 +25,8 @@ export interface IAddRoom {
   description: string,
   descriptionLong: string,
   price: number,
+  square: number,
+  adults: number,
   promo: string,
   rating: number
   services: string,

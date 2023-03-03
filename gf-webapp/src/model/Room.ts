@@ -4,6 +4,8 @@ export interface Room {
   descriptionLong?: string,
   id?: string,
   price?: number,
+  square?: number,
+  adults?: number,
   promo?: string,
   rating?: number
   services?: string,

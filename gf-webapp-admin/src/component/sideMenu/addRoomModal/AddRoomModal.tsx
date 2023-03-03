@@ -3,6 +3,7 @@ import {Promo} from "../../rooms/room/promo/Promo";
 import {Slider} from "../../rooms/room/slider/Slider";
 import {AddRoomContext} from "./addRoomContext";
 import styles from "./addRoomModal.module.scss";
+import {Adults} from "./adults/Adults";
 import {ApartmentsType} from "./apartmentsType/ApartmentType";
 import {CloseBtn} from "./closeBtn/CloseBtn";
 import {Description} from "./description/Description";
@@ -13,6 +14,7 @@ import {Rating} from "./rating/Rating";
 import {errors, room} from "./room";
 import {Services} from "./services/Services";
 import {IShowModal} from "./showModal";
+import {Square} from "./square/Square";
 import {SubmitBtn} from "./submitBtn/Submit";
 
 export const AddRoomModal = ({showModal}: IShowModal) => {
@@ -26,8 +28,12 @@ export const AddRoomModal = ({showModal}: IShowModal) => {
         <ApartmentsType />
         <Description />
         <LongDescription />
-        <Price />
-        <Rating />
+        <div className={styles.wrapper}>
+          <Price />
+          <Rating />
+          <Square />
+          <Adults />
+        </div>
         <Services />
         <Promo room={room} />
         <Slider room={room} />

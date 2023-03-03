@@ -5,6 +5,8 @@ export const room: IAddRoom = {
   description: "",
   descriptionLong: "",
   price: 0,
+  square: 30,
+  adults: 1,
   promo: "",
   rating: 0,
   services: "",

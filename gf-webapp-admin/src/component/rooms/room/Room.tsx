@@ -1,5 +1,6 @@
 import React from "react";
 import {RoomType} from "../../../model/room";
+import {Adults} from "./adults/Adults";
 import {ApartmentsType} from "./apartmentType/ApartmentType";
 import {Description} from "./description/Description";
 import {LongDescription} from "./longDescription/longDescription";
@@ -9,6 +10,7 @@ import {Rating} from "./rating/Rating";
 import styles from "./room.module.scss";
 import {Services} from "./services/Services";
 import {Slider} from "./slider/Slider";
+import {Square} from "./square/Square";
 
 export const Room = ({room}: RoomType) => {
   return (
@@ -20,8 +22,12 @@ export const Room = ({room}: RoomType) => {
       <Description room={room} />
       <LongDescription room={room} />
       <Services room={room} />
-      <Rating room={room} />
-      <Price room={room} />
+      <div className={styles.wrapper}>
+        <Rating room={room} />
+        <Price room={room} />
+        <Square room={room} />
+        <Adults room={room} />
+      </div>
       <Promo room={room} />
       <Slider room={room} />
     </div>

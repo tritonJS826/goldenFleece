@@ -24,3 +24,9 @@
   padding-bottom: 5px;
   text-align: center;
 }
+
+.wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 150px);
+}

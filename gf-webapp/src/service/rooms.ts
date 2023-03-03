@@ -5,3 +5,7 @@ export const getRooms = async () => {
   const res = await roomsApi.apiRoomsGet();
   return res;
 };
+
+export const getRoomNumber = (id:string | undefined) => {
+  return id && +id < 10 ? `0${Number(id) + 1}` : id;
+};

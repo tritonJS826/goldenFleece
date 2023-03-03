@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
 import styles from "./roomBlock.module.scss";
-import imgPromo from "../../../../resources/rooms/rooms.jpg";
 import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
 import {RoomBlockContext} from "./RoomBlockContext";
-import {getRooms} from "../../../../service/roomsApi";
+import {getRoomNumber, getRooms} from "../../../../service/rooms";
 import {Room} from "../../../../model/Room";
 import {Loader} from "../../../../component/loader/Loader";
 
@@ -25,6 +24,8 @@ export const RoomBlock = () => {
   const {t} = useTranslation();
 
   const [rooms, setRooms] = useState<Room[]>([]);
+  console.log("rooms", rooms);
+  const UPPER_INDEX = 2;
 
   useEffect(() => {
     (async () => {
@@ -40,144 +41,54 @@ export const RoomBlock = () => {
   return (
     <RoomBlockContext.Provider value={{rooms}}>
       <div>
-        <div className={styles.wrap}
-          id={"single"}
-        >
-          <div className={styles.backImageWrap}>
-            <img className={styles.backImage}
-              src={imgPromo}
-              alt="Single room"
-            />
-          </div>
-          <motion.div
-            variants={textAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{amount: 0.1, once: true}}
-            className={styles.roomAbout}
+        {rooms.map(room => (
+          <div className={styles.wrap}
+            id={room.apartmentsType?.toLocaleLowerCase()}
+            key={room.id}
           >
-            <span className={styles.span}>
-              01
-            </span>
-            <h3 className={styles.titleBook}>
-              {t("singleRoom")}
-            </h3>
-            <div className={styles.settingsRoom}>
-              30
-              {" "}
-              {t("dimension")}
-              <span className={styles.sub}>
-                2
-              </span>
-              {" "}
-              / 1
-              {" "}
-              {t("adults1")}
+            <div className={styles.backImageWrap}>
+              <img className={styles.backImage}
+                src={room.promo}
+                alt="room"
+              />
             </div>
-            <div className={styles.description}>
-              {t("wakeUp")}
-            </div>
-            <NavLink to="/rooms/0"
-              className={styles.roomLink}
+            <motion.div
+              variants={textAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{amount: 0.1, once: true}}
+              className={styles.roomAbout}
             >
-              <span className={styles.linkText}>
-                {t("readMore")}
+              <span className={styles.span}>
+                {getRoomNumber(room.id)}
               </span>
-            </NavLink>
-          </motion.div>
-        </div>
-        <div className={styles.wrap}
-          id={"double"}
-        >
-          <div className={styles.backImageWrap}>
-            <img className={styles.backImage}
-              src={imgPromo}
-              alt="Double room"
-            />
+              <h3 className={styles.titleBook}>
+                {t(`${room.apartmentsType?.toLocaleLowerCase()}Room`)}
+              </h3>
+              <div className={styles.settingsRoom}>
+                {room.square}
+                {t("dimension")}
+                <span className={styles.sub}>
+                  {`${UPPER_INDEX}`}
+                </span>
+                <span>
+                  {` / ${room.adults} `}
+                </span>
+                {t("adults1")}
+              </div>
+              <div className={styles.description}>
+                {t("wakeUp")}
+              </div>
+              <NavLink to={`/rooms/${room.id}`}
+                className={styles.roomLink}
+              >
+                <span className={styles.linkText}>
+                  {t("readMore")}
+                </span>
+              </NavLink>
+            </motion.div>
           </div>
-          <motion.div
-            variants={textAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{amount: 0.1, once: true}}
-            className={styles.roomAbout}
-          >
-            <span className={styles.span}>
-              02
-            </span>
-            <h3 className={styles.titleBook}>
-              {t("doubleRoom")}
-            </h3>
-            <div className={styles.settingsRoom}>
-              40
-              {" "}
-              {t("dimension")}
-              <span className={styles.sub}>
-                2
-              </span>
-              {" "}
-              / 2
-              {" "}
-              {t("adults")}
-            </div>
-            <div className={styles.description}>
-              {t("wakeUp")}
-            </div>
-            <NavLink to="/rooms/1"
-              className={styles.roomLink}
-            >
-              <span className={styles.linkText}>
-                {t("readMore")}
-              </span>
-            </NavLink>
-          </motion.div>
-        </div>
-        <div className={styles.wrap}
-          id={"twin"}
-        >
-          <div className={styles.backImageWrap}>
-            <img className={styles.backImage}
-              src={imgPromo}
-              alt="Twin room"
-            />
-          </div>
-          <motion.div
-            variants={textAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{amount: 0.1, once: true}}
-            className={styles.roomAbout}
-          >
-            <span className={styles.span}>
-              03
-            </span>
-            <h3 className={styles.titleBook}>
-              {t("twinRoom")}
-            </h3>
-            <div className={styles.settingsRoom}>
-              35
-              {" "}
-              {t("dimension")}
-              <span className={styles.sub}>
-                2
-              </span>
-              {" "}
-              / 2
-              {" "}
-              {t("adults")}
-            </div>
-            <div className={styles.description}>
-              {t("wakeUp")}
-            </div>
-            <NavLink to="/rooms/2"
-              className={styles.roomLink}
-            >
-              <span className={styles.linkText}>
-                {t("readMore")}
-              </span>
-            </NavLink>
-          </motion.div>
-        </div>
+        ))}
       </div>
     </RoomBlockContext.Provider>
   );
