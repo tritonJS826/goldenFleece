@@ -6,6 +6,7 @@ import {MapContext} from "./MapContext";
 import {IMarker} from "./mapInterfaces";
 import {ItemDescription} from "./itemDescription/ItemDescription";
 import {markers} from "./mapMarkersList";
+import {ZoomMap} from "./zoomMap/ZoomMap";
 
 export const Map = () => {
   const [dragging, setDragging] = useState(false);
@@ -77,6 +78,7 @@ export const Map = () => {
       >
         <MapContent mouseDownHandler={mouseDownHandler} />
       </div>
+      <ZoomMap />
     </MapContext.Provider>
   );
 };
