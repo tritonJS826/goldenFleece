@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import styles from "./roomBlock.module.scss";
 import imgPromo from "../../../../resources/rooms/rooms.jpg";
 import {motion} from "framer-motion";
-import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../../../context/Context";
 
 const textAnimation = {
   hidden: {
@@ -18,7 +18,8 @@ const textAnimation = {
 };
 
 export const RoomBlock = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
+
   return (
     <div>
       <div className={styles.wrap}
@@ -41,28 +42,28 @@ export const RoomBlock = () => {
             01
           </span>
           <h3 className={styles.titleBook}>
-            {t("singleRoom")}
+            {language.roomInfo.singleRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             30
             {" "}
-            {t("dimension")}
+            {language.roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 1
             {" "}
-            {t("adults1")}
+            {language.roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {t("wakeUp")}
+            {language.roomInfo.singleRoomDescription}
           </div>
           <NavLink to="/rooms/0"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {t("readMore")}
+              {language.roomsPage.moreButtonText}
             </span>
           </NavLink>
         </motion.div>
@@ -87,28 +88,28 @@ export const RoomBlock = () => {
             02
           </span>
           <h3 className={styles.titleBook}>
-            {t("doubleRoom")}
+            {language.roomInfo.doubleRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             40
             {" "}
-            {t("dimension")}
+            {language.roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 2
             {" "}
-            {t("adults")}
+            {language.roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {t("wakeUp")}
+            {language.roomInfo.doubleRoomDescription}
           </div>
           <NavLink to="/rooms/1"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {t("readMore")}
+              {language.roomsPage.moreButtonText}
             </span>
           </NavLink>
         </motion.div>
@@ -133,28 +134,28 @@ export const RoomBlock = () => {
             03
           </span>
           <h3 className={styles.titleBook}>
-            {t("twinRoom")}
+            {language.roomInfo.twinRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             35
             {" "}
-            {t("dimension")}
+            {language.roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 2
             {" "}
-            {t("adults")}
+            {language.roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {t("wakeUp")}
+            {language.roomInfo.twinRoomDescription}
           </div>
           <NavLink to="/rooms/2"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {t("readMore")}
+              {language.roomsPage.moreButtonText}
             </span>
           </NavLink>
         </motion.div>

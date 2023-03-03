@@ -13,10 +13,10 @@ export const MapContent = (props: mapContent) => {
       onMouseDown={(e) => props.mouseDownHandler(e)}
       className={styles.content}
     >
-      {markers.map((marker) => (<Marker {...marker}
-        key={marker.id}
-      // eslint-disable-next-line react/jsx-closing-bracket-location
-      />))}
+      {markers.map((marker) => (
+        <Marker {...marker}
+          key={marker.id}
+        />))}
     </div>
   );
 };

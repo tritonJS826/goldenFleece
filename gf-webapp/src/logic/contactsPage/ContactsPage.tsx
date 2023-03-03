@@ -2,10 +2,12 @@ import React, {useState} from "react";
 import {send} from "emailjs-com";
 import styles from "./ContactsPage.module.scss";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
-import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../context/Context";
+
 
 export const ContactsPage = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
+
   const [toSend, setToSend] = useState({
     to_name: "",
     message: "",
@@ -44,31 +46,30 @@ export const ContactsPage = () => {
       <div className={styles.wrap}>
         <div className={styles.contacts}>
           <h1 className={styles.title}>
-            {t("contactUs")}
+            {language.contactsPage.title}
           </h1>
           <div className={styles.contactsData}>
             <div className={styles.minititle}>
-              {t("phone")}
+              {language.contactsPage.phone}
             </div>
             <p className={styles.text}>
               +12346789
             </p>
             <div className={styles.minititle}>
-              {t("mail")}
+              {language.contactsPage.email}
             </div>
             <p className={styles.text}>
               goldenFleece@gmain.com
             </p>
             <div className={styles.minititle}>
-              {t("address")}
+              {language.contactsPage.address}
             </div>
             <p className={styles.text}>
-              {t("street")}
-              {" "}
-              4,
+              {language.contactsPage.street}
+              ,
             </p>
             <p className={styles.text}>
-              {t("location")}
+              {language.contactsPage.location}
             </p>
           </div>
         </div>
@@ -79,7 +80,7 @@ export const ContactsPage = () => {
             <label className={styles.label}
               htmlFor="text"
             >
-              {t("yourName")}
+              {language.contactsPage.form.name}
             </label>
             <input type="text"
               className={styles.input}
@@ -95,7 +96,7 @@ export const ContactsPage = () => {
             <label className={styles.label}
               htmlFor="email"
             >
-              {t("yourEmail")}
+              {language.contactsPage.form.email}
             </label>
             <input type="email"
               className={styles.input}
@@ -111,7 +112,7 @@ export const ContactsPage = () => {
             <label className={styles.label}
               htmlFor="phone"
             >
-              {t("yourPhone")}
+              {language.contactsPage.form.phone}
             </label>
             <input type="text"
               className={styles.input}
@@ -127,7 +128,7 @@ export const ContactsPage = () => {
             <label className={styles.label}
               htmlFor="message"
             >
-              {t("message")}
+              {language.contactsPage.form.message}
             </label>
             <input type="text"
               className={styles.input}
@@ -142,7 +143,7 @@ export const ContactsPage = () => {
           <button type="submit"
             className={styles.button}
           >
-            {t("submit")}
+            {language.contactsPage.form.submit}
           </button>
         </form>
       </div>

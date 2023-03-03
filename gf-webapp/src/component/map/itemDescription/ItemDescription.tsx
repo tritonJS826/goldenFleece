@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
 import styles from "./itemDescription.module.scss";
 import {MapContext} from "../MapContext";
-import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../../context/Context";
 
 export const ItemDescription = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
   const {menuItem, setMenuItem} = useContext(MapContext);
 
   const closeHandler = () => {
@@ -23,7 +23,7 @@ export const ItemDescription = () => {
         {menuItem.name}
       </h3>
       <p className={styles.description}>
-        {t(menuItem.description)}
+        {language.component.map.goldenFleeceDescription}
       </p>
     </div>
   );

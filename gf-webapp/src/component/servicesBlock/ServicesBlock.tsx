@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./servicesBlock.module.scss";
 import {NavLink} from "react-router-dom";
 import room1 from "../../resources/rooms/1.jpg";
-import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../context/Context";
+
 
 export const ServicesBlock = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
+
   return (
     <div className={styles.services}>
       <div className={styles.service}>
@@ -17,10 +19,10 @@ export const ServicesBlock = () => {
             alt="Gastronomy"
           />
           <h3 className={styles.titleService}>
-            {t("Gastronomy")}
+            {language.component.gastronomy}
           </h3>
           <span className={styles.spanLink}>
-            {t("More")}
+            {language.component.buttonText}
           </span>
         </NavLink>
       </div>
@@ -33,10 +35,10 @@ export const ServicesBlock = () => {
             alt="Experiences"
           />
           <h3 className={styles.titleService}>
-            {t("Experiences")}
+            {language.component.experience}
           </h3>
           <span className={styles.spanLink}>
-            {t("More")}
+            {language.component.buttonText}
           </span>
         </NavLink>
       </div>
@@ -49,10 +51,10 @@ export const ServicesBlock = () => {
             alt="Spa"
           />
           <h3 className={styles.titleService}>
-            {t("Spa")}
+            {language.component.spa}
           </h3>
           <span className={styles.spanLink}>
-            {t("More")}
+            {language.component.buttonText}
           </span>
         </NavLink>
       </div>

@@ -1,56 +1,56 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import styles from "./bookingBlock.module.scss";
 
 
 export const BookingBlock = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
   return (
     <div className={styles.book}>
       <div className={styles.leftSide}>
         <p className={styles.textLeft}>
           <span className={styles.span}>
-            {t("reservations")}
+            {language.component.bookingBlock.subTitle}
           </span>
         </p>
         <h2 className={styles.titleLeft}>
-          {t("bookToday")}
+          {language.component.bookingBlock.description}
         </h2>
         <p className={styles.textLeft}>
-          {t("bookDirect")}
+          {language.component.bookingBlock.text}
         </p>
         <span className={styles.spanLink}>
-          {t("More")}
+          {language.component.bookingBlock.buttonText}
         </span>
       </div>
       <div className={styles.rightSide}>
         <h3 className={styles.titleBook}>
-          {t("whyBookDirect")}
+          {language.component.bookingBlock.bookingTitle}
         </h3>
         <ul className={styles.list}>
           <li className={styles.listItem}>
             <h4>
-              {t("bestPrice")}
+              {language.component.bookingBlock.bestPriceGuarantee}
             </h4>
             <p className={styles.text}>
-              {t("enjoy")}
+              {language.component.bookingBlock.bestPriceGuaranteeDescription}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              {t("exclusiveOffers")}
+              {language.component.bookingBlock.exclusiveOffers}
             </h4>
             <p className={styles.text}>
-              {t("bookEnjoy")}
+              {language.component.bookingBlock.exclusiveOffersDescription}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              {t("fees")}
+              {language.component.bookingBlock.noHiddenFees}
             </h4>
             <p className={styles.text}>
-              {t("extraFees")}
+              {language.component.bookingBlock.noHiddenFeesDescription}
             </p>
           </li>
         </ul>
@@ -58,7 +58,7 @@ export const BookingBlock = () => {
           className={styles.bookLink}
         >
           <span className={styles.linkText}>
-            {t("book-now")}
+            {language.component.bookButtonText}
           </span>
         </NavLink>
       </div>

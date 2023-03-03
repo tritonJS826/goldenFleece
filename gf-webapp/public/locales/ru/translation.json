@@ -1,70 +1,110 @@
 {
-  "contacts": "Контакты",
-  "book-now": "Забронировать",
-  "main": "Главная",
-  "rooms": "Комнаты",
-  "about-us": "О нас",
-  "about-us-title": "Мы всегда рады новым гостям",
-  "about-us-text": "К вашим услугам ресторан, бесплатная частная парковка, сезонный открытый бассейн и бар. А так же семейные номера и терраса, круглосуточная стойка регистрации, доставка до отеля, общая кухня и бесплатный Wi-Fi.",
-  "food": "Еда и напитки",
-  "park": "Парки",
-  "goldenFleeceDescr": "Отель Golden Fleece расположен в Кутаиси, в 4,9 км от Белого моста. К услугам гостей сезонный открытый бассейн, бесплатная частная парковка, терраса и бар.",
-  "cakeClubDescr": "Кондитерские изделия Cake Club – это лучший вкус традиционной выпечки, приготовленной только из натуральных ингредиентов.",
-  "shedevriDescr": "Shedevri предлагает вам традиционные грузинские блюда высокого качества и гарантирует лучший вкус!",
-  "tomasDescr": "Это семейная винодельня, где уже 50 лет мы делаем вино по нашим семейным технологиям.",
-  "youthParkDescr": "Молодежный парк находится в 3,5 км южнее Колхидского фонтана по проспекту Чавчавадзе. Площадь 1,4 км. Большой по кутаисским меркам и отличный для бега и в какой-то степени для езды на велосипеде.",
-  "tennisCourtDescr": "Современный спортивный комплекс для взрослых и детей (4+), где созданы все необходимые условия для полноценного тренировочного процесса теннисиста.",
-  "shengeliaStadiumDescr": "Это многоцелевой стадион в Кутаиси, используемый в основном для футбольных матчей. Это домашний стадион ФК Торпедо Кутаиси. Стадион способен вместить 12 000 человек.",
-  "roomsAbout": "Захватывающие виды, исключительный дизайн, вдохновленный природой, и роскошные удобства - наши горные люксы премиум-класса предлагают незабываемые впечатления, подобных которым нет нигде в Греции.",
-  "suites": "Апартаменты",
-  "singleRoom": "Одноместный номер",
-  "doubleRoom": "Двухместный номер",
-  "twinRoom": "Номер с двумя односпальными кроватями",
-  "Gastronomy": "Гастрономия",
-  "More": "Подробнее",
-  "Experiences": "Впечатления",
-  "Spa": "SPA",
-  "reservations": "Бронирование",
-  "bookToday": "Забронируйте свой отдых в Гранд Форест Метсово уже сегодня",
-  "bookDirect": "Бронируйте напрямую по лучшей цене, эксклюзивным предложениям и без скрытых платежей.",
-  "whyBookDirect": "Почему стоит бронировать напрямую?",
-  "bestPrice": "Гарантия лучшей цены",
-  "enjoy": "Бронируйте напрямую и наслаждайтесь самыми низкими ценами!",
-  "exclusiveOffers": "Эксклюзивные предложения",
-  "bookEnjoy": "Бронируйте напрямую и пользуйтесь эксклюзивными предложениями",
-  "fees": "Отсутствие скрытых платежей",
-  "extraFees": "Многие сайты взимают дополнительную плату за бронирование, но мы этого не делаем.",
-  "dimension": "м",
-  "adults1": "взрослый",
-  "adults2": "взрослых",
-  "wakeUp": "Проснитесь, любуясь захватывающей дух красотой гор Пиндус.",
-  "readMore": "Подробнее",
-  "moreRooms": "Больше комнат",
-  "aboutUsTitle": "Некоторые места настолько хороши для проживания, что вам не захочется спешить, находясь в них. Отель Grand Forest в Метсово - один из них.",
-  "services": "Услуги",
-  "gastronomyDescription": "Оцените современные блюда местной кухни и захватывающие дух виды в нашем фирменном ресторане Metsovo 1350m, где меню разработано исполнительным шеф-консультантом Гикасом Ксенакисом.",
-  "experience": "Впечатление",
-  "experienceDescription": "Все наши мероприятия подбираются индивидуально для каждого гостя, чтобы они запомнились вам на всю жизнь. От катания на лыжах до охоты на дикие трюфели - окружающий ландшафт предлагает множество развлечений для всех четырех сезонов.",
-  "spaDescription": "Откройте для себя ни с чем не сравнимое спокойствие в спа-центре Fountus, где в элегантной обстановке щедро предлагаются оздоровительные процедуры.",
-  "chooseRoom": "Выберите одну из комнат",
-  "booking": "Бронирование",
-  "email": "Адрес эл. почты",
-  "name": "Ваше имя",
-  "dateIn": "Дата заезда",
-  "dateOut": "Дата выезда",
-  "room": "Апартаменты",
-  "adults": "Взрослые",
-  "children": "Дети",
-  "swimmingPool": "Бассейн",
-  "contactUs": "Свяжитесь с нами",
-  "phone": "Телефон",
-  "mail": "Email",
-  "address": "Адрес",
-  "street": "Табукашвили",
-  "location": "Кутаиси, Грузия",
-  "yourName": "Ваше имя",
-  "yourEmail": "Ваш Email",
-  "yourPhone": "Ваш номер телефона",
-  "message": "Сообщение",
-  "submit": "Отправить"
+  "linkToPage": {
+    "main": "Главная",
+    "rooms": "Комнаты",
+    "contacts": "Контакты",
+    "aboutUs": "О нас"
+  },
+  "component": {
+    "border": {
+      "contacts": "Contacts",
+      "bookButtonText": "Book now"
+    },
+    "bookButtonText": "Book now",
+    "map": {
+      "foodTitle": "Food and drink",
+      "parkTitle": "Park areas",
+      "goldenFleeceDescription": "Located in Kutaisi, 4.9 km from WhiteBridge, Hotel Golden Fleece provides accommodation with a seasonal outdoor swimming pool, free private parking, a terrace and a bar",
+      "cakeClubDescription": "Сonfectionery Cake club is the best taste of traditional pastries made only from natural ingredients.",
+      "shedevriDescription": "Shedevri offers you Georgian, traditional dishes, high quality, and guarantees the best taste!",
+      "tomasDescription": "This is family winery, where already 50 year we are doing wine by our family technologies.",
+      "youthParkDescription": "Youth park is 3.5 km south from Colchis fountain along Chavchavadze avenue. Circumference is 1.4 km. Large by Kutaisi standards and excellent for running and to some extent cycling.",
+      "tennisCourtDescription": "A modern sports complex for adults and children (4+), where all the necessary conditions for a full-fledged training process of a tennis player are created.",
+      "shengeliaStadiumDescription": "It is a multi-use stadium in Kutaisi, used mostly for football matches. It is the home stadium of FC Torpedo Kutaisi. The stadium is able to hold 12,000 people."
+    },
+    "servicesBlock": {
+      "gastronomy": "Gastronomy",
+      "spa": "SPA",
+      "experiences": "expierences",
+      "buttonText": "More"
+    },
+    "bookingBlock": {
+      "subTitle": "Reservations",
+      "description": "Book your escape to Grand Forest Metsovo today",
+      "text":  "Book direct for the best price, exclusive offers and no hidden fees.",
+      "buttonText": "More",
+      "bookingTitle": "Why book direct?",
+      "bestPriceGuarantee": "Best price guarantee",
+      "bestPriceGuaranteeDescription": "Book direct and enjoy the lowest rates available!",
+      "exclusiveOffers": "Exclusive offers",
+      "exclusiveOffersDescription": "Book direct and enjoy exclusive offers",
+      "noHiddenFees": "No hidden fees",
+      "noHiddenFeesDescription": "Many websites charge extra fees for bookings, we do not."
+    }
+  },
+  "mainPage": {
+    "aboutHotelTitle": "We always welcome new guests",
+    "aboutHotelText": "This property features a restaurant, free private parking, a seasonal outdoor pool and a bar. It offers family rooms and a terrace. It offers a 24-hour front desk, a shuttle service, a shared kitchen and free Wi-Fi."
+  },
+  "roomsPage": {
+    "title": "Rooms",
+    "description": "With breathtaking views, exceptional design inspired by nature and sumptuous amenities – our premium mountain suites offer a memorable experience unlike anywhere else in Greece.",
+    "moreButtonText": "Read more"
+  },
+  "roomPage": {
+    "roomsList": "More rooms",
+    "buttonText": "More"
+  },
+  "roomInfo": {
+    "singleRoomTitle": "Single room",
+    "singleRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
+    "doubleRoomTitle": "Double room",
+    "doubleRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
+    "twinRoomTitle": "Twin room",
+    "twinRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
+    "dimension": "m",
+    "adults": "adults",
+    "children": "children"
+  },
+  "contactsPage": {
+    "title": "Свяжитесь с нами",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "street": "Tabukashvili 4",
+    "location": "Kutaisi, Georgia",
+    "form": {
+      "name": "Your name",
+      "email": "Your email address",
+      "phone": "Your phone number",
+      "message": "Message",
+      "submit": "Submit"
+    }
+  },
+  "aboutUsPage": {
+    "title": "About us",
+    "description": "Some places are so good to stay in, you don’t want to generate a rush on them. The Grand Forest hotel in Metsovo is one of them.",
+    "subtitle": "Services",
+    "gastronomy": "Gastronomy",
+    "gastronomyDescription": "Experience modern local dishes and breathtaking views at our signature restaurant, Metsovo 1350m, where the menu is created by executive consultant chef Gikas Xenakis.",
+    "experience": "Experience",
+    "experienceDescription": "All of our experiences are tailored to each individual guest – ensuring you’ll remember them for a lifetime. From skiing to wild truffle hunting, the surrounding landscape offers an array of activities for all four seasons.",
+    "spa": "SPA",
+    "spaDescription": "Discover tranquillity beyond compare at the Fountus Spa, where wellness is generously offered in an elegant environment."
+  },
+  "bookingPage": {
+    "title": "Booking",
+    "bookingText":  "Book direct for the best price, exclusive offers and no hidden fees.",
+    "form": {
+      "name": "Your name",
+      "email": "Your email address",
+      "dateIn": "Date In",
+      "dateOut": "Date Out",
+      "roomNumber": "Room",
+      "adultsAmount": "Adults",
+      "childrenAmount": "Children",
+      "buttonText": "Book now"
+    }
+  }
+
 }

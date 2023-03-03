@@ -1,15 +1,14 @@
 import React, {useState} from "react";
 import {send} from "emailjs-com";
 import styles from "./Form.module.scss";
-import {useModalVisibilityContext} from "../../../context/Context";
-import {useTranslation} from "react-i18next";
+import {useModalVisibilityContext, useCurrentLanguageContext} from "../../../context/Context";
 
 type RoomProps = {
   roomNumber: string;
 }
 
 export const Form = (props: RoomProps) => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
   const {isModalActive, setIsModalActive} = useModalVisibilityContext();
 
   const [toSend, setToSend] = useState({
@@ -59,7 +58,7 @@ export const Form = (props: RoomProps) => {
           <label className={styles.label}
             htmlFor="email"
           >
-            {t("email")}
+            {language.bookingPage.form.email}
           </label>
           <input type="email"
             className={styles.input}
@@ -75,7 +74,7 @@ export const Form = (props: RoomProps) => {
           <label className={styles.label}
             htmlFor="text"
           >
-            {t("name")}
+            {language.bookingPage.form.name}
           </label>
           <input type="text"
             className={styles.input}
@@ -92,7 +91,7 @@ export const Form = (props: RoomProps) => {
             <label className={styles.label}
               htmlFor="dateIn"
             >
-              {t("dateIn")}
+              {language.bookingPage.form.dateIn}
             </label>
             <input type="date"
               className={styles.input2}
@@ -107,7 +106,7 @@ export const Form = (props: RoomProps) => {
             <label className={styles.label}
               htmlFor="dateOut"
             >
-              {t("dateOut")}
+              {language.bookingPage.form.dateOut}
             </label>
             <input type="date"
               className={styles.input2}
@@ -123,7 +122,7 @@ export const Form = (props: RoomProps) => {
             <label className={styles.label}
               htmlFor="rooms"
             >
-              {t("room")}
+              {language.bookingPage.form.roomNumber}
             </label>
             <input type="text"
               className={styles.input}
@@ -140,7 +139,7 @@ export const Form = (props: RoomProps) => {
               <label className={styles.label}
                 htmlFor="adults"
               >
-                {t("adults")}
+                {language.bookingPage.form.adultsAmount}
               </label>
               <input type="text"
                 className={styles.input}
@@ -157,7 +156,7 @@ export const Form = (props: RoomProps) => {
               <label className={styles.label}
                 htmlFor="children"
               >
-                {t("children")}
+                {language.bookingPage.form.childrenAmount}
               </label>
               <input type="text"
                 className={styles.input}
@@ -173,7 +172,7 @@ export const Form = (props: RoomProps) => {
         <button type="submit"
           className={styles.button}
         >
-          {t("book-now")}
+          {language.bookingPage.form.buttonText}
         </button>
       </form>
     </div>

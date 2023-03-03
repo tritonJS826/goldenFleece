@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./aboutUs.module.scss";
 import frontImg from "../../resources/about-us/kutaisi.jpg";
 import {motion} from "framer-motion";
-import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../context/Context";
 
 const textAnimation = {
   hidden: {
@@ -29,7 +29,7 @@ const imageAnimation = {
 };
 
 export const AboutUs = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
 
   return (
     <div className={styles.wrapper}>
@@ -41,10 +41,10 @@ export const AboutUs = () => {
         className={styles.container}
       >
         <h2 className={styles.title}>
-          {t("about-us-title")}
+          {language.aboutUsPage.title}
         </h2>
         <p className={styles.text}>
-          {t("about-us-text")}
+          {language.aboutUsPage.description}
         </p>
       </motion.div>
       <motion.div

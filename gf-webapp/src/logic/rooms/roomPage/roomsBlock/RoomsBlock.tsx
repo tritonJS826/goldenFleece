@@ -7,13 +7,15 @@ import room3 from "../../../../resources/rooms/3.jpg";
 import room4 from "../../../../resources/rooms/4.jpg";
 import room5 from "../../../../resources/rooms/5.jpg";
 import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../../../context/Context";
 
 export const RoomsBlock = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
+
   return (
     <div className={styles.roomsWrap}>
       <h2 className={styles.title2}>
-        {t("moreRooms")}
+        {language.roomPage.roomsList}
       </h2>
       <div className={styles.rooms}>
         <div className={styles.room}>
@@ -26,10 +28,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {t("singleRoom")}
+              {language.roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {t("More")}
+              {language.roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -43,10 +45,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {t("singleRoom")}
+              {language.roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {t("More")}
+              {language.roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -60,10 +62,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {t("singleRoom")}
+              {language.roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {t("More")}
+              {language.roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -77,10 +79,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {t("singleRoom")}
+              {language.roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {t("More")}
+              {language.roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -94,10 +96,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {t("singleRoom")}
+              {language.roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {t("More")}
+              {language.roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>

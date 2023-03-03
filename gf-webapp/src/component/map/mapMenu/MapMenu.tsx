@@ -2,10 +2,11 @@ import React, {useContext} from "react";
 import {IMapMenuProps} from "../mapInterfaces";
 import {MapContext} from "../MapContext";
 import styles from "./mapMenu.module.scss";
-import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../../context/Context";
+
 
 export const MapMenu = (props: IMapMenuProps) => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
   const {markers, menuItem} = useContext(MapContext);
   const markerTypes = Array.from(new Set(markers.map(marker => marker.markerType)));
 
@@ -13,7 +14,7 @@ export const MapMenu = (props: IMapMenuProps) => {
     {markerTypes.map((markerType, index) => (
       <li key={index}>
         <p className={styles.groupName}>
-          {markerType !== "main" && t(markerType)}
+          {markerType !== "main" && markerType}
         </p>
         {markers.map(marker => (
           markerType === marker.markerType &&

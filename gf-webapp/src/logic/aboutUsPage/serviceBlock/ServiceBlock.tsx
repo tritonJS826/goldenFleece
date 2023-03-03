@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./ServiceBlock.module.scss";
 import image from "../../../resources/sliderImages/Promo3.jpg";
-import {useTranslation} from "react-i18next";
+import {useCurrentLanguageContext} from "../../../context/Context";
+
 
 export const ServiceBlock = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
+
   return (
     <div>
       <div className={styles.wrapper}>
@@ -16,26 +18,26 @@ export const ServiceBlock = () => {
           <div className={styles.over}>
             <p className={styles.textLeft}>
               <span className={styles.span}>
-                {t("services")}
+                {language.aboutUsPage.subtitle}
               </span>
             </p>
             <h2 className={styles.title}>
-              {t("Gastronomy")}
+              {language.aboutUsPage.gastronomy}
             </h2>
             <div className={styles.description}>
-              {t("gastronomyDescription")}
+              {language.aboutUsPage.gastronomyDescription}
             </div>
             <h2 className={styles.title}>
-              {t("experience")}
+              {language.aboutUsPage.experience}
             </h2>
             <div className={styles.description}>
-              {t("experienceDescription")}
+              {language.aboutUsPage.experienceDescription}
             </div>
             <h3 className={styles.title}>
-              {t("Spa")}
+              {language.aboutUsPage.spa}
             </h3>
             <div className={styles.description}>
-              {t("spaDescription")}
+              {language.aboutUsPage.spaDescription}
             </div>
           </div>
         </div>

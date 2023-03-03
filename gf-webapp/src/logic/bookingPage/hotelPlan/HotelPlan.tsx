@@ -3,11 +3,12 @@ import styles from "./HotelPlan.module.scss";
 import {Modal} from "../modal/Modal";
 import {ModalVisibilityContext} from "../../../context/Context";
 import {Form} from "../form/Form";
-import {useTranslation} from "react-i18next";
 import hotelPlan from "../../../resources/hotelPlan/hotelPlan.jpg";
+import {useCurrentLanguageContext} from "../../../context/Context";
+
 
 export const HotelPlan = () => {
-  const {t} = useTranslation();
+  const {language} = useCurrentLanguageContext();
 
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [roomNumber, setRoomNumber] = useState<string>("");
@@ -37,7 +38,7 @@ export const HotelPlan = () => {
           <div className={styles.book}>
             <div className={styles.leftSide}>
               <h1 className={styles.titleLeft}>
-                {t("bookDirect")}
+                {language.bookingPage.bookingText}
               </h1>
             </div>
             <div className={styles.rightSide}>
