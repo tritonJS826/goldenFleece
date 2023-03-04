@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import {Loader} from "../../component/loader/Loader";
 import {Room} from "../../component/rooms/room/Room";
-import {SideMenu} from "../../component/sideMenu/SideMenu";
 import {IRoom} from "../../model/room";
 import {getRoom} from "../../service/room";
+import {BorderedAdminPage} from "../borderedAdminPage/BorderedAdminPage";
 import styles from "./roomPage.module.scss";
 
 export const RoomPage = () => {
@@ -21,14 +20,12 @@ export const RoomPage = () => {
     })();
   }, []);
 
-  if(!Object.keys(room).length) {
-    return <Loader />;
-  }
-
   return (
-    <div className={styles.roomPage}>
-      <SideMenu />
-      <Room room={room} />
-    </div>
+    <BorderedAdminPage>
+      <div className={styles.roomPage}>
+        <Room room={room} />
+      </div>
+    </BorderedAdminPage>
+
   );
 };

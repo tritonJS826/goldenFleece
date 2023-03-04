@@ -34,3 +34,7 @@ export const postRoom = async (room: IRoom) => {
   const roomsApi = new RoomsApi;
   await roomsApi.apiRoomsPost({body: room});
 };
+
+export const roomInit = (room:IRoom) => {
+  return Object.keys(room).length;
+};
