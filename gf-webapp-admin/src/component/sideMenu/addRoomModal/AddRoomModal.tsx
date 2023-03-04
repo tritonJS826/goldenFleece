@@ -11,7 +11,7 @@ import {LongDescription} from "./longDescription/LongDescription";
 import {ModalOverlay} from "./modalOverlay/ModalOverlay";
 import {Price} from "./price/Price";
 import {Rating} from "./rating/Rating";
-import {errors, room} from "./room";
+import {errors, roomStartState as room} from "./roomStartState";
 import {Services} from "./services/Services";
 import {IShowModal} from "./showModal";
 import {Square} from "./square/Square";

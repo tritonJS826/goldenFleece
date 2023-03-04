@@ -16,23 +16,21 @@ export const saveRoom = async (room: IRoom) => {
 export const getRooms = async () => {
   const roomsApi = new RoomsApi;
   const res = await roomsApi.apiRoomsGet();
-  return res;
+  return res as IRoom[];
 };
 
 export const getRoom = async (id:string) => {
   const roomApi = new RoomApi;
   const res = await roomApi.apiRoomsRoomIdGet({roomId: id});
-  return res;
+  return res as IRoom;
 };
 
 export const deleteRoom = async (id: string) => {
   const roomApi = new RoomApi;
-  const res = await roomApi.apiRoomsRoomIdDelete({roomId: id});
-  return res;
+  await roomApi.apiRoomsRoomIdDelete({roomId: id});
 };
 
 export const postRoom = async (room: IRoom) => {
   const roomsApi = new RoomsApi;
-  const res = await roomsApi.apiRoomsPost({body: room});
-  return res;
+  await roomsApi.apiRoomsPost({body: room});
 };

@@ -10,7 +10,7 @@ import styles from "./roomPage.module.scss";
 export const RoomPage = () => {
   const roomParams = useParams();
   const roomId = roomParams.id;
-  const [room, setRoom] = useState<IRoom>({});
+  const [room, setRoom] = useState<IRoom>({} as IRoom);
 
   useEffect(() => {
     (async () => {

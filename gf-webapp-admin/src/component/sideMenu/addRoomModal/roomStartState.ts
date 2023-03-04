@@ -1,6 +1,6 @@
-import {IAddRoom} from "../../../model/room";
+import {IRoom} from "../../../model/room";
 
-export const room: IAddRoom = {
+export const roomStartState: IRoom = {
   apartmentsType: "Single",
   description: "",
   descriptionLong: "",
