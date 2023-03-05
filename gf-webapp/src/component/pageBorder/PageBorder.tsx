@@ -32,8 +32,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   };
 
   const [contactsOpen, setContactsOpen] = useState(false);
-  const contactsList: {[key: string]: string;} = {phone: "+123456789", email: "goldenFleece@gmain.com"};
-  const contactsArray = Object.keys(contactsList);
+  const contactsList: [phone: string, email: string] = ["+123456789", "goldenFleece@gmain.com"];
 
   const contactsHoverHandler = () => {
     setContactsOpen(prev => !prev);
@@ -55,6 +54,10 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   const burgerOpenHandler = () => {
     setBurgerActive(prev => !prev);
     document.body.classList.toggle("notScrollable");
+  };
+
+  const activeLinkHandler = (isActive: boolean) => {
+    return isActive ? styles.burger_item_active : styles.burger_item;
   };
 
   return (
@@ -90,18 +93,17 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 </svg>
               </div>
               <ul className={styles.contact_links}>
-                {contactsOpen && contactsArray.map((contact, i) => (
+                {contactsOpen && contactsList.map((contact, i) => (
                   <li onClick={onContactChoose}
                     key={i}
                   >
                     <a className={styles.link}
                       href="#"
                     >
-                      {contactsList[contact]}
+                      {contact}
                     </a>
                   </li>
                 ))}
-
               </ul>
             </li>
             <li className={styles.listItem}>
@@ -151,28 +153,28 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
             <ul>
               <NavLink to="/"
                 className={({isActive}) =>
-                  isActive ? styles.burger_item_active : styles.burger_item
+                  activeLinkHandler(isActive)
                 }
               >
                 {t("main")}
               </NavLink>
               <NavLink to="/rooms"
                 className={({isActive}) =>
-                  isActive ? styles.burger_item_active : styles.burger_item
+                  activeLinkHandler(isActive)
                 }
               >
                 {t("rooms")}
               </NavLink>
               <NavLink to="/contacts"
                 className={({isActive}) =>
-                  isActive ? styles.burger_item_active : styles.burger_item
+                  activeLinkHandler(isActive)
                 }
               >
                 {t("contacts")}
               </NavLink>
               <NavLink to="/about"
                 className={({isActive}) =>
-                  isActive ? styles.burger_item_active : styles.burger_item
+                  activeLinkHandler(isActive)
                 }
               >
                 {t("about-us")}
