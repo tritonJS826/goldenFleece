@@ -7,41 +7,27 @@ import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
 import styles from "./roomPage.module.scss";
-
-type RoomParams = {
-  id: string;
-};
+import {Room} from "../../../model/room";
+import {getRoom, roomInit} from "../../../service/rooms";
+import {Loader} from "../../../component/loader/Loader";
 
 export const RoomPage = () => {
-  const {id} = useParams<RoomParams>();
-  const [room, setRoom] = useState({
-    id: "",
-    services: "",
-    images: {},
-    apartmentsType: "",
-    description: "",
-    descriptionLong: "",
-    price: 200,
-    promo: "",
-    slider: [],
-    rating: 8,
-  });
-
-  const url = "http://localhost:3600/api/rooms";
-
-  const fetchData = async () => {
-    const res = await fetch(url);
-    const final = await res.json();
-    console.log(final[Number(id)]);
-    setRoom(final[Number(id)]);
-    return final[Number(id)];
-  };
+  const roomParams = useParams();
+  const roomId = roomParams.id;
+  const [room, setRoom] = useState({} as Room);
 
   useEffect(() => {
-    fetchData();
+    (async () => {
+      if (roomId) {
+        const roomBack = await getRoom(roomId);
+        setRoom(roomBack);
+      }
+    })();
   }, []);
 
-  return (
+  const isRoomInit = roomInit(room);
+
+  return isRoomInit ?
     <PageBorder>
       <RoomPromo promo={room.promo}
         description={room.description}
@@ -56,5 +42,7 @@ export const RoomPage = () => {
       <ServicesBlock />
       <BookingBlock />
     </PageBorder>
-  );
+    :
+    <Loader />
+  ;
 };
