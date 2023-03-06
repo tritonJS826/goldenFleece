@@ -64,6 +64,19 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     return isActive ? styles.footer_link_active : styles.footer_link;
   };
 
+  const contacts = () => (
+    contactsList.map((contact, index) => (
+      <li key={index}
+        onClick={onContactChoose}
+      >
+        <a className={styles.link}
+          href={index === 0 ? `tel:${contact}` : `mailto:${contact}`}
+        >
+          {contact}
+        </a>
+      </li>
+    )));
+
   return (
     <div className={styles.wrapper}>
       <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
@@ -97,24 +110,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 </svg>
               </div>
               <ul className={styles.contact_links}>
-                {contactsOpen ? (
-                  <>
-                    <li onClick={onContactChoose}>
-                      <a className={styles.link}
-                        href="tel:+380441234567"
-                      >
-                        {contactsList[0]}
-                      </a>
-                    </li>
-                    <li onClick={onContactChoose}>
-                      <a className={styles.link}
-                        href="mailto:ask@htmlbook.ru"
-                      >
-                        {contactsList[1]}
-                      </a>
-                    </li>
-                  </>
-                ) : null}
+                {contactsOpen && contacts()}
               </ul>
             </li>
             <li className={styles.listItem}>
