@@ -1,7 +1,7 @@
 import express from "express";
 import {roomsService} from "../service/serviceRooms";
 
-const router = express.Router();
+export const roomsRouter = express.Router();
 
 /**
  * @swagger
@@ -105,11 +105,8 @@ const router = express.Router();
  *          content:
  *            application/json: {}
 */
-router.get("/api/rooms", roomsService.getRooms);
-router.post("/api/rooms", roomsService.postRoom);
-router.get("/api/rooms/:roomId", roomsService.getRoom);
-router.put("/api/rooms/:roomId", roomsService.putRoom);
-router.delete("/api/rooms/:roomId", roomsService.deleteRoom);
-
-
-export {router};
+roomsRouter.get("/api/rooms", roomsService.getRooms);
+roomsRouter.post("/api/rooms", roomsService.postRoom);
+roomsRouter.get("/api/rooms/:roomId", roomsService.getRoom);
+roomsRouter.put("/api/rooms/:roomId", roomsService.putRoom);
+roomsRouter.delete("/api/rooms/:roomId", roomsService.deleteRoom);
