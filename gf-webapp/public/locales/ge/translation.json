@@ -1,110 +1,101 @@
 {
-  "linkToPage": {
-    "main": "Main",
-    "rooms": "Rooms",
-    "contacts": "Contacts",
-    "aboutUs": "About us"
+  "navigation": {
+    "main": "მთავარი",
+    "rooms": "ოთახები",
+    "contacts": "კონტაქტები",
+    "aboutUs": "Ჩვენს შესახებ"
   },
-  "component": {
-    "border": {
-      "contacts": "Contacts",
-      "bookButtonText": "Book now"
-    },
-    "bookButtonText": "Book now",
-    "map": {
-      "foodTitle": "Food and drink",
-      "parkTitle": "Park areas",
-      "goldenFleeceDescription": "Located in Kutaisi, 4.9 km from WhiteBridge, Hotel Golden Fleece provides accommodation with a seasonal outdoor swimming pool, free private parking, a terrace and a bar",
-      "cakeClubDescription": "Сonfectionery Cake club is the best taste of traditional pastries made only from natural ingredients.",
-      "shedevriDescription": "Shedevri offers you Georgian, traditional dishes, high quality, and guarantees the best taste!",
-      "tomasDescription": "This is family winery, where already 50 year we are doing wine by our family technologies.",
-      "youthParkDescription": "Youth park is 3.5 km south from Colchis fountain along Chavchavadze avenue. Circumference is 1.4 km. Large by Kutaisi standards and excellent for running and to some extent cycling.",
-      "tennisCourtDescription": "A modern sports complex for adults and children (4+), where all the necessary conditions for a full-fledged training process of a tennis player are created.",
-      "shengeliaStadiumDescription": "It is a multi-use stadium in Kutaisi, used mostly for football matches. It is the home stadium of FC Torpedo Kutaisi. The stadium is able to hold 12,000 people."
-    },
-    "servicesBlock": {
-      "gastronomy": "Gastronomy",
-      "spa": "SPA",
-      "experiences": "expierences",
-      "buttonText": "More"
-    },
-    "bookingBlock": {
-      "subTitle": "Reservations",
-      "description": "Book your escape to Grand Forest Metsovo today",
-      "text":  "Book direct for the best price, exclusive offers and no hidden fees.",
-      "buttonText": "More",
-      "bookingTitle": "Why book direct?",
-      "bestPriceGuarantee": "Best price guarantee",
-      "bestPriceGuaranteeDescription": "Book direct and enjoy the lowest rates available!",
-      "exclusiveOffers": "Exclusive offers",
-      "exclusiveOffersDescription": "Book direct and enjoy exclusive offers",
-      "noHiddenFees": "No hidden fees",
-      "noHiddenFeesDescription": "Many websites charge extra fees for bookings, we do not."
-    }
+  "contacts": "კონტაქტები",
+  "bookButtonText": "Დაჯავშნა",
+  "map": {
+    "foodTitle": "Საკვები და სასმელი",
+    "parkTitle": "პარკის ტერიტორიები",
+    "goldenFleeceDescription": "სასტუმრო ოქროს საწმისი მდებარეობს ქუთაისში, თეთრი ხიდიდან 4,9 კმ-ში, გთავაზობთ განთავსებას სეზონური ღია აუზით, უფასო კერძო პარკინგით, ტერასით და ბარით.",
+    "cakeClubDescription": "საკონდიტრო ნამცხვრების კლუბი არის ტრადიციული ნამცხვრების საუკეთესო გემო, რომელიც დამზადებულია მხოლოდ ნატურალური ინგრედიენტებისგან",
+    "shedevriDescription": "შედევრი გთავაზობთ ქართულ, ტრადიციულ კერძებს, მაღალ ხარისხს და საუკეთესო გემოს გარანტიას!",
+    "tomasDescription": "ეს არის საოჯახო მეღვინეობა, სადაც უკვე 50 წელია ღვინოს ჩვენი ოჯახური ტექნოლოგიებით ვაკეთებთ.",
+    "youthParkDescription": "ახალგაზრდული პარკი კოლხეთის შადრევნიდან სამხრეთით 3,5 კილომეტრში ჭავჭავაძის გამზირზეა. გარშემოწერილობა 1,4 კმ. დიდი ქუთაისის სტანდარტებით და შესანიშნავია სირბილისთვის და გარკვეულწილად ველოსიპედისთვის.",
+    "tennisCourtDescription": "თანამედროვე სპორტული კომპლექსი მოზრდილებისა და ბავშვებისთვის (4+), სადაც შექმნილია ყველა აუცილებელი პირობა ჩოგბურთელის სრულფასოვანი საწვრთნელი პროცესისთვის.",
+    "shengeliaStadiumDescription": "ეს არის მრავალფუნქციური სტადიონი ქუთაისში, რომელიც ძირითადად საფეხბურთო მატჩებისთვის გამოიყენება. ეს არის ქუთაისის ტორპედოს საშინაო სტადიონი. სტადიონი 12000 ადამიანს იტევს."
+  },
+  "servicesBlock": {
+    "gastronomy": "გასტრონომია",
+    "spa": "SPA",
+    "experiences": "გამოცდილება",
+    "buttonText": "მეტი"
+  },
+  "bookingBlock": {
+    "subTitle": "დაჯავშნა",
+    "description": "დაჯავშნეთ თქვენი გაქცევა Grand Forest Metsovo-ში დღეს",
+    "text":  "დაჯავშნეთ პირდაპირ საუკეთესო ფასად, ექსკლუზიური შეთავაზებებით და ფარული გადასახადის გარეშე.",
+    "buttonText": "მეტი",
+    "bookingTitle": "რატომ დაჯავშნოთ პირდაპირ?",
+    "bestPriceGuarantee": "საუკეთესო ფასის გარანტია",
+    "bestPriceGuaranteeDescription": "დაჯავშნეთ პირდაპირ და ისარგებლეთ ყველაზე დაბალი ფასებით!",
+    "exclusiveOffers": "ექსკლუზიური შეთავაზებები",
+    "exclusiveOffersDescription": "დაჯავშნეთ პირდაპირ და ისიამოვნეთ ექსკლუზიური შეთავაზებებით",
+    "noHiddenFees": "არანაირი ფარული გადასახადი",
+    "noHiddenFeesDescription": "ბევრი ვებსაიტი იღებს დამატებით საფასურს ჯავშნებისთვის, ჩვენ არა."
   },
   "mainPage": {
-    "aboutHotelTitle": "We always welcome new guests",
-    "aboutHotelText": "This property features a restaurant, free private parking, a seasonal outdoor pool and a bar. It offers family rooms and a terrace. It offers a 24-hour front desk, a shuttle service, a shared kitchen and free Wi-Fi."
+    "aboutHotelTitle": "ჩვენ ყოველთვის მივესალმებით ახალ სტუმრებს",
+    "aboutHotelText": "ამ ქონებას აქვს რესტორანი, უფასო კერძო პარკინგი, სეზონური ღია აუზი და ბარი. გთავაზობთ საოჯახო ოთახებს და ტერასას. ის გთავაზობთ 24-საათიან წინა მაგიდას, შატლის მომსახურებას, საერთო სამზარეულოს და უფასო Wi-Fi-ს."
   },
   "roomsPage": {
-    "title": "Rooms",
-    "description": "With breathtaking views, exceptional design inspired by nature and sumptuous amenities – our premium mountain suites offer a memorable experience unlike anywhere else in Greece.",
-    "moreButtonText": "Read more"
+    "title": "ოთახები",
+    "description": "თვალწარმტაცი ხედებით, ბუნებით შთაგონებული განსაკუთრებული დიზაინით და მდიდრული კეთილმოწყობით – ჩვენი პრემიუმ სამთო ლუქსი გთავაზობთ დასამახსოვრებელ გამოცდილებას, განსხვავებით სხვაგან საბერძნეთში.",
+    "moreButtonText": "Წაიკითხე მეტი"
   },
   "roomPage": {
-    "roomsList": "More rooms",
-    "buttonText": "More"
+    "roomsList": "მეტი ოთახი",
+    "buttonText": "მეტი"
   },
   "roomInfo": {
-    "singleRoomTitle": "Single room",
-    "singleRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
-    "doubleRoomTitle": "Double room",
-    "doubleRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
-    "twinRoomTitle": "Twin room",
-    "twinRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
-    "dimension": "m",
-    "adults": "adults",
-    "children": "children"
+    "singleRoomTitle": "Ერთსაწოლიანი ოთახი",
+    "singleRoomDescription": "გაიღვიძეთ პინდუსის მთების თვალწარმტაცი სილამაზით.",
+    "doubleRoomTitle": "Ორადგილიანი ოთახი",
+    "doubleRoomDescription": "გაიღვიძეთ პინდუსის მთების თვალწარმტაცი სილამაზით.",
+    "twinRoomTitle": "Ტყუპი ოთახი",
+    "twinRoomDescription": "გაიღვიძეთ პინდუსის მთების თვალწარმტაცი სილამაზით.",
+    "dimension": "მ",
+    "adults": "მოზარდები",
+    "children": "ბავშვები",
+    "moreButtonText": "მეტი"
   },
   "contactsPage": {
-    "title": "123",
-    "phone": "Phone",
-    "email": "Email",
-    "address": "Address",
-    "street": "Tabukashvili 4",
-    "location": "Kutaisi, Georgia",
-    "form": {
-      "name": "Your name",
-      "email": "Your email address",
-      "phone": "Your phone number",
-      "message": "Message",
-      "submit": "Submit"
-    }
+    "title": "Დაგვიკავშირდით",
+    "phone": "ტელეფონი",
+    "email": "ელფოსტა",
+    "address": "მისამართი",
+    "street": "თაბუკაშვილი 4",
+    "location": "ქუთაისი, საქართველო"
   },
   "aboutUsPage": {
-    "title": "About us",
-    "description": "Some places are so good to stay in, you don’t want to generate a rush on them. The Grand Forest hotel in Metsovo is one of them.",
-    "subtitle": "Services",
-    "gastronomy": "Gastronomy",
-    "gastronomyDescription": "Experience modern local dishes and breathtaking views at our signature restaurant, Metsovo 1350m, where the menu is created by executive consultant chef Gikas Xenakis.",
-    "experience": "Experience",
-    "experienceDescription": "All of our experiences are tailored to each individual guest – ensuring you’ll remember them for a lifetime. From skiing to wild truffle hunting, the surrounding landscape offers an array of activities for all four seasons.",
+    "title": "Ჩვენს შესახებ",
+    "description": "ზოგიერთი ადგილი იმდენად კარგია დარჩენისთვის, არ გინდა მათზე აჩქარება. სასტუმრო გრანდ ფორესტი მეცოვოში ერთ-ერთი მათგანია.",
+    "subtitle": "სერვისები",
+    "gastronomy": "გასტრონომია",
+    "gastronomyDescription": "დააგემოვნეთ თანამედროვე ადგილობრივი კერძები და თვალწარმტაცი ხედები ჩვენს გამორჩეულ რესტორანში, Metsovo 1350m, სადაც მენიუ შექმნილია აღმასრულებელი კონსულტანტი შეფ-მზარეული გიკას ქსენაკისის მიერ.",
+    "experience": "გამოცდილება",
+    "experienceDescription": "ჩვენი ყველა გამოცდილება მორგებულია თითოეულ ინდივიდუალურ სტუმარზე - იმის გარანტია, რომ თქვენ მათ მთელი ცხოვრება გემახსოვრებათ. თხილამურებით სრიალიდან ველურ ტრიუფელზე ნადირობამდე, მიმდებარე ლანდშაფტი გთავაზობთ აქტივობების მთელ რიგს ოთხივე სეზონისთვის.",
     "spa": "SPA",
-    "spaDescription": "Discover tranquillity beyond compare at the Fountus Spa, where wellness is generously offered in an elegant environment."
+    "spaDescription": "აღმოაჩინეთ სიმშვიდე Fountus Spa-ში, სადაც კეთილდღეობა გულუხვად არის შემოთავაზებული ელეგანტურ გარემოში."
   },
   "bookingPage": {
-    "title": "Booking",
-    "bookingText":  "Book direct for the best price, exclusive offers and no hidden fees.",
-    "form": {
-      "name": "Your name",
-      "email": "Your email address",
-      "dateIn": "Date In",
-      "dateOut": "Date Out",
-      "roomNumber": "Room",
-      "adultsAmount": "Adults",
-      "childrenAmount": "Children",
-      "buttonText": "Book now"
-    }
+    "title": "დაჯავშნა",
+    "bookingText":  "დაჯავშნეთ პირდაპირ საუკეთესო ფასად, ექსკლუზიური შეთავაზებებით და ფარული გადასახადის გარეშე."
+  },
+  "form": {
+    "name": "Თქვენი სახელი",
+    "email": "თქვენი ელ - ფოსტის მისამართი",
+    "phone": "Თქვენი ტელეფონის ნომერი",
+    "message": "შეტყობინება",
+    "dateIn": "თარიღი",
+    "dateOut": "თარიღი გარეთ",
+    "roomNumber": "ოთახი",
+    "adultsAmount": "მოზარდები",
+    "childrenAmount": "ბავშვები",
+    "buttonBooking": "Დაჯავშნა",
+    "buttonSubmit": "გაგზავნა"
   }
-
 }

@@ -1,5 +1,5 @@
 import {createContext, useContext} from "react";
-import en from "../../public/locales/ru/translation.json";
+import en from "../../public/locales/en/translation.json";
 
 const STUB_FUNCTION = () => undefined;
 const STUB_BOOLEAN = false;
@@ -19,17 +19,17 @@ export const ModalVisibilityContext = createContext<ModalVisibility>({
 export const useModalVisibilityContext = () => useContext(ModalVisibilityContext);
 
 
-export type CurrentLanguage = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  language: any,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setLanguage: (language: any) => void,
+export type DictionaryType = typeof en;
+
+export type CurrentDictionary = {
+  dictionary: DictionaryType,
+  setDictionary: (dictionary: DictionaryType) => void,
 }
 
 
-export const CurrentLanguageContext = createContext<CurrentLanguage>({
-  language: STUB_LANG,
-  setLanguage: STUB_FUNCTION,
-} as CurrentLanguage);
+export const CurrentDictionaryContext = createContext<CurrentDictionary>({
+  dictionary: STUB_LANG,
+  setDictionary: STUB_FUNCTION,
+} as CurrentDictionary);
 
-export const useCurrentLanguageContext = () => useContext(CurrentLanguageContext);
+export const useCurrentDictionaryContext = () => useContext(CurrentDictionaryContext);

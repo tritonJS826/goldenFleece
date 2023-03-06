@@ -1,9 +1,10 @@
 import React from "react";
+import {useCurrentDictionaryContext} from "../../../../context/Context";
 import {NavLink} from "react-router-dom";
-import styles from "./roomBlock.module.scss";
 import imgPromo from "../../../../resources/rooms/rooms.jpg";
 import {motion} from "framer-motion";
-import {useCurrentLanguageContext} from "../../../../context/Context";
+import styles from "./roomBlock.module.scss";
+
 
 const textAnimation = {
   hidden: {
@@ -18,15 +19,17 @@ const textAnimation = {
 };
 
 export const RoomBlock = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
 
   return (
     <div>
-      <div className={styles.wrap}
+      <div
+        className={styles.wrap}
         id={"single"}
       >
         <div className={styles.backImageWrap}>
-          <img className={styles.backImage}
+          <img
+            className={styles.backImage}
             src={imgPromo}
             alt="Single room"
           />
@@ -42,37 +45,40 @@ export const RoomBlock = () => {
             01
           </span>
           <h3 className={styles.titleBook}>
-            {language.roomInfo.singleRoomTitle}
+            {dictionary.roomInfo.singleRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             30
             {" "}
-            {language.roomInfo.dimension}
+            {dictionary.roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 1
             {" "}
-            {language.roomInfo.adults}
+            {dictionary.roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {language.roomInfo.singleRoomDescription}
+            {dictionary.roomInfo.singleRoomDescription}
           </div>
-          <NavLink to="/rooms/0"
+          <NavLink
+            to="/rooms/0"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {language.roomsPage.moreButtonText}
+              {dictionary.roomsPage.moreButtonText}
             </span>
           </NavLink>
         </motion.div>
       </div>
-      <div className={styles.wrap}
+      <div
+        className={styles.wrap}
         id={"double"}
       >
         <div className={styles.backImageWrap}>
-          <img className={styles.backImage}
+          <img
+            className={styles.backImage}
             src={imgPromo}
             alt="Double room"
           />
@@ -88,37 +94,40 @@ export const RoomBlock = () => {
             02
           </span>
           <h3 className={styles.titleBook}>
-            {language.roomInfo.doubleRoomTitle}
+            {dictionary.roomInfo.doubleRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             40
             {" "}
-            {language.roomInfo.dimension}
+            {dictionary.roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 2
             {" "}
-            {language.roomInfo.adults}
+            {dictionary.roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {language.roomInfo.doubleRoomDescription}
+            {dictionary.roomInfo.doubleRoomDescription}
           </div>
-          <NavLink to="/rooms/1"
+          <NavLink
+            to="/rooms/1"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {language.roomsPage.moreButtonText}
+              {dictionary.roomsPage.moreButtonText}
             </span>
           </NavLink>
         </motion.div>
       </div>
-      <div className={styles.wrap}
+      <div
+        className={styles.wrap}
         id={"twin"}
       >
         <div className={styles.backImageWrap}>
-          <img className={styles.backImage}
+          <img
+            className={styles.backImage}
             src={imgPromo}
             alt="Twin room"
           />
@@ -134,28 +143,29 @@ export const RoomBlock = () => {
             03
           </span>
           <h3 className={styles.titleBook}>
-            {language.roomInfo.twinRoomTitle}
+            {dictionary.roomInfo.twinRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             35
             {" "}
-            {language.roomInfo.dimension}
+            {dictionary.roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 2
             {" "}
-            {language.roomInfo.adults}
+            {dictionary.roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {language.roomInfo.twinRoomDescription}
+            {dictionary.roomInfo.twinRoomDescription}
           </div>
-          <NavLink to="/rooms/2"
+          <NavLink
+            to="/rooms/2"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {language.roomsPage.moreButtonText}
+              {dictionary.roomsPage.moreButtonText}
             </span>
           </NavLink>
         </motion.div>

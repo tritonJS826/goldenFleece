@@ -1,10 +1,11 @@
 import React, {useContext} from "react";
-import styles from "./itemDescription.module.scss";
+import {useCurrentDictionaryContext} from "../../../context/Context";
 import {MapContext} from "../MapContext";
-import {useCurrentLanguageContext} from "../../../context/Context";
+import styles from "./itemDescription.module.scss";
+
 
 export const ItemDescription = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
   const {menuItem, setMenuItem} = useContext(MapContext);
 
   const closeHandler = () => {
@@ -12,10 +13,12 @@ export const ItemDescription = () => {
   };
 
   return menuItem && (
-    <div onClick={closeHandler}
+    <div
+      onClick={closeHandler}
       className={styles.container}
     >
-      <img className={styles.image}
+      <img
+        className={styles.image}
         src={menuItem.imgUrl}
         alt="golden-fleece"
       />
@@ -23,7 +26,7 @@ export const ItemDescription = () => {
         {menuItem.name}
       </h3>
       <p className={styles.description}>
-        {language.component.map.goldenFleeceDescription}
+        {menuItem.description}
       </p>
     </div>
   );

@@ -1,21 +1,22 @@
 import React from "react";
-import styles from "./roomsPromo.module.scss";
+import {useCurrentDictionaryContext} from "../../../../context/Context";
 import imgPromo from "../../../../resources/rooms/rooms.jpg";
-import {useCurrentLanguageContext} from "../../../../context/Context";
+import styles from "./roomsPromo.module.scss";
 
 
 export const RoomsPromo = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
 
   return (
     <div>
       <div className={styles.wrapper}>
-        <img className={styles.promo}
+        <img
+          className={styles.promo}
           src={imgPromo}
           alt="Promo image"
         />
         <h1 className={styles.title}>
-          {language.title}
+          {dictionary.roomsPage.title}
         </h1>
       </div>
     </div>

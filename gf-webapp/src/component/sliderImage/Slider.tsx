@@ -1,16 +1,15 @@
 import React from "react";
-import styles from "./Slider.module.scss";
 import {Swiper, SwiperSlide} from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import {Autoplay, Pagination, Navigation, Keyboard} from "swiper";
 import image1 from "../../resources/sliderImages/Promo1.jpg";
 import image2 from "../../resources/sliderImages/Promo2.jpg";
 import image3 from "../../resources/sliderImages/Promo3.jpg";
 import image4 from "../../resources/sliderImages/Promo4.jpg";
 import image5 from "../../resources/sliderImages/Promo5.jpg";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import {Autoplay, Pagination, Navigation, Keyboard} from "swiper";
+import styles from "./Slider.module.scss";
 
 // TODO: render any quantity of images
 
@@ -26,14 +25,13 @@ export function Slider() {
         delay: 7000,
         disableOnInteraction: false,
       }}
-      // pagination={{clickable: true}}
-      // navigation={true}
       keyboard={{enabled: true}}
       modules={[Autoplay, Pagination, Navigation, Keyboard]}
       className={styles.swiper}
     >
       <SwiperSlide>
-        <img className={styles.image}
+        <img
+          className={styles.image}
           src={image1}
           alt="image1"
         />
@@ -44,7 +42,8 @@ export function Slider() {
         </p>
       </SwiperSlide>
       <SwiperSlide>
-        <img className={styles.image}
+        <img
+          className={styles.image}
           src={image2}
           alt="image2"
         />
@@ -55,7 +54,8 @@ export function Slider() {
         </p>
       </SwiperSlide>
       <SwiperSlide>
-        <img className={styles.image}
+        <img
+          className={styles.image}
           src={image3}
           alt="image3"
         />
@@ -66,7 +66,8 @@ export function Slider() {
         </p>
       </SwiperSlide>
       <SwiperSlide>
-        <img className={styles.image}
+        <img
+          className={styles.image}
           src={image4}
           alt="image4"
         />
@@ -77,7 +78,8 @@ export function Slider() {
         </p>
       </SwiperSlide>
       <SwiperSlide>
-        <img className={styles.image}
+        <img
+          className={styles.image}
           src={image5}
           alt="image5"
         />

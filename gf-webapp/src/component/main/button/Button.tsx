@@ -1,18 +1,19 @@
 import React from "react";
-import {useCurrentLanguageContext} from "../../../context/Context";
+import {useCurrentDictionaryContext} from "../../../context/Context";
 import {NavLink} from "react-router-dom";
 import styles from "./button.module.scss";
 
 
 export const Button = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
 
   return (
     <div className={styles.wrap}>
-      <NavLink to="/booking"
+      <NavLink
+        to="/booking"
         className={styles.button}
       >
-        {language.component.bookButtonText}
+        {dictionary.bookButtonText}
       </NavLink>
     </div>
   );

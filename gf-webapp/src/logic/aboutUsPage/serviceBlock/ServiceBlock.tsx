@@ -1,16 +1,17 @@
 import React from "react";
-import styles from "./ServiceBlock.module.scss";
+import {useCurrentDictionaryContext} from "../../../context/Context";
 import image from "../../../resources/sliderImages/Promo3.jpg";
-import {useCurrentLanguageContext} from "../../../context/Context";
+import styles from "./ServiceBlock.module.scss";
 
 
 export const ServiceBlock = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
 
   return (
     <div>
       <div className={styles.wrapper}>
-        <img className={styles.promo}
+        <img
+          className={styles.promo}
           src={image}
           alt="Promo image"
         />
@@ -18,26 +19,26 @@ export const ServiceBlock = () => {
           <div className={styles.over}>
             <p className={styles.textLeft}>
               <span className={styles.span}>
-                {language.aboutUsPage.subtitle}
+                {dictionary.aboutUsPage.subtitle}
               </span>
             </p>
             <h2 className={styles.title}>
-              {language.aboutUsPage.gastronomy}
+              {dictionary.aboutUsPage.gastronomy}
             </h2>
             <div className={styles.description}>
-              {language.aboutUsPage.gastronomyDescription}
+              {dictionary.aboutUsPage.gastronomyDescription}
             </div>
             <h2 className={styles.title}>
-              {language.aboutUsPage.experience}
+              {dictionary.aboutUsPage.experience}
             </h2>
             <div className={styles.description}>
-              {language.aboutUsPage.experienceDescription}
+              {dictionary.aboutUsPage.experienceDescription}
             </div>
             <h3 className={styles.title}>
-              {language.aboutUsPage.spa}
+              {dictionary.aboutUsPage.spa}
             </h3>
             <div className={styles.description}>
-              {language.aboutUsPage.spaDescription}
+              {dictionary.aboutUsPage.spaDescription}
             </div>
           </div>
         </div>

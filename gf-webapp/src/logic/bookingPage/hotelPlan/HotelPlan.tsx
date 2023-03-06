@@ -1,14 +1,14 @@
 import React, {useState} from "react";
-import styles from "./HotelPlan.module.scss";
-import {Modal} from "../modal/Modal";
+import {useCurrentDictionaryContext} from "../../../context/Context";
 import {ModalVisibilityContext} from "../../../context/Context";
+import {Modal} from "../modal/Modal";
 import {Form} from "../form/Form";
 import hotelPlan from "../../../resources/hotelPlan/hotelPlan.jpg";
-import {useCurrentLanguageContext} from "../../../context/Context";
+import styles from "./HotelPlan.module.scss";
 
 
 export const HotelPlan = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
 
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [roomNumber, setRoomNumber] = useState<string>("");
@@ -32,13 +32,14 @@ export const HotelPlan = () => {
       value={{isModalActive, setIsModalActive}}
     >
       <div className={styles.wrapper}>
-        <Modal active={isModalActive}
+        <Modal
+          active={isModalActive}
           setActive={setIsModalActive}
         >
           <div className={styles.book}>
             <div className={styles.leftSide}>
               <h1 className={styles.titleLeft}>
-                {language.bookingPage.bookingText}
+                {dictionary.bookingPage.bookingText}
               </h1>
             </div>
             <div className={styles.rightSide}>
@@ -46,39 +47,47 @@ export const HotelPlan = () => {
             </div>
           </div>
         </Modal>
-        <img className={styles.hotelPlan}
+        <img
+          className={styles.hotelPlan}
           src={hotelPlan}
           alt="Hotel plan"
         />
-        <div className={styles.divs}
+        <div
+          className={styles.divs}
           onClick={isBooking}
         >
-          <div id="1"
+          <div
+            id="1"
             className={`${styles.planRoom} ${styles.one}`}
           >
             Single room №1
           </div>
-          <div id="2"
+          <div
+            id="2"
             className={`${styles.planRoom} ${styles.two}`}
           >
             Single room №2
           </div>
-          <div id="3"
+          <div
+            id="3"
             className={`${styles.planRoom} ${styles.three}`}
           >
             Double room №3
           </div>
-          <div id="4"
+          <div
+            id="4"
             className={`${styles.planRoom} ${styles.four}`}
           >
             Twin room №4
           </div>
-          <div id="5"
+          <div
+            id="5"
             className={`${styles.planRoom} ${styles.five} ${styles.disabled}`}
           >
             Double room №5
           </div>
-          <div id="6"
+          <div
+            id="6"
             className={`${styles.planRoom} ${styles.six}`}
           >
             Double room №6

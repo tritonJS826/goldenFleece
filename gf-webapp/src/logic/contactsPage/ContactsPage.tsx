@@ -1,12 +1,12 @@
 import React, {useState} from "react";
+import {useCurrentDictionaryContext} from "../../context/Context";
 import {send} from "emailjs-com";
-import styles from "./ContactsPage.module.scss";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
-import {useCurrentLanguageContext} from "../../context/Context";
+import styles from "./ContactsPage.module.scss";
 
 
 export const ContactsPage = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
 
   const [toSend, setToSend] = useState({
     to_name: "",
@@ -46,43 +46,46 @@ export const ContactsPage = () => {
       <div className={styles.wrap}>
         <div className={styles.contacts}>
           <h1 className={styles.title}>
-            {language.contactsPage.title}
+            {dictionary.contactsPage.title}
           </h1>
           <div className={styles.contactsData}>
             <div className={styles.minititle}>
-              {language.contactsPage.phone}
+              {dictionary.contactsPage.phone}
             </div>
             <p className={styles.text}>
               +12346789
             </p>
             <div className={styles.minititle}>
-              {language.contactsPage.email}
+              {dictionary.contactsPage.email}
             </div>
             <p className={styles.text}>
               goldenFleece@gmain.com
             </p>
             <div className={styles.minititle}>
-              {language.contactsPage.address}
+              {dictionary.contactsPage.address}
             </div>
             <p className={styles.text}>
-              {language.contactsPage.street}
+              {dictionary.contactsPage.street}
               ,
             </p>
             <p className={styles.text}>
-              {language.contactsPage.location}
+              {dictionary.contactsPage.location}
             </p>
           </div>
         </div>
-        <form onSubmit={onSubmit}
+        <form
+          onSubmit={onSubmit}
           className={styles.form}
         >
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="text"
             >
-              {language.contactsPage.form.name}
+              {dictionary.form.name}
             </label>
-            <input type="text"
+            <input
+              type="text"
               className={styles.input}
               id="text"
               placeholder="Your name"
@@ -93,12 +96,14 @@ export const ContactsPage = () => {
             />
           </div>
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="email"
             >
-              {language.contactsPage.form.email}
+              {dictionary.form.email}
             </label>
-            <input type="email"
+            <input
+              type="email"
               className={styles.input}
               id="email"
               placeholder="Your email address"
@@ -109,12 +114,14 @@ export const ContactsPage = () => {
             />
           </div>
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="phone"
             >
-              {language.contactsPage.form.phone}
+              {dictionary.form.phone}
             </label>
-            <input type="text"
+            <input
+              type="text"
               className={styles.input}
               id="phone"
               placeholder="Your phone number"
@@ -125,12 +132,14 @@ export const ContactsPage = () => {
             />
           </div>
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="message"
             >
-              {language.contactsPage.form.message}
+              {dictionary.form.message}
             </label>
-            <input type="text"
+            <input
+              type="text"
               className={styles.input}
               id="message"
               placeholder="Message"
@@ -140,10 +149,11 @@ export const ContactsPage = () => {
               required
             />
           </div>
-          <button type="submit"
+          <button
+            type="submit"
             className={styles.button}
           >
-            {language.contactsPage.form.submit}
+            {dictionary.form.buttonSubmit}
           </button>
         </form>
       </div>

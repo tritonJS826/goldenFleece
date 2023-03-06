@@ -1,64 +1,67 @@
 import React from "react";
-import {useCurrentLanguageContext} from "../../context/Context";
+import {useCurrentDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import styles from "./bookingBlock.module.scss";
 
 
 export const BookingBlock = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
+  // const dictionary = language.bookingBlock;
+
   return (
     <div className={styles.book}>
       <div className={styles.leftSide}>
         <p className={styles.textLeft}>
           <span className={styles.span}>
-            {language.component.bookingBlock.subTitle}
+            {dictionary.bookingBlock.subTitle}
           </span>
         </p>
         <h2 className={styles.titleLeft}>
-          {language.component.bookingBlock.description}
+          {dictionary.bookingBlock.description}
         </h2>
         <p className={styles.textLeft}>
-          {language.component.bookingBlock.text}
+          {dictionary.bookingBlock.text}
         </p>
         <span className={styles.spanLink}>
-          {language.component.bookingBlock.buttonText}
+          {dictionary.bookingBlock.buttonText}
         </span>
       </div>
       <div className={styles.rightSide}>
         <h3 className={styles.titleBook}>
-          {language.component.bookingBlock.bookingTitle}
+          {dictionary.bookingBlock.bookingTitle}
         </h3>
         <ul className={styles.list}>
           <li className={styles.listItem}>
             <h4>
-              {language.component.bookingBlock.bestPriceGuarantee}
+              {dictionary.bookingBlock.bestPriceGuarantee}
             </h4>
             <p className={styles.text}>
-              {language.component.bookingBlock.bestPriceGuaranteeDescription}
+              {dictionary.bookingBlock.bestPriceGuaranteeDescription}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              {language.component.bookingBlock.exclusiveOffers}
+              {dictionary.bookingBlock.exclusiveOffers}
             </h4>
             <p className={styles.text}>
-              {language.component.bookingBlock.exclusiveOffersDescription}
+              {dictionary.bookingBlock.exclusiveOffersDescription}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              {language.component.bookingBlock.noHiddenFees}
+              {dictionary.bookingBlock.noHiddenFees}
             </h4>
             <p className={styles.text}>
-              {language.component.bookingBlock.noHiddenFeesDescription}
+              {dictionary.bookingBlock.noHiddenFeesDescription}
             </p>
           </li>
         </ul>
-        <NavLink to="/booking"
+        <NavLink
+          to="/booking"
           className={styles.bookLink}
         >
           <span className={styles.linkText}>
-            {language.component.bookButtonText}
+            {dictionary.bookButtonText}
           </span>
         </NavLink>
       </div>

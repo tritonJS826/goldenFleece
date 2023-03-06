@@ -1,10 +1,11 @@
 import React from "react";
-import styles from "./navigation.module.scss";
+import {useCurrentDictionaryContext} from "../../../../context/Context";
 import {RoomBlock} from "../roomBlock/RoomBlock";
-import {useCurrentLanguageContext} from "../../../../context/Context";
+import styles from "./navigation.module.scss";
+
 
 export const Navigation = () => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
 
 
   return (
@@ -12,30 +13,33 @@ export const Navigation = () => {
       <nav className={styles.navigation}>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <a href="#single"
+            <a
+              href="#single"
               className={styles.link}
             >
-              {language.roomInfo.singleRoomTitle}
+              {dictionary.roomInfo.singleRoomTitle}
             </a>
           </li>
           <p className={styles.line}>
             |
           </p>
           <li className={styles.listItem}>
-            <a href="#double"
+            <a
+              href="#double"
               className={styles.link}
             >
-              {language.roomInfo.doubleRoomTitle}
+              {dictionary.roomInfo.doubleRoomTitle}
             </a>
           </li>
           <p className={styles.line}>
             |
           </p>
           <li className={styles.listItem}>
-            <a href="#twin"
+            <a
+              href="#twin"
               className={styles.link}
             >
-              {language.roomInfo.twinRoomTitle}
+              {dictionary.roomInfo.twinRoomTitle}
             </a>
           </li>
         </ul>

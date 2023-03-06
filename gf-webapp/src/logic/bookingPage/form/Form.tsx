@@ -1,14 +1,14 @@
 import React, {useState} from "react";
+import {useModalVisibilityContext, useCurrentDictionaryContext} from "../../../context/Context";
 import {send} from "emailjs-com";
 import styles from "./Form.module.scss";
-import {useModalVisibilityContext, useCurrentLanguageContext} from "../../../context/Context";
 
 type RoomProps = {
   roomNumber: string;
 }
 
 export const Form = (props: RoomProps) => {
-  const {language} = useCurrentLanguageContext();
+  const {dictionary} = useCurrentDictionaryContext();
   const {isModalActive, setIsModalActive} = useModalVisibilityContext();
 
   const [toSend, setToSend] = useState({
@@ -51,16 +51,19 @@ export const Form = (props: RoomProps) => {
 
   return (
     <div>
-      <form onSubmit={onSubmit}
+      <form
+        onSubmit={onSubmit}
         className={styles.form}
       >
         <div className={styles.formGoup}>
-          <label className={styles.label}
+          <label
+            className={styles.label}
             htmlFor="email"
           >
-            {language.bookingPage.form.email}
+            {dictionary.form.email}
           </label>
-          <input type="email"
+          <input
+            type="email"
             className={styles.input}
             id="email"
             placeholder="Your email address"
@@ -71,12 +74,14 @@ export const Form = (props: RoomProps) => {
           />
         </div>
         <div className={styles.formGoup}>
-          <label className={styles.label}
+          <label
+            className={styles.label}
             htmlFor="text"
           >
-            {language.bookingPage.form.name}
+            {dictionary.form.name}
           </label>
-          <input type="text"
+          <input
+            type="text"
             className={styles.input}
             id="text"
             placeholder="Your name"
@@ -88,12 +93,14 @@ export const Form = (props: RoomProps) => {
         </div>
         <div className={styles.row}>
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="dateIn"
             >
-              {language.bookingPage.form.dateIn}
+              {dictionary.form.dateIn}
             </label>
-            <input type="date"
+            <input
+              type="date"
               className={styles.input2}
               id="dateIn"
               name="check_in"
@@ -103,12 +110,14 @@ export const Form = (props: RoomProps) => {
             />
           </div>
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="dateOut"
             >
-              {language.bookingPage.form.dateOut}
+              {dictionary.form.dateOut}
             </label>
-            <input type="date"
+            <input
+              type="date"
               className={styles.input2}
               id="dateOut"
               name="check_out"
@@ -119,12 +128,14 @@ export const Form = (props: RoomProps) => {
         </div>
         <div className={styles.row}>
           <div className={styles.formGroup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="rooms"
             >
-              {language.bookingPage.form.roomNumber}
+              {dictionary.form.roomNumber}
             </label>
-            <input type="text"
+            <input
+              type="text"
               className={styles.input}
               id="rooms"
               name="room_number"
@@ -136,12 +147,14 @@ export const Form = (props: RoomProps) => {
           </div>
           <div className={styles.row}>
             <div className={styles.formGroup}>
-              <label className={styles.label}
+              <label
+                className={styles.label}
                 htmlFor="adults"
               >
-                {language.bookingPage.form.adultsAmount}
+                {dictionary.form.adultsAmount}
               </label>
-              <input type="text"
+              <input
+                type="text"
                 className={styles.input}
                 id="adults"
                 name="adults_amount"
@@ -153,12 +166,14 @@ export const Form = (props: RoomProps) => {
           </div>
           <div className={styles.row}>
             <div className={styles.formGroup}>
-              <label className={styles.label}
+              <label
+                className={styles.label}
                 htmlFor="children"
               >
-                {language.bookingPage.form.childrenAmount}
+                {dictionary.form.childrenAmount}
               </label>
-              <input type="text"
+              <input
+                type="text"
                 className={styles.input}
                 id="children"
                 name="children_amount"
@@ -169,10 +184,11 @@ export const Form = (props: RoomProps) => {
             </div>
           </div>
         </div>
-        <button type="submit"
+        <button
+          type="submit"
           className={styles.button}
         >
-          {language.bookingPage.form.buttonText}
+          {dictionary.form.buttonBooking}
         </button>
       </form>
     </div>
