@@ -60,6 +60,10 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     return isActive ? styles.burger_item_active : styles.burger_item;
   };
 
+  const footerLinkHandler = (isActive: boolean) => {
+    return isActive ? styles.footer_link_active : styles.footer_link;
+  };
+
   return (
     <div className={styles.wrapper}>
       <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
@@ -200,7 +204,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               <li className={styles.burger_item}>
                 <NavLink to="/"
                   className={({isActive}) =>
-                    isActive ? styles.footer_link_active : styles.footer_link
+                    footerLinkHandler(isActive)
                   }
                 >
                   {t("main")}
@@ -209,7 +213,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               <li className={styles.burger_item}>
                 <NavLink to="/rooms"
                   className={({isActive}) =>
-                    isActive ? styles.footer_link_active : styles.footer_link
+                    footerLinkHandler(isActive)
                   }
                 >
                   {t("rooms")}
@@ -218,7 +222,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               <li className={styles.burger_item}>
                 <NavLink to="/contacts"
                   className={({isActive}) =>
-                    isActive ? styles.footer_link_active : styles.footer_link
+                    footerLinkHandler(isActive)
                   }
                 >
                   {t("contacts")}
@@ -227,7 +231,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               <li className={styles.burger_item}>
                 <NavLink to="/about"
                   className={({isActive}) =>
-                    isActive ? styles.footer_link_active : styles.footer_link
+                    footerLinkHandler(isActive)
                   }
                 >
                   {t("about-us")}
