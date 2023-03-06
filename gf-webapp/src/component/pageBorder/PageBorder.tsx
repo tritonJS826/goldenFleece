@@ -32,7 +32,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   };
 
   const [contactsOpen, setContactsOpen] = useState(false);
-  const contactsList: [phone: string, email: string] = ["+123456789", "goldenFleece@gmain.com"];
+  const contactsList: [phone: string, email: string] = ["+380441234567", "ask@htmlbook.ru"];
 
   const contactsHoverHandler = () => {
     setContactsOpen(prev => !prev);
@@ -93,17 +93,24 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 </svg>
               </div>
               <ul className={styles.contact_links}>
-                {contactsOpen && contactsList.map((contact, i) => (
-                  <li onClick={onContactChoose}
-                    key={i}
-                  >
-                    <a className={styles.link}
-                      href="#"
-                    >
-                      {contact}
-                    </a>
-                  </li>
-                ))}
+                {contactsOpen ? (
+                  <>
+                    <li onClick={onContactChoose}>
+                      <a className={styles.link}
+                        href="tel:+380441234567"
+                      >
+                        {contactsList[0]}
+                      </a>
+                    </li>
+                    <li onClick={onContactChoose}>
+                      <a className={styles.link}
+                        href="mailto:ask@htmlbook.ru"
+                      >
+                        {contactsList[1]}
+                      </a>
+                    </li>
+                  </>
+                ) : null}
               </ul>
             </li>
             <li className={styles.listItem}>
