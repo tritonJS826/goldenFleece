@@ -59,8 +59,8 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
 
   return (
     <div className={styles.wrapper}>
-      <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
-        <nav className={scrollPosition > 100 ? styles.nav_scroll : styles.nav}>
+      <header className={scrollPosition < 100 ? styles.header : `${styles.header} ${styles.header_scroll}`}>
+        <nav className={scrollPosition < 100 ? styles.nav : `${styles.nav} ${styles.nav_scroll}`}>
           <ul className={styles.list}>
             <li className={styles.listItem}
               onClick={burgerOpenHandler}
@@ -131,13 +131,11 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               </ul>
 
             </li>
-            <li className={styles.listItem}>
-              <NavLink to="/booking"
-                className={styles.bookingLink}
-              >
-                {t("book-now")}
-              </NavLink>
-            </li>
+            <NavLink to="/booking"
+              className={styles.listItem}
+            >
+              {t("book-now")}
+            </NavLink>
           </ul>
         </nav>
         <div

@@ -6,8 +6,6 @@
 }
 
 .nav_scroll {
-  max-width: 1980px;
-  z-index: 100;
   background-color: $color-white;
 }
 
@@ -17,146 +15,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
-  .header_scroll {
-    position: fixed;
-    z-index: 100;
-    justify-self: flex-start;
-    display: flex;
-    justify-content: center;
-    background-color: $color-white;
-    color: $color-text;
-    font-size: 1.2rem;
-    transition: all 0.6s;
-
-    .list {
-      display: flex;
-      list-style: none;
-
-      .listItem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $color-text;
-        padding: 5px;
-        transition: background 0.3s;
-
-        &:hover {
-          background-color: $color-primary;
-          cursor: pointer;
-        }
-      }
-    }
-
-    .list .listItem:first-child {
-      width: 5vw;
-      text-align: center;
-      border-left: none;
-      border-right: none;
-      display: flex;
-      flex-direction: column;
-
-      div:first-child {
-        margin-bottom: 10px;
-        border-top: 1px solid $color-text;
-        width: 30px;
-      }
-
-      div:nth-child(2) {
-        border-top: 1px solid $color-text;
-        width: 15px;
-        transition: width 0.3s;
-      }
-
-      div:last-child {
-        margin-top: 10px;
-        border-top: 1px solid $color-text;
-        width: 30px;
-      }
-
-      &:hover {
-        div:nth-child(2) {
-          width: 30px;
-        }
-      }
-    }
-
-    .list .listItem:nth-child(2) {
-      width: 15vw;
-      text-align: center;
-    }
-
-    .list .listItem:nth-child(3) {
-      width: 60vw;
-      text-align: center;
-      flex-direction: row-reverse;
-      border-left: none;
-      border-right: none;
-
-      .logo {
-        font-family: Montserrat Regular;
-        font-size: 32px;
-      }
-
-      img {
-        width: 45px;
-        height: 50px;
-      }
-
-      &:hover {
-        background-color: transparent;
-        cursor: default;
-      }
-    }
-
-    .list .listItem:nth-child(4) {
-      width: 5vw;
-      text-align: center;
-    }
-
-    .list .listItem:last-child {
-      width: 15vw;
-      text-align: center;
-      border-left: none;
-      border-right: none;
-
-      .bookingLink {
-        text-decoration: none;
-        color: $color-text;
-      }
-    }
-
-    .languages {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .langAdditional {
-      position: absolute;
-      top: 100%;
-      background-color: $color-white;
-      color: $color-text;
-      width: 100%;
-
-      li {
-        padding: 6px;
-        border-bottom: 1px solid $color-disabled;
-
-        &:hover {
-          background-color: $color-background;
-        }
-      }
-    }
-  }
-
-  .disabled {
-    pointer-events: none;
-    background-color: $color-disabled;
-    color: $color-text-disabled;
-  }
 
   .header {
     position: fixed;
@@ -259,11 +117,8 @@
       text-align: center;
       border-left: none;
       border-right: none;
-
-      .bookingLink {
-        text-decoration: none;
-        color: $color-white;
-      }
+      text-decoration: none;
+      color: $color-white;
     }
 
     .languages {
@@ -289,6 +144,47 @@
         }
       }
     }
+  }
+
+  .header_scroll {
+    background-color: $color-white;
+    color: $color-text;
+
+    .list {
+
+      .listItem {
+        border: 1px solid $color-text;
+
+        &:hover {
+          background-color: $color-primary;
+        }
+      }
+    }
+
+    .list .listItem:first-child {
+
+      div:first-child {
+        border-top: 1px solid $color-text;
+      }
+
+      div:nth-child(2) {
+        border-top: 1px solid $color-text;
+      }
+
+      div:last-child {
+        border-top: 1px solid $color-text;
+      }
+    }
+
+    .list .listItem:last-child {
+      color: $color-text;
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    background-color: $color-disabled;
+    color: $color-text-disabled;
   }
 
   .main {
@@ -480,52 +376,6 @@
 @media (max-width: 800px) {
   .wrapper {
 
-    .header_scroll {
-      font-size: 1rem;
-
-      .list .listItem:first-child {
-        width: 10vw;
-        border-right: 1px solid $color-text;
-
-        div:first-child {
-          margin-bottom: 5px;
-          width: 15px;
-        }
-
-        div:nth-child(2) {
-          width: 10px;
-        }
-
-        div:last-child {
-          margin-top: 5px;
-          width: 15px;
-        }
-
-        &:hover {
-          div:nth-child(2) {
-            width: 15px;
-          }
-        }
-      }
-
-      .list .listItem:nth-child(2) {
-        display: none;
-      }
-
-      .list .listItem:nth-child(3) {
-        width: 80vw;
-      }
-
-      .list .listItem:nth-child(4) {
-        width: 10vw;
-        border-right: none;
-      }
-
-      .list .listItem:last-child {
-        display: none;
-      }
-    }
-
     .header {
       font-size: 1rem;
 
@@ -586,7 +436,13 @@
       .list .listItem:last-child {
         display: none;
       }
+    }
 
+    .header_scroll {
+
+      .list .listItem:first-child {
+        border-right: 1px solid $color-text;
+      }
     }
   }
 }
