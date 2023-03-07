@@ -146,7 +146,8 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               </ul>
 
             </li>
-            <NavLink to="/booking"
+            <NavLink
+              to="/booking"
               className={styles.listItem}
             >
               {dictionary.bookButtonText}
