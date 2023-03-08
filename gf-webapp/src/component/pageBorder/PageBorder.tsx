@@ -14,6 +14,11 @@ interface PageBorderProps {
   children: ReactNode
 }
 
+interface Contact {
+  type: string;
+  contact: string;
+}
+
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
   const {t} = useTranslation();
   const [langOpen, setLangOpen] = useState(false);
@@ -32,7 +37,6 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   };
 
   const [contactsOpen, setContactsOpen] = useState(false);
-  const contactsList: [phone: string, email: string] = ["+380441234567", "ask@htmlbook.ru"];
 
   const contactsHoverHandler = () => {
     setContactsOpen(prev => !prev);
@@ -42,9 +46,32 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     setContactsOpen(false);
   };
 
+  const contactsList: Contact[] = [
+    {
+      type: "tel:",
+      contact: "+380441234567",
+    },
+    {
+      type: "mailto:",
+      contact: "ask@htmlbook.ru",
+    },
+  ];
+
+  const contacts = () => (
+    contactsList.map((item, index) => (
+      <li key={index}
+        onClick={onContactChoose}
+      >
+        <a className={styles.link}
+          href={item.type + item.contact}
+        >
+          {item.contact}
+        </a>
+      </li>
+    )));
+
   const scrollPosition = useScrollPosition();
   const [burgerActive, setBurgerActive] = useState(false);
-
   const location = useLocation();
 
   useEffect(() => {
@@ -63,19 +90,6 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   const footerLinkHandler = (isActive: boolean) => {
     return isActive ? styles.footer_link_active : styles.footer_link;
   };
-
-  const contacts = () => (
-    contactsList.map((contact, index) => (
-      <li key={index}
-        onClick={onContactChoose}
-      >
-        <a className={styles.link}
-          href={index === 0 ? `tel:${contact}` : `mailto:${contact}`}
-        >
-          {contact}
-        </a>
-      </li>
-    )));
 
   return (
     <div className={styles.wrapper}>
