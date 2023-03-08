@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useCurrentDictionaryContext} from "../../../context/Context";
+import {useDictionaryContext} from "../../../context/Context";
 import {ModalVisibilityContext} from "../../../context/Context";
 import {Modal} from "../modal/Modal";
 import {Form} from "../form/Form";
@@ -8,7 +8,8 @@ import styles from "./HotelPlan.module.scss";
 
 
 export const HotelPlan = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.bookingPage;
 
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [roomNumber, setRoomNumber] = useState<string>("");
@@ -39,7 +40,7 @@ export const HotelPlan = () => {
           <div className={styles.book}>
             <div className={styles.leftSide}>
               <h1 className={styles.titleLeft}>
-                {dictionary.bookingPage.bookingText}
+                {glossary.bookingText}
               </h1>
             </div>
             <div className={styles.rightSide}>

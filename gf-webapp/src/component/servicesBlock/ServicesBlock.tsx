@@ -1,12 +1,13 @@
 import React from "react";
-import {useCurrentDictionaryContext} from "../../context/Context";
+import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import room1 from "../../resources/rooms/1.jpg";
 import styles from "./servicesBlock.module.scss";
 
 
 export const ServicesBlock = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.servicesBlock;
 
   return (
     <div className={styles.services}>
@@ -21,10 +22,10 @@ export const ServicesBlock = () => {
             alt="Gastronomy"
           />
           <h3 className={styles.titleService}>
-            {dictionary.servicesBlock.gastronomy}
+            {glossary.gastronomy}
           </h3>
           <span className={styles.spanLink}>
-            {dictionary.servicesBlock.buttonText}
+            {glossary.buttonText}
           </span>
         </NavLink>
       </div>
@@ -39,10 +40,10 @@ export const ServicesBlock = () => {
             alt="Experiences"
           />
           <h3 className={styles.titleService}>
-            {dictionary.servicesBlock.experiences}
+            {glossary.experiences}
           </h3>
           <span className={styles.spanLink}>
-            {dictionary.servicesBlock.buttonText}
+            {glossary.buttonText}
           </span>
         </NavLink>
       </div>
@@ -57,10 +58,10 @@ export const ServicesBlock = () => {
             alt="Spa"
           />
           <h3 className={styles.titleService}>
-            {dictionary.servicesBlock.spa}
+            {glossary.spa}
           </h3>
           <span className={styles.spanLink}>
-            {dictionary.servicesBlock.buttonText}
+            {glossary.buttonText}
           </span>
         </NavLink>
       </div>

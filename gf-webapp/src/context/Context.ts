@@ -3,13 +3,13 @@ import en from "../../public/locales/en/translation.json";
 
 const STUB_FUNCTION = () => undefined;
 const STUB_BOOLEAN = false;
-const STUB_LANG = en;
+const STUB_DICTIONARY = en;
+
 
 export type ModalVisibility = {
   isModalActive: boolean,
   setIsModalActive: (modalActive: boolean) => void,
 }
-
 
 export const ModalVisibilityContext = createContext<ModalVisibility>({
   isModalActive: STUB_BOOLEAN,
@@ -21,15 +21,14 @@ export const useModalVisibilityContext = () => useContext(ModalVisibilityContext
 
 export type DictionaryType = typeof en;
 
-export type CurrentDictionary = {
+export type Dictionary = {
   dictionary: DictionaryType,
   setDictionary: (dictionary: DictionaryType) => void,
 }
 
-
-export const CurrentDictionaryContext = createContext<CurrentDictionary>({
-  dictionary: STUB_LANG,
+export const DictionaryContext = createContext<Dictionary>({
+  dictionary: STUB_DICTIONARY,
   setDictionary: STUB_FUNCTION,
-} as CurrentDictionary);
+} as Dictionary);
 
-export const useCurrentDictionaryContext = () => useContext(CurrentDictionaryContext);
+export const useDictionaryContext = () => useContext(DictionaryContext);

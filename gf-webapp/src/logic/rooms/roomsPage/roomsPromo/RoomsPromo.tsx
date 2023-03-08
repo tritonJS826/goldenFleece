@@ -1,11 +1,12 @@
 import React from "react";
-import {useCurrentDictionaryContext} from "../../../../context/Context";
+import {useDictionaryContext} from "../../../../context/Context";
 import imgPromo from "../../../../resources/rooms/rooms.jpg";
 import styles from "./roomsPromo.module.scss";
 
 
 export const RoomsPromo = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.roomsPage;
 
   return (
     <div>
@@ -16,7 +17,7 @@ export const RoomsPromo = () => {
           alt="Promo image"
         />
         <h1 className={styles.title}>
-          {dictionary.roomsPage.title}
+          {glossary.title}
         </h1>
       </div>
     </div>

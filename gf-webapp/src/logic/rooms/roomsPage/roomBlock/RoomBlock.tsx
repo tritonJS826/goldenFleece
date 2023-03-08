@@ -1,5 +1,5 @@
 import React from "react";
-import {useCurrentDictionaryContext} from "../../../../context/Context";
+import {useDictionaryContext} from "../../../../context/Context";
 import {NavLink} from "react-router-dom";
 import imgPromo from "../../../../resources/rooms/rooms.jpg";
 import {motion} from "framer-motion";
@@ -19,7 +19,8 @@ const textAnimation = {
 };
 
 export const RoomBlock = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.roomInfo;
 
   return (
     <div>
@@ -45,22 +46,22 @@ export const RoomBlock = () => {
             01
           </span>
           <h3 className={styles.titleBook}>
-            {dictionary.roomInfo.singleRoomTitle}
+            {glossary.singleRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             30
             {" "}
-            {dictionary.roomInfo.dimension}
+            {glossary.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 1
             {" "}
-            {dictionary.roomInfo.adults}
+            {glossary.adults}
           </div>
           <div className={styles.description}>
-            {dictionary.roomInfo.singleRoomDescription}
+            {glossary.singleRoomDescription}
           </div>
           <NavLink
             to="/rooms/0"
@@ -94,22 +95,22 @@ export const RoomBlock = () => {
             02
           </span>
           <h3 className={styles.titleBook}>
-            {dictionary.roomInfo.doubleRoomTitle}
+            {glossary.doubleRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             40
             {" "}
-            {dictionary.roomInfo.dimension}
+            {glossary.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 2
             {" "}
-            {dictionary.roomInfo.adults}
+            {glossary.adults}
           </div>
           <div className={styles.description}>
-            {dictionary.roomInfo.doubleRoomDescription}
+            {glossary.doubleRoomDescription}
           </div>
           <NavLink
             to="/rooms/1"
@@ -143,22 +144,22 @@ export const RoomBlock = () => {
             03
           </span>
           <h3 className={styles.titleBook}>
-            {dictionary.roomInfo.twinRoomTitle}
+            {glossary.twinRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             35
             {" "}
-            {dictionary.roomInfo.dimension}
+            {glossary.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 2
             {" "}
-            {dictionary.roomInfo.adults}
+            {glossary.adults}
           </div>
           <div className={styles.description}>
-            {dictionary.roomInfo.twinRoomDescription}
+            {glossary.twinRoomDescription}
           </div>
           <NavLink
             to="/rooms/2"

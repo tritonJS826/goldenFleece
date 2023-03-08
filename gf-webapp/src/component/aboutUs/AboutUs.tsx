@@ -1,5 +1,5 @@
 import React from "react";
-import {useCurrentDictionaryContext} from "../../context/Context";
+import {useDictionaryContext} from "../../context/Context";
 import frontImg from "../../resources/about-us/kutaisi.jpg";
 import {motion} from "framer-motion";
 import styles from "./aboutUs.module.scss";
@@ -30,8 +30,8 @@ const imageAnimation = {
 };
 
 export const AboutUs = () => {
-  const {dictionary} = useCurrentDictionaryContext();
-  // const dictionary = language.aboutUsPage;
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.aboutUsPage;
 
   return (
     <div className={styles.wrapper}>
@@ -43,10 +43,10 @@ export const AboutUs = () => {
         className={styles.container}
       >
         <h2 className={styles.title}>
-          {dictionary.aboutUsPage.title}
+          {glossary.title}
         </h2>
         <p className={styles.text}>
-          {dictionary.aboutUsPage.description}
+          {glossary.description}
         </p>
       </motion.div>
       <motion.div

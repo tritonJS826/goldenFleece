@@ -1,5 +1,5 @@
 import React from "react";
-import {useCurrentDictionaryContext} from "../../../../context/Context";
+import {useDictionaryContext} from "../../../../context/Context";
 import {NavLink} from "react-router-dom";
 import room1 from "../../../../resources/rooms/1.jpg";
 import room2 from "../../../../resources/rooms/2.jpg";
@@ -10,7 +10,8 @@ import styles from "./roomsBlock.module.scss";
 
 
 export const RoomsBlock = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.roomInfo;
 
   return (
     <div className={styles.roomsWrap}>
@@ -30,10 +31,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {dictionary.roomInfo.singleRoomTitle}
+              {glossary.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {dictionary.roomInfo.moreButtonText}
+              {glossary.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -49,10 +50,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {dictionary.roomInfo.singleRoomTitle}
+              {glossary.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {dictionary.roomInfo.moreButtonText}
+              {glossary.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -68,10 +69,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {dictionary.roomInfo.singleRoomTitle}
+              {glossary.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {dictionary.roomInfo.moreButtonText}
+              {glossary.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -87,10 +88,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {dictionary.roomInfo.singleRoomTitle}
+              {glossary.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {dictionary.roomInfo.moreButtonText}
+              {glossary.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -106,10 +107,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {dictionary.roomInfo.singleRoomTitle}
+              {glossary.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {dictionary.roomInfo.moreButtonText}
+              {glossary.moreButtonText}
             </span>
           </NavLink>
         </div>

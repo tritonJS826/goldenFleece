@@ -1,11 +1,12 @@
 import React from "react";
-import styles from "./AboutUsPromo.module.scss";
+import {useDictionaryContext} from "../../../context/Context";
 import image from "../../../resources/sliderImages/Promo3.jpg";
-import {useCurrentDictionaryContext} from "../../../context/Context";
+import styles from "./AboutUsPromo.module.scss";
 
 
 export const AboutUsPromo = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.aboutUsPage;
 
   return (
     <div>
@@ -16,7 +17,7 @@ export const AboutUsPromo = () => {
           alt="Promo image"
         />
         <h1 className={styles.title}>
-          {dictionary.aboutUsPage.title}
+          {glossary.title}
         </h1>
       </div>
     </div>

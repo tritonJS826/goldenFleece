@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Routes, Route} from "react-router-dom";
-import {CurrentDictionaryContext} from "./context/Context";
+import {DictionaryContext} from "./context/Context";
 import {MainPage} from "./logic/mainPage/MainPage";
 import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
 import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="app">
-      <CurrentDictionaryContext.Provider
+      <DictionaryContext.Provider
         value={{dictionary, setDictionary}}
       >
         <ScrollToTop />
@@ -48,7 +48,7 @@ function App() {
             element={<ContactsPage />}
           />
         </Routes>
-      </CurrentDictionaryContext.Provider>
+      </DictionaryContext.Provider>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import {useCurrentDictionaryContext} from "../../../context/Context";
+import {useDictionaryContext} from "../../../context/Context";
 import {NavLink} from "react-router-dom";
 import styles from "./button.module.scss";
 
 
 export const Button = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
 
   return (
     <div className={styles.wrap}>

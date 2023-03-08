@@ -1,5 +1,5 @@
-import {useCurrentDictionaryContext} from "../../context/Context";
-import {IMarker} from "./mapInterfaces";
+import {useDictionaryContext} from "../../context/Context";
+import {IMarker} from "./mapContent/marker/IMarker";
 import goldenFleeceImg from "../../resources/map/golden-fleece.jpg";
 import cakeClubImg from "../../resources/map/cake-club.jpg";
 import shedevriImg from "../../resources/map/shedevri.jpg";
@@ -10,7 +10,8 @@ import stadiumImg from "../../resources/map/ramaz-shengelia-stadium.jpg";
 
 
 export const MapMarkers = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.map;
 
   const markers: IMarker[] = [
     {
@@ -20,7 +21,7 @@ export const MapMarkers = () => {
       y: 230,
       markerType: "main",
       imgUrl: goldenFleeceImg,
-      description: dictionary.map.goldenFleeceDescription,
+      description: glossary.goldenFleeceDescription,
     },
     {
       id: 2,
@@ -29,7 +30,7 @@ export const MapMarkers = () => {
       y: 110,
       markerType: "food",
       imgUrl: cakeClubImg,
-      description: dictionary.map.cakeClubDescription,
+      description: glossary.cakeClubDescription,
     },
     {
       id: 3,
@@ -38,7 +39,7 @@ export const MapMarkers = () => {
       y: 630,
       markerType: "food",
       imgUrl: shedevriImg,
-      description: dictionary.map.shedevriDescription,
+      description: glossary.shedevriDescription,
     },
     {
       id: 4,
@@ -47,7 +48,7 @@ export const MapMarkers = () => {
       y: 740,
       markerType: "food",
       imgUrl: tomasWineCellarImg,
-      description: dictionary.map.tomasDescription,
+      description: glossary.tomasDescription,
     },
     {
       id: 5,
@@ -56,7 +57,7 @@ export const MapMarkers = () => {
       y: 500,
       markerType: "park",
       imgUrl: youthParkImg,
-      description: dictionary.map.youthParkDescription,
+      description: glossary.youthParkDescription,
     },
     {
       id: 6,
@@ -65,7 +66,7 @@ export const MapMarkers = () => {
       y: 980,
       markerType: "park",
       imgUrl: tennisCourtImg,
-      description: dictionary.map.tennisCourtDescription,
+      description: glossary.tennisCourtDescription,
     },
     {
       id: 7,
@@ -74,7 +75,7 @@ export const MapMarkers = () => {
       y: 1100,
       markerType: "park",
       imgUrl: stadiumImg,
-      description: dictionary.map.shengeliaStadiumDescription,
+      description: glossary.shengeliaStadiumDescription,
     },
   ];
 

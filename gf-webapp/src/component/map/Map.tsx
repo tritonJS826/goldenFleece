@@ -3,7 +3,7 @@ import {MapContent} from "./mapContent/MapContent";
 import styles from "./map.module.scss";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
-import {IMarker} from "./mapInterfaces";
+import {IMarker} from "./mapContent/marker/IMarker";
 import {ItemDescription} from "./itemDescription/ItemDescription";
 import {MapMarkers} from "./mapMarkersList";
 

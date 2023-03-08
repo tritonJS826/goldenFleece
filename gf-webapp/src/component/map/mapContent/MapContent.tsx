@@ -1,9 +1,12 @@
 import React, {useContext} from "react";
-import {mapContent} from "../mapInterfaces";
 import {MapContext} from "../MapContext";
 import {Marker} from "./marker/marker";
 import styles from "./mapContent.module.scss";
 
+
+type mapContent = {
+  mouseDownHandler: (e: React.MouseEvent) => void;
+}
 
 export const MapContent = (props: mapContent) => {
   const {markers} = useContext(MapContext);
@@ -11,7 +14,13 @@ export const MapContent = (props: mapContent) => {
   const renderMarkers = () => {
     return markers.map((marker) => (
       <Marker
-        {...marker}
+        id={marker.id}
+        name={marker.name}
+        x={marker.x}
+        y={marker.y}
+        imgUrl={marker.imgUrl}
+        description={marker.description}
+        markerType={marker.markerType}
         key={marker.id}
       />));
   };

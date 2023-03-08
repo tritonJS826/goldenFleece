@@ -1,11 +1,12 @@
 import React from "react";
-import {useCurrentDictionaryContext} from "../../../../context/Context";
+import {useDictionaryContext} from "../../../../context/Context";
 import {RoomBlock} from "../roomBlock/RoomBlock";
 import styles from "./navigation.module.scss";
 
 
 export const Navigation = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.roomInfo;
 
 
   return (
@@ -17,7 +18,7 @@ export const Navigation = () => {
               href="#single"
               className={styles.link}
             >
-              {dictionary.roomInfo.singleRoomTitle}
+              {glossary.singleRoomTitle}
             </a>
           </li>
           <p className={styles.line}>
@@ -28,7 +29,7 @@ export const Navigation = () => {
               href="#double"
               className={styles.link}
             >
-              {dictionary.roomInfo.doubleRoomTitle}
+              {glossary.doubleRoomTitle}
             </a>
           </li>
           <p className={styles.line}>
@@ -39,7 +40,7 @@ export const Navigation = () => {
               href="#twin"
               className={styles.link}
             >
-              {dictionary.roomInfo.twinRoomTitle}
+              {glossary.twinRoomTitle}
             </a>
           </li>
         </ul>

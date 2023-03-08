@@ -11,7 +11,6 @@ import image4 from "../../resources/sliderImages/Promo4.jpg";
 import image5 from "../../resources/sliderImages/Promo5.jpg";
 import styles from "./Slider.module.scss";
 
-// TODO: render any quantity of images
 
 export function Slider() {
   return (

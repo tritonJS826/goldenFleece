@@ -1,11 +1,12 @@
 import React from "react";
-import {useCurrentDictionaryContext} from "../../../context/Context";
+import {useDictionaryContext} from "../../../context/Context";
 import image from "../../../resources/sliderImages/Promo3.jpg";
 import styles from "./ServiceBlock.module.scss";
 
 
 export const ServiceBlock = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.aboutUsPage;
 
   return (
     <div>
@@ -19,26 +20,26 @@ export const ServiceBlock = () => {
           <div className={styles.over}>
             <p className={styles.textLeft}>
               <span className={styles.span}>
-                {dictionary.aboutUsPage.subtitle}
+                {glossary.subtitle}
               </span>
             </p>
             <h2 className={styles.title}>
-              {dictionary.aboutUsPage.gastronomy}
+              {glossary.gastronomy}
             </h2>
             <div className={styles.description}>
-              {dictionary.aboutUsPage.gastronomyDescription}
+              {glossary.gastronomyDescription}
             </div>
             <h2 className={styles.title}>
-              {dictionary.aboutUsPage.experience}
+              {glossary.experience}
             </h2>
             <div className={styles.description}>
-              {dictionary.aboutUsPage.experienceDescription}
+              {glossary.experienceDescription}
             </div>
             <h3 className={styles.title}>
-              {dictionary.aboutUsPage.spa}
+              {glossary.spa}
             </h3>
             <div className={styles.description}>
-              {dictionary.aboutUsPage.spaDescription}
+              {glossary.spaDescription}
             </div>
           </div>
         </div>

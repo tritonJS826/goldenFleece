@@ -1,9 +1,7 @@
 import React, {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
-import {useCurrentDictionaryContext} from "../../context/Context";
+import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
-import githubLogo from "../../resources/icons/githubLogo.svg";
-import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
 import {useLocation} from "react-router-dom";
 import en from "../../../public/locales/en/translation.json";
 import ru from "../../../public/locales/ru/translation.json";
@@ -16,7 +14,8 @@ interface PageBorderProps {
 }
 
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
-  const {dictionary, setDictionary} = useCurrentDictionaryContext();
+  const {dictionary, setDictionary} = useDictionaryContext();
+  const glossary = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
   const currentLang = localStorage.getItem("lang");
   const [langSelected, setLangSelected] = useState(localStorage.getItem("lang"));
@@ -170,7 +169,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     isActive ? styles.burger_item_active : styles.burger_item
                   }
                 >
-                  {dictionary.navigation.main}
+                  {glossary.main}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -180,7 +179,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     isActive ? styles.burger_item_active : styles.burger_item
                   }
                 >
-                  {dictionary.navigation.rooms}
+                  {glossary.rooms}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -190,7 +189,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     isActive ? styles.burger_item_active : styles.burger_item
                   }
                 >
-                  {dictionary.navigation.contacts}
+                  {glossary.contacts}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -200,7 +199,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     isActive ? styles.burger_item_active : styles.burger_item
                   }
                 >
-                  {dictionary.navigation.aboutUs}
+                  {glossary.aboutUs}
                 </NavLink>
               </li>
             </ul>
@@ -221,7 +220,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     isActive ? styles.footer_link_active : styles.footer_link
                   }
                 >
-                  {dictionary.navigation.main}
+                  {glossary.main}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -231,7 +230,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     isActive ? styles.footer_link_active : styles.footer_link
                   }
                 >
-                  {dictionary.navigation.rooms}
+                  {glossary.rooms}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -241,7 +240,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     isActive ? styles.footer_link_active : styles.footer_link
                   }
                 >
-                  {dictionary.navigation.contacts}
+                  {glossary.contacts}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -251,7 +250,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     isActive ? styles.footer_link_active : styles.footer_link
                   }
                 >
-                  {dictionary.navigation.aboutUs}
+                  {glossary.aboutUs}
                 </NavLink>
               </li>
             </ul>

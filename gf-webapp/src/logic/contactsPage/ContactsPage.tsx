@@ -1,12 +1,13 @@
 import React, {useState} from "react";
-import {useCurrentDictionaryContext} from "../../context/Context";
+import {useDictionaryContext} from "../../context/Context";
 import {send} from "emailjs-com";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
 import styles from "./ContactsPage.module.scss";
 
 
 export const ContactsPage = () => {
-  const {dictionary} = useCurrentDictionaryContext();
+  const {dictionary} = useDictionaryContext();
+  const glossary = dictionary.contactsPage;
 
   const [toSend, setToSend] = useState({
     to_name: "",
@@ -46,30 +47,30 @@ export const ContactsPage = () => {
       <div className={styles.wrap}>
         <div className={styles.contacts}>
           <h1 className={styles.title}>
-            {dictionary.contactsPage.title}
+            {glossary.title}
           </h1>
           <div className={styles.contactsData}>
             <div className={styles.minititle}>
-              {dictionary.contactsPage.phone}
+              {glossary.phone}
             </div>
             <p className={styles.text}>
               +12346789
             </p>
             <div className={styles.minititle}>
-              {dictionary.contactsPage.email}
+              {glossary.email}
             </div>
             <p className={styles.text}>
               goldenFleece@gmain.com
             </p>
             <div className={styles.minititle}>
-              {dictionary.contactsPage.address}
+              {glossary.address}
             </div>
             <p className={styles.text}>
-              {dictionary.contactsPage.street}
+              {glossary.street}
               ,
             </p>
             <p className={styles.text}>
-              {dictionary.contactsPage.location}
+              {glossary.location}
             </p>
           </div>
         </div>

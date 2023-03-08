@@ -1,15 +1,14 @@
 import React, {useContext} from "react";
-import {useCurrentDictionaryContext} from "../../../context/Context";
 import {MapContext} from "../MapContext";
+import {IMarker} from "../mapContent/marker/IMarker";
 import styles from "./itemDescription.module.scss";
 
 
 export const ItemDescription = () => {
-  const {dictionary} = useCurrentDictionaryContext();
   const {menuItem, setMenuItem} = useContext(MapContext);
 
   const closeHandler = () => {
-    setMenuItem(null);
+    setMenuItem({} as IMarker);
   };
 
   return menuItem && (
