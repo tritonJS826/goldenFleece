@@ -57,7 +57,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     },
   ];
 
-  const contacts = () => (
+  const renderContacts = () => (
     contactsList.map((item, index) => (
       <li key={index}
         onClick={onContactChoose}
@@ -124,7 +124,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 </svg>
               </div>
               <ul className={styles.contact_links}>
-                {contactsOpen && contacts()}
+                {contactsOpen && renderContacts()}
               </ul>
             </li>
             <li className={styles.listItem}>
