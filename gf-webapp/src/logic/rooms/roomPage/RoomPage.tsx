@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {PageBorder} from "../../../component/pageBorder/PageBorder";
 import {RoomSlider} from "./roomSlider/RoomSlider";
 import {RoomPromo} from "./roomPromo/RoomPromo";
@@ -15,29 +15,32 @@ export const RoomPage = () => {
   const roomParams = useParams();
   const roomId = roomParams.id;
   const [room, setRoom] = useState({} as Room);
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
       if (roomId) {
-        const roomBack = await getRoom(roomId);
-        setRoom(roomBack);
+        try {
+          const roomBack = await getRoom(roomId);
+          setRoom(roomBack);
+        } catch (e) {
+          console.log("No such room");
+          navigate("/rooms");
+        }
+
       }
     })();
-  }, []);
+  }, [roomId]);
 
   const isRoomInit = roomInit(room);
 
   return isRoomInit ?
     <PageBorder>
-      <RoomPromo promo={room.promo}
-        description={room.description}
-        apartmentsType={room.apartmentsType}
-        price={room.price}
-      />
+      <RoomPromo room={room} />
       <div className={styles.about}>
         {room.descriptionLong}
       </div>
-      <RoomSlider slider={room.slider} />
+      <RoomSlider room={room} />
       <RoomsBlock />
       <ServicesBlock />
       <BookingBlock />

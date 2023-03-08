@@ -7,7 +7,7 @@ import styles from "./roomItem.module.scss";
 export const RoomItem = ({room}: {room: Room}) => {
   return (
     <div className={styles.wrap}
-      id={room.apartmentsType?.toLocaleLowerCase()}
+      id={room.apartmentsType.toLowerCase()}
       key={room.id}
     >
       <PromoImage room={room} />

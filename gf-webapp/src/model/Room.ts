@@ -15,3 +15,7 @@ export interface Room {
 export type RoomType = {
   room: Room
 }
+
+export type RoomsType = {
+  rooms: Room[]
+}
