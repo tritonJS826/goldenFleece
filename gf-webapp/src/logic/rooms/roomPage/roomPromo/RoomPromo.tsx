@@ -1,5 +1,5 @@
 import React from "react";
-import {RoomType} from "../../../../model/room";
+import {RoomType} from "../../../../model/Room";
 import {Information} from "./information/Information";
 import {Title} from "./title/Title";
 

@@ -4,7 +4,7 @@ import styles from "./roomSlider.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import {Autoplay, Keyboard} from "swiper";
-import {RoomType} from "../../../../model/room";
+import {RoomType} from "../../../../model/Room";
 
 
 export const RoomSlider = ({room}: RoomType) => {

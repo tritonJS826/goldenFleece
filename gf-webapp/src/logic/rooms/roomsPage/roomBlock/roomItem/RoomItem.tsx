@@ -1,5 +1,5 @@
 import React from "react";
-import {Room} from "../../../../../model/room";
+import {Room} from "../../../../../model/Room";
 import {Description} from "./description/Description";
 import {PromoImage} from "./promoImage/PromoImage";
 import styles from "./roomItem.module.scss";

@@ -1,5 +1,5 @@
 import React from "react";
-import {RoomsType} from "../../../../../model/room";
+import {RoomsType} from "../../../../../model/Room";
 import {RoomItem} from "./RoomItem";
 import styles from "../roomsBlock.module.scss";
 

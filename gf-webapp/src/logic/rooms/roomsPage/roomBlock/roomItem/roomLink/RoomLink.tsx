@@ -1,7 +1,7 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
-import {RoomType} from "../../../../../../model/room";
+import {RoomType} from "../../../../../../model/Room";
 import styles from "../roomItem.module.scss";
 
 export const RoomLink = ({room}: RoomType) => {

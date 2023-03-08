@@ -1,6 +1,6 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {RoomType} from "../../../../../../model/room";
+import {RoomType} from "../../../../../../model/Room";
 import {getRoomNumber} from "../../../../../../service/rooms";
 import styles from "../roomItem.module.scss";
 

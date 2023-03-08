@@ -7,7 +7,7 @@ import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
 import styles from "./roomPage.module.scss";
-import {Room} from "../../../model/room";
+import {Room} from "../../../model/Room";
 import {getRoom, roomInit} from "../../../service/rooms";
 import {Loader} from "../../../component/loader/Loader";
 
@@ -24,7 +24,6 @@ export const RoomPage = () => {
           const roomBack = await getRoom(roomId);
           setRoom(roomBack);
         } catch (e) {
-          console.log("No such room");
           navigate("/rooms");
         }
 

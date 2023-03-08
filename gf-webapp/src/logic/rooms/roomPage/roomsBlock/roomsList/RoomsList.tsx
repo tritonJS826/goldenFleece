@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {Loader} from "../../../../../component/loader/Loader";
-import {Room} from "../../../../../model/room";
+import {Room} from "../../../../../model/Room";
 import {getRandomRooms, roomsInit} from "../../../../../service/rooms";
 import {Rooms} from "./Rooms";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {RoomType} from "../../../../../model/room";
+import {RoomType} from "../../../../../model/Room";
 import styles from "../roomPromo.module.scss";
 
 export const Title = ({room}: RoomType) => {
