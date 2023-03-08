@@ -1,5 +1,4 @@
 /**swagger model and room model will be separate soon*/
-/* why? You like mystery, Andrew :) */
 
 
 /**
