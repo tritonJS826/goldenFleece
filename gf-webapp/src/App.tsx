@@ -14,7 +14,6 @@ import en from "../public/locales/en/translation.json";
 function App() {
   const [dictionary, setDictionary] = useState<DictionaryType>(en);
 
-
   return (
     <div className="app">
       <DictionaryContext.Provider
