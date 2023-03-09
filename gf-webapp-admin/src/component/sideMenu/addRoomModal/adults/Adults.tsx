@@ -4,7 +4,7 @@ import {AddRoomContext} from "../addRoomContext";
 
 export const Adults = () => {
   const {room} = useContext(AddRoomContext);
-  const [adults, setAdults] = useState(String(room.adultsAmount));
+  const [adults, setAdults] = useState(String(room.adults));
 
   const onChangeAdults = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
@@ -12,7 +12,7 @@ export const Adults = () => {
   };
 
   useEffect(() => {
-    room.adultsAmount = +adults;
+    room.adults = +adults;
   }, [adults]);
 
   return (

@@ -6,12 +6,12 @@ import {saveRoom} from "../../../../service/room";
 import styles from "./adults.module.scss";
 
 export const Adults = ({room}: RoomType) => {
-  const [adults, setAdults] = useState(String(room.adultsAmount));
+  const [adults, setAdults] = useState(String(room.adults));
   const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    room.adultsAmount = +adults;
+    room.adults = +adults;
     saveRoom(room);
   };
 
