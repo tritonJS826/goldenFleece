@@ -172,7 +172,7 @@ components:
         adults:
           type: number
           required: true
-          description: The room's audits number.
+          description: Amount of adults who can stay in the room.
           example: 1
         promo:
           type: string
