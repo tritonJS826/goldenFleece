@@ -3,9 +3,8 @@ import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import {useLocation} from "react-router-dom";
-import en from "../../../public/locales/en/translation.json";
-import ru from "../../../public/locales/ru/translation.json";
-import ge from "../../../public/locales/ge/translation.json";
+import {loadDictionary} from "../../service/LoadDictionary";
+import {languages} from "../../service/LocalStorage";
 import styles from "./PageBorder.module.scss";
 
 
@@ -17,26 +16,25 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   const {dictionary, setDictionary} = useDictionaryContext();
   const glossary = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
-  const currentLang = localStorage.getItem("lang");
-  const [langSelected, setLangSelected] = useState(localStorage.getItem("lang"));
+  const [langSelected, setLangSelected] = useState(languages.getValue("lang") || "en");
   const langList = ["en", "ru", "ge"];
 
   const langHoverHandler = () => {
     setLangOpen(prev => !prev);
   };
 
+  const loadDictionaryAsync = async () => {
+    const messages = await loadDictionary(langSelected);
+    setDictionary(messages);
+  };
+
+  useEffect(() => {
+    loadDictionaryAsync();
+  }, [langSelected]);
+
   const onLangChoose = (lang: string) => {
     setLangSelected(lang);
     localStorage.setItem("lang", `${lang}`);
-    console.log(localStorage.getItem("lang"));
-
-    if (localStorage.getItem("lang") === "en") {
-      setDictionary(en);
-    } else if (localStorage.getItem("lang") === "ru") {
-      setDictionary(ru);
-    } else if (localStorage.getItem("lang") === "ge") {
-      setDictionary(ge);
-    }
     setLangOpen(false);
   };
 
@@ -130,14 +128,14 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               onMouseLeave={langHoverHandler}
             >
               <p>
-                {langSelected?.toUpperCase()}
+                {langSelected.toUpperCase()}
               </p>
               <ul className={styles.langAdditional}>
                 {langOpen && langList.map(lang => (
                   <li
                     key={lang}
                     onClick={() => onLangChoose(lang)}
-                    className={currentLang === lang ? `${styles.disabled}` : ""}
+                    className={langSelected === lang ? `${styles.disabled}` : ""}
                   >
                     {lang.toUpperCase()}
                   </li>

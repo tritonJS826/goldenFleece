@@ -1,8 +1,9 @@
 import {createContext, useContext} from "react";
 import en from "../../public/locales/en/translation.json";
 
-const STUB_FUNCTION = () => undefined;
-const STUB_BOOLEAN = false;
+const STUB_SET_VISIBILITY = () => undefined;
+const STUB_SET_DICTIONARY = () => undefined;
+const STUB_IS_ACTIVE = false;
 const STUB_DICTIONARY = en;
 
 
@@ -12,8 +13,8 @@ export type ModalVisibility = {
 }
 
 export const ModalVisibilityContext = createContext<ModalVisibility>({
-  isModalActive: STUB_BOOLEAN,
-  setIsModalActive: STUB_FUNCTION,
+  isModalActive: STUB_IS_ACTIVE,
+  setIsModalActive: STUB_SET_VISIBILITY,
 } as ModalVisibility);
 
 export const useModalVisibilityContext = () => useContext(ModalVisibilityContext);
@@ -28,7 +29,7 @@ export type Dictionary = {
 
 export const DictionaryContext = createContext<Dictionary>({
   dictionary: STUB_DICTIONARY,
-  setDictionary: STUB_FUNCTION,
+  setDictionary: STUB_SET_DICTIONARY,
 } as Dictionary);
 
 export const useDictionaryContext = () => useContext(DictionaryContext);

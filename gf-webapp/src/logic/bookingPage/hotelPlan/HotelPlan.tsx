@@ -3,6 +3,7 @@ import {useDictionaryContext} from "../../../context/Context";
 import {ModalVisibilityContext} from "../../../context/Context";
 import {Modal} from "../modal/Modal";
 import {Form} from "../form/Form";
+import {RoomsPlan} from "./roomsPlan/RoomsPlan";
 import hotelPlan from "../../../resources/hotelPlan/hotelPlan.jpg";
 import styles from "./HotelPlan.module.scss";
 
@@ -25,8 +26,8 @@ export const HotelPlan = () => {
         setIsModalActive(true);
       }
     }
-
   };
+
 
   return (
     <ModalVisibilityContext.Provider
@@ -57,42 +58,7 @@ export const HotelPlan = () => {
           className={styles.divs}
           onClick={isBooking}
         >
-          <div
-            id="1"
-            className={`${styles.planRoom} ${styles.one}`}
-          >
-            Single room №1
-          </div>
-          <div
-            id="2"
-            className={`${styles.planRoom} ${styles.two}`}
-          >
-            Single room №2
-          </div>
-          <div
-            id="3"
-            className={`${styles.planRoom} ${styles.three}`}
-          >
-            Double room №3
-          </div>
-          <div
-            id="4"
-            className={`${styles.planRoom} ${styles.four}`}
-          >
-            Twin room №4
-          </div>
-          <div
-            id="5"
-            className={`${styles.planRoom} ${styles.five} ${styles.disabled}`}
-          >
-            Double room №5
-          </div>
-          <div
-            id="6"
-            className={`${styles.planRoom} ${styles.six}`}
-          >
-            Double room №6
-          </div>
+          <RoomsPlan />
         </div>
       </div>
     </ModalVisibilityContext.Provider>

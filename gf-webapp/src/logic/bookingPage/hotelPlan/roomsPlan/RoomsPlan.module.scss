@@ -1,0 +1,112 @@
+@import "../../../../index.scss";
+
+.planRoom {
+  position: absolute;
+  background-color: rgba($color-secondary, 0.8);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  font-size: 28px;
+  font-family: Montserrat Regular;
+  padding: 20px;
+  text-align: center;
+}
+
+.disabled {
+  background-color: $color-primary;
+  color: $color-text;
+  cursor: not-allowed;
+}
+
+.one {
+  top: 27.5%;
+  left: 0;
+  width: 17.5%;
+  height: 11.5%;
+}
+
+.two {
+  top: 39%;
+  left: 0;
+  width: 17.5%;
+  height: 12%;
+}
+
+.three {
+  top: 51%;
+  left: 0;
+  width: 17.5%;
+  height: 17.4%;
+}
+
+.four {
+  top: 68.5%;
+  left: 0;
+  width: 17.5%;
+  height: 31%;
+}
+
+.five {
+  top: 21.5%;
+  left: 80%;
+  width: 10%;
+  height: 31.4%;
+}
+
+.six {
+  top: 21.5%;
+  left: 90%;
+  width: 9.8%;
+  height: 31.4%;
+}
+
+
+@media (max-width: 768px) {
+  .planRoom {
+    font-size: 14px;
+  }
+
+  .one {
+    top: 27.5%;
+    left: 0;
+    width: 135px;
+    height: 11.5%;
+  }
+
+  .two {
+    top: 39%;
+    left: 0;
+    width: 135px;
+    height: 12%;
+  }
+
+  .three {
+    top: 51%;
+    left: 0;
+    width: 135px;
+    height: 17.4%;
+  }
+
+  .four {
+    top: 68.5%;
+    left: 0;
+    width: 135px;
+    height: 31%;
+  }
+
+  .five {
+    top: 21.5%;
+    left: 615px;
+    width: 75px;
+    height: 31.4%;
+  }
+
+  .six {
+    top: 21.5%;
+    left: 690px;
+    width: 75px;
+    height: 31.4%;
+  }
+}

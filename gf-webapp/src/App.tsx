@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Routes, Route} from "react-router-dom";
-import {DictionaryContext} from "./context/Context";
+import {DictionaryContext, DictionaryType} from "./context/Context";
 import {MainPage} from "./logic/mainPage/MainPage";
 import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
 import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
@@ -8,13 +8,12 @@ import {RoomPage} from "./logic/rooms/roomPage/RoomPage";
 import {ContactsPage} from "./logic/contactsPage/ContactsPage";
 import {BookingPage} from "./logic/bookingPage/BookingPage";
 import ScrollToTop from "./utils/ScrollToTop";
-import {changeLanguage} from "./utils/changeLanguage";
+import en from "../public/locales/en/translation.json";
 
 
 function App() {
-  const language = changeLanguage();
+  const [dictionary, setDictionary] = useState<DictionaryType>(en);
 
-  const [dictionary, setDictionary] = useState(language);
 
   return (
     <div className="app">
