@@ -66,10 +66,12 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
 
   const renderContacts = () => (
     contactsList.map((item, index) => (
-      <li key={index}
+      <li
+        key={index}
         onClick={onContactChoose}
       >
-        <a className={styles.link}
+        <a
+          className={styles.link}
           href={item.type + item.contact}
         >
           {item.contact}
@@ -181,28 +183,32 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
         >
           <div className={styles.burger_content}>
             <ul>
-              <NavLink to="/"
+              <NavLink
+                to="/"
                 className={({isActive}) =>
                   activeLinkHandler(isActive)
                 }
               >
                 {glossary.main}
               </NavLink>
-              <NavLink to="/rooms"
+              <NavLink
+                to="/rooms"
                 className={({isActive}) =>
                   activeLinkHandler(isActive)
                 }
               >
                 {glossary.rooms}
               </NavLink>
-              <NavLink to="/contacts"
+              <NavLink
+                to="/contacts"
                 className={({isActive}) =>
                   activeLinkHandler(isActive)
                 }
               >
                 {glossary.contacts}
               </NavLink>
-              <NavLink to="/about"
+              <NavLink
+                to="/about"
                 className={({isActive}) =>
                   activeLinkHandler(isActive)
                 }
