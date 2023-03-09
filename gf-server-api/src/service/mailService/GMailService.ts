@@ -87,6 +87,8 @@ export class GMailService implements MailServiceInterface {
     sendMail(mailOptionsInternal);
 
     this.customerNotification(req.body.email);
+
+    res.status(200);
   };
 
   private customerNotification(customerEmail: string) {
