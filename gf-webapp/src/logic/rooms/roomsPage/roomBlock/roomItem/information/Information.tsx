@@ -15,7 +15,7 @@ export const Information = ({room}: RoomType) => {
           {`${UPPER_INDEX}`}
         </span>
         <span>
-          {` / ${room.adults} `}
+          {` / ${room.adultsAmount} `}
         </span>
         {t("adults1")}
       </div>

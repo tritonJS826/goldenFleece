@@ -5,7 +5,7 @@ export interface IRoom {
   id?: string,
   price: number,
   square: number,
-  adults: number,
+  adultsAmount: number,
   promo: string,
   rating: number
   services: string,

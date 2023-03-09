@@ -6,7 +6,7 @@ export const roomStartState: IRoom = {
   descriptionLong: "",
   price: 0,
   square: 30,
-  adults: 1,
+  adultsAmount: 1,
   promo: "",
   rating: 0,
   services: "",
