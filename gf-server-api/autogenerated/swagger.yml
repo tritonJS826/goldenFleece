@@ -13,6 +13,43 @@ schemes:
 apis:
   - ./src/routes/*.ts
 paths:
+  /api/ask-admin:
+    post:
+      tags:
+        - Mail
+      summary: Comment or question to admin
+      description: Comment or question to admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: customers name
+                email:
+                  type: string
+                  description: customers email
+                phone:
+                  type: string
+                  description: customers phone
+                message:
+                  type: string
+                  description: customers comment or question addressed to admin
+              required:
+                - email
+                - name
+                - message
+              example:
+                email: example@gmail.com
+                name: Ivan
+                phone: 379221233209
+                message: Could
+      responses:
+        "200":
+          description: Mail sent.
   /api/rooms:
     get:
       tags:

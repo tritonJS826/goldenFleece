@@ -2,10 +2,11 @@ import express, {Express} from "express";
 import {config} from "dotenv";
 import {PORT, listenServer} from "./utils/listenServer";
 import {checkStatusCallback} from "./utils/checkStatusCallback";
-import {router} from "./routes/routes";
+import {roomsRouter} from "./routes/roomRoutes";
 import swaggerUi from "swagger-ui-express";
 import {apiSpec} from "../swagger";
 import cors from "cors";
+import {mailRouter} from "./routes/mailRoutes";
 
 config();
 const app: Express = express();
@@ -20,9 +21,8 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(apiSpec));
 app.get("/", checkStatusCallback);
 
 // App routing
-app.use(router);
+app.use(roomsRouter);
+app.use(mailRouter);
 
 // App listening for connections on port
 app.listen(PORT, listenServer);
-
-
