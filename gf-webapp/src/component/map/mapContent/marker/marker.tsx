@@ -21,7 +21,6 @@ export const Marker = (props: IMarker) => {
     setMenuItem(props);
   };
 
-
   return (
     <div data-name='marker'
       onClick={clickHandler}
