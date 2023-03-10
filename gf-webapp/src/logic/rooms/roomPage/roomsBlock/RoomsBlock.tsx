@@ -10,13 +10,12 @@ import styles from "./roomsBlock.module.scss";
 
 
 export const RoomsBlock = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.roomInfo;
+  const {roomInfo} = useDictionaryContext().dictionary;
 
   return (
     <div className={styles.roomsWrap}>
       <h2 className={styles.title2}>
-        {dictionary.roomPage.roomsList}
+        {roomInfo.roomsList}
       </h2>
       <div className={styles.rooms}>
         <div className={styles.room}>
@@ -31,10 +30,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {glossary.singleRoomTitle}
+              {roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {glossary.moreButtonText}
+              {roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -50,10 +49,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {glossary.singleRoomTitle}
+              {roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {glossary.moreButtonText}
+              {roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -69,10 +68,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {glossary.singleRoomTitle}
+              {roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {glossary.moreButtonText}
+              {roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -88,10 +87,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {glossary.singleRoomTitle}
+              {roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {glossary.moreButtonText}
+              {roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>
@@ -107,10 +106,10 @@ export const RoomsBlock = () => {
               alt="Single room"
             />
             <h3 className={styles.title3}>
-              {glossary.singleRoomTitle}
+              {roomInfo.singleRoomTitle}
             </h3>
             <span className={styles.spanLink}>
-              {glossary.moreButtonText}
+              {roomInfo.moreButtonText}
             </span>
           </NavLink>
         </div>

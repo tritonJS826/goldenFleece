@@ -8,8 +8,7 @@ type RoomProps = {
 }
 
 export const Form = (props: RoomProps) => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.form;
+  const {form} = useDictionaryContext().dictionary;
   const {isModalActive, setIsModalActive} = useModalVisibilityContext();
 
   const [toSend, setToSend] = useState({
@@ -61,7 +60,7 @@ export const Form = (props: RoomProps) => {
             className={styles.label}
             htmlFor="email"
           >
-            {glossary.email}
+            {form.email}
           </label>
           <input
             type="email"
@@ -79,7 +78,7 @@ export const Form = (props: RoomProps) => {
             className={styles.label}
             htmlFor="text"
           >
-            {glossary.name}
+            {form.name}
           </label>
           <input
             type="text"
@@ -98,7 +97,7 @@ export const Form = (props: RoomProps) => {
               className={styles.label}
               htmlFor="dateIn"
             >
-              {glossary.dateIn}
+              {form.dateIn}
             </label>
             <input
               type="date"
@@ -115,7 +114,7 @@ export const Form = (props: RoomProps) => {
               className={styles.label}
               htmlFor="dateOut"
             >
-              {glossary.dateOut}
+              {form.dateOut}
             </label>
             <input
               type="date"
@@ -133,7 +132,7 @@ export const Form = (props: RoomProps) => {
               className={styles.label}
               htmlFor="rooms"
             >
-              {glossary.roomNumber}
+              {form.roomNumber}
             </label>
             <input
               type="text"
@@ -152,7 +151,7 @@ export const Form = (props: RoomProps) => {
                 className={styles.label}
                 htmlFor="adults"
               >
-                {glossary.adultsAmount}
+                {form.adultsAmount}
               </label>
               <input
                 type="text"
@@ -171,7 +170,7 @@ export const Form = (props: RoomProps) => {
                 className={styles.label}
                 htmlFor="children"
               >
-                {glossary.childrenAmount}
+                {form.childrenAmount}
               </label>
               <input
                 type="text"
@@ -189,7 +188,7 @@ export const Form = (props: RoomProps) => {
           type="submit"
           className={styles.button}
         >
-          {glossary.buttonBooking}
+          {form.buttonBooking}
         </button>
       </form>
     </div>

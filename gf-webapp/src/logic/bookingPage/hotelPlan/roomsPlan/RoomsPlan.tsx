@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./RoomsPlan.module.scss";
-import {roomsArray} from "./roomsArray";
+import {roomsPlan} from "./roomsPlan";
 
 export const RoomsPlan = () => {
 
   const renderRoomsPlan = () => {
-    return roomsArray.map((room) => (
+    return roomsPlan.map((room) => (
       <div
         key={room.id}
         className={`${styles.planRoom} ${room.className}`}

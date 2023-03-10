@@ -19,8 +19,7 @@ const textAnimation = {
 };
 
 export const RoomBlock = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.roomInfo;
+  const {roomInfo} = useDictionaryContext().dictionary;
 
   return (
     <div>
@@ -46,29 +45,29 @@ export const RoomBlock = () => {
             01
           </span>
           <h3 className={styles.titleBook}>
-            {glossary.singleRoomTitle}
+            {roomInfo.singleRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             30
             {" "}
-            {glossary.dimension}
+            {roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 1
             {" "}
-            {glossary.adults}
+            {roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {glossary.singleRoomDescription}
+            {roomInfo.singleRoomDescription}
           </div>
           <NavLink
             to="/rooms/0"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {dictionary.roomsPage.moreButtonText}
+              {roomInfo.moreButtonText}
             </span>
           </NavLink>
         </motion.div>
@@ -95,29 +94,29 @@ export const RoomBlock = () => {
             02
           </span>
           <h3 className={styles.titleBook}>
-            {glossary.doubleRoomTitle}
+            {roomInfo.doubleRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             40
             {" "}
-            {glossary.dimension}
+            {roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 2
             {" "}
-            {glossary.adults}
+            {roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {glossary.doubleRoomDescription}
+            {roomInfo.doubleRoomDescription}
           </div>
           <NavLink
             to="/rooms/1"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {dictionary.roomsPage.moreButtonText}
+              {roomInfo.moreButtonText}
             </span>
           </NavLink>
         </motion.div>
@@ -144,29 +143,29 @@ export const RoomBlock = () => {
             03
           </span>
           <h3 className={styles.titleBook}>
-            {glossary.twinRoomTitle}
+            {roomInfo.twinRoomTitle}
           </h3>
           <div className={styles.settingsRoom}>
             35
             {" "}
-            {glossary.dimension}
+            {roomInfo.dimension}
             <span className={styles.sub}>
               2
             </span>
             {" "}
             / 2
             {" "}
-            {glossary.adults}
+            {roomInfo.adults}
           </div>
           <div className={styles.description}>
-            {glossary.twinRoomDescription}
+            {roomInfo.twinRoomDescription}
           </div>
           <NavLink
             to="/rooms/2"
             className={styles.roomLink}
           >
             <span className={styles.linkText}>
-              {dictionary.roomsPage.moreButtonText}
+              {roomInfo.moreButtonText}
             </span>
           </NavLink>
         </motion.div>

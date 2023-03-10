@@ -6,8 +6,7 @@ import styles from "./ContactsPage.module.scss";
 
 
 export const ContactsPage = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.contactsPage;
+  const {contactsPage} = useDictionaryContext().dictionary;
 
   const [toSend, setToSend] = useState({
     to_name: "",
@@ -47,30 +46,30 @@ export const ContactsPage = () => {
       <div className={styles.wrap}>
         <div className={styles.contacts}>
           <h1 className={styles.title}>
-            {glossary.title}
+            {contactsPage.title}
           </h1>
           <div className={styles.contactsData}>
             <div className={styles.minititle}>
-              {glossary.phone}
+              {contactsPage.phone}
             </div>
             <p className={styles.text}>
               +12346789
             </p>
             <div className={styles.minititle}>
-              {glossary.email}
+              {contactsPage.email}
             </div>
             <p className={styles.text}>
               goldenFleece@gmain.com
             </p>
             <div className={styles.minititle}>
-              {glossary.address}
+              {contactsPage.address}
             </div>
             <p className={styles.text}>
-              {glossary.street}
+              {contactsPage.street}
               ,
             </p>
             <p className={styles.text}>
-              {glossary.location}
+              {contactsPage.location}
             </p>
           </div>
         </div>
@@ -83,7 +82,7 @@ export const ContactsPage = () => {
               className={styles.label}
               htmlFor="text"
             >
-              {dictionary.form.name}
+              {contactsPage.form.name}
             </label>
             <input
               type="text"
@@ -101,7 +100,7 @@ export const ContactsPage = () => {
               className={styles.label}
               htmlFor="email"
             >
-              {dictionary.form.email}
+              {contactsPage.form.email}
             </label>
             <input
               type="email"
@@ -119,7 +118,7 @@ export const ContactsPage = () => {
               className={styles.label}
               htmlFor="phone"
             >
-              {dictionary.form.phone}
+              {contactsPage.form.phone}
             </label>
             <input
               type="text"
@@ -137,7 +136,7 @@ export const ContactsPage = () => {
               className={styles.label}
               htmlFor="message"
             >
-              {dictionary.form.message}
+              {contactsPage.form.message}
             </label>
             <input
               type="text"
@@ -154,7 +153,7 @@ export const ContactsPage = () => {
             type="submit"
             className={styles.button}
           >
-            {dictionary.form.buttonSubmit}
+            {contactsPage.form.buttonSubmit}
           </button>
         </form>
       </div>

@@ -6,8 +6,7 @@ import styles from "./servicesBlock.module.scss";
 
 
 export const ServicesBlock = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.servicesBlock;
+  const {servicesBlock} = useDictionaryContext().dictionary;
 
   return (
     <div className={styles.services}>
@@ -22,10 +21,10 @@ export const ServicesBlock = () => {
             alt="Gastronomy"
           />
           <h3 className={styles.titleService}>
-            {glossary.gastronomy}
+            {servicesBlock.gastronomy}
           </h3>
           <span className={styles.spanLink}>
-            {glossary.buttonText}
+            {servicesBlock.buttonText}
           </span>
         </NavLink>
       </div>
@@ -40,10 +39,10 @@ export const ServicesBlock = () => {
             alt="Experiences"
           />
           <h3 className={styles.titleService}>
-            {glossary.experiences}
+            {servicesBlock.experiences}
           </h3>
           <span className={styles.spanLink}>
-            {glossary.buttonText}
+            {servicesBlock.buttonText}
           </span>
         </NavLink>
       </div>
@@ -58,10 +57,10 @@ export const ServicesBlock = () => {
             alt="Spa"
           />
           <h3 className={styles.titleService}>
-            {glossary.spa}
+            {servicesBlock.spa}
           </h3>
           <span className={styles.spanLink}>
-            {glossary.buttonText}
+            {servicesBlock.buttonText}
           </span>
         </NavLink>
       </div>

@@ -8,7 +8,7 @@ export const ItemDescription = () => {
   const {menuItem, setMenuItem} = useContext(MapContext);
 
   const closeHandler = () => {
-    setMenuItem({} as IMarker);
+    setMenuItem(null);
   };
 
   return menuItem && (

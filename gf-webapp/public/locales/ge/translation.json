@@ -35,7 +35,8 @@
     "exclusiveOffers": "ექსკლუზიური შეთავაზებები",
     "exclusiveOffersDescription": "დაჯავშნეთ პირდაპირ და ისიამოვნეთ ექსკლუზიური შეთავაზებებით",
     "noHiddenFees": "არანაირი ფარული გადასახადი",
-    "noHiddenFeesDescription": "ბევრი ვებსაიტი იღებს დამატებით საფასურს ჯავშნებისთვის, ჩვენ არა."
+    "noHiddenFeesDescription": "ბევრი ვებსაიტი იღებს დამატებით საფასურს ჯავშნებისთვის, ჩვენ არა.",
+    "bookButtonText": "Დაჯავშნა"
   },
   "mainPage": {
     "aboutHotelTitle": "ჩვენ ყოველთვის მივესალმებით ახალ სტუმრებს",
@@ -60,7 +61,8 @@
     "dimension": "მ",
     "adults": "მოზარდები",
     "children": "ბავშვები",
-    "moreButtonText": "მეტი"
+    "moreButtonText": "მეტი",
+    "roomsList": "მეტი ოთახი"
   },
   "contactsPage": {
     "title": "Დაგვიკავშირდით",
@@ -68,7 +70,14 @@
     "email": "ელფოსტა",
     "address": "მისამართი",
     "street": "თაბუკაშვილი 4",
-    "location": "ქუთაისი, საქართველო"
+    "location": "ქუთაისი, საქართველო",
+    "form": {
+      "name": "Თქვენი სახელი",
+      "email": "თქვენი ელ - ფოსტის მისამართი",
+      "phone": "Თქვენი ტელეფონის ნომერი",
+      "message": "შეტყობინება",
+      "buttonSubmit": "გაგზავნა"
+    }
   },
   "aboutUsPage": {
     "title": "Ჩვენს შესახებ",

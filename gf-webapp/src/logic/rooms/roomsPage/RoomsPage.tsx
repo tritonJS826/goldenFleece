@@ -9,19 +9,18 @@ import styles from "./roomsPage.module.scss";
 
 
 export const RoomsPage = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.roomsPage;
+  const {roomsPage} = useDictionaryContext().dictionary;
 
   return (
     <div>
       <PageBorder>
         <RoomsPromo />
         <div className={styles.about}>
-          {glossary.description}
+          {roomsPage.description}
         </div>
         <Navigation />
         <div className={styles.about}>
-          {glossary.description}
+          {roomsPage.description}
         </div>
         <ServicesBlock />
         <BookingBlock />

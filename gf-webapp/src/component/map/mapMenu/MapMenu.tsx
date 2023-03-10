@@ -8,9 +8,8 @@ export const MapMenu = (props: IMapMenuProps) => {
   const {markers, menuItem} = useContext(MapContext);
   const markerTypes = Array.from(new Set(markers.map(marker => marker.markerType)));
 
-
-  return (<ul className={styles.menu}>
-    {markerTypes.map((markerType) => (
+  const renderMarkersList = () => {
+    return markerTypes.map((markerType) => (
       <li key={markerType}>
         <p className={styles.groupName}>
           {markerType !== "main" && markerType}
@@ -26,6 +25,10 @@ export const MapMenu = (props: IMapMenuProps) => {
           </span>
         ))}
       </li>
-    ))}
+    ));
+  };
+
+  return (<ul className={styles.menu}>
+    {renderMarkersList()}
   </ul>);
 };

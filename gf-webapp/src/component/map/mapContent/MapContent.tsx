@@ -4,11 +4,11 @@ import {Marker} from "./marker/marker";
 import styles from "./mapContent.module.scss";
 
 
-type mapContent = {
+type MapContentProps = {
   mouseDownHandler: (e: React.MouseEvent) => void;
 }
 
-export const MapContent = (props: mapContent) => {
+export const MapContent = (props: MapContentProps) => {
   const {markers} = useContext(MapContext);
 
   const renderMarkers = () => {

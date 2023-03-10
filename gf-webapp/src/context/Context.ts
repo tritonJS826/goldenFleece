@@ -3,8 +3,8 @@ import en from "../../public/locales/en/translation.json";
 
 const STUB_SET_VISIBILITY = () => undefined;
 const STUB_SET_DICTIONARY = () => undefined;
-const STUB_IS_ACTIVE = false;
-const STUB_DICTIONARY = en;
+const STUB_MODAL_IS_ACTIVE = false;
+const STUB_DICTIONARY_LANGUAGE = en;
 
 
 export type ModalVisibility = {
@@ -13,7 +13,7 @@ export type ModalVisibility = {
 }
 
 export const ModalVisibilityContext = createContext<ModalVisibility>({
-  isModalActive: STUB_IS_ACTIVE,
+  isModalActive: STUB_MODAL_IS_ACTIVE,
   setIsModalActive: STUB_SET_VISIBILITY,
 } as ModalVisibility);
 
@@ -28,7 +28,7 @@ export type Dictionary = {
 }
 
 export const DictionaryContext = createContext<Dictionary>({
-  dictionary: STUB_DICTIONARY,
+  dictionary: STUB_DICTIONARY_LANGUAGE,
   setDictionary: STUB_SET_DICTIONARY,
 } as Dictionary);
 

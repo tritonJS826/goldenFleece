@@ -5,8 +5,7 @@ import styles from "./roomsPromo.module.scss";
 
 
 export const RoomsPromo = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.roomsPage;
+  const {roomsPage} = useDictionaryContext().dictionary;
 
   return (
     <div>
@@ -17,7 +16,7 @@ export const RoomsPromo = () => {
           alt="Promo image"
         />
         <h1 className={styles.title}>
-          {glossary.title}
+          {roomsPage.title}
         </h1>
       </div>
     </div>

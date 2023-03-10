@@ -10,8 +10,7 @@ import stadiumImg from "../../resources/map/ramaz-shengelia-stadium.jpg";
 
 
 export const MapMarkers = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.map;
+  const {map} = useDictionaryContext().dictionary;
 
   const markers: IMarker[] = [
     {
@@ -21,7 +20,7 @@ export const MapMarkers = () => {
       y: 230,
       markerType: "main",
       imgUrl: goldenFleeceImg,
-      description: glossary.goldenFleeceDescription,
+      description: map.goldenFleeceDescription,
     },
     {
       id: 2,
@@ -30,7 +29,7 @@ export const MapMarkers = () => {
       y: 110,
       markerType: "food",
       imgUrl: cakeClubImg,
-      description: glossary.cakeClubDescription,
+      description: map.cakeClubDescription,
     },
     {
       id: 3,
@@ -39,7 +38,7 @@ export const MapMarkers = () => {
       y: 630,
       markerType: "food",
       imgUrl: shedevriImg,
-      description: glossary.shedevriDescription,
+      description: map.shedevriDescription,
     },
     {
       id: 4,
@@ -48,7 +47,7 @@ export const MapMarkers = () => {
       y: 740,
       markerType: "food",
       imgUrl: tomasWineCellarImg,
-      description: glossary.tomasDescription,
+      description: map.tomasDescription,
     },
     {
       id: 5,
@@ -57,7 +56,7 @@ export const MapMarkers = () => {
       y: 500,
       markerType: "park",
       imgUrl: youthParkImg,
-      description: glossary.youthParkDescription,
+      description: map.youthParkDescription,
     },
     {
       id: 6,
@@ -66,7 +65,7 @@ export const MapMarkers = () => {
       y: 980,
       markerType: "park",
       imgUrl: tennisCourtImg,
-      description: glossary.tennisCourtDescription,
+      description: map.tennisCourtDescription,
     },
     {
       id: 7,
@@ -75,7 +74,7 @@ export const MapMarkers = () => {
       y: 1100,
       markerType: "park",
       imgUrl: stadiumImg,
-      description: glossary.shengeliaStadiumDescription,
+      description: map.shengeliaStadiumDescription,
     },
   ];
 

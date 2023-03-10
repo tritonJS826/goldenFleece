@@ -35,7 +35,8 @@
     "exclusiveOffers": "Exclusive offers",
     "exclusiveOffersDescription": "Book direct and enjoy exclusive offers",
     "noHiddenFees": "No hidden fees",
-    "noHiddenFeesDescription": "Many websites charge extra fees for bookings, we do not."
+    "noHiddenFeesDescription": "Many websites charge extra fees for bookings, we do not.",
+    "bookButtonText": "Book now"
   },
   "mainPage": {
     "aboutHotelTitle": "We always welcome new guests",
@@ -60,7 +61,8 @@
     "dimension": "m",
     "adults": "adults",
     "children": "children",
-    "moreButtonText": "Read more"
+    "moreButtonText": "Read more",
+    "roomsList": "More rooms"
   },
   "contactsPage": {
     "title": "Contact us",
@@ -68,7 +70,14 @@
     "email": "Email",
     "address": "Address",
     "street": "Tabukashvili 4",
-    "location": "Kutaisi, Georgia"
+    "location": "Kutaisi, Georgia",
+    "form": {
+      "name": "Your name",
+      "email": "Your email address",
+      "phone": "Your phone number",
+      "message": "Message",
+      "buttonSubmit": "Submit"
+    }
   },
   "aboutUsPage": {
     "title": "About us",

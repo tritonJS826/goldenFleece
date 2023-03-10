@@ -5,9 +5,7 @@ import styles from "./navigation.module.scss";
 
 
 export const Navigation = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.roomInfo;
-
+  const {roomInfo} = useDictionaryContext().dictionary;
 
   return (
     <div>
@@ -18,7 +16,7 @@ export const Navigation = () => {
               href="#single"
               className={styles.link}
             >
-              {glossary.singleRoomTitle}
+              {roomInfo.singleRoomTitle}
             </a>
           </li>
           <p className={styles.line}>
@@ -29,7 +27,7 @@ export const Navigation = () => {
               href="#double"
               className={styles.link}
             >
-              {glossary.doubleRoomTitle}
+              {roomInfo.doubleRoomTitle}
             </a>
           </li>
           <p className={styles.line}>
@@ -40,7 +38,7 @@ export const Navigation = () => {
               href="#twin"
               className={styles.link}
             >
-              {glossary.twinRoomTitle}
+              {roomInfo.twinRoomTitle}
             </a>
           </li>
         </ul>

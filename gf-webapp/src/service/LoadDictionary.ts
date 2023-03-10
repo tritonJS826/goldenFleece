@@ -1,9 +1,6 @@
 import {DictionaryType} from "../context/Context";
 
-export const loadDictionary = (currentLang: string): Promise<DictionaryType> => {
-  return new Promise((res) => {
-    import (`../../public/locales/${currentLang}/translation.json`).then((data) => {
-      res(data.default);
-    });
-  });
+export const loadDictionary = async (currentLang: string): Promise<DictionaryType> => {
+  const dictionary: DictionaryType = await import(`../../public/locales/${currentLang}/translation.json`);
+  return dictionary;
 };

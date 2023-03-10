@@ -9,8 +9,7 @@ import styles from "./HotelPlan.module.scss";
 
 
 export const HotelPlan = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.bookingPage;
+  const {bookingPage} = useDictionaryContext().dictionary;
 
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [roomNumber, setRoomNumber] = useState<string>("");
@@ -41,7 +40,7 @@ export const HotelPlan = () => {
           <div className={styles.book}>
             <div className={styles.leftSide}>
               <h1 className={styles.titleLeft}>
-                {glossary.bookingText}
+                {bookingPage.bookingText}
               </h1>
             </div>
             <div className={styles.rightSide}>

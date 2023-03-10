@@ -5,8 +5,7 @@ import styles from "./AboutUsPromo.module.scss";
 
 
 export const AboutUsPromo = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.aboutUsPage;
+  const {aboutUsPage} = useDictionaryContext().dictionary;
 
   return (
     <div>
@@ -17,7 +16,7 @@ export const AboutUsPromo = () => {
           alt="Promo image"
         />
         <h1 className={styles.title}>
-          {glossary.title}
+          {aboutUsPage.title}
         </h1>
       </div>
     </div>

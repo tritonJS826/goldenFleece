@@ -30,8 +30,7 @@ const imageAnimation = {
 };
 
 export const AboutUs = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.aboutUsPage;
+  const {aboutUsPage} = useDictionaryContext().dictionary;
 
   return (
     <div className={styles.wrapper}>
@@ -43,10 +42,10 @@ export const AboutUs = () => {
         className={styles.container}
       >
         <h2 className={styles.title}>
-          {glossary.title}
+          {aboutUsPage.title}
         </h2>
         <p className={styles.text}>
-          {glossary.description}
+          {aboutUsPage.description}
         </p>
       </motion.div>
       <motion.div

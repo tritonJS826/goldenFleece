@@ -5,54 +5,53 @@ import styles from "./bookingBlock.module.scss";
 
 
 export const BookingBlock = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.bookingBlock;
+  const {bookingBlock} = useDictionaryContext().dictionary;
 
   return (
     <div className={styles.book}>
       <div className={styles.leftSide}>
         <p className={styles.textLeft}>
           <span className={styles.span}>
-            {glossary.subTitle}
+            {bookingBlock.subTitle}
           </span>
         </p>
         <h2 className={styles.titleLeft}>
-          {glossary.description}
+          {bookingBlock.description}
         </h2>
         <p className={styles.textLeft}>
-          {glossary.text}
+          {bookingBlock.text}
         </p>
         <span className={styles.spanLink}>
-          {glossary.buttonText}
+          {bookingBlock.buttonText}
         </span>
       </div>
       <div className={styles.rightSide}>
         <h3 className={styles.titleBook}>
-          {glossary.bookingTitle}
+          {bookingBlock.bookingTitle}
         </h3>
         <ul className={styles.list}>
           <li className={styles.listItem}>
             <h4>
-              {glossary.bestPriceGuarantee}
+              {bookingBlock.bestPriceGuarantee}
             </h4>
             <p className={styles.text}>
-              {glossary.bestPriceGuaranteeDescription}
+              {bookingBlock.bestPriceGuaranteeDescription}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              {glossary.exclusiveOffers}
+              {bookingBlock.exclusiveOffers}
             </h4>
             <p className={styles.text}>
-              {glossary.exclusiveOffersDescription}
+              {bookingBlock.exclusiveOffersDescription}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              {glossary.noHiddenFees}
+              {bookingBlock.noHiddenFees}
             </h4>
             <p className={styles.text}>
-              {glossary.noHiddenFeesDescription}
+              {bookingBlock.noHiddenFeesDescription}
             </p>
           </li>
         </ul>
@@ -61,7 +60,7 @@ export const BookingBlock = () => {
           className={styles.bookLink}
         >
           <span className={styles.linkText}>
-            {dictionary.bookButtonText}
+            {bookingBlock.bookButtonText}
           </span>
         </NavLink>
       </div>

@@ -7,15 +7,14 @@ import styles from "./AboutUsPage.module.scss";
 
 
 export const AboutUsPage = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.aboutUsPage;
+  const {aboutUsPage} = useDictionaryContext().dictionary;
 
   return (
     <PageBorder>
       <AboutUsPromo />
       <div className={styles.wrap}>
         <h3 className={styles.title}>
-          {glossary.description}
+          {aboutUsPage.description}
         </h3>
       </div>
       <ServiceBlock />

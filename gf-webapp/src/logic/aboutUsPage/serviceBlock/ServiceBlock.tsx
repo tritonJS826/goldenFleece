@@ -5,8 +5,7 @@ import styles from "./ServiceBlock.module.scss";
 
 
 export const ServiceBlock = () => {
-  const {dictionary} = useDictionaryContext();
-  const glossary = dictionary.aboutUsPage;
+  const {aboutUsPage} = useDictionaryContext().dictionary;
 
   return (
     <div>
@@ -20,26 +19,26 @@ export const ServiceBlock = () => {
           <div className={styles.over}>
             <p className={styles.textLeft}>
               <span className={styles.span}>
-                {glossary.subtitle}
+                {aboutUsPage.subtitle}
               </span>
             </p>
             <h2 className={styles.title}>
-              {glossary.gastronomy}
+              {aboutUsPage.gastronomy}
             </h2>
             <div className={styles.description}>
-              {glossary.gastronomyDescription}
+              {aboutUsPage.gastronomyDescription}
             </div>
             <h2 className={styles.title}>
-              {glossary.experience}
+              {aboutUsPage.experience}
             </h2>
             <div className={styles.description}>
-              {glossary.experienceDescription}
+              {aboutUsPage.experienceDescription}
             </div>
             <h3 className={styles.title}>
-              {glossary.spa}
+              {aboutUsPage.spa}
             </h3>
             <div className={styles.description}>
-              {glossary.spaDescription}
+              {aboutUsPage.spaDescription}
             </div>
           </div>
         </div>

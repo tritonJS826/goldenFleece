@@ -19,9 +19,9 @@ interface Contact {
 
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
   const {dictionary, setDictionary} = useDictionaryContext();
-  const glossary = dictionary.navigation;
+  const navigation = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
-  const [langSelected, setLangSelected] = useState(languages.getValue("lang") || "en");
+  const [langSelected, setLangSelected] = useState(languages.getLanguage);
   const langList = ["en", "ru", "ge"];
 
   const langHoverHandler = () => {
@@ -189,7 +189,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                   activeLinkHandler(isActive)
                 }
               >
-                {glossary.main}
+                {navigation.main}
               </NavLink>
               <NavLink
                 to="/rooms"
@@ -197,7 +197,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                   activeLinkHandler(isActive)
                 }
               >
-                {glossary.rooms}
+                {navigation.rooms}
               </NavLink>
               <NavLink
                 to="/contacts"
@@ -205,7 +205,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                   activeLinkHandler(isActive)
                 }
               >
-                {glossary.contacts}
+                {navigation.contacts}
               </NavLink>
               <NavLink
                 to="/about"
@@ -213,7 +213,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                   activeLinkHandler(isActive)
                 }
               >
-                {glossary.aboutUs}
+                {navigation.aboutUs}
               </NavLink>
             </ul>
           </div>
@@ -233,7 +233,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     footerLinkHandler(isActive)
                   }
                 >
-                  {glossary.main}
+                  {navigation.main}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -243,7 +243,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     footerLinkHandler(isActive)
                   }
                 >
-                  {glossary.rooms}
+                  {navigation.rooms}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -253,7 +253,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     footerLinkHandler(isActive)
                   }
                 >
-                  {glossary.contacts}
+                  {navigation.contacts}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
@@ -263,7 +263,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                     footerLinkHandler(isActive)
                   }
                 >
-                  {glossary.aboutUs}
+                  {navigation.aboutUs}
                 </NavLink>
               </li>
             </ul>
