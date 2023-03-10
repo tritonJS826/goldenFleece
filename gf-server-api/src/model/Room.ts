@@ -1,6 +1,7 @@
 /**swagger model and room model will be separate soon*/
 
 
+
 /**
  * Room model
  * @swagger
