@@ -33,7 +33,7 @@ export const Map = () => {
     const LEFT = 0;
     const BOTTOM = 0;
     const TOP = target.offsetHeight - (target.parentElement?.offsetHeight || 0);
-    const RIGTH = ((target.parentElement?.offsetWidth || 0) - target.offsetWidth);
+    const RIGHT = ((target.parentElement?.offsetWidth || 0) - target.offsetWidth);
 
     if (target.dataset.name === "map-content") {
       let x = e.pageX - startX;
@@ -48,8 +48,8 @@ export const Map = () => {
       if (y > TOP) {
         y = TOP;
       }
-      if (x < RIGTH) {
-        x = RIGTH;
+      if (x < RIGHT) {
+        x = RIGHT;
       }
       target.style.transform = `translate(${x}px, ${y}px)`;
     }
