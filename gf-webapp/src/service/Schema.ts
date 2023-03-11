@@ -5,5 +5,5 @@ export enum Schema {
 export enum Language {
   en = "en",
   ru = "ru",
-  ge = "ge"
+  ge = "ge",
 }

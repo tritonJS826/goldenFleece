@@ -1,18 +1,18 @@
-import {StorageService} from "./StorageSevice";
+import {StorageService} from "./StorageService";
 import {Schema, Language} from "./Schema";
 
-export class LanguageService extends StorageService<Schema> {
+class LanguageService extends StorageService<Schema> {
 
   constructor() {
     super();
   }
 
   public getCurrentLanguage() {
-    return this.get(Schema.lang) as Language;
+    return this.get(Schema.lang) as Language ?? Language.en;
   }
 
-  public setCurrentLanguage(accessToken: Language) {
-    this.set(Schema.lang, accessToken);
+  public setCurrentLanguage(language: Language) {
+    this.set(Schema.lang, language);
   }
 
 }

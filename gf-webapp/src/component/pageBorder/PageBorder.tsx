@@ -22,7 +22,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   const {dictionary, setDictionary} = useDictionaryContext();
   const navigation = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
-  const [langSelected, setLangSelected] = useState<Language>(languageService.getCurrentLanguage() ?? Language.en);
+  const [langSelected, setLangSelected] = useState<Language>(languageService.getCurrentLanguage());
 
   const langHoverHandler = () => {
     setLangOpen(prev => !prev);
