@@ -7,6 +7,7 @@ import styles from "./ContactsPage.module.scss";
 
 export const ContactsPage = () => {
   const {contactsPage} = useDictionaryContext().dictionary;
+  const {askAdminForm} = useDictionaryContext().dictionary;
 
   const [toSend, setToSend] = useState({
     to_name: "",
@@ -82,13 +83,13 @@ export const ContactsPage = () => {
               className={styles.label}
               htmlFor="text"
             >
-              {contactsPage.form.name}
+              {askAdminForm.name}
             </label>
             <input
               type="text"
               className={styles.input}
               id="text"
-              placeholder="Your name"
+              placeholder={askAdminForm.name}
               name="to_name"
               value={toSend.to_name}
               onChange={handleChange}
@@ -100,13 +101,13 @@ export const ContactsPage = () => {
               className={styles.label}
               htmlFor="email"
             >
-              {contactsPage.form.email}
+              {askAdminForm.email}
             </label>
             <input
               type="email"
               className={styles.input}
               id="email"
-              placeholder="Your email address"
+              placeholder={askAdminForm.email}
               name="reply_to"
               value={toSend.reply_to}
               onChange={handleChange}
@@ -118,13 +119,13 @@ export const ContactsPage = () => {
               className={styles.label}
               htmlFor="phone"
             >
-              {contactsPage.form.phone}
+              {askAdminForm.phone}
             </label>
             <input
               type="text"
               className={styles.input}
               id="phone"
-              placeholder="Your phone number"
+              placeholder={askAdminForm.phone}
               name="phone"
               value={toSend.phone}
               onChange={handleChange}
@@ -136,13 +137,13 @@ export const ContactsPage = () => {
               className={styles.label}
               htmlFor="message"
             >
-              {contactsPage.form.message}
+              {askAdminForm.message}
             </label>
             <input
               type="text"
               className={styles.input}
               id="message"
-              placeholder="Message"
+              placeholder={askAdminForm.message}
               name="message"
               value={toSend.message}
               onChange={handleChange}
@@ -153,7 +154,7 @@ export const ContactsPage = () => {
             type="submit"
             className={styles.button}
           >
-            {contactsPage.form.buttonSubmit}
+            {askAdminForm.buttonText}
           </button>
         </form>
       </div>

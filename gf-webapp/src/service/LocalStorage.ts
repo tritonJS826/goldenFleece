@@ -9,10 +9,12 @@ class LocalStorageService {
 
 export const localStorageValue = new LocalStorageService();
 
+import {CurrentLanguage} from "./LoadDictionary";
 class LocalStorageLanguageService {
 
-  public getLanguage(): string {
-    const currentLanguage = localStorage.getItem("lang") ?? "en";
+  public getLanguage(): CurrentLanguage {
+    const lang = localStorage.getItem("lang") as keyof typeof CurrentLanguage;
+    const currentLanguage = CurrentLanguage[lang];
     return currentLanguage;
   }
 

@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./RoomsPlan.module.scss";
-import {roomsPlan} from "./roomsPlan";
+import {roomsSchema} from "./roomsSchema";
 
 export const RoomsPlan = () => {
 
-  const renderRoomsPlan = () => {
-    return roomsPlan.map((room) => (
+  const renderRoomsSchema = () => {
+    return roomsSchema.map((room) => (
       <div
         key={room.id}
         className={`${styles.planRoom} ${room.className}`}
@@ -17,7 +17,7 @@ export const RoomsPlan = () => {
 
   return (
     <div>
-      {renderRoomsPlan()}
+      {renderRoomsSchema()}
     </div>
   );
 };

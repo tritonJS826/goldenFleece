@@ -28,7 +28,7 @@ export const MapContent = (props: MapContentProps) => {
   return (
     <div
       data-name='map-content'
-      onMouseDown={(e) => props.mouseDownHandler(e)}
+      onMouseDown={props.mouseDownHandler}
       className={styles.content}
     >
       {renderMarkers()}

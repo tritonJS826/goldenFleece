@@ -70,14 +70,7 @@
     "email": "Email",
     "address": "Address",
     "street": "Tabukashvili 4",
-    "location": "Kutaisi, Georgia",
-    "form": {
-      "name": "Your name",
-      "email": "Your email address",
-      "phone": "Your phone number",
-      "message": "Message",
-      "buttonSubmit": "Submit"
-    }
+    "location": "Kutaisi, Georgia"
   },
   "aboutUsPage": {
     "title": "About us",
@@ -94,7 +87,7 @@
     "title": "Booking",
     "bookingText":  "Book direct for the best price, exclusive offers and no hidden fees."
   },
-  "form": {
+  "bookingRoomForm": {
     "name": "Your name",
     "email": "Your email address",
     "phone": "Your phone number",
@@ -104,7 +97,13 @@
     "roomNumber": "Room",
     "adultsAmount": "Adults",
     "childrenAmount": "Children",
-    "buttonBooking": "Book now",
-    "buttonSubmit": "Submit"
+    "buttonText": "Book now"
+  },
+  "askAdminForm": {
+    "name": "Your name",
+    "email": "Your email address",
+    "phone": "Your phone number",
+    "message": "Message",
+    "buttonText": "Submit"
   }
 }

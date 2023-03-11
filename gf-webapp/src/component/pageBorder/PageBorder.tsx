@@ -3,7 +3,7 @@ import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import {useLocation} from "react-router-dom";
-import {loadDictionary} from "../../service/LoadDictionary";
+import {CurrentLanguage, loadDictionary} from "../../service/LoadDictionary";
 import {languages} from "../../service/LocalStorage";
 import styles from "./PageBorder.module.scss";
 
@@ -17,12 +17,12 @@ interface Contact {
   contact: string;
 }
 
+
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
   const {dictionary, setDictionary} = useDictionaryContext();
   const navigation = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
-  const [langSelected, setLangSelected] = useState(languages.getLanguage);
-  const langList = ["en", "ru", "ge"];
+  const [langSelected, setLangSelected] = useState<CurrentLanguage>(languages.getLanguage);
 
   const langHoverHandler = () => {
     setLangOpen(prev => !prev);
@@ -37,7 +37,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     loadDictionaryAsync();
   }, [langSelected]);
 
-  const onLangChoose = (lang: string) => {
+  const onLangChoose = (lang: CurrentLanguage) => {
     setLangSelected(lang);
     localStorage.setItem("lang", `${lang}`);
     setLangOpen(false);
@@ -151,16 +151,16 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               onMouseLeave={langHoverHandler}
             >
               <p>
-                {langSelected.toUpperCase()}
+                {CurrentLanguage[langSelected].toUpperCase()}
               </p>
               <ul className={styles.langAdditional}>
-                {langOpen && langList.map(lang => (
+                {langOpen && (Object.keys(CurrentLanguage) as (keyof typeof CurrentLanguage)[]).map(lang => (
                   <li
                     key={lang}
-                    onClick={() => onLangChoose(lang)}
-                    className={langSelected === lang ? `${styles.disabled}` : ""}
+                    onClick={() => onLangChoose(CurrentLanguage[lang])}
+                    className={langSelected === CurrentLanguage[lang] ? `${styles.disabled}` : ""}
                   >
-                    {lang.toUpperCase()}
+                    {CurrentLanguage[lang].toUpperCase()}
                   </li>
                 ))}
               </ul>

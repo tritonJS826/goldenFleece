@@ -1,6 +1,6 @@
 import styles from "./RoomsPlan.module.scss";
 
-export const roomsPlan = [
+export const roomsSchema = [
   {
     id: "1",
     title: "Single room №1",
