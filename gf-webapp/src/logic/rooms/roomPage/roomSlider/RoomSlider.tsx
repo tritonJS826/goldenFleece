@@ -4,10 +4,13 @@ import styles from "./roomSlider.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import {Autoplay, Keyboard} from "swiper";
-import {RoomType} from "../../../../model/Room";
+import {Room} from "../../../../model/Room";
 
+interface SliderProps {
+  room: Room
+}
 
-export const RoomSlider = ({room}: RoomType) => {
+export const RoomSlider = (props: SliderProps) => {
   return (
     <Swiper className={styles.swiper}
       spaceBetween={30}
@@ -21,7 +24,7 @@ export const RoomSlider = ({room}: RoomType) => {
       keyboard={{enabled: true}}
       modules={[Autoplay, Keyboard]}
     >
-      {room.slider.map((slide, index) => (
+      {props.room.slider.map((slide, index) => (
         <SwiperSlide key={index}
           className={styles.wrap}
         >

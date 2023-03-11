@@ -1,10 +1,14 @@
 import React from "react";
 import {motion} from "framer-motion";
 import styles from "../roomItem.module.scss";
-import {RoomType} from "../../../../../../model/Room";
+import {Room} from "../../../../../../model/Room";
 import {RoomLink} from "../roomLink/RoomLink";
 import {Information} from "../information/Information";
 import {Title} from "../title/Title";
+
+interface DescriptionProps {
+  room: Room
+}
 
 const textAnimation = {
   hidden: {
@@ -18,7 +22,7 @@ const textAnimation = {
   },
 };
 
-export const Description = ({room}: RoomType) => {
+export const Description = (props: DescriptionProps) => {
 
   return (
     <motion.div
@@ -28,9 +32,9 @@ export const Description = ({room}: RoomType) => {
       viewport={{amount: 0.1, once: true}}
       className={styles.roomAbout}
     >
-      <Title room={room} />
-      <Information room={room} />
-      <RoomLink room={room} />
+      <Title room={props.room} />
+      <Information room={props.room} />
+      <RoomLink room={props.room} />
     </motion.div>
   );
 };

@@ -1,9 +1,14 @@
 import React, {useState} from "react";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import styles from "./promo.module.scss";
 
-export const Promo = ({room}: RoomType) => {
+interface PromoProps {
+  room:IRoom;
+}
+
+
+export const Promo = (props: PromoProps) => {
   const [isHover, setIsHover] = useState(false);
   const [isImgModalShow, setIsImgModalShow] = useState(false);
   const [newPromoImageUrl, setNewPromoImageUrl] = useState("");
@@ -14,8 +19,8 @@ export const Promo = ({room}: RoomType) => {
 
   const saveHandler = () => {
     setIsImgModalShow(!isImgModalShow);
-    room.promo = newPromoImageUrl;
-    saveRoom(room);
+    props.room.promo = newPromoImageUrl;
+    saveRoom(props.room);
     setNewPromoImageUrl("");
   };
 
@@ -34,10 +39,10 @@ export const Promo = ({room}: RoomType) => {
           onMouseEnter={hoverHandler}
           onMouseLeave={hoverHandler}
         >
-          {room.promo ?
+          {props.room.promo ?
             (
               <img className={styles.image}
-                src={room.promo}
+                src={props.room.promo}
                 alt="room-promo"
               />
             ) : (

@@ -1,15 +1,19 @@
 import React from "react";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import styles from "./slider.module.scss";
 import {Slides} from "./slides/Slides";
 
-export const Slider = ({room}: RoomType) => {
+interface SliderProps {
+  room:IRoom;
+}
+
+export const Slider = (props: SliderProps) => {
   return (
     <div className={styles.slider}>
       <p className={styles.title}>
         Room slider
       </p>
-      <Slides room={room} />
+      <Slides room={props.room} />
     </div>
   );
 };

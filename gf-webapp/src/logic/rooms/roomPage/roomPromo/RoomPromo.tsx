@@ -1,13 +1,17 @@
 import React from "react";
-import {RoomType} from "../../../../model/Room";
+import {Room} from "../../../../model/Room";
 import {Information} from "./information/Information";
 import {Title} from "./title/Title";
 
-export const RoomPromo = ({room}: RoomType) => {
+interface PromoProps {
+  room: Room
+}
+
+export const RoomPromo = (props: PromoProps) => {
   return (
     <div>
-      <Title room={room} />
-      <Information room={room} />
+      <Title room={props.room} />
+      <Information room={props.room} />
     </div>
   );
 };

@@ -1,22 +1,26 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {RoomType} from "../../../../../model/Room";
+import {Room} from "../../../../../model/Room";
 import styles from "../roomPromo.module.scss";
 import {Services} from "./setvices/Services";
 
-export const Information = ({room}: RoomType) => {
+interface InformationProps {
+  room: Room
+}
+
+export const Information = (props: InformationProps) => {
   const {t} = useTranslation();
   return (
     <div>
       <div className={styles.container}>
         <div className={styles.description}>
-          {t(`${room.apartmentsType.toLowerCase()}Room`)}
+          {t(`${props.room.apartmentsType.toLowerCase()}Room`)}
         </div>
         <div className={styles.description}>
-          {`Price: ${room.price}$`}
+          {`Price: ${props.room.price}$`}
         </div>
       </div>
-      <Services services={room.services} />
+      <Services services={props.room.services} />
     </div>
   );
 };

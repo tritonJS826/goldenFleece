@@ -1,21 +1,25 @@
 import React, {useState} from "react";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {BASE_SERVICES} from "../../../../utils/roomConstants";
 import {EditBtn} from "../editBtn/EditBtn";
 import styles from "./services.module.scss";
 import {changeRoomServices} from "./roomServices";
 
-export const Services = ({room}: RoomType) => {
+interface ServicesProps {
+  room:IRoom;
+}
 
-  const roomServices = room.services?.split(",").map(el => el.trim());
+export const Services = (props: ServicesProps) => {
+
+  const roomServices = props.room.services?.split(",").map(el => el.trim());
   const [services, setServices] = useState(roomServices);
   const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const saveHandler = async () => {
     setIsEditFieldDisabled(true);
-    room.services = services?.join(", ").trim();
-    saveRoom(room);
+    props.room.services = services?.join(", ").trim();
+    saveRoom(props.room);
   };
 
   const fieldEditHandler = () => {
@@ -37,7 +41,7 @@ export const Services = ({room}: RoomType) => {
           <li className={styles.service}
             key={service}
           >
-            <input id={`${service}-service-${room.id}`}
+            <input id={`${service}-service-${props.room.id}`}
               type="checkbox"
               value={service}
               defaultChecked={services?.indexOf(service) !== -1}
@@ -45,7 +49,7 @@ export const Services = ({room}: RoomType) => {
               disabled={isEditFieldDisabled}
             />
             <label className={styles.label}
-              htmlFor={`${service}-service-${room.id}`}
+              htmlFor={`${service}-service-${props.room.id}`}
             >
               {service}
             </label>

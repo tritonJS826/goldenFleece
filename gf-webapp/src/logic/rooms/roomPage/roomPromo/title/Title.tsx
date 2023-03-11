@@ -1,16 +1,20 @@
 import React from "react";
-import {RoomType} from "../../../../../model/Room";
+import {Room} from "../../../../../model/Room";
 import styles from "../roomPromo.module.scss";
 
-export const Title = ({room}: RoomType) => {
+interface TitleProps {
+  room: Room
+}
+
+export const Title = (props: TitleProps) => {
   return (
     <div className={styles.wrapper}>
       <img className={styles.promo}
-        src={room.promo}
+        src={props.room.promo}
         alt="Promo image"
       />
       <h1 className={styles.title}>
-        {room.description}
+        {props.room.description}
       </h1>
     </div>
   );

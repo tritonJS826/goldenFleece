@@ -1,18 +1,23 @@
 import * as React from "react";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import {useState} from "react";
 import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
 import styles from "./price.module.scss";
 
-export const Price = ({room}: RoomType) => {
-  const [price, setPrice] = useState(String(room.price));
+interface ProcenProps {
+  room:IRoom;
+}
+
+
+export const Price = (props: ProcenProps) => {
+  const [price, setPrice] = useState(String(props.room.price));
   const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    room.price = +price;
-    saveRoom(room);
+    props.room.price = +price;
+    saveRoom(props.room);
   };
 
   const fieldEditHandler = () => {
@@ -21,12 +26,12 @@ export const Price = ({room}: RoomType) => {
 
   return (
     <div className={styles.price}>
-      <label htmlFor={`price-${room.id}`}>
+      <label htmlFor={`price-${props.room.id}`}>
         Room price
       </label>
       <div className={styles.container}>
         <input type="number"
-          id={`price-${room.id}`}
+          id={`price-${props.room.id}`}
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           disabled={isEditFieldDisabled}

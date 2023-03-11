@@ -1,5 +1,5 @@
 import React from "react";
-import {RoomType} from "../../../model/room";
+import {IRoom} from "../../../model/room";
 import {roomInit} from "../../../service/room";
 import {Loader} from "../../loader/Loader";
 import {Adults} from "./adults/Adults";
@@ -14,7 +14,11 @@ import {Services} from "./services/Services";
 import {Slider} from "./slider/Slider";
 import {Square} from "./square/Square";
 
-export const Room = ({room}: RoomType) => {
+interface RoomProps {
+  room:IRoom;
+}
+
+export const Room = ({room}: RoomProps) => {
   const isRoomInit = roomInit(room);
   return isRoomInit ?
     <div className={styles.room}>

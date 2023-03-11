@@ -13,11 +13,14 @@ import {Price} from "./price/Price";
 import {Rating} from "./rating/Rating";
 import {errors, roomStartState as room} from "./roomStartState";
 import {Services} from "./services/Services";
-import {IShowModal} from "./showModal";
 import {Square} from "./square/Square";
 import {SubmitBtn} from "./submitBtn/Submit";
 
-export const AddRoomModal = ({showModal}: IShowModal) => {
+interface ShowModalProps {
+  showModal: () => void
+}
+
+export const AddRoomModal = (props: ShowModalProps) => {
   return (
     <AddRoomContext.Provider value={{
       room,
@@ -38,9 +41,9 @@ export const AddRoomModal = ({showModal}: IShowModal) => {
         <Promo room={room} />
         <Slider room={room} />
         <SubmitBtn />
-        <CloseBtn showModal={showModal} />
+        <CloseBtn showModal={props.showModal} />
       </div>
-      <ModalOverlay showModal={showModal} />
+      <ModalOverlay showModal={props.showModal} />
     </AddRoomContext.Provider>
   );
 };

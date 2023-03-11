@@ -1,18 +1,22 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {RoomType} from "../../../../../../model/Room";
+import {Room} from "../../../../../../model/Room";
 import {getRoomNumber} from "../../../../../../service/rooms";
 import styles from "../roomItem.module.scss";
 
-export const Title = ({room} :RoomType) => {
+interface TitleProps {
+  room: Room
+}
+
+export const Title = (props: TitleProps) => {
   const {t} = useTranslation();
   return (
     <div>
       <span className={styles.span}>
-        {getRoomNumber(room.id)}
+        {getRoomNumber(props.room.id)}
       </span>
       <h3 className={styles.titleBook}>
-        {t(`${room.apartmentsType.toLowerCase()}Room`)}
+        {t(`${props.room.apartmentsType.toLowerCase()}Room`)}
       </h3>
     </div>
   );

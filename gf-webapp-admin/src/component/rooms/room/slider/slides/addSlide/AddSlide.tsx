@@ -1,15 +1,15 @@
 import React, {useState} from "react";
 import styles from "./addSlide.module.scss";
 
-interface IAddSlide {
+interface AddSlideProps {
   addSlide: (slideImageURL: string) => void
 }
 
-export const AddSlide = ({addSlide}: IAddSlide) => {
+export const AddSlide = (props: AddSlideProps) => {
   const [slideURL, setSlideURL] = useState("");
 
   const addSlideHandler = () => {
-    addSlide(slideURL);
+    props.addSlide(slideURL);
     setSlideURL("");
   };
 

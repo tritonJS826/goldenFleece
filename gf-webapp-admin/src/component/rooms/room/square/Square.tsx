@@ -1,18 +1,22 @@
 import * as React from "react";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import {useState} from "react";
 import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
 import styles from "./square.module.scss";
 
-export const Square = ({room}: RoomType) => {
-  const [square, setSquare] = useState(String(room.square));
+interface SquareProps {
+  room:IRoom;
+}
+
+export const Square = (props: SquareProps) => {
+  const [square, setSquare] = useState(String(props.room.square));
   const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    room.square = +square;
-    saveRoom(room);
+    props.room.square = +square;
+    saveRoom(props.room);
   };
 
   const fieldEditHandler = () => {
@@ -21,12 +25,12 @@ export const Square = ({room}: RoomType) => {
 
   return (
     <div className={styles.square}>
-      <label htmlFor={`square-${room.id}`}>
+      <label htmlFor={`square-${props.room.id}`}>
         Room square
       </label>
       <div className={styles.container}>
         <input type="number"
-          id={`square-${room.id}`}
+          id={`square-${props.room.id}`}
           value={square}
           onChange={(e) => setSquare(e.target.value)}
           disabled={isEditFieldDisabled}

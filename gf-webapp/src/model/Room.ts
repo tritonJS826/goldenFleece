@@ -11,11 +11,3 @@ export interface Room {
   services: string,
   slider: string[],
 }
-
-export type RoomType = {
-  room: Room
-}
-
-export type RoomsType = {
-  rooms: Room[]
-}

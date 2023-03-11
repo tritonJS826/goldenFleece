@@ -1,11 +1,15 @@
 import React, {useState} from "react";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 import styles from "./rating.module.scss";
 
-export const Rating = ({room}: RoomType) => {
-  const [rating, setRating] = useState(String(room.rating));
+interface RatingProps {
+  room:IRoom;
+}
+
+export const Rating = (props: RatingProps) => {
+  const [rating, setRating] = useState(String(props.room.rating));
   const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const ratingHandler = (e: React.ChangeEvent) => {
@@ -21,8 +25,8 @@ export const Rating = ({room}: RoomType) => {
 
   const saveHandler = () => {
     setIsEditFieldDisabled(true);
-    room.rating = +rating;
-    saveRoom(room);
+    props.room.rating = +rating;
+    saveRoom(props.room);
   };
 
   const fieldEditHandler = () => {
@@ -30,12 +34,12 @@ export const Rating = ({room}: RoomType) => {
   };
   return (
     <div className={styles.rating}>
-      <label htmlFor={`rating-${room.id}`}>
+      <label htmlFor={`rating-${props.room.id}`}>
         Room rating
       </label>
       <div className={styles.container}>
         <input type="number"
-          id={`rating-${room.id}`}
+          id={`rating-${props.room.id}`}
           value={rating}
           onChange={ratingHandler}
           disabled={isEditFieldDisabled}

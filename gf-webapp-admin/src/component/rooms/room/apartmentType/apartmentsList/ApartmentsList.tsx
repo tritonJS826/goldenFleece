@@ -1,18 +1,18 @@
 import React from "react";
 import {ROOM_TYPES} from "../../../../../utils/roomConstants";
 import styles from "./apartmentsList.module.scss";
-interface IApartments {
+interface ApartmentsProps {
   type: string | undefined;
   isEditFieldDisabled: boolean;
   onChangeApatrmentType: (e: React.ChangeEvent) => void;
 }
 
-export const ApartmentsList = ({type, isEditFieldDisabled, onChangeApatrmentType}: IApartments) => {
+export const ApartmentsList = (porps: ApartmentsProps) => {
   return (
     <select className={styles.list}
-      value={type}
-      disabled={isEditFieldDisabled}
-      onChange={onChangeApatrmentType}
+      value={porps.type}
+      disabled={porps.isEditFieldDisabled}
+      onChange={porps.onChangeApatrmentType}
     >
       {ROOM_TYPES.map(roomType => (
         <option key={roomType}

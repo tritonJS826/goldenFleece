@@ -1,18 +1,21 @@
-import * as React from "react";
-import {RoomType} from "../../../../model/room";
-import {useState} from "react";
+import React, {useState} from "react";
+import {IRoom} from "../../../../model/room";
 import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
 import styles from "./adults.module.scss";
 
-export const Adults = ({room}: RoomType) => {
-  const [adults, setAdults] = useState(String(room.adults));
+interface AdultsProps {
+  room:IRoom;
+}
+
+export const Adults = (props: AdultsProps) => {
+  const [adults, setAdults] = useState(String(props.room.adults));
   const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    room.adults = +adults;
-    saveRoom(room);
+    props.room.adults = +adults;
+    saveRoom(props.room);
   };
 
   const fieldEditHandler = () => {
@@ -21,21 +24,22 @@ export const Adults = ({room}: RoomType) => {
 
   return (
     <div className={styles.adults}>
-      <label htmlFor={`adults-${room.id}`}>
-        Room adults
+      <label>
+        <h4 className={styles.title}>
+          Room adults
+        </h4>
+        <div className={styles.container}>
+          <input type="number"
+            value={adults}
+            onChange={(e) => setAdults(e.target.value)}
+            disabled={isEditFieldDisabled}
+          />
+          <EditBtn isEditFieldDisabled={isEditFieldDisabled}
+            saveHandler={saveHandler}
+            fieldEditHandler={fieldEditHandler}
+          />
+        </div>
       </label>
-      <div className={styles.container}>
-        <input type="number"
-          id={`adults-${room.id}`}
-          value={adults}
-          onChange={(e) => setAdults(e.target.value)}
-          disabled={isEditFieldDisabled}
-        />
-        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-          saveHandler={saveHandler}
-          fieldEditHandler={fieldEditHandler}
-        />
-      </div>
     </div>
   );
 };

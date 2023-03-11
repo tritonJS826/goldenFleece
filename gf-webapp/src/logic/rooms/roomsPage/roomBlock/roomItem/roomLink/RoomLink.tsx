@@ -1,13 +1,17 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
-import {RoomType} from "../../../../../../model/Room";
+import {Room} from "../../../../../../model/Room";
 import styles from "../roomItem.module.scss";
 
-export const RoomLink = ({room}: RoomType) => {
+interface LinkProps {
+  room: Room
+}
+
+export const RoomLink = (props: LinkProps) => {
   const {t} = useTranslation();
   return (
-    <NavLink to={`/rooms/${room.id}`}
+    <NavLink to={`/rooms/${props.room.id}`}
       className={styles.roomLink}
     >
       <span className={styles.linkText}>
