@@ -4,7 +4,7 @@ import {send} from "emailjs-com";
 import styles from "./Form.module.scss";
 
 type RoomProps = {
-  roomNumber: string | undefined;
+  roomNumber: string | null;
 }
 
 export const Form = (props: RoomProps) => {
@@ -139,7 +139,7 @@ export const Form = (props: RoomProps) => {
               className={styles.input}
               id="rooms"
               name="room_number"
-              placeholder={props.roomNumber}
+              placeholder={props.roomNumber ?? undefined}
               value={toSend.room_number}
               onChange={handleChangeRoom}
               required

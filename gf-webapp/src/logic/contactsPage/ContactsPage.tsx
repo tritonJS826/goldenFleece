@@ -6,8 +6,7 @@ import styles from "./ContactsPage.module.scss";
 
 
 export const ContactsPage = () => {
-  const {contactsPage} = useDictionaryContext().dictionary;
-  const {askAdminForm} = useDictionaryContext().dictionary;
+  const {contactsPage, askAdminForm} = useDictionaryContext().dictionary;
 
   const [toSend, setToSend] = useState({
     to_name: "",

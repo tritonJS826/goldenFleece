@@ -1,12 +1,7 @@
 import {DictionaryType} from "../context/Context";
+import {Language} from "./Schema";
 
-export enum CurrentLanguage {
-  en = "en",
-  ru = "ru",
-  ge = "ge"
-}
-
-export const loadDictionary = async (currentLang: CurrentLanguage): Promise<DictionaryType> => {
-  const dictionary: DictionaryType = await import(`../../public/locales/${currentLang}/translation.json`);
+export const loadDictionary = async (language: Language): Promise<DictionaryType> => {
+  const dictionary: DictionaryType = await import(`../../public/locales/${language}/translation.json`);
   return dictionary;
 };

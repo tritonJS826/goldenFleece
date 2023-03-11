@@ -12,7 +12,7 @@ export const HotelPlan = () => {
   const {bookingPage} = useDictionaryContext().dictionary;
 
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
-  const [roomNumber, setRoomNumber] = useState<string | undefined>(undefined);
+  const [roomNumber, setRoomNumber] = useState<string | null>(null);
 
   const isBooking = (event: React.MouseEvent): void => {
     const element = event.target as HTMLElement;
