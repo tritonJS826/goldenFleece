@@ -11,7 +11,7 @@ import {LongDescription} from "./longDescription/LongDescription";
 import {ModalOverlay} from "./modalOverlay/ModalOverlay";
 import {Price} from "./price/Price";
 import {Rating} from "./rating/Rating";
-import {errors, roomStartState as room} from "./roomStartState";
+import {roomStartState} from "./roomStartState";
 import {Services} from "./services/Services";
 import {Square} from "./square/Square";
 import {SubmitBtn} from "./submitBtn/Submit";
@@ -22,11 +22,7 @@ interface ShowModalProps {
 
 export const AddRoomModal = (props: ShowModalProps) => {
   return (
-    <AddRoomContext.Provider value={{
-      room,
-      errors,
-    }}
-    >
+    <AddRoomContext.Provider value={{roomStartState}}>
       <div className={styles.addRoomModal}>
         <ApartmentsType />
         <Description />
@@ -38,8 +34,8 @@ export const AddRoomModal = (props: ShowModalProps) => {
           <Adults />
         </div>
         <Services />
-        <Promo room={room} />
-        <Slider room={room} />
+        <Promo room={roomStartState} />
+        <Slider room={roomStartState} />
         <SubmitBtn />
         <CloseBtn showModal={props.showModal} />
       </div>
