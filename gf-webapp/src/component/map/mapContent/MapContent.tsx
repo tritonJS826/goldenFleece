@@ -10,16 +10,6 @@ export const MapContent = (props: mapContent) => {
   const {scale, zoomInHandler, zoomOutHandler} = useZoom();
   const {menuItem} = useContext(MapContext);
 
-  const renderMarkers = () => {
-    return (
-      markers.map((marker) => (
-        <Marker {...marker}
-          key={marker.id}
-        />
-      ))
-    );
-  };
-
   return (
     <>
       <div data-name='map-content'
@@ -27,10 +17,14 @@ export const MapContent = (props: mapContent) => {
         className={styles.content}
         style={{
           scale: `${scale}`,
-          transform: `translate(${(menuItem ? -menuItem.x / 1.6 : null)}px, ${menuItem ? menuItem.y / 2 : null}px)`,
+          transform: `translate(${(menuItem ? -menuItem.x / 1.75 : null)}px, ${menuItem ? menuItem.y / 2 : null}px)`,
         }}
       >
-        {renderMarkers()}
+        {markers.map((marker) => (
+          <Marker {...marker}
+            key={marker.id}
+          />
+        ))}
       </div>
       <div className={styles.zoom}>
         <div className={styles.zoom_in}
