@@ -1,64 +1,66 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
+import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import styles from "./bookingBlock.module.scss";
 
 
 export const BookingBlock = () => {
-  const {t} = useTranslation();
+  const {bookingBlock} = useDictionaryContext().dictionary;
+
   return (
     <div className={styles.book}>
       <div className={styles.leftSide}>
         <p className={styles.textLeft}>
           <span className={styles.span}>
-            {t("reservations")}
+            {bookingBlock.subTitle}
           </span>
         </p>
         <h2 className={styles.titleLeft}>
-          {t("bookToday")}
+          {bookingBlock.description}
         </h2>
         <p className={styles.textLeft}>
-          {t("bookDirect")}
+          {bookingBlock.text}
         </p>
         <span className={styles.spanLink}>
-          {t("More")}
+          {bookingBlock.buttonText}
         </span>
       </div>
       <div className={styles.rightSide}>
         <h3 className={styles.titleBook}>
-          {t("whyBookDirect")}
+          {bookingBlock.bookingTitle}
         </h3>
         <ul className={styles.list}>
           <li className={styles.listItem}>
             <h4>
-              {t("bestPrice")}
+              {bookingBlock.bestPriceGuarantee}
             </h4>
             <p className={styles.text}>
-              {t("enjoy")}
+              {bookingBlock.bestPriceGuaranteeDescription}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              {t("exclusiveOffers")}
+              {bookingBlock.exclusiveOffers}
             </h4>
             <p className={styles.text}>
-              {t("bookEnjoy")}
+              {bookingBlock.exclusiveOffersDescription}
             </p>
           </li>
           <li className={styles.listItem}>
             <h4>
-              {t("fees")}
+              {bookingBlock.noHiddenFees}
             </h4>
             <p className={styles.text}>
-              {t("extraFees")}
+              {bookingBlock.noHiddenFeesDescription}
             </p>
           </li>
         </ul>
-        <NavLink to="/booking"
+        <NavLink
+          to="/booking"
           className={styles.bookLink}
         >
           <span className={styles.linkText}>
-            {t("book-now")}
+            {bookingBlock.bookButtonText}
           </span>
         </NavLink>
       </div>

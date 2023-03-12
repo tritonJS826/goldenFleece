@@ -1,4 +1,10 @@
 import {createContext} from "react";
-import {IMapContext} from "./mapInterfaces";
+import {IMarker} from "../../component/map/mapContent/marker/IMarker";
+
+export interface IMapContext {
+  markers: IMarker[];
+  menuItem: IMarker | null;
+  setMenuItem: React.Dispatch<React.SetStateAction<IMarker | null>>;
+}
 
 export const MapContext = createContext<IMapContext>({} as IMapContext);

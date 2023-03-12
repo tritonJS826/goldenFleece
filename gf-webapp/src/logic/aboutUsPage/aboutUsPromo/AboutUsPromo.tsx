@@ -1,19 +1,22 @@
 import React from "react";
-import styles from "./AboutUsPromo.module.scss";
+import {useDictionaryContext} from "../../../context/Context";
 import image from "../../../resources/sliderImages/Promo3.jpg";
-import {useTranslation} from "react-i18next";
+import styles from "./AboutUsPromo.module.scss";
+
 
 export const AboutUsPromo = () => {
-  const {t} = useTranslation();
+  const {aboutUsPage} = useDictionaryContext().dictionary;
+
   return (
     <div>
       <div className={styles.wrapper}>
-        <img className={styles.promo}
+        <img
+          className={styles.promo}
           src={image}
           alt="Promo image"
         />
         <h1 className={styles.title}>
-          {t("about-us")}
+          {aboutUsPage.title}
         </h1>
       </div>
     </div>

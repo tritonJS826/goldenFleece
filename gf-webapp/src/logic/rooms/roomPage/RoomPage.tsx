@@ -43,7 +43,8 @@ export const RoomPage = () => {
 
   return (
     <PageBorder>
-      <RoomPromo promo={room.promo}
+      <RoomPromo
+        promo={room.promo}
         description={room.description}
         apartmentsType={room.apartmentsType}
         price={room.price}

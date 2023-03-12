@@ -1,14 +1,12 @@
 import React, {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
+import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
-import styles from "./PageBorder.module.scss";
-import logo from "../../resources/icons/logo.svg";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
-import githubLogo from "../../resources/icons/githubLogo.svg";
-import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
-import {useTranslation} from "react-i18next";
-import i18next from "i18next";
-import cookies from "js-cookie";
 import {useLocation} from "react-router-dom";
+import {loadDictionary} from "../../service/LoadDictionary";
+import {languageService} from "../../service/LanguageService";
+import {Language} from "../../service/Schema";
+import styles from "./PageBorder.module.scss";
 
 interface PageBorderProps {
   children: ReactNode
@@ -19,20 +17,29 @@ interface Contact {
   contact: string;
 }
 
+
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
-  const {t} = useTranslation();
+  const {dictionary, setDictionary} = useDictionaryContext();
+  const navigation = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
-  const currentLang = cookies.get("i18next") || "en";
-  const [langSelected, setLangSelected] = useState(currentLang);
-  const langList = ["en", "ru", "ge"];
+  const [langSelected, setLangSelected] = useState<Language>(languageService.getCurrentLanguage());
 
   const langHoverHandler = () => {
     setLangOpen(prev => !prev);
   };
 
-  const onLangChoose = (lang: string) => {
-    i18next.changeLanguage(lang);
+  const loadDictionaryAsync = async () => {
+    const messages = await loadDictionary(langSelected);
+    setDictionary(messages);
+  };
+
+  useEffect(() => {
+    loadDictionaryAsync();
+  }, [langSelected]);
+
+  const onLangChoose = (lang: Language) => {
     setLangSelected(lang);
+    localStorage.setItem("lang", `${lang}`);
     setLangOpen(false);
   };
 
@@ -59,10 +66,12 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
 
   const renderContacts = () => (
     contactsList.map((item, index) => (
-      <li key={index}
+      <li
+        key={index}
         onClick={onContactChoose}
       >
-        <a className={styles.link}
+        <a
+          className={styles.link}
           href={item.type + item.contact}
         >
           {item.contact}
@@ -96,14 +105,16 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
       <header className={scrollPosition < 100 ? styles.header : `${styles.header} ${styles.header_scroll}`}>
         <nav className={scrollPosition < 100 ? styles.nav : `${styles.nav} ${styles.nav_scroll}`}>
           <ul className={styles.list}>
-            <li className={styles.listItem}
+            <li
+              className={styles.listItem}
               onClick={burgerOpenHandler}
             >
               <div />
               <div />
               <div />
             </li>
-            <li onMouseEnter={contactsHoverHandler}
+            <li
+              onMouseEnter={contactsHoverHandler}
               onMouseLeave={contactsHoverHandler}
               className={`${styles.contacts} ${styles.listItem}`}
             >
@@ -111,14 +122,16 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 className={styles.contact}
               >
                 <p className={styles.contact_text}>
-                  {t("contacts")}
+                  {dictionary.contacts}
                 </p>
-                <svg className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
+                <svg
+                  className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
                   xmlns="http://www.w3.org/2000/svg"
                   height="35"
                   width="35"
                 >
-                  <path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"
+                  <path
+                    d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"
                     fill="#ffffff"
                   />
                 </svg>
@@ -131,33 +144,33 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               <div className={styles.logo}>
                 Golden Fleece
               </div>
-              {/* <img src={logo}
-                alt="Golden Fleece logo"
-              /> */}
             </li>
-            <li className={`${styles.languages} ${styles.listItem}`}
+            <li
+              className={`${styles.languages} ${styles.listItem}`}
               onMouseEnter={langHoverHandler}
               onMouseLeave={langHoverHandler}
             >
               <p>
-                {langSelected.toUpperCase()}
+                {Language[langSelected].toUpperCase()}
               </p>
               <ul className={styles.langAdditional}>
-                {langOpen && langList.map(lang => (
-                  <li key={lang}
-                    onClick={() => onLangChoose(lang)}
-                    className={currentLang === lang ? `${styles.disabled}` : ""}
+                {langOpen && (Object.keys(Language) as (keyof typeof Language)[]).map(lang => (
+                  <li
+                    key={lang}
+                    onClick={() => onLangChoose(Language[lang])}
+                    className={langSelected === Language[lang] ? `${styles.disabled}` : ""}
                   >
-                    {lang.toUpperCase()}
+                    {Language[lang].toUpperCase()}
                   </li>
                 ))}
               </ul>
 
             </li>
-            <NavLink to="/booking"
+            <NavLink
+              to="/booking"
               className={styles.listItem}
             >
-              {t("book-now")}
+              {dictionary.bookButtonText}
             </NavLink>
           </ul>
         </nav>
@@ -170,33 +183,37 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
         >
           <div className={styles.burger_content}>
             <ul>
-              <NavLink to="/"
+              <NavLink
+                to="/"
                 className={({isActive}) =>
                   activeLinkHandler(isActive)
                 }
               >
-                {t("main")}
+                {navigation.main}
               </NavLink>
-              <NavLink to="/rooms"
+              <NavLink
+                to="/rooms"
                 className={({isActive}) =>
                   activeLinkHandler(isActive)
                 }
               >
-                {t("rooms")}
+                {navigation.rooms}
               </NavLink>
-              <NavLink to="/contacts"
+              <NavLink
+                to="/contacts"
                 className={({isActive}) =>
                   activeLinkHandler(isActive)
                 }
               >
-                {t("contacts")}
+                {navigation.contacts}
               </NavLink>
-              <NavLink to="/about"
+              <NavLink
+                to="/about"
                 className={({isActive}) =>
                   activeLinkHandler(isActive)
                 }
               >
-                {t("about-us")}
+                {navigation.aboutUs}
               </NavLink>
             </ul>
           </div>
@@ -210,39 +227,43 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
           <div className={styles.footer_container}>
             <ul className={styles.footerList}>
               <li className={styles.burger_item}>
-                <NavLink to="/"
+                <NavLink
+                  to="/"
                   className={({isActive}) =>
                     footerLinkHandler(isActive)
                   }
                 >
-                  {t("main")}
+                  {navigation.main}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
-                <NavLink to="/rooms"
+                <NavLink
+                  to="/rooms"
                   className={({isActive}) =>
                     footerLinkHandler(isActive)
                   }
                 >
-                  {t("rooms")}
+                  {navigation.rooms}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
-                <NavLink to="/contacts"
+                <NavLink
+                  to="/contacts"
                   className={({isActive}) =>
                     footerLinkHandler(isActive)
                   }
                 >
-                  {t("contacts")}
+                  {navigation.contacts}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
-                <NavLink to="/about"
+                <NavLink
+                  to="/about"
                   className={({isActive}) =>
                     footerLinkHandler(isActive)
                   }
                 >
-                  {t("about-us")}
+                  {navigation.aboutUs}
                 </NavLink>
               </li>
             </ul>

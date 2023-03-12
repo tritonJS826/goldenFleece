@@ -1,11 +1,13 @@
 import React, {useState} from "react";
+import {useDictionaryContext} from "../../context/Context";
 import {send} from "emailjs-com";
-import styles from "./ContactsPage.module.scss";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
-import {useTranslation} from "react-i18next";
+import styles from "./ContactsPage.module.scss";
+
 
 export const ContactsPage = () => {
-  const {t} = useTranslation();
+  const {contactsPage, askAdminForm} = useDictionaryContext().dictionary;
+
   const [toSend, setToSend] = useState({
     to_name: "",
     message: "",
@@ -44,47 +46,49 @@ export const ContactsPage = () => {
       <div className={styles.wrap}>
         <div className={styles.contacts}>
           <h1 className={styles.title}>
-            {t("contactUs")}
+            {contactsPage.title}
           </h1>
           <div className={styles.contactsData}>
             <div className={styles.minititle}>
-              {t("phone")}
+              {contactsPage.phone}
             </div>
             <p className={styles.text}>
               +12346789
             </p>
             <div className={styles.minititle}>
-              {t("mail")}
+              {contactsPage.email}
             </div>
             <p className={styles.text}>
               goldenFleece@gmain.com
             </p>
             <div className={styles.minititle}>
-              {t("address")}
+              {contactsPage.address}
             </div>
             <p className={styles.text}>
-              {t("street")}
-              {" "}
-              4,
+              {contactsPage.street}
+              ,
             </p>
             <p className={styles.text}>
-              {t("location")}
+              {contactsPage.location}
             </p>
           </div>
         </div>
-        <form onSubmit={onSubmit}
+        <form
+          onSubmit={onSubmit}
           className={styles.form}
         >
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="text"
             >
-              {t("yourName")}
+              {askAdminForm.name}
             </label>
-            <input type="text"
+            <input
+              type="text"
               className={styles.input}
               id="text"
-              placeholder="Your name"
+              placeholder={askAdminForm.name}
               name="to_name"
               value={toSend.to_name}
               onChange={handleChange}
@@ -92,15 +96,17 @@ export const ContactsPage = () => {
             />
           </div>
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="email"
             >
-              {t("yourEmail")}
+              {askAdminForm.email}
             </label>
-            <input type="email"
+            <input
+              type="email"
               className={styles.input}
               id="email"
-              placeholder="Your email address"
+              placeholder={askAdminForm.email}
               name="reply_to"
               value={toSend.reply_to}
               onChange={handleChange}
@@ -108,15 +114,17 @@ export const ContactsPage = () => {
             />
           </div>
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="phone"
             >
-              {t("yourPhone")}
+              {askAdminForm.phone}
             </label>
-            <input type="text"
+            <input
+              type="text"
               className={styles.input}
               id="phone"
-              placeholder="Your phone number"
+              placeholder={askAdminForm.phone}
               name="phone"
               value={toSend.phone}
               onChange={handleChange}
@@ -124,25 +132,28 @@ export const ContactsPage = () => {
             />
           </div>
           <div className={styles.formGoup}>
-            <label className={styles.label}
+            <label
+              className={styles.label}
               htmlFor="message"
             >
-              {t("message")}
+              {askAdminForm.message}
             </label>
-            <input type="text"
+            <input
+              type="text"
               className={styles.input}
               id="message"
-              placeholder="Message"
+              placeholder={askAdminForm.message}
               name="message"
               value={toSend.message}
               onChange={handleChange}
               required
             />
           </div>
-          <button type="submit"
+          <button
+            type="submit"
             className={styles.button}
           >
-            {t("submit")}
+            {askAdminForm.buttonText}
           </button>
         </form>
       </div>

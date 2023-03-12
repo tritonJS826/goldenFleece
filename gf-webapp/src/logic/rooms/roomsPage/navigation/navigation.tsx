@@ -1,42 +1,44 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
-import styles from "./navigation.module.scss";
-import imgPromo from "../../../../resources/rooms/rooms.jpg";
+import {useDictionaryContext} from "../../../../context/Context";
 import {RoomBlock} from "../roomBlock/RoomBlock";
-import {useTranslation} from "react-i18next";
+import styles from "./navigation.module.scss";
+
 
 export const Navigation = () => {
-  const {t} = useTranslation();
+  const {roomInfo} = useDictionaryContext().dictionary;
 
   return (
     <div>
       <nav className={styles.navigation}>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <a href="#single"
+            <a
+              href="#single"
               className={styles.link}
             >
-              {t("singleRoom")}
+              {roomInfo.singleRoomTitle}
             </a>
           </li>
           <p className={styles.line}>
             |
           </p>
           <li className={styles.listItem}>
-            <a href="#double"
+            <a
+              href="#double"
               className={styles.link}
             >
-              {t("doubleRoom")}
+              {roomInfo.doubleRoomTitle}
             </a>
           </li>
           <p className={styles.line}>
             |
           </p>
           <li className={styles.listItem}>
-            <a href="#twin"
+            <a
+              href="#twin"
               className={styles.link}
             >
-              {t("twinRoom")}
+              {roomInfo.twinRoomTitle}
             </a>
           </li>
         </ul>

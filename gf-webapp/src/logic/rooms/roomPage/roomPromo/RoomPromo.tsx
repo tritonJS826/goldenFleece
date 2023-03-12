@@ -12,7 +12,8 @@ export const RoomPromo = (props: RoomPromo) => {
   return (
     <div>
       <div className={styles.wrapper}>
-        <img className={styles.promo}
+        <img
+          className={styles.promo}
           src={props.promo}
           alt="Promo image"
         />
