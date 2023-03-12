@@ -5,8 +5,7 @@ import {Response, Request} from "express";
 class RoomsService {
 
   /**
-   *
-   * @returns all available rooms
+   * Get add rooms
    */
   public async getRooms(req: Request, res: Response): Promise<Room[]> {
     const allRooms = await roomsRepository.getRooms();
@@ -15,8 +14,7 @@ class RoomsService {
   }
 
   /**
-   *
-   * @returns room by ID
+   * Get room by Id
    */
   public async getRoom(req: Request, res: Response): Promise<Room> {
     const roomId: string = req.params.roomId;
@@ -26,8 +24,7 @@ class RoomsService {
   }
 
   /**
-   *
-   * @returns all available rooms without deleted room
+   * Delete room
    */
   public async deleteRoom(req: Request, res: Response): Promise<Room[]> {
     const roomId: string = req.params.roomId;
@@ -37,8 +34,7 @@ class RoomsService {
   }
 
   /**
-   *
-   * @returns new room
+   * Create new room
    */
   public async postRoom(req: Request, res: Response): Promise<Room> {
     const allRooms = await roomsRepository.getRooms();
@@ -68,8 +64,7 @@ class RoomsService {
   }
 
   /**
-   *
-   * @returns all available rooms with updated room
+   * Update room data
    */
   public async putRoom(req: Request, res: Response): Promise<Room[]> {
     const roomId: string = req.params.roomId;

@@ -1,39 +1,49 @@
 import React, {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
+import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
-import styles from "./PageBorder.module.scss";
-import logo from "../../resources/icons/logo.svg";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
-import githubLogo from "../../resources/icons/githubLogo.svg";
-import rsSchoolLogo from "../../resources/icons/rsSchool.svg";
-import {useTranslation} from "react-i18next";
-import i18next from "i18next";
-import cookies from "js-cookie";
 import {useLocation} from "react-router-dom";
+import {loadDictionary} from "../../service/LoadDictionary";
+import {languageService} from "../../service/LanguageService";
+import {Language} from "../../service/Schema";
+import styles from "./PageBorder.module.scss";
 
 interface PageBorderProps {
   children: ReactNode
 }
 
+interface Contact {
+  type: string;
+  contact: string;
+}
+
+
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
-  const {t} = useTranslation();
+  const {dictionary, setDictionary} = useDictionaryContext();
+  const navigation = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
-  const currentLang = cookies.get("i18next") || "en";
-  const [langSelected, setLangSelected] = useState(currentLang);
-  const langList = ["en", "ru", "ge"];
+  const [langSelected, setLangSelected] = useState<Language>(languageService.getCurrentLanguage());
 
   const langHoverHandler = () => {
     setLangOpen(prev => !prev);
   };
 
-  const onLangChoose = (lang: string) => {
-    i18next.changeLanguage(lang);
+  const loadDictionaryAsync = async () => {
+    const messages = await loadDictionary(langSelected);
+    setDictionary(messages);
+  };
+
+  useEffect(() => {
+    loadDictionaryAsync();
+  }, [langSelected]);
+
+  const onLangChoose = (lang: Language) => {
     setLangSelected(lang);
+    localStorage.setItem("lang", `${lang}`);
     setLangOpen(false);
   };
 
   const [contactsOpen, setContactsOpen] = useState(false);
-  const contactsList: {[key: string]: string;} = {phone: "+123456789", email: "goldenFleece@gmain.com"};
-  const conatctsArray = Object.keys(contactsList);
 
   const contactsHoverHandler = () => {
     setContactsOpen(prev => !prev);
@@ -43,9 +53,34 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     setContactsOpen(false);
   };
 
+  const contactsList: Contact[] = [
+    {
+      type: "tel:",
+      contact: "+380441234567",
+    },
+    {
+      type: "mailto:",
+      contact: "ask@htmlbook.ru",
+    },
+  ];
+
+  const renderContacts = () => (
+    contactsList.map((item, index) => (
+      <li
+        key={index}
+        onClick={onContactChoose}
+      >
+        <a
+          className={styles.link}
+          href={item.type + item.contact}
+        >
+          {item.contact}
+        </a>
+      </li>
+    )));
+
   const scrollPosition = useScrollPosition();
   const [burgerActive, setBurgerActive] = useState(false);
-
   const location = useLocation();
 
   useEffect(() => {
@@ -57,19 +92,29 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
     document.body.classList.toggle("notScrollable");
   };
 
+  const activeLinkHandler = (isActive: boolean) => {
+    return isActive ? styles.burger_item_active : styles.burger_item;
+  };
+
+  const footerLinkHandler = (isActive: boolean) => {
+    return isActive ? styles.footer_link_active : styles.footer_link;
+  };
+
   return (
     <div className={styles.wrapper}>
-      <header className={scrollPosition > 100 ? styles.header_scroll : styles.header}>
-        <nav className={scrollPosition > 100 ? styles.nav_scroll : styles.nav}>
+      <header className={scrollPosition < 100 ? styles.header : `${styles.header} ${styles.header_scroll}`}>
+        <nav className={scrollPosition < 100 ? styles.nav : `${styles.nav} ${styles.nav_scroll}`}>
           <ul className={styles.list}>
-            <li className={styles.listItem}
+            <li
+              className={styles.listItem}
               onClick={burgerOpenHandler}
             >
               <div />
               <div />
               <div />
             </li>
-            <li onMouseEnter={contactsHoverHandler}
+            <li
+              onMouseEnter={contactsHoverHandler}
               onMouseLeave={contactsHoverHandler}
               className={`${styles.contacts} ${styles.listItem}`}
             >
@@ -77,113 +122,99 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
                 className={styles.contact}
               >
                 <p className={styles.contact_text}>
-                  {t("contacts")}
+                  {dictionary.contacts}
                 </p>
-                <svg className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
+                <svg
+                  className={scrollPosition > 100 ? styles.expand_arrow_scroll : styles.expand_arrow}
                   xmlns="http://www.w3.org/2000/svg"
                   height="35"
                   width="35"
                 >
-                  <path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"
+                  <path
+                    d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"
                     fill="#ffffff"
                   />
                 </svg>
               </div>
               <ul className={styles.contact_links}>
-                {contactsOpen && conatctsArray.map((contact, i) => (
-                  <li onClick={onContactChoose}
-                    key={i}
-                  >
-                    <a className={styles.link}
-                      href="#"
-                    >
-                      {contactsList[contact]}
-                    </a>
-                  </li>
-                ))}
-
+                {contactsOpen && renderContacts()}
               </ul>
             </li>
             <li className={styles.listItem}>
               <div className={styles.logo}>
                 Golden Fleece
               </div>
-              {/* <img src={logo}
-                alt="Golden Fleece logo"
-              /> */}
             </li>
-            <li className={`${styles.languages} ${styles.listItem}`}
+            <li
+              className={`${styles.languages} ${styles.listItem}`}
               onMouseEnter={langHoverHandler}
               onMouseLeave={langHoverHandler}
             >
               <p>
-                {langSelected.toUpperCase()}
+                {Language[langSelected].toUpperCase()}
               </p>
               <ul className={styles.langAdditional}>
-                {langOpen && langList.map(lang => (
-                  <li key={lang}
-                    onClick={() => onLangChoose(lang)}
-                    className={currentLang === lang ? `${styles.disabled}` : ""}
+                {langOpen && (Object.keys(Language) as (keyof typeof Language)[]).map(lang => (
+                  <li
+                    key={lang}
+                    onClick={() => onLangChoose(Language[lang])}
+                    className={langSelected === Language[lang] ? `${styles.disabled}` : ""}
                   >
-                    {lang.toUpperCase()}
+                    {Language[lang].toUpperCase()}
                   </li>
                 ))}
               </ul>
 
             </li>
-            <li className={styles.listItem}>
-              <NavLink to="/booking"
-                className={styles.bookingLink}
-              >
-                {t("book-now")}
-              </NavLink>
-            </li>
+            <NavLink
+              to="/booking"
+              className={styles.listItem}
+            >
+              {dictionary.bookButtonText}
+            </NavLink>
           </ul>
         </nav>
         <div
           className={burgerActive ? `${styles.burger} ${styles.active}` : styles.burger}
-          onClick={() => setBurgerActive(false)}
+          onClick={() => {
+            setBurgerActive(false);
+            document.body.classList.remove("notScrollable");
+          }}
         >
-          <div className={styles.burger_content}
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className={styles.burger_content}>
             <ul>
-              <li className={styles.burger_item}>
-                <NavLink to="/"
-                  className={({isActive}) =>
-                    isActive ? styles.burger_item_active : styles.burger_item
-                  }
-                >
-                  {t("main")}
-                </NavLink>
-              </li>
-              <li className={styles.burger_item}>
-                <NavLink to="/rooms"
-                  className={({isActive}) =>
-                    isActive ? styles.burger_item_active : styles.burger_item
-                  }
-                >
-                  {t("rooms")}
-                </NavLink>
-              </li>
-              <li className={styles.burger_item}>
-                <NavLink to="/contacts"
-                  className={({isActive}) =>
-                    isActive ? styles.burger_item_active : styles.burger_item
-                  }
-                >
-                  {t("contacts")}
-                </NavLink>
-              </li>
-              <li className={styles.burger_item}>
-                <NavLink to="/about"
-                  className={({isActive}) =>
-                    isActive ? styles.burger_item_active : styles.burger_item
-                  }
-                >
-                  {t("about-us")}
-                </NavLink>
-              </li>
+              <NavLink
+                to="/"
+                className={({isActive}) =>
+                  activeLinkHandler(isActive)
+                }
+              >
+                {navigation.main}
+              </NavLink>
+              <NavLink
+                to="/rooms"
+                className={({isActive}) =>
+                  activeLinkHandler(isActive)
+                }
+              >
+                {navigation.rooms}
+              </NavLink>
+              <NavLink
+                to="/contacts"
+                className={({isActive}) =>
+                  activeLinkHandler(isActive)
+                }
+              >
+                {navigation.contacts}
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({isActive}) =>
+                  activeLinkHandler(isActive)
+                }
+              >
+                {navigation.aboutUs}
+              </NavLink>
             </ul>
           </div>
         </div>
@@ -196,97 +227,46 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
           <div className={styles.footer_container}>
             <ul className={styles.footerList}>
               <li className={styles.burger_item}>
-                <NavLink to="/"
+                <NavLink
+                  to="/"
                   className={({isActive}) =>
-                    isActive ? styles.footer_link_active : styles.footer_link
+                    footerLinkHandler(isActive)
                   }
                 >
-                  {t("main")}
+                  {navigation.main}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
-                <NavLink to="/rooms"
+                <NavLink
+                  to="/rooms"
                   className={({isActive}) =>
-                    isActive ? styles.footer_link_active : styles.footer_link
+                    footerLinkHandler(isActive)
                   }
                 >
-                  {t("rooms")}
+                  {navigation.rooms}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
-                <NavLink to="/contacts"
+                <NavLink
+                  to="/contacts"
                   className={({isActive}) =>
-                    isActive ? styles.footer_link_active : styles.footer_link
+                    footerLinkHandler(isActive)
                   }
                 >
-                  {t("contacts")}
+                  {navigation.contacts}
                 </NavLink>
               </li>
               <li className={styles.burger_item}>
-                <NavLink to="/about"
+                <NavLink
+                  to="/about"
                   className={({isActive}) =>
-                    isActive ? styles.footer_link_active : styles.footer_link
+                    footerLinkHandler(isActive)
                   }
                 >
-                  {t("about-us")}
+                  {navigation.aboutUs}
                 </NavLink>
               </li>
             </ul>
-          </div>
-          <div className={styles.line} />
-          <div className={styles.creators}>
-            <a
-              href="https://github.com/Ekaterina1994"
-              className={styles.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ekaterina1994
-              <img
-                className={styles.githubLogo}
-                src={githubLogo}
-                alt="GitHub"
-              />
-            </a>
-            <a
-              href="https://github.com/scorpigg"
-              className={styles.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              scorpigg
-              <img
-                className={styles.githubLogo}
-                src={githubLogo}
-                alt="GitHub"
-              />
-            </a>
-            <a
-              href="https://github.com/SergioAJS"
-              className={styles.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              SergioAJS
-              <img
-                className={styles.githubLogo}
-                src={githubLogo}
-                alt="GitHub"
-              />
-            </a>
-            <div className={styles.year}>
-              © 2023
-            </div>
-            <a
-              href="https://rs.school/js/"
-              className={styles.course}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={rsSchoolLogo}
-                alt="rsSchool"
-              />
-            </a>
           </div>
         </footer>
       </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
-import styles from "./roomSlider.module.scss";
+import {Autoplay, Keyboard} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-import {Autoplay, Keyboard} from "swiper";
+import styles from "./roomSlider.module.scss";
 
 interface RoomSlider {
   slider: string[]
@@ -11,7 +11,8 @@ interface RoomSlider {
 
 export const RoomSlider = ({slider}: RoomSlider) => {
   return (
-    <Swiper className={styles.swiper}
+    <Swiper
+      className={styles.swiper}
       spaceBetween={30}
       slidesPerView={1}
       loop={true}
@@ -24,10 +25,12 @@ export const RoomSlider = ({slider}: RoomSlider) => {
       modules={[Autoplay, Keyboard]}
     >
       {slider.map((slide, index) => (
-        <SwiperSlide key={index}
+        <SwiperSlide
+          key={index}
           className={styles.wrap}
         >
-          <img className={styles.slide}
+          <img
+            className={styles.slide}
             src={slide}
             alt="Slider image"
           />

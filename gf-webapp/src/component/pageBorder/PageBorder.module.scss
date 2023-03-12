@@ -6,8 +6,6 @@
 }
 
 .nav_scroll {
-  max-width: 1980px;
-  z-index: 100;
   background-color: $color-white;
 }
 
@@ -17,146 +15,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
-  .header_scroll {
-    position: fixed;
-    z-index: 100;
-    justify-self: flex-start;
-    display: flex;
-    justify-content: center;
-    background-color: $color-white;
-    color: $color-text;
-    font-size: 1.2rem;
-    transition: all 0.6s;
-
-    .list {
-      display: flex;
-      list-style: none;
-
-      .listItem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $color-text;
-        padding: 5px;
-        transition: background 0.3s;
-
-        &:hover {
-          background-color: $color-primary;
-          cursor: pointer;
-        }
-      }
-    }
-
-    .list .listItem:first-child {
-      width: 5vw;
-      text-align: center;
-      border-left: none;
-      border-right: none;
-      display: flex;
-      flex-direction: column;
-
-      div:first-child {
-        margin-bottom: 10px;
-        border-top: 1px solid $color-text;
-        width: 30px;
-      }
-
-      div:nth-child(2) {
-        border-top: 1px solid $color-text;
-        width: 15px;
-        transition: width 0.3s;
-      }
-
-      div:last-child {
-        margin-top: 10px;
-        border-top: 1px solid $color-text;
-        width: 30px;
-      }
-
-      &:hover {
-        div:nth-child(2) {
-          width: 30px;
-        }
-      }
-    }
-
-    .list .listItem:nth-child(2) {
-      width: 15vw;
-      text-align: center;
-    }
-
-    .list .listItem:nth-child(3) {
-      width: 60vw;
-      text-align: center;
-      flex-direction: row-reverse;
-      border-left: none;
-      border-right: none;
-
-      .logo {
-        font-family: Montserrat Regular;
-        font-size: 32px;
-      }
-
-      img {
-        width: 45px;
-        height: 50px;
-      }
-
-      &:hover {
-        background-color: transparent;
-        cursor: default;
-      }
-    }
-
-    .list .listItem:nth-child(4) {
-      width: 5vw;
-      text-align: center;
-    }
-
-    .list .listItem:last-child {
-      width: 15vw;
-      text-align: center;
-      border-left: none;
-      border-right: none;
-
-      .bookingLink {
-        text-decoration: none;
-        color: $color-text;
-      }
-    }
-
-    .languages {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .langAdditional {
-      position: absolute;
-      top: 100%;
-      background-color: $color-white;
-      color: $color-text;
-      width: 100%;
-
-      li {
-        padding: 6px;
-        border-bottom: 1px solid $color-disabled;
-
-        &:hover {
-          background-color: $color-background;
-        }
-      }
-    }
-  }
-
-  .disabled {
-    pointer-events: none;
-    background-color: $color-disabled;
-    color: $color-text-disabled;
-  }
 
   .header {
     position: fixed;
@@ -259,11 +117,8 @@
       text-align: center;
       border-left: none;
       border-right: none;
-
-      .bookingLink {
-        text-decoration: none;
-        color: $color-white;
-      }
+      text-decoration: none;
+      color: $color-white;
     }
 
     .languages {
@@ -289,6 +144,47 @@
         }
       }
     }
+  }
+
+  .header_scroll {
+    background-color: $color-white;
+    color: $color-text;
+
+    .list {
+
+      .listItem {
+        border: 1px solid $color-text;
+
+        &:hover {
+          background-color: $color-primary;
+        }
+      }
+    }
+
+    .list .listItem:first-child {
+
+      div:first-child {
+        border-top: 1px solid $color-text;
+      }
+
+      div:nth-child(2) {
+        border-top: 1px solid $color-text;
+      }
+
+      div:last-child {
+        border-top: 1px solid $color-text;
+      }
+    }
+
+    .list .listItem:last-child {
+      color: $color-text;
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    background-color: $color-disabled;
+    color: $color-text-disabled;
   }
 
   .main {
@@ -331,88 +227,6 @@
       max-width: 1980px;
       display: flex;
       justify-content: space-evenly;
-    }
-
-    .line {
-      width: 100%;
-      border: 1px solid $color-text;
-    }
-
-    .creators {
-      display: flex;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      gap: 10px;
-
-      a {
-        color: $color-text;
-      }
-
-      .github {
-        text-decoration: none;
-        font-size: 20px;
-        margin-right: 10px;
-        transition: all 0.3s ease;
-
-        &:hover {
-          color: $color-primary;
-
-          .githubLogo {
-            opacity: 1;
-          }
-        }
-
-        &:focus {
-          color: $color-primary;
-
-          .githubLogo {
-            opacity: 1;
-          }
-        }
-
-        &:active {
-          color: $color-active;
-        }
-
-        .githubLogo {
-          width: 20px;
-          height: 20px;
-          margin-left: 5px;
-          opacity: 0.8;
-          transition: 0.3s ease;
-        }
-      }
-
-      .year {
-        font-size: 20px;
-        color: $color-text;
-        text-align: center;
-        margin-right: 10px;
-      }
-
-      .course {
-        align-self: flex-end;
-        min-width: 80px;
-        background-repeat: no-repeat;
-        height: 32px;
-        opacity: 0.8;
-        transition: 0.3s ease;
-
-        &:hover {
-          color: $color-primary;
-          opacity: 1;
-        }
-
-        &:focus {
-          color: $color-primary;
-          opacity: 1;
-        }
-
-        &:active {
-          color: $color-active;
-        }
-      }
     }
   }
 
@@ -498,18 +312,27 @@
         justify-content: space-evenly;
 
         .burger_item {
+          text-decoration: none;
           color: white;
           padding: 10px 15px;
-          text-decoration: none;
+          cursor: pointer;
           list-style: none;
           font-size: 32px;
           font-family: Montserrat Regular;
-          cursor: pointer;
           transition: color 0.3s linear;
 
           &:hover {
             color: $color-primary;
           }
+        }
+
+        .burger_item_active {
+          text-decoration: none;
+          color: $color-primary;
+          cursor: default;
+          padding: 10px 15px;
+          font-size: 32px;
+          font-family: Montserrat Regular;
         }
       }
     }
@@ -520,11 +343,6 @@
   }
 }
 
-.burger_item_active {
-  text-decoration: none;
-  color: $color-primary;
-  cursor: default;
-}
 
 .footer_link {
   color: $color-text;
@@ -561,52 +379,6 @@
 
 @media (max-width: 800px) {
   .wrapper {
-
-    .header_scroll {
-      font-size: 1rem;
-
-      .list .listItem:first-child {
-        width: 10vw;
-        border-right: 1px solid $color-text;
-
-        div:first-child {
-          margin-bottom: 5px;
-          width: 15px;
-        }
-
-        div:nth-child(2) {
-          width: 10px;
-        }
-
-        div:last-child {
-          margin-top: 5px;
-          width: 15px;
-        }
-
-        &:hover {
-          div:nth-child(2) {
-            width: 15px;
-          }
-        }
-      }
-
-      .list .listItem:nth-child(2) {
-        display: none;
-      }
-
-      .list .listItem:nth-child(3) {
-        width: 80vw;
-      }
-
-      .list .listItem:nth-child(4) {
-        width: 10vw;
-        border-right: none;
-      }
-
-      .list .listItem:last-child {
-        display: none;
-      }
-    }
 
     .header {
       font-size: 1rem;
@@ -668,7 +440,13 @@
       .list .listItem:last-child {
         display: none;
       }
+    }
 
+    .header_scroll {
+
+      .list .listItem:first-child {
+        border-right: 1px solid $color-text;
+      }
     }
   }
 }

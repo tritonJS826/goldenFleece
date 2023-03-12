@@ -1,14 +1,17 @@
 import React from "react";
-import styles from "./ServiceBlock.module.scss";
+import {useDictionaryContext} from "../../../context/Context";
 import image from "../../../resources/sliderImages/Promo3.jpg";
-import {useTranslation} from "react-i18next";
+import styles from "./ServiceBlock.module.scss";
+
 
 export const ServiceBlock = () => {
-  const {t} = useTranslation();
+  const {aboutUsPage} = useDictionaryContext().dictionary;
+
   return (
     <div>
       <div className={styles.wrapper}>
-        <img className={styles.promo}
+        <img
+          className={styles.promo}
           src={image}
           alt="Promo image"
         />
@@ -16,26 +19,26 @@ export const ServiceBlock = () => {
           <div className={styles.over}>
             <p className={styles.textLeft}>
               <span className={styles.span}>
-                {t("services")}
+                {aboutUsPage.subtitle}
               </span>
             </p>
             <h2 className={styles.title}>
-              {t("Gastronomy")}
+              {aboutUsPage.gastronomy}
             </h2>
             <div className={styles.description}>
-              {t("gastronomyDescription")}
+              {aboutUsPage.gastronomyDescription}
             </div>
             <h2 className={styles.title}>
-              {t("experience")}
+              {aboutUsPage.experience}
             </h2>
             <div className={styles.description}>
-              {t("experienceDescription")}
+              {aboutUsPage.experienceDescription}
             </div>
             <h3 className={styles.title}>
-              {t("Spa")}
+              {aboutUsPage.spa}
             </h3>
             <div className={styles.description}>
-              {t("spaDescription")}
+              {aboutUsPage.spaDescription}
             </div>
           </div>
         </div>
