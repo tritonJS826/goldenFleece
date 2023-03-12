@@ -10,6 +10,7 @@ type MapContentProps = {
 
 export const MapContent = (props: MapContentProps) => {
   const {markers} = useContext(MapContext);
+  const {menuItem} = useContext(MapContext);
 
   const renderMarkers = () => {
     return markers.map((marker) => (
@@ -30,6 +31,7 @@ export const MapContent = (props: MapContentProps) => {
       data-name='map-content'
       onMouseDown={props.mouseDownHandler}
       className={styles.content}
+      style={{transform: `translate(${(menuItem ? -menuItem.x / 1.75 : null)}px, ${menuItem ? menuItem.y / 2 : null}px)`}}
     >
       {renderMarkers()}
     </div>
