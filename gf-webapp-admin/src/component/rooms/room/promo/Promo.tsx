@@ -24,9 +24,11 @@ export const Promo = (props: PromoProps) => {
     setNewPromoImageUrl("");
   };
 
-  const closeModal = (e: React.MouseEvent) => {
-    const target = e.target as HTMLElement;
-    target.classList.contains(styles.imgSrc) && setIsImgModalShow(!isImgModalShow);
+  const closeModal = (e: React.MouseEvent<HTMLElement>) => {
+    const target = e.target;
+    if (target instanceof HTMLElement) {
+      target.classList.contains(styles.imgSrc) && setIsImgModalShow(!isImgModalShow);
+    }
   };
 
   return (
@@ -67,7 +69,7 @@ export const Promo = (props: PromoProps) => {
         {isImgModalShow &&
           (
             <div className={styles.imgSrc}
-              onClick={(e) => closeModal(e)}
+              onClick={closeModal}
             >
               <input value={newPromoImageUrl}
                 type="text"

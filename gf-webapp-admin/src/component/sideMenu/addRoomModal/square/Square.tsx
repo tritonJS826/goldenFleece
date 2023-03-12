@@ -5,13 +5,12 @@ export const Square = () => {
   const {roomStartState} = useContext(AddRoomContext);
   const [square, setSquare] = useState(roomStartState.square);
 
-  const onChangeSquare = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setSquare(Number(target.value));
+  const onChangeSquare = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSquare(Number(e.target.value));
   };
 
   useEffect(() => {
-    roomStartState.square = +square;
+    roomStartState.square = square;
   }, [square]);
 
   return (

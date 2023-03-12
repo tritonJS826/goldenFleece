@@ -6,9 +6,8 @@ export const Adults = () => {
   const {roomStartState} = useContext(AddRoomContext);
   const [adults, setAdults] = useState(roomStartState.adults);
 
-  const onChangeAdults = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setAdults(Number(target.value));
+  const onChangeAdults = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAdults(Number(e.target.value));
   };
 
   useEffect(() => {

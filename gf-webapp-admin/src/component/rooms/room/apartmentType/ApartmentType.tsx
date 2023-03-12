@@ -20,9 +20,8 @@ export const ApartmentsType = (porps: ApartmentsTypeProps) => {
     saveRoom(porps.room);
   };
 
-  const onChangeApatrmentType = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLSelectElement;
-    setType(target.value);
+  const onChangeApatrmentType = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setType(e.target.value);
   };
 
   const fieldEditHandler = () => {

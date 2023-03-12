@@ -20,14 +20,12 @@ export const Registration = () => {
     }, 3000);
   };
 
-  const emailHandler = (e:React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setEmail(target.value);
+  const emailHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
   };
 
-  const passwordHandler = (e:React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setPassword(target.value);
+  const passwordHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
   };
 
   return (
@@ -43,7 +41,7 @@ export const Registration = () => {
             Email
           </label>
           <input id="reg-email"
-            onChange={(e) => emailHandler(e)}
+            onChange={emailHandler}
             name="email"
             type="email"
             value={email}
@@ -56,7 +54,7 @@ export const Registration = () => {
             Password
           </label>
           <input id="reg-pass"
-            onChange={(e) => passwordHandler(e)}
+            onChange={passwordHandler}
             name="password"
             type="text"
             value={password}

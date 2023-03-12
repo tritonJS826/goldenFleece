@@ -12,9 +12,8 @@ export const Rating = (props: RatingProps) => {
   const [rating, setRating] = useState(props.room.rating);
   const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
-  const ratingHandler = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    let value = Number(target.value);
+  const ratingHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = Number(e.target.value);
     if (value > 10) {
       value = 10;
     }

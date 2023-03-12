@@ -18,7 +18,7 @@ export const Services = (props: ServicesProps) => {
 
   const saveHandler = async () => {
     setIsEditFieldDisabled(true);
-    props.room.services = services?.join(", ").trim();
+    props.room.services = services.join(", ").trim();
     saveRoom(props.room);
   };
 
@@ -26,9 +26,9 @@ export const Services = (props: ServicesProps) => {
     setIsEditFieldDisabled(false);
   };
 
-  const onChangeRoomServices = (e:React.ChangeEvent) => {
-    const selectedService = e.target as HTMLInputElement;
-    setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService.value));
+  const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const selectedService = e.target.value;
+    setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
   };
 
   return (

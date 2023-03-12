@@ -4,7 +4,7 @@ import styles from "./apartmentsList.module.scss";
 interface ApartmentsProps {
   type: string | undefined;
   isEditFieldDisabled: boolean;
-  onChangeApatrmentType: (e: React.ChangeEvent) => void;
+  onChangeApatrmentType: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 export const ApartmentsList = (porps: ApartmentsProps) => {

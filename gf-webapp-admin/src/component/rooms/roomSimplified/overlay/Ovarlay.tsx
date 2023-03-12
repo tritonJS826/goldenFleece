@@ -10,7 +10,7 @@ interface OverlayProps {
 }
 
 export const Overlay = (props: OverlayProps) => {
-  const services = props.room.services?.split(",").map(el => el.trim());
+  const services = props.room.services.split(",").map(el => el.trim());
 
   return (
     <div

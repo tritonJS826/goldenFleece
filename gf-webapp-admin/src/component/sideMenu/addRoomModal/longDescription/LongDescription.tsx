@@ -6,9 +6,8 @@ export const LongDescription = () => {
   const {roomStartState} = useContext(AddRoomContext);
   const [descriptionLong, setDescriptionLong] = useState(String(roomStartState.descriptionLong));
 
-  const onChangeDescription = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setDescriptionLong(target.value);
+  const onChangeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setDescriptionLong(e.target.value);
   };
 
   useEffect(() => {

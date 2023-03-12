@@ -6,9 +6,8 @@ export const Rating = () => {
   const {roomStartState} = useContext(AddRoomContext);
   const [rating, setRating] = useState(roomStartState.rating);
 
-  const onChangeRating = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    let value = Number(target.value);
+  const onChangeRating = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = Number(e.target.value);
     if (value >= 10) {
       value = 10;
     }

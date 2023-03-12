@@ -8,9 +8,8 @@ export const ApartmentsList = () => {
 
   const [apartmentType, setApartmentType] = useState(roomStartState.apartmentsType);
 
-  const onChangeApatrmentType = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLSelectElement;
-    setApartmentType(target.value);
+  const onChangeApatrmentType = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setApartmentType(e.target.value);
   };
 
   useEffect(() => {

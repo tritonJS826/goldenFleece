@@ -12,5 +12,3 @@ export const roomStartState: IRoom = {
   services: "",
   slider: [],
 };
-
-export const errors:{[keyof: string]: string} = {};

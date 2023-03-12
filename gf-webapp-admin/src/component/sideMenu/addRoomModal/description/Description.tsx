@@ -6,9 +6,8 @@ export const Description = () => {
   const {roomStartState} = useContext(AddRoomContext);
   const [description, setDescription] = useState(String(roomStartState.description));
 
-  const onChangeDescription = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setDescription(target.value);
+  const onChangeDescription = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDescription(e.target.value);
   };
 
   useEffect(() => {

@@ -6,9 +6,8 @@ export const Price = () => {
   const {roomStartState} = useContext(AddRoomContext);
   const [price, setPrice] = useState(roomStartState.price);
 
-  const onChangePrice = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setPrice(Number(target.value));
+  const onChangePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPrice(Number(e.target.value));
   };
   useEffect(() => {
     roomStartState.price = price;
