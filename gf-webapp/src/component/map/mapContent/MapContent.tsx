@@ -27,7 +27,7 @@ export const MapContent = (props: mapContent) => {
         className={styles.content}
         style={{
           scale: `${scale}`,
-          transform: `translate(${(menuItem ? -menuItem.x / 2 : null)}px, ${menuItem ? menuItem.y / 2 : null}px)`,
+          transform: `translate(${(menuItem ? -menuItem.x / 1.6 : null)}px, ${menuItem ? menuItem.y / 2 : null}px)`,
         }}
       >
         {renderMarkers()}
