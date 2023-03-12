@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import {MapContext} from "../MapContext";
 import {Marker} from "./marker/marker";
 import styles from "./mapContent.module.scss";
+import {useZoom} from "../useZoom";
 
 
 type MapContentProps = {
@@ -10,6 +11,7 @@ type MapContentProps = {
 
 export const MapContent = (props: MapContentProps) => {
   const {markers} = useContext(MapContext);
+  const {scale, zoomInHandler, zoomOutHandler} = useZoom();
 
   const renderMarkers = () => {
     return markers.map((marker) => (
@@ -26,12 +28,29 @@ export const MapContent = (props: MapContentProps) => {
   };
 
   return (
-    <div
-      data-name='map-content'
-      onMouseDown={props.mouseDownHandler}
-      className={styles.content}
-    >
-      {renderMarkers()}
-    </div>
+    <>
+      <div
+        data-name='map-content'
+        onMouseDown={props.mouseDownHandler}
+        className={styles.content}
+        style={{scale: `${scale}`}}
+      >
+        {renderMarkers()}
+      </div>
+      <div className={styles.zoom}>
+        <div
+          className={styles.zoom_in}
+          onClick={zoomInHandler}
+        >
+          +
+        </div>
+        <div
+          className={styles.zoom_out}
+          onClick={zoomOutHandler}
+        >
+          -
+        </div>
+      </div>
+    </>
   );
 };
