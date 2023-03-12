@@ -4,14 +4,14 @@ import {AddRoomContext} from "../addRoomContext";
 
 export const Price = () => {
   const {room} = useContext(AddRoomContext);
-  const [price, setPrice] = useState(String(room.price));
+  const [price, setPrice] = useState(room.price);
 
   const onChangePrice = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
-    setPrice(target.value);
+    setPrice(Number(target.value));
   };
   useEffect(() => {
-    room.price = +price;
+    room.price = price;
   }, [price]);
 
   return (

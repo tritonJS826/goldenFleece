@@ -9,23 +9,24 @@ interface RatingProps {
 }
 
 export const Rating = (props: RatingProps) => {
-  const [rating, setRating] = useState(String(props.room.rating));
+  const [rating, setRating] = useState(props.room.rating);
   const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const ratingHandler = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
-    if (+target.value > 10) {
-      target.value = "10";
+    let value = Number(target.value);
+    if (value > 10) {
+      value = 10;
     }
-    if (+target.value < 0) {
-      target.value = "0";
+    if (value < 0) {
+      value = 0;
     }
-    setRating(target.value);
+    setRating(value);
   };
 
   const saveHandler = () => {
     setIsEditFieldDisabled(true);
-    props.room.rating = +rating;
+    props.room.rating = rating;
     saveRoom(props.room);
   };
 

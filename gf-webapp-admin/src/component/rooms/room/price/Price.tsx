@@ -11,12 +11,12 @@ interface ProcenProps {
 
 
 export const Price = (props: ProcenProps) => {
-  const [price, setPrice] = useState(String(props.room.price));
+  const [price, setPrice] = useState(props.room.price);
   const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    props.room.price = +price;
+    props.room.price = price;
     saveRoom(props.room);
   };
 
@@ -33,7 +33,7 @@ export const Price = (props: ProcenProps) => {
         <input type="number"
           id={`price-${props.room.id}`}
           value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => setPrice(Number(e.target.value))}
           disabled={isEditFieldDisabled}
         />
         <EditBtn isEditFieldDisabled={isEditFieldDisabled}

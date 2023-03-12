@@ -4,15 +4,15 @@ import {AddRoomContext} from "../addRoomContext";
 
 export const Rating = () => {
   const {room} = useContext(AddRoomContext);
-  const [rating, setRating] = useState(String(room.rating));
+  const [rating, setRating] = useState(room.rating);
 
   const onChangeRating = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
-    if (+target.value >= 10) {
-      target.value = "10";
+    let value = Number(target.value);
+    if (value >= 10) {
+      value = 10;
     }
-
-    setRating(target.value);
+    setRating(value);
   };
   useEffect(() => {
     room.rating = +rating;

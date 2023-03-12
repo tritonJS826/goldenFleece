@@ -3,11 +3,11 @@ import {AddRoomContext} from "../addRoomContext";
 
 export const Square = () => {
   const {room} = useContext(AddRoomContext);
-  const [square, setSquare] = useState(String(room.square));
+  const [square, setSquare] = useState(room.square);
 
   const onChangeSquare = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
-    setSquare(target.value);
+    setSquare(Number(target.value));
   };
 
   useEffect(() => {

@@ -10,12 +10,12 @@ interface SquareProps {
 }
 
 export const Square = (props: SquareProps) => {
-  const [square, setSquare] = useState(String(props.room.square));
+  const [square, setSquare] = useState(props.room.square);
   const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    props.room.square = +square;
+    props.room.square = square;
     saveRoom(props.room);
   };
 
@@ -32,7 +32,7 @@ export const Square = (props: SquareProps) => {
         <input type="number"
           id={`square-${props.room.id}`}
           value={square}
-          onChange={(e) => setSquare(e.target.value)}
+          onChange={(e) => setSquare(Number(e.target.value))}
           disabled={isEditFieldDisabled}
         />
         <EditBtn isEditFieldDisabled={isEditFieldDisabled}

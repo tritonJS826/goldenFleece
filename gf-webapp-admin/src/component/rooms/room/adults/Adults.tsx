@@ -9,12 +9,12 @@ interface AdultsProps {
 }
 
 export const Adults = (props: AdultsProps) => {
-  const [adults, setAdults] = useState(String(props.room.adults));
+  const [adults, setAdults] = useState(props.room.adults);
   const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {
     setIsDisabled(true);
-    props.room.adults = +adults;
+    props.room.adults = adults;
     saveRoom(props.room);
   };
 
@@ -31,7 +31,7 @@ export const Adults = (props: AdultsProps) => {
         <div className={styles.container}>
           <input type="number"
             value={adults}
-            onChange={(e) => setAdults(e.target.value)}
+            onChange={(e) => setAdults(Number(e.target.value))}
             disabled={isEditFieldDisabled}
           />
           <EditBtn isEditFieldDisabled={isEditFieldDisabled}
