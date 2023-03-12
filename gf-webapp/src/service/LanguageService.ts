@@ -7,7 +7,7 @@ class LanguageService extends StorageService<Schema> {
     super();
   }
 
-  public getCurrentLanguage() {
+  public getCurrentLanguage(): Language {
     return this.get(Schema.lang) as Language ?? Language.en;
   }
 
