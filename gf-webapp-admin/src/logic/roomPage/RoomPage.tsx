@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import {Loader} from "../../component/loader/Loader";
 import {Room} from "../../component/rooms/room/Room";
 import {IRoom} from "../../model/room";
 import {getRoom} from "../../service/room";
@@ -9,7 +10,7 @@ import styles from "./roomPage.module.scss";
 export const RoomPage = () => {
   const roomParams = useParams();
   const roomId = roomParams.id;
-  const [room, setRoom] = useState<IRoom>({} as IRoom);
+  const [room, setRoom] = useState<IRoom | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -23,9 +24,13 @@ export const RoomPage = () => {
   return (
     <BorderedAdminPage>
       <div className={styles.roomPage}>
-        <Room room={room} />
+        {
+          room ?
+            <Room room={room} />
+            :
+            <Loader />
+        }
       </div>
     </BorderedAdminPage>
-
   );
 };

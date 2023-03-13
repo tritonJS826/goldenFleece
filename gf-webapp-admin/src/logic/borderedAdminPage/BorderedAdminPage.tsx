@@ -1,12 +1,8 @@
-import React, {PropsWithChildren, ReactElement, ReactNode} from "react";
+import React, {PropsWithChildren, ReactElement} from "react";
 import {SideMenu} from "../../component/sideMenu/SideMenu";
 import styles from "./borderedAdminPage.module.scss";
 
-interface PageBorderProps {
-  children: ReactNode
-}
-
-export const BorderedAdminPage = (props: PropsWithChildren<PageBorderProps>):ReactElement => {
+export const BorderedAdminPage = (props: PropsWithChildren):ReactElement => {
   return (
     <div className={styles.borderedAdminPage}>
       <SideMenu />

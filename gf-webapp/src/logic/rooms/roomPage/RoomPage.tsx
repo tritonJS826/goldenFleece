@@ -8,13 +8,13 @@ import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
 import styles from "./roomPage.module.scss";
 import {Room} from "../../../model/Room";
-import {getRoom, roomInit} from "../../../service/rooms";
+import {getRoom} from "../../../service/rooms";
 import {Loader} from "../../../component/loader/Loader";
 
 export const RoomPage = () => {
   const roomParams = useParams();
   const roomId = roomParams.id;
-  const [room, setRoom] = useState({} as Room);
+  const [room, setRoom] = useState<Room | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,9 +31,7 @@ export const RoomPage = () => {
     })();
   }, [roomId]);
 
-  const isRoomInit = roomInit(room);
-
-  return isRoomInit ?
+  return room ?
     <PageBorder>
       <RoomPromo room={room} />
       <div className={styles.about}>

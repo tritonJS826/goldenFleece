@@ -1,7 +1,5 @@
 import React from "react";
 import {IRoom} from "../../../model/room";
-import {roomInit} from "../../../service/room";
-import {Loader} from "../../loader/Loader";
 import {Adults} from "./adults/Adults";
 import {ApartmentsType} from "./apartmentType/ApartmentType";
 import {Description} from "./description/Description";
@@ -18,26 +16,25 @@ interface RoomProps {
   room:IRoom;
 }
 
-export const Room = ({room}: RoomProps) => {
-  const isRoomInit = roomInit(room);
-  return isRoomInit ?
+export const Room = (props: RoomProps) => {
+
+  return (
     <div className={styles.room}>
       <h2 className={styles.title}>
-        {`Room #${Number(room.id) + 1}`}
+        {`Room #${Number(props.room.id) + 1}`}
       </h2>
-      <ApartmentsType room={room} />
-      <Description room={room} />
-      <LongDescription room={room} />
-      <Services room={room} />
+      <ApartmentsType room={props.room} />
+      <Description room={props.room} />
+      <LongDescription room={props.room} />
+      <Services room={props.room} />
       <div className={styles.wrapper}>
-        <Rating room={room} />
-        <Price room={room} />
-        <Square room={room} />
-        <Adults room={room} />
+        <Rating room={props.room} />
+        <Price room={props.room} />
+        <Square room={props.room} />
+        <Adults room={props.room} />
       </div>
-      <Promo room={room} />
-      <Slider room={room} />
+      <Promo room={props.room} />
+      <Slider room={props.room} />
     </div>
-    :
-    <Loader />;
+  );
 };

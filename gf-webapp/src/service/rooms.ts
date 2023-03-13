@@ -18,14 +18,6 @@ export const getRoom = async (id:string) => {
   return res as Room;
 };
 
-export const roomInit = (room:Room) => {
-  return Object.keys(room).length;
-};
-
-export const roomsInit = (rooms:Room[]) => {
-  return rooms.length;
-};
-
 const shuffleArray = (array:Room[]) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

@@ -6,7 +6,7 @@ import {Loader} from "../loader/Loader";
 import {RoomsList} from "./roomsList/RoomsList";
 
 export const Rooms = () => {
-  const [rooms, setRooms] = useState<IRoom[]>([]);
+  const [rooms, setRooms] = useState<IRoom[] | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -15,16 +15,17 @@ export const Rooms = () => {
     })();
   }, []);
 
-  if(!rooms.length) {
-    return <Loader />;
-  }
-
   return (
     <div className={styles.rooms}>
       <h2 className={styles.title}>
         Rooms
       </h2>
-      <RoomsList rooms={rooms} />
+      {
+        rooms ?
+          <RoomsList rooms={rooms} />
+          :
+          <Loader />
+      }
     </div>
   );
 };
