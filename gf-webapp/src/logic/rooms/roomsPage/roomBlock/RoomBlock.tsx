@@ -8,11 +8,13 @@ export const RoomBlock = () => {
 
   const [rooms, setRooms] = useState<Room[] | null>(null);
 
+  const initRooms = async () => {
+    const roomsList = await getRooms();
+    setRooms(roomsList);
+  };
+
   useEffect(() => {
-    (async () => {
-      const roomsList = await getRooms();
-      setRooms(roomsList);
-    })();
+    initRooms();
   }, [rooms]);
 
   return rooms ?

@@ -17,18 +17,19 @@ export const RoomPage = () => {
   const [room, setRoom] = useState<Room | null>(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    (async () => {
-      if (roomId) {
-        try {
-          const roomBack = await getRoom(roomId);
-          setRoom(roomBack);
-        } catch (e) {
-          navigate("/rooms");
-        }
-
+  const initRoom = async () => {
+    if (roomId) {
+      try {
+        const roomBack = await getRoom(roomId);
+        setRoom(roomBack);
+      } catch (e) {
+        navigate("/rooms");
       }
-    })();
+    }
+  };
+
+  useEffect(() => {
+    initRoom();
   }, [roomId]);
 
   return room ?

@@ -8,11 +8,13 @@ import {RoomsList} from "./roomsList/RoomsList";
 export const Rooms = () => {
   const [rooms, setRooms] = useState<IRoom[] | null>(null);
 
+  const roomsInit = async () => {
+    const roomsList = await getRooms();
+    setRooms(roomsList);
+  };
+
   useEffect(() => {
-    (async () => {
-      const roomsList = await getRooms();
-      setRooms(roomsList);
-    })();
+    roomsInit();
   }, []);
 
   return (

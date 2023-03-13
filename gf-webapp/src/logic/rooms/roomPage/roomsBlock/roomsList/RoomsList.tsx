@@ -11,13 +11,15 @@ export const RoomsList = () => {
   const roomParams = useParams();
   const currentRoomId = roomParams.id;
 
+  const randomRoomsInit = async () => {
+    if (currentRoomId) {
+      const rooms = await getRandomRooms(displayedRoomsCount, currentRoomId);
+      setRandomRooms(rooms);
+    }
+  };
+
   useEffect(() => {
-    (async () => {
-      if (currentRoomId) {
-        const rooms = await getRandomRooms(displayedRoomsCount, currentRoomId);
-        setRandomRooms(rooms);
-      }
-    })();
+    randomRoomsInit();
   }, [currentRoomId]);
 
 
