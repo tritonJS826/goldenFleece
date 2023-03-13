@@ -2,7 +2,7 @@ import React from "react";
 import {Promo} from "../../rooms/room/promo/Promo";
 import {Slider} from "../../rooms/room/slider/Slider";
 import {AddRoomContext} from "./addRoomContext";
-import styles from "./addRoomModal.module.scss";
+import styles from "./AddRoomModal.module.scss";
 import {ApartmentsType} from "./apartmentsType/ApartmentType";
 import {CloseBtn} from "./closeBtn/CloseBtn";
 import {Description} from "./description/Description";

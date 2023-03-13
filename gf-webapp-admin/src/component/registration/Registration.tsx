@@ -1,7 +1,7 @@
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import React, {FormEvent, useContext, useState} from "react";
 import {AppContext} from "../../appContext";
-import styles from "./registration.module.scss";
+import styles from "./Registration.module.scss";
 
 export const Registration = () => {
   const [email, setEmail] = useState("");

@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {RoomType} from "../../../../model/room";
 import {DeleteBtn} from "./deleteBtn/DeleteBtn";
-import styles from "./overlay.module.scss";
+import styles from "./Overlay.module.scss";
 import {ServicesList} from "./servicesList/servicesList";
 
 export const Overlay = ({room}: RoomType) => {

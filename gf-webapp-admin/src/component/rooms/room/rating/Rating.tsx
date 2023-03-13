@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
-import styles from "./rating.module.scss";
+import styles from "./Rating.module.scss";
 
 export const Rating = ({room}: RoomType) => {
   const [rating, setRating] = useState(String(room.rating));

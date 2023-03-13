@@ -1,6 +1,6 @@
 import React from "react";
 import {ROOM_TYPES} from "../../../../../utils/roomConstants";
-import styles from "./apartmentsList.module.scss";
+import styles from "./ApartmentsList.module.scss";
 interface IApartments {
   type: string | undefined;
   isEditFieldDisabled: boolean;

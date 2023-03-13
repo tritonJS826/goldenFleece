@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./addRoomBtn.module.scss";
+import styles from "./AddRoomBtn.module.scss";
 
 export const AddRoomBtn = ({showModal}: {showModal:() => void}) => {
   return (

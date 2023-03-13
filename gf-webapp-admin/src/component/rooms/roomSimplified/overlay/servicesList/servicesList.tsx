@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./servicesList.module.scss";
+import styles from "./ServicesList.module.scss";
 
 interface IServices {
   services: string[] | undefined

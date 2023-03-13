@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
-import styles from "./longDescription.module.scss";
+import styles from "./LongDescription.module.scss";
 
 export const LongDescription = ({room}: RoomType) => {
   const [description, setDescription] = useState(String(room.descriptionLong));

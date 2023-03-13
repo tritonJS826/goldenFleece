@@ -3,7 +3,7 @@ import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 import {ApartmentsList} from "./apartmentsList/ApartmentsList";
-import styles from "./apartmentType.module.scss";
+import styles from "./ApartmentType.module.scss";
 
 export const ApartmentsType = ({room}:RoomType) => {
 

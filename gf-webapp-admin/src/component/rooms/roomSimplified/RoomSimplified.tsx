@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {RoomType} from "../../../model/room";
-import {Overlay} from "./overlay/Ovarlay";
-import styles from "./roomSimplified.module.scss";
+import {Overlay} from "./overlay/Overlay";
+import styles from "./RoomSimplified.module.scss";
 
 
 export const RoomSimplified = ({room}: RoomType) => {

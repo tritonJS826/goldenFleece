@@ -1,7 +1,7 @@
 import React from "react";
 import {RoomType} from "../../../../../model/room";
 import {deleteRoom} from "../../../../../service/room";
-import styles from "./deleteBtn.module.scss";
+import styles from "./DeleteBtn.module.scss";
 
 export const DeleteBtn = ({room}: RoomType) => {
   const deleteRoomHandler = () => {
