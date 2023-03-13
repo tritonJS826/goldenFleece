@@ -1,19 +1,23 @@
 import {useState} from "react";
 
 export function useZoom() {
-  const [scale, setScale] = useState(1.0);
+  const INITIAL_SCALE = 1.0;
+  const MAX_SCALE = 1.5;
+  const MIN_SCALE = 0.5;
+  const SCALE_CHANGE_STEP = 0.1;
+  const [scale, setScale] = useState(INITIAL_SCALE);
 
   function zoomInHandler() {
-    if (scale < 1.5) {
-      setScale((prev) => Number((prev + 0.1).toFixed(1)));
+    if (scale < MAX_SCALE) {
+      setScale((prev) => Number((prev + SCALE_CHANGE_STEP).toFixed(1)));
     } else {
       return;
     }
   }
 
   function zoomOutHandler() {
-    if (scale > 0.5) {
-      setScale((prev) => Number((prev - 0.1).toFixed(1)));
+    if (scale > MIN_SCALE) {
+      setScale((prev) => Number((prev - SCALE_CHANGE_STEP).toFixed(1)));
     } else {
       return;
     }
