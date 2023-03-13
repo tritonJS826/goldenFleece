@@ -37,18 +37,18 @@ export const MapContent = (props: MapContentProps) => {
         {renderMarkers()}
       </div>
       <div className={styles.zoom}>
-        <div
+        <button
           className={styles.zoom_button}
           onClick={zoomInHandler}
         >
           +
-        </div>
-        <div
+        </button>
+        <button
           className={styles.zoom_button}
           onClick={zoomOutHandler}
         >
           -
-        </div>
+        </button>
       </div>
     </>
   );
