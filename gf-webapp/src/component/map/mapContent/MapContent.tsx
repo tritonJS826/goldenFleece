@@ -39,13 +39,13 @@ export const MapContent = (props: MapContentProps) => {
       </div>
       <div className={styles.zoom}>
         <div
-          className={styles.zoom_in}
+          className={styles.zoom_button}
           onClick={zoomInHandler}
         >
           +
         </div>
         <div
-          className={styles.zoom_out}
+          className={styles.zoom_button}
           onClick={zoomOutHandler}
         >
           -

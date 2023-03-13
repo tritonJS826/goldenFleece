@@ -27,14 +27,7 @@
   font-size: 1.2rem;
   user-select: none;
 
-  .zoom_in {
-    background-color: $color-secondary;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-  }
-
-  .zoom_out {
+  .zoom_button {
     background-color: $color-secondary;
     width: 25px;
     height: 25px;
