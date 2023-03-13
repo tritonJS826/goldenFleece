@@ -6,7 +6,7 @@ import room2 from "../../../../resources/rooms/2.jpg";
 import room3 from "../../../../resources/rooms/3.jpg";
 import room4 from "../../../../resources/rooms/4.jpg";
 import room5 from "../../../../resources/rooms/5.jpg";
-import styles from "./roomsBlock.module.scss";
+import styles from "./RoomsBlock.module.scss";
 
 
 export const RoomsBlock = () => {

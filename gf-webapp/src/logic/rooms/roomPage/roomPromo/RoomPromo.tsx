@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./roomPromo.module.scss";
+import styles from "./RoomPromo.module.scss";
 
 interface RoomPromo {
   promo: string,

@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {MapContext} from "../MapContext";
 import {Marker} from "./marker/marker";
 import {useZoom} from "../useZoom";
-import styles from "./mapContent.module.scss";
+import styles from "./MapContent.module.scss";
 
 type MapContentProps = {
   mouseDownHandler: (e: React.MouseEvent) => void;

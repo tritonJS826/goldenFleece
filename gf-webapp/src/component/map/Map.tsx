@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {MapContent} from "./mapContent/MapContent";
-import styles from "./map.module.scss";
+import styles from "./Map.module.scss";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
 import {IMarker} from "./mapContent/marker/IMarker";

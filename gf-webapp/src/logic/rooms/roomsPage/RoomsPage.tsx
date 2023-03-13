@@ -5,7 +5,7 @@ import {RoomsPromo} from "./roomsPromo/RoomsPromo";
 import {Navigation} from "./navigation/navigation";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
-import styles from "./roomsPage.module.scss";
+import styles from "./RoomsPage.module.scss";
 
 
 export const RoomsPage = () => {

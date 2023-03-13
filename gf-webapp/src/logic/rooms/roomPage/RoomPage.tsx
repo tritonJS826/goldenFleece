@@ -6,7 +6,7 @@ import {RoomPromo} from "./roomPromo/RoomPromo";
 import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
-import styles from "./roomPage.module.scss";
+import styles from "./RoomPage.module.scss";
 
 type RoomParams = {
   id: string;

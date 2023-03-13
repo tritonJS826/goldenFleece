@@ -1,7 +1,7 @@
 import React from "react";
 import {useDictionaryContext} from "../../../../context/Context";
 import {RoomBlock} from "../roomBlock/RoomBlock";
-import styles from "./navigation.module.scss";
+import styles from "./Navigation.module.scss";
 
 
 export const Navigation = () => {
