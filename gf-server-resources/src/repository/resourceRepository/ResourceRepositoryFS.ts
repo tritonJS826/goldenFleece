@@ -1,10 +1,10 @@
 import fileUpload from "express-fileupload";
-import {isFileExist} from "../../utils/isFileExist";
+import {isFileExist} from "src/utils/isFileExist";
 import {ResourceRepositoryInterface} from "./ResourceRepositoryInterface";
 import {v4 as uuidv4} from "uuid";
-import {writeFile} from "../../utils/writeFile";
+import {writeFile} from "src/utils/writeFile";
 import {Response} from "express";
-import {removeFile} from "../../utils/removeFile";
+import {removeFile} from "src/utils/removeFile";
 
 
 /**

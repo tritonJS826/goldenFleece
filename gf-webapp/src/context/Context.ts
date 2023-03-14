@@ -1,5 +1,5 @@
 import {createContext, useContext} from "react";
-import en from "../../public/locales/en/translation.json";
+import en from "src/locales/en/translation.json";
 
 const STUB_SET_VISIBILITY = () => undefined;
 const STUB_SET_DICTIONARY = () => undefined;

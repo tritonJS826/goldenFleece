@@ -1,7 +1,7 @@
 import express from "express";
 import fileUpload from "express-fileupload";
-import {filesPayloadExists} from "../middleware/filesPayloadExists";
-import {resourceService} from "../service/resourceService/resourceService";
+import {filesPayloadExists} from "src/middleware/filesPayloadExists";
+import {resourceService} from "src/service/resourceService/resourceService";
 
 /**
  * Express router for resources api

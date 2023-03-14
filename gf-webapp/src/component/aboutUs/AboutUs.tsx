@@ -1,8 +1,7 @@
-import React from "react";
-import {useDictionaryContext} from "../../context/Context";
-import frontImg from "../../resources/about-us/kutaisi.jpg";
 import {motion} from "framer-motion";
-import styles from "./AboutUs.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import frontImg from "src/resources/about-us/kutaisi.jpg";
+import styles from "src/component/aboutUs/AboutUs.module.scss";
 
 
 const textAnimation = {

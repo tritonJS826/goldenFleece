@@ -2,10 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import swaggerUi from "swagger-ui-express";
-import {apiSpec} from "../swagger";
+import {apiSpec} from "swagger";
 
-import {sandboxRouter} from "./routes/sandboxRoute";
-import {resourcesRouter} from "./routes/resourcesRoute";
+import {sandboxRouter} from "src/routes/sandboxRoute";
+import {resourcesRouter} from "src/routes/resourcesRoute";
 
 dotenv.config({path: "./.env"});
 export const __dirname = path.dirname("./");

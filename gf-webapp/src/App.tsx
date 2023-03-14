@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import {Routes, Route} from "react-router-dom";
-import {DictionaryContext, DictionaryType} from "./context/Context";
-import {MainPage} from "./logic/mainPage/MainPage";
-import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
-import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
-import {RoomPage} from "./logic/rooms/roomPage/RoomPage";
-import {ContactsPage} from "./logic/contactsPage/ContactsPage";
-import {BookingPage} from "./logic/bookingPage/BookingPage";
-import ScrollToTop from "./utils/scrollToTop";
-import en from "../public/locales/en/translation.json";
+import {DictionaryContext, DictionaryType} from "src/context/Context";
+import {MainPage} from "src/logic/mainPage/MainPage";
+import {AboutUsPage} from "src/logic/aboutUsPage/AboutUsPage";
+import {RoomsPage} from "src/logic/rooms/roomsPage/RoomsPage";
+import {RoomPage} from "src/logic/rooms/roomPage/RoomPage";
+import {ContactsPage} from "src/logic/contactsPage/ContactsPage";
+import {BookingPage} from "src/logic/bookingPage/BookingPage";
+import ScrollToTop from "src/utils/scrollToTop";
+import en from "src/locales/en/translation.json";
 
 
 function App() {

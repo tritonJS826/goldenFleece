@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-import {__dirname} from "../index";
+import {__dirname} from "src/index";
 
 /**
  * Check is file exist

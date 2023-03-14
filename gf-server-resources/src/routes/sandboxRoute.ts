@@ -1,5 +1,5 @@
 import express from "express";
-import {sandboxService} from "../service/sandboxService/sandboxService";
+import {sandboxService} from "src/service/sandboxService/sandboxService";
 
 /**
  * Express router for sandbox

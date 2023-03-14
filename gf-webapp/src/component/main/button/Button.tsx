@@ -1,7 +1,6 @@
-import React from "react";
-import {useDictionaryContext} from "../../../context/Context";
+import {useDictionaryContext} from "src/context/Context";
 import {NavLink} from "react-router-dom";
-import styles from "./Button.module.scss";
+import styles from "src/component/main/button/Button.module.scss";
 
 
 export const Button = () => {

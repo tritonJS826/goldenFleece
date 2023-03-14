@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
-import {AskAdminMailParams} from "../../model/AskAdminMailParams";
-import {BookingRequestMailParams} from "../../model/BookingRequestMailParams";
-import {MailServiceInterface} from "./MailServiceInterface";
+import {AskAdminMailParams} from "src/model/AskAdminMailParams";
+import {BookingRequestMailParams} from "src/model/BookingRequestMailParams";
+import {MailServiceInterface} from "src/service/mailService/MailServiceInterface";
 
 /**
  * Mail sender service

@@ -1,5 +1,5 @@
 import express from "express";
-import {mailService} from "../service/mailService/mailService";
+import {mailService} from "src/service/mailService/mailService";
 
 export const mailRouter = express.Router();
 
