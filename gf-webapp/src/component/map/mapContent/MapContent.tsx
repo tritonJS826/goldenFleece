@@ -9,8 +9,7 @@ type MapContentProps = {
 }
 
 export const MapContent = (props: MapContentProps) => {
-  const {markers} = useContext(MapContext);
-  const {menuItem} = useContext(MapContext);
+  const {markers, menuItem} = useContext(MapContext);
 
   const renderMarkers = () => {
     return markers.map((marker) => (
