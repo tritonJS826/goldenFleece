@@ -1,39 +1,33 @@
 import React from "react";
+import {Information} from "./information/Information";
+import {Title} from "./title/Title";
 import {Apartments} from "../../../../model/Room/Apartments";
-import styles from "./RoomPromo.module.scss";
+import {Price} from "../../../../model/Price";
+import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
 
-
-interface RoomPromo {
-  promoImgUrl: string,
-  description: string,
-  apartmentsType: Apartments,
+interface RoomPromoProps {
+  promoImgUrl: string;
+  description: string;
+  apartmentsType: Apartments;
   /**
    * Formatted price
    */
-  price: string,
+  price: Price;
+  service: ApartmentServices[];
 }
 
-export const RoomPromo = (props: RoomPromo) => {
+export const RoomPromo = (props: RoomPromoProps) => {
   return (
     <div>
-      <div className={styles.wrapper}>
-        <img
-          className={styles.promo}
-          src={props.promoImgUrl}
-          alt="Promo image"
-        />
-        <h1 className={styles.title}>
-          {props.description}
-        </h1>
-      </div>
-      <div className={styles.container}>
-        <div className={styles.description}>
-          {`Apartment type: ${props.apartmentsType}`}
-        </div>
-        <div className={styles.description}>
-          {`Price: ${props.price}$`}
-        </div>
-      </div>
+      <Title
+        description={props.description}
+        promoImgUrl={props.promoImgUrl}
+      />
+      <Information
+        apartmentsType={props.apartmentsType}
+        price={props.price}
+        services={props.service}
+      />
     </div>
   );
 };

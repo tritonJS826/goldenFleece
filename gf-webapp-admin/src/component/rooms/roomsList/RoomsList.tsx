@@ -1,13 +1,16 @@
 import React from "react";
-import {RoomsType} from "../../../model/room";
+import {IRoom} from "../../../model/room";
 import {RoomSimplified} from "../roomSimplified/RoomSimplified";
 import styles from "./RoomsList.module.scss";
 
+interface RoomsListProps {
+  rooms:IRoom[]
+}
 
-export const RoomsList = ({rooms}: RoomsType) => {
+export const RoomsList = (props: RoomsListProps) => {
   return (
     <div className={styles.container}>
-      {rooms.map(room => (
+      {props.rooms.map(room => (
         <RoomSimplified key={room.id}
           room={room}
         />

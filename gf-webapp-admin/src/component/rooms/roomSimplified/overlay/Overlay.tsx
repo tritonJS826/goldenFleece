@@ -1,34 +1,38 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import {DeleteBtn} from "./deleteBtn/DeleteBtn";
 import styles from "./Overlay.module.scss";
 import {ServicesList} from "./servicesList/ServicesList";
 
-export const Overlay = ({room}: RoomType) => {
-  const services = room.services?.split(",").map(el => el.trim());
+interface OverlayProps {
+  room: IRoom;
+}
+
+export const Overlay = (props: OverlayProps) => {
+  const services = props.room.services.split(",").map(el => el.trim());
 
   return (
     <div
       className={styles.overlay}
     >
-      <Link to={`rooms/${room.id}`}
+      <Link to={`rooms/${props.room.id}`}
         className={styles.info}
       >
         <h3>
-          {`${room.apartmentsType} room`}
+          {`${props.room.apartmentsType} room`}
         </h3>
         <ServicesList services={services} />
         <div className={styles.container}>
           <p>
-            {`Raiting: ${room.rating}`}
+            {`Raiting: ${props.room.rating}`}
           </p>
           <p>
-            {`Price: ${room.price}`}
+            {`Price: ${props.room.price}`}
           </p>
         </div>
       </Link>
-      <DeleteBtn room={room} />
+      <DeleteBtn room={props.room} />
     </div>
   );
 };

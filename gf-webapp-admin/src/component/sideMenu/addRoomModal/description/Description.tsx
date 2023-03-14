@@ -3,21 +3,15 @@ import {AddRoomContext} from "../addRoomContext";
 import styles from "./Description.module.scss";
 
 export const Description = () => {
-  const {room, errors} = useContext(AddRoomContext);
-  const [description, setDescription] = useState(String(room.description));
+  const {roomStartState} = useContext(AddRoomContext);
+  const [description, setDescription] = useState(String(roomStartState.description));
 
-  const onChangeDescription = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    if (target.value.length > 10) {
-      errors.description = "";
-    } else {
-      errors.description = "Description must be more than 10 symbols";
-    }
-    setDescription(target.value);
+  const onChangeDescription = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDescription(e.target.value);
   };
 
   useEffect(() => {
-    room.description = description;
+    roomStartState.description = description;
   }, [description]);
 
   return (

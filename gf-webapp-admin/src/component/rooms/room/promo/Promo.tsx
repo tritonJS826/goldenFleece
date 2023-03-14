@@ -1,9 +1,14 @@
 import React, {useState} from "react";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import styles from "./Promo.module.scss";
 
-export const Promo = ({room}: RoomType) => {
+interface PromoProps {
+  room:IRoom;
+}
+
+
+export const Promo = (props: PromoProps) => {
   const [isHover, setIsHover] = useState(false);
   const [isImgModalShow, setIsImgModalShow] = useState(false);
   const [newPromoImageUrl, setNewPromoImageUrl] = useState("");
@@ -14,14 +19,16 @@ export const Promo = ({room}: RoomType) => {
 
   const saveHandler = () => {
     setIsImgModalShow(!isImgModalShow);
-    room.promo = newPromoImageUrl;
-    saveRoom(room);
+    props.room.promo = newPromoImageUrl;
+    saveRoom(props.room);
     setNewPromoImageUrl("");
   };
 
-  const closeModal = (e: React.MouseEvent) => {
-    const target = e.target as HTMLElement;
-    target.classList.contains(styles.imgSrc) && setIsImgModalShow(!isImgModalShow);
+  const closeModal = (e: React.MouseEvent<HTMLElement>) => {
+    const target = e.target;
+    if (target instanceof HTMLElement) {
+      target.classList.contains(styles.imgSrc) && setIsImgModalShow(!isImgModalShow);
+    }
   };
 
   return (
@@ -34,10 +41,10 @@ export const Promo = ({room}: RoomType) => {
           onMouseEnter={hoverHandler}
           onMouseLeave={hoverHandler}
         >
-          {room.promo ?
+          {props.room.promo ?
             (
               <img className={styles.image}
-                src={room.promo}
+                src={props.room.promo}
                 alt="room-promo"
               />
             ) : (
@@ -62,7 +69,7 @@ export const Promo = ({room}: RoomType) => {
         {isImgModalShow &&
           (
             <div className={styles.imgSrc}
-              onClick={(e) => closeModal(e)}
+              onClick={closeModal}
             >
               <input value={newPromoImageUrl}
                 type="text"

@@ -1,24 +1,27 @@
 import React, {useState} from "react";
-import {RoomType} from "../../../../model/room";
+import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 import {ApartmentsList} from "./apartmentsList/ApartmentsList";
 import styles from "./ApartmentType.module.scss";
 
-export const ApartmentsType = ({room}:RoomType) => {
+interface ApartmentsTypeProps {
+  room:IRoom;
+}
 
-  const [type, setType] = useState(room.apartmentsType);
+export const ApartmentsType = (porps: ApartmentsTypeProps) => {
+
+  const [type, setType] = useState(porps.room.apartmentsType);
   const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const saveHandler = async () => {
     setIsEditFieldDisabled(true);
-    room.apartmentsType = type;
-    saveRoom(room);
+    porps.room.apartmentsType = type;
+    saveRoom(porps.room);
   };
 
-  const onChangeApatrmentType = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLSelectElement;
-    setType(target.value);
+  const onChangeApatrmentType = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setType(e.target.value);
   };
 
   const fieldEditHandler = () => {

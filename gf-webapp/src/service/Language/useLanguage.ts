@@ -9,7 +9,6 @@ export const useLanguage = () => {
 
   useEffect(() => {
     languageService.setCurrentLanguage(lang);
-    console.log(lang);
   }, [lang]);
 
   return {lang, setCurrentLang};

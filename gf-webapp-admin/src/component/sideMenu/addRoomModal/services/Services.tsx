@@ -6,17 +6,17 @@ import styles from "./Services.module.scss";
 
 
 export const Services = () => {
-  const {room} = useContext(AddRoomContext);
-  const roomServices = room.services?.split(",").filter(el => el !== "").map(el => el.trim());
+  const {roomStartState} = useContext(AddRoomContext);
+  const roomServices = roomStartState.services?.split(",").filter(el => el !== "").map(el => el.trim());
   const [services, setServices] = useState(roomServices);
 
-  const onChangeRoomServices = (e:React.ChangeEvent) => {
-    const selectedService = e.target as HTMLInputElement;
-    setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService.value));
+  const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const selectedService = e.target.value;
+    setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
   };
 
   useEffect(() => {
-    room.services = services.join(", ");
+    roomStartState.services = services.join(", ");
   }, [services]);
 
   return (

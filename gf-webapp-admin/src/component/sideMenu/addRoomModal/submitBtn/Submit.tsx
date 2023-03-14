@@ -4,11 +4,11 @@ import {AddRoomContext} from "../addRoomContext";
 import styles from "./SubmitBtn.module.scss";
 
 export const SubmitBtn = () => {
-  const {room} = useContext(AddRoomContext);
+  const {roomStartState} = useContext(AddRoomContext);
 
 
   const addRoom = async () => {
-    await postRoom(room);
+    await postRoom(roomStartState);
     location.reload();
   };
 

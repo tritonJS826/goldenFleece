@@ -2,6 +2,7 @@ import React from "react";
 import {Promo} from "../../rooms/room/promo/Promo";
 import {Slider} from "../../rooms/room/slider/Slider";
 import {AddRoomContext} from "./addRoomContext";
+import {Adults} from "./adults/Adults";
 import styles from "./AddRoomModal.module.scss";
 import {ApartmentsType} from "./apartmentsType/ApartmentType";
 import {CloseBtn} from "./closeBtn/CloseBtn";
@@ -10,31 +11,35 @@ import {LongDescription} from "./longDescription/LongDescription";
 import {ModalOverlay} from "./modalOverlay/ModalOverlay";
 import {Price} from "./price/Price";
 import {Rating} from "./rating/Rating";
-import {errors, room} from "./room";
+import {roomStartState} from "./roomStartState";
 import {Services} from "./services/Services";
-import {IShowModal} from "./showModal";
+import {Square} from "./square/Square";
 import {SubmitBtn} from "./submitBtn/Submit";
 
-export const AddRoomModal = ({showModal}: IShowModal) => {
+interface ShowModalProps {
+  showModal: () => void
+}
+
+export const AddRoomModal = (props: ShowModalProps) => {
   return (
-    <AddRoomContext.Provider value={{
-      room,
-      errors,
-    }}
-    >
+    <AddRoomContext.Provider value={{roomStartState}}>
       <div className={styles.addRoomModal}>
         <ApartmentsType />
         <Description />
         <LongDescription />
-        <Price />
-        <Rating />
+        <div className={styles.wrapper}>
+          <Price />
+          <Rating />
+          <Square />
+          <Adults />
+        </div>
         <Services />
-        <Promo room={room} />
-        <Slider room={room} />
+        <Promo room={roomStartState} />
+        <Slider room={roomStartState} />
         <SubmitBtn />
-        <CloseBtn showModal={showModal} />
+        <CloseBtn showModal={props.showModal} />
       </div>
-      <ModalOverlay showModal={showModal} />
+      <ModalOverlay showModal={props.showModal} />
     </AddRoomContext.Provider>
   );
 };

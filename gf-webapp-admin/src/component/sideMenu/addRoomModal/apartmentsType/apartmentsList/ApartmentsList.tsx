@@ -4,17 +4,16 @@ import {AddRoomContext} from "../../addRoomContext";
 import styles from "./ApartmentList.module.scss";
 
 export const ApartmentsList = () => {
-  const {room} = useContext(AddRoomContext);
+  const {roomStartState} = useContext(AddRoomContext);
 
-  const [apartmentType, setApartmentType] = useState(room.apartmentsType);
+  const [apartmentType, setApartmentType] = useState(roomStartState.apartmentsType);
 
-  const onChangeApatrmentType = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLSelectElement;
-    setApartmentType(target.value);
+  const onChangeApatrmentType = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setApartmentType(e.target.value);
   };
 
   useEffect(() => {
-    room.apartmentsType = apartmentType;
+    roomStartState.apartmentsType = apartmentType;
   }, [apartmentType]);
 
   return (

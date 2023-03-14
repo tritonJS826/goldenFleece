@@ -7,6 +7,7 @@ import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
 import {Room} from "../../../model/Room/Room";
+import {Loader} from "../../../component/loader/Loader";
 import {RoomApiService} from "../../../service/RoomApi/RoomApi";
 import styles from "./RoomPage.module.scss";
 
@@ -18,12 +19,9 @@ export const RoomPage = () => {
   const {id} = useParams<RoomParams>();
   const [room, setRoom] = useState<Room | null>(null);
 
-  const url = "http://localhost:3600/api/rooms";
-
   const loadRoom = async (roomId: string): Promise<void> => {
     const currentRoom = await RoomApiService.getRoomById(roomId);
     setRoom(currentRoom);
-    console.log(currentRoom);
   };
 
   useEffect(() => {
@@ -32,18 +30,14 @@ export const RoomPage = () => {
     }
   }, [id]);
 
-  if (!room) {
-    // TODO: show spinner
-    return null;
-  }
-
-  return (
+  return room ?
     <PageBorder>
       <RoomPromo
         promoImgUrl={room.promoImgUrl}
         description={room.description}
         apartmentsType={room.apartmentsType}
-        price={room.price.getFullPrice()}
+        price={room.price}
+        service={room.services}
       />
       <div className={styles.about}>
         {room.descriptionLong}
@@ -53,5 +47,7 @@ export const RoomPage = () => {
       <ServicesBlock />
       <BookingBlock />
     </PageBorder>
-  );
+    :
+    <Loader />
+  ;
 };

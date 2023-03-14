@@ -1,12 +1,16 @@
 import React from "react";
-import {RoomType} from "../../../../../model/room";
+import {IRoom} from "../../../../../model/room";
 import {deleteRoom} from "../../../../../service/room";
 import styles from "./DeleteBtn.module.scss";
 
-export const DeleteBtn = ({room}: RoomType) => {
+interface BtnProps {
+  room: IRoom
+}
+
+export const DeleteBtn = (props: BtnProps) => {
   const deleteRoomHandler = () => {
-    if (room.id) {
-      deleteRoom(room.id);
+    if (props.room.id) {
+      deleteRoom(props.room.id);
       location.reload();
     }
   };

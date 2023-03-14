@@ -1,0 +1,27 @@
+@import '../../../../../../Index.scss';
+
+.services {
+  color: $color-text;
+  font-weight: 600;
+  background-color: $color-primary;
+}
+
+.title {
+  text-align: center;
+  background-color: $color-secondary;
+  color: $color-back;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  
+  li {
+    padding: 20px 0;
+    text-align: center;
+
+    &:not(:first-child) {
+      border-left: 2px solid $color-secondary;
+    }
+  }
+}

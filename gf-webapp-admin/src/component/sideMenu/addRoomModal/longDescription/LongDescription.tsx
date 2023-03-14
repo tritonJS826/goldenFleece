@@ -3,16 +3,15 @@ import {AddRoomContext} from "../addRoomContext";
 import styles from "./LongDescription.module.scss";
 
 export const LongDescription = () => {
-  const {room} = useContext(AddRoomContext);
-  const [descriptionLong, setDescriptionLong] = useState(String(room.descriptionLong));
+  const {roomStartState} = useContext(AddRoomContext);
+  const [descriptionLong, setDescriptionLong] = useState(String(roomStartState.descriptionLong));
 
-  const onChangeDescription = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setDescriptionLong(target.value);
+  const onChangeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setDescriptionLong(e.target.value);
   };
 
   useEffect(() => {
-    room.descriptionLong = descriptionLong;
+    roomStartState.descriptionLong = descriptionLong;
   }, [descriptionLong]);
 
   return (

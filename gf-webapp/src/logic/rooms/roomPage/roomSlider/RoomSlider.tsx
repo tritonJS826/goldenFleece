@@ -1,6 +1,7 @@
 import React from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Keyboard} from "swiper";
+import {Room} from "../../../../model/Room/Room";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./RoomSlider.module.scss";
@@ -10,7 +11,6 @@ interface RoomSlider {
 }
 
 export const RoomSlider = (props: RoomSlider) => {
-  console.log(props.images, "!!!!!!1");
   return (
     <Swiper
       className={styles.swiper}

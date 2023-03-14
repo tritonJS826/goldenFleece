@@ -1,10 +1,13 @@
 import React from "react";
-import {IShowModal} from "../showModal";
 import styles from "./CloseBtn.module.scss";
 
-export const CloseBtn = ({showModal}: IShowModal) => {
+export interface CloseBtnProps {
+  showModal: () => void
+}
+
+export const CloseBtn = (props: CloseBtnProps) => {
   return (
-    <div onClick={showModal}
+    <div onClick={props.showModal}
       className={styles.closeBtn}
     />
   );

@@ -2,13 +2,13 @@ import React from "react";
 import {useState} from "react";
 import styles from "./Slide.module.scss";
 
-interface ISlide {
+interface SlideProps {
   slideImageURL: string;
   index: number;
   deleteSlide: (slideIndex: number) => void
 }
 
-export const Slide = ({slideImageURL, index, deleteSlide}: ISlide) => {
+export const Slide = (props: SlideProps) => {
 
   const [isHover, setIsHover] = useState(false);
 
@@ -24,12 +24,12 @@ export const Slide = ({slideImageURL, index, deleteSlide}: ISlide) => {
           onMouseLeave={hoverHandler}
         >
           <img className={styles.image}
-            src={slideImageURL}
+            src={props.slideImageURL}
             alt="slide"
           />
           {isHover &&
             (
-              <div onClick={() => deleteSlide(index)}
+              <div onClick={() => props.deleteSlide(props.index)}
                 className={styles.overlay}
               >
                 <span>

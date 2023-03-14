@@ -33,7 +33,8 @@
   font-family: Montserrat Regular;
 }
 
-.container {
+.container,
+.services {
   background: $color-primary;
   height: 50px;
   display: flex;
@@ -45,6 +46,10 @@
   color: $color-text;
   text-align: center;
   font-weight: bold;
+}
+
+.services {
+  display: flex;
 }
 
 

@@ -12,6 +12,7 @@ export class RoomApiService {
   public static async getAllRooms() {
     // TODO: create Swagger RoomDTO an use instead of as unknown as Room
     const roomsRaw: RoomDTO[] = await roomsApi.apiRoomsGet() as unknown as Room[];
+
     const rooms: Room[] = roomsRaw.map(room => ({
       ...room,
       price: new Price(Currency.GEL, room.price),
@@ -26,6 +27,7 @@ export class RoomApiService {
   public static async getRoomById(roomId: string) {
     // TODO: create Swagger RoomDTO an use instead of as unknown as Room
     const roomDTO: RoomDTO = await roomApi.apiRoomsRoomIdGet({roomId}) as unknown as Room;
+
     const room: Room = {
       ...roomDTO,
       price: new Price(Currency.GEL, roomDTO.price),

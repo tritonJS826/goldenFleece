@@ -1,9 +1,8 @@
 import {createContext} from "react";
-import {IAddRoom} from "../../../model/room";
+import {IRoom} from "../../../model/room";
 
 interface IAddRoomContext {
-  room: IAddRoom;
-  errors: {[keyof: string]: string};
+  roomStartState: IRoom;
 }
 
 export const AddRoomContext = createContext<IAddRoomContext>({} as IAddRoomContext);

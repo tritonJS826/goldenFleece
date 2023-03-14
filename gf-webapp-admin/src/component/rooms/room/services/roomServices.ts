@@ -1,5 +1,5 @@
 export const changeRoomServices = (
-  roomServices: string[] | undefined,
+  roomServices: string[],
   selectedService: string,
 ) => {
   return roomServices?.indexOf(selectedService) === -1 ?

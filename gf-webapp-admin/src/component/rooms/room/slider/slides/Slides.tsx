@@ -1,13 +1,17 @@
 import React, {useEffect, useState} from "react";
-import {RoomType} from "../../../../../model/room";
+import {IRoom} from "../../../../../model/room";
 import {saveRoom} from "../../../../../service/room";
 import {AddSlide} from "./addSlide/AddSlide";
 import {Slide} from "./slide/Slide";
 import styles from "./Slides.module.scss";
 
-export const Slides = ({room}: RoomType) => {
+interface SlidesProps {
+  room:IRoom;
+}
 
-  const [slides, setSlides] = useState(room.slider);
+export const Slides = (props: SlidesProps) => {
+
+  const [slides, setSlides] = useState(props.room.slider);
 
   const deleteSlide = (slideIndex: number) => {
     setSlides(slides?.filter((_, index) => index !== slideIndex));
@@ -18,8 +22,8 @@ export const Slides = ({room}: RoomType) => {
   };
 
   useEffect(() => {
-    room.slider = slides;
-    saveRoom(room);
+    props.room.slider = slides;
+    saveRoom(props.room);
   }, [slides]);
 
   return (
