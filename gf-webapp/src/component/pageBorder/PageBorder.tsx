@@ -3,10 +3,11 @@ import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
 import {useLocation} from "react-router-dom";
-import {loadDictionary} from "../../service/LoadDictionary";
-import {languageService} from "../../service/LanguageService";
-import {Language} from "../../service/Schema";
+import {loadDictionary} from "../../service/Language/LoadDictionary";
+import {languageService} from "../../service/Language/LanguageService";
+import {Language, languageList} from "../../model/Language";
 import styles from "./PageBorder.module.scss";
+import {useLanguage} from "../../service/Language/useLanguage";
 
 interface PageBorderProps {
   children: ReactNode
@@ -22,24 +23,23 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
   const {dictionary, setDictionary} = useDictionaryContext();
   const navigation = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
-  const [langSelected, setLangSelected] = useState<Language>(languageService.getCurrentLanguage());
+  const {lang, setCurrentLang} = useLanguage();
 
   const langHoverHandler = () => {
     setLangOpen(prev => !prev);
   };
 
   const loadDictionaryAsync = async () => {
-    const messages = await loadDictionary(langSelected);
+    const messages = await loadDictionary(lang);
     setDictionary(messages);
   };
 
   useEffect(() => {
     loadDictionaryAsync();
-  }, [langSelected]);
+  }, [lang]);
 
-  const onLangChoose = (lang: Language) => {
-    setLangSelected(lang);
-    localStorage.setItem("lang", `${lang}`);
+  const onLangChoose = (language: Language) => {
+    setCurrentLang(language);
     setLangOpen(false);
   };
 
@@ -151,16 +151,16 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
               onMouseLeave={langHoverHandler}
             >
               <p>
-                {Language[langSelected].toUpperCase()}
+                {Language[lang].toUpperCase()}
               </p>
               <ul className={styles.langAdditional}>
-                {langOpen && (Object.keys(Language) as (keyof typeof Language)[]).map(lang => (
+                {langOpen && languageList.map(langCode => (
                   <li
-                    key={lang}
-                    onClick={() => onLangChoose(Language[lang])}
-                    className={langSelected === Language[lang] ? `${styles.disabled}` : ""}
+                    key={langCode}
+                    onClick={() => onLangChoose(Language[langCode])}
+                    className={lang === Language[langCode] ? `${styles.disabled}` : ""}
                   >
-                    {Language[lang].toUpperCase()}
+                    {Language[langCode].toUpperCase()}
                   </li>
                 ))}
               </ul>
