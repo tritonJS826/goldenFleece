@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
 import {MapContext} from "../MapContext";
-import {Marker} from "./marker/marker";
-import styles from "./mapContent.module.scss";
-
+import {Marker} from "./marker/Marker";
+import {useZoom} from "../useZoom";
+import styles from "./MapContent.module.scss";
 
 type MapContentProps = {
   mouseDownHandler: (e: React.MouseEvent) => void;
@@ -10,6 +10,7 @@ type MapContentProps = {
 
 export const MapContent = (props: MapContentProps) => {
   const {markers, menuItem} = useContext(MapContext);
+  const {scale, zoomInHandler, zoomOutHandler} = useZoom();
 
   const renderMarkers = () => {
     return markers.map((marker) => (
@@ -26,13 +27,32 @@ export const MapContent = (props: MapContentProps) => {
   };
 
   return (
-    <div
-      data-name='map-content'
-      onMouseDown={props.mouseDownHandler}
-      className={styles.content}
-      style={{transform: `translate(${(menuItem ? -menuItem.x / 1.75 : null)}px, ${menuItem ? menuItem.y / 2 : null}px)`}}
-    >
-      {renderMarkers()}
-    </div>
+    <>
+      <div
+        data-name='map-content'
+        onMouseDown={props.mouseDownHandler}
+        className={styles.content}
+        style={{
+          scale: `${scale}`,
+          transform: `translate(${(menuItem ? -menuItem.x / 1.75 : null)}px, ${menuItem ? menuItem.y / 2 : null}px)`,
+        }}
+      >
+        {renderMarkers()}
+      </div>
+      <div className={styles.zoom}>
+        <button
+          className={styles.zoom_button}
+          onClick={zoomInHandler}
+        >
+          +
+        </button>
+        <button
+          className={styles.zoom_button}
+          onClick={zoomOutHandler}
+        >
+          -
+        </button>
+      </div>
+    </>
   );
 };

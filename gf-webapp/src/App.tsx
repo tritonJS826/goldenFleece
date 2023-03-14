@@ -7,7 +7,7 @@ import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
 import {RoomPage} from "./logic/rooms/roomPage/RoomPage";
 import {ContactsPage} from "./logic/contactsPage/ContactsPage";
 import {BookingPage} from "./logic/bookingPage/BookingPage";
-import ScrollToTop from "./utils/ScrollToTop";
+import ScrollToTop from "./utils/scrollToTop";
 import en from "../public/locales/en/translation.json";
 
 

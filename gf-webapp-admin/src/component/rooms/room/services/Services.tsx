@@ -3,7 +3,7 @@ import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {BASE_SERVICES} from "../../../../utils/roomConstants";
 import {EditBtn} from "../editBtn/EditBtn";
-import styles from "./services.module.scss";
+import styles from "./Services.module.scss";
 import {changeRoomServices} from "./roomServices";
 
 export const Services = ({room}: RoomType) => {

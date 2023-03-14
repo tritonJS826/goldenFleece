@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
-import styles from "./description.module.scss";
+import styles from "./Description.module.scss";
 
 export const Description = ({room}: RoomType) => {
   const [description, setDescription] = useState(String(room.description));

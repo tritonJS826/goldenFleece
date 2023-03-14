@@ -5,7 +5,7 @@ import {Room} from "../../component/rooms/room/Room";
 import {SideMenu} from "../../component/sideMenu/SideMenu";
 import {IRoom} from "../../model/room";
 import {getRoom} from "../../service/room";
-import styles from "./roomPage.module.scss";
+import styles from "./RoomPage.module.scss";
 
 export const RoomPage = () => {
   const roomParams = useParams();

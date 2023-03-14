@@ -1,7 +1,7 @@
 import React from "react";
 import {RoomsType} from "../../../model/room";
 import {RoomSimplified} from "../roomSimplified/RoomSimplified";
-import styles from "./roomsList.module.scss";
+import styles from "./RoomsList.module.scss";
 
 
 export const RoomsList = ({rooms}: RoomsType) => {

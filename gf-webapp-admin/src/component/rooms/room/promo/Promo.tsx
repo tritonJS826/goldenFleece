@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {RoomType} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
-import styles from "./promo.module.scss";
+import styles from "./Promo.module.scss";
 
 export const Promo = ({room}: RoomType) => {
   const [isHover, setIsHover] = useState(false);

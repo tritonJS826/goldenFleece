@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./modalOverlay.module.scss";
+import styles from "./ModalOverlay.module.scss";
 
 export const ModalOverlay = ({showModal}: {showModal: () => void}) => {
   return (

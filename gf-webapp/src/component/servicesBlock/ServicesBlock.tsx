@@ -2,7 +2,7 @@ import React from "react";
 import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import room1 from "../../resources/rooms/1.jpg";
-import styles from "./servicesBlock.module.scss";
+import styles from "./ServicesBlock.module.scss";
 
 
 export const ServicesBlock = () => {

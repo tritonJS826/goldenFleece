@@ -1,7 +1,7 @@
 import React from "react";
 import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
-import styles from "./bookingBlock.module.scss";
+import styles from "./BookingBlock.module.scss";
 
 
 export const BookingBlock = () => {

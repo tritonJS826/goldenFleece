@@ -3,7 +3,7 @@ import {useDictionaryContext} from "../../../../context/Context";
 import {NavLink} from "react-router-dom";
 import imgPromo from "../../../../resources/rooms/rooms.jpg";
 import {motion} from "framer-motion";
-import styles from "./roomBlock.module.scss";
+import styles from "./RoomBlock.module.scss";
 
 
 const textAnimation = {
