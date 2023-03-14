@@ -1,12 +1,12 @@
 import express, {Express} from "express";
 import {config} from "dotenv";
-import {PORT, listenServer} from "./utils/listenServer";
-import {checkStatusCallback} from "./utils/checkStatusCallback";
-import {roomsRouter} from "./routes/roomRoutes";
 import swaggerUi from "swagger-ui-express";
-import {apiSpec} from "../swagger";
+import {apiSpec} from "swagger";
 import cors from "cors";
-import {mailRouter} from "./routes/mailRoutes";
+import {PORT, listenServer} from "src/utils/listenServer";
+import {checkStatusCallback} from "src/utils/checkStatusCallback";
+import {roomsRouter} from "src/routes/roomRoutes";
+import {mailRouter} from "src/routes/mailRoutes";
 
 config();
 const app: Express = express();

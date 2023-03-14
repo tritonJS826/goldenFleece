@@ -36,7 +36,8 @@ export default {
   },
   resolve: {
     extensions: [".ts", ".js", ".html"],
-    modules: ["node_modules"],
+    modules: ["node_modules", path.resolve(__dirname)],
+    alias: {["src"]: path.resolve(__dirname, "src")},
   },
   output: {
     filename: "[name].js",

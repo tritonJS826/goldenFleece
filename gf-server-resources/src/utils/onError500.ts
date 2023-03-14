@@ -1,4 +1,4 @@
-import {nodeError} from "../model/nodeError";
+import {nodeError} from "src/model/nodeError";
 import {Response} from "express";
 
 /**

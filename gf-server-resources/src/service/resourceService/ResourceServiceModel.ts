@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
-import {resourceRepository} from "../../repository/resourceRepository/resourceRepository";
-import {ResourceServiceInterface} from "./ResourceServiceInterface";
+import {resourceRepository} from "src/repository/resourceRepository/resourceRepository";
+import {ResourceServiceInterface} from "src/service/resourceService/ResourceServiceInterface";
 
 /**
  * Resource service

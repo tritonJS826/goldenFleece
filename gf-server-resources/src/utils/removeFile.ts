@@ -1,9 +1,9 @@
 import path from "path";
 import fs from "fs";
-import {FILES_DIRECTORY} from "../settings/FILES_DIRECTORY";
-import {onError500} from "./onError500";
-import {nodeError} from "../model/nodeError";
 import {Response} from "express";
+import {FILES_DIRECTORY} from "src/settings/FILES_DIRECTORY";
+import {onError500} from "src/utils/onError500";
+import {nodeError} from "src/model/nodeError";
 
 /**
  * Remove file by file name

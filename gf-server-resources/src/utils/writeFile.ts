@@ -1,9 +1,9 @@
 import path from "path";
-import {onError500} from "./onError500";
-import {__dirname} from "../index";
-import {FILES_DIRECTORY} from "../settings/FILES_DIRECTORY";
-import {FileModel} from "../model/fileModel";
 import {Response} from "express";
+import {onError500} from "./onError500";
+import {__dirname} from "src/index";
+import {FILES_DIRECTORY} from "src/settings/FILES_DIRECTORY";
+import {FileModel} from "src/model/fileModel";
 
 /**
  * Write file on hard drive

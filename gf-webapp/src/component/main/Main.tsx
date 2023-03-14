@@ -1,8 +1,8 @@
 import React from "react";
-import {Slider} from "../sliderImage/Slider";
-import {Button} from "./button/Button";
-import {AboutUs} from "../aboutUs/AboutUs";
-import {Map} from "../map/Map";
+import {Slider} from "src/component/sliderImage/Slider";
+import {Button} from "src/component/main/button/Button";
+import {AboutUs} from "src/component/aboutUs/AboutUs";
+import {Map} from "src/component/map/Map";
 
 
 export function Main() {
