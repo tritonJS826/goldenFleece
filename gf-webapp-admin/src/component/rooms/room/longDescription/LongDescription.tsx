@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
-import {EditBtn} from "../editBtn/EditBtn";
+import {Button} from "../../../Button/Button";
 import styles from "./LongDescription.module.scss";
 
 interface LongDescriptionProps {
@@ -34,9 +34,9 @@ export const LongDescription = (props: LongDescriptionProps) => {
           disabled={isEditFieldDisabled}
           placeholder="Enter full description"
         />
-        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-          saveHandler={saveHandler}
-          fieldEditHandler={fieldEditHandler}
+        <Button
+          value={isEditFieldDisabled ? "Edit" : "Save"}
+          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />
       </div>
     </div>

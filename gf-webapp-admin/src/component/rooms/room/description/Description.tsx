@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
-import {EditBtn} from "../editBtn/EditBtn";
+import {Button} from "../../../Button/Button";
 import styles from "./Description.module.scss";
 
 interface DescriptionProps {
@@ -35,9 +35,9 @@ export const Description = (props: DescriptionProps) => {
           disabled={isEditFieldDisabled}
           placeholder="Enter short description"
         />
-        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-          saveHandler={saveHandler}
-          fieldEditHandler={fieldEditHandler}
+        <Button
+          value={isEditFieldDisabled ? "Edit" : "Save"}
+          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />
       </div>
     </div>

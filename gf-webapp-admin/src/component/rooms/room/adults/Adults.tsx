@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {IRoom} from "../../../../model/room";
-import {EditBtn} from "../editBtn/EditBtn";
+import {Button} from "../../../Button/Button";
 import {saveRoom} from "../../../../service/room";
 import styles from "./adults.module.scss";
 
@@ -34,9 +34,9 @@ export const Adults = (props: AdultsProps) => {
             onChange={(e) => setAdults(Number(e.target.value))}
             disabled={isEditFieldDisabled}
           />
-          <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-            saveHandler={saveHandler}
-            fieldEditHandler={fieldEditHandler}
+          <Button
+            value={isEditFieldDisabled ? "Edit" : "Save"}
+            onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
           />
         </div>
       </label>
