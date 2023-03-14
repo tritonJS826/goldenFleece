@@ -1,7 +1,7 @@
 import * as React from "react";
 import {IRoom} from "../../../../model/room";
 import {useState} from "react";
-import {EditBtn} from "../editBtn/EditBtn";
+import {Button} from "../../../Button/Button";
 import {saveRoom} from "../../../../service/room";
 import styles from "./Price.module.scss";
 
@@ -36,9 +36,9 @@ export const Price = (props: ProcenProps) => {
           onChange={(e) => setPrice(Number(e.target.value))}
           disabled={isEditFieldDisabled}
         />
-        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-          saveHandler={saveHandler}
-          fieldEditHandler={fieldEditHandler}
+        <Button
+          value={isEditFieldDisabled ? "Edit" : "Save"}
+          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />
       </div>
     </div>
