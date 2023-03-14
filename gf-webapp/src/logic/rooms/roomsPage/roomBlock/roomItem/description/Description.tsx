@@ -1,13 +1,14 @@
 import React from "react";
 import {motion} from "framer-motion";
-import styles from "../roomItem.module.scss";
-import {Room} from "../../../../../../model/Room";
 import {RoomLink} from "../roomLink/RoomLink";
 import {Information} from "../information/Information";
 import {Title} from "../title/Title";
+import styles from "../RoomItem.module.scss";
 
 interface DescriptionProps {
-  room: Room
+  roomId: string;
+  roomSquare: number;
+  adults: number;
 }
 
 const textAnimation = {
@@ -32,9 +33,12 @@ export const Description = (props: DescriptionProps) => {
       viewport={{amount: 0.1, once: true}}
       className={styles.roomAbout}
     >
-      <Title room={props.room} />
-      <Information room={props.room} />
-      <RoomLink room={props.room} />
+      <Title roomId={props.roomId} />
+      <Information
+        adults={props.adults}
+        roomSquare={props.roomSquare}
+      />
+      <RoomLink roomId={props.roomId} />
     </motion.div>
   );
 };

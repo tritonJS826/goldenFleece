@@ -1,21 +1,22 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
-import {Room} from "../../../../../../model/Room";
-import styles from "../roomItem.module.scss";
+import {useDictionaryContext} from "../../../../../../context/Context";
+import {Room} from "../../../../../../model/Room/Room";
+import styles from "../RoomItem.module.scss";
 
-interface LinkProps {
-  room: Room
+interface RoomLinkProps {
+  roomId: string;
 }
 
-export const RoomLink = (props: LinkProps) => {
-  const {t} = useTranslation();
+export const RoomLink = (props: RoomLinkProps) => {
+  const dictionary = useDictionaryContext().dictionary;
   return (
-    <NavLink to={`/rooms/${props.room.id}`}
+    <NavLink
+      to={`/rooms/${props.roomId}`}
       className={styles.roomLink}
     >
       <span className={styles.linkText}>
-        {t("readMore")}
+        {dictionary.roomInfo.moreButtonText}
       </span>
     </NavLink>
   );

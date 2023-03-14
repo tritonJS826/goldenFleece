@@ -1,32 +1,35 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
-import {Room} from "../../../../../model/Room";
-import styles from "../roomsBlock.module.scss";
+import {useDictionaryContext} from "../../../../../context/Context";
+import styles from "../RoomsBlock.module.scss";
 
 interface RoomItemProps {
-  room: Room
+  roomId: string;
+  promoImgUrl: string;
 }
 
 export const RoomItem = (props: RoomItemProps) => {
-  const {t} = useTranslation();
+  const {roomPage} = useDictionaryContext().dictionary;
   return (
-    <div key={props.room.id}
+    <div
+      key={props.roomId}
       className={styles.room}
     >
-      <NavLink to={`/rooms/${props.room.id}`}
+      <NavLink
+        to={`/rooms/${props.roomId}`}
         className={({isActive}) =>
           isActive ? styles.link : undefined}
       >
-        <img className={styles.roomImage}
-          src={props.room.promo}
+        <img
+          className={styles.roomImage}
+          src={props.promoImgUrl}
           alt="room"
         />
         <h3 className={styles.title3}>
-          {t(`${props.room.apartmentsType.toLowerCase()}Room`)}
+          TODO: render right apartmentsType for specific room
         </h3>
         <span className={styles.spanLink}>
-          {t("More")}
+          {roomPage.buttonText}
         </span>
       </NavLink>
     </div>

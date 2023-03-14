@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {Loader} from "../../../../../component/loader/Loader";
-import {Room} from "../../../../../model/Room";
-import {getRandomRooms} from "../../../../../service/rooms";
+import {Room} from "../../../../../model/Room/Room";
+import {getShuffledRooms} from "../../../../../service/rooms";
 import {Rooms} from "./Rooms";
 
 export const RoomsList = () => {
@@ -13,7 +13,7 @@ export const RoomsList = () => {
 
   const randomRoomsInit = async () => {
     if (currentRoomId) {
-      const rooms = await getRandomRooms(displayedRoomsCount, currentRoomId);
+      const rooms = await getShuffledRooms(displayedRoomsCount, currentRoomId);
       setRandomRooms(rooms);
     }
   };

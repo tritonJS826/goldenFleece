@@ -1,22 +1,22 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
-import {Room} from "../../../../../../model/Room";
+import {useDictionaryContext} from "../../../../../../context/Context";
 import {getRoomNumber} from "../../../../../../service/rooms";
-import styles from "../roomItem.module.scss";
+import styles from "../RoomItem.module.scss";
 
 interface TitleProps {
-  room: Room
+  roomId: string;
 }
 
 export const Title = (props: TitleProps) => {
-  const {t} = useTranslation();
+  const dictionary = useDictionaryContext().dictionary;
   return (
     <div>
       <span className={styles.span}>
-        {getRoomNumber(props.room.id)}
+        TODO: ID is not roomNumber, add room Number to Room model
+        {getRoomNumber(props.roomId)}
       </span>
       <h3 className={styles.titleBook}>
-        {t(`${props.room.apartmentsType.toLowerCase()}Room`)}
+        TODO: render right apartmentsType for specific room
       </h3>
     </div>
   );

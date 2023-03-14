@@ -14,7 +14,7 @@ export interface Room {
   /**
    * Available services for room
    */
-  services: ApartmentServices,
+  services: ApartmentServices[],
   /**
    * Room's ID
    */
@@ -36,6 +36,17 @@ export interface Room {
    * Array of paths to images of room
    */
   images: string[],
+
+  /**
+   * Max adults amount in room
+   */
+  adults: number
+
+  /**
+   * Room's square in m^2
+   */
+  square: number;
+
 }
 
 

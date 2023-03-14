@@ -1,7 +1,7 @@
 import React from "react";
-import {Room} from "../../../../../model/Room";
+import {Room} from "../../../../../model/Room/Room";
 import {RoomItem} from "./RoomItem";
-import styles from "../roomsBlock.module.scss";
+import styles from "../RoomsBlock.module.scss";
 
 interface RoomsProps {
   rooms: Room[]
@@ -12,8 +12,10 @@ export const Rooms = (props: RoomsProps) => {
     <div className={styles.rooms}>
       {props.rooms.map(room =>
         (
-          <RoomItem key={room.id}
-            room={room}
+          <RoomItem
+            key={room.id}
+            promoImgUrl={room.promoImgUrl}
+            roomId={room.id}
           />
         ),
       )}

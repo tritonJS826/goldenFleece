@@ -1,6 +1,6 @@
 import React from "react";
 import {useDictionaryContext} from "../../../../context/Context";
-import {RoomBlock} from "../roomBlock/RoomBlock";
+import {RoomsBlock} from "../roomBlock/RoomBlock";
 import styles from "./Navigation.module.scss";
 
 
@@ -43,7 +43,7 @@ export const Navigation = () => {
           </li>
         </ul>
       </nav>
-      <RoomBlock />
+      <RoomsBlock />
     </div>
   );
 };

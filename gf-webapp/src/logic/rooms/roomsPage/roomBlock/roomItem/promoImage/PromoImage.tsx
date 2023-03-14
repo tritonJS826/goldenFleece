@@ -1,16 +1,16 @@
 import React from "react";
-import {Room} from "../../../../../../model/Room";
-import styles from "../roomItem.module.scss";
+import styles from "../RoomItem.module.scss";
 
-interface ImageProps {
-  room: Room
+interface PromoImageProps {
+  promoImageUrl: string;
 }
 
-export const PromoImage = (props: ImageProps) => {
+export const PromoImage = (props: PromoImageProps) => {
   return(
     <div className={styles.backImageWrap}>
-      <img className={styles.backImage}
-        src={props.room.promo}
+      <img
+        className={styles.backImage}
+        src={props.promoImageUrl}
         alt="room"
       />
     </div>
