@@ -1,7 +1,7 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {Navigation} from "../logic/rooms/roomsPage/navigation/navigation";
+import {Navigation} from "../logic/rooms/roomsPage/navigation/nNavigation";
 
 export default {
   title: "Page/RoomsPage/Navigation",

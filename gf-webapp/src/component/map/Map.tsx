@@ -5,7 +5,7 @@ import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
 import {IMarker} from "./mapContent/marker/IMarker";
 import {ItemDescription} from "./itemDescription/ItemDescription";
-import {MapMarkers} from "./mapMarkersList";
+import {MapMarkers} from "./mMapMarkersList";
 
 export const Map = () => {
   const [dragging, setDragging] = useState(false);

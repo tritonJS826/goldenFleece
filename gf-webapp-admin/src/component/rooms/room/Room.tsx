@@ -2,7 +2,7 @@ import React from "react";
 import {RoomType} from "../../../model/room";
 import {ApartmentsType} from "./apartmentType/ApartmentType";
 import {Description} from "./description/Description";
-import {LongDescription} from "./longDescription/longDescription";
+import {LongDescription} from "./longDescription/lLongDescription";
 import {Price} from "./price/Price";
 import {Promo} from "./promo/Promo";
 import {Rating} from "./rating/Rating";
