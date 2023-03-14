@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./closeBtn.module.scss";
+import styles from "./CloseBtn.module.scss";
 
 export interface CloseBtnProps {
   showModal: () => void

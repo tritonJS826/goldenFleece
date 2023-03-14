@@ -1,13 +1,14 @@
 import React from "react";
 import {ROOM_TYPES} from "../../../../../utils/roomConstants";
-import styles from "./apartmentsList.module.scss";
-interface ApartmentsProps {
+import styles from "./ApartmentsList.module.scss";
+
+interface ApartmentsListProps {
   type: string | undefined;
   isEditFieldDisabled: boolean;
   onChangeApatrmentType: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export const ApartmentsList = (porps: ApartmentsProps) => {
+export const ApartmentsList = (porps: ApartmentsListProps) => {
   return (
     <select className={styles.list}
       value={porps.type}

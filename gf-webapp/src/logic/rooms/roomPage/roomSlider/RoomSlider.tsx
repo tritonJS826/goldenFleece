@@ -1,18 +1,19 @@
 import React from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
-import styles from "./roomSlider.module.scss";
-import "swiper/css";
-import "swiper/css/navigation";
 import {Autoplay, Keyboard} from "swiper";
 import {Room} from "../../../../model/Room";
+import "swiper/css";
+import "swiper/css/navigation";
+import styles from "./RoomSlider.module.scss";
 
-interface SliderProps {
-  room: Room
+interface RoomSlider {
+  images: string[]
 }
 
-export const RoomSlider = (props: SliderProps) => {
+export const RoomSlider = (props: RoomSlider) => {
   return (
-    <Swiper className={styles.swiper}
+    <Swiper
+      className={styles.swiper}
       spaceBetween={30}
       slidesPerView={1}
       loop={true}
@@ -24,12 +25,14 @@ export const RoomSlider = (props: SliderProps) => {
       keyboard={{enabled: true}}
       modules={[Autoplay, Keyboard]}
     >
-      {props.room.slider.map((slide, index) => (
-        <SwiperSlide key={index}
+      {props.images.map((slideURL, index) => (
+        <SwiperSlide
+          key={slideURL}
           className={styles.wrap}
         >
-          <img className={styles.slide}
-            src={slide}
+          <img
+            className={styles.slide}
+            src={slideURL}
             alt="Slider image"
           />
           <p className={styles.number}>

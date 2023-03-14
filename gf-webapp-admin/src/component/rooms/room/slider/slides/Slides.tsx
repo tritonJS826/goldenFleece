@@ -3,7 +3,7 @@ import {IRoom} from "../../../../../model/room";
 import {saveRoom} from "../../../../../service/room";
 import {AddSlide} from "./addSlide/AddSlide";
 import {Slide} from "./slide/Slide";
-import styles from "./slides.module.scss";
+import styles from "./Slides.module.scss";
 
 interface SlidesProps {
   room:IRoom;

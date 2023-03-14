@@ -4,8 +4,8 @@ import {Loader} from "../../component/loader/Loader";
 import {Room} from "../../component/rooms/room/Room";
 import {IRoom} from "../../model/room";
 import {getRoom} from "../../service/room";
+import styles from "./RoomPage.module.scss";
 import {BorderedAdminPage} from "../borderedAdminPage/BorderedAdminPage";
-import styles from "./roomPage.module.scss";
 
 export const RoomPage = () => {
   const roomParams = useParams();

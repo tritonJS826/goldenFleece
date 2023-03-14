@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
-import styles from "./itemDescription.module.scss";
 import {MapContext} from "../MapContext";
-import {useTranslation} from "react-i18next";
+import {IMarker} from "../mapContent/marker/IMarker";
+import styles from "./ItemDescription.module.scss";
+
 
 export const ItemDescription = () => {
-  const {t} = useTranslation();
   const {menuItem, setMenuItem} = useContext(MapContext);
 
   const closeHandler = () => {
@@ -12,10 +12,12 @@ export const ItemDescription = () => {
   };
 
   return menuItem && (
-    <div onClick={closeHandler}
+    <div
+      onClick={closeHandler}
       className={styles.container}
     >
-      <img className={styles.image}
+      <img
+        className={styles.image}
         src={menuItem.imgUrl}
         alt="golden-fleece"
       />
@@ -23,7 +25,7 @@ export const ItemDescription = () => {
         {menuItem.name}
       </h3>
       <p className={styles.description}>
-        {t(menuItem.description)}
+        {menuItem.description}
       </p>
     </div>
   );

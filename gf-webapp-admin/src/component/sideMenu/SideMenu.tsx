@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from "./sideMenu.module.scss";
+import styles from "./SideMenu.module.scss";
 import {LogOutBtn} from "../logOut/LogOut";
 import {Link} from "react-router-dom";
 import {AddRoomBtn} from "./addRoomBtn/AddRoomBtn";

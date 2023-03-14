@@ -31,6 +31,10 @@ ___
 
 ``` pnpm run swagger:generateAll```
 
+4. generate .env by env.example
+
+```pnpm run generateEnvAll```
+
 4. run application's modules
 
 ```pnpm run startAll```

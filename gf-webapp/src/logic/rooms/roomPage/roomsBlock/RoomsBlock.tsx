@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from "react";
-import styles from "./roomsBlock.module.scss";
-import {useTranslation} from "react-i18next";
 import {RoomsList} from "./roomsList/RoomsList";
+import {useDictionaryContext} from "../../../../context/Context";
+import styles from "./RoomsBlock.module.scss";
+
 
 export const RoomsBlock = () => {
-  const {t} = useTranslation();
+  const {roomInfo} = useDictionaryContext().dictionary;
 
   return (
     <div className={styles.roomsWrap}>
       <h2 className={styles.title2}>
-        {t("moreRooms")}
+        {roomInfo.roomsList}
       </h2>
       <RoomsList />
     </div>

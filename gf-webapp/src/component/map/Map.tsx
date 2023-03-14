@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {MapContent} from "./mapContent/MapContent";
-import styles from "./map.module.scss";
+import styles from "./Map.module.scss";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
-import {IMarker} from "./mapInterfaces";
+import {IMarker} from "./mapContent/marker/IMarker";
 import {ItemDescription} from "./itemDescription/ItemDescription";
-import {markers} from "./mapMarkersList";
+import {MapMarkers} from "./MapMarkersList";
 
 export const Map = () => {
   const [dragging, setDragging] = useState(false);
@@ -65,6 +65,9 @@ export const Map = () => {
   const menuItemHandler = (marker: IMarker) => {
     setMenuItem(marker);
   };
+
+  const markers = MapMarkers();
+
 
   return (
     <MapContext.Provider value={{markers, menuItem, setMenuItem}}>

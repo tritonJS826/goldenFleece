@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {BASE_SERVICES} from "../../../../utils/roomConstants";
 import {AddRoomContext} from "../addRoomContext";
 import {changeRoomServices} from "./roomServices";
-import styles from "./services.module.scss";
+import styles from "./Services.module.scss";
 
 
 export const Services = () => {

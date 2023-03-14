@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import {AddRoomContext} from "../addRoomContext";
-import styles from "./longDescription.module.scss";
+import styles from "./LongDescription.module.scss";
 
 export const LongDescription = () => {
   const {roomStartState} = useContext(AddRoomContext);
@@ -15,7 +15,7 @@ export const LongDescription = () => {
   }, [descriptionLong]);
 
   return (
-    <div className={styles.descriptiomLong}>
+    <div className={styles.descriptionLong}>
       <label htmlFor='descriptionLong'>
         Room long description
       </label>

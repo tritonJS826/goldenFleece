@@ -1,19 +1,22 @@
 import React from "react";
-import styles from "./BookingPromo.module.scss";
+import {useDictionaryContext} from "../../../context/Context";
 import imgPromo from "../../../resources/rooms/rooms.jpg";
-import {useTranslation} from "react-i18next";
+import styles from "./BookingPromo.module.scss";
+
 
 export const BookingPromo = () => {
-  const {t} = useTranslation();
+  const {bookingPage} = useDictionaryContext().dictionary;
+
   return (
     <div>
       <div className={styles.wrapper}>
-        <img className={styles.promo}
+        <img
+          className={styles.promo}
           src={imgPromo}
           alt="Promo image"
         />
         <h1 className={styles.title}>
-          {t("booking")}
+          {bookingPage.title}
         </h1>
       </div>
     </div>

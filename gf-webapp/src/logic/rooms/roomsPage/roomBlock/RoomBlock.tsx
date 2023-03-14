@@ -20,7 +20,8 @@ export const RoomBlock = () => {
   return rooms ?
     <div>
       {rooms.map(room => (
-        <RoomItem key={room.id}
+        <RoomItem
+          key={room.id}
           room={room}
         />
       ))}

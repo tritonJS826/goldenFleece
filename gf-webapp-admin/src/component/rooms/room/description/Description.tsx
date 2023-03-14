@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
-import styles from "./description.module.scss";
+import styles from "./Description.module.scss";
 
 interface DescriptionProps {
   room:IRoom;

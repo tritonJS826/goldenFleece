@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {IRoom} from "../../model/room";
-import styles from "./rooms.module.scss";
+import styles from "./Rooms.module.scss";
 import {getRooms} from "../../service/room";
 import {Loader} from "../loader/Loader";
 import {RoomsList} from "./roomsList/RoomsList";

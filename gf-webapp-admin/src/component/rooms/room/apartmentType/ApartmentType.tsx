@@ -3,7 +3,7 @@ import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 import {ApartmentsList} from "./apartmentsList/ApartmentsList";
-import styles from "./apartmentType.module.scss";
+import styles from "./ApartmentType.module.scss";
 
 interface ApartmentsTypeProps {
   room:IRoom;

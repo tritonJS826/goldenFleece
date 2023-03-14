@@ -1,8 +1,9 @@
 import React from "react";
-import styles from "./aboutUs.module.scss";
+import {useDictionaryContext} from "../../context/Context";
 import frontImg from "../../resources/about-us/kutaisi.jpg";
 import {motion} from "framer-motion";
-import {useTranslation} from "react-i18next";
+import styles from "./AboutUs.module.scss";
+
 
 const textAnimation = {
   hidden: {
@@ -29,7 +30,7 @@ const imageAnimation = {
 };
 
 export const AboutUs = () => {
-  const {t} = useTranslation();
+  const {aboutUsPage} = useDictionaryContext().dictionary;
 
   return (
     <div className={styles.wrapper}>
@@ -41,10 +42,10 @@ export const AboutUs = () => {
         className={styles.container}
       >
         <h2 className={styles.title}>
-          {t("about-us-title")}
+          {aboutUsPage.title}
         </h2>
         <p className={styles.text}>
-          {t("about-us-text")}
+          {aboutUsPage.description}
         </p>
       </motion.div>
       <motion.div
@@ -54,7 +55,8 @@ export const AboutUs = () => {
         viewport={{amount: 0.1, once: true}}
         className={styles.imgContainer}
       >
-        <img className={styles.frontImg}
+        <img
+          className={styles.frontImg}
           src={frontImg}
           alt="kutaisi"
         />

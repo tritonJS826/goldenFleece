@@ -1,0 +1,32 @@
+@import '../../../Index.scss';
+
+.room {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: $color-background;
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+}
+
+.title {
+  width: 100%;
+  align-self: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $color-disabled;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 150px);
+}
