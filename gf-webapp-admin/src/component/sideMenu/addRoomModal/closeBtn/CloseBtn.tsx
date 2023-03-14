@@ -1,6 +1,6 @@
 import React from "react";
 import {IShowModal} from "../showModal";
-import styles from "./closeBtn.module.scss";
+import styles from "./CloseBtn.module.scss";
 
 export const CloseBtn = ({showModal}: IShowModal) => {
   return (

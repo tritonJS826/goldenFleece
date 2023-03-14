@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import "./index.scss";
+import "./Index.scss";
 
 const loadingMarkup = (
   <h2 style={{textAlign: "center"}}>

@@ -1,6 +1,7 @@
 import React from "react";
 import {Apartments} from "../../../../model/Room/Apartments";
-import styles from "./roomPromo.module.scss";
+import styles from "./RoomPromo.module.scss";
+
 
 interface RoomPromo {
   promoImgUrl: string,

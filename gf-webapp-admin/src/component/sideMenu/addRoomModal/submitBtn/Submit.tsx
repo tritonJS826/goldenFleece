@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {postRoom} from "../../../../service/room";
 import {AddRoomContext} from "../addRoomContext";
-import styles from "./submitBtn.module.scss";
+import styles from "./SubmitBtn.module.scss";
 
 export const SubmitBtn = () => {
   const {room} = useContext(AddRoomContext);

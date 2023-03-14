@@ -3,7 +3,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Keyboard} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-import styles from "./roomSlider.module.scss";
+import styles from "./RoomSlider.module.scss";
 
 interface RoomSlider {
   images: string[]

@@ -2,10 +2,10 @@ import React from "react";
 import {useDictionaryContext} from "../../../context/Context";
 import {PageBorder} from "../../../component/pageBorder/PageBorder";
 import {RoomsPromo} from "./roomsPromo/RoomsPromo";
-import {Navigation} from "./navigation/navigation";
+import {Navigation} from "./navigation/Navigation";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
-import styles from "./roomsPage.module.scss";
+import styles from "./RoomsPage.module.scss";
 
 
 export const RoomsPage = () => {

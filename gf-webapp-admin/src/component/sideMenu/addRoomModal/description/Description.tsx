@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import {AddRoomContext} from "../addRoomContext";
-import styles from "./descriprion.module.scss";
+import styles from "./Description.module.scss";
 
 export const Description = () => {
   const {room, errors} = useContext(AddRoomContext);

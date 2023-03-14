@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import {ROOM_TYPES} from "../../../../../utils/roomConstants";
 import {AddRoomContext} from "../../addRoomContext";
-import styles from "./apartmentList.module.scss";
+import styles from "./ApartmentList.module.scss";
 
 export const ApartmentsList = () => {
   const {room} = useContext(AddRoomContext);

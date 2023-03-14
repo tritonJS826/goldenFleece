@@ -1,6 +1,6 @@
 import React from "react";
 import {RoomType} from "../../../../model/room";
-import styles from "./slider.module.scss";
+import styles from "./Slider.module.scss";
 import {Slides} from "./slides/Slides";
 
 export const Slider = ({room}: RoomType) => {

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from "./addSlide.module.scss";
+import styles from "./AddSlide.module.scss";
 
 interface IAddSlide {
   addSlide: (slideImageURL: string) => void

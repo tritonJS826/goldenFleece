@@ -1,6 +1,6 @@
 import React from "react";
 import {useState} from "react";
-import styles from "./slide.module.scss";
+import styles from "./Slide.module.scss";
 
 interface ISlide {
   slideImageURL: string;

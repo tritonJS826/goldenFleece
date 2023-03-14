@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./editBtn.module.scss";
+import styles from "./EditBtn.module.scss";
 
 interface IEditBtn {
   isEditFieldDisabled: boolean;

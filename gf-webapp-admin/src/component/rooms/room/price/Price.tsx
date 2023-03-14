@@ -3,7 +3,7 @@ import {RoomType} from "../../../../model/room";
 import {useState} from "react";
 import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
-import styles from "./price.module.scss";
+import styles from "./Price.module.scss";
 
 export const Price = ({room}: RoomType) => {
   const [price, setPrice] = useState(String(room.price));

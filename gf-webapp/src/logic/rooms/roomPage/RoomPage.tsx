@@ -6,9 +6,9 @@ import {RoomPromo} from "./roomPromo/RoomPromo";
 import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
-import styles from "./roomPage.module.scss";
 import {Room} from "../../../model/Room/Room";
 import {RoomApiService} from "../../../service/RoomApi/RoomApi";
+import styles from "./RoomPage.module.scss";
 
 type RoomParams = {
   id: string;
