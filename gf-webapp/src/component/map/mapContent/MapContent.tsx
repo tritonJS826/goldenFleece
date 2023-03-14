@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {MapContext} from "../MapContext";
-import {Marker} from "./marker/mMarker";
+import {Marker} from "./marker/Marker";
 import {useZoom} from "../useZoom";
 import styles from "./MapContent.module.scss";
 
