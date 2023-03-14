@@ -1,5 +1,9 @@
+apis/MailApi.ts
 apis/RoomApi.ts
 apis/RoomsApi.ts
 apis/index.ts
 index.ts
+models/ApiAskAdminPostRequest.ts
+models/ApiBookingRequestPostRequest.ts
+models/index.ts
 runtime.ts

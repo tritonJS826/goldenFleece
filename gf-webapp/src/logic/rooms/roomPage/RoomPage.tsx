@@ -6,6 +6,8 @@ import {RoomPromo} from "./roomPromo/RoomPromo";
 import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
+import {Room} from "../../../model/Room/Room";
+import {RoomApiService} from "../../../service/RoomApi/RoomApi";
 import styles from "./RoomPage.module.scss";
 
 type RoomParams = {
@@ -14,45 +16,39 @@ type RoomParams = {
 
 export const RoomPage = () => {
   const {id} = useParams<RoomParams>();
-  const [room, setRoom] = useState({
-    id: "",
-    services: "",
-    images: {},
-    apartmentsType: "",
-    description: "",
-    descriptionLong: "",
-    price: 200,
-    promo: "",
-    slider: [],
-    rating: 8,
-  });
+  const [room, setRoom] = useState<Room | null>(null);
 
   const url = "http://localhost:3600/api/rooms";
 
-  const fetchData = async () => {
-    const res = await fetch(url);
-    const final = await res.json();
-    console.log(final[Number(id)]);
-    setRoom(final[Number(id)]);
-    return final[Number(id)];
+  const loadRoom = async (roomId: string): Promise<void> => {
+    const currentRoom = await RoomApiService.getRoomById(roomId);
+    setRoom(currentRoom);
+    console.log(currentRoom);
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (id) {
+      loadRoom(id);
+    }
+  }, [id]);
+
+  if (!room) {
+    // TODO: show spinner
+    return null;
+  }
 
   return (
     <PageBorder>
       <RoomPromo
-        promo={room.promo}
+        promoImgUrl={room.promoImgUrl}
         description={room.description}
         apartmentsType={room.apartmentsType}
-        price={room.price}
+        price={room.price.getFullPrice()}
       />
       <div className={styles.about}>
         {room.descriptionLong}
       </div>
-      <RoomSlider slider={room.slider} />
+      <RoomSlider images={room.images} />
       <RoomsBlock />
       <ServicesBlock />
       <BookingBlock />
