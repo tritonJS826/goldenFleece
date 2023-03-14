@@ -3,3 +3,4 @@ packages:
   - 'gf-server-resources'
   - 'gf-webapp'
   - 'gf-webapp-admin'
+  - 'gf-ui-lib'
