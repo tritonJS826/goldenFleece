@@ -1,11 +1,15 @@
 import React from "react";
+import {Apartments} from "../../../../model/Room/Apartments";
 import styles from "./roomPromo.module.scss";
 
 interface RoomPromo {
-  promo: string,
+  promoImgUrl: string,
   description: string,
-  apartmentsType: string,
-  price: number,
+  apartmentsType: Apartments,
+  /**
+   * Formatted price
+   */
+  price: string,
 }
 
 export const RoomPromo = (props: RoomPromo) => {
@@ -14,7 +18,7 @@ export const RoomPromo = (props: RoomPromo) => {
       <div className={styles.wrapper}>
         <img
           className={styles.promo}
-          src={props.promo}
+          src={props.promoImgUrl}
           alt="Promo image"
         />
         <h1 className={styles.title}>

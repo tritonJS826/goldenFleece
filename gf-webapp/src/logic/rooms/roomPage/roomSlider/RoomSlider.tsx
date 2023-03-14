@@ -6,10 +6,11 @@ import "swiper/css/navigation";
 import styles from "./roomSlider.module.scss";
 
 interface RoomSlider {
-  slider: string[]
+  images: string[]
 }
 
-export const RoomSlider = ({slider}: RoomSlider) => {
+export const RoomSlider = (props: RoomSlider) => {
+  console.log(props.images, "!!!!!!1");
   return (
     <Swiper
       className={styles.swiper}
@@ -24,14 +25,14 @@ export const RoomSlider = ({slider}: RoomSlider) => {
       keyboard={{enabled: true}}
       modules={[Autoplay, Keyboard]}
     >
-      {slider.map((slide, index) => (
+      {props.images.map((slideURL, index) => (
         <SwiperSlide
-          key={index}
+          key={slideURL}
           className={styles.wrap}
         >
           <img
             className={styles.slide}
-            src={slide}
+            src={slideURL}
             alt="Slider image"
           />
           <p className={styles.number}>
