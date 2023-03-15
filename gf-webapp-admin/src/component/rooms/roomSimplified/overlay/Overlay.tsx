@@ -2,8 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {IRoom} from "../../../../model/room";
 import {DeleteBtn} from "./deleteBtn/DeleteBtn";
-import styles from "./Overlay.module.scss";
 import {ServicesList} from "./servicesList/ServicesList";
+import styles from "./Overlay.module.scss";
 
 interface OverlayProps {
   room: IRoom;

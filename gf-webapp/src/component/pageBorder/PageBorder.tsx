@@ -6,8 +6,8 @@ import {useLocation} from "react-router-dom";
 import {loadDictionary} from "../../service/Language/LoadDictionary";
 import {languageService} from "../../service/Language/LanguageService";
 import {Language, languageList} from "../../model/Language";
-import styles from "./PageBorder.module.scss";
 import {useLanguage} from "../../service/Language/useLanguage";
+import styles from "./PageBorder.module.scss";
 
 interface PageBorderProps {
   children: ReactNode
