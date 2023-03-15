@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {useDictionaryContext} from "../../context/Context";
 import {send} from "emailjs-com";
 import {PageBorder} from "../../component/pageBorder/PageBorder";

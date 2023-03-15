@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, SetStateAction, Dispatch} from "react";
+import {FC, ReactNode, SetStateAction, Dispatch} from "react";
 import styles from "./Modal.module.scss";
 
 type ModalProps = {

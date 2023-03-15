@@ -1,4 +1,3 @@
-import React from "react";
 import {useDictionaryContext} from "../../../../../context/Context";
 import {Price} from "../../../../../model/Price";
 import {Apartments} from "../../../../../model/Room/Apartments";

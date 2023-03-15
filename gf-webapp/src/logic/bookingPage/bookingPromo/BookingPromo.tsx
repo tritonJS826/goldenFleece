@@ -1,4 +1,3 @@
-import React from "react";
 import {useDictionaryContext} from "../../../context/Context";
 import imgPromo from "../../../resources/rooms/rooms.jpg";
 import styles from "./BookingPromo.module.scss";

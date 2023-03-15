@@ -1,4 +1,3 @@
-import React from "react";
 import {Promo} from "../../rooms/room/promo/Promo";
 import {Slider} from "../../rooms/room/slider/Slider";
 import {AddRoomContext} from "./addRoomContext";

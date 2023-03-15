@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {MapContent} from "./mapContent/MapContent";
 import styles from "./Map.module.scss";
 import {MapMenu} from "./mapMenu/MapMenu";

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {useModalVisibilityContext, useDictionaryContext} from "../../../context/Context";
 import {send} from "emailjs-com";
 import styles from "./Form.module.scss";

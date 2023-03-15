@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import styles from "./SideMenu.module.scss";
 import {LogOutBtn} from "../logOut/LogOut";
 import {Link} from "react-router-dom";

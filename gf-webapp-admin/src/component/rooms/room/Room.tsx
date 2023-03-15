@@ -1,4 +1,3 @@
-import React from "react";
 import {IRoom} from "../../../model/room";
 import {Adults} from "./adults/Adults";
 import {ApartmentsType} from "./apartmentType/ApartmentType";

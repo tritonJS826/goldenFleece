@@ -1,4 +1,3 @@
-import React from "react";
 import {useDictionaryContext} from "../../../../context/Context";
 import {RoomsBlock} from "../roomBlock/RoomBlock";
 import styles from "./Navigation.module.scss";

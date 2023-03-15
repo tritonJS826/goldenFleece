@@ -1,4 +1,3 @@
-import React from "react";
 import {useDictionaryContext} from "../../../context/Context";
 import image from "../../../resources/sliderImages/Promo3.jpg";
 import styles from "./ServiceBlock.module.scss";

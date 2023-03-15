@@ -1,4 +1,3 @@
-import React from "react";
 import {Link} from "react-router-dom";
 import {IRoom} from "../../../../model/room";
 import {DeleteBtn} from "./deleteBtn/DeleteBtn";

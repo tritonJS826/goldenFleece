@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import {useContext} from "react";
 import {NavLink} from "react-router-dom";
 import {AppContext} from "../../appContext";
 import {LOGIN_ROUTE} from "../../utils/pathes";

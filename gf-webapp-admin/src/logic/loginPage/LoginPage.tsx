@@ -1,4 +1,3 @@
-import React from "react";
 import {AuthModal} from "../../component/authModal/AuthModal";
 
 

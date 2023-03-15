@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import {useContext} from "react";
 import {BrowserRouter} from "react-router-dom";
 import {AppContext} from "./appContext";
 import {AppRouter} from "./component/AppRouter";

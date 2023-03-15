@@ -1,4 +1,3 @@
-import React from "react";
 import {IRoom} from "../../../model/room";
 import {RoomSimplified} from "../roomSimplified/RoomSimplified";
 import styles from "./RoomsList.module.scss";

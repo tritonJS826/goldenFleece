@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {IRoom} from "../../../../../model/room";
 import {saveRoom} from "../../../../../service/room";
 import {AddSlide} from "./addSlide/AddSlide";

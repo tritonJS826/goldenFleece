@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {IRoom} from "../../../model/room";
 import {Overlay} from "./overlay/Overlay";
 import styles from "./RoomSimplified.module.scss";

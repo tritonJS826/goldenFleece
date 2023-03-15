@@ -1,4 +1,4 @@
-import React, {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
+import {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
 import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
 import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";

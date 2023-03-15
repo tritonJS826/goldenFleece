@@ -1,4 +1,3 @@
-import React from "react";
 import {NavLink} from "react-router-dom";
 import {useDictionaryContext} from "../../../../../../context/Context";
 import {Room} from "../../../../../../model/Room/Room";

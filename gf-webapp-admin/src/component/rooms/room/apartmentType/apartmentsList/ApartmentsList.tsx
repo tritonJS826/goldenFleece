@@ -1,4 +1,3 @@
-import React from "react";
 import {ROOM_TYPES} from "../../../../../utils/roomConstants";
 import styles from "./ApartmentsList.module.scss";
 

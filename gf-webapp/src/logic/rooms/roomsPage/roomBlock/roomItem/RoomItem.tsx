@@ -1,4 +1,3 @@
-import React from "react";
 import {Room} from "../../../../../model/Room/Room";
 import {Description} from "./description/Description";
 import {PromoImage} from "./promoImage/PromoImage";

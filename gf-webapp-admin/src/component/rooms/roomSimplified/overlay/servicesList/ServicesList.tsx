@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ServicesList.module.scss";
 
 interface IServices {

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {IRoom} from "../../model/room";
 import styles from "./Rooms.module.scss";
 import {getRooms} from "../../service/room";

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {ROOM_TYPES} from "../../../../../utils/roomConstants";
 import {AddRoomContext} from "../../addRoomContext";
 import styles from "./ApartmentList.module.scss";
