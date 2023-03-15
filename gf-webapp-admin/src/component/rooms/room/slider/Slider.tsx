@@ -1,7 +1,7 @@
 import React from "react";
 import {IRoom} from "../../../../model/room";
-import styles from "./Slider.module.scss";
 import {Slides} from "./slides/Slides";
+import styles from "./Slider.module.scss";
 
 interface SliderProps {
   room:IRoom;

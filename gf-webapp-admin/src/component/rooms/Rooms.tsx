@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {IRoom} from "../../model/room";
-import styles from "./Rooms.module.scss";
 import {getRooms} from "../../service/room";
 import {Loader} from "../loader/Loader";
 import {RoomsList} from "./roomsList/RoomsList";
+import styles from "./Rooms.module.scss";
 
 export const Rooms = () => {
   const [rooms, setRooms] = useState<IRoom[] | null>(null);

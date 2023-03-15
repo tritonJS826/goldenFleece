@@ -3,7 +3,6 @@ import {Promo} from "../../rooms/room/promo/Promo";
 import {Slider} from "../../rooms/room/slider/Slider";
 import {AddRoomContext} from "./addRoomContext";
 import {Adults} from "./adults/Adults";
-import styles from "./AddRoomModal.module.scss";
 import {ApartmentsType} from "./apartmentsType/ApartmentType";
 import {CloseBtn} from "./closeBtn/CloseBtn";
 import {Description} from "./description/Description";
@@ -15,6 +14,7 @@ import {roomStartState} from "./roomStartState";
 import {Services} from "./services/Services";
 import {Square} from "./square/Square";
 import {SubmitBtn} from "./submitBtn/Submit";
+import styles from "./AddRoomModal.module.scss";
 
 interface ShowModalProps {
   showModal: () => void

@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import firebase from "firebase/compat/app";
 import {getFirestore} from "firebase/firestore";
 import {getAuth} from "firebase/auth";
-import "./Index.scss";
 import App from "./App";
 import {app} from "./firebase";
 import {AppContext} from "./appContext";
+import "./Index.scss";
 
 const auth = getAuth(app);
 const firestore = getFirestore(app);

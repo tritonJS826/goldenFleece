@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import styles from "./SideMenu.module.scss";
 import {LogOutBtn} from "../logOut/LogOut";
 import {Link} from "react-router-dom";
 import {AddRoomBtn} from "./addRoomBtn/AddRoomBtn";
 import {AddRoomModal} from "./addRoomModal/AddRoomModal";
 import {Registration} from "../registration/Registration";
+import styles from "./SideMenu.module.scss";
 
 export const SideMenu = () => {
   const [isModalShown, setIsModalShown] = useState(false);
