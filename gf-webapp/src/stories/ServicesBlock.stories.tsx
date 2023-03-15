@@ -1,7 +1,7 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {ServicesBlock} from "../component/servicesBlock/ServicesBlock";
+import {ServicesBlock} from "src/component/servicesBlock/ServicesBlock";
 
 export default {
   title: "Block/ServicesBlock",

@@ -1,4 +1,4 @@
-import styles from "../RoomItem.module.scss";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface PromoImageProps {
   promoImageUrl: string;

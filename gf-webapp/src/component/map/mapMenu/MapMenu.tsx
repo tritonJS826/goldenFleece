@@ -1,7 +1,7 @@
 import {useContext} from "react";
-import {IMapMenuProps} from "./IMapMenuProps";
-import {MapContext} from "../MapContext";
-import styles from "./MapMenu.module.scss";
+import {IMapMenuProps} from "src/component/map/mapMenu/IMapMenuProps";
+import {MapContext} from "src/component/map/MapContext";
+import styles from "src/component/map/mapMenu/MapMenu.module.scss";
 
 
 export const MapMenu = (props: IMapMenuProps) => {

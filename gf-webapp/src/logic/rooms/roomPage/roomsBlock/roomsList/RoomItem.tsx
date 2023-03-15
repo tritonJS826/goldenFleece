@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
-import {useDictionaryContext} from "../../../../../context/Context";
-import styles from "../RoomsBlock.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import styles from "src/logic/rooms/roomPage/roomsBlock/RoomsBlock.module.scss";
 
 interface RoomItemProps {
   roomId: string;

@@ -1,7 +1,7 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {BookingBlock} from "../component/bookBlock/BookingBlock";
+import {BookingBlock} from "src/component/bookBlock/BookingBlock";
 
 export default {
   title: "Block/BookingBlock",

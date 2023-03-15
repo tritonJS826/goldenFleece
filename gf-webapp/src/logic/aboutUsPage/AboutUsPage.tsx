@@ -1,8 +1,8 @@
-import {useDictionaryContext} from "../../context/Context";
-import {PageBorder} from "../../component/pageBorder/PageBorder";
-import {AboutUsPromo} from "./aboutUsPromo/AboutUsPromo";
-import {ServiceBlock} from "./serviceBlock/ServiceBlock";
-import styles from "./AboutUsPage.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import {PageBorder} from "src/component/pageBorder/PageBorder";
+import {AboutUsPromo} from "src/logic/aboutUsPage/aboutUsPromo/AboutUsPromo";
+import {ServiceBlock} from "src/logic/aboutUsPage/serviceBlock/ServiceBlock";
+import styles from "src/logic/aboutUsPage/AboutUsPage.module.scss";
 
 
 export const AboutUsPage = () => {

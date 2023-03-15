@@ -1,6 +1,6 @@
 import path from "path";
-import {DictionaryType} from "../../context/Context";
-import {Language} from "../../model/Language";
+import {DictionaryType} from "src/context/Context";
+import {Language} from "src/model/Language";
 
 import en from "src/locales/en/translation.json";
 import ru from "src/locales/ru/translation.json";

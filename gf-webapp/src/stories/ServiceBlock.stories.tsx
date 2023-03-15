@@ -1,7 +1,7 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {ServiceBlock} from "../logic/aboutUsPage/serviceBlock/ServiceBlock";
+import {ServiceBlock} from "src/logic/aboutUsPage/serviceBlock/ServiceBlock";
 
 export default {
   title: "Page/AboutUs/ServiceBlock",

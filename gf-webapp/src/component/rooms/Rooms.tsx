@@ -1,6 +1,6 @@
 import React from "react";
-import {Room} from "../../model/Room/Room";
-import {useRooms} from "./useRooms";
+import {Room} from "src/model/Room/Room";
+import {useRooms} from "src/component/rooms/useRooms";
 
 export function Rooms() {
   const {rooms} = useRooms();

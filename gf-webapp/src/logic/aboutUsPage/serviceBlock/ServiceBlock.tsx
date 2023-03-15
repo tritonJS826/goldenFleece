@@ -1,6 +1,6 @@
-import {useDictionaryContext} from "../../../context/Context";
-import image from "../../../resources/sliderImages/Promo3.jpg";
-import styles from "./ServiceBlock.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import image from "src/resources/sliderImages/Promo3.jpg";
+import styles from "src/logic/aboutUsPage/serviceBlock/ServiceBlock.module.scss";
 
 
 export const ServiceBlock = () => {

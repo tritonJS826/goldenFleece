@@ -1,6 +1,6 @@
-import {useDictionaryContext} from "../../../context/Context";
-import imgPromo from "../../../resources/rooms/rooms.jpg";
-import styles from "./BookingPromo.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import imgPromo from "src/resources/rooms/rooms.jpg";
+import styles from "src/logic/bookingPage/bookingPromo/BookingPromo.module.scss";
 
 
 export const BookingPromo = () => {

@@ -1,5 +1,5 @@
-import {useDictionaryContext} from "../../../../../../context/Context";
-import styles from "../RoomItem.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface InformationProps {
   roomSquare: number;

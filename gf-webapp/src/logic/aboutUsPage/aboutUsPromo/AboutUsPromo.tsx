@@ -1,6 +1,6 @@
-import {useDictionaryContext} from "../../../context/Context";
-import image from "../../../resources/sliderImages/Promo3.jpg";
-import styles from "./AboutUsPromo.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import image from "src/resources/sliderImages/Promo3.jpg";
+import styles from "src/logic/aboutUsPage/aboutUsPromo/AboutUsPromo.module.scss";
 
 
 export const AboutUsPromo = () => {

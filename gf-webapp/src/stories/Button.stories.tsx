@@ -1,7 +1,7 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {AboutUs} from "../component/aboutUs/AboutUs";
+import {AboutUs} from "src/component/aboutUs/AboutUs";
 
 export default {
   title: "Block/AboutUs",

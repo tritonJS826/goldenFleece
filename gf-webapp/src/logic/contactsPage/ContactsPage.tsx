@@ -1,8 +1,8 @@
 import {useState} from "react";
-import {useDictionaryContext} from "../../context/Context";
+import {useDictionaryContext} from "src/context/Context";
 import {send} from "emailjs-com";
-import {PageBorder} from "../../component/pageBorder/PageBorder";
-import styles from "./ContactsPage.module.scss";
+import {PageBorder} from "src/component/pageBorder/PageBorder";
+import styles from "src/logic/contactsPage/ContactsPage.module.scss";
 
 
 export const ContactsPage = () => {

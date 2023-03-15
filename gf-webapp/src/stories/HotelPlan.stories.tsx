@@ -1,7 +1,7 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {HotelPlan} from "../logic/bookingPage/hotelPlan/HotelPlan";
+import {HotelPlan} from "src/logic/bookingPage/hotelPlan/HotelPlan";
 
 export default {
   title: "Page/BookingPage/HotelPlan",

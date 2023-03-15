@@ -1,7 +1,7 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {RoomsBlock} from "../logic/rooms/roomPage/roomsBlock/RoomsBlock";
+import {RoomsBlock} from "src/logic/rooms/roomPage/roomsBlock/RoomsBlock";
 
 export default {
   title: "Page/RoomPage/RoomsBlock",

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import {Room} from "../../model/Room/Room";
-import {RoomApiService} from "../../service/RoomApi/RoomApi";
+import {Room} from "src/model/Room/Room";
+import {RoomApiService} from "src/service/RoomApi/RoomApi";
 
 export function useRooms() {
   const [rooms, setRooms] = useState<Room[]>([]);

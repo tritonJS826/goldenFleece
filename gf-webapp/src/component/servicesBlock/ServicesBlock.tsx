@@ -1,7 +1,7 @@
-import {useDictionaryContext} from "../../context/Context";
+import {useDictionaryContext} from "src/context/Context";
 import {NavLink} from "react-router-dom";
-import room1 from "../../resources/rooms/1.jpg";
-import styles from "./ServicesBlock.module.scss";
+import room1 from "src/resources/rooms/1.jpg";
+import styles from "src/component/servicesBlock/ServicesBlock.module.scss";
 
 
 export const ServicesBlock = () => {

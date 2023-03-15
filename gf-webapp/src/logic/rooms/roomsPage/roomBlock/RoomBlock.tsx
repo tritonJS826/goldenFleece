@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import {Room} from "../../../../model/Room/Room";
-import {RoomItem} from "./roomItem/RoomItem";
-import {Loader} from "../../../../component/loader/Loader";
-import {RoomApiService} from "../../../../service/RoomApi/RoomApi";
+import {Room} from "src/model/Room/Room";
+import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
+import {Loader} from "src/component/loader/Loader";
+import {RoomApiService} from "src/service/RoomApi/RoomApi";
 
 export const RoomsBlock = () => {
   const [rooms, setRooms] = useState<Room[] | null>(null);

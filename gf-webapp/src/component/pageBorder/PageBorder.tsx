@@ -1,13 +1,13 @@
 import {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
-import {useDictionaryContext} from "../../context/Context";
+import {useDictionaryContext} from "src/context/Context";
 import {NavLink} from "react-router-dom";
-import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
+import {useScrollPosition} from "src/domEventsUtils/useScrollPosition";
 import {useLocation} from "react-router-dom";
-import {loadDictionary} from "../../service/Language/LoadDictionary";
-import {languageService} from "../../service/Language/LanguageService";
-import {Language, languageList} from "../../model/Language";
-import styles from "./PageBorder.module.scss";
-import {useLanguage} from "../../service/Language/useLanguage";
+import {loadDictionary} from "src/service/Language/LoadDictionary";
+import {languageService} from "src/service/Language/LanguageService";
+import {Language, languageList} from "src/model/Language";
+import styles from "src/component/pageBorder/PageBorder.module.scss";
+import {useLanguage} from "src/service/Language/useLanguage";
 
 interface PageBorderProps {
   children: ReactNode

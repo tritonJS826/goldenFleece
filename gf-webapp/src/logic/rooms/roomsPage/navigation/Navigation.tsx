@@ -1,6 +1,6 @@
-import {useDictionaryContext} from "../../../../context/Context";
-import {RoomsBlock} from "../roomBlock/RoomBlock";
-import styles from "./Navigation.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import {RoomsBlock} from "src/logic/rooms/roomsPage/roomBlock/RoomBlock";
+import styles from "src/logic/rooms/roomsPage/navigation/Navigation.module.scss";
 
 
 export const Navigation = () => {

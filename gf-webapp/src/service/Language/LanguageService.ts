@@ -1,7 +1,7 @@
-import {Language} from "../../model/Language";
-import {IStorage} from "../Storage/IStorage";
-import {ILocalStorageSchema} from "../Storage/LocalStorageSchema";
-import {LocalStorageService} from "../Storage/LocalStorageService";
+import {Language} from "src/model/Language";
+import {IStorage} from "src/service/Storage/IStorage";
+import {ILocalStorageSchema} from "src/service/Storage/LocalStorageSchema";
+import {LocalStorageService} from "src/service/Storage/LocalStorageService";
 
 class LanguageService {
 

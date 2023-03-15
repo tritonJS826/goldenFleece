@@ -1,6 +1,6 @@
-import {RoomsList} from "./roomsList/RoomsList";
-import {useDictionaryContext} from "../../../../context/Context";
-import styles from "./RoomsBlock.module.scss";
+import {RoomsList} from "src/logic/rooms/roomPage/roomsBlock/roomsList/RoomsList";
+import {useDictionaryContext} from "src/context/Context";
+import styles from "src/logic/rooms/roomPage/roomsBlock/RoomsBlock.module.scss";
 
 
 export const RoomsBlock = () => {

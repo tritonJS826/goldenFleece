@@ -1,7 +1,7 @@
 import React, {SetStateAction} from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {Form} from "../logic/bookingPage/form/Form";
+import {Form} from "src/logic/bookingPage/form/Form";
 
 export default {
   title: "Page/BookingPage/Form",

@@ -1,6 +1,6 @@
-import {useDictionaryContext} from "../../../../../../context/Context";
-import {getRoomNumber} from "../../../../../../service/rooms";
-import styles from "../RoomItem.module.scss";
+import {useDictionaryContext} from "src/context/Context";
+import {getRoomNumber} from "src/service/rooms";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface TitleProps {
   roomId: string;

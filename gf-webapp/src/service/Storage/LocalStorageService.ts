@@ -1,4 +1,4 @@
-import {IStorage} from "./IStorage";
+import {IStorage} from "src/service/Storage/IStorage";
 
 export class LocalStorageService<Schema> implements IStorage<Schema> {
 

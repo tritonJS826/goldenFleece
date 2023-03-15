@@ -1,7 +1,7 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import {Map} from "../component/map/Map";
+import {Map} from "src/component/map/Map";
 
 export default {
   title: "Component/Map",

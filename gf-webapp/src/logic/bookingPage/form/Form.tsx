@@ -1,7 +1,7 @@
 import {useState} from "react";
-import {useModalVisibilityContext, useDictionaryContext} from "../../../context/Context";
+import {useModalVisibilityContext, useDictionaryContext} from "src/context/Context";
 import {send} from "emailjs-com";
-import styles from "./Form.module.scss";
+import styles from "src/logic/bookingPage/form/Form.module.scss";
 
 type RoomProps = {
   roomNumber: string | null;
