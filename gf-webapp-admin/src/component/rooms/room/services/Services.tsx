@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {IRoom} from "../../../../model/room";
 import {saveRoom} from "../../../../service/room";
 import {BASE_SERVICES} from "../../../../utils/roomConstants";
-import {Button} from "../../../Button/Button";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import {changeRoomServices} from "./roomServices";
 import styles from "./Services.module.scss";
 

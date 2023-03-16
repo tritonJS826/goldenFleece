@@ -1,4 +1,4 @@
-# goldenFleece web app for admin
+# goldenFleece ui library
 
 ### Run in dev mode locally
 1. create a file .env with variables from file .env.example
@@ -15,10 +15,6 @@
 
 ```pnpm run build```
 
-### Run tests locally
 
-```pnpm run test```
-
-### Run eject command
-
-```pnpm run eject```
+### FYI
+* Due to creating symlinks pnpm we should reinstall nodemodules in packages recepients each time after any changes in library (TODO: we should fix it later)
