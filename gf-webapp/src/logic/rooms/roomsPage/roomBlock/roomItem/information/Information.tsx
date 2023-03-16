@@ -1,5 +1,5 @@
 import React from "react";
-import {useDictionaryContext} from "../../../../../../context/Context";
+import {useDictionary} from "../../../../../DictionaryContext/useDictionary";
 import styles from "../RoomItem.module.scss";
 
 interface InformationProps {
@@ -9,7 +9,7 @@ interface InformationProps {
 
 export const Information = (props: InformationProps) => {
   const UPPER_INDEX = 2;
-  const dictionary = useDictionaryContext().dictionary;
+  const dictionary = useDictionary().dictionary;
   return (
     <div>
       <div className={styles.settingsRoom}>

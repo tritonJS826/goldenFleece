@@ -1,5 +1,5 @@
 import React from "react";
-import {useDictionaryContext} from "../../../context/Context";
+import {useDictionary} from "../../DictionaryContext/useDictionary";
 import {PageBorder} from "../../../component/pageBorder/PageBorder";
 import {RoomsPromo} from "./roomsPromo/RoomsPromo";
 import {Navigation} from "./navigation/Navigation";
@@ -9,7 +9,7 @@ import styles from "./RoomsPage.module.scss";
 
 
 export const RoomsPage = () => {
-  const {roomsPage} = useDictionaryContext().dictionary;
+  const {roomsPage} = useDictionary().dictionary;
 
   return (
     <div>

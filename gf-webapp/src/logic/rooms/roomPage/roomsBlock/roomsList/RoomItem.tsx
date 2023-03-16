@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {useDictionaryContext} from "../../../../../context/Context";
+import {useDictionary} from "../../../../DictionaryContext/useDictionary";
 import styles from "../RoomsBlock.module.scss";
 
 interface RoomItemProps {
@@ -9,7 +9,7 @@ interface RoomItemProps {
 }
 
 export const RoomItem = (props: RoomItemProps) => {
-  const {roomPage} = useDictionaryContext().dictionary;
+  const {roomPage} = useDictionary().dictionary;
   return (
     <div
       key={props.roomId}

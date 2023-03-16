@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useModalVisibilityContext, useDictionaryContext} from "../../../context/Context";
+import {useModalVisibilityContext, useDictionary} from "../../DictionaryContext/useDictionary";
 import {send} from "emailjs-com";
 import styles from "./Form.module.scss";
 
@@ -8,7 +8,7 @@ type RoomProps = {
 }
 
 export const Form = (props: RoomProps) => {
-  const {bookingRoomForm} = useDictionaryContext().dictionary;
+  const {bookingRoomForm} = useDictionary().dictionary;
   const {isModalActive, setIsModalActive} = useModalVisibilityContext();
 
   const [toSend, setToSend] = useState({

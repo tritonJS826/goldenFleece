@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Routes, Route} from "react-router-dom";
-import {DictionaryContext, DictionaryType} from "src/context/Context";
+import {DictionaryContext, DictionaryType} from "src/logic/DictionaryContext/useDictionary";
 import {MainPage} from "src/logic/mainPage/MainPage";
 import {AboutUsPage} from "src/logic/aboutUsPage/AboutUsPage";
 import {RoomsPage} from "src/logic/rooms/roomsPage/RoomsPage";

@@ -1,11 +1,11 @@
 import React from "react";
-import {useDictionaryContext} from "../../../../context/Context";
+import {useDictionary} from "../../../DictionaryContext/useDictionary";
 import {RoomsBlock} from "../roomBlock/RoomBlock";
 import styles from "./Navigation.module.scss";
 
 
 export const Navigation = () => {
-  const {roomInfo} = useDictionaryContext().dictionary;
+  const {roomInfo} = useDictionary().dictionary;
 
   return (
     <div>

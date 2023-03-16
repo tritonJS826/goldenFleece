@@ -1,5 +1,5 @@
 import React from "react";
-import {useDictionaryContext} from "../../../../../../context/Context";
+import {useDictionary} from "../../../../../DictionaryContext/useDictionary";
 import {getRoomNumber} from "../../../../../../service/rooms";
 import styles from "../RoomItem.module.scss";
 
@@ -8,7 +8,7 @@ interface TitleProps {
 }
 
 export const Title = (props: TitleProps) => {
-  const dictionary = useDictionaryContext().dictionary;
+  const dictionary = useDictionary().dictionary;
   return (
     <div>
       <span className={styles.span}>

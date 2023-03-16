@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {useDictionaryContext} from "../../../context/Context";
-import {ModalVisibilityContext} from "../../../context/Context";
+import {useDictionary} from "../../DictionaryContext/useDictionary";
+import {ModalVisibilityContext} from "../../DictionaryContext/useDictionary";
 import {Modal} from "../modal/Modal";
 import {Form} from "../form/Form";
 import {RoomsPlan} from "./roomsPlan/RoomsPlan";
@@ -9,7 +9,7 @@ import styles from "./HotelPlan.module.scss";
 
 
 export const HotelPlan = () => {
-  const {bookingPage} = useDictionaryContext().dictionary;
+  const {bookingPage} = useDictionary().dictionary;
 
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [roomNumber, setRoomNumber] = useState<string | null>(null);
