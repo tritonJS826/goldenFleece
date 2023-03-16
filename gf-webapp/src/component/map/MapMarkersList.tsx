@@ -1,4 +1,4 @@
-import {useDictionaryContext} from "src/context/Context";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {IMarker} from "src/component/map/mapContent/marker/IMarker";
 import goldenFleeceImg from "src/resources/map/golden-fleece.jpg";
 import cakeClubImg from "src/resources/map/cake-club.jpg";
@@ -10,7 +10,7 @@ import stadiumImg from "src/resources/map/ramaz-shengelia-stadium.jpg";
 
 
 export const MapMarkers = () => {
-  const {map} = useDictionaryContext().dictionary;
+  const {map} = useDictionary().dictionary;
 
   const markers: IMarker[] = [
     {

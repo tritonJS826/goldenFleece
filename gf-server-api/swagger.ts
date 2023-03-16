@@ -1,5 +1,5 @@
 import swaggerJsDoc from "swagger-jsdoc";
-import swaggerDefinition from "static/swaggerConfigurationTemplate.json";
+import swaggerDefinition from "./static/swaggerConfigurationTemplate.json";
 import {config} from "dotenv";
 
 config();

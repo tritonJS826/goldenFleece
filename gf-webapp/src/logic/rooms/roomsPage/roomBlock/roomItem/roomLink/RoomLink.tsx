@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {useDictionaryContext} from "../../../../../../context/Context";
+import {useDictionary} from "../../../../../DictionaryContext/useDictionary";
 import {Room} from "../../../../../../model/Room/Room";
 import styles from "../RoomItem.module.scss";
 
@@ -9,7 +9,7 @@ interface RoomLinkProps {
 }
 
 export const RoomLink = (props: RoomLinkProps) => {
-  const dictionary = useDictionaryContext().dictionary;
+  const dictionary = useDictionary().dictionary;
   return (
     <NavLink
       to={`/rooms/${props.roomId}`}

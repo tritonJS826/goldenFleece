@@ -1,11 +1,11 @@
 import React from "react";
-import {useDictionaryContext} from "../../../context/Context";
+import {useDictionary} from "../../DictionaryContext/useDictionary";
 import image from "../../../resources/sliderImages/Promo3.jpg";
 import styles from "./AboutUsPromo.module.scss";
 
 
 export const AboutUsPromo = () => {
-  const {aboutUsPage} = useDictionaryContext().dictionary;
+  const {aboutUsPage} = useDictionary().dictionary;
 
   return (
     <div>

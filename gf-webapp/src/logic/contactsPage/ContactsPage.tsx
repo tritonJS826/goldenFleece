@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import {useDictionaryContext} from "../../context/Context";
+import {useDictionary} from "../DictionaryContext/useDictionary";
 import {send} from "emailjs-com";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
 import styles from "./ContactsPage.module.scss";
 
 
 export const ContactsPage = () => {
-  const {contactsPage, askAdminForm} = useDictionaryContext().dictionary;
+  const {contactsPage, askAdminForm} = useDictionary().dictionary;
 
   const [toSend, setToSend] = useState({
     to_name: "",

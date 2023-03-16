@@ -5,12 +5,14 @@ const GF_SERVER_API_PATH = path.resolve(__dirname, "../gf-server-api");
 const GF_SERVER_RESOURCES_PATH = path.resolve(__dirname, "../gf-server-resources");
 const GF_WEBAPP_PATH = path.resolve(__dirname, "../gf-webapp");
 const GF_WEBAPP_ADMIN_PATH = path.resolve(__dirname, "../gf-webapp-admin");
+const GF_UI_LIB_PATH = path.resolve(__dirname, "../gf-ui-lib");
 
 const MODULES_PATHS = [
   GF_SERVER_API_PATH,
   GF_SERVER_RESOURCES_PATH,
   GF_WEBAPP_PATH,
   GF_WEBAPP_ADMIN_PATH,
+  GF_UI_LIB_PATH,
 ];
 
 const generateEnvIfNotExist = (modulePath: string) => {
