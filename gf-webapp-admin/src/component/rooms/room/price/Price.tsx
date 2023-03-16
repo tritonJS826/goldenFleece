@@ -1,7 +1,6 @@
-import * as React from "react";
 import {IRoom} from "../../../../model/room";
 import {useState} from "react";
-import {Button} from "../../../Button/Button";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import {saveRoom} from "../../../../service/room";
 import styles from "./Price.module.scss";
 

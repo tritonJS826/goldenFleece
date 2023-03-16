@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {IRoom} from "../../../../model/room";
-import {Button} from "../../../Button/Button";
 import {saveRoom} from "../../../../service/room";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import styles from "./adults.module.scss";
 
 interface AdultsProps {
