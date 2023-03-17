@@ -2,6 +2,7 @@ import {useContext} from "react";
 import {MapContext} from "../MapContext";
 import {Marker} from "./marker/Marker";
 import {useZoom} from "../useZoom";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import styles from "./MapContent.module.scss";
 
 type MapContentProps = {
@@ -40,18 +41,14 @@ export const MapContent = (props: MapContentProps) => {
         {renderMarkers()}
       </div>
       <div className={styles.zoom}>
-        <button
-          className={styles.zoom_button}
+        <Button
           onClick={zoomInHandler}
-        >
-          +
-        </button>
-        <button
-          className={styles.zoom_button}
+          value="+"
+        />
+        <Button
           onClick={zoomOutHandler}
-        >
-          -
-        </button>
+          value="-"
+        />
       </div>
     </>
   );

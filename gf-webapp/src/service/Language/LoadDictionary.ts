@@ -1,5 +1,5 @@
 import path from "path";
-import {DictionaryType} from "../../context/Context";
+import {DictionaryType} from "../../logic/DictionaryContext/useDictionary";
 import {Language} from "../../model/Language";
 
 import en from "src/locales/en/translation.json";

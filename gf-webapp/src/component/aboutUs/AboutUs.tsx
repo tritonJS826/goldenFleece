@@ -1,5 +1,5 @@
 import {motion} from "framer-motion";
-import {useDictionaryContext} from "src/context/Context";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import frontImg from "src/resources/about-us/kutaisi.jpg";
 import styles from "src/component/aboutUs/AboutUs.module.scss";
 
@@ -29,7 +29,7 @@ const imageAnimation = {
 };
 
 export const AboutUs = () => {
-  const {aboutUsPage} = useDictionaryContext().dictionary;
+  const {aboutUsPage} = useDictionary().dictionary;
 
   return (
     <div className={styles.wrapper}>

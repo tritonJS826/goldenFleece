@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import {useState} from "react";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import styles from "./AddSlide.module.scss";
 
 interface AddSlideProps {
@@ -21,9 +22,10 @@ export const AddSlide = (props: AddSlideProps) => {
         value={slideURL}
         onChange={(e) => setSlideURL(e.target.value)}
       />
-      <button onClick={addSlideHandler}>
-        Add
-      </button>
+      <Button
+        onClick={addSlideHandler}
+        value="Add"
+      />
     </li>
   );
 };

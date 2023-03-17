@@ -1,9 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
+const {aliasWebpack} = require("react-app-alias-ex");
 const path = require("path");
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const {addWebpackAlias, override} = require("customize-cra");
 
+const options = {webpack: {alias: {"gf-ui-lib": path.resolve(__dirname, "../gf-ui-lib/src")}}};
 
-module.exports = override(
-  addWebpackAlias({["src"]: path.resolve(__dirname, "src")}),
-);
+module.exports = aliasWebpack(options);

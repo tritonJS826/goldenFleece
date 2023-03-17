@@ -1,5 +1,5 @@
 import React from "react";
-import {useDictionaryContext} from "../../../../../context/Context";
+import {useDictionary} from "../../../../DictionaryContext/useDictionary";
 import {Price} from "../../../../../model/Price";
 import {Apartments} from "../../../../../model/Room/Apartments";
 import {ApartmentServices} from "../../../../../model/Room/ApartmentServices";
@@ -13,7 +13,7 @@ interface InformationProps {
 }
 
 export const Information = (props: InformationProps) => {
-  const dictionary = useDictionaryContext().dictionary;
+  const dictionary = useDictionary().dictionary;
   return (
     <div>
       <div className={styles.container}>
