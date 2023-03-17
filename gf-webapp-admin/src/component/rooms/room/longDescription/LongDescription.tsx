@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
+import {Room} from "../../../../model/Room/Room";
 import {saveRoom} from "../../../../service/room";
 import {EditBtn} from "../editBtn/EditBtn";
 import styles from "./LongDescription.module.scss";
 
 interface LongDescriptionProps {
-  room:IRoom;
+  room:Room;
 }
 
 export const LongDescription = (props: LongDescriptionProps) => {

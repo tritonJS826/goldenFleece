@@ -1,5 +1,5 @@
 import React from "react";
-import {IRoom} from "../../../model/room";
+import {Room} from "../../../model/Room/Room";
 import {Adults} from "./adults/Adults";
 import {ApartmentsType} from "./apartmentType/ApartmentType";
 import {Description} from "./description/Description";
@@ -13,10 +13,10 @@ import {Slider} from "./slider/Slider";
 import {Square} from "./square/Square";
 
 interface RoomProps {
-  room:IRoom;
+  room:Room;
 }
 
-export const Room = (props: RoomProps) => {
+export const RoomItem = (props: RoomProps) => {
 
   return (
     <div className={styles.room}>

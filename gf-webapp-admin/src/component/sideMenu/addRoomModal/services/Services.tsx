@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
+import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
 import {BASE_SERVICES} from "../../../../utils/roomConstants";
 import {AddRoomContext} from "../addRoomContext";
 import {changeRoomServices} from "./roomServices";
@@ -7,16 +8,15 @@ import styles from "./Services.module.scss";
 
 export const Services = () => {
   const {roomStartState} = useContext(AddRoomContext);
-  const roomServices = roomStartState.services?.split(",").filter(el => el !== "").map(el => el.trim());
-  const [services, setServices] = useState(roomServices);
+  const [services, setServices] = useState(roomStartState.services);
 
   const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
-    const selectedService = e.target.value;
+    const selectedService = e.target.value as unknown as ApartmentServices;
     setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
   };
 
   useEffect(() => {
-    roomStartState.services = services.join(", ");
+    roomStartState.services = services;
   }, [services]);
 
   return (

@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
+import {Room} from "../../../../model/Room/Room";
 import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
 import styles from "./adults.module.scss";
 
 interface AdultsProps {
-  room:IRoom;
+  room:Room;
 }
 
 export const Adults = (props: AdultsProps) => {

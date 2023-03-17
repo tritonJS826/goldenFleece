@@ -3,25 +3,28 @@ import {ROOM_TYPES} from "../../../../../utils/roomConstants";
 import styles from "./ApartmentsList.module.scss";
 
 interface ApartmentsListProps {
-  type: string | undefined;
+  type: string;
   isEditFieldDisabled: boolean;
   onChangeApatrmentType: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export const ApartmentsList = (porps: ApartmentsListProps) => {
+export const ApartmentsList = (props: ApartmentsListProps) => {
+  const renderApartmens = () =>
+    ROOM_TYPES.map(roomType => (
+      <option key={roomType}
+        value={roomType}
+      >
+        {roomType}
+      </option>
+    ));
+
   return (
     <select className={styles.list}
-      value={porps.type}
-      disabled={porps.isEditFieldDisabled}
-      onChange={porps.onChangeApatrmentType}
+      value={props.type}
+      disabled={props.isEditFieldDisabled}
+      onChange={props.onChangeApatrmentType}
     >
-      {ROOM_TYPES.map(roomType => (
-        <option key={roomType}
-          value={roomType}
-        >
-          {roomType}
-        </option>
-      ))}
+      {renderApartmens()}
     </select>
   );
 };

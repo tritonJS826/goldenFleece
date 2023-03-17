@@ -1,17 +1,15 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {IRoom} from "../../../../model/room";
+import {Room} from "../../../../model/Room/Room";
 import {DeleteBtn} from "./deleteBtn/DeleteBtn";
 import styles from "./Overlay.module.scss";
 import {ServicesList} from "./servicesList/ServicesList";
 
 interface OverlayProps {
-  room: IRoom;
+  room: Room;
 }
 
 export const Overlay = (props: OverlayProps) => {
-  const services = props.room.services.split(",").map(el => el.trim());
-
   return (
     <div
       className={styles.overlay}
@@ -22,7 +20,7 @@ export const Overlay = (props: OverlayProps) => {
         <h3>
           {`${props.room.apartmentsType} room`}
         </h3>
-        <ServicesList services={services} />
+        <ServicesList services={props.room.services} />
         <div className={styles.container}>
           <p>
             {`Raiting: ${props.room.rating}`}

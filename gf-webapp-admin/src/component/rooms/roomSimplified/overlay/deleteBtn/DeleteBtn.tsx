@@ -1,10 +1,10 @@
 import React from "react";
-import {IRoom} from "../../../../../model/room";
+import {Room} from "../../../../../model/Room/Room";
 import {deleteRoom} from "../../../../../service/room";
 import styles from "./DeleteBtn.module.scss";
 
 interface BtnProps {
-  room: IRoom
+  room: Room
 }
 
 export const DeleteBtn = (props: BtnProps) => {

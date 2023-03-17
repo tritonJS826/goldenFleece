@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import {IRoom} from "../../../model/room";
+import {Room} from "../../../model/Room/Room";
 import {Overlay} from "./overlay/Overlay";
 import styles from "./RoomSimplified.module.scss";
 
 interface RoomSimplifiedProps {
-  room: IRoom
+  room: Room
 }
 
 export const RoomSimplified = (props: RoomSimplifiedProps) => {
@@ -17,7 +17,7 @@ export const RoomSimplified = (props: RoomSimplifiedProps) => {
       className={styles.roomSimplified}
     >
       <div className={styles.imageContainer}>
-        <img src={props.room.promo}
+        <img src={props.room.promoImgUrl}
           alt="room-promo"
         />
         {isHovered && <Overlay room={props.room} />}

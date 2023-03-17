@@ -1,12 +1,12 @@
 import * as React from "react";
-import {IRoom} from "../../../../model/room";
+import {Room} from "../../../../model/Room/Room";
 import {useState} from "react";
 import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/room";
-import styles from "./square.module.scss";
+import styles from "./Square.module.scss";
 
 interface SquareProps {
-  room:IRoom;
+  room:Room;
 }
 
 export const Square = (props: SquareProps) => {
