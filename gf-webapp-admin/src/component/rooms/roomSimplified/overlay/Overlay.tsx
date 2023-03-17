@@ -1,8 +1,8 @@
-import React from "react";
 import {Link} from "react-router-dom";
 import {IRoom} from "../../../../model/room";
-import {DeleteBtn} from "./deleteBtn/DeleteBtn";
 import {ServicesList} from "./servicesList/ServicesList";
+import {Button} from "gf-ui-lib/components/Button/Button";
+import {deleteRoom} from "src/service/room";
 import styles from "./Overlay.module.scss";
 
 interface OverlayProps {
@@ -11,6 +11,13 @@ interface OverlayProps {
 
 export const Overlay = (props: OverlayProps) => {
   const services = props.room.services.split(",").map(el => el.trim());
+
+  const deleteRoomHandler = () => {
+    if (props.room.id) {
+      deleteRoom(props.room.id);
+      location.reload();
+    }
+  };
 
   return (
     <div
@@ -32,7 +39,10 @@ export const Overlay = (props: OverlayProps) => {
           </p>
         </div>
       </Link>
-      <DeleteBtn room={props.room} />
+      <Button
+        onClick={deleteRoomHandler}
+        value="Delete"
+      />
     </div>
   );
 };

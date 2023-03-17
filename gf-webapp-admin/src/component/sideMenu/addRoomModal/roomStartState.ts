@@ -1,6 +1,6 @@
 import {IRoom} from "../../../model/room";
 
-export const roomStartState: IRoom = {
+export const defaultRoomState: IRoom = {
   apartmentsType: "Single",
   description: "",
   descriptionLong: "",
