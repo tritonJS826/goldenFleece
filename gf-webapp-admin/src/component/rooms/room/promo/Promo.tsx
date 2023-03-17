@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {AddRoom, Room} from "../../../../model/Room/Room";
-import {saveRoom} from "../../../../service/room";
+import {AddRoom, Room} from "../../../../model/Room/RoomDeprecated";
+import {saveRoom} from "../../../../service/RoomService";
 import styles from "./Promo.module.scss";
 
 interface PromoProps {

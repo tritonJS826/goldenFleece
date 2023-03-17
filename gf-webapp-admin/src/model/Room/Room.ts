@@ -1,57 +1,17 @@
-import {ApartmentServices} from "./ApartmentServices";
-import {Price} from "../Price";
+import {NewRoom} from "./NewRoom";
 
-export interface AddRoom {
-  /**
-   * Url to promo image;
-   */
-  promoImgUrl: string;
-  /**
-   * Apartment's type
-   */
-  apartmentsType: string,
-  /**
-   * Available services for room
-   */
-  services: ApartmentServices[],
-  /**
-   * Description about room
-   */
-  description: string,
+type RoomArgs = NewRoom & {id: string};
+
+export class Room extends NewRoom {
 
   /**
-   * Long room description
+   * Room id
    */
-  descriptionLong: string,
-  /**
-   * Room price
-   */
-  price: Price,
-  /**
-   * Array of paths to images of room
-   */
-  images: string[],
+  public id: string;
 
-  /**
-   * Max adults amount in room
-   */
-  adults: number
+  constructor(args: RoomArgs) {
+    super(args);
+    this.id = args.id;
+  }
 
-  /**
-   * Room's square in m^2
-   */
-  square: number;
-
-  /**
-   * Room's rating from 1 to 10
-   */
-  rating: number;
-
-}
-
-export interface Room extends AddRoom {
-  /**
-   * Room's ID
-   */
-  id: string,
 }

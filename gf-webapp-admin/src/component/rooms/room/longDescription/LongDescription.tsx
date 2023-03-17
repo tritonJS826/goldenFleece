@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {Room} from "../../../../model/Room/Room";
-import {saveRoom} from "../../../../service/room";
+import {Room} from "../../../../model/Room/RoomDeprecated";
+import {saveRoom} from "../../../../service/RoomService";
 import {EditBtn} from "../editBtn/EditBtn";
 import styles from "./LongDescription.module.scss";
 

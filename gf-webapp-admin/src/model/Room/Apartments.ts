@@ -1,9 +1,9 @@
 /**
  * Apartments type
  */
-
 export enum Apartments {
-  Single,
-  Double,
-  Twin
+  Single = "Single",
+  Double = "Double",
+  Twin = "Twin",
 }
+

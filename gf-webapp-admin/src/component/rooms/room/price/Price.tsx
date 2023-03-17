@@ -1,8 +1,8 @@
 import React from "react";
-import {Room} from "../../../../model/Room/Room";
+import {Room} from "../../../../model/Room/RoomDeprecated";
 import {useState} from "react";
 import {EditBtn} from "../editBtn/EditBtn";
-import {saveRoom} from "../../../../service/room";
+import {saveRoom} from "../../../../service/RoomService";
 import styles from "./Price.module.scss";
 
 interface ProcenProps {
@@ -11,7 +11,7 @@ interface ProcenProps {
 
 
 export const Price = (props: ProcenProps) => {
-  const [price, setPrice] = useState(props.room.price.getPriceAmount);
+  const [price, setPrice] = useState(() => props.room.price.getPriceAmount());
   const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const saveHandler = () => {

@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
-import {AddRoom, Room} from "../../../../../model/Room/Room";
-import {saveRoom} from "../../../../../service/room";
+import {Room} from "../../../../../model/Room/Room";
+import {NewRoom} from "../../../../../model/Room/NewRoom";
+import {saveRoom} from "../../../../../service/RoomService";
 import {AddSlide} from "./addSlide/AddSlide";
 import {Slide} from "./slide/Slide";
 import styles from "./Slides.module.scss";
 
 interface SlidesProps {
-  room:Room | AddRoom;
+  room:Room | NewRoom; //adults
 }
 
 export const Slides = (props: SlidesProps) => {

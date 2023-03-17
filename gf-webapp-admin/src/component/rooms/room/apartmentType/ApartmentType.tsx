@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import {Room} from "../../../../model/Room/Room";
-import {saveRoom} from "../../../../service/room";
+import {Apartments} from "../../../../model/Room/Apartments";
+import {Room} from "../../../../model/Room/RoomDeprecated";
+import {saveRoom} from "../../../../service/RoomService";
 import {EditBtn} from "../editBtn/EditBtn";
 import {ApartmentsList} from "./apartmentsList/ApartmentsList";
 import styles from "./ApartmentType.module.scss";
@@ -10,17 +11,13 @@ interface ApartmentsTypeProps {
 }
 
 export const ApartmentsType = (props: ApartmentsTypeProps) => {
-  const [type, setType] = useState(props.room.apartmentsType);
-  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
+  const [apartmentType, setApartmentType] = useState<Apartments>(props.room.apartmentsType);
+  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState<boolean>(true);
 
   const saveHandler = async () => {
     setIsEditFieldDisabled(true);
-    props.room.apartmentsType = type;
+    props.room.apartmentsType = apartmentType;
     saveRoom(props.room);
-  };
-
-  const onChangeApatrmentType = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setType(e.target.value);
   };
 
   const fieldEditHandler = () => {
@@ -33,9 +30,10 @@ export const ApartmentsType = (props: ApartmentsTypeProps) => {
         Room type
       </h4>
       <div className={styles.container}>
-        <ApartmentsList type={type}
+        <ApartmentsList
+          apartmentsType={apartmentType}
           isEditFieldDisabled={isEditFieldDisabled}
-          onChangeApatrmentType={onChangeApatrmentType}
+          onChangeApartmentType={setApartmentType}
         />
         <EditBtn isEditFieldDisabled={isEditFieldDisabled}
           saveHandler={saveHandler}

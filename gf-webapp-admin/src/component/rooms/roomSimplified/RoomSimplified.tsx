@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Room} from "../../../model/Room/Room";
+import {Room} from "../../../model/Room/RoomDeprecated";
 import {Overlay} from "./overlay/Overlay";
 import styles from "./RoomSimplified.module.scss";
 

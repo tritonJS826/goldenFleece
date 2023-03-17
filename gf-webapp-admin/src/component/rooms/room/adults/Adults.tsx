@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {Room} from "../../../../model/Room/Room";
+import {Room} from "../../../../model/Room/RoomDeprecated";
 import {EditBtn} from "../editBtn/EditBtn";
-import {saveRoom} from "../../../../service/room";
+import {saveRoom} from "../../../../service/RoomService";
 import styles from "./adults.module.scss";
 
 interface AdultsProps {

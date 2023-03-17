@@ -4,7 +4,7 @@ import {AddRoomContext} from "../addRoomContext";
 
 export const Price = () => {
   const {roomStartState} = useContext(AddRoomContext);
-  const [price, setPrice] = useState(roomStartState.price.getPriceAmount);
+  const [price, setPrice] = useState(() => roomStartState.price.getPriceAmount());
 
   const onChangePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPrice(Number(e.target.value));

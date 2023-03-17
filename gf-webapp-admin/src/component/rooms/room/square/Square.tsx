@@ -1,8 +1,8 @@
 import * as React from "react";
-import {Room} from "../../../../model/Room/Room";
+import {Room} from "../../../../model/Room/RoomDeprecated";
 import {useState} from "react";
 import {EditBtn} from "../editBtn/EditBtn";
-import {saveRoom} from "../../../../service/room";
+import {saveRoom} from "../../../../service/RoomService";
 import styles from "./Square.module.scss";
 
 interface SquareProps {

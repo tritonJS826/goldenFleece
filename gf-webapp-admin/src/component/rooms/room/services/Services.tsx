@@ -1,15 +1,15 @@
 import React, {useState} from "react";
-import {Room} from "../../../../model/Room/Room";
-import {saveRoom} from "../../../../service/room";
+import {Room} from "../../../../model/Room/RoomDeprecated";
+import {saveRoom} from "../../../../service/RoomService";
 import {EditBtn} from "../editBtn/EditBtn";
-import styles from "./Services.module.scss";
 import {changeRoomServices} from "./roomServices";
 import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
+import styles from "./Services.module.scss";
+import {enumToArray} from "../../../../utils/enumToArray";
 
 interface ServicesProps {
   room:Room;
 }
-
 export const Services = (props: ServicesProps) => {
 
   const [services, setServices] = useState(props.room.services);
@@ -30,15 +30,15 @@ export const Services = (props: ServicesProps) => {
     setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
   };
 
-  const renderServices = (roomServices: ApartmentServices[]) =>
-    roomServices.map(service => (
+  const renderServices = () =>
+    enumToArray(ApartmentServices).map(service => (
       <li className={styles.service}
         key={service}
       >
         <input id={`${service}-service-${props.room.id}`}
           type="checkbox"
           value={service}
-          defaultChecked={services.indexOf(service) !== -1}
+          defaultChecked={enumToArray(services).includes(service)}
           onChange={onChangeRoomServices}
           disabled={isEditFieldDisabled}
         />
@@ -57,7 +57,7 @@ export const Services = (props: ServicesProps) => {
         Room services
       </p>
       <ul className={styles.container}>
-        {renderServices(props.room.services)}
+        {renderServices()}
       </ul>
       <EditBtn isEditFieldDisabled={isEditFieldDisabled}
         saveHandler={saveHandler}

@@ -1,6 +1,6 @@
 import React from "react";
-import {Room} from "../../../../../model/Room/Room";
-import {deleteRoom} from "../../../../../service/room";
+import {Room} from "../../../../../model/Room/RoomDeprecated";
+import {deleteRoom} from "../../../../../service/RoomService";
 import styles from "./DeleteBtn.module.scss";
 
 interface BtnProps {

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {Room} from "../../model/Room/Room";
+import {Room} from "../../model/Room/RoomDeprecated";
 import styles from "./Rooms.module.scss";
-import {getRooms} from "../../service/room";
+import {getRooms} from "../../service/RoomService";
 import {Loader} from "../loader/Loader";
 import {RoomsList} from "./roomsList/RoomsList";
 

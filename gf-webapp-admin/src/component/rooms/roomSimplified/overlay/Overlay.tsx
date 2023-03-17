@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {Room} from "../../../../model/Room/Room";
+import {Room} from "../../../../model/Room/RoomDeprecated";
 import {DeleteBtn} from "./deleteBtn/DeleteBtn";
 import styles from "./Overlay.module.scss";
 import {ServicesList} from "./servicesList/ServicesList";
@@ -26,7 +26,7 @@ export const Overlay = (props: OverlayProps) => {
             {`Raiting: ${props.room.rating}`}
           </p>
           <p>
-            {`Price: ${props.room.price}`}
+            {`Price: ${props.room.price.getFullPrice()}`}
           </p>
         </div>
       </Link>

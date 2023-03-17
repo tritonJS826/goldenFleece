@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
-import {ROOM_TYPES} from "../../../../../utils/roomConstants";
 import {AddRoomContext} from "../../addRoomContext";
+import {Apartments} from "../../../../../model/Room/Apartments";
 import styles from "./ApartmentList.module.scss";
 
 export const ApartmentsList = () => {
@@ -9,7 +9,7 @@ export const ApartmentsList = () => {
   const [apartmentType, setApartmentType] = useState(roomStartState.apartmentsType);
 
   const onChangeApatrmentType = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setApartmentType(e.target.value);
+    setApartmentType(e.target.value as Apartments);
   };
 
   useEffect(() => {
@@ -17,11 +17,12 @@ export const ApartmentsList = () => {
   }, [apartmentType]);
 
   return (
-    <select className={styles.list}
+    <select
+      className={styles.list}
       value={apartmentType}
       onChange={onChangeApatrmentType}
     >
-      {ROOM_TYPES.map(roomType => (
+      {Object.keys(Apartments).map(roomType => (
         <option key={roomType}
           value={roomType}
         >

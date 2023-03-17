@@ -1,16 +1,16 @@
 import React from "react";
-import {ROOM_TYPES} from "../../../../../utils/roomConstants";
+import {Apartments} from "../../../../../model/Room/Apartments";
 import styles from "./ApartmentsList.module.scss";
 
 interface ApartmentsListProps {
-  type: string;
+  apartmentsType: string;
   isEditFieldDisabled: boolean;
-  onChangeApatrmentType: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChangeApartmentType: (apartmentType: Apartments) => void;
 }
 
 export const ApartmentsList = (props: ApartmentsListProps) => {
-  const renderApartmens = () =>
-    ROOM_TYPES.map(roomType => (
+  const renderApartments = () =>
+    Object.keys(Apartments).map(roomType => (
       <option key={roomType}
         value={roomType}
       >
@@ -20,11 +20,11 @@ export const ApartmentsList = (props: ApartmentsListProps) => {
 
   return (
     <select className={styles.list}
-      value={props.type}
+      value={props.apartmentsType}
       disabled={props.isEditFieldDisabled}
-      onChange={props.onChangeApatrmentType}
+      onChange={(e) => props.onChangeApartmentType(e.target.value as Apartments)}
     >
-      {renderApartmens()}
+      {renderApartments()}
     </select>
   );
 };

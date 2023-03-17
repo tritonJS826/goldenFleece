@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {postRoom} from "../../../../service/room";
+import {postRoom} from "../../../../service/RoomService";
 import {AddRoomContext} from "../addRoomContext";
 import styles from "./SubmitBtn.module.scss";
 
