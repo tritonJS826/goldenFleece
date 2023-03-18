@@ -24,6 +24,8 @@ class RoomsRepository {
   public async getRoom(roomId: string): Promise<Room> {
     const rawRooms: string = await readFile(PATH_TO_FILE_WITH_ROOMS);
     const rooms: Room[] = await JSON.parse(rawRooms);
+
+    // TODO: use find instead of filter
     const receivedRoom: Room[] = rooms.filter((room) => parseInt(room.id) === parseInt(roomId));
     return receivedRoom[0];
   }

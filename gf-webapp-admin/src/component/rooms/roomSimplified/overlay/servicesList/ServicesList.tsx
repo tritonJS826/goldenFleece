@@ -1,8 +1,9 @@
 import React from "react";
+import {ApartmentServices} from "../../../../../model/Room/ApartmentServices";
 import styles from "./ServicesList.module.scss";
 
 interface IServices {
-  services: string[] | undefined
+  services: ApartmentServices[]
 }
 
 export const ServicesList = ({services}: IServices) => {
@@ -11,7 +12,7 @@ export const ServicesList = ({services}: IServices) => {
       <h4>
         Services
       </h4>
-      {services?.map((service: string) => (
+      {services.map((service: ApartmentServices) => (
         <li key={service}>
           {service}
         </li>

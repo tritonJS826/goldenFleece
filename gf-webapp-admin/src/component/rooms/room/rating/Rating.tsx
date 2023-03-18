@@ -1,11 +1,11 @@
 import {useState} from "react";
-import {IRoom} from "../../../../model/room";
-import {saveRoom} from "../../../../service/room";
+import {Room} from "../../../../model/Room/RoomDeprecated";
+import {saveRoom} from "../../../../service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import styles from "./Rating.module.scss";
 
 interface RatingProps {
-  room:IRoom;
+  room:Room;
 }
 
 export const Rating = (props: RatingProps) => {

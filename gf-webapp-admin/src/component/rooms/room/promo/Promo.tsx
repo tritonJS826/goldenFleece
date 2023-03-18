@@ -1,11 +1,11 @@
 import {Button} from "gf-ui-lib/components/Button/Button";
 import React, {useState} from "react";
-import {IRoom} from "../../../../model/room";
-import {saveRoom} from "../../../../service/room";
+import {AddRoom, Room} from "../../../../model/Room/RoomDeprecated";
+import {saveRoom} from "../../../../service/RoomService";
 import styles from "./Promo.module.scss";
 
 interface PromoProps {
-  room:IRoom;
+  room:Room | AddRoom;
 }
 
 
@@ -20,8 +20,8 @@ export const Promo = (props: PromoProps) => {
 
   const saveHandler = () => {
     setIsImgModalShow(!isImgModalShow);
-    props.room.promo = newPromoImageUrl;
-    saveRoom(props.room);
+    props.room.promoImgUrl = newPromoImageUrl;
+    saveRoom(props.room as Room);
     setNewPromoImageUrl("");
   };
 
@@ -42,10 +42,10 @@ export const Promo = (props: PromoProps) => {
           onMouseEnter={hoverHandler}
           onMouseLeave={hoverHandler}
         >
-          {props.room.promo ?
+          {props.room.promoImgUrl ?
             (
               <img className={styles.image}
-                src={props.room.promo}
+                src={props.room.promoImgUrl}
                 alt="room-promo"
               />
             ) : (

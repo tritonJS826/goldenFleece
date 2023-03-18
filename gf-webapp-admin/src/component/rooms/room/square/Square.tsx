@@ -1,11 +1,11 @@
-import {IRoom} from "../../../../model/room";
+import {Room} from "../../../../model/Room/RoomDeprecated";
 import {useState} from "react";
 import {Button} from "gf-ui-lib/components/Button/Button";
-import {saveRoom} from "../../../../service/room";
-import styles from "./square.module.scss";
+import {saveRoom} from "../../../../service/RoomService";
+import styles from "./Square.module.scss";
 
 interface SquareProps {
-  room:IRoom;
+  room:Room;
 }
 
 export const Square = (props: SquareProps) => {

@@ -1,1 +1,0 @@
-Folder for app's utils. This file will be deleted

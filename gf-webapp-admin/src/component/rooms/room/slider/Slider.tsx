@@ -1,10 +1,10 @@
-import React from "react";
-import {IRoom} from "../../../../model/room";
+import {Room} from "../../../../model/Room/Room";
+import {NewRoom} from "../../../../model/Room/NewRoom";
 import {Slides} from "./slides/Slides";
 import styles from "./Slider.module.scss";
 
 interface SliderProps {
-  room:IRoom;
+  room: Room | NewRoom;
 }
 
 export const Slider = (props: SliderProps) => {

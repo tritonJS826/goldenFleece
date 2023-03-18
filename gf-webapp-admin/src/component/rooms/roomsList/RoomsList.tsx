@@ -1,10 +1,10 @@
 import React from "react";
-import {IRoom} from "../../../model/room";
+import {Room} from "../../../model/Room/RoomDeprecated";
 import {RoomSimplified} from "../roomSimplified/RoomSimplified";
 import styles from "./RoomsList.module.scss";
 
 interface RoomsListProps {
-  rooms:IRoom[]
+  rooms:Room[]
 }
 
 export const RoomsList = (props: RoomsListProps) => {

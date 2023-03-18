@@ -1,24 +1,23 @@
 import {useState} from "react";
-import {IRoom} from "../../../../model/room";
-import {saveRoom} from "../../../../service/room";
-import {BASE_SERVICES} from "../../../../utils/roomConstants";
+import {Room} from "../../../../model/Room/RoomDeprecated";
+import {saveRoom} from "../../../../service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import {changeRoomServices} from "./roomServices";
+import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
+import {enumToArray} from "../../../../utils/enumToArray";
 import styles from "./Services.module.scss";
 
 interface ServicesProps {
-  room:IRoom;
+  room:Room;
 }
-
 export const Services = (props: ServicesProps) => {
 
-  const roomServices = props.room.services?.split(",").map(el => el.trim());
-  const [services, setServices] = useState(roomServices);
+  const [services, setServices] = useState(props.room.services);
   const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
   const saveHandler = async () => {
     setIsEditFieldDisabled(true);
-    props.room.services = services.join(", ").trim();
+    props.room.services = services;
     saveRoom(props.room);
   };
 
@@ -27,9 +26,30 @@ export const Services = (props: ServicesProps) => {
   };
 
   const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
-    const selectedService = e.target.value;
+    const selectedService = e.target.value as unknown as ApartmentServices;
     setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
   };
+
+  const renderServices = () =>
+    enumToArray(ApartmentServices).map(service => (
+      <li className={styles.service}
+        key={service}
+      >
+        <input id={`${service}-service-${props.room.id}`}
+          type="checkbox"
+          value={service}
+          defaultChecked={enumToArray(services).includes(service)}
+          onChange={onChangeRoomServices}
+          disabled={isEditFieldDisabled}
+        />
+        <label className={styles.label}
+          htmlFor={`${service}-service-${props.room.id}`}
+        >
+          {service}
+        </label>
+      </li>
+    ));
+
 
   return (
     <div className={styles.services}>
@@ -37,24 +57,7 @@ export const Services = (props: ServicesProps) => {
         Room services
       </p>
       <ul className={styles.container}>
-        {BASE_SERVICES.map(service => (
-          <li className={styles.service}
-            key={service}
-          >
-            <input id={`${service}-service-${props.room.id}`}
-              type="checkbox"
-              value={service}
-              defaultChecked={services?.indexOf(service) !== -1}
-              onChange={onChangeRoomServices}
-              disabled={isEditFieldDisabled}
-            />
-            <label className={styles.label}
-              htmlFor={`${service}-service-${props.room.id}`}
-            >
-              {service}
-            </label>
-          </li>
-        ))}
+        {renderServices()}
       </ul>
       <Button
         value={isEditFieldDisabled ? "Edit" : "Save"}

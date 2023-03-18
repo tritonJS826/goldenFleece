@@ -1,9 +1,13 @@
+import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
+
 export const changeRoomServices = (
-  roomServices: string[],
-  selectedService: string,
+  roomServices: ApartmentServices[],
+
+  selectedService: ApartmentServices,
+
 ) => {
-  return roomServices?.indexOf(selectedService) === -1 ?
+  return roomServices.indexOf(selectedService) === -1 ?
     [...roomServices, selectedService]
     :
-    roomServices?.filter(value => value !== selectedService);
+    roomServices.filter(value => value !== selectedService);
 };

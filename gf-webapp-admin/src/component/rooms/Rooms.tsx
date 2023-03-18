@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react";
-import {IRoom} from "../../model/room";
-import {getRooms} from "../../service/room";
+import {Room} from "../../model/Room/RoomDeprecated";
+import {getRooms} from "../../service/RoomService";
 import {Loader} from "gf-ui-lib/components/Loader/Loader";
 import {RoomsList} from "./roomsList/RoomsList";
 import styles from "./Rooms.module.scss";
 
 export const Rooms = () => {
-  const [rooms, setRooms] = useState<IRoom[] | null>(null);
+  const [rooms, setRooms] = useState<Room[] | null>(null);
 
   const roomsInit = async () => {
     const roomsList = await getRooms();

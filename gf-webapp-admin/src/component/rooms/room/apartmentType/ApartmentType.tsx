@@ -1,27 +1,23 @@
 import {useState} from "react";
-import {IRoom} from "../../../../model/room";
-import {saveRoom} from "../../../../service/room";
+import {Apartments} from "../../../../model/Room/Apartments";
+import {Room} from "../../../../model/Room/RoomDeprecated";
+import {saveRoom} from "../../../../service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import {ApartmentsList} from "./apartmentsList/ApartmentsList";
 import styles from "./ApartmentType.module.scss";
 
 interface ApartmentsTypeProps {
-  room:IRoom;
+  room:Room;
 }
 
-export const ApartmentsType = (porps: ApartmentsTypeProps) => {
-
-  const [type, setType] = useState(porps.room.apartmentsType);
-  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
+export const ApartmentsType = (props: ApartmentsTypeProps) => {
+  const [apartmentType, setApartmentType] = useState<Apartments>(props.room.apartmentsType);
+  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState<boolean>(true);
 
   const saveHandler = async () => {
     setIsEditFieldDisabled(true);
-    porps.room.apartmentsType = type;
-    saveRoom(porps.room);
-  };
-
-  const onChangeApatrmentType = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setType(e.target.value);
+    props.room.apartmentsType = apartmentType;
+    saveRoom(props.room);
   };
 
   const fieldEditHandler = () => {
@@ -34,9 +30,10 @@ export const ApartmentsType = (porps: ApartmentsTypeProps) => {
         Room type
       </h4>
       <div className={styles.container}>
-        <ApartmentsList type={type}
+        <ApartmentsList
+          apartmentsType={apartmentType}
           isEditFieldDisabled={isEditFieldDisabled}
-          onChangeApatrmentType={onChangeApatrmentType}
+          onChangeApartmentType={setApartmentType}
         />
         <Button
           value={isEditFieldDisabled ? "Edit" : "Save"}
