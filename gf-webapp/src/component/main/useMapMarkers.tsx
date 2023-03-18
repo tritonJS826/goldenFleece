@@ -1,5 +1,6 @@
+import {useState} from "react";
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import {IMarker} from "src/component/map/mapContent/marker/IMarker";
+import {IMarker} from "gf-ui-lib/components/Map/mapContent/marker/IMarker";
 import goldenFleeceImg from "src/resources/map/golden-fleece.jpg";
 import cakeClubImg from "src/resources/map/cake-club.jpg";
 import shedevriImg from "src/resources/map/shedevri.jpg";
@@ -9,10 +10,10 @@ import tennisCourtImg from "src/resources/map/tennis-court.jpg";
 import stadiumImg from "src/resources/map/ramaz-shengelia-stadium.jpg";
 
 
-export const MapMarkers = () => {
+export const useMapMarkers = () => {
   const {map} = useDictionary().dictionary;
 
-  const markers: IMarker[] = [
+  const [markers] = useState<IMarker[]>([
     {
       id: 1,
       name: "Golden fleece",
@@ -76,8 +77,8 @@ export const MapMarkers = () => {
       imgUrl: stadiumImg,
       description: map.shengeliaStadiumDescription,
     },
-  ];
+  ]);
 
-  return markers;
+  return {markers};
 };
 

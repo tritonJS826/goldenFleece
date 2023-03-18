@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import {useContext} from "react";
 import {IMapMenuProps} from "./IMapMenuProps";
 import {MapContext} from "../MapContext";
 import styles from "./MapMenu.module.scss";
