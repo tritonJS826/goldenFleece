@@ -4,8 +4,5 @@
  * @returns
  */
 export const enumToArray = (anyEnum: any) => {
-  if (typeof anyEnum === "enum") {
-    return Object.keys(anyEnum).filter((prop) => isNaN(+(prop)));
-  }
-
+  return Object.keys(anyEnum).filter((prop) => isNaN(+(prop)));
 };
