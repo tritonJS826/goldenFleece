@@ -33,6 +33,7 @@ export const SideMenu = () => {
       <Registration />
       {isModalShown && <AddRoomModal showModal={showModal} />}
       <Button
+        type="button"
         onClick={logOut}
         value="Logout"
       />

@@ -38,6 +38,7 @@ export const Overlay = (props: OverlayProps) => {
         </div>
       </Link>
       <Button
+        type="button"
         onClick={deleteRoomHandler}
         value="Delete"
       />

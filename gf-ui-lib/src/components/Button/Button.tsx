@@ -12,6 +12,10 @@ interface ButtonProps {
    * Callback triggered on button click
    */
   onClick: () => void;
+  /**
+   * Button type
+   */
+  type: "submit" | "button";
 }
 
 /**
@@ -20,6 +24,7 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   return (
     <button
+      type={props.type ?? "button"}
       className={styles.button}
       onClick={props.onClick}
     >

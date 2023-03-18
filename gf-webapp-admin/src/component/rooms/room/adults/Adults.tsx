@@ -35,6 +35,7 @@ export const Adults = (props: AdultsProps) => {
             disabled={isEditFieldDisabled}
           />
           <Button
+            type="button"
             value={isEditFieldDisabled ? "Edit" : "Save"}
             onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
           />

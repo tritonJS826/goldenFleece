@@ -17,6 +17,7 @@ export function Main() {
     <>
       <Slider />
       <Button
+        type="button"
         value={dictionary.bookButtonText}
         onClick={() => navigate(pages.booking.path)}
       />
