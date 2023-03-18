@@ -6,9 +6,7 @@ import {NewRoom} from "../model/Room/NewRoom";
 import {Price} from "../model/Price";
 
 /**
- * Temporary function. Will be deleted after receiving a correct response from the server
- * @param roomRaw
- * @returns
+ * @description Temporary function. Will be deleted after receiving a correct response from the server
  */
 const roomDTOToBusinessConverter = (roomRaw: any) => new Room({
   ...roomRaw,
