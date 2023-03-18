@@ -1,5 +1,5 @@
 import {createContext} from "react";
-import {IMarker} from "src/component/map/mapContent/marker/IMarker";
+import {IMarker} from "./mapContent/marker/IMarker";
 
 export interface IMapContext {
   markers: IMarker[];

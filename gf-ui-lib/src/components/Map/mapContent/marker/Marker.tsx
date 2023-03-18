@@ -1,7 +1,7 @@
 import React, {FC, useContext, useState} from "react";
 import {IMarker} from "./IMarker";
 import {MapContext} from "../../MapContext";
-import marker from "../../../../resources/map/marker-sprite.svg";
+import marker from "../../resources/marker-sprite.svg";
 import styleMarker from "./Marker.module.scss";
 
 

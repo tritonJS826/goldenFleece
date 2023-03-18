@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {MapContext} from "../MapContext";
 import {Marker} from "./marker/Marker";
 import {useZoom} from "../useZoom";
-import {Button} from "gf-ui-lib/components/Button/Button";
+import {Button} from "../../Button/Button";
 import styles from "./MapContent.module.scss";
 
 type MapContentProps = {
