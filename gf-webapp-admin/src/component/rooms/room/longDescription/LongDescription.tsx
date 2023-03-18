@@ -35,6 +35,7 @@ export const LongDescription = (props: LongDescriptionProps) => {
           placeholder="Enter full description"
         />
         <Button
+          type="button"
           value={isEditFieldDisabled ? "Edit" : "Save"}
           onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />

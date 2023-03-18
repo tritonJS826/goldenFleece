@@ -36,6 +36,7 @@ export const Description = (props: DescriptionProps) => {
           placeholder="Enter short description"
         />
         <Button
+          type="button"
           value={isEditFieldDisabled ? "Edit" : "Save"}
           onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />

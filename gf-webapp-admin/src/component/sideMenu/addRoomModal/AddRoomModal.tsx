@@ -44,6 +44,7 @@ export const AddRoomModal = (props: ShowModalProps) => {
         <Promo room={defaultRoomState} />
         <Slider room={defaultRoomState} />
         <Button
+          type="button"
           onClick={addRoom}
           value="Submit"
         />

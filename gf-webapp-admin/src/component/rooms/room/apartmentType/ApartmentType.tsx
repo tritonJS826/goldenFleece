@@ -39,6 +39,7 @@ export const ApartmentsType = (porps: ApartmentsTypeProps) => {
           onChangeApatrmentType={onChangeApatrmentType}
         />
         <Button
+          type="button"
           value={isEditFieldDisabled ? "Edit" : "Save"}
           onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />

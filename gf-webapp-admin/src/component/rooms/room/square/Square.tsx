@@ -35,6 +35,7 @@ export const Square = (props: SquareProps) => {
           disabled={isEditFieldDisabled}
         />
         <Button
+          type="button"
           value={isEditFieldDisabled ? "Edit" : "Save"}
           onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />
