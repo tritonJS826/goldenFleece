@@ -14,7 +14,7 @@ import {defaultRoom} from "./roomStartState";
 import {Services} from "./services/Services";
 import {Square} from "./square/Square";
 import {Button} from "gf-ui-lib/components/Button/Button";
-import {postRoom} from "src/service/room";
+import {postRoom} from "src/service/RoomService";
 import styles from "./AddRoomModal.module.scss";
 
 interface ShowModalProps {
