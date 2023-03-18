@@ -1,4 +1,4 @@
-@import '../../../Index.scss';
+@import "../../../styles/GlobalTokens.scss";
 
 .content {
   position: absolute;
@@ -6,7 +6,7 @@
   left: 0;
   width: 3000px;
   height: 1321px;
-  background-image: url('../../../resources/map/golden-fleece-map.jpg');
+  background-image: url('../resources/golden-fleece-map.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: grab;

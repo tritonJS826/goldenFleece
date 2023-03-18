@@ -29,7 +29,7 @@
       "gf-ui-lib": ["../gf-ui-lib/src/*"]
     }
   },
-  "include": ["src", "scripts"],
+  "include": ["src", "scripts", "../gf-ui-lib/src/components/Map"],
   "types": ["node", "jest", "@testing-library/jest-dom"]
 }
 

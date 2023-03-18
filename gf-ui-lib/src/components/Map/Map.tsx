@@ -1,13 +1,16 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {MapContent} from "./mapContent/MapContent";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
 import {IMarker} from "./mapContent/marker/IMarker";
 import {ItemDescription} from "./itemDescription/ItemDescription";
-import {MapMarkers} from "./MapMarkersList";
 import styles from "./Map.module.scss";
 
-export const Map = () => {
+export interface MarkerProps {
+  markers: IMarker[];
+}
+
+export const Map: React.FC<MarkerProps> = (props: MarkerProps) => {
   const [dragging, setDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
@@ -66,11 +69,14 @@ export const Map = () => {
     setMenuItem(marker);
   };
 
-  const markers = MapMarkers();
-
-
   return (
-    <MapContext.Provider value={{markers, menuItem, setMenuItem}}>
+    <MapContext.Provider
+      value={{
+        markers: props.markers,
+        menuItem,
+        setMenuItem,
+      }}
+    >
       <MapMenu menuItemHandler={menuItemHandler} />
       <ItemDescription />
       <div
