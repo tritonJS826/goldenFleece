@@ -1,12 +1,13 @@
-import React, {useState} from "react";
-import {useDictionaryContext} from "../../context/Context";
+import React, {useRef, useState} from "react";
+import {useDictionary} from "../DictionaryContext/useDictionary";
 import {send} from "emailjs-com";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
 import styles from "./ContactsPage.module.scss";
+import {Button} from "gf-ui-lib/components/Button/Button";
 
 
 export const ContactsPage = () => {
-  const {contactsPage, askAdminForm} = useDictionaryContext().dictionary;
+  const {contactsPage, askAdminForm} = useDictionary().dictionary;
 
   const [toSend, setToSend] = useState({
     to_name: "",
@@ -40,6 +41,8 @@ export const ContactsPage = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setToSend({...toSend, [e.target.name]: e.target.value});
   };
+
+  const formToSubmit = useRef<HTMLFormElement>(null);
 
   return (
     <PageBorder>
@@ -75,6 +78,7 @@ export const ContactsPage = () => {
         </div>
         <form
           onSubmit={onSubmit}
+          ref={formToSubmit}
           className={styles.form}
         >
           <div className={styles.formGoup}>
@@ -149,12 +153,10 @@ export const ContactsPage = () => {
               required
             />
           </div>
-          <button
-            type="submit"
-            className={styles.button}
-          >
-            {askAdminForm.buttonText}
-          </button>
+          <Button
+            onClick={() => formToSubmit.current?.submit()}
+            value={askAdminForm.buttonText}
+          />
         </form>
       </div>
     </PageBorder>

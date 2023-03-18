@@ -1,3 +1,4 @@
+import {Button} from "gf-ui-lib/components/Button/Button";
 import React, {useState} from "react";
 import {AddRoom, Room} from "../../../../model/Room/RoomDeprecated";
 import {saveRoom} from "../../../../service/RoomService";
@@ -76,12 +77,10 @@ export const Promo = (props: PromoProps) => {
                 onChange={(e) => setNewPromoImageUrl(e.target.value)}
                 placeholder="Enter image URL"
               />
-              <button
+              <Button
                 onClick={saveHandler}
-                className={styles.btnSave}
-              >
-                Save
-              </button>
+                value="Save"
+              />
             </div>
           )
         }

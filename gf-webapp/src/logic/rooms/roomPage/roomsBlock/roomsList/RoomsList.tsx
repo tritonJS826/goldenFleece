@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import {Loader} from "../../../../../component/loader/Loader";
+import {Loader} from "gf-ui-lib/components/Loader/Loader";
 import {Room} from "../../../../../model/Room/Room";
 import {getShuffledRooms} from "../../../../../service/rooms";
 import {Rooms} from "./Rooms";
@@ -22,9 +22,9 @@ export const RoomsList = () => {
     randomRoomsInit();
   }, [currentRoomId]);
 
+  if (!randomRooms) {
+    return <Loader />;
+  }
 
-  return randomRooms ?
-    <Rooms rooms={randomRooms} />
-    :
-    <Loader />;
+  return (<Rooms rooms={randomRooms} />);
 };

@@ -1,8 +1,9 @@
-import {Room} from "../model/Room";
-import {readFile} from "../utils/readFile";
-import {writeFile} from "../utils/writeFile";
+import path from "path";
+import {Room} from "src/model/Room";
+import {readFile} from "src/utils/readFile";
+import {writeFile} from "src/utils/writeFile";
 
-const PATH_TO_FILE_WITH_ROOMS = "./DTO/roomsDTO.json";
+const PATH_TO_FILE_WITH_ROOMS = path.resolve("./DTO/roomsDTO.json");
 
 class RoomsRepository {
 

@@ -1,13 +1,12 @@
-import React, {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
-import {useDictionaryContext} from "../../context/Context";
+import {useState, useEffect, PropsWithChildren, ReactNode, ReactElement} from "react";
+import {useDictionary} from "../../logic/DictionaryContext/useDictionary";
 import {NavLink} from "react-router-dom";
-import {useScrollPosition} from "../../domEventsUtils/useScrollPosition";
+import {useScrollPosition} from "../../utils/domEventsUtils/useScrollPosition";
 import {useLocation} from "react-router-dom";
 import {loadDictionary} from "../../service/Language/LoadDictionary";
-import {languageService} from "../../service/Language/LanguageService";
 import {Language, languageList} from "../../model/Language";
-import styles from "./PageBorder.module.scss";
 import {useLanguage} from "../../service/Language/useLanguage";
+import styles from "./PageBorder.module.scss";
 
 interface PageBorderProps {
   children: ReactNode
@@ -20,7 +19,7 @@ interface Contact {
 
 
 export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
-  const {dictionary, setDictionary} = useDictionaryContext();
+  const {dictionary, setDictionary} = useDictionary();
   const navigation = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
   const {lang, setCurrentLang} = useLanguage();

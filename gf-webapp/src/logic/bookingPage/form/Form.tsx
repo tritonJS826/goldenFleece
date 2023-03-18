@@ -1,6 +1,7 @@
-import React, {useState} from "react";
-import {useModalVisibilityContext, useDictionaryContext} from "../../../context/Context";
+import {useRef, useState} from "react";
+import {useModalVisibilityContext, useDictionary} from "../../DictionaryContext/useDictionary";
 import {send} from "emailjs-com";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import styles from "./Form.module.scss";
 
 type RoomProps = {
@@ -8,7 +9,7 @@ type RoomProps = {
 }
 
 export const Form = (props: RoomProps) => {
-  const {bookingRoomForm} = useDictionaryContext().dictionary;
+  const {bookingRoomForm} = useDictionary().dictionary;
   const {isModalActive, setIsModalActive} = useModalVisibilityContext();
 
   const [toSend, setToSend] = useState({
@@ -49,10 +50,13 @@ export const Form = (props: RoomProps) => {
     setToSend({...toSend, [e.target.name]: props.roomNumber});
   };
 
+  const formToSubmit = useRef<HTMLFormElement>(null);
+
   return (
     <div>
       <form
         onSubmit={onSubmit}
+        ref={formToSubmit}
         className={styles.form}
       >
         <div className={styles.formGoup}>
@@ -184,12 +188,10 @@ export const Form = (props: RoomProps) => {
             </div>
           </div>
         </div>
-        <button
-          type="submit"
-          className={styles.button}
-        >
-          {bookingRoomForm.buttonText}
-        </button>
+        <Button
+          onClick={() => formToSubmit?.current?.submit()}
+          value={bookingRoomForm.buttonText}
+        />
       </form>
     </div>
   );

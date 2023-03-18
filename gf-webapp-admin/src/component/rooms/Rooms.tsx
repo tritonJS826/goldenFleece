@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Room} from "../../model/Room/RoomDeprecated";
-import styles from "./Rooms.module.scss";
 import {getRooms} from "../../service/RoomService";
-import {Loader} from "../loader/Loader";
+import {Loader} from "gf-ui-lib/components/Loader/Loader";
 import {RoomsList} from "./roomsList/RoomsList";
+import styles from "./Rooms.module.scss";
 
 export const Rooms = () => {
   const [rooms, setRooms] = useState<Room[] | null>(null);

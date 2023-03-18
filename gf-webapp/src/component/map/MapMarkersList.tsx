@@ -1,16 +1,16 @@
-import {useDictionaryContext} from "../../context/Context";
-import {IMarker} from "./mapContent/marker/IMarker";
-import goldenFleeceImg from "../../resources/map/golden-fleece.jpg";
-import cakeClubImg from "../../resources/map/cake-club.jpg";
-import shedevriImg from "../../resources/map/shedevri.jpg";
-import tomasWineCellarImg from "../../resources/map/tomas-wine-cellar.jpg";
-import youthParkImg from "../../resources/map/youth-park.jpg";
-import tennisCourtImg from "../../resources/map/tennis-court.jpg";
-import stadiumImg from "../../resources/map/ramaz-shengelia-stadium.jpg";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import {IMarker} from "src/component/map/mapContent/marker/IMarker";
+import goldenFleeceImg from "src/resources/map/golden-fleece.jpg";
+import cakeClubImg from "src/resources/map/cake-club.jpg";
+import shedevriImg from "src/resources/map/shedevri.jpg";
+import tomasWineCellarImg from "src/resources/map/tomas-wine-cellar.jpg";
+import youthParkImg from "src/resources/map/youth-park.jpg";
+import tennisCourtImg from "src/resources/map/tennis-court.jpg";
+import stadiumImg from "src/resources/map/ramaz-shengelia-stadium.jpg";
 
 
 export const MapMarkers = () => {
-  const {map} = useDictionaryContext().dictionary;
+  const {map} = useDictionary().dictionary;
 
   const markers: IMarker[] = [
     {

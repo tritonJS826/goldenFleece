@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
-import {sandboxRepository} from "../../repository/sandboxRepository/sandboxRepository";
-import {SandboxServiceInterface} from "./SandboxServerInterface";
+import {sandboxRepository} from "src/repository/sandboxRepository/sandboxRepository";
+import {SandboxServiceInterface} from "src/service/sandboxService/SandboxServerInterface";
 
 /**
  * Sandbox service

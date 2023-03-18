@@ -1,11 +1,10 @@
-import React from "react";
-import {useDictionaryContext} from "../../context/Context";
 import {NavLink} from "react-router-dom";
-import styles from "./BookingBlock.module.scss";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import styles from "src/component/bookBlock/BookingBlock.module.scss";
 
 
 export const BookingBlock = () => {
-  const {bookingBlock} = useDictionaryContext().dictionary;
+  const {bookingBlock} = useDictionary().dictionary;
 
   return (
     <div className={styles.book}>

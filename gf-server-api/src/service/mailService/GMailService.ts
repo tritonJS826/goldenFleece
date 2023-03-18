@@ -1,10 +1,10 @@
-import {MailServiceInterface} from "./MailServiceInterface";
+import {MailServiceInterface} from "src/service/mailService/MailServiceInterface";
 import nodemailer from "nodemailer";
 import {config} from "dotenv";
 import Mail from "nodemailer/lib/mailer";
-import {getCurrentDate} from "../../utils/getCurrentDate";
-import {AskAdminMailParams} from "../../model/AskAdminMailParams";
-import {BookingRequestMailParams} from "../../model/BookingRequestMailParams";
+import {getCurrentDate} from "src/utils/getCurrentDate";
+import {AskAdminMailParams} from "src/model/AskAdminMailParams";
+import {BookingRequestMailParams} from "src/model/BookingRequestMailParams";
 import {Request, Response} from "express";
 
 config();

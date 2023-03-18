@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {MapContent} from "./mapContent/MapContent";
-import styles from "./Map.module.scss";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
 import {IMarker} from "./mapContent/marker/IMarker";
 import {ItemDescription} from "./itemDescription/ItemDescription";
 import {MapMarkers} from "./MapMarkersList";
+import styles from "./Map.module.scss";
 
 export const Map = () => {
   const [dragging, setDragging] = useState(false);

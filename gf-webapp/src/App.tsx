@@ -1,15 +1,9 @@
 import React, {useState} from "react";
 import {Routes, Route} from "react-router-dom";
-import {DictionaryContext, DictionaryType} from "./context/Context";
-import {MainPage} from "./logic/mainPage/MainPage";
-import {AboutUsPage} from "./logic/aboutUsPage/AboutUsPage";
-import {RoomsPage} from "./logic/rooms/roomsPage/RoomsPage";
-import {RoomPage} from "./logic/rooms/roomPage/RoomPage";
-import {ContactsPage} from "./logic/contactsPage/ContactsPage";
-import {BookingPage} from "./logic/bookingPage/BookingPage";
-import ScrollToTop from "./utils/scrollToTop";
-import en from "../public/locales/en/translation.json";
-
+import {DictionaryContext, DictionaryType} from "src/logic/DictionaryContext/useDictionary";
+import ScrollToTop from "src/utils/scrollToTop";
+import en from "src/locales/en/translation.json";
+import {pages} from "src/pages";
 
 function App() {
   const [dictionary, setDictionary] = useState<DictionaryType>(en);
@@ -22,28 +16,28 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route
-            path="/"
-            element={<MainPage />}
+            path={pages.main.path}
+            element={pages.main.element}
           />
           <Route
-            path="/about"
-            element={<AboutUsPage />}
+            path={pages.aboutUs.path}
+            element={pages.aboutUs.element}
           />
           <Route
-            path="/rooms"
-            element={<RoomsPage />}
+            path={pages.rooms.path}
+            element={pages.rooms.element}
           />
           <Route
-            path="/rooms/:id"
-            element={<RoomPage />}
+            path={pages.room.path("id")}
+            element={pages.room.element}
           />
           <Route
-            path="/booking"
-            element={<BookingPage />}
+            path={pages.booking.path}
+            element={pages.booking.element}
           />
           <Route
-            path="/contacts"
-            element={<ContactsPage />}
+            path={pages.contacts.path}
+            element={pages.contacts.element}
           />
         </Routes>
       </DictionaryContext.Provider>

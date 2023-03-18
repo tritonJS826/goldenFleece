@@ -1,7 +1,6 @@
-import React, {useContext} from "react";
-import {MapContext} from "../MapContext";
-import {IMarker} from "../mapContent/marker/IMarker";
-import styles from "./ItemDescription.module.scss";
+import {useContext} from "react";
+import {MapContext} from "src/component/map/MapContext";
+import styles from "src/component/map/itemDescription/ItemDescription.module.scss";
 
 
 export const ItemDescription = () => {

@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {Room} from "../../../../model/Room/RoomDeprecated";
-import {EditBtn} from "../editBtn/EditBtn";
 import {saveRoom} from "../../../../service/RoomService";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import styles from "./adults.module.scss";
 
 interface AdultsProps {
@@ -34,9 +34,9 @@ export const Adults = (props: AdultsProps) => {
             onChange={(e) => setAdults(Number(e.target.value))}
             disabled={isEditFieldDisabled}
           />
-          <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-            saveHandler={saveHandler}
-            fieldEditHandler={fieldEditHandler}
+          <Button
+            value={isEditFieldDisabled ? "Edit" : "Save"}
+            onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
           />
         </div>
       </label>

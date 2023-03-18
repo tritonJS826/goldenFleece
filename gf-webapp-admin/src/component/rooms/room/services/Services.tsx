@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {Room} from "../../../../model/Room/RoomDeprecated";
 import {saveRoom} from "../../../../service/RoomService";
-import {EditBtn} from "../editBtn/EditBtn";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import {changeRoomServices} from "./roomServices";
 import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
-import styles from "./Services.module.scss";
 import {enumToArray} from "../../../../utils/enumToArray";
+import styles from "./Services.module.scss";
 
 interface ServicesProps {
   room:Room;
@@ -59,9 +59,9 @@ export const Services = (props: ServicesProps) => {
       <ul className={styles.container}>
         {renderServices()}
       </ul>
-      <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-        saveHandler={saveHandler}
-        fieldEditHandler={fieldEditHandler}
+      <Button
+        value={isEditFieldDisabled ? "Edit" : "Save"}
+        onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
       />
     </div>
   );

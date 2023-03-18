@@ -1,10 +1,10 @@
 import path from "path";
-import {DictionaryType} from "../../context/Context";
+import {DictionaryType} from "../../logic/DictionaryContext/useDictionary";
 import {Language} from "../../model/Language";
 
-import en from "../../../public/locales/en/translation.json";
-import ru from "../../../public/locales/ru/translation.json";
-import ge from "../../../public/locales/ge/translation.json";
+import en from "src/locales/en/translation.json";
+import ru from "src/locales/ru/translation.json";
+import ge from "src/locales/ge/translation.json";
 
 const langMapping = {
   en,

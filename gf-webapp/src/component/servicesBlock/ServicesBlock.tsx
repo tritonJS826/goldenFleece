@@ -1,12 +1,12 @@
 import React from "react";
-import {useDictionaryContext} from "../../context/Context";
+import {useDictionary} from "../../logic/DictionaryContext/useDictionary";
 import {NavLink} from "react-router-dom";
 import room1 from "../../resources/rooms/1.jpg";
 import styles from "./ServicesBlock.module.scss";
 
 
 export const ServicesBlock = () => {
-  const {servicesBlock} = useDictionaryContext().dictionary;
+  const {servicesBlock} = useDictionary().dictionary;
 
   return (
     <div className={styles.services}>

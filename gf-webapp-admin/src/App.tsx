@@ -1,9 +1,9 @@
-import React, {useContext} from "react";
+import {useContext} from "react";
 import {BrowserRouter} from "react-router-dom";
 import {AppContext} from "./appContext";
 import {AppRouter} from "./component/AppRouter";
 import {useAuthState} from "react-firebase-hooks/auth";
-import {Loader} from "./component/loader/Loader";
+import {Loader} from "gf-ui-lib/components/Loader/Loader";
 
 function App() {
   const {auth} = useContext(AppContext);

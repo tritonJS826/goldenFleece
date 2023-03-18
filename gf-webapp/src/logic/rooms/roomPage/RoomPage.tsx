@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {PageBorder} from "../../../component/pageBorder/PageBorder";
 import {RoomSlider} from "./roomSlider/RoomSlider";
@@ -7,16 +7,22 @@ import {RoomsBlock} from "./roomsBlock/RoomsBlock";
 import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
 import {Room} from "../../../model/Room/Room";
-import {Loader} from "../../../component/loader/Loader";
 import {RoomApiService} from "../../../service/RoomApi/RoomApi";
 import styles from "./RoomPage.module.scss";
+import {Loader} from "gf-ui-lib/components/Loader/Loader";
 
-type RoomParams = {
+/**
+ * Url Params
+ */
+type UrlParams = {
+  /**
+   * Room ID
+   */
   id: string;
 };
 
 export const RoomPage = () => {
-  const {id} = useParams<RoomParams>();
+  const {id} = useParams<UrlParams>();
   const [room, setRoom] = useState<Room | null>(null);
 
   const loadRoom = async (roomId: string): Promise<void> => {
@@ -30,7 +36,12 @@ export const RoomPage = () => {
     }
   }, [id]);
 
-  return room ?
+  // if data not initialized yet
+  if (!room) {
+    return <Loader />;
+  }
+
+  return (
     <PageBorder>
       <RoomPromo
         promoImgUrl={room.promoImgUrl}
@@ -47,7 +58,5 @@ export const RoomPage = () => {
       <ServicesBlock />
       <BookingBlock />
     </PageBorder>
-    :
-    <Loader />
-  ;
+  );
 };

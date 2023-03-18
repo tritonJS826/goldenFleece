@@ -1,4 +1,3 @@
-import React from "react";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
 import {BookingPromo} from "./bookingPromo/BookingPromo";
 import {HotelPlan} from "./hotelPlan/HotelPlan";

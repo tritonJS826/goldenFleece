@@ -7,10 +7,10 @@ import {LongDescription} from "./longDescription/LongDescription";
 import {Price} from "./price/Price";
 import {Promo} from "./promo/Promo";
 import {Rating} from "./rating/Rating";
-import styles from "./Room.module.scss";
 import {Services} from "./services/Services";
 import {Slider} from "./slider/Slider";
 import {Square} from "./square/Square";
+import styles from "./Room.module.scss";
 
 interface RoomProps {
   room:Room;

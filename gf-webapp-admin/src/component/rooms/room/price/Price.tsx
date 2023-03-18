@@ -1,7 +1,6 @@
-import React from "react";
 import {Room} from "../../../../model/Room/RoomDeprecated";
 import {useState} from "react";
-import {EditBtn} from "../editBtn/EditBtn";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import {saveRoom} from "../../../../service/RoomService";
 import styles from "./Price.module.scss";
 
@@ -41,9 +40,9 @@ export const Price = (props: ProcenProps) => {
           onChange={onChangePrice}
           disabled={isEditFieldDisabled}
         />
-        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-          saveHandler={saveHandler}
-          fieldEditHandler={fieldEditHandler}
+        <Button
+          value={isEditFieldDisabled ? "Edit" : "Save"}
+          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />
       </div>
     </div>

@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {Apartments} from "../../../../model/Room/Apartments";
 import {Room} from "../../../../model/Room/RoomDeprecated";
 import {saveRoom} from "../../../../service/RoomService";
-import {EditBtn} from "../editBtn/EditBtn";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import {ApartmentsList} from "./apartmentsList/ApartmentsList";
 import styles from "./ApartmentType.module.scss";
 
@@ -35,9 +35,9 @@ export const ApartmentsType = (props: ApartmentsTypeProps) => {
           isEditFieldDisabled={isEditFieldDisabled}
           onChangeApartmentType={setApartmentType}
         />
-        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-          saveHandler={saveHandler}
-          fieldEditHandler={fieldEditHandler}
+        <Button
+          value={isEditFieldDisabled ? "Edit" : "Save"}
+          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />
       </div>
     </div>

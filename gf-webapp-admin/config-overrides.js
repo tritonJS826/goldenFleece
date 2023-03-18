@@ -1,11 +1,7 @@
-/**At the moment we are forced to use react-app-rewired. Craco will be used in the future*/
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
+const {aliasWebpack} = require("react-app-alias-ex");
 const path = require("path");
 
-module.exports = {
-  paths: function (paths) {
-    paths.appSrc = path.resolve(__dirname);
-    return paths;
-  },
-};
+const options = {webpack: {alias: {"gf-ui-lib": path.resolve(__dirname, "../gf-ui-lib/src")}}};
+
+module.exports = aliasWebpack(options);

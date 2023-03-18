@@ -1,7 +1,6 @@
-import * as React from "react";
 import {Room} from "../../../../model/Room/RoomDeprecated";
 import {useState} from "react";
-import {EditBtn} from "../editBtn/EditBtn";
+import {Button} from "gf-ui-lib/components/Button/Button";
 import {saveRoom} from "../../../../service/RoomService";
 import styles from "./Square.module.scss";
 
@@ -35,9 +34,9 @@ export const Square = (props: SquareProps) => {
           onChange={(e) => setSquare(Number(e.target.value))}
           disabled={isEditFieldDisabled}
         />
-        <EditBtn isEditFieldDisabled={isEditFieldDisabled}
-          saveHandler={saveHandler}
-          fieldEditHandler={fieldEditHandler}
+        <Button
+          value={isEditFieldDisabled ? "Edit" : "Save"}
+          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />
       </div>
     </div>

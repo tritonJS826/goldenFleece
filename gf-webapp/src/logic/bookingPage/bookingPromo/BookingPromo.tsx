@@ -1,11 +1,11 @@
 import React from "react";
-import {useDictionaryContext} from "../../../context/Context";
+import {useDictionary} from "../../DictionaryContext/useDictionary";
 import imgPromo from "../../../resources/rooms/rooms.jpg";
 import styles from "./BookingPromo.module.scss";
 
 
 export const BookingPromo = () => {
-  const {bookingPage} = useDictionaryContext().dictionary;
+  const {bookingPage} = useDictionary().dictionary;
 
   return (
     <div>

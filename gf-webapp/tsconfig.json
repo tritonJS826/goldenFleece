@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
+    "rootDir": "../../",
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
+    ],  
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,11 +22,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["./src/*"],
+      "gf-ui-lib": ["../gf-ui-lib/src/*"]
+    }
   },
-  "include": [
-    "src", "scripts"
-  ],
+  "include": ["src", "scripts"],
   "types": ["node", "jest", "@testing-library/jest-dom"]
 }
 

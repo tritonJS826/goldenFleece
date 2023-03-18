@@ -1,5 +1,5 @@
-import {roomsRepository} from "../repository/RoomRepository";
-import {Room} from "../model/Room";
+import {roomsRepository} from "src/repository/RoomRepository";
+import {Room} from "src/model/Room";
 import {Response, Request} from "express";
 
 class RoomsService {
