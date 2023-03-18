@@ -6,7 +6,7 @@ import {NewRoom} from "../model/Room/NewRoom";
 import {Price} from "../model/Price";
 
 /**
- * Temporary....... asdasdas asd akjsd alkjsd hajsd aljksdh lakjsd al
+ * Temporary function. Will be deleted after receiving a correct response from the server
  * @param roomRaw
  * @returns
  */
