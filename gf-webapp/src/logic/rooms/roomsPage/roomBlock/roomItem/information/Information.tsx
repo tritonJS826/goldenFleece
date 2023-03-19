@@ -1,4 +1,3 @@
-import React from "react";
 import {useDictionary} from "../../../../../DictionaryContext/useDictionary";
 import styles from "../RoomItem.module.scss";
 

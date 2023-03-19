@@ -1,4 +1,4 @@
-import React, {Suspense} from "react";
+import {StrictMode, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
@@ -15,11 +15,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Suspense fallback={loadingMarkup}>
-    <React.StrictMode>
+    <StrictMode>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </React.StrictMode>
+    </StrictMode>
   </Suspense>,
 );
 

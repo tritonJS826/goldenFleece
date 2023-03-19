@@ -1,4 +1,3 @@
-import React from "react";
 import {roomsSchema} from "./roomsSchema";
 import styles from "./RoomsPlan.module.scss";
 

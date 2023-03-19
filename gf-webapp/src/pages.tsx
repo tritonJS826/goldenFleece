@@ -1,4 +1,3 @@
-import React from "react";
 import {MainPage} from "src/logic/mainPage/MainPage";
 import {AboutUsPage} from "src/logic/aboutUsPage/AboutUsPage";
 import {RoomsPage} from "src/logic/rooms/roomsPage/RoomsPage";

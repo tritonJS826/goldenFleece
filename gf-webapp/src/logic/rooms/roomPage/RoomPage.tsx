@@ -8,8 +8,8 @@ import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
 import {Room} from "../../../model/Room/Room";
 import {RoomApiService} from "../../../service/RoomApi/RoomApi";
-import styles from "./RoomPage.module.scss";
 import {Loader} from "gf-ui-lib/components/Loader/Loader";
+import styles from "./RoomPage.module.scss";
 
 /**
  * Url Params

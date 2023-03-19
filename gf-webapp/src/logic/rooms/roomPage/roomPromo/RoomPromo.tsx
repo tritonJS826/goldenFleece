@@ -1,4 +1,3 @@
-import React from "react";
 import {Information} from "./information/Information";
 import {Title} from "./title/Title";
 import {Apartments} from "../../../../model/Room/Apartments";

@@ -1,4 +1,3 @@
-import React from "react";
 import {ApartmentServices} from "../../../../../../model/Room/ApartmentServices";
 import styles from "./services.module.scss";
 

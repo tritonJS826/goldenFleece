@@ -1,4 +1,3 @@
-import React from "react";
 import {useDictionary} from "../DictionaryContext/useDictionary";
 import {PageBorder} from "../../component/pageBorder/PageBorder";
 import {AboutUsPromo} from "./aboutUsPromo/AboutUsPromo";

@@ -1,4 +1,3 @@
-import React from "react";
 import {Room} from "../../../../../model/Room/Room";
 import {RoomItem} from "./RoomItem";
 import styles from "../RoomsBlock.module.scss";

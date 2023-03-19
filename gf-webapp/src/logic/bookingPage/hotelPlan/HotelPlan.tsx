@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {useDictionary} from "../../DictionaryContext/useDictionary";
 import {ModalVisibilityContext} from "../../DictionaryContext/useDictionary";
 import {Modal} from "../modal/Modal";

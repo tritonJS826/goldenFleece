@@ -1,4 +1,3 @@
-import React from "react";
 import {useDictionary} from "../../logic/DictionaryContext/useDictionary";
 import {NavLink} from "react-router-dom";
 import room1 from "../../resources/rooms/1.jpg";
