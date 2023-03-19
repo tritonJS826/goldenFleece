@@ -1,4 +1,3 @@
-import React from "react";
 import {ApartmentsList} from "./apartmentsList/ApartmentsList";
 
 export const ApartmentsType = () => {

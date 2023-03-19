@@ -1,4 +1,3 @@
-import React from "react";
 import {useDictionary} from "../../../../../DictionaryContext/useDictionary";
 import {getRoomNumber} from "../../../../../../service/rooms";
 import styles from "../RoomItem.module.scss";

@@ -1,5 +1,5 @@
 import {createUserWithEmailAndPassword} from "firebase/auth";
-import React, {FormEvent, useContext, useState} from "react";
+import {FormEvent, useContext, useState} from "react";
 import {AppContext} from "../../appContext";
 import styles from "./Registration.module.scss";
 

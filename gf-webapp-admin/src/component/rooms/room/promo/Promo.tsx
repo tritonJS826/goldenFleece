@@ -1,5 +1,5 @@
 import {Button} from "gf-ui-lib/components/Button/Button";
-import React, {useState} from "react";
+import {useState} from "react";
 import {AddRoom, Room} from "../../../../model/Room/RoomDeprecated";
 import {saveRoom} from "../../../../service/RoomService";
 import styles from "./Promo.module.scss";

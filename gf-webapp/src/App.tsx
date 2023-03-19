@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {Routes, Route} from "react-router-dom";
 import {DictionaryContext, DictionaryType} from "src/logic/DictionaryContext/useDictionary";
 import ScrollToTop from "src/utils/scrollToTop";

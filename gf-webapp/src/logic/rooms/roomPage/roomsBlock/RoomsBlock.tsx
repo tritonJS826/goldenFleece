@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {RoomsList} from "./roomsList/RoomsList";
 import {useDictionary} from "../../../DictionaryContext/useDictionary";
 import styles from "./RoomsBlock.module.scss";

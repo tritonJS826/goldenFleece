@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {AddRoomContext} from "../addRoomContext";
 import styles from "./LongDescription.module.scss";
 

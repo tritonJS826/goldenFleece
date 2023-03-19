@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {useDictionary} from "../DictionaryContext/useDictionary";
 import {PageBorder} from "src/component/pageBorder/PageBorder";
 import {MailApiService} from "src/service/MailApi/MailApi";

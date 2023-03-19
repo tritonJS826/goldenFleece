@@ -1,4 +1,4 @@
-import React, {FormEvent, useContext, useState} from "react";
+import {FormEvent, useContext, useState} from "react";
 import {AppContext} from "../../appContext";
 import {signInWithEmailAndPassword} from "firebase/auth";
 import styles from "./AuthModal.module.scss";

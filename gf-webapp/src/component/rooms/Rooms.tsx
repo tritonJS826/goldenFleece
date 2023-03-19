@@ -1,4 +1,4 @@
-import React from "react";
+import {Fragment} from "react";
 import {Room} from "../../model/Room/Room";
 import {useRooms} from "./useRooms";
 
@@ -7,13 +7,13 @@ export function Rooms() {
 
   const renderRooms = (roomsList: Room[]) => {
     return roomsList.map((room) => (
-      <React.Fragment key={room.id}>
+      <Fragment key={room.id}>
         <>
           Price:
           {" "}
           {room.price}
         </>
-      </React.Fragment>
+      </Fragment>
     ));
   };
 

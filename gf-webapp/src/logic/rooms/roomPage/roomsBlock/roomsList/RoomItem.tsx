@@ -1,4 +1,3 @@
-import React from "react";
 import {NavLink} from "react-router-dom";
 import {useDictionary} from "../../../../DictionaryContext/useDictionary";
 import styles from "../RoomsBlock.module.scss";

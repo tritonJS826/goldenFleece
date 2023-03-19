@@ -1,4 +1,3 @@
-import React from "react";
 import {motion} from "framer-motion";
 import {RoomLink} from "../roomLink/RoomLink";
 import {Information} from "../information/Information";
