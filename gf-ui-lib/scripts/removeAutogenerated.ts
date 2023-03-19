@@ -9,5 +9,5 @@ const errorHandler = (error: ExecException | null, stdout: string, stderr: strin
 
 exec(
   "pnpm dlx rimraf node_modules build storyboook-static",
-  errorHandler
+  errorHandler,
 );
