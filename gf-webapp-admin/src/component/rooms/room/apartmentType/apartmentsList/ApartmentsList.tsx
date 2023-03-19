@@ -1,4 +1,3 @@
-import React from "react";
 import {Apartments} from "../../../../../model/Room/Apartments";
 import styles from "./ApartmentsList.module.scss";
 

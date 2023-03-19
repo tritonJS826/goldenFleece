@@ -1,4 +1,3 @@
-import React from "react";
 import {Room} from "../../../model/Room/RoomDeprecated";
 import {Adults} from "./adults/Adults";
 import {ApartmentsType} from "./apartmentType/ApartmentType";

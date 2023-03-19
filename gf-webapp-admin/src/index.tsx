@@ -1,4 +1,4 @@
-import React from "react";
+import {StrictMode} from "react";
 import ReactDOM from "react-dom/client";
 import firebase from "firebase/compat/app";
 import {getFirestore} from "firebase/firestore";
@@ -21,9 +21,9 @@ root.render(
     firestore,
   }}
   >
-    <React.StrictMode>
+    <StrictMode>
       <App />
-    </React.StrictMode>
+    </StrictMode>
   </AppContext.Provider>,
 );
 

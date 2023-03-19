@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Room} from "../../../../../model/Room/Room";
 import {NewRoom} from "../../../../../model/Room/NewRoom";
 import {saveRoom} from "../../../../../service/RoomService";

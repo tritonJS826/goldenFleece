@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./AddRoomBtn.module.scss";
 
 export const AddRoomBtn = ({showModal}: {showModal:() => void}) => {

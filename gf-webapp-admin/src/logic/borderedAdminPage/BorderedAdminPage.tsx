@@ -1,4 +1,4 @@
-import React, {PropsWithChildren, ReactElement} from "react";
+import {PropsWithChildren, ReactElement} from "react";
 import {SideMenu} from "../../component/sideMenu/SideMenu";
 import styles from "./borderedAdminPage.module.scss";
 

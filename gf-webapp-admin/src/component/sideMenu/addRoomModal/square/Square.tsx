@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {AddRoomContext} from "../addRoomContext";
 
 export const Square = () => {
