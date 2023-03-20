@@ -1,7 +1,7 @@
 import {FormEvent, useContext, useState} from "react";
-import {AppContext} from "../../appContext";
+import {AppContext} from "src/appContext";
 import {signInWithEmailAndPassword} from "firebase/auth";
-import styles from "./AuthModal.module.scss";
+import styles from "src/component/authModal/AuthModal.module.scss";
 
 export const AuthModal = () => {
   const [email, setEmail] = useState("");

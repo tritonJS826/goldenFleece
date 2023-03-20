@@ -1,5 +1,5 @@
 import {useState} from "react";
-import styles from "./Slide.module.scss";
+import styles from "src/component/rooms/room/slider/slides/slide/Slide.module.scss";
 
 interface SlideProps {
   slideImageURL: string;

@@ -1,4 +1,4 @@
-import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
 
 export const changeRoomServices = (
   roomServices: ApartmentServices[],

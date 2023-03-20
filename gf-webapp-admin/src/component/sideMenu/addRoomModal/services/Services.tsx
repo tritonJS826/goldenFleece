@@ -1,10 +1,9 @@
 import {useContext, useEffect, useState} from "react";
-import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
-import {BASE_SERVICES} from "../../../../utils/roomConstants";
-import {AddRoomContext} from "../addRoomContext";
-import {changeRoomServices} from "./roomServices";
-import styles from "./Services.module.scss";
-
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {BASE_SERVICES} from "src/utils/roomConstants";
+import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {changeRoomServices} from "src/component/sideMenu/addRoomModal/services/roomServices";
+import styles from "src/component/sideMenu/addRoomModal/services/Services.module.scss";
 
 export const Services = () => {
   const {roomStartState} = useContext(AddRoomContext);

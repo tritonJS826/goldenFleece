@@ -1,6 +1,6 @@
-import {Room} from "../../../model/Room/RoomDeprecated";
-import {RoomSimplified} from "../roomSimplified/RoomSimplified";
-import styles from "./RoomsList.module.scss";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {RoomSimplified} from "src/component/rooms/roomSimplified/RoomSimplified";
+import styles from "src/component/rooms/roomsList/RoomsList.module.scss";
 
 interface RoomsListProps {
   rooms:Room[]

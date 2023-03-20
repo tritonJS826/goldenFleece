@@ -1,10 +1,10 @@
 import {useState} from "react";
-import {Apartments} from "../../../../model/Room/Apartments";
-import {Room} from "../../../../model/Room/RoomDeprecated";
-import {saveRoom} from "../../../../service/RoomService";
+import {Apartments} from "src/model/Room/Apartments";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {saveRoom} from "src/service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
-import {ApartmentsList} from "./apartmentsList/ApartmentsList";
-import styles from "./ApartmentType.module.scss";
+import {ApartmentsList} from "src/component/rooms/room/apartmentType/apartmentsList/ApartmentsList";
+import styles from "src/component/rooms/room/apartmentType/ApartmentType.module.scss";
 
 interface ApartmentsTypeProps {
   room:Room;

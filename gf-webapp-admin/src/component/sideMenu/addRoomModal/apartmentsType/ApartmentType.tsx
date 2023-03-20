@@ -1,4 +1,4 @@
-import {ApartmentsList} from "./apartmentsList/ApartmentsList";
+import {ApartmentsList} from "src/component/sideMenu/addRoomModal/apartmentsType/apartmentsList/ApartmentsList";
 
 export const ApartmentsType = () => {
   return (

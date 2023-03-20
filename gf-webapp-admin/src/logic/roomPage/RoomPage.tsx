@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {Loader} from "gf-ui-lib/components/Loader/Loader";
-import {RoomItem} from "../../component/rooms/room/RoomItem";
-import {Room} from "../../model/Room/RoomDeprecated";
-import {getRoom} from "../../service/RoomService";
-import {BorderedAdminPage} from "../borderedAdminPage/BorderedAdminPage";
-import styles from "./RoomPage.module.scss";
+import {RoomItem} from "src/component/rooms/room/RoomItem";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {getRoom} from "src/service/RoomService";
+import {BorderedAdminPage} from "src/logic/borderedAdminPage/BorderedAdminPage";
+import styles from "src/logic/roomPage/RoomPage.module.scss";
 
 export const RoomPage = () => {
   const roomParams = useParams();

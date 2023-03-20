@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from "react";
-import {AddRoomContext} from "../../addRoomContext";
-import {Apartments} from "../../../../../model/Room/Apartments";
-import styles from "./ApartmentList.module.scss";
+import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {Apartments} from "src/model/Room/Apartments";
+import styles from "src/component/sideMenu/addRoomModal/apartmentsType/apartmentsList/ApartmentList.module.scss";
 
 export const ApartmentsList = () => {
   const {roomStartState} = useContext(AddRoomContext);

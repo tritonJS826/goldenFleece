@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
-import {Room} from "../../../../../model/Room/Room";
-import {NewRoom} from "../../../../../model/Room/NewRoom";
-import {saveRoom} from "../../../../../service/RoomService";
-import {AddSlide} from "./addSlide/AddSlide";
-import {Slide} from "./slide/Slide";
-import styles from "./Slides.module.scss";
+import {Room} from "src/model/Room/Room";
+import {NewRoom} from "src/model/Room/NewRoom";
+import {saveRoom} from "src/service/RoomService";
+import {AddSlide} from "src/component/rooms/room/slider/slides/addSlide/AddSlide";
+import {Slide} from "src/component/rooms/room/slider/slides/slide/Slide";
+import styles from "src/component/rooms/room/slider/slides/Slides.module.scss";
 
 interface SlidesProps {
   room:Room | NewRoom; //adults

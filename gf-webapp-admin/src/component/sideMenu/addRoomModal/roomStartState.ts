@@ -1,7 +1,7 @@
-import {Currency} from "../../../model/Currency";
-import {Price} from "../../../model/Price";
-import {Apartments} from "../../../model/Room/Apartments";
-import {NewRoom} from "../../../model/Room/NewRoom";
+import {Currency} from "src/model/Currency";
+import {Price} from "src/model/Price";
+import {Apartments} from "src/model/Room/Apartments";
+import {NewRoom} from "src/model/Room/NewRoom";
 
 
 const defaultPrice = new Price(Currency.GEL, 0);

@@ -1,4 +1,4 @@
-import styles from "./AddRoomBtn.module.scss";
+import styles from "src/component/sideMenu/addRoomBtn/AddRoomBtn.module.scss";
 
 export const AddRoomBtn = ({showModal}: {showModal:() => void}) => {
   return (

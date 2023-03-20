@@ -1,4 +1,4 @@
-import {Currency} from "./Currency";
+import {Currency} from "src/model/Currency";
 
 export class Price {
 

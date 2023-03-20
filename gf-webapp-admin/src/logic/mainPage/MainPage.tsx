@@ -1,6 +1,6 @@
-import {Rooms} from "../../component/rooms/Rooms";
-import {BorderedAdminPage} from "../borderedAdminPage/BorderedAdminPage";
-import styles from "./MainPage.module.scss";
+import {Rooms} from "src/component/rooms/Rooms";
+import {BorderedAdminPage} from "src/logic/borderedAdminPage/BorderedAdminPage";
+import styles from "src/logic/mainPage/MainPage.module.scss";
 
 export const MainPage = () => {
 

@@ -1,7 +1,7 @@
-import {Room} from "../../../../model/Room/Room";
-import {NewRoom} from "../../../../model/Room/NewRoom";
-import {Slides} from "./slides/Slides";
-import styles from "./Slider.module.scss";
+import {Room} from "src/model/Room/Room";
+import {NewRoom} from "src/model/Room/NewRoom";
+import {Slides} from "src/component/rooms/room/slider/slides/Slides";
+import styles from "src/component/rooms/room/slider/Slider.module.scss";
 
 interface SliderProps {
   room: Room | NewRoom;

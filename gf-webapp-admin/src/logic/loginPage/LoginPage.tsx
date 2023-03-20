@@ -1,4 +1,4 @@
-import {AuthModal} from "../../component/authModal/AuthModal";
+import {AuthModal} from "src/component/authModal/AuthModal";
 
 
 export const LoginPage = () => {

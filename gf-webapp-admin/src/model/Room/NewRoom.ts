@@ -1,6 +1,6 @@
-import {Price} from "../Price";
-import {Apartments} from "./Apartments";
-import {ApartmentServices} from "./ApartmentServices";
+import {Price} from "src/model/Price";
+import {Apartments} from "src/model/Room/Apartments";
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
 
 export class NewRoom {
 

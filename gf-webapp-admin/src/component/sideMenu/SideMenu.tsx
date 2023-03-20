@@ -1,12 +1,12 @@
 import {useContext, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
-import {AddRoomBtn} from "./addRoomBtn/AddRoomBtn";
-import {AddRoomModal} from "./addRoomModal/AddRoomModal";
-import {Registration} from "../registration/Registration";
+import {AddRoomBtn} from "src/component/sideMenu/addRoomBtn/AddRoomBtn";
+import {AddRoomModal} from "src/component/sideMenu/addRoomModal/AddRoomModal";
+import {Registration} from "src/component/registration/Registration";
 import {AppContext} from "src/appContext";
 import {LOGIN_ROUTE, MAIN_PAGE_ROUTE} from "src/utils/pathes";
 import {Button} from "gf-ui-lib/components/Button/Button";
-import styles from "./SideMenu.module.scss";
+import styles from "src/component/sideMenu/SideMenu.module.scss";
 
 export const SideMenu = () => {
   const navigate = useNavigate();

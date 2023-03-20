@@ -1,8 +1,8 @@
 import {useState} from "react";
-import {Room} from "../../../../model/Room/RoomDeprecated";
-import {saveRoom} from "../../../../service/RoomService";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {saveRoom} from "src/service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
-import styles from "./Description.module.scss";
+import styles from "src/component/rooms/room/description/Description.module.scss";
 
 interface DescriptionProps {
   room:Room;
