@@ -1,5 +1,5 @@
-import {ResourceRepositoryFS} from "./ResourceRepositoryFS";
-import {ResourceRepositoryInterface} from "./ResourceRepositoryInterface";
+import {ResourceRepositoryFS} from "src/repository/resourceRepository/ResourceRepositoryFS";
+import {ResourceRepositoryInterface} from "src/repository/resourceRepository/ResourceRepositoryInterface";
 
 /**
  * Resource repository

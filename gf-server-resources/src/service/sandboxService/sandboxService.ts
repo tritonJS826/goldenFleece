@@ -1,5 +1,5 @@
-import {SandboxServiceInterface} from "./SandboxServerInterface";
-import {SandboxService} from "./SandboxServiceClass";
+import {SandboxServiceInterface} from "src/service/sandboxService/SandboxServerInterface";
+import {SandboxService} from "src/service/sandboxService/SandboxServiceClass";
 
 /**
  * Sandbox service (temporal)

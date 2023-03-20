@@ -1,6 +1,6 @@
 import path from "path";
 import {Response} from "express";
-import {onError500} from "./onError500";
+import {onError500} from "src/utils/onError500";
 import {__dirname} from "src/index";
 import {FILES_DIRECTORY} from "src/settings/FILES_DIRECTORY";
 import {FileModel} from "src/model/fileModel";

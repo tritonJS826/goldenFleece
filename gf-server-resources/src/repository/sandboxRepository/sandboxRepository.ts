@@ -1,5 +1,5 @@
-import {SandboxRepositoryFS} from "./SandboxRepositoryFS";
-import {SandboxReposotoryInterface} from "./SandboxRepositoryInterface";
+import {SandboxRepositoryFS} from "src/repository/sandboxRepository/SandboxRepositoryFS";
+import {SandboxReposotoryInterface} from "src/repository/sandboxRepository/SandboxRepositoryInterface";
 import dotenv from "dotenv";
 
 dotenv.config({path: ".env"});

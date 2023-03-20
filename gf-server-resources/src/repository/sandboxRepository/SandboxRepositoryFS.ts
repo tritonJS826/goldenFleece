@@ -1,4 +1,4 @@
-import {SandboxReposotoryInterface} from "./SandboxRepositoryInterface";
+import {SandboxReposotoryInterface} from "src/repository/sandboxRepository/SandboxRepositoryInterface";
 import util from "util";
 import {readFile} from "fs";
 import path from "path";
