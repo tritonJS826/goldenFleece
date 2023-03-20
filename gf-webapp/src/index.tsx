@@ -1,8 +1,8 @@
 import {StrictMode, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import {BrowserRouter} from "react-router-dom";
-import App from "./App";
-import "./Index.scss";
+import App from "src/App";
+import "src/Index.scss";
 
 const loadingMarkup = (
   <h2 style={{textAlign: "center"}}>

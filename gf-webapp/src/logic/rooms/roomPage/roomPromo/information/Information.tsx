@@ -1,9 +1,9 @@
-import {useDictionary} from "../../../../DictionaryContext/useDictionary";
-import {Price} from "../../../../../model/Price";
-import {Apartments} from "../../../../../model/Room/Apartments";
-import {ApartmentServices} from "../../../../../model/Room/ApartmentServices";
-import {Services} from "./services/Services";
-import styles from "../RoomPromo.module.scss";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import {Price} from "src/model/Price";
+import {Apartments} from "src/model/Room/Apartments";
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {Services} from "src/logic/rooms/roomPage/roomPromo/information/services/Services";
+import styles from "src/logic/rooms/roomPage/roomPromo/RoomPromo.module.scss";
 
 interface InformationProps {
   apartmentsType: Apartments;

@@ -1,7 +1,7 @@
 import {Room} from "src/model/Room/Room";
-import {Description} from "./description/Description";
-import {PromoImage} from "./promoImage/PromoImage";
-import styles from "./RoomItem.module.scss";
+import {Description} from "src/logic/rooms/roomsPage/roomBlock/roomItem/description/Description";
+import {PromoImage} from "src/logic/rooms/roomsPage/roomBlock/roomItem/promoImage/PromoImage";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 export const RoomItem = ({room}: {room: Room}) => {
   return (

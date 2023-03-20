@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import {Room} from "../../../../model/Room/Room";
-import {RoomItem} from "./roomItem/RoomItem";
-import {RoomApiService} from "../../../../service/RoomApi/RoomApi";
+import {Room} from "src/model/Room/Room";
+import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
+import {RoomApiService} from "src/service/RoomApi/RoomApi";
 import {Loader} from "gf-ui-lib/components/Loader/Loader";
 
 export const RoomsBlock = () => {

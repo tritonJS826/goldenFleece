@@ -1,6 +1,6 @@
-import {useDictionary} from "../../../DictionaryContext/useDictionary";
-import imgPromo from "../../../../resources/rooms/rooms.jpg";
-import styles from "./RoomsPromo.module.scss";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import imgPromo from "src/resources/rooms/rooms.jpg";
+import styles from "src/logic/rooms/roomsPage/roomsPromo/RoomsPromo.module.scss";
 
 
 export const RoomsPromo = () => {

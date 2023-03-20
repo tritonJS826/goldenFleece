@@ -1,5 +1,5 @@
-import {Main} from "../../component/main/Main";
-import {PageBorder} from "../../component/pageBorder/PageBorder";
+import {Main} from "src/component/main/Main";
+import {PageBorder} from "src/component/pageBorder/PageBorder";
 
 
 export const MainPage = () => {

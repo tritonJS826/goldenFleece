@@ -1,7 +1,7 @@
-import {PageBorder} from "../../component/pageBorder/PageBorder";
-import {BookingPromo} from "./bookingPromo/BookingPromo";
-import {HotelPlan} from "./hotelPlan/HotelPlan";
-import styles from "./BookingPage.module.scss";
+import {PageBorder} from "src/component/pageBorder/PageBorder";
+import {BookingPromo} from "src/logic/bookingPage/bookingPromo/BookingPromo";
+import {HotelPlan} from "src/logic/bookingPage/hotelPlan/HotelPlan";
+import styles from "src/logic/bookingPage/BookingPage.module.scss";
 
 export const BookingPage = () => {
   return (

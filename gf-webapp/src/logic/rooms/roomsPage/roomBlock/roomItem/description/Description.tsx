@@ -1,8 +1,8 @@
 import {motion} from "framer-motion";
-import {RoomLink} from "../roomLink/RoomLink";
-import {Information} from "../information/Information";
-import {Title} from "../title/Title";
-import styles from "../RoomItem.module.scss";
+import {RoomLink} from "src/logic/rooms/roomsPage/roomBlock/roomItem/roomLink/RoomLink";
+import {Information} from "src/logic/rooms/roomsPage/roomBlock/roomItem/information/Information";
+import {Title} from "src/logic/rooms/roomsPage/roomBlock/roomItem/title/Title";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface DescriptionProps {
   roomId: string;

@@ -3,12 +3,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import {Autoplay, Pagination, Navigation, Keyboard} from "swiper";
-import image1 from "../../resources/sliderImages/Promo1.jpg";
-import image2 from "../../resources/sliderImages/Promo2.jpg";
-import image3 from "../../resources/sliderImages/Promo3.jpg";
-import image4 from "../../resources/sliderImages/Promo4.jpg";
-import image5 from "../../resources/sliderImages/Promo5.jpg";
-import styles from "./Slider.module.scss";
+import image1 from "src/resources/sliderImages/Promo1.jpg";
+import image2 from "src/resources/sliderImages/Promo2.jpg";
+import image3 from "src/resources/sliderImages/Promo3.jpg";
+import image4 from "src/resources/sliderImages/Promo4.jpg";
+import image5 from "src/resources/sliderImages/Promo5.jpg";
+import styles from "src/component/sliderImage/Slider.module.scss";
 
 export function Slider() {
 

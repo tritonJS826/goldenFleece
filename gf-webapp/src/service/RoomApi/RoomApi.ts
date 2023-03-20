@@ -1,7 +1,7 @@
-import {Currency} from "../../model/Currency";
-import {Price} from "../../model/Price";
-import {Room} from "../../model/Room/Room";
-import {roomApi, roomsApi} from "../ApiInitialization";
+import {Currency} from "src/model/Currency";
+import {Price} from "src/model/Price";
+import {Room} from "src/model/Room/Room";
+import {roomApi, roomsApi} from "src/service/ApiInitialization";
 
 //TODO: remove after adding roomDTO into swagger
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

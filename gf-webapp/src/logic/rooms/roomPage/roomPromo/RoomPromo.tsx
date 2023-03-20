@@ -1,8 +1,8 @@
-import {Information} from "./information/Information";
-import {Title} from "./title/Title";
-import {Apartments} from "../../../../model/Room/Apartments";
-import {Price} from "../../../../model/Price";
-import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
+import {Information} from "src/logic/rooms/roomPage/roomPromo/information/Information";
+import {Title} from "src/logic/rooms/roomPage/roomPromo/title/Title";
+import {Apartments} from "src/model/Room/Apartments";
+import {Price} from "src/model/Price";
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
 
 interface RoomPromoProps {
   promoImgUrl: string;

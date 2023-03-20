@@ -1,7 +1,7 @@
 import {NavLink} from "react-router-dom";
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {pages} from "src/pages";
-import styles from "../RoomItem.module.scss";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface RoomLinkProps {
   roomId: string;
