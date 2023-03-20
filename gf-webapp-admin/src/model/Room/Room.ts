@@ -1,4 +1,4 @@
-import {NewRoom} from "./NewRoom";
+import {NewRoom} from "src/model/Room/NewRoom";
 
 type RoomArgs = NewRoom & {id: string};
 

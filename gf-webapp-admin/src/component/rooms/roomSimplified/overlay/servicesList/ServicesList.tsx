@@ -1,5 +1,5 @@
-import {ApartmentServices} from "../../../../../model/Room/ApartmentServices";
-import styles from "./ServicesList.module.scss";
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import styles from "src/component/rooms/roomSimplified/overlay/servicesList/ServicesList.module.scss";
 
 interface IServices {
   services: ApartmentServices[]

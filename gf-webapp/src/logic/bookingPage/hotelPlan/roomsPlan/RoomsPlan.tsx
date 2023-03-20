@@ -1,5 +1,5 @@
-import {roomsSchema} from "./roomsSchema";
-import styles from "./RoomsPlan.module.scss";
+import {roomsSchema} from "src/logic/bookingPage/hotelPlan/roomsPlan/roomsSchema";
+import styles from "src/logic/bookingPage/hotelPlan/roomsPlan/RoomsPlan.module.scss";
 
 export const RoomsPlan = () => {
 

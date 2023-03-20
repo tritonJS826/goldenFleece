@@ -1,9 +1,9 @@
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Keyboard} from "swiper";
-import {Room} from "../../../../model/Room/Room";
+import {Room} from "src/model/Room/Room";
 import "swiper/css";
 import "swiper/css/navigation";
-import styles from "./RoomSlider.module.scss";
+import styles from "src/logic/rooms/roomPage/roomSlider/RoomSlider.module.scss";
 
 interface RoomSlider {
   images: string[]

@@ -1,6 +1,6 @@
-import {ApartmentServices} from "./ApartmentServices";
-import {Price} from "../Price";
-import {Apartments} from "./Apartments";
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {Price} from "src/model/Price";
+import {Apartments} from "src/model/Room/Apartments";
 
 export interface AddRoom {
   /**

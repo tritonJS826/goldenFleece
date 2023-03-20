@@ -1,5 +1,5 @@
 import {useContext, useEffect, useState} from "react";
-import {AddRoomContext} from "../addRoomContext";
+import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 
 
 export const Rating = () => {

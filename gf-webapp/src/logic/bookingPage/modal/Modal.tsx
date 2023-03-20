@@ -1,5 +1,5 @@
 import {FC, ReactNode, SetStateAction, Dispatch} from "react";
-import styles from "./Modal.module.scss";
+import styles from "src/logic/bookingPage/modal/Modal.module.scss";
 
 type ModalProps = {
   active: boolean;

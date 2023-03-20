@@ -1,10 +1,10 @@
-import {useDictionary} from "../../DictionaryContext/useDictionary";
-import {PageBorder} from "../../../component/pageBorder/PageBorder";
-import {RoomsPromo} from "./roomsPromo/RoomsPromo";
-import {Navigation} from "./navigation/Navigation";
-import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
-import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
-import styles from "./RoomsPage.module.scss";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import {PageBorder} from "src/component/pageBorder/PageBorder";
+import {RoomsPromo} from "src/logic/rooms/roomsPage/roomsPromo/RoomsPromo";
+import {Navigation} from "src/logic/rooms/roomsPage/navigation/Navigation";
+import {ServicesBlock} from "src/component/servicesBlock/ServicesBlock";
+import {BookingBlock} from "src/component/bookBlock/BookingBlock";
+import styles from "src/logic/rooms/roomsPage/RoomsPage.module.scss";
 
 
 export const RoomsPage = () => {

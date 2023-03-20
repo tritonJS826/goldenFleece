@@ -1,7 +1,7 @@
-import {FirebaseMailService} from "./firebaseMailService";
-import {GMailService} from "./GMailService";
+import {FirebaseMailService} from "src/service/mailService/firebaseMailService";
+import {GMailService} from "src/service/mailService/GMailService";
 import {config} from "dotenv";
-import {MailServiceInterface} from "./MailServiceInterface";
+import {MailServiceInterface} from "src/service/mailService/MailServiceInterface";
 
 config();
 

@@ -1,4 +1,4 @@
-import styles from "./ModalOverlay.module.scss";
+import styles from "src/component/sideMenu/addRoomModal/modalOverlay/ModalOverlay.module.scss";
 
 export const ModalOverlay = ({showModal}: {showModal: () => void}) => {
   return (

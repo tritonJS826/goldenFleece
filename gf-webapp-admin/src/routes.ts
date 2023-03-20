@@ -1,7 +1,7 @@
-import {LoginPage} from "./logic/loginPage/LoginPage";
-import {MainPage} from "./logic/mainPage/MainPage";
-import {RoomPage} from "./logic/roomPage/RoomPage";
-import {LOGIN_ROUTE, MAIN_PAGE_ROUTE, ROOM_PAGE_ROUTE} from "./utils/pathes";
+import {LoginPage} from "src/logic/loginPage/LoginPage";
+import {MainPage} from "src/logic/mainPage/MainPage";
+import {RoomPage} from "src/logic/roomPage/RoomPage";
+import {LOGIN_ROUTE, MAIN_PAGE_ROUTE, ROOM_PAGE_ROUTE} from "src/utils/pathes";
 
 interface IRoute {
   path:string;

@@ -1,15 +1,15 @@
-import {Room} from "../../../model/Room/RoomDeprecated";
-import {Adults} from "./adults/Adults";
-import {ApartmentsType} from "./apartmentType/ApartmentType";
-import {Description} from "./description/Description";
-import {LongDescription} from "./longDescription/LongDescription";
-import {Price} from "./price/Price";
-import {Promo} from "./promo/Promo";
-import {Rating} from "./rating/Rating";
-import {Services} from "./services/Services";
-import {Slider} from "./slider/Slider";
-import {Square} from "./square/Square";
-import styles from "./Room.module.scss";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {Adults} from "src/component/rooms/room/adults/Adults";
+import {ApartmentsType} from "src/component/rooms/room/apartmentType/ApartmentType";
+import {Description} from "src/component/rooms/room/description/Description";
+import {LongDescription} from "src/component/rooms/room/longDescription/LongDescription";
+import {Price} from "src/component/rooms/room/price/Price";
+import {Promo} from "src/component/rooms/room/promo/Promo";
+import {Rating} from "src/component/rooms/room/rating/Rating";
+import {Services} from "src/component/rooms/room/services/Services";
+import {Slider} from "src/component/rooms/room/slider/Slider";
+import {Square} from "src/component/rooms/room/square/Square";
+import styles from "src/component/rooms/room/Room.module.scss";
 
 interface RoomProps {
   room:Room;

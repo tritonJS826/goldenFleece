@@ -1,8 +1,8 @@
-import {Room} from "../../../../model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/RoomDeprecated";
 import {useState} from "react";
 import {Button} from "gf-ui-lib/components/Button/Button";
-import {saveRoom} from "../../../../service/RoomService";
-import styles from "./Square.module.scss";
+import {saveRoom} from "src/service/RoomService";
+import styles from "src/component/rooms/room/square/Square.module.scss";
 
 interface SquareProps {
   room:Room;

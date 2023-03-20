@@ -1,5 +1,5 @@
-import {ResourceServiceModel} from "./ResourceServiceModel";
-import {ResourceServiceInterface} from "./ResourceServiceInterface";
+import {ResourceServiceModel} from "src/service/resourceService/ResourceServiceModel";
+import {ResourceServiceInterface} from "src/service/resourceService/ResourceServiceInterface";
 
 /**
  * Resource service provide availability to manipulate with files resources

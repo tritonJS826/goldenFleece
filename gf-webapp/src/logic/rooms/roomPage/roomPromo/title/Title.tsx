@@ -1,4 +1,4 @@
-import styles from "../RoomPromo.module.scss";
+import styles from "src/logic/rooms/roomPage/roomPromo/RoomPromo.module.scss";
 
 interface TitleProps {
   description: string;

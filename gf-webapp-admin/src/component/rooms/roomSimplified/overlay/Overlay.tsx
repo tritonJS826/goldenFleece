@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
-import {Room} from "../../../../model/Room/RoomDeprecated";
-import {ServicesList} from "./servicesList/ServicesList";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {ServicesList} from "src/component/rooms/roomSimplified/overlay/servicesList/ServicesList";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import {deleteRoom} from "src/service/RoomService";
-import styles from "./Overlay.module.scss";
+import styles from "src/component/rooms/roomSimplified/overlay/Overlay.module.scss";
 
 interface OverlayProps {
   room: Room;

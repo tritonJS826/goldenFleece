@@ -1,8 +1,8 @@
 import {useState} from "react";
-import {Room} from "../../../../model/Room/RoomDeprecated";
-import {saveRoom} from "../../../../service/RoomService";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {saveRoom} from "src/service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
-import styles from "./adults.module.scss";
+import styles from "src/component/rooms/room/adults/adults.module.scss";
 
 interface AdultsProps {
   room:Room;

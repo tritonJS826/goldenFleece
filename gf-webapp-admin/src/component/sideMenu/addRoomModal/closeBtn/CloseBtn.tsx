@@ -1,4 +1,4 @@
-import styles from "./CloseBtn.module.scss";
+import styles from "src/component/sideMenu/addRoomModal/closeBtn/CloseBtn.module.scss";
 
 export interface CloseBtnProps {
   showModal: () => void

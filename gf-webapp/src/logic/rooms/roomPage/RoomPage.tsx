@@ -1,15 +1,15 @@
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
-import {PageBorder} from "../../../component/pageBorder/PageBorder";
-import {RoomSlider} from "./roomSlider/RoomSlider";
-import {RoomPromo} from "./roomPromo/RoomPromo";
-import {RoomsBlock} from "./roomsBlock/RoomsBlock";
-import {ServicesBlock} from "../../../component/servicesBlock/ServicesBlock";
-import {BookingBlock} from "../../../component/bookBlock/BookingBlock";
-import {Room} from "../../../model/Room/Room";
-import {RoomApiService} from "../../../service/RoomApi/RoomApi";
+import {PageBorder} from "src/component/pageBorder/PageBorder";
+import {RoomSlider} from "src/logic/rooms/roomPage/roomSlider/RoomSlider";
+import {RoomPromo} from "src/logic/rooms/roomPage/roomPromo/RoomPromo";
+import {RoomsBlock} from "src/logic/rooms/roomPage/roomsBlock/RoomsBlock";
+import {ServicesBlock} from "src/component/servicesBlock/ServicesBlock";
+import {BookingBlock} from "src/component/bookBlock/BookingBlock";
+import {Room} from "src/model/Room/Room";
+import {RoomApiService} from "src/service/RoomApi/RoomApi";
 import {Loader} from "gf-ui-lib/components/Loader/Loader";
-import styles from "./RoomPage.module.scss";
+import styles from "src/logic/rooms/roomPage/RoomPage.module.scss";
 
 /**
  * Url Params

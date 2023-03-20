@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import {RoomsList} from "./roomsList/RoomsList";
-import {useDictionary} from "../../../DictionaryContext/useDictionary";
-import styles from "./RoomsBlock.module.scss";
+import {RoomsList} from "src/logic/rooms/roomPage/roomsBlock/roomsList/RoomsList";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import styles from "src/logic/rooms/roomPage/roomsBlock/RoomsBlock.module.scss";
 
 
 export const RoomsBlock = () => {

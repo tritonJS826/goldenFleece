@@ -1,5 +1,5 @@
-import {Apartments} from "../../../../../model/Room/Apartments";
-import styles from "./ApartmentsList.module.scss";
+import {Apartments} from "src/model/Room/Apartments";
+import styles from "src/component/rooms/room/apartmentType/apartmentsList/ApartmentsList.module.scss";
 
 interface ApartmentsListProps {
   apartmentsType: string;

@@ -1,6 +1,6 @@
 import path from "path";
-import {DictionaryType} from "../../logic/DictionaryContext/useDictionary";
-import {Language} from "../../model/Language";
+import {DictionaryType} from "src/logic/DictionaryContext/useDictionary";
+import {Language} from "src/model/Language";
 
 import en from "src/locales/en/translation.json";
 import ru from "src/locales/ru/translation.json";

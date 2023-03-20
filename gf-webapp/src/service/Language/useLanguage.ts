@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {Language} from "../../model/Language";
-import {languageService} from "./LanguageService";
+import {Language} from "src/model/Language";
+import {languageService} from "src/service/Language/LanguageService";
 
 const currentLanguage = languageService.getCurrentLanguage();
 

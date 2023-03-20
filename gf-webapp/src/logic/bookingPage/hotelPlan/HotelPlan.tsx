@@ -1,11 +1,10 @@
 import {useState} from "react";
-import {useDictionary} from "../../DictionaryContext/useDictionary";
-import {ModalVisibilityContext} from "../../DictionaryContext/useDictionary";
-import {Modal} from "../modal/Modal";
-import {Form} from "../form/Form";
-import {RoomsPlan} from "./roomsPlan/RoomsPlan";
-import hotelPlan from "../../../resources/hotelPlan/hotelPlan.jpg";
-import styles from "./HotelPlan.module.scss";
+import {useDictionary, ModalVisibilityContext} from "src/logic/DictionaryContext/useDictionary";
+import {Modal} from "src/logic/bookingPage/modal/Modal";
+import {Form} from "src/logic/bookingPage/form/Form";
+import {RoomsPlan} from "src/logic/bookingPage/hotelPlan/roomsPlan/RoomsPlan";
+import hotelPlan from "src/resources/hotelPlan/hotelPlan.jpg";
+import styles from "src/logic/bookingPage/hotelPlan/HotelPlan.module.scss";
 
 
 export const HotelPlan = () => {

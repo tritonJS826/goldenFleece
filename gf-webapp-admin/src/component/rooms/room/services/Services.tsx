@@ -1,11 +1,11 @@
 import {useState} from "react";
-import {Room} from "../../../../model/Room/RoomDeprecated";
-import {saveRoom} from "../../../../service/RoomService";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {saveRoom} from "src/service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import {changeRoomServices} from "./roomServices";
-import {ApartmentServices} from "../../../../model/Room/ApartmentServices";
-import {enumToArray} from "../../../../utils/enumToArray";
-import styles from "./Services.module.scss";
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {enumToArray} from "src/utils/enumToArray";
+import styles from "src/component/rooms/room/services/Services.module.scss";
 
 interface ServicesProps {
   room:Room;

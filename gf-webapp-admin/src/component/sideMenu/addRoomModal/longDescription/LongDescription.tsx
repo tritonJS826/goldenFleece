@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from "react";
-import {AddRoomContext} from "../addRoomContext";
-import styles from "./LongDescription.module.scss";
+import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import styles from "src/component/sideMenu/addRoomModal/longDescription/LongDescription.module.scss";
 
 export const LongDescription = () => {
   const {roomStartState} = useContext(AddRoomContext);

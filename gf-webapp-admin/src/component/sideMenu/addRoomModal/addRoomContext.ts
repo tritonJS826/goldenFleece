@@ -1,5 +1,5 @@
 import {createContext} from "react";
-import {NewRoom} from "../../../model/Room/NewRoom";
+import {NewRoom} from "src/model/Room/NewRoom";
 
 interface IAddRoomContext {
   roomStartState: NewRoom;

@@ -1,6 +1,6 @@
 import fileUpload from "express-fileupload";
 import {isFileExist} from "src/utils/isFileExist";
-import {ResourceRepositoryInterface} from "./ResourceRepositoryInterface";
+import {ResourceRepositoryInterface} from "src/repository/resourceRepository/ResourceRepositoryInterface";
 import {v4 as uuidv4} from "uuid";
 import {writeFile} from "src/utils/writeFile";
 import {Response} from "express";

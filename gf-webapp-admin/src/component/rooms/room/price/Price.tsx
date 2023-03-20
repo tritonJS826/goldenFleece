@@ -1,8 +1,8 @@
-import {Room} from "../../../../model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/RoomDeprecated";
 import {useState} from "react";
 import {Button} from "gf-ui-lib/components/Button/Button";
-import {saveRoom} from "../../../../service/RoomService";
-import styles from "./Price.module.scss";
+import {saveRoom} from "src/service/RoomService";
+import styles from "src/component/rooms/room/price/Price.module.scss";
 
 interface ProcenProps {
   room:Room;

@@ -1,7 +1,7 @@
 import {useState} from "react";
-import {Room} from "../../../model/Room/RoomDeprecated";
-import {Overlay} from "./overlay/Overlay";
-import styles from "./RoomSimplified.module.scss";
+import {Room} from "src/model/Room/RoomDeprecated";
+import {Overlay} from "src/component/rooms/roomSimplified/overlay/Overlay";
+import styles from "src/component/rooms/roomSimplified/RoomSimplified.module.scss";
 
 interface RoomSimplifiedProps {
   room: Room

@@ -1,8 +1,8 @@
 import {useContext} from "react";
 import {Navigate, Route, Routes} from "react-router-dom";
-import {AppContext} from "../appContext";
-import {privateRoutes, publicRoutes} from "../routes";
-import {LOGIN_ROUTE, MAIN_PAGE_ROUTE} from "../utils/pathes";
+import {AppContext} from "src/appContext";
+import {privateRoutes, publicRoutes} from "src/routes";
+import {LOGIN_ROUTE, MAIN_PAGE_ROUTE} from "src/utils/pathes";
 import {useAuthState} from "react-firebase-hooks/auth";
 
 export const AppRouter = () => {

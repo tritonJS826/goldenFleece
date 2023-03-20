@@ -1,5 +1,5 @@
-import {Room} from "../model/Room/Room";
-import {RoomApiService} from "./RoomApi/RoomApi";
+import {Room} from "src/model/Room/Room";
+import {RoomApiService} from "src/service/RoomApi/RoomApi";
 
 export const getRoomNumber = (id:string | undefined) => {
   return id && +id < 10 ? `0${Number(id) + 1}` : id;
