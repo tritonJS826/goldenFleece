@@ -47,6 +47,8 @@ class RoomsService {
       }
       return 0;
     });
+
+    // TODO: implement class Room. room must be an instance of Room
     const room: Room = {
       id: parseInt(sortedRoomsId[sortedRoomsId.length - 1].id) + 1 + "",
       apartmentsType: req.body.apartmentsType,
@@ -70,6 +72,7 @@ class RoomsService {
    */
   public async putRoom(req: Request, res: Response): Promise<Room[]> {
     const roomId: string = req.params.roomId;
+    // TODO: implement class Room. updateRoom must be an instance of Room
     const updatedRoom: Room = {
       id: roomId,
       apartmentsType: req.body.apartmentsType,
@@ -79,8 +82,8 @@ class RoomsService {
       price: req.body.price,
       square: req.body.square,
       adults: req.body.adults,
-      promo: req.body.promo,
-      slider: req.body.slider,
+      promo: req.body.promoImgUrl,
+      slider: req.body.images,
       rating: req.body.rating,
     };
     const rooms = await roomsRepository.putRoom(updatedRoom, roomId);
