@@ -15,7 +15,7 @@ export const Services = (props: ServicesProps) => {
   const [services, setServices] = useState(props.room.services);
   const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
 
-  const saveHandler = async () => {
+  const saveHandler = () => {
     setIsEditFieldDisabled(true);
     props.room.services = services;
     saveRoom(props.room);
@@ -32,24 +32,22 @@ export const Services = (props: ServicesProps) => {
 
   const renderServices = () =>
     enumToArray(ApartmentServices).map(service => (
-      <li className={styles.service}
+      <li
+        className={styles.service}
         key={service}
       >
-        <input id={`${service}-service-${props.room.id}`}
-          type="checkbox"
-          value={service}
-          defaultChecked={enumToArray(services).includes(service)}
-          onChange={onChangeRoomServices}
-          disabled={isEditFieldDisabled}
-        />
-        <label className={styles.label}
-          htmlFor={`${service}-service-${props.room.id}`}
-        >
+        <label className={styles.label}>
+          <input
+            type="checkbox"
+            value={service}
+            defaultChecked={enumToArray(services).includes(service)}
+            onChange={onChangeRoomServices}
+            disabled={isEditFieldDisabled}
+          />
           {service}
         </label>
       </li>
     ));
-
 
   return (
     <div className={styles.services}>
