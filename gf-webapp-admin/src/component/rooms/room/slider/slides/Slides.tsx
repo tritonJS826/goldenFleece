@@ -19,8 +19,19 @@ export const Slides = (props: SlidesProps) => {
   };
 
   const addSlide = (slideImageURL:string) => {
-    slideImageURL && (slides && setSlides([...slides, slideImageURL]));
+    if (slideImageURL && slides) {
+      setSlides([...slides, slideImageURL]);
+    }
   };
+
+  const renderSlides = (roomSlides: string[]) =>
+    roomSlides.map((slideImageURL, index) => (
+      <Slide key={slideImageURL}
+        slideImageURL={slideImageURL}
+        index={index}
+        deleteSlide={deleteSlide}
+      />
+    ));
 
   useEffect(() => {
     props.room.images = slides;
@@ -29,13 +40,7 @@ export const Slides = (props: SlidesProps) => {
 
   return (
     <ul className={styles.slides}>
-      {slides?.map((slideImageURL, index) => (
-        <Slide key={slideImageURL}
-          slideImageURL={slideImageURL}
-          index={index}
-          deleteSlide={deleteSlide}
-        />
-      ))}
+      {renderSlides(slides)}
       <AddSlide addSlide={addSlide} />
     </ul>
   );

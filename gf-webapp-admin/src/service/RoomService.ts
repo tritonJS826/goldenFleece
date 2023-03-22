@@ -16,15 +16,13 @@ const roomDTOToBusinessConverter = (roomRaw: any) => new Room({
 });
 
 export const saveRoom = async (room: Room) => {
+
   const roomApi = new RoomApi;
   try {
-    // TODO remove branch if-else with check id,
-    if (room.id) {
-      await roomApi.apiRoomsRoomIdPut({
-        roomId: room.id,
-        body: room,
-      });
-    }
+    await roomApi.apiRoomsRoomIdPut({
+      roomId: room.id,
+      body: room,
+    });
   } catch (error) {
     console.log(error);
   }
