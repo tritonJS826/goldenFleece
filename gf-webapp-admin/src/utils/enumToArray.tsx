@@ -5,5 +5,5 @@
  * @returns string[]
  */
 export const enumToArray = (anyEnum: any): string[] => {
-  return Object.keys(anyEnum).filter((prop) => isNaN(+(prop)));
+  return Object.values(anyEnum);
 };

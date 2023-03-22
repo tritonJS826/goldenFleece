@@ -3,9 +3,9 @@
  */
 
 export enum ApartmentServices {
-  WiFi,
-  Laundry,
-  TeaCoffeeMaker,
-  Heating,
-  AirportShuttle
+  WiFi = "Free WiFi",
+  Laundry = "Laundry",
+  TeaCoffeeMaker = "Tea/coffee maker",
+  Heating = "Heating",
+  AirportShuttle = "Airport Shuttle"
 }
