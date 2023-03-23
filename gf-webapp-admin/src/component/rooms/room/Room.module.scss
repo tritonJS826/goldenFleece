@@ -14,6 +14,18 @@
     margin-bottom: 5px;
     cursor: pointer;
   }
+
+  button {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    animation: none;
+    font-family: 'Lato Regular', sans-serif, 'Arial';
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
 }
 
 .title {

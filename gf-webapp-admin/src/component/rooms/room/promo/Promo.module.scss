@@ -55,6 +55,8 @@
   }
 
   button {
+    width: auto;
+    height: auto;
     font-size: 1rem;
     padding: 5px 10px;
     border-radius: 5px;
@@ -63,8 +65,11 @@
     cursor: pointer;
     background-color: $color-hover;
     color: $color-white;
+    animation: none;
 
     &:hover {
+      border: none;
+      color: $color-white;
       background-color: $color-active;
     }
   }

@@ -25,6 +25,8 @@
   }
 
   button {
+    width: auto;
+    height: auto;
     font-size: 1rem;
     padding: 5px 20px;
     border-radius: 5px;
@@ -34,8 +36,11 @@
     background-color: $color-hover;
     color: $color-white;
     margin: 0 auto;
+    animation: none;
 
     &:hover {
+      border: none;
+      color: $color-white;
       background-color: $color-active;
     }
   }

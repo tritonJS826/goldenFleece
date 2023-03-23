@@ -28,7 +28,7 @@
 }
 
 .registrationBtn {
-  padding: 5px 10px;
+  padding: 5px 20px;
   cursor: pointer;
   border: none;
   outline: none;
@@ -37,6 +37,7 @@
   font-size: 1.1rem;
 
   &:hover {
-    background-color: $color-hover;
+    color: $color-white;
+    background-color: $color-primary;
   }
 }
