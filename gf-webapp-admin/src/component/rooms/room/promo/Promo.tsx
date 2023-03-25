@@ -81,6 +81,7 @@ export const Promo = (props: PromoProps) => {
                 type="button"
                 onClick={saveHandler}
                 value="Save"
+                size="content"
               />
             </div>
           )

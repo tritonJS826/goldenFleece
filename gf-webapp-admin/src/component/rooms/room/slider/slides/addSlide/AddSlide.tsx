@@ -26,6 +26,7 @@ export const AddSlide = (props: AddSlideProps) => {
         type="button"
         onClick={addSlideHandler}
         value="Add"
+        size="content"
       />
     </li>
   );

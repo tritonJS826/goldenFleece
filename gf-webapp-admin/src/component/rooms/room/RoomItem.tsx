@@ -10,6 +10,7 @@ import {Services} from "src/component/rooms/room/services/Services";
 import {Slider} from "src/component/rooms/room/slider/Slider";
 import {Square} from "src/component/rooms/room/square/Square";
 import styles from "src/component/rooms/room/Room.module.scss";
+import {DeleteRoom} from "./deleteRoom/DeleteRoom";
 
 interface RoomProps {
   room:Room;
@@ -34,6 +35,7 @@ export const RoomItem = (props: RoomProps) => {
       </div>
       <Promo room={props.room} />
       <Slider room={props.room} />
+      <DeleteRoom id={props.room.id} />
     </div>
   );
 };

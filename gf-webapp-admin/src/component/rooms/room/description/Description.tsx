@@ -39,6 +39,7 @@ export const Description = (props: DescriptionProps) => {
           type="button"
           value={isEditFieldDisabled ? "Edit" : "Save"}
           onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
+          size="content"
         />
       </div>
     </div>

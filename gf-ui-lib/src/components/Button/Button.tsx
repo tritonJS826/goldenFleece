@@ -16,6 +16,10 @@ interface ButtonProps {
    * Button type
    */
   type: "submit" | "button";
+  /**
+   * Button size
+   */
+  size?: "content"
 }
 
 /**
@@ -25,7 +29,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   return (
     <button
       type={props.type ?? "button"}
-      className={styles.button}
+      className={`${styles.button} ${props.size === "content" ? styles.content : ""}`}
       onClick={props.onClick}
     >
       {props.value}
