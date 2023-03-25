@@ -33,13 +33,13 @@ jobs:
       with:
         project: ./gf-ui-lib
         browser: chrome
-        start: npm startAll
+        start: pnpm startAll
     
     - name: Cypress run gf-e2e-test
       uses: cypress-io/github-action@v5
       with:
         project: ./gf-e2e-test
         browser: chrome
-        start: npm startAll
+        start: pnpm startAll
       env:
         EXAMPLE_ENV_VARIABLE: ${{ secrets.EXAMPLE_ENV_VARIABLE }}
