@@ -29,8 +29,8 @@ jobs:
         pnpm buildAll
 
     - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          build: npm run build
-          start: npm start
-        run: pnpm run testAll
+      uses: cypress-io/github-action@v5
+      with:
+        build: npm run build
+        start: npm start
+      run: pnpm run testAll
