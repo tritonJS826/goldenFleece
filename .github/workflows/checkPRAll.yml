@@ -1,4 +1,4 @@
-name: build all
+name: check PR all
 
 on:
   push:
@@ -27,3 +27,10 @@ jobs:
         npm i -g pnpm
         pnpm install
         pnpm buildAll
+
+    - name: Cypress run
+      uses: cypress-io/github-action@v5
+      # with:
+      #   build: npm run build
+      #   start: npm start
+      run: pnpm run testAll
