@@ -22,17 +22,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    # - name: Build
-    #   run: |
-    #     npm i -g pnpm
-    #     pnpm install
-    #     pnpm buildAll
+    - name: Build
+      run: |
+        npm i -g pnpm
+        pnpm install
+      # pnpm buildAll
 
     - name: Cypress run gf-ui-lib
       uses: cypress-io/github-action@v5
       with:
         command: pnpm run test
-        working-directory: gf-ui-lib
+        working-directory: ./gf-ui-lib
     
     - name: Cypress run gf-e2e-test
       uses: ./
