@@ -1,6 +1,6 @@
- # UI library 
+# End-to-end testing module
 
- ### Run tests for components
+### Run e2e tests
 
 1. create a file .env with variables from file .env.example
 

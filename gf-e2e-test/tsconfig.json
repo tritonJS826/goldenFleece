@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
+    "rootDir": "../",
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
+    ],  
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -13,15 +17,20 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "NodeNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "jsx": "react-jsx",
     "types": ["cypress"],
-    "jsx": "react-jsx"
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["./src/*"],
+      "gf-ui-lib": ["../gf-ui-lib/src/*"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src", "scripts"],
+  "types": ["node", "jest", "@testing-library/jest-dom"]
 }
+
