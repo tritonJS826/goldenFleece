@@ -33,8 +33,8 @@ jobs:
     - name: Cypress run gf-ui-lib
       uses: cypress-io/github-action@v5
       with:
-        command: pnpm run test
-        working-directory: ../gf-ui-lib
+        command: pnpm run testAll
+        working-directory: ./
     
     - name: Cypress run gf-e2e-test
       uses: ./
