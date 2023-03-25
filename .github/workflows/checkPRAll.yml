@@ -29,17 +29,20 @@ jobs:
         pnpm buildAll
 
     - name: Cypress run gf-ui-lib
-      uses: cypress-io/github-action@v5
+      uses: ./
       with:
-        project: ./gf-ui-lib
-        browser: chrome
-        start: pnpm startAll
+        command: pnpm run test
+        working-directory: gf-ui-lib
     
     - name: Cypress run gf-e2e-test
-      uses: cypress-io/github-action@v5
+      uses: ./
       with:
-        project: ./gf-e2e-test
-        browser: chrome
-        start: pnpm startAll
-      env:
-        EXAMPLE_ENV_VARIABLE: ${{ secrets.EXAMPLE_ENV_VARIABLE }}
+        command: pnpm run test
+        working-directory: gf-e2e-test
+      # uses: cypress-io/github-action@v5
+      # with:
+      #   project: ./gf-e2e-test
+      #   browser: chrome
+      #   start: pnpm startAll
+      # env:
+      #   EXAMPLE_ENV_VARIABLE: ${{ secrets.EXAMPLE_ENV_VARIABLE }}
