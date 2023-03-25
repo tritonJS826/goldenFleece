@@ -2,7 +2,7 @@ import {Button} from "./Button";
 import {mount} from "cypress/react";
 
 const BUTTON_VALUE = "TEST BUTTON";
-const STUB_FUCNTION = () => null;
+const STUB_FUNCTION = () => null;
 
 describe("<Button />", () => {
   it("renders", () => {
@@ -10,7 +10,7 @@ describe("<Button />", () => {
     mount(
       <Button
         value={BUTTON_VALUE}
-        onClick={STUB_FUCNTION}
+        onClick={STUB_FUNCTION}
         type="button"
       />,
     );

@@ -7,7 +7,6 @@
   "scripts": {
     "start": "react-app-rewired start process.env.PORT",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "swagger:generate_gf-server-api": "ts-node --esm scripts/swaggerGenerateServerApi.ts",
     "swagger:generate_gf-server-resources": "ts-node --esm scripts/swaggerGenerateServerResources.ts",

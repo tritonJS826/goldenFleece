@@ -4,3 +4,4 @@ packages:
   - 'gf-webapp'
   - 'gf-webapp-admin'
   - 'gf-ui-lib'
+  - 'gf-e2e-test'

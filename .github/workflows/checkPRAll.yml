@@ -1,4 +1,4 @@
-name: build all
+name: check PR all
 
 on:
   push:
@@ -27,3 +27,4 @@ jobs:
         npm i -g pnpm
         pnpm install
         pnpm buildAll
+        pnpm testAll
