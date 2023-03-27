@@ -38,7 +38,7 @@ export const LongDescription = (props: LongDescriptionProps) => {
           type="button"
           value={isEditFieldDisabled ? "Edit" : "Save"}
           onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-          size="content"
+          size="innerContent"
         />
       </div>
     </div>

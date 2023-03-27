@@ -1,3 +1,4 @@
+import {useEffect, useState} from "react";
 import styles from "./Button.module.scss";
 
 /**
@@ -17,22 +18,28 @@ interface ButtonProps {
    */
   type: "submit" | "button";
   /**
-   * Button size
+   * Button size.
+   * If size is undefined, then the button will have parentWidth style
    */
-  size?: "content"
+  size?: "innerContent" | "parentWidth";
 }
 
 /**
  * Button component
  */
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+
+  const buttonSize = props.size ? props.size : "";
+
   return (
     <button
       type={props.type ?? "button"}
-      className={`${styles.button} ${props.size === "content" ? styles.content : ""}`}
+      className={`${styles.button} ${styles[buttonSize]}`}
       onClick={props.onClick}
     >
       {props.value}
     </button>
   );
 };
+
+Button.defaultProps = {size: "parentWidth"};
