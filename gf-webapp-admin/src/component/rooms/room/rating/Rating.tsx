@@ -46,7 +46,6 @@ export const Rating = (props: RatingProps) => {
           max={10}
         />
         <Button
-          type="button"
           value={isEditFieldDisabled ? "Edit" : "Save"}
           onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
         />

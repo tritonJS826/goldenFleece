@@ -23,8 +23,8 @@ export const RoomItem = (props: RoomProps) => {
 
   const navigate = useNavigate();
 
-  const deleteWithRedirect = async () => {
-    await deleteRoom(props.room.id);
+  const deleteWithRedirect = () => {
+    deleteRoom(props.room.id);
     navigate(MAIN_PAGE_ROUTE);
   };
 
@@ -46,7 +46,6 @@ export const RoomItem = (props: RoomProps) => {
       <Promo room={props.room} />
       <Slider room={props.room} />
       <Button
-        type="button"
         value="Delete room"
         onClick={deleteWithRedirect}
       />

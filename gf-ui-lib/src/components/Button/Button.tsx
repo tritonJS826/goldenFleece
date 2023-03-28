@@ -15,8 +15,9 @@ interface ButtonProps {
   onClick: () => void;
   /**
    * Button type
+   * If type is undefined, then the button type will be
    */
-  type: "submit" | "button";
+  type?: "submit" | "button";
   /**
    * Button size.
    * If size is undefined, then the button will have parentWidth style
@@ -28,13 +29,10 @@ interface ButtonProps {
  * Button component
  */
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-
-  const buttonSize = props.size ? props.size : "";
-
+  const buttonClassNames = `${styles.button} ${props.size && styles[props.size]}`;
   return (
     <button
-      type={props.type ?? "button"}
-      className={`${styles.button} ${styles[buttonSize]}`}
+      className={buttonClassNames}
       onClick={props.onClick}
     >
       {props.value}
@@ -42,4 +40,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   );
 };
 
-Button.defaultProps = {size: "parentWidth"};
+Button.defaultProps = {
+  type: "button",
+  size: "parentWidth",
+};
