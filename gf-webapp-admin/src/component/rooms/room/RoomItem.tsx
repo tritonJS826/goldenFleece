@@ -13,6 +13,7 @@ import {Button} from "gf-ui-lib/components/Button/Button";
 import {useNavigate} from "react-router-dom";
 import {deleteRoom} from "src/service/RoomService";
 import {MAIN_PAGE_ROUTE} from "src/utils/pathes";
+import {RoomContext} from "src/component/rooms/room/roomContext";
 import styles from "src/component/rooms/room/Room.module.scss";
 
 interface RoomProps {
@@ -29,26 +30,28 @@ export const RoomItem = (props: RoomProps) => {
   };
 
   return (
-    <div className={styles.room}>
-      <h2 className={styles.title}>
-        {`Room #${Number(props.room.id) + 1}`}
-      </h2>
-      <ApartmentsType room={props.room} />
-      <Description room={props.room} />
-      <LongDescription room={props.room} />
-      <Services room={props.room} />
-      <div className={styles.wrapper}>
-        <Rating room={props.room} />
-        <Price room={props.room} />
-        <Square room={props.room} />
-        <Adults room={props.room} />
+    <RoomContext.Provider value={{room: props.room}}>
+      <div className={styles.room}>
+        <h2 className={styles.title}>
+          {`Room #${Number(props.room.id) + 1}`}
+        </h2>
+        <ApartmentsType room={props.room} />
+        <Description room={props.room} />
+        <LongDescription room={props.room} />
+        <Services room={props.room} />
+        <div className={styles.wrapper}>
+          <Rating room={props.room} />
+          <Price room={props.room} />
+          <Square room={props.room} />
+          <Adults room={props.room} />
+        </div>
+        <Promo room={props.room} />
+        <Slider room={props.room} />
+        <Button
+          value="Delete room"
+          onClick={deleteWithRedirect}
+        />
       </div>
-      <Promo room={props.room} />
-      <Slider room={props.room} />
-      <Button
-        value="Delete room"
-        onClick={deleteWithRedirect}
-      />
-    </div>
+    </RoomContext.Provider>
   );
 };
