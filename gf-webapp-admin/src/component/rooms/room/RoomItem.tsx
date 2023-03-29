@@ -43,7 +43,7 @@ export const RoomItem = (props: RoomProps) => {
           <Rating room={props.room} />
           <Price room={props.room} />
           <Square room={props.room} />
-          <Adults room={props.room} />
+          <Adults />
         </div>
         <Promo room={props.room} />
         <Slider room={props.room} />

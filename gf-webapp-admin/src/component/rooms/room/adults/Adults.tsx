@@ -1,25 +1,15 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/RoomDeprecated";
-import {saveRoom} from "src/service/RoomService";
-import {Button} from "gf-ui-lib/components/Button/Button";
+import {useRoomContext} from "src/component/rooms/room/roomContext";
 import styles from "src/component/rooms/room/adults/adults.module.scss";
 
-interface AdultsProps {
-  room:Room;
-}
+export const Adults = () => {
+  const contextAdults = useRoomContext().room.adults;
 
-export const Adults = (props: AdultsProps) => {
-  const [adults, setAdults] = useState(props.room.adults);
-  const [isEditFieldDisabled, setIsDisabled] = useState(true);
+  const [adults, setAdults] = useState(contextAdults);
 
-  const saveHandler = () => {
-    setIsDisabled(true);
-    props.room.adults = adults;
-    saveRoom(props.room);
-  };
-
-  const fieldEditHandler = () => {
-    setIsDisabled(false);
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(e.target.value);
+    setAdults(value);
   };
 
   return (
@@ -31,12 +21,7 @@ export const Adults = (props: AdultsProps) => {
         <div className={styles.container}>
           <input type="number"
             value={adults}
-            onChange={(e) => setAdults(Number(e.target.value))}
-            disabled={isEditFieldDisabled}
-          />
-          <Button
-            value={isEditFieldDisabled ? "Edit" : "Save"}
-            onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
+            onChange={onChangeValue}
           />
         </div>
       </label>
