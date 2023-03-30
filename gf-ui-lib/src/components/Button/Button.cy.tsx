@@ -11,7 +11,6 @@ describe("<Button />", () => {
       <Button
         value={BUTTON_VALUE}
         onClick={STUB_FUNCTION}
-        type="button"
       />,
     );
     cy.get("button").should("contains.text", BUTTON_VALUE);

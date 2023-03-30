@@ -9,6 +9,10 @@ import {Rating} from "src/component/rooms/room/rating/Rating";
 import {Services} from "src/component/rooms/room/services/Services";
 import {Slider} from "src/component/rooms/room/slider/Slider";
 import {Square} from "src/component/rooms/room/square/Square";
+import {Button} from "gf-ui-lib/components/Button/Button";
+import {useNavigate} from "react-router-dom";
+import {deleteRoom} from "src/service/RoomService";
+import {MAIN_PAGE_ROUTE} from "src/utils/pathes";
 import styles from "src/component/rooms/room/Room.module.scss";
 
 interface RoomProps {
@@ -16,6 +20,13 @@ interface RoomProps {
 }
 
 export const RoomItem = (props: RoomProps) => {
+
+  const navigate = useNavigate();
+
+  const deleteWithRedirect = () => {
+    deleteRoom(props.room.id);
+    navigate(MAIN_PAGE_ROUTE);
+  };
 
   return (
     <div className={styles.room}>
@@ -34,6 +45,10 @@ export const RoomItem = (props: RoomProps) => {
       </div>
       <Promo room={props.room} />
       <Slider room={props.room} />
+      <Button
+        value="Delete room"
+        onClick={deleteWithRedirect}
+      />
     </div>
   );
 };

@@ -53,21 +53,6 @@
     outline: none;
     border: none;
   }
-
-  button {
-    font-size: 1rem;
-    padding: 5px 10px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    background-color: $color-hover;
-    color: $color-white;
-
-    &:hover {
-      background-color: $color-active;
-    }
-  }
 }
 
 .addImage {

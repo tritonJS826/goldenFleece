@@ -58,9 +58,9 @@ export const Services = (props: ServicesProps) => {
         {renderServices()}
       </ul>
       <Button
-        type="button"
         value={isEditFieldDisabled ? "Edit" : "Save"}
         onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
+        size="innerContent"
       />
     </div>
   );
