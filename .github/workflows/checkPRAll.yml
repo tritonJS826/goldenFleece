@@ -24,7 +24,7 @@ jobs:
 
     - name: Build
       run: |
-        npm ci -g pnpm
+        npm -g pnpm
         pnpm ci
         pnpm buildAll
 
