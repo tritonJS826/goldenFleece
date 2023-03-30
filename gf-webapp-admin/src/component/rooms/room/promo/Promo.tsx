@@ -78,9 +78,9 @@ export const Promo = (props: PromoProps) => {
                 placeholder="Enter image URL"
               />
               <Button
-                type="button"
                 onClick={saveHandler}
                 value="Save"
+                size="innerContent"
               />
             </div>
           )

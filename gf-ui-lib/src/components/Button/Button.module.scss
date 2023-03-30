@@ -1,7 +1,6 @@
 @import '../../styles/GlobalTokens.scss';
 
 .button {
-  width: 100%;
   height: 50px;
   text-decoration: none;
   text-align: center;
@@ -34,4 +33,13 @@
   100% {
     color: $color-background;
   }
+}
+
+.innerContent {
+  width: auto;
+  height: auto;
+}
+
+.parentWidth {
+  width: 100%;
 }

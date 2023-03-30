@@ -26,8 +26,8 @@ jobs:
 
     - name: Build
       run: |
-        npm i -g pnpm
-        pnpm install
+        npm i -g pnpm@7.18.2
+        pnpm i --frozen-lockfile
         pnpm buildAll
 
     - name: Cypress run all tests

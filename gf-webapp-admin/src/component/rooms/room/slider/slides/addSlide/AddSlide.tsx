@@ -23,9 +23,9 @@ export const AddSlide = (props: AddSlideProps) => {
         onChange={(e) => setSlideURL(e.target.value)}
       />
       <Button
-        type="button"
         onClick={addSlideHandler}
         value="Add"
+        size="innerContent"
       />
     </li>
   );

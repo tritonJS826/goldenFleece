@@ -36,9 +36,9 @@ export const ApartmentsType = (props: ApartmentsTypeProps) => {
           onChangeApartmentType={setApartmentType}
         />
         <Button
-          type="button"
           value={isEditFieldDisabled ? "Edit" : "Save"}
           onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
+          size="innerContent"
         />
       </div>
     </div>
