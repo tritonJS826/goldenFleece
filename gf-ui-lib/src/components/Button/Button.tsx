@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import clsx from "clsx";
 import styles from "./Button.module.scss";
 
 /**
@@ -25,14 +25,22 @@ interface ButtonProps {
   size?: "innerContent" | "parentWidth";
 }
 
+const DEFAULT_SIZE = "parentWidth";
+const DEFAULT_TYPE = "button";
+
 /**
  * Button component
  */
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const buttonClassNames = `${styles.button} ${props.size && styles[props.size]}`;
+  const buttonClasses = clsx(
+    styles.button,
+    styles[props.size ?? DEFAULT_SIZE],
+  );
+
   return (
     <button
-      className={buttonClassNames}
+      type={props.type ?? DEFAULT_TYPE}
+      className={buttonClasses}
       onClick={props.onClick}
     >
       {props.value}
@@ -40,7 +48,3 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   );
 };
 
-Button.defaultProps = {
-  type: "button",
-  size: "parentWidth",
-};
