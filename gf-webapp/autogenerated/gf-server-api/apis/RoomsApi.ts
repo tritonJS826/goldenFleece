@@ -15,11 +15,11 @@
 
 import * as runtime from '../runtime';
 import type {
-  ApiRoomsGet200ResponseInner,
+  Room,
 } from '../models';
 import {
-    ApiRoomsGet200ResponseInnerFromJSON,
-    ApiRoomsGet200ResponseInnerToJSON,
+    RoomFromJSON,
+    RoomToJSON,
 } from '../models';
 
 /**
@@ -36,13 +36,13 @@ export interface RoomsApiInterface {
      * @throws {RequiredError}
      * @memberof RoomsApiInterface
      */
-    apiRoomsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ApiRoomsGet200ResponseInner>>>;
+    apiRoomsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Room>>>;
 
     /**
      * Retrieve a list of all rooms
      * Get list of rooms
      */
-    apiRoomsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ApiRoomsGet200ResponseInner>>;
+    apiRoomsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Room>>;
 
 }
 
@@ -55,7 +55,7 @@ export class RoomsApi extends runtime.BaseAPI implements RoomsApiInterface {
      * Retrieve a list of all rooms
      * Get list of rooms
      */
-    async apiRoomsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ApiRoomsGet200ResponseInner>>> {
+    async apiRoomsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Room>>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -67,14 +67,14 @@ export class RoomsApi extends runtime.BaseAPI implements RoomsApiInterface {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(ApiRoomsGet200ResponseInnerFromJSON));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(RoomFromJSON));
     }
 
     /**
      * Retrieve a list of all rooms
      * Get list of rooms
      */
-    async apiRoomsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ApiRoomsGet200ResponseInner>> {
+    async apiRoomsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Room>> {
         const response = await this.apiRoomsGetRaw(initOverrides);
         return await response.value();
     }

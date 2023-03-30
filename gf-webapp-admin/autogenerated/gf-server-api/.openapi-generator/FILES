@@ -6,7 +6,6 @@ apis/index.ts
 index.ts
 models/ApiAskAdminPostRequest.ts
 models/ApiBookingRequestPostRequest.ts
-models/ApiRoomsGet200ResponseInner.ts
 models/ApiRoomsGetRequest.ts
 models/index.ts
 runtime.ts

@@ -14,9 +14,16 @@
 
 
 import * as runtime from '../runtime';
+import type {
+  Room,
+} from '../models';
+import {
+    RoomFromJSON,
+    RoomToJSON,
+} from '../models';
 
 export interface ApiRoomsRoomIdPutRequest {
-    body: object;
+    body: Room;
 }
 
 /**
@@ -48,29 +55,29 @@ export interface RoomApiInterface {
      * @throws {RequiredError}
      * @memberof RoomApiInterface
      */
-    apiRoomsRoomIdGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    apiRoomsRoomIdGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>>;
 
     /**
      * Retrieve a room by ID
      * Get room by ID
      */
-    apiRoomsRoomIdGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    apiRoomsRoomIdGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room>;
 
     /**
      * Update room by ID
      * @summary Update room information by ID
-     * @param {object} body 
+     * @param {Room} body 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoomApiInterface
      */
-    apiRoomsRoomIdPutRaw(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    apiRoomsRoomIdPutRaw(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>>;
 
     /**
      * Update room by ID
      * Update room information by ID
      */
-    apiRoomsRoomIdPut(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    apiRoomsRoomIdPut(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room>;
 
 }
 
@@ -110,7 +117,7 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
      * Retrieve a room by ID
      * Get room by ID
      */
-    async apiRoomsRoomIdGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async apiRoomsRoomIdGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -122,14 +129,14 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse<any>(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RoomFromJSON(jsonValue));
     }
 
     /**
      * Retrieve a room by ID
      * Get room by ID
      */
-    async apiRoomsRoomIdGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async apiRoomsRoomIdGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room> {
         const response = await this.apiRoomsRoomIdGetRaw(initOverrides);
         return await response.value();
     }
@@ -138,7 +145,7 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
      * Update room by ID
      * Update room information by ID
      */
-    async apiRoomsRoomIdPutRaw(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async apiRoomsRoomIdPutRaw(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling apiRoomsRoomIdPut.');
         }
@@ -157,14 +164,14 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
             body: requestParameters.body as any,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse<any>(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RoomFromJSON(jsonValue));
     }
 
     /**
      * Update room by ID
      * Update room information by ID
      */
-    async apiRoomsRoomIdPut(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async apiRoomsRoomIdPut(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room> {
         const response = await this.apiRoomsRoomIdPutRaw(requestParameters, initOverrides);
         return await response.value();
     }
