@@ -24,7 +24,7 @@ jobs:
 
     - name: Build
       run: |
-        npm i -g pnpm
+        npm i -g pnpm --frozen-lockfile
         pnpm install --frozen-lockfile
         pnpm buildAll
 

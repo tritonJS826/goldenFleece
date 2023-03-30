@@ -1,7 +1,7 @@
 FROM node:18.3-alpine
 WORKDIR /gf-server-api
 COPY . .
-RUN npm i -g pnpm
+RUN npm i -g pnpm --frozen-lockfile
 RUN pnpm i --frozen-lockfile
 RUN pnpm run build
 CMD pnpm dlx serve ./build -p 3600 -s
