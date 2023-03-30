@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: |
         npm i -g pnpm
-        pnpm ci
+        pnpm i --frozen-lockfile
         pnpm buildAll
 
     - name: Cypress run
