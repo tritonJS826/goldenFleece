@@ -1,0 +1,12 @@
+apis/MailApi.ts
+apis/RoomApi.ts
+apis/RoomsApi.ts
+apis/TestApi.ts
+apis/index.ts
+index.ts
+models/ApiAskAdminPostRequest.ts
+models/ApiBookingRequestPostRequest.ts
+models/ApiRoomsGet200ResponseInner.ts
+models/ApiRoomsGetRequest.ts
+models/index.ts
+runtime.ts

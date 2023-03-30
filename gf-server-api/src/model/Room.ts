@@ -40,7 +40,7 @@
  *             type: string
  *             required: true
  *             description: The room's description.
- *             example: Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.
+ *             example: Dressed in soothing natural colour palettes with designs inspired by the natural landscape...
  *           price:
  *             type: number
  *             required: true
