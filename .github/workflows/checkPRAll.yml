@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        persist-credentials: false
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -24,13 +26,12 @@ jobs:
 
     - name: Build
       run: |
-        npm i -g pnpm
-        pnpm install
+        npm i -g pnpm@7.18.2
+        pnpm i --frozen-lockfile
         pnpm buildAll
 
-    - name: Cypress run
+    - name: Cypress run all tests
       uses: cypress-io/github-action@v5
-      # with:
-      #   build: npm run build
-      #   start: npm start
-      run: pnpm run testAll
+      with:
+        command: pnpm run testAll
+      #   EXAMPLE_ENV_VARIABLE: ${{ secrets.EXAMPLE_ENV_VARIABLE }}
