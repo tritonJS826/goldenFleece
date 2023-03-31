@@ -1,8 +1,12 @@
+import {Apartments} from "src/model/Apartments";
+import {ApartmentServices} from "src/model/ApartmentServices";
+import {Price} from "src/model/Price";
+
 /**
  * Room model
  * @swagger
  *   components:
- *     schema:
+ *     schemas:
  *       Room:
  *         type: object
  *         properties:
@@ -12,59 +16,46 @@
  *               - Single
  *               - Double
  *               - Twin
- *             required: true
  *             description: The room's type.
  *             example: Single
  *           services:
- *             type: string
- *             enum:
- *               - WiFi
- *               - Laundry
- *               - TeaCoffeeMaker
- *               - Heating
- *               - AirportShuttle
- *             required: true
- *             description: The room's services.
- *             example: WiFi, TeaCoffeeMaker
+ *             type: ApartmentServices[]
+ *             items:
+ *               type: ApartmentServices
+ *               description: The room's services.
+ *               example: WiFi
  *           id:
  *             type: string
- *             required: true
  *             description: The room's ID.
  *             example: 0
  *           description:
  *             type: string
- *             required: true
  *             description: Short room's description.
  *             example: A small room
  *           descriptionLong:
  *             type: string
- *             required: true
  *             description: The room's description.
  *             example: Dressed in soothing natural colour palettes with designs inspired by the natural landscape...
  *           price:
- *             type: number
- *             required: true
+ *             type: Price
  *             description: The room's price.
  *             example: 300
  *           square:
  *             type: number
- *             required: true
  *             description: The room's square.
  *             example: 30
  *           adults:
  *             type: number
- *             required: true
  *             description: Amount of adults who can stay in the room.
  *             example: 1
- *           promo:
+ *           promoImgUrl:
  *             type: string
- *             required: true
  *             description: The room's promo image URL.
  *             example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
- *           slider:
- *             type: array
+ *           images:
+ *             type: string[]
  *             items:
- *              type:string
+ *              type: string
  *             example: [
  *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
  *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
@@ -72,16 +63,30 @@
  *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
  *               https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg,
  *             ]
- *             required: true
  *             description: The rooms slider images URL.
  *           rating:
  *             type: number
- *             required: true
  *             description: The room's rating.
  *             example: 10
+ *         required:
+ *           - promoImgUrl
+ *           - apartmentsType
+ *           - services
+ *           - id
+ *           - description
+ *           - descriptionLong
+ *           - price
+ *           - images
+ *           - square
+ *           - adults
+ *           - rating
  */
 
 export interface Room {
+  /**
+  * Url to promo image;
+  */
+  promoImgUrl: string;
   /**
    * Apartment's type
    */
@@ -89,7 +94,7 @@ export interface Room {
   /**
    * Available services for room
    */
-  services: Set<Services>,
+  services: ApartmentServices[],
   /**
    * Room's ID
    */
@@ -105,7 +110,11 @@ export interface Room {
   /**
    * Price
    */
-  price: number,
+  price: Price,
+  /**
+  * Array of paths to images of room
+  */
+  images: string[],
   /**
    * Room's square in meters
    */
@@ -115,31 +124,8 @@ export interface Room {
    */
   adults: number,
   /**
-   * Promo image URL of the room
-   */
-  promo: string,
-  /**
-   * slider images URL of the rooms
-   */
-  slider: string[],
-  /**
    * Rating can be from 1 to 10
    */
   rating: number;
 
 }
-
-enum Apartments {
-  Single,
-  Double,
-  Twin
-}
-
-enum Services {
-  WiFi,
-  Laundry,
-  TeaCoffeeMaker,
-  Heating,
-  AirportShuttle
-}
-

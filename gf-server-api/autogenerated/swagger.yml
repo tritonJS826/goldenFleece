@@ -125,8 +125,26 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schema/Room"
-  "/api/rooms/{room_id}":
+                  $ref: "#/components/schemas/Room"
+    post:
+      tags:
+        - Rooms
+      summary: Add new room
+      description: Add new room
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#components/schemas/Room"
+      responses:
+        "200":
+          description: New room.
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/Room"
+  "/api/rooms/:{room_id}":
     get:
       tags:
         - Room
@@ -138,7 +156,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schema/Room"
+                $ref: "#/components/schemas/Room"
     put:
       tags:
         - Room
@@ -149,14 +167,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schema/Room"
+              $ref: "#/components/schemas/Room"
       responses:
         "200":
           description: Room.
           content:
             application/json:
               schema:
-                $ref: "#/components/schema/Room"
+                $ref: "#/components/schemas/Room"
     delete:
       tags:
         - Room
@@ -168,7 +186,7 @@ paths:
           content:
             application/json: {}
 components:
-  schema:
+  schemas:
     Room:
       type: object
       properties:
@@ -178,70 +196,68 @@ components:
             - Single
             - Double
             - Twin
-          required: true
           description: The room's type.
           example: Single
         services:
-          type: string
-          enum:
-            - WiFi
-            - Laundry
-            - TeaCoffeeMaker
-            - Heating
-            - AirportShuttle
-          required: true
-          description: The room's services.
-          example: WiFi, TeaCoffeeMaker
+          type: ApartmentServices[]
+          items:
+            type: ApartmentServices
+            description: The room's services.
+            example: WiFi
         id:
           type: string
-          required: true
           description: The room's ID.
           example: 0
         description:
           type: string
-          required: true
           description: Short room's description.
           example: A small room
         descriptionLong:
           type: string
-          required: true
           description: The room's description.
           example: Dressed in soothing natural colour palettes with designs inspired by
             the natural landscape...
         price:
-          type: number
-          required: true
+          type: Price
           description: The room's price.
           example: 300
         square:
           type: number
-          required: true
           description: The room's square.
           example: 30
         adults:
           type: number
-          required: true
           description: Amount of adults who can stay in the room.
           example: 1
-        promo:
+        promoImgUrl:
           type: string
-          required: true
           description: The room's promo image URL.
           example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
-        slider:
-          type: array
-          items: type:string
+        images:
+          type: string[]
+          items:
+            type: string
           example:
             - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
             - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
             - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
             - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
             - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
-          required: true
           description: The rooms slider images URL.
         rating:
           type: number
-          required: true
           description: The room's rating.
           example: 10
+      required:
+        - promoImgUrl
+        - apartmentsType
+        - services
+        - id
+        - description
+        - descriptionLong
+        - price
+        - images
+        - square
+        - adults
+        - rating
 tags: []

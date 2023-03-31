@@ -2,4 +2,4 @@
 /* eslint-disable */
 export * from './ApiAskAdminPostRequest';
 export * from './ApiBookingRequestPostRequest';
-export * from './ApiRoomsGetRequest';
+export * from './Room';

@@ -23,7 +23,7 @@ import {
 } from '../models';
 
 export interface ApiRoomsRoomIdPutRequest {
-    body: Room;
+    room: Room;
 }
 
 /**
@@ -66,7 +66,7 @@ export interface RoomApiInterface {
     /**
      * Update room by ID
      * @summary Update room information by ID
-     * @param {Room} body 
+     * @param {Room} room 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoomApiInterface
@@ -96,7 +96,7 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/rooms/{room_id}`,
+            path: `/api/rooms/:{room_id}`,
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -123,7 +123,7 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/rooms/{room_id}`,
+            path: `/api/rooms/:{room_id}`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -146,8 +146,8 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
      * Update room information by ID
      */
     async apiRoomsRoomIdPutRaw(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling apiRoomsRoomIdPut.');
+        if (requestParameters.room === null || requestParameters.room === undefined) {
+            throw new runtime.RequiredError('room','Required parameter requestParameters.room was null or undefined when calling apiRoomsRoomIdPut.');
         }
 
         const queryParameters: any = {};
@@ -157,11 +157,11 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/api/rooms/{room_id}`,
+            path: `/api/rooms/:{room_id}`,
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.body as any,
+            body: RoomToJSON(requestParameters.room),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RoomFromJSON(jsonValue));
