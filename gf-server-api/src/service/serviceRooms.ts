@@ -58,8 +58,8 @@ class RoomsService {
       price: req.body.price,
       square: req.body.square,
       adults: req.body.adults,
-      promo: req.body.promo,
-      slider: req.body.slider,
+      promoImgUrl: req.body.promoImgUrl,
+      images: req.body.images,
       rating: req.body.rating,
     };
     await roomsRepository.postRoom(room);
@@ -82,8 +82,8 @@ class RoomsService {
       price: req.body.price,
       square: req.body.square,
       adults: req.body.adults,
-      promo: req.body.promoImgUrl,
-      slider: req.body.images,
+      promoImgUrl: req.body.promoImgUrl,
+      images: req.body.images,
       rating: req.body.rating,
     };
     const rooms = await roomsRepository.putRoom(updatedRoom, roomId);

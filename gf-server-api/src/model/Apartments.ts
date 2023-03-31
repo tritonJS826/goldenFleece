@@ -1,5 +1,16 @@
 /**
  * Apartments type
+ * @swagger
+ *   components:
+ *     schemas:
+ *       Apartments:
+ *         type: string
+ *         enum:
+ *           - Single
+ *           - Double
+ *           - Twin
+ *         required: true
+ *         example: Single
  */
 
 export enum Apartments {

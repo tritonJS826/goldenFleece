@@ -11,19 +11,12 @@ import {Price} from "src/model/Price";
  *         type: object
  *         properties:
  *           apartmentsType:
- *             type: string
- *             enum:
- *               - Single
- *               - Double
- *               - Twin
- *             description: The room's type.
- *             example: Single
+ *             $ref: '#/components/schemas/Apartments'
  *           services:
- *             type: ApartmentServices[]
+ *             type: string[]
  *             items:
- *               type: ApartmentServices
- *               description: The room's services.
- *               example: WiFi
+ *               $ref: '#/components/schemas/ApartmentServices'
+ *             example: [WiFi, Laundry]
  *           id:
  *             type: string
  *             description: The room's ID.
@@ -39,7 +32,7 @@ import {Price} from "src/model/Price";
  *           price:
  *             type: Price
  *             description: The room's price.
- *             example: 300
+ *             example: 300 GEL
  *           square:
  *             type: number
  *             description: The room's square.

@@ -1,5 +1,17 @@
 /**
- * Apartments services
+ * Apartment services
+ * @swagger
+ *   components:
+ *     schemas:
+ *       ApartmentServices:
+ *         type: string
+ *         enum:
+ *           - WiFi
+ *           - Laundry
+ *           - TeaCoffeeMaker
+ *           - Heating
+ *           - AirportShuttle
+ *       example: WiFi
  */
 
 export enum ApartmentServices {

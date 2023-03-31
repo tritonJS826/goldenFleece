@@ -187,23 +187,49 @@ paths:
             application/json: {}
 components:
   schemas:
+    ApartmentServices:
+      type: string
+      enum:
+        - WiFi
+        - Laundry
+        - TeaCoffeeMaker
+        - Heating
+        - AirportShuttle
+    example: WiFi
+    Apartments:
+      type: string
+      enum:
+        - Single
+        - Double
+        - Twin
+      required: true
+      example: Single
+    Currency:
+      type: string
+      enum:
+        - GEL
+      required: true
+      example: GEL
+    Price:
+      type: object
+      properties:
+        currency:
+          $ref: "#/components/schemas/Currency"
+        amount:
+          type: number
+      example: 300 GEL
     Room:
       type: object
       properties:
         apartmentsType:
-          type: string
-          enum:
-            - Single
-            - Double
-            - Twin
-          description: The room's type.
-          example: Single
+          $ref: "#/components/schemas/Apartments"
         services:
-          type: ApartmentServices[]
+          type: string[]
           items:
-            type: ApartmentServices
-            description: The room's services.
-            example: WiFi
+            $ref: "#/components/schemas/ApartmentServices"
+          example:
+            - WiFi
+            - Laundry
         id:
           type: string
           description: The room's ID.
@@ -220,7 +246,7 @@ components:
         price:
           type: Price
           description: The room's price.
-          example: 300
+          example: 300 GEL
         square:
           type: number
           description: The room's square.

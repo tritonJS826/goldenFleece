@@ -19,6 +19,12 @@ import {
     ApartmentServicesFromJSONTyped,
     ApartmentServicesToJSON,
 } from './ApartmentServices';
+import type { Apartments } from './Apartments';
+import {
+    ApartmentsFromJSON,
+    ApartmentsFromJSONTyped,
+    ApartmentsToJSON,
+} from './Apartments';
 import type { Price } from './Price';
 import {
     PriceFromJSON,
@@ -33,11 +39,11 @@ import {
  */
 export interface Room {
     /**
-     * The room's type.
-     * @type {string}
+     * 
+     * @type {Apartments}
      * @memberof Room
      */
-    apartmentsType: RoomApartmentsTypeEnum;
+    apartmentsType: Apartments;
     /**
      * 
      * @type {Array<ApartmentServices>}
@@ -100,18 +106,6 @@ export interface Room {
     rating: number;
 }
 
-
-/**
- * @export
- */
-export const RoomApartmentsTypeEnum = {
-    Single: 'Single',
-    Double: 'Double',
-    Twin: 'Twin'
-} as const;
-export type RoomApartmentsTypeEnum = typeof RoomApartmentsTypeEnum[keyof typeof RoomApartmentsTypeEnum];
-
-
 /**
  * Check if a given object implements the Room interface.
  */
@@ -142,7 +136,7 @@ export function RoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): Room
     }
     return {
         
-        'apartmentsType': json['apartmentsType'],
+        'apartmentsType': ApartmentsFromJSON(json['apartmentsType']),
         'services': ((json['services'] as Array<any>).map(ApartmentServicesFromJSON)),
         'id': json['id'],
         'description': json['description'],
@@ -165,7 +159,7 @@ export function RoomToJSON(value?: Room | null): any {
     }
     return {
         
-        'apartmentsType': value.apartmentsType,
+        'apartmentsType': ApartmentsToJSON(value.apartmentsType),
         'services': ((value.services as Array<any>).map(ApartmentServicesToJSON)),
         'id': value.id,
         'description': value.description,
