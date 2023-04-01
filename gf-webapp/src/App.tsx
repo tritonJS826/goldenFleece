@@ -28,7 +28,7 @@ function App() {
             element={pages.rooms.element}
           />
           <Route
-            path={pages.room.path("id")}
+            path={pages.room.path(":id")}
             element={pages.room.element}
           />
           <Route
