@@ -9,10 +9,14 @@ import {Currency} from "src/model/Currency";
  *         type: object
  *         properties:
  *           currency:
+ *             type: string
  *             $ref: '#/components/schemas/Currency'
  *           amount:
  *             type: number
  *         example: 300 GEL
+ *         required:
+ *           - currency
+ *           - amount
  */
 export class Price {
 

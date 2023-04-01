@@ -22,7 +22,16 @@ import {
     RoomToJSON,
 } from '../models';
 
+export interface ApiRoomsRoomIdDeleteRequest {
+    roomId: string;
+}
+
+export interface ApiRoomsRoomIdGetRequest {
+    roomId: string;
+}
+
 export interface ApiRoomsRoomIdPutRequest {
+    roomId: string;
     room: Room;
 }
 
@@ -36,36 +45,39 @@ export interface RoomApiInterface {
     /**
      * Delete a room by ID
      * @summary Delete room by ID
+     * @param {string} roomId room ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoomApiInterface
      */
-    apiRoomsRoomIdDeleteRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    apiRoomsRoomIdDeleteRaw(requestParameters: ApiRoomsRoomIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
 
     /**
      * Delete a room by ID
      * Delete room by ID
      */
-    apiRoomsRoomIdDelete(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    apiRoomsRoomIdDelete(requestParameters: ApiRoomsRoomIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 
     /**
      * Retrieve a room by ID
      * @summary Get room by ID
+     * @param {string} roomId room ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoomApiInterface
      */
-    apiRoomsRoomIdGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>>;
+    apiRoomsRoomIdGetRaw(requestParameters: ApiRoomsRoomIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>>;
 
     /**
      * Retrieve a room by ID
      * Get room by ID
      */
-    apiRoomsRoomIdGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room>;
+    apiRoomsRoomIdGet(requestParameters: ApiRoomsRoomIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room>;
 
     /**
      * Update room by ID
      * @summary Update room information by ID
+     * @param {string} roomId room ID
      * @param {Room} room 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -90,13 +102,17 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
      * Delete a room by ID
      * Delete room by ID
      */
-    async apiRoomsRoomIdDeleteRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async apiRoomsRoomIdDeleteRaw(requestParameters: ApiRoomsRoomIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.roomId === null || requestParameters.roomId === undefined) {
+            throw new runtime.RequiredError('roomId','Required parameter requestParameters.roomId was null or undefined when calling apiRoomsRoomIdDelete.');
+        }
+
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/rooms/:{room_id}`,
+            path: `/api/rooms/{room_id}`.replace(`{${"room_id"}}`, encodeURIComponent(String(requestParameters.roomId))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -109,21 +125,25 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
      * Delete a room by ID
      * Delete room by ID
      */
-    async apiRoomsRoomIdDelete(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiRoomsRoomIdDeleteRaw(initOverrides);
+    async apiRoomsRoomIdDelete(requestParameters: ApiRoomsRoomIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.apiRoomsRoomIdDeleteRaw(requestParameters, initOverrides);
     }
 
     /**
      * Retrieve a room by ID
      * Get room by ID
      */
-    async apiRoomsRoomIdGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>> {
+    async apiRoomsRoomIdGetRaw(requestParameters: ApiRoomsRoomIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>> {
+        if (requestParameters.roomId === null || requestParameters.roomId === undefined) {
+            throw new runtime.RequiredError('roomId','Required parameter requestParameters.roomId was null or undefined when calling apiRoomsRoomIdGet.');
+        }
+
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/rooms/:{room_id}`,
+            path: `/api/rooms/{room_id}`.replace(`{${"room_id"}}`, encodeURIComponent(String(requestParameters.roomId))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -136,8 +156,8 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
      * Retrieve a room by ID
      * Get room by ID
      */
-    async apiRoomsRoomIdGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room> {
-        const response = await this.apiRoomsRoomIdGetRaw(initOverrides);
+    async apiRoomsRoomIdGet(requestParameters: ApiRoomsRoomIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room> {
+        const response = await this.apiRoomsRoomIdGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -146,6 +166,10 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
      * Update room information by ID
      */
     async apiRoomsRoomIdPutRaw(requestParameters: ApiRoomsRoomIdPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>> {
+        if (requestParameters.roomId === null || requestParameters.roomId === undefined) {
+            throw new runtime.RequiredError('roomId','Required parameter requestParameters.roomId was null or undefined when calling apiRoomsRoomIdPut.');
+        }
+
         if (requestParameters.room === null || requestParameters.room === undefined) {
             throw new runtime.RequiredError('room','Required parameter requestParameters.room was null or undefined when calling apiRoomsRoomIdPut.');
         }
@@ -157,7 +181,7 @@ export class RoomApi extends runtime.BaseAPI implements RoomApiInterface {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/api/rooms/:{room_id}`,
+            path: `/api/rooms/{room_id}`.replace(`{${"room_id"}}`, encodeURIComponent(String(requestParameters.roomId))),
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,

@@ -136,20 +136,28 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#components/schemas/Room"
+              $ref: "#/components/schemas/Room"
       responses:
         "200":
           description: New room.
           content:
             application/json:
               schema:
-                $ref: "#components/schemas/Room"
-  "/api/rooms/:{room_id}":
+                $ref: "#/components/schemas/Room"
+  "/api/rooms/{room_id}":
     get:
       tags:
         - Room
       summary: Get room by ID
       description: Retrieve a room by ID
+      parameters:
+        - name: room_id
+          in: path
+          description: room ID
+          schema:
+            type: string
+          required: true
+          example: 0
       responses:
         "200":
           description: Room.
@@ -162,6 +170,14 @@ paths:
         - Room
       summary: Update room information by ID
       description: Update room by ID
+      parameters:
+        - name: room_id
+          in: path
+          description: room ID
+          schema:
+            type: string
+          required: true
+          example: 0
       requestBody:
         required: true
         content:
@@ -180,6 +196,14 @@ paths:
         - Room
       summary: Delete room by ID
       description: Delete a room by ID
+      parameters:
+        - name: room_id
+          in: path
+          required: true
+          description: room ID
+          schema:
+            type: string
+          example: 0
       responses:
         "200":
           description: Successful room delete.
@@ -195,29 +219,30 @@ components:
         - TeaCoffeeMaker
         - Heating
         - AirportShuttle
-    example: WiFi
+    example: GEL
     Apartments:
       type: string
       enum:
         - Single
         - Double
         - Twin
-      required: true
       example: Single
     Currency:
       type: string
       enum:
         - GEL
-      required: true
-      example: GEL
     Price:
       type: object
       properties:
         currency:
+          type: string
           $ref: "#/components/schemas/Currency"
         amount:
           type: number
       example: 300 GEL
+      required:
+        - currency
+        - amount
     Room:
       type: object
       properties:

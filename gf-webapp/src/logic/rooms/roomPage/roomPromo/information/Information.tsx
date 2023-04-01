@@ -1,11 +1,12 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {Price} from "src/model/Price";
+import {Apartments} from "src/model/Room/Apartments";
 import {ApartmentServices} from "src/model/Room/ApartmentServices";
 import {Services} from "src/logic/rooms/roomPage/roomPromo/information/services/Services";
 import styles from "src/logic/rooms/roomPage/roomPromo/RoomPromo.module.scss";
 
 interface InformationProps {
-  apartmentsType: string;
+  apartmentsType: Apartments;
   price: Price;
   services: ApartmentServices[];
 }

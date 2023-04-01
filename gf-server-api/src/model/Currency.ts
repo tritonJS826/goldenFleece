@@ -7,10 +7,11 @@
  *         type: string
  *         enum:
  *           - GEL
- *         required: true
- *         example: GEL
+ *       example: GEL
  */
-
 export enum Currency {
+  /**
+   * Curency of Georgia
+   */
   GEL = "GEL",
 }

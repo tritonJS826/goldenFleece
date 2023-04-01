@@ -31,13 +31,13 @@ export interface Price {
      * @type {Currency}
      * @memberof Price
      */
-    currency?: Currency;
+    currency: Currency;
     /**
      * 
      * @type {number}
      * @memberof Price
      */
-    amount?: number;
+    amount: number;
 }
 
 /**
@@ -45,6 +45,8 @@ export interface Price {
  */
 export function instanceOfPrice(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "currency" in value;
+    isInstance = isInstance && "amount" in value;
 
     return isInstance;
 }
@@ -59,8 +61,8 @@ export function PriceFromJSONTyped(json: any, ignoreDiscriminator: boolean): Pri
     }
     return {
         
-        'currency': !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
-        'amount': !exists(json, 'amount') ? undefined : json['amount'],
+        'currency': CurrencyFromJSON(json['currency']),
+        'amount': json['amount'],
     };
 }
 

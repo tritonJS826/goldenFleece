@@ -74,7 +74,6 @@ import {Price} from "src/model/Price";
  *           - adults
  *           - rating
  */
-
 export interface Room {
   /**
   * Url to promo image;
