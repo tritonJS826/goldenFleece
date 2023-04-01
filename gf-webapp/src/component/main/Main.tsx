@@ -19,6 +19,7 @@ export function Main() {
       <Button
         value={dictionary.bookButtonText}
         onClick={() => navigate(pages.booking.path)}
+        type={"button"}
       />
       <AboutUs />
       <Map markers={markers} />
