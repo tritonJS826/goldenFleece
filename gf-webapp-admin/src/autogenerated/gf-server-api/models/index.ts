@@ -5,5 +5,6 @@ export * from './Apartments';
 export * from './ApiAskAdminPostRequest';
 export * from './ApiBookingRequestPostRequest';
 export * from './Currency';
+export * from './NewRoom';
 export * from './Price';
 export * from './Room';

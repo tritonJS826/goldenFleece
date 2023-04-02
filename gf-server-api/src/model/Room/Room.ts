@@ -1,7 +1,3 @@
-import {Apartments} from "src/model/Apartments";
-import {ApartmentServices} from "src/model/ApartmentServices";
-import {Price} from "src/model/Price";
-
 /**
  * Room model
  * @swagger
@@ -17,20 +13,20 @@ import {Price} from "src/model/Price";
  *             items:
  *               $ref: '#/components/schemas/ApartmentServices'
  *             example: [WiFi, Laundry]
- *           id:
- *             type: string
- *             description: The room's ID.
- *             example: 0
  *           description:
  *             type: string
  *             description: Short room's description.
  *             example: A small room
+ *           id:
+ *             type: string
+ *             description: The room's ID.
+ *             example: 0
  *           descriptionLong:
  *             type: string
  *             description: The room's description.
  *             example: Dressed in soothing natural colour palettes with designs inspired by the natural landscape...
  *           price:
- *             type: Price
+ *             $ref: '#/components/schemas/Price'
  *             description: The room's price.
  *             example: 300 GEL
  *           square:
@@ -74,50 +70,20 @@ import {Price} from "src/model/Price";
  *           - adults
  *           - rating
  */
-export interface Room {
+import {NewRoom} from "src/model/Room/NewRoom";
+
+type RoomArgs = NewRoom & {id: string};
+
+export class Room extends NewRoom {
+
   /**
-  * Url to promo image;
-  */
-  promoImgUrl: string;
-  /**
-   * Apartment's type
-   */
-  apartmentsType: Apartments,
-  /**
-   * Available services for room
-   */
-  services: ApartmentServices[],
-  /**
-   * Room's ID
-   */
-  id: string,
-  /**
-   * Short description about room
-   */
-  description: string,
-  /**
-   * Description about room
-   */
-  descriptionLong: string,
-  /**
-   * Price
-   */
-  price: Price,
-  /**
-  * Array of paths to images of room
-  */
-  images: string[],
-  /**
-   * Room's square in meters
-   */
-  square: number,
-  /**
-   * Amount of adults who can stay in the room
-   */
-  adults: number,
-  /**
-   * Rating can be from 1 to 10
-   */
-  rating: number;
+    * Room id
+    */
+  public id: string;
+
+  constructor(args: RoomArgs) {
+    super(args);
+    this.id = args.id;
+  }
 
 }

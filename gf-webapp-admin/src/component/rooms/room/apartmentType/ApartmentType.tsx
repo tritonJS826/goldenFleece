@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {Apartments} from "src/model/Room/Apartments";
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {saveRoom} from "src/service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import {ApartmentsList} from "src/component/rooms/room/apartmentType/apartmentsList/ApartmentsList";

@@ -35,86 +35,79 @@ import {
 /**
  * 
  * @export
- * @interface Room
+ * @interface NewRoom
  */
-export interface Room {
+export interface NewRoom {
     /**
      * 
      * @type {Apartments}
-     * @memberof Room
+     * @memberof NewRoom
      */
     apartmentsType: Apartments;
     /**
      * 
      * @type {Array<ApartmentServices>}
-     * @memberof Room
+     * @memberof NewRoom
      */
     services: Array<ApartmentServices>;
     /**
      * Short room's description.
      * @type {string}
-     * @memberof Room
+     * @memberof NewRoom
      */
     description: string;
     /**
-     * The room's ID.
-     * @type {string}
-     * @memberof Room
-     */
-    id: string;
-    /**
      * The room's description.
      * @type {string}
-     * @memberof Room
+     * @memberof NewRoom
      */
     descriptionLong: string;
     /**
      * 
      * @type {Price}
-     * @memberof Room
+     * @memberof NewRoom
      */
     price: Price;
     /**
      * The room's square.
      * @type {number}
-     * @memberof Room
+     * @memberof NewRoom
      */
     square: number;
     /**
      * Amount of adults who can stay in the room.
      * @type {number}
-     * @memberof Room
+     * @memberof NewRoom
      */
     adults: number;
     /**
      * The room's promo image URL.
      * @type {string}
-     * @memberof Room
+     * @memberof NewRoom
      */
     promoImgUrl: string;
     /**
      * The rooms slider images URL.
      * @type {Array<string>}
-     * @memberof Room
+     * @memberof NewRoom
      */
     images: Array<string>;
     /**
      * The room's rating.
      * @type {number}
-     * @memberof Room
+     * @memberof NewRoom
      */
     rating: number;
 }
 
 /**
- * Check if a given object implements the Room interface.
+ * Check if a given object implements the NewRoom interface.
  */
-export function instanceOfRoom(value: object): boolean {
+export function instanceOfNewRoom(value: object): boolean {
     let isInstance = true;
     isInstance = isInstance && "apartmentsType" in value;
     isInstance = isInstance && "services" in value;
     isInstance = isInstance && "description" in value;
-    isInstance = isInstance && "id" in value;
     isInstance = isInstance && "descriptionLong" in value;
     isInstance = isInstance && "price" in value;
     isInstance = isInstance && "square" in value;
@@ -126,11 +119,11 @@ export function instanceOfRoom(value: object): boolean {
     return isInstance;
 }
 
-export function RoomFromJSON(json: any): Room {
-    return RoomFromJSONTyped(json, false);
+export function NewRoomFromJSON(json: any): NewRoom {
+    return NewRoomFromJSONTyped(json, false);
 }
 
-export function RoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): Room {
+export function NewRoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewRoom {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -139,7 +132,6 @@ export function RoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): Room
         'apartmentsType': ApartmentsFromJSON(json['apartmentsType']),
         'services': ((json['services'] as Array<any>).map(ApartmentServicesFromJSON)),
         'description': json['description'],
-        'id': json['id'],
         'descriptionLong': json['descriptionLong'],
         'price': PriceFromJSON(json['price']),
         'square': json['square'],
@@ -150,7 +142,7 @@ export function RoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): Room
     };
 }
 
-export function RoomToJSON(value?: Room | null): any {
+export function NewRoomToJSON(value?: NewRoom | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -162,7 +154,6 @@ export function RoomToJSON(value?: Room | null): any {
         'apartmentsType': ApartmentsToJSON(value.apartmentsType),
         'services': ((value.services as Array<any>).map(ApartmentServicesToJSON)),
         'description': value.description,
-        'id': value.id,
         'descriptionLong': value.descriptionLong,
         'price': PriceToJSON(value.price),
         'square': value.square,

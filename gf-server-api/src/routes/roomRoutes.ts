@@ -36,14 +36,14 @@ roomsRouter.get("/api/rooms", roomsService.getRooms);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Room'
+ *               $ref: '#/components/schemas/NewRoom'
  *       responses:
  *         200:
  *           description: New room.
  *           content:
  *             application/json:
  *               schema:
- *                 $ref: '#/components/schemas/Room'
+ *                 $ref: '#/components/schemas/NewRoom'
 */
 roomsRouter.post("/api/rooms", roomsService.postRoom);
 

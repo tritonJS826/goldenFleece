@@ -1,4 +1,4 @@
-import {Currency} from "src/model/Currency";
+import {Currency} from "src/model/Room/Currency";
 
 /**
  * Price
@@ -6,7 +6,6 @@ import {Currency} from "src/model/Currency";
  *   components:
  *     schemas:
  *       Price:
- *         type: object
  *         properties:
  *           currency:
  *             type: string

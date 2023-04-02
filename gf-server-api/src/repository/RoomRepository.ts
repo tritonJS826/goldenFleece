@@ -1,5 +1,5 @@
 import path from "path";
-import {Room} from "src/model/Room";
+import {Room} from "src/model/Room/Room";
 import {readFile} from "src/utils/readFile";
 import {writeFile} from "src/utils/writeFile";
 

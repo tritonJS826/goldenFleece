@@ -15,15 +15,18 @@
 
 import * as runtime from '../runtime';
 import type {
+  NewRoom,
   Room,
 } from '../models';
 import {
+    NewRoomFromJSON,
+    NewRoomToJSON,
     RoomFromJSON,
     RoomToJSON,
 } from '../models';
 
 export interface ApiRoomsPostRequest {
-    room: Room;
+    newRoom: NewRoom;
 }
 
 /**
@@ -51,18 +54,18 @@ export interface RoomsApiInterface {
     /**
      * Add new room
      * @summary Add new room
-     * @param {Room} room 
+     * @param {NewRoom} newRoom 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoomsApiInterface
      */
-    apiRoomsPostRaw(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>>;
+    apiRoomsPostRaw(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<NewRoom>>;
 
     /**
      * Add new room
      * Add new room
      */
-    apiRoomsPost(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room>;
+    apiRoomsPost(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NewRoom>;
 
 }
 
@@ -103,9 +106,9 @@ export class RoomsApi extends runtime.BaseAPI implements RoomsApiInterface {
      * Add new room
      * Add new room
      */
-    async apiRoomsPostRaw(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Room>> {
-        if (requestParameters.room === null || requestParameters.room === undefined) {
-            throw new runtime.RequiredError('room','Required parameter requestParameters.room was null or undefined when calling apiRoomsPost.');
+    async apiRoomsPostRaw(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<NewRoom>> {
+        if (requestParameters.newRoom === null || requestParameters.newRoom === undefined) {
+            throw new runtime.RequiredError('newRoom','Required parameter requestParameters.newRoom was null or undefined when calling apiRoomsPost.');
         }
 
         const queryParameters: any = {};
@@ -119,17 +122,17 @@ export class RoomsApi extends runtime.BaseAPI implements RoomsApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RoomToJSON(requestParameters.room),
+            body: NewRoomToJSON(requestParameters.newRoom),
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => RoomFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => NewRoomFromJSON(jsonValue));
     }
 
     /**
      * Add new room
      * Add new room
      */
-    async apiRoomsPost(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Room> {
+    async apiRoomsPost(requestParameters: ApiRoomsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NewRoom> {
         const response = await this.apiRoomsPostRaw(requestParameters, initOverrides);
         return await response.value();
     }

@@ -51,17 +51,17 @@ export interface Room {
      */
     services: Array<ApartmentServices>;
     /**
-     * The room's ID.
-     * @type {string}
-     * @memberof Room
-     */
-    id: string;
-    /**
      * Short room's description.
      * @type {string}
      * @memberof Room
      */
     description: string;
+    /**
+     * The room's ID.
+     * @type {string}
+     * @memberof Room
+     */
+    id: string;
     /**
      * The room's description.
      * @type {string}
@@ -69,7 +69,7 @@ export interface Room {
      */
     descriptionLong: string;
     /**
-     * The room's price.
+     * 
      * @type {Price}
      * @memberof Room
      */
@@ -113,8 +113,8 @@ export function instanceOfRoom(value: object): boolean {
     let isInstance = true;
     isInstance = isInstance && "apartmentsType" in value;
     isInstance = isInstance && "services" in value;
-    isInstance = isInstance && "id" in value;
     isInstance = isInstance && "description" in value;
+    isInstance = isInstance && "id" in value;
     isInstance = isInstance && "descriptionLong" in value;
     isInstance = isInstance && "price" in value;
     isInstance = isInstance && "square" in value;
@@ -138,8 +138,8 @@ export function RoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): Room
         
         'apartmentsType': ApartmentsFromJSON(json['apartmentsType']),
         'services': ((json['services'] as Array<any>).map(ApartmentServicesFromJSON)),
-        'id': json['id'],
         'description': json['description'],
+        'id': json['id'],
         'descriptionLong': json['descriptionLong'],
         'price': PriceFromJSON(json['price']),
         'square': json['square'],
@@ -161,8 +161,8 @@ export function RoomToJSON(value?: Room | null): any {
         
         'apartmentsType': ApartmentsToJSON(value.apartmentsType),
         'services': ((value.services as Array<any>).map(ApartmentServicesToJSON)),
-        'id': value.id,
         'description': value.description,
+        'id': value.id,
         'descriptionLong': value.descriptionLong,
         'price': PriceToJSON(value.price),
         'square': value.square,

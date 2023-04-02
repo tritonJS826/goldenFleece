@@ -1,3 +1,4 @@
+.openapi-generator-ignore
 apis/MailApi.ts
 apis/RoomApi.ts
 apis/RoomsApi.ts
@@ -8,6 +9,7 @@ models/Apartments.ts
 models/ApiAskAdminPostRequest.ts
 models/ApiBookingRequestPostRequest.ts
 models/Currency.ts
+models/NewRoom.ts
 models/Price.ts
 models/Room.ts
 models/index.ts

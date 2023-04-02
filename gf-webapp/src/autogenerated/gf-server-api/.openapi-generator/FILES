@@ -8,6 +8,7 @@ models/Apartments.ts
 models/ApiAskAdminPostRequest.ts
 models/ApiBookingRequestPostRequest.ts
 models/Currency.ts
+models/NewRoom.ts
 models/Price.ts
 models/Room.ts
 models/index.ts

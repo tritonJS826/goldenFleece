@@ -1,11 +1,11 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {saveRoom} from "src/service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import styles from "src/component/rooms/room/adults/adults.module.scss";
 
 interface AdultsProps {
-  room:Room;
+  room: Room;
 }
 
 export const Adults = (props: AdultsProps) => {

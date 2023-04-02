@@ -5,12 +5,12 @@ export class Price {
   /**
    * Price currency
    */
-  public currency: Currency;
+  private currency: Currency;
 
   /**
    * Price amount
    */
-  public amount: number;
+  private amount: number;
 
   constructor(currency: Currency, amount: number) {
     this.currency = currency;
