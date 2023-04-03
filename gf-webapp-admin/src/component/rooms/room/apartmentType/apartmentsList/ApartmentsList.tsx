@@ -3,8 +3,7 @@ import styles from "src/component/rooms/room/apartmentType/apartmentsList/Apartm
 
 interface ApartmentsListProps {
   apartmentsType: string;
-  isEditFieldDisabled: boolean;
-  onChangeApartmentType: (apartmentType: Apartments) => void;
+  onChangeValue: (apartmentType: Apartments) => void;
 }
 
 export const ApartmentsList = (props: ApartmentsListProps) => {
@@ -20,8 +19,7 @@ export const ApartmentsList = (props: ApartmentsListProps) => {
   return (
     <select className={styles.list}
       value={props.apartmentsType}
-      disabled={props.isEditFieldDisabled}
-      onChange={(e) => props.onChangeApartmentType(e.target.value as Apartments)}
+      onChange={(e) => props.onChangeValue(e.target.value as Apartments)}
     >
       {renderApartments()}
     </select>

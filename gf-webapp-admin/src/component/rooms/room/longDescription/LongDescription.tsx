@@ -1,45 +1,29 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/RoomDeprecated";
-import {saveRoom} from "src/service/RoomService";
-import {Button} from "gf-ui-lib/components/Button/Button";
-import styles from "src/component/rooms/room/longDescription/LongDescription.module.scss";
+import {useRoomContext} from "src/component/rooms/room/roomContext";
 
-interface LongDescriptionProps {
-  room:Room;
-}
+export const LongDescription = () => {
+  const {room, setRoom} = useRoomContext();
 
-export const LongDescription = (props: LongDescriptionProps) => {
-  const [description, setDescription] = useState(String(props.room.descriptionLong));
-  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
+  const [longDescription, setLongDescription] = useState(room.descriptionLong);
 
-  const saveHandler = () => {
-    setIsEditFieldDisabled(true);
-    props.room.descriptionLong = description;
-    saveRoom(props.room);
-  };
-
-  const fieldEditHandler = () => {
-    setIsEditFieldDisabled(false);
+  const onChangeValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    setLongDescription(value);
+    room.descriptionLong = value;
+    setRoom(room);
   };
   return (
-    <div className={styles.longDescription}>
-      <label htmlFor={`description-long-${props.room.id}`}>
-        Room long description
-      </label>
-      <div className={styles.container}>
+    <div>
+      <label>
+        <h4>
+          Room long longDescription
+        </h4>
         <textarea
-          id={`description-long-${props.room.id}`}
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          disabled={isEditFieldDisabled}
-          placeholder="Enter full description"
+          value={longDescription}
+          onChange={onChangeValue}
+          placeholder="Enter full longDescription"
         />
-        <Button
-          value={isEditFieldDisabled ? "Edit" : "Save"}
-          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-          size="innerContent"
-        />
-      </div>
+      </label>
     </div>
   );
 };

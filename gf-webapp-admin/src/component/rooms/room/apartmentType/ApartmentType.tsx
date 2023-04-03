@@ -1,46 +1,29 @@
 import {useState} from "react";
 import {Apartments} from "src/model/Room/Apartments";
-import {Room} from "src/model/Room/RoomDeprecated";
-import {saveRoom} from "src/service/RoomService";
-import {Button} from "gf-ui-lib/components/Button/Button";
 import {ApartmentsList} from "src/component/rooms/room/apartmentType/apartmentsList/ApartmentsList";
-import styles from "src/component/rooms/room/apartmentType/ApartmentType.module.scss";
+import {useRoomContext} from "src/component/rooms/room/roomContext";
 
-interface ApartmentsTypeProps {
-  room:Room;
-}
+export const ApartmentsType = () => {
+  const {room, setRoom} = useRoomContext();
 
-export const ApartmentsType = (props: ApartmentsTypeProps) => {
-  const [apartmentType, setApartmentType] = useState<Apartments>(props.room.apartmentsType);
-  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState<boolean>(true);
+  const [apartmentType, setApartmentType] = useState<Apartments>(room.apartmentsType);
 
-  const saveHandler = async () => {
-    setIsEditFieldDisabled(true);
-    props.room.apartmentsType = apartmentType;
-    saveRoom(props.room);
+  const onChangeValue = (apartment: Apartments) => {
+    setApartmentType(apartment);
+    room.apartmentsType = apartment;
+    setRoom(room);
   };
 
-  const fieldEditHandler = () => {
-    setIsEditFieldDisabled(false);
-  };
 
   return (
-    <div className={styles.apartments}>
-      <h4 className={styles.apartmentsTitle}>
+    <div>
+      <h4>
         Room type
       </h4>
-      <div className={styles.container}>
-        <ApartmentsList
-          apartmentsType={apartmentType}
-          isEditFieldDisabled={isEditFieldDisabled}
-          onChangeApartmentType={setApartmentType}
-        />
-        <Button
-          value={isEditFieldDisabled ? "Edit" : "Save"}
-          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-          size="innerContent"
-        />
-      </div>
+      <ApartmentsList
+        apartmentsType={apartmentType}
+        onChangeValue={onChangeValue}
+      />
     </div>
   );
 };

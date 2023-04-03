@@ -1,34 +1,26 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/RoomDeprecated";
-import {saveRoom} from "src/service/RoomService";
-import {Button} from "gf-ui-lib/components/Button/Button";
 import {changeRoomServices} from "./roomServices";
 import {ApartmentServices} from "src/model/Room/ApartmentServices";
 import {enumToArray} from "src/utils/enumToArray";
+import {useRoomContext} from "src/component/rooms/room/roomContext";
 import styles from "src/component/rooms/room/services/Services.module.scss";
 
-interface ServicesProps {
-  room:Room;
-}
-export const Services = (props: ServicesProps) => {
+export const Services = () => {
 
-  const [services, setServices] = useState(props.room.services);
-  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
-
-  const saveHandler = () => {
-    setIsEditFieldDisabled(true);
-    props.room.services = services;
-    saveRoom(props.room);
-  };
-
-  const fieldEditHandler = () => {
-    setIsEditFieldDisabled(false);
-  };
+  const {room, setRoom} = useRoomContext();
+  const [services, setServices] = useState(room.services);
 
   const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
     const selectedService = e.target.value as unknown as ApartmentServices;
     setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
   };
+
+  const updateRoomServices = () => {
+    room.services = services;
+    setRoom(room);
+  };
+
+  updateRoomServices();
 
   const renderServices = () =>
     enumToArray(ApartmentServices).map(service => (
@@ -42,26 +34,22 @@ export const Services = (props: ServicesProps) => {
             value={service}
             defaultChecked={enumToArray(services).includes(service)}
             onChange={onChangeRoomServices}
-            disabled={isEditFieldDisabled}
           />
-          {service}
+          <span className={styles.seviceName}>
+            {service}
+          </span>
         </label>
       </li>
     ));
 
   return (
     <div className={styles.services}>
-      <p className={styles.title}>
+      <h4 className={styles.title}>
         Room services
-      </p>
+      </h4>
       <ul className={styles.container}>
         {renderServices()}
       </ul>
-      <Button
-        value={isEditFieldDisabled ? "Edit" : "Save"}
-        onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-        size="innerContent"
-      />
     </div>
   );
 };

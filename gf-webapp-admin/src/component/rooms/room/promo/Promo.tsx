@@ -34,9 +34,9 @@ export const Promo = (props: PromoProps) => {
 
   return (
     <div className={styles.promo}>
-      <p className={styles.title}>
+      <h4 className={styles.title}>
         Promo
-      </p>
+      </h4>
       <div className={styles.container}>
         <div className={styles.imgContainer}
           onMouseEnter={hoverHandler}

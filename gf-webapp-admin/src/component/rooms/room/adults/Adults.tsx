@@ -1,29 +1,32 @@
 import {useState} from "react";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
-import styles from "src/component/rooms/room/adults/adults.module.scss";
+
 
 export const Adults = () => {
-  const contextAdults = useRoomContext().room.adults;
 
-  const [adults, setAdults] = useState(contextAdults);
+  const {room, setRoom} = useRoomContext();
+
+  const [adults, setAdults] = useState(room.adults);
+
+  // TODO: onChangeValue repeated in many components. It will become universal when the common input component is implemented.
 
   const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
     setAdults(value);
+    room.adults = value;
+    setRoom(room);
   };
 
   return (
-    <div className={styles.adults}>
+    <div>
       <label>
-        <h4 className={styles.title}>
+        <h4>
           Room adults
         </h4>
-        <div className={styles.container}>
-          <input type="number"
-            value={adults}
-            onChange={onChangeValue}
-          />
-        </div>
+        <input type="number"
+          value={adults}
+          onChange={onChangeValue}
+        />
       </label>
     </div>
   );

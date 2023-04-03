@@ -1,46 +1,30 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/RoomDeprecated";
-import {saveRoom} from "src/service/RoomService";
-import {Button} from "gf-ui-lib/components/Button/Button";
-import styles from "src/component/rooms/room/description/Description.module.scss";
+import {useRoomContext} from "src/component/rooms/room/roomContext";
 
-interface DescriptionProps {
-  room:Room;
-}
+export const Description = () => {
+  const {room, setRoom} = useRoomContext();
 
-export const Description = (props: DescriptionProps) => {
-  const [description, setDescription] = useState(String(props.room.description));
-  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
+  const [description, setDescription] = useState(room.description);
 
-  const saveHandler = async () => {
-    setIsEditFieldDisabled(true);
-    props.room.description = description;
-    saveRoom(props.room);
-  };
-
-  const fieldEditHandler = () => {
-    setIsEditFieldDisabled(false);
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setDescription(value);
+    room.description = value;
+    setRoom(room);
   };
 
   return (
-    <div className={styles.description}>
-      <label htmlFor={`description-${props.room.id}`}>
-        Room description
-      </label>
-      <div className={styles.container}>
+    <div>
+      <label>
+        <h4>
+          Room description
+        </h4>
         <input type="text"
-          id={`description-${props.room.id}`}
           value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          disabled={isEditFieldDisabled}
+          onChange={onChangeValue}
           placeholder="Enter short description"
         />
-        <Button
-          value={isEditFieldDisabled ? "Edit" : "Save"}
-          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-          size="innerContent"
-        />
-      </div>
+      </label>
     </div>
   );
 };

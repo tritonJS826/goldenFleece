@@ -3,6 +3,7 @@ import {Room} from "src/model/Room/Room";
 
 interface IRoomContext {
   room: Room;
+  setRoom: (room:Room) => void;
 }
 
 export const RoomContext = createContext<IRoomContext | null>(null);
