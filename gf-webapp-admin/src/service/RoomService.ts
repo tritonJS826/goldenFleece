@@ -5,8 +5,8 @@ import {Room} from "src/model/Room/Room";
 import {Price} from "src/model/Price";
 import {Currency} from "src/model/Currency";
 import {Apartments} from "src/model/Room/Apartments";
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
 import {NewRoom} from "src/model/Room/NewRoom";
+import {ApartmentServices} from "src/model/Room/ApartmentServices";
 
 /**
  * @description Temporary function. Will be deleted after receiving a correct response from the server
@@ -16,16 +16,19 @@ const roomDTOToBusinessConverter = (roomRaw: RoomDTO) => new Room({
   ...roomRaw,
   price: new Price(Currency[roomRaw.price.currency], roomRaw.price.amount),
   apartmentsType: Apartments[roomRaw.apartmentsType],
-  services: roomRaw.services as ApartmentServices[],
+  services: roomRaw.services.map((service) => ApartmentServices[service]),
 });
 
-export const saveRoom = async (room: Room) => {
 
+export const saveRoom = async (room: Room) => {
   const roomApi = new RoomApi;
   try {
     await roomApi.apiRoomsRoomIdPut({
       roomId: room.id,
-      room: room,
+      room: new Room({
+        ...room,
+        price: new Price(room.price.toJSON()),
+      }),
     });
   } catch (error) {
     console.log(error);

@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {ServicesList} from "src/component/rooms/roomSimplified/overlay/servicesList/ServicesList";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import {deleteRoom} from "src/service/RoomService";
@@ -30,7 +30,7 @@ export const Overlay = (props: OverlayProps) => {
         <ServicesList services={props.room.services} />
         <div className={styles.container}>
           <p>
-            {`Raiting: ${props.room.rating}`}
+            {`Rating: ${props.room.rating}`}
           </p>
           <p>
             {`Price: ${props.room.price.getFullPrice()}`}

@@ -49,19 +49,6 @@ class RoomsService {
     });
 
     // TODO: implement class Room. room must be an instance of Room
-    // const room: Room = {
-    //   id: parseInt(sortedRoomsId[sortedRoomsId.length - 1].id) + 1 + "",
-    //   apartmentsType: req.body.apartmentsType,
-    //   services: req.body.services,
-    //   description: req.body.description,
-    //   descriptionLong: req.body.descriptionLong,
-    //   price: req.body.price,
-    //   square: req.body.square,
-    //   adults: req.body.adults,
-    //   promoImgUrl: req.body.promoImgUrl,
-    //   images: req.body.images,
-    //   rating: req.body.rating,
-    // };
     const room = new Room({
       id: parseInt(sortedRoomsId[sortedRoomsId.length - 1].id) + 1 + "",
       apartmentsType: req.body.apartmentsType,
@@ -86,19 +73,6 @@ class RoomsService {
   public async putRoom(req: Request, res: Response): Promise<Room[]> {
     const roomId: string = req.params.roomId;
     // TODO: implement class Room. updateRoom must be an instance of Room
-    // const updatedRoom: Room = {
-    //   id: roomId,
-    //   apartmentsType: req.body.apartmentsType,
-    //   services: req.body.services,
-    //   description: req.body.description,
-    //   descriptionLong: req.body.descriptionLong,
-    //   price: req.body.price,
-    //   square: req.body.square,
-    //   adults: req.body.adults,
-    //   promoImgUrl: req.body.promoImgUrl,
-    //   images: req.body.images,
-    //   rating: req.body.rating,
-    // };
     const updatedRoom = new Room({
       id: roomId,
       apartmentsType: req.body.apartmentsType,
