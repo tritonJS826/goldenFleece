@@ -58,6 +58,7 @@ export const deleteRoom = async (id: string) => {
 };
 
 export const postRoom = async (room: NewRoom) => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const newRoomDTO: NewRoomDTO = room.toNewRoomDTO!();
   const roomsApi = new RoomsApi;
   await roomsApi.apiRoomsPost({newRoom: newRoomDTO});
