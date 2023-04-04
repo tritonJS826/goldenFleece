@@ -17,7 +17,7 @@ export class RoomApiService {
 
   public static async getAllRooms() {
     const roomsRaw: RoomDTO[] = await roomsApi.apiRoomsGet();
-    const rooms = roomsRaw.map((roomDTOToBusinessConverter));
+    const rooms = roomsRaw.map(roomDTOToBusinessConverter);
     return rooms;
   }
 
