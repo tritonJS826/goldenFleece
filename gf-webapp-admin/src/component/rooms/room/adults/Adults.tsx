@@ -23,24 +23,24 @@ export const Adults = (props: AdultsProps) => {
   };
 
   return (
-    <div className={styles.adults}>
-      <label>
-        <h4 className={styles.title}>
-          Room adults
-        </h4>
-        <div className={styles.container}>
-          <input type="number"
-            value={adults}
-            onChange={(e) => setAdults(Number(e.target.value))}
-            disabled={isEditFieldDisabled}
-          />
-          <Button
-            type="button"
-            value={isEditFieldDisabled ? "Edit" : "Save"}
-            onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-          />
-        </div>
-      </label>
-    </div>
+    // <div className={styles.adults}>
+    <label>
+      <h4 className={styles.title}>
+        Room adults
+      </h4>
+      <div className={styles.container}>
+        <input type="number"
+          value={adults}
+          onChange={(e) => setAdults(Number(e.target.value))}
+          disabled={isEditFieldDisabled}
+        />
+        <Button
+          type="button"
+          value={isEditFieldDisabled ? "Edit" : "Save"}
+          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
+        />
+      </div>
+    </label>
+    // </div>
   );
 };

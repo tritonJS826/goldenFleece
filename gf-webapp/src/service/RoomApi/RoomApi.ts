@@ -6,31 +6,24 @@ import {Price} from "src/model/Price";
 import {Currency} from "src/model/Currency";
 import {ApartmentServices} from "src/model/Room/ApartmentServices";
 
+const roomDTOToBusinessConverter = (roomRaw: RoomDTO) => new Room({
+  ...roomRaw,
+  price: new Price(Currency[roomRaw.price.currency], roomRaw.price.amount),
+  apartmentsType: Apartments[roomRaw.apartmentsType],
+  services: roomRaw.services.map((service) => ApartmentServices[service]),
+});
+
 export class RoomApiService {
 
   public static async getAllRooms() {
     const roomsRaw: RoomDTO[] = await roomsApi.apiRoomsGet();
-
-    const rooms: Room[] = roomsRaw.map(room => ({
-      ...room,
-      price: new Price(Currency[room.price.currency], room.price.amount),
-      apartmentsType: Apartments[room.apartmentsType],
-      services: room.services.map((service) => ApartmentServices[service]),
-    }));
-
+    const rooms = roomsRaw.map((roomDTOToBusinessConverter));
     return rooms;
   }
 
-  public static async getRoomById(roomId: string) {
-    const roomDTO: RoomDTO = await roomApi.apiRoomsRoomIdGet({roomId});
-
-    const room: Room = {
-      ...roomDTO,
-      price: new Price(Currency[roomDTO.price.currency], roomDTO.price.amount),
-      apartmentsType: Apartments[roomDTO.apartmentsType],
-      services: roomDTO.services.map((service) => ApartmentServices[service]),
-    };
-
+  public static async getRoomById(id: string) {
+    const roomRaw: RoomDTO = await roomApi.apiRoomsRoomIdGet({roomId: id});
+    const room = roomDTOToBusinessConverter(roomRaw);
     return room;
   }
 
