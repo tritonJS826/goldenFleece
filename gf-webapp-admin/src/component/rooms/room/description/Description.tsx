@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {saveRoom} from "src/service/RoomService";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import styles from "src/component/rooms/room/description/Description.module.scss";

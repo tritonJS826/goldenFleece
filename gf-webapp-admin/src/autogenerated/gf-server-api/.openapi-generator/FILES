@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 apis/MailApi.ts
 apis/RoomApi.ts
 apis/RoomsApi.ts
