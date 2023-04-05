@@ -28,7 +28,6 @@ export class Price {
   /**
    * Get price amount
    */
-
   public getPriceAmount() {
     return this.amount;
   }
@@ -36,11 +35,13 @@ export class Price {
   /**
    * Set new price amount
    */
-
   public setNewPrice(amount: number) {
     return this.amount = amount;
   }
 
+  /**
+   * Get price in DTO format
+   */
   public toJSON(): PriceDTO {
     return {
       currency: this.currency,
