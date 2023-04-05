@@ -15,13 +15,16 @@ interface LoaderProps {
  * Block loader. Could be used as full Page.
  */
 export const Loader: React.FC<LoaderProps> = (props: LoaderProps) => {
-  if (!props.isLoading) {
+  // set default as true
+  const isLoading = props.isLoading ?? true;
+
+  if (!isLoading) {
     return null;
   }
 
   return (
     <div>
-      <div className={styles.stub}>
+      <div className={styles.loader}>
         <div className={styles.title}>
           Golden Fleece
         </div>
@@ -32,6 +35,3 @@ export const Loader: React.FC<LoaderProps> = (props: LoaderProps) => {
     </div>
   );
 };
-
-const defaultProps = {isLoading: true};
-Loader.defaultProps = defaultProps;
