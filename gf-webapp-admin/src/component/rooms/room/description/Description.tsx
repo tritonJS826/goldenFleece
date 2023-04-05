@@ -14,17 +14,15 @@ export const Description = () => {
   };
 
   return (
-    <div>
-      <label>
-        <h4>
-          Room description
-        </h4>
-        <input type="text"
-          value={description}
-          onChange={onChangeValue}
-          placeholder="Enter short description"
-        />
-      </label>
-    </div>
+    <label>
+      <h4>
+        Room description
+      </h4>
+      <input type="text"
+        value={description}
+        onChange={onChangeValue}
+        placeholder="Enter short description"
+      />
+    </label>
   );
 };

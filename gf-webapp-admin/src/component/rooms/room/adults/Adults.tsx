@@ -18,16 +18,14 @@ export const Adults = () => {
   };
 
   return (
-    <div>
-      <label>
-        <h4>
-          Room adults
-        </h4>
-        <input type="number"
-          value={adults}
-          onChange={onChangeValue}
-        />
-      </label>
-    </div>
+    <label>
+      <h4>
+        Room adults
+      </h4>
+      <input type="number"
+        value={adults}
+        onChange={onChangeValue}
+      />
+    </label>
   );
 };

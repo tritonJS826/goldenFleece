@@ -19,17 +19,15 @@ export const Rating = () => {
   };
 
   return (
-    <div>
-      <label>
-        <h4>
-          Room rating
-        </h4>
-        <input type="number"
-          value={rating}
-          onChange={onChangeValue}
-          max={10}
-        />
-      </label>
-    </div>
+    <label>
+      <h4>
+        Room rating
+      </h4>
+      <input type="number"
+        value={rating}
+        onChange={onChangeValue}
+        max={10}
+      />
+    </label>
   );
 };

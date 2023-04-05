@@ -13,17 +13,15 @@ export const LongDescription = () => {
     setRoom(room);
   };
   return (
-    <div>
-      <label>
-        <h4>
-          Room long longDescription
-        </h4>
-        <textarea
-          value={longDescription}
-          onChange={onChangeValue}
-          placeholder="Enter full longDescription"
-        />
-      </label>
-    </div>
+    <label>
+      <h4>
+        Room description
+      </h4>
+      <textarea
+        value={longDescription}
+        onChange={onChangeValue}
+        placeholder="Enter full longDescription"
+      />
+    </label>
   );
 };

@@ -2,8 +2,8 @@ import {Apartments} from "src/model/Room/Apartments";
 import styles from "src/component/rooms/room/apartmentType/apartmentsList/ApartmentsList.module.scss";
 
 interface ApartmentsListProps {
-  apartmentsType: string;
-  onChangeValue: (apartmentType: Apartments) => void;
+  apartmentsType: keyof typeof Apartments;
+  onChangeValue: (apartment: Apartments) => void;
 }
 
 export const ApartmentsList = (props: ApartmentsListProps) => {

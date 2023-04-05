@@ -14,16 +14,14 @@ export const Square = () => {
   };
 
   return (
-    <div>
-      <label>
-        <h4>
-          Room square
-        </h4>
-        <input type="number"
-          value={square}
-          onChange={onChangeValue}
-        />
-      </label>
-    </div>
+    <label>
+      <h4>
+        Room square
+      </h4>
+      <input type="number"
+        value={square}
+        onChange={onChangeValue}
+      />
+    </label>
   );
 };

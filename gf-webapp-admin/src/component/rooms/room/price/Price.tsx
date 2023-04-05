@@ -15,16 +15,14 @@ export const Price = () => {
   };
 
   return (
-    <div>
-      <label>
-        <h4>
-          Room price
-        </h4>
-        <input type="number"
-          value={price}
-          onChange={onChangeValue}
-        />
-      </label>
-    </div>
+    <label>
+      <h4>
+        Room price
+      </h4>
+      <input type="number"
+        value={price}
+        onChange={onChangeValue}
+      />
+    </label>
   );
 };

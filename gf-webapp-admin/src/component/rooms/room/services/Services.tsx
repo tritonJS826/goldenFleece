@@ -11,7 +11,7 @@ export const Services = () => {
   const [services, setServices] = useState(room.services);
 
   const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
-    const selectedService = e.target.value as unknown as ApartmentServices;
+    const selectedService = e.target.value as ApartmentServices;
     setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
   };
 
