@@ -14,8 +14,8 @@
     },
     "square": 30,
     "adults": 1,
-    "promo": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
-    "slider": [
+    "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "images": [
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
@@ -41,8 +41,8 @@
     },
     "square": 40,
     "adults": 2,
-    "promo": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
-    "slider": [
+    "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "images": [
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
@@ -68,8 +68,8 @@
     },
     "square": 35,
     "adults": 2,
-    "promo": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
-    "slider": [
+    "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "images": [
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",

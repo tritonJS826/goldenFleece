@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {getRooms} from "src/service/RoomService";
 import {Loader} from "gf-ui-lib/components/Loader/Loader";
 import {RoomsList} from "src/component/rooms/roomsList/RoomsList";

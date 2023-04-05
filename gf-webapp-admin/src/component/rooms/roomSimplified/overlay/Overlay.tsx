@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {ServicesList} from "src/component/rooms/roomSimplified/overlay/servicesList/ServicesList";
 import styles from "src/component/rooms/roomSimplified/overlay/Overlay.module.scss";
 
@@ -22,7 +22,7 @@ export const Overlay = (props: OverlayProps) => {
         <ServicesList services={props.room.services} />
         <div className={styles.container}>
           <p>
-            {`Raiting: ${props.room.rating}`}
+            {`Rating: ${props.room.rating}`}
           </p>
           <p>
             {`Price: ${props.room.price.getFullPrice()}`}

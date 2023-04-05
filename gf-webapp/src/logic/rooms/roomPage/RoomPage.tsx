@@ -48,7 +48,7 @@ export const RoomPage = () => {
         description={room.description}
         apartmentsType={room.apartmentsType}
         price={room.price}
-        service={room.services}
+        services={room.services}
       />
       <div className={styles.about}>
         {room.descriptionLong}
