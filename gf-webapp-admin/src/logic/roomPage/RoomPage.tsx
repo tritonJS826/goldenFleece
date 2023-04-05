@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {Loader} from "gf-ui-lib/components/Loader/Loader";
 import {RoomItem} from "src/component/rooms/room/RoomItem";
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {getRoom} from "src/service/RoomService";
 import {BorderedAdminPage} from "src/logic/borderedAdminPage/BorderedAdminPage";
 import styles from "src/logic/roomPage/RoomPage.module.scss";

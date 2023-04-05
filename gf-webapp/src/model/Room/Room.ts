@@ -2,51 +2,85 @@ import {Apartments} from "src/model/Room/Apartments";
 import {ApartmentServices} from "src/model/Room/ApartmentServices";
 import {Price} from "src/model/Price";
 
-export interface Room {
-  /**
-   * Url to promo image;
-   */
-  promoImgUrl: string;
-  /**
-   * Apartment's type
-   */
-  apartmentsType: Apartments,
-  /**
-   * Available services for room
-   */
-  services: ApartmentServices[],
-  /**
-   * Room's ID
-   */
-  id: string,
-  /**
-   * Description about room
-   */
-  description: string,
+export class NewRoom {
 
   /**
-   * Long room description
-   */
-  descriptionLong: string,
-  /**
-   * Room price
-   */
-  price: Price,
-  /**
-   * Array of paths to images of room
-   */
-  images: string[],
+     * Url to promo image;
+     */
+  public promoImgUrl: string;
 
   /**
-   * Max adults amount in room
-   */
-  adults: number
+    * Apartment's type
+    */
+  public apartmentsType: Apartments;
 
   /**
-   * Room's square in m^2
-   */
-  square: number;
+    * Available services for room
+    */
+  public services: ApartmentServices[];
+
+  /**
+    * Description about room
+    */
+  public description: string;
+
+  /**
+    * Long room description
+    */
+  public descriptionLong: string;
+
+  /**
+    * Room price
+    */
+  public price: Price;
+
+  /**
+    * Array of paths to images of room
+    */
+  public images: string[];
+
+  /**
+    * Max adults amount in room
+    */
+  public adults: number;
+
+  /**
+    * Room's square in m^2
+    */
+  public square: number;
+
+  /**
+    * Room's rating from 1 to 10
+    */
+  public rating: number;
+
+  constructor(arg: NewRoom) {
+    this.adults = arg.adults;
+    this.apartmentsType = arg.apartmentsType;
+    this.description = arg.description;
+    this.descriptionLong = arg.descriptionLong;
+    this.images = arg.images;
+    this.price = arg.price;
+    this.promoImgUrl = arg.promoImgUrl;
+    this.rating = arg.rating;
+    this.services = arg.services;
+    this.square = arg.square;
+  }
 
 }
 
+type RoomArgs = NewRoom & {id: string};
 
+export class Room extends NewRoom {
+
+  /**
+   * Room id
+   */
+  public id: string;
+
+  constructor(args: RoomArgs) {
+    super(args);
+    this.id = args.id;
+  }
+
+}

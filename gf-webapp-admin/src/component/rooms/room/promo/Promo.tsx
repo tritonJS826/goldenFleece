@@ -1,6 +1,7 @@
-import {Button} from "gf-ui-lib/components/Button/Button";
 import {useState} from "react";
-import {AddRoom, Room} from "src/model/Room/RoomDeprecated";
+import {Button} from "gf-ui-lib/components/Button/Button";
+import {AddRoom} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {saveRoom} from "src/service/RoomService";
 import styles from "src/component/rooms/room/promo/Promo.module.scss";
 

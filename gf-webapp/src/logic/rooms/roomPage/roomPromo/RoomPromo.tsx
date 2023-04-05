@@ -12,7 +12,7 @@ interface RoomPromoProps {
    * Formatted price
    */
   price: Price;
-  service: ApartmentServices[];
+  services: ApartmentServices[];
 }
 
 export const RoomPromo = (props: RoomPromoProps) => {
@@ -25,7 +25,7 @@ export const RoomPromo = (props: RoomPromoProps) => {
       <Information
         apartmentsType={props.apartmentsType}
         price={props.price}
-        services={props.service}
+        services={props.services}
       />
     </div>
   );

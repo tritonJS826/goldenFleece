@@ -1,0 +1,376 @@
+openapi: 3.0.0
+info:
+  title: Golden Fleece API
+  version: 1.0.0
+  description: A simple REST API for providing basic CRUD-access to the employees
+    in a Golden Fleece database.
+servers:
+  - url: http://localhost:3600
+    description: gf-server-api
+schemes:
+  - http
+  - https
+apis:
+  - ./src/routes/*.ts
+paths:
+  /api/ask-admin:
+    post:
+      tags:
+        - Mail
+      summary: Comment or question to admin
+      description: Comment or question to admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: customers name
+                email:
+                  type: string
+                  description: customers email
+                phone:
+                  type: string
+                  description: customers phone
+                message:
+                  type: string
+                  description: customers comment or question addressed to admin
+              required:
+                - email
+                - name
+                - message
+              example:
+                email: example@gmail.com
+                name: Ivan
+                phone: 379221233209
+                message: Could you help me to bring my baggage
+      responses:
+        "200":
+          description: Mail sent.
+  /api/booking-request:
+    post:
+      tags:
+        - Mail
+      summary: Customer trying to book room
+      description: Customer trying to book room
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: customers email
+                name:
+                  type: string
+                  description: customers name
+                dateIn:
+                  type: string
+                  description: check in date yyyy-mm-dd
+                dateOut:
+                  type: string
+                  description: check out date yyyy-mm-dd
+                roomNumber:
+                  type: number
+                  description: room number
+                adultsAmount:
+                  type: number
+                  description: adults amount
+                childrenAmount:
+                  type: number
+                  description: children amount
+                phone:
+                  type: string
+                  description: customers phone
+                message:
+                  type: string
+                  description: customers comment or question addressed to admin
+              required:
+                - email
+                - name
+                - dateIn
+                - dateOut
+                - roomNumber
+                - adultsAmount
+                - childrenAmount
+              example:
+                email: example@gmail.com
+                name: Ivan
+                dateIn: 2017-01-26
+                dateOut: 2017-02-12
+                roomNumber: 12
+                adultsAmount: 2
+                childrenAmount: 1
+                phone: 379221233209
+                message: Could you help me to bring my baggage?
+      responses:
+        "200":
+          description: Message sent
+  /api/rooms:
+    get:
+      tags:
+        - Rooms
+      summary: Get list of rooms
+      description: Retrieve a list of all rooms
+      responses:
+        "200":
+          description: A list of rooms.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Room"
+    post:
+      tags:
+        - Rooms
+      summary: Add new room
+      description: Add new room
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewRoom"
+      responses:
+        "200":
+          description: New room.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewRoom"
+  "/api/rooms/{room_id}":
+    get:
+      tags:
+        - Room
+      summary: Get room by ID
+      description: Retrieve a room by ID
+      parameters:
+        - name: room_id
+          in: path
+          description: room ID
+          schema:
+            type: string
+          required: true
+          example: 0
+      responses:
+        "200":
+          description: Room.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Room"
+    put:
+      tags:
+        - Room
+      summary: Update room information by ID
+      description: Update room by ID
+      parameters:
+        - name: room_id
+          in: path
+          description: room ID
+          schema:
+            type: string
+          required: true
+          example: 0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Room"
+      responses:
+        "200":
+          description: Room.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Room"
+    delete:
+      tags:
+        - Room
+      summary: Delete room by ID
+      description: Delete a room by ID
+      parameters:
+        - name: room_id
+          in: path
+          required: true
+          description: room ID
+          schema:
+            type: string
+          example: 0
+      responses:
+        "200":
+          description: Successful room delete.
+          content:
+            application/json: {}
+components:
+  schemas:
+    ApartmentServices:
+      type: string
+      enum:
+        - WiFi
+        - Laundry
+        - TeaCoffeeMaker
+        - Heating
+        - AirportShuttle
+    example: GEL
+    Apartments:
+      type: string
+      enum:
+        - Single
+        - Double
+        - Twin
+      example: Single
+    Currency:
+      type: string
+      enum:
+        - GEL
+    NewRoom:
+      type: object
+      properties:
+        apartmentsType:
+          $ref: "#/components/schemas/Apartments"
+        services:
+          type: string[]
+          items:
+            $ref: "#/components/schemas/ApartmentServices"
+          example:
+            - WiFi
+            - Laundry
+        description:
+          type: string
+          description: Short room's description.
+          example: A small room
+        descriptionLong:
+          type: string
+          description: The room's description.
+          example: Dressed in soothing natural colour palettes with designs inspired by
+            the natural landscape...
+        price:
+          $ref: "#/components/schemas/Price"
+          description: The room's price.
+          example: 300 GEL
+        square:
+          type: number
+          description: The room's square.
+          example: 30
+        adults:
+          type: number
+          description: Amount of adults who can stay in the room.
+          example: 1
+        promoImgUrl:
+          type: string
+          description: The room's promo image URL.
+          example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+        images:
+          type: string[]
+          items:
+            type: string
+          example:
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+          description: The rooms slider images URL.
+        rating:
+          type: number
+          description: The room's rating.
+          example: 10
+      required:
+        - promoImgUrl
+        - apartmentsType
+        - services
+        - description
+        - descriptionLong
+        - price
+        - images
+        - square
+        - adults
+        - rating
+    Price:
+      properties:
+        currency:
+          type: string
+          $ref: "#/components/schemas/Currency"
+        amount:
+          type: number
+      example: 300 GEL
+      required:
+        - currency
+        - amount
+    Room:
+      type: object
+      properties:
+        apartmentsType:
+          $ref: "#/components/schemas/Apartments"
+        services:
+          type: string[]
+          items:
+            $ref: "#/components/schemas/ApartmentServices"
+          example:
+            - WiFi
+            - Laundry
+        description:
+          type: string
+          description: Short room's description.
+          example: A small room
+        id:
+          type: string
+          description: The room's ID.
+          example: 0
+        descriptionLong:
+          type: string
+          description: The room's description.
+          example: Dressed in soothing natural colour palettes with designs inspired by
+            the natural landscape...
+        price:
+          $ref: "#/components/schemas/Price"
+          description: The room's price.
+          example: 300 GEL
+        square:
+          type: number
+          description: The room's square.
+          example: 30
+        adults:
+          type: number
+          description: Amount of adults who can stay in the room.
+          example: 1
+        promoImgUrl:
+          type: string
+          description: The room's promo image URL.
+          example: https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+        images:
+          type: string[]
+          items:
+            type: string
+          example:
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+            - https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg
+          description: The rooms slider images URL.
+        rating:
+          type: number
+          description: The room's rating.
+          example: 10
+      required:
+        - promoImgUrl
+        - apartmentsType
+        - services
+        - id
+        - description
+        - descriptionLong
+        - price
+        - images
+        - square
+        - adults
+        - rating
+tags: []
