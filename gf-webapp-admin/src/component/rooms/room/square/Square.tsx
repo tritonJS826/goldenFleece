@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
+import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
 
 export const Square = () => {
   const {room, setRoom} = useRoomContext();
@@ -15,9 +16,9 @@ export const Square = () => {
 
   return (
     <label>
-      <h4>
-        Room square
-      </h4>
+      <SmallTitle
+        text="Room square"
+      />
       <input type="number"
         value={square}
         onChange={onChangeValue}

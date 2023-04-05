@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
 
 
@@ -19,9 +20,9 @@ export const Adults = () => {
 
   return (
     <label>
-      <h4>
-        Room adults
-      </h4>
+      <SmallTitle
+        text="Room adults"
+      />
       <input type="number"
         value={adults}
         onChange={onChangeValue}

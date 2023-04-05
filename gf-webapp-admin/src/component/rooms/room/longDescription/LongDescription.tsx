@@ -1,5 +1,7 @@
 import {useState} from "react";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
+import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
+
 
 export const LongDescription = () => {
   const {room, setRoom} = useRoomContext();
@@ -14,9 +16,9 @@ export const LongDescription = () => {
   };
   return (
     <label>
-      <h4>
-        Room description
-      </h4>
+      <SmallTitle
+        text="Room long description"
+      />
       <textarea
         value={longDescription}
         onChange={onChangeValue}

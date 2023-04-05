@@ -1,5 +1,7 @@
 import {useState} from "react";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
+import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
+
 
 export const Rating = () => {
   const {room, setRoom} = useRoomContext();
@@ -20,10 +22,11 @@ export const Rating = () => {
 
   return (
     <label>
-      <h4>
-        Room rating
-      </h4>
-      <input type="number"
+      <SmallTitle
+        text="Room rating"
+      />
+      <input
+        type="number"
         value={rating}
         onChange={onChangeValue}
         max={10}

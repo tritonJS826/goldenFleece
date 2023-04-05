@@ -2,6 +2,8 @@ import {useState} from "react";
 import {Apartments} from "src/model/Room/Apartments";
 import {ApartmentsList} from "src/component/rooms/room/apartmentType/apartmentsList/ApartmentsList";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
+import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
+
 
 export const ApartmentsType = () => {
   const {room, setRoom} = useRoomContext();
@@ -17,9 +19,9 @@ export const ApartmentsType = () => {
 
   return (
     <div>
-      <h4>
-        Room type
-      </h4>
+      <SmallTitle
+        text="Room type"
+      />
       <ApartmentsList
         apartmentsType={apartmentType}
         onChangeValue={onChangeValue}

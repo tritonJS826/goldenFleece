@@ -2,6 +2,7 @@ import {Button} from "gf-ui-lib/components/Button/Button";
 import {useState} from "react";
 import {AddRoom, Room} from "src/model/Room/RoomDeprecated";
 import {saveRoom} from "src/service/RoomService";
+import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
 import styles from "src/component/rooms/room/promo/Promo.module.scss";
 
 interface PromoProps {
@@ -34,9 +35,9 @@ export const Promo = (props: PromoProps) => {
 
   return (
     <div className={styles.promo}>
-      <h4 className={styles.title}>
-        Promo
-      </h4>
+      <SmallTitle
+        text="Promo"
+      />
       <div className={styles.container}>
         <div className={styles.imgContainer}
           onMouseEnter={hoverHandler}

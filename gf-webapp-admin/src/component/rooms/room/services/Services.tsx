@@ -3,6 +3,7 @@ import {changeRoomServices} from "./roomServices";
 import {ApartmentServices} from "src/model/Room/ApartmentServices";
 import {enumToArray} from "src/utils/enumToArray";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
+import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
 import styles from "src/component/rooms/room/services/Services.module.scss";
 
 export const Services = () => {
@@ -44,9 +45,9 @@ export const Services = () => {
 
   return (
     <div className={styles.services}>
-      <h4 className={styles.title}>
-        Room services
-      </h4>
+      <SmallTitle
+        text="Room services"
+      />
       <ul className={styles.container}>
         {renderServices()}
       </ul>
