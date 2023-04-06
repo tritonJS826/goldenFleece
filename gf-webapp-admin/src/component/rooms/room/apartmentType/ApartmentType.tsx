@@ -4,16 +4,22 @@ import {ApartmentsList} from "src/component/rooms/room/apartmentType/apartmentsL
 import {useRoomContext} from "src/component/rooms/room/roomContext";
 import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
 
-
 export const ApartmentsType = () => {
   const {room, setRoom} = useRoomContext();
 
   const [apartmentType, setApartmentType] = useState<Apartments>(room.apartmentsType);
+  const validApartments: string[] = Object.values(Apartments);
 
-  const onChangeValue = (apartment: Apartments) => {
-    setApartmentType(apartment);
-    room.apartmentsType = apartment;
-    setRoom(room);
+  const isValidApartment = (inputApartment: string): inputApartment is Apartments => {
+    return validApartments.indexOf(inputApartment) !== -1;
+  };
+
+  const onChangeValue = (value: string) => {
+    if (isValidApartment(value)) {
+      setApartmentType(value);
+      room.apartmentsType = value;
+      setRoom(room);
+    }
   };
 
 

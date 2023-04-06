@@ -3,7 +3,7 @@ import styles from "src/component/rooms/room/apartmentType/apartmentsList/Apartm
 
 interface ApartmentsListProps {
   apartmentsType: keyof typeof Apartments;
-  onChangeValue: (apartment: Apartments) => void;
+  onChangeValue: (value: string) => void;
 }
 
 export const ApartmentsList = (props: ApartmentsListProps) => {
@@ -19,7 +19,7 @@ export const ApartmentsList = (props: ApartmentsListProps) => {
   return (
     <select className={styles.list}
       value={props.apartmentsType}
-      onChange={(e) => props.onChangeValue(e.target.value as Apartments)}
+      onChange={(e) => props.onChangeValue(e.target.value)}
     >
       {renderApartments()}
     </select>

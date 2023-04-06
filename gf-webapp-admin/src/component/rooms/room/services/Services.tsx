@@ -10,10 +10,17 @@ export const Services = () => {
 
   const {room, setRoom} = useRoomContext();
   const [services, setServices] = useState(room.services);
+  const validServices: string[] = Object.values(ApartmentServices);
 
-  const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
-    const selectedService = e.target.value as ApartmentServices;
-    setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
+  const isValidService = (inputServices: string): inputServices is ApartmentServices => {
+    return validServices.indexOf(inputServices) !== -1;
+  };
+
+  const onChangeRoomServices = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedService = e.target.value;
+    if (isValidService(selectedService)) {
+      setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
+    }
   };
 
   const updateRoomServices = () => {
