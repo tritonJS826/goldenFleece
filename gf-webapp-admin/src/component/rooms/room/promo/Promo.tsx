@@ -1,12 +1,13 @@
-import {Button} from "gf-ui-lib/components/Button/Button";
 import {useState} from "react";
-import {AddRoom, Room} from "src/model/Room/RoomDeprecated";
+import {Button} from "gf-ui-lib/components/Button/Button";
+import {Room} from "src/model/Room/Room";
+import {NewRoom} from "src/model/Room/NewRoom";
 import {saveRoom} from "src/service/RoomService";
 import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
 import styles from "src/component/rooms/room/promo/Promo.module.scss";
 
 interface PromoProps {
-  room:Room | AddRoom;
+  room:Room | NewRoom;
 }
 
 

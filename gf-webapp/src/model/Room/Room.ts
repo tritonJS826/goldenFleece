@@ -2,51 +2,75 @@ import {Apartments} from "src/model/Room/Apartments";
 import {ApartmentServices} from "src/model/Room/ApartmentServices";
 import {Price} from "src/model/Price";
 
-export interface Room {
+export class Room {
+
   /**
    * Url to promo image;
    */
-  promoImgUrl: string;
+  public promoImgUrl: string;
+
   /**
    * Apartment's type
    */
-  apartmentsType: Apartments,
+  public apartmentsType: Apartments;
+
   /**
    * Available services for room
    */
-  services: ApartmentServices[],
-  /**
-   * Room's ID
-   */
-  id: string,
+  public services: ApartmentServices[];
+
   /**
    * Description about room
    */
-  description: string,
+  public description: string;
 
   /**
    * Long room description
    */
-  descriptionLong: string,
+  public descriptionLong: string;
+
   /**
    * Room price
    */
-  price: Price,
+  public price: Price;
+
   /**
    * Array of paths to images of room
    */
-  images: string[],
+  public images: string[];
 
   /**
    * Max adults amount in room
    */
-  adults: number
+  public adults: number;
 
   /**
    * Room's square in m^2
    */
-  square: number;
+  public square: number;
+
+  /**
+   * Room's rating from 1 to 10
+   */
+  public rating: number;
+
+  /**
+   * Room id
+   */
+  public id: string;
+
+  constructor(arg: Room) {
+    this.id = arg.id;
+    this.adults = arg.adults;
+    this.apartmentsType = arg.apartmentsType;
+    this.description = arg.description;
+    this.descriptionLong = arg.descriptionLong;
+    this.images = arg.images;
+    this.price = arg.price;
+    this.promoImgUrl = arg.promoImgUrl;
+    this.rating = arg.rating;
+    this.services = arg.services;
+    this.square = arg.square;
+  }
 
 }
-
-

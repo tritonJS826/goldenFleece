@@ -3,7 +3,13 @@ apis/RoomApi.ts
 apis/RoomsApi.ts
 apis/index.ts
 index.ts
+models/ApartmentServices.ts
+models/Apartments.ts
 models/ApiAskAdminPostRequest.ts
 models/ApiBookingRequestPostRequest.ts
+models/Currency.ts
+models/NewRoom.ts
+models/Price.ts
+models/Room.ts
 models/index.ts
 runtime.ts

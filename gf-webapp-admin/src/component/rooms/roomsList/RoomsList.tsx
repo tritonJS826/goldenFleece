@@ -1,4 +1,4 @@
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {RoomSimplified} from "src/component/rooms/roomSimplified/RoomSimplified";
 import styles from "src/component/rooms/roomsList/RoomsList.module.scss";
 

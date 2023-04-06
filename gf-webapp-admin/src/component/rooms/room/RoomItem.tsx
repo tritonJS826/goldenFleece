@@ -1,4 +1,4 @@
-import {Room} from "src/model/Room/RoomDeprecated";
+import {Room} from "src/model/Room/Room";
 import {Adults} from "src/component/rooms/room/adults/Adults";
 import {ApartmentsType} from "src/component/rooms/room/apartmentType/ApartmentType";
 import {Description} from "src/component/rooms/room/description/Description";

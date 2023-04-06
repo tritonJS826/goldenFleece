@@ -19,8 +19,15 @@ export const roomsRouter = express.Router();
  *               schema:
  *                 type: array
  *                 items:
- *                   $ref: '#components/schema/Room'
- *     post:
+ *                   $ref: '#/components/schemas/Room'
+*/
+roomsRouter.get("/api/rooms", roomsService.getRooms);
+
+/**
+ * @swagger
+ * paths:
+ *   /api/rooms:
+*     post:
  *       tags: [Rooms]
  *       summary: Add new room
  *       description: Add new room
@@ -29,64 +36,79 @@ export const roomsRouter = express.Router();
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               $ref: '#components/schema/Room'
+ *               $ref: '#/components/schemas/NewRoom'
  *       responses:
  *         200:
  *           description: New room.
  *           content:
  *             application/json:
  *               schema:
- *                 type: object
- *                 $ref: '#components/schema/Room'
+ *                 $ref: '#/components/schemas/NewRoom'
+*/
+roomsRouter.post("/api/rooms", roomsService.postRoom);
+
+/**
+ * @swagger
+ * paths:
  *   /api/rooms/{room_id}:
  *     get:
  *       tags: [Room]
  *       summary: Get room by ID
  *       description: Retrieve a room by ID
  *       parameters:
- *       - name: room_id
- *         in: path
- *         required: true
- *         description: room ID
- *         schema:
- *           type: string
- *         example: 0
+ *         - name: room_id
+ *           in: path
+ *           description: room ID
+ *           schema:
+ *             type: string
+ *           required: true
+ *           example: 0
  *       responses:
  *         200:
  *           description: Room.
  *           content:
  *             application/json:
  *               schema:
- *                 type: object
- *                 $ref: '#components/schema/Room'
+ *                 $ref: '#/components/schemas/Room'
+*/
+roomsRouter.get("/api/rooms/:roomId", roomsService.getRoom);
+
+/**
+ * @swagger
+ * paths:
+ *   /api/rooms/{room_id}:
  *     put:
  *       tags: [Room]
  *       summary: Update room information by ID
  *       description: Update room by ID
  *       parameters:
- *       - name: room_id
- *         in: path
- *         required: true
- *         description: room ID
- *         schema:
- *           type: string
- *         example: 0
+ *         - name: room_id
+ *           in: path
+ *           description: room ID
+ *           schema:
+ *             type: string
+ *           required: true
+ *           example: 0
  *       requestBody:
  *         required: true
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               $ref: '#components/schema/Room'
+ *               $ref: '#/components/schemas/Room'
  *       responses:
  *         200:
  *           description: Room.
  *           content:
  *             application/json:
  *               schema:
- *                 type: object
- *                 $ref: '#components/schema/Room'
+ *                 $ref: '#/components/schemas/Room'
+*/
+roomsRouter.put("/api/rooms/:roomId", roomsService.putRoom);
+
+/**
+ * @swagger
+ * paths:
+ *   /api/rooms/{room_id}:
  *     delete:
  *       tags: [Room]
  *       summary: Delete room by ID
@@ -105,8 +127,4 @@ export const roomsRouter = express.Router();
  *           content:
  *             application/json: {}
 */
-roomsRouter.get("/api/rooms", roomsService.getRooms);
-roomsRouter.post("/api/rooms", roomsService.postRoom);
-roomsRouter.get("/api/rooms/:roomId", roomsService.getRoom);
-roomsRouter.put("/api/rooms/:roomId", roomsService.putRoom);
 roomsRouter.delete("/api/rooms/:roomId", roomsService.deleteRoom);
