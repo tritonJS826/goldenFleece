@@ -15,6 +15,10 @@ export class Room extends NewRoom {
     this.id = args.id;
   }
 
+  /**
+   * Convert class Room to RoomDTO object
+   * @returns RoomDTO object
+   */
   public toRoomDTO(): RoomDTO {
     return {
       apartmentsType: this.apartmentsType,

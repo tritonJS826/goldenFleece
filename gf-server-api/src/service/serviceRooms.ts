@@ -48,7 +48,6 @@ class RoomsService {
       return 0;
     });
 
-    // TODO: implement class Room. room must be an instance of Room
     const room = new Room({
       id: parseInt(sortedRoomsId[sortedRoomsId.length - 1].id) + 1 + "",
       apartmentsType: req.body.apartmentsType,
@@ -72,7 +71,6 @@ class RoomsService {
    */
   public async putRoom(req: Request, res: Response): Promise<Room[]> {
     const roomId: string = req.params.roomId;
-    // TODO: implement class Room. updateRoom must be an instance of Room
     const updatedRoom = new Room({
       id: roomId,
       apartmentsType: req.body.apartmentsType,

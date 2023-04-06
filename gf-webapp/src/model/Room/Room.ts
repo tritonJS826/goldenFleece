@@ -2,59 +2,65 @@ import {Apartments} from "src/model/Room/Apartments";
 import {ApartmentServices} from "src/model/Room/ApartmentServices";
 import {Price} from "src/model/Price";
 
-export class NewRoom {
+export class Room {
 
   /**
-     * Url to promo image;
-     */
+   * Url to promo image;
+   */
   public promoImgUrl: string;
 
   /**
-    * Apartment's type
-    */
+   * Apartment's type
+   */
   public apartmentsType: Apartments;
 
   /**
-    * Available services for room
-    */
+   * Available services for room
+   */
   public services: ApartmentServices[];
 
   /**
-    * Description about room
-    */
+   * Description about room
+   */
   public description: string;
 
   /**
-    * Long room description
-    */
+   * Long room description
+   */
   public descriptionLong: string;
 
   /**
-    * Room price
-    */
+   * Room price
+   */
   public price: Price;
 
   /**
-    * Array of paths to images of room
-    */
+   * Array of paths to images of room
+   */
   public images: string[];
 
   /**
-    * Max adults amount in room
-    */
+   * Max adults amount in room
+   */
   public adults: number;
 
   /**
-    * Room's square in m^2
-    */
+   * Room's square in m^2
+   */
   public square: number;
 
   /**
-    * Room's rating from 1 to 10
-    */
+   * Room's rating from 1 to 10
+   */
   public rating: number;
 
-  constructor(arg: NewRoom) {
+  /**
+   * Room id
+   */
+  public id: string;
+
+  constructor(arg: Room) {
+    this.id = arg.id;
     this.adults = arg.adults;
     this.apartmentsType = arg.apartmentsType;
     this.description = arg.description;
@@ -65,22 +71,6 @@ export class NewRoom {
     this.rating = arg.rating;
     this.services = arg.services;
     this.square = arg.square;
-  }
-
-}
-
-type RoomArgs = NewRoom & {id: string};
-
-export class Room extends NewRoom {
-
-  /**
-   * Room id
-   */
-  public id: string;
-
-  constructor(args: RoomArgs) {
-    super(args);
-    this.id = args.id;
   }
 
 }
