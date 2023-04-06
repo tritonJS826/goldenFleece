@@ -1,4 +1,4 @@
-name: check PR all
+name: build
 
 on:
   push:
@@ -24,14 +24,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
+    - name: install packages
       run: |
         npm i -g pnpm@7.18.2
         pnpm i --frozen-lockfile
-        pnpm buildAll
 
     - name: Cypress run all tests
       uses: cypress-io/github-action@v5
       with:
         command: pnpm run testAll
-      #   EXAMPLE_ENV_VARIABLE: ${{ secrets.EXAMPLE_ENV_VARIABLE }}
