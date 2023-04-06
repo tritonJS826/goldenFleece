@@ -1,0 +1,66 @@
+name: check PR
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        persist-credentials: false
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: install packages
+      run: |
+        npm i -g pnpm@7.18.2
+        pnpm i --frozen-lockfile
+
+    - name: build
+      run: |
+        pnpm buildAll
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        persist-credentials: false
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: setup X
+      run: |
+        Xvfb :99 &
+      env:
+        DISPLAY: 99
+
+    - name: install packages
+      run: |
+        npm i -g pnpm@7.18.2
+        pnpm i --frozen-lockfile
+
+    - name: Cypress run all tests
+      uses: cypress-io/github-action@v5.1.0
+      with:
+        command: pnpm run testAll
