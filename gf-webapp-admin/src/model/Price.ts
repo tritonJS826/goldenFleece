@@ -40,7 +40,7 @@ export class Price {
   }
 
   /**
-   * Get price in DTO format
+   * Convert class Price to DTO object
    */
   public toJSON(): PriceDTO {
     return {

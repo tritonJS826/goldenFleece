@@ -69,8 +69,8 @@ export class NewRoom {
   }
 
   /**
-   * New room with formatted data for NewRoomDTO
-   * @returns object with NewRoomDTO
+   * Convert class NewRoom to NewRoomDTO object
+   * @returns BewRoomDTO object
    */
   public toNewRoomDTO?(): NewRoomDTO {
     return {

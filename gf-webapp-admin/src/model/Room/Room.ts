@@ -16,8 +16,8 @@ export class Room extends NewRoom {
   }
 
   /**
-   * Room with formatted data for RoomDTO
-   * @returns object with RoomDTO
+   * Convert class Room to RoomDTO object
+   * @returns RoomDTO object
    */
   public toRoomDTO(): RoomDTO {
     return {
