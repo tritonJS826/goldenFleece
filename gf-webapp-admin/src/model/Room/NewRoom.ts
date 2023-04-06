@@ -68,6 +68,10 @@ export class NewRoom {
     this.square = arg.square;
   }
 
+  /**
+   * Convert class NewRoom to NewRoomDTO object
+   * @returns BewRoomDTO object
+   */
   public toNewRoomDTO?(): NewRoomDTO {
     return {
       apartmentsType: this.apartmentsType,

@@ -11,7 +11,7 @@
  */
 export enum Currency {
   /**
-   * Curency of Georgia
+   * Lari - currency of Georgia
    */
   GEL = "GEL",
 }

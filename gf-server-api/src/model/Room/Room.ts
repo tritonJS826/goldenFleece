@@ -1,3 +1,5 @@
+import {NewRoom} from "src/model/Room/NewRoom";
+
 /**
  * Room model
  * @swagger
@@ -70,8 +72,6 @@
  *           - adults
  *           - rating
  */
-import {NewRoom} from "src/model/Room/NewRoom";
-
 type RoomArgs = NewRoom & {id: string};
 
 export class Room extends NewRoom {

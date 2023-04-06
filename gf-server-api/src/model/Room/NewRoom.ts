@@ -121,7 +121,6 @@ export class NewRoom {
     */
   public rating: number;
 
-  // eslint-disable-next-line max-params
   constructor(arg: NewRoom) {
     this.adults = arg.adults;
     this.apartmentsType = arg.apartmentsType;
