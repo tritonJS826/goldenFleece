@@ -7,36 +7,33 @@ class RoomsService {
   /**
    * Get add rooms
    */
-  public async getRooms(req: Request, res: Response): Promise<Room[]> {
+  public async getRooms(req: Request, res: Response): Promise<void> {
     const allRooms = await roomsRepository.getRooms();
     res.status(200).send(allRooms);
-    return allRooms;
   }
 
   /**
    * Get room by Id
    */
-  public async getRoom(req: Request, res: Response): Promise<Room> {
+  public async getRoom(req: Request, res: Response): Promise<void> {
     const roomId: string = req.params.roomId;
     const room = await roomsRepository.getRoom(roomId);
     res.status(200).send(room);
-    return room;
   }
 
   /**
    * Delete room
    */
-  public async deleteRoom(req: Request, res: Response): Promise<Room[]> {
+  public async deleteRoom(req: Request, res: Response): Promise<void> {
     const roomId: string = req.params.roomId;
     const rooms = await roomsRepository.deleteRoom(roomId);
     res.status(200).send(rooms);
-    return rooms;
   }
 
   /**
    * Create new room
    */
-  public async postRoom(req: Request, res: Response): Promise<Room> {
+  public async postRoom(req: Request, res: Response): Promise<void> {
     const allRooms = await roomsRepository.getRooms();
     const sortedRoomsId = allRooms.sort((a, b) => {
       if (parseInt(a.id) > parseInt(b.id)) {
@@ -63,13 +60,12 @@ class RoomsService {
     });
     await roomsRepository.postRoom(room);
     res.send(room);
-    return room;
   }
 
   /**
    * Update room data
    */
-  public async putRoom(req: Request, res: Response): Promise<Room[]> {
+  public async putRoom(req: Request, res: Response): Promise<void> {
     const roomId: string = req.params.roomId;
     const updatedRoom = new Room({
       id: roomId,
@@ -86,7 +82,6 @@ class RoomsService {
     });
     const rooms = await roomsRepository.putRoom(updatedRoom, roomId);
     res.status(200).send(rooms);
-    return rooms;
   }
 
 }

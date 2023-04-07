@@ -1,6 +1,6 @@
 build
-cypress/screenshots/
-cypress/videos/
+*/cypress/screenshots
+*/cypress/videos
 storybook-static
 
 
