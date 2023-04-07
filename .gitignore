@@ -1,6 +1,7 @@
 build
 cypress/screenshots/
 cypress/videos/
+storybook-static
 
 
 # Logs
