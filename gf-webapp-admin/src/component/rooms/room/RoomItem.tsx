@@ -52,8 +52,8 @@ export const RoomItem = (props: RoomProps) => {
           <Square />
           <Adults />
         </div>
-        <Promo room={props.room} />
-        <Slider room={props.room} />
+        <Promo room={room} />
+        <Slider room={room} />
         <div className={styles.buttons}>
           <Button
             value="Update room"

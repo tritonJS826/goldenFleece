@@ -7,7 +7,7 @@ import {Slide} from "src/component/rooms/room/slider/slides/slide/Slide";
 import styles from "src/component/rooms/room/slider/slides/Slides.module.scss";
 
 interface SlidesProps {
-  room:Room | NewRoom; //adults
+  room:Room | NewRoom;
 }
 
 export const Slides = (props: SlidesProps) => {
@@ -35,7 +35,9 @@ export const Slides = (props: SlidesProps) => {
 
   useEffect(() => {
     props.room.images = slides;
-    saveRoom(props.room as Room);
+    if (props.room instanceof Room) {
+      saveRoom(props.room);
+    }
   }, [slides]);
 
   return (

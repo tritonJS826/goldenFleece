@@ -211,6 +211,13 @@ paths:
             application/json: {}
 components:
   schemas:
+    Apartments:
+      type: string
+      enum:
+        - Single
+        - Double
+        - Twin
+      example: Single
     ApartmentServices:
       type: string
       enum:
@@ -220,13 +227,6 @@ components:
         - Heating
         - AirportShuttle
     example: GEL
-    Apartments:
-      type: string
-      enum:
-        - Single
-        - Double
-        - Twin
-      example: Single
     Currency:
       type: string
       enum:
