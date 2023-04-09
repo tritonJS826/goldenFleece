@@ -69,7 +69,7 @@ class RoomsService {
   /**
    * Update room data
    */
-  public async putRoom(req: Request, res: Response): Promise<Room[]> {
+  public async putRoom(req: Request, res: Response): Promise<Room> {
     const roomId: string = req.params.roomId;
     const updatedRoom = new Room({
       id: roomId,
@@ -84,9 +84,9 @@ class RoomsService {
       images: req.body.images,
       rating: req.body.rating,
     });
-    const rooms = await roomsRepository.putRoom(updatedRoom, roomId);
-    res.status(200).send(rooms);
-    return rooms;
+    const room = await roomsRepository.putRoom(updatedRoom, roomId);
+    res.status(200).send(room);
+    return room;
   }
 
 }

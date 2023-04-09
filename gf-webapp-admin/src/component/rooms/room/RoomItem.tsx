@@ -27,20 +27,20 @@ export const RoomItem = (props: RoomProps) => {
   const [room, setRoom] = useState<Room>(props.room);
 
   const deleteWithRedirect = () => {
-    deleteRoom(props.room.id);
+    deleteRoom(room.id);
     navigate(MAIN_PAGE_ROUTE);
   };
 
   const updateRoom = () => {
     saveRoom(room);
-    navigate(MAIN_PAGE_ROUTE);
+    // navigate(MAIN_PAGE_ROUTE);
   };
 
   return (
     <RoomContext.Provider value={{room, setRoom}}>
       <div className={styles.room}>
         <h2 className={styles.title}>
-          {`Room #${Number(props.room.id) + 1}`}
+          {`Room #${Number(room.id) + 1}`}
         </h2>
         <ApartmentsType />
         <Description />

@@ -1,13 +1,12 @@
 import {useEffect, useState} from "react";
 import {Room} from "src/model/Room/Room";
 import {NewRoom} from "src/model/Room/NewRoom";
-import {saveRoom} from "src/service/RoomService";
 import {AddSlide} from "src/component/rooms/room/slider/slides/addSlide/AddSlide";
 import {Slide} from "src/component/rooms/room/slider/slides/slide/Slide";
 import styles from "src/component/rooms/room/slider/slides/Slides.module.scss";
 
 interface SlidesProps {
-  room:Room | NewRoom;
+  room: Room | NewRoom;
 }
 
 export const Slides = (props: SlidesProps) => {
@@ -35,9 +34,6 @@ export const Slides = (props: SlidesProps) => {
 
   useEffect(() => {
     props.room.images = slides;
-    if (props.room instanceof Room) {
-      saveRoom(props.room);
-    }
   }, [slides]);
 
   return (
