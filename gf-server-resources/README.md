@@ -1,4 +1,4 @@
-# goldenFleece server for managing resources
+# Golden Fleece server for managing resources
 
 ### Run in dev mode locally
 1. create a file .env with variables from file .env.example
