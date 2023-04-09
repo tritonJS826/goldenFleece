@@ -33,7 +33,7 @@ export const RoomItem = (props: RoomProps) => {
 
   const updateRoom = () => {
     saveRoom(room);
-    // navigate(MAIN_PAGE_ROUTE);
+    navigate(MAIN_PAGE_ROUTE);
   };
 
   return (
