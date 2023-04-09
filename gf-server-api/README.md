@@ -1,4 +1,4 @@
-# goldenFleece server REST API app
+# Golden Fleece server with REST API
 
 ### Run in dev mode locally
 1. create a file .env with variables from file .env.example

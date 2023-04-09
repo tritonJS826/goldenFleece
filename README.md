@@ -1,18 +1,20 @@
-# rss-golden-fleece
+# Golden fleece
 
-[![Build NodeJS with Webpack](https://github.com/tritonJS826/goldenFleece/actions/workflows/buildAll.yml/badge.svg)](https://github.com/tritonJS826/goldenFleece/actions/workflows/buildAll.yml)
+Application form hotel management (SaaS).
 
-
-Application with the services of the hotel "Golden Fleece" and the possibility of administration.
-
-[Golen Fleece on booking.com](https://www.booking.com/hotel/ge/golden-fleece-kutaisi1.en-gb.html?label=golden-fleece-kutaisi1-PuaQq_ky5aWb1ZQ0gZZ0FQS541245730078%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-179416350486%3Alp9069844%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXwxhKG0pUU-mcMVT-JwQpc&sid=796a669ccda304c03fa6e21b0fe80bf9&gclid=Cj0KCQiAq5meBhCyARIsAJrtdr7dXEfe6wLr9MY8jxzopxfmV0OIvFLkKYU9npE3u7y4rfcWbRSHopsaAkC7EALw_wcB&aid=311984&ucfs=1&arphpl=1&dest_id=900049994&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=1808496b59f4008a&srepoch=1673951192&from=searchresults#hotelTmpl)
+[Golden Fleece on booking.com](https://www.booking.com/hotel/ge/golden-fleece-kutaisi1.en-gb.html?label=golden-fleece-kutaisi1-PuaQq_ky5aWb1ZQ0gZZ0FQS541245730078%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-179416350486%3Alp9069844%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXwxhKG0pUU-mcMVT-JwQpc&sid=796a669ccda304c03fa6e21b0fe80bf9&gclid=Cj0KCQiAq5meBhCyARIsAJrtdr7dXEfe6wLr9MY8jxzopxfmV0OIvFLkKYU9npE3u7y4rfcWbRSHopsaAkC7EALw_wcB&aid=311984&ucfs=1&arphpl=1&dest_id=900049994&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=1808496b59f4008a&srepoch=1673951192&from=searchresults#hotelTmpl)
 ### App's modules
 
 * gf-server-api - the main REST API server
+* gf-ui-lib - project sharable react library
+* gf-e2e-test - e2e tests
 * gf-webapp - front end for clients
 * gf-webapp-admin - front end for administrator with additional functionality (that is not available to the clients)
 * gf-server-resources - the module for working with resources on the site
 
+### Additional modules
+* docs - project documentation
+* scripts - project automation scripts
 ___
 
 ### Requirements: 

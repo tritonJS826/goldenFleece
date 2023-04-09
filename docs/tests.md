@@ -1,4 +1,4 @@
-User stories tests
+User stories tests (e2e)
 
 ### Customer wants to rent a room via page *Rooms*
 1. Customer open public site main page

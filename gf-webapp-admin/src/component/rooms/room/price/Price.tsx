@@ -6,7 +6,9 @@ export const Price = () => {
 
   const {room, setRoom} = useRoomContext();
 
-  const [price, setPrice] = useState(room.price.getPriceAmount());
+export const Price = (props: ProcenProps) => {
+  const [price, setPrice] = useState(() => props.room.price.getPriceAmount());
+  const [isEditFieldDisabled, setIsDisabled] = useState(true);
 
   const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
