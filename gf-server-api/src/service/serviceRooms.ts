@@ -82,7 +82,6 @@ class RoomsService {
     });
     const room = await roomsRepository.putRoom(updatedRoom, roomId);
     res.status(200).send(room);
-    return room;
   }
 
 }
