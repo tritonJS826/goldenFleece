@@ -1,6 +1,6 @@
- # UI library 
+# Golden Fleece react UI library 
 
- ### Run tests for components
+### Run tests for components
 
 1. create a file .env with variables from file .env.example
 

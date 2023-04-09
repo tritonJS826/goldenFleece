@@ -1,4 +1,4 @@
-# goldenFleece web app
+# GoldenFleece app for customers 
 
 ### Run in dev mode locally
 1. create a file .env with variables from file .env.example
@@ -22,5 +22,3 @@
 ### Run eject command
 
 ```pnpm run eject```
-
-

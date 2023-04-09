@@ -3,7 +3,7 @@
 ## UserApp (150h)
 ### Features
 * [x] **routing**
-* [] **mailOnBook** custom realisation
+* [x] **mailOnBook** custom realisation
 * [x] **multilangs**
 
 ### Common components
@@ -25,7 +25,7 @@
 * [] **FilterRooms** calendar, persons etc.
 
 3. RoomPage (Specific room description) 
-* [] **roomGallery** (some images with scale) (16h)
+* [x] **roomGallery** (some images with scale) (16h)
 * [] **roomInfo** (16h)
 
 4. AboutUs
@@ -34,13 +34,13 @@
 ## AdminApp (80h)
 ### For admin
 1. [] **AdminCRUDRoom** (24h)
-2. [] **AdjustPromo** (16h)
+2. [x] **AdjustPromo** (16h)
 3. [] **UpdateHotelPlan** (16h)
 4. [x] **AdminAuth** (24h)
 
 ## REST API Server features (110h)
-2. [] **CRUDRoom** (24h)
-1. [] **Adjust promo** (24h)
+2. [x] **CRUDRoom** (24h)
+1. [x] **Adjust promo** (24h)
 5. [x] **SwaggerFile** (14h )auto generation (maybe with auto generators) 
 3. [] **UpdateHotelPlan** (8h)
 4. [] **Auth** (40h)
@@ -50,7 +50,7 @@
 ## Backlog 
 
 ### AdditionalServicesPage
-* [] **servicesBlock** (swimmingPool, security, safe deposit, restaurant if included & room order, excursions, dry cleaning, home pets services)
+* [x] **servicesBlock** (swimmingPool, security, safe deposit, restaurant if included & room order, excursions, dry cleaning, home pets services)
 
 ### features
 * [] **customerReviews** (page with users reviews and posibility to comments other reviews)
