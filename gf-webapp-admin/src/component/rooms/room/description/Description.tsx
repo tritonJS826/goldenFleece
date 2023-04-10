@@ -1,46 +1,30 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/Room";
-import {saveRoom} from "src/service/RoomService";
-import {Button} from "gf-ui-lib/components/Button/Button";
-import styles from "src/component/rooms/room/description/Description.module.scss";
+import {useRoomContext} from "src/component/rooms/room/roomContext";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
 
-interface DescriptionProps {
-  room:Room;
-}
 
-export const Description = (props: DescriptionProps) => {
-  const [description, setDescription] = useState(String(props.room.description));
-  const [isEditFieldDisabled, setIsEditFieldDisabled] = useState(true);
+export const Description = () => {
+  const {room, setRoom} = useRoomContext();
 
-  const saveHandler = async () => {
-    setIsEditFieldDisabled(true);
-    props.room.description = description;
-    saveRoom(props.room);
-  };
+  const [description, setDescription] = useState(room.description);
 
-  const fieldEditHandler = () => {
-    setIsEditFieldDisabled(false);
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setDescription(value);
+    room.description = value;
+    setRoom(room);
   };
 
   return (
-    <div className={styles.description}>
-      <label htmlFor={`description-${props.room.id}`}>
-        Room description
-      </label>
-      <div className={styles.container}>
-        <input type="text"
-          id={`description-${props.room.id}`}
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          disabled={isEditFieldDisabled}
-          placeholder="Enter short description"
-        />
-        <Button
-          value={isEditFieldDisabled ? "Edit" : "Save"}
-          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-          size="innerContent"
-        />
-      </div>
-    </div>
+    <label>
+      <SmallTitle
+        text="Room description"
+      />
+      <input type="text"
+        value={description}
+        onChange={onChangeValue}
+        placeholder="Enter short description"
+      />
+    </label>
   );
 };

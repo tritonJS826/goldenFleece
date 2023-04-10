@@ -58,9 +58,9 @@ class RoomsRepository {
 
   /**
    *
-   * @returns all rooms with updated room
+   * @returns updated room
    */
-  public async putRoom(updatedRoom: Room, roomId: string): Promise<Room[]> {
+  public async putRoom(updatedRoom: Room, roomId: string): Promise<Room> {
     const rawRooms: string = await readFile(PATH_TO_FILE_WITH_ROOMS);
     const rooms: Room[] = await JSON.parse(rawRooms);
     const updatedRooms = rooms.map((room) => {
@@ -72,7 +72,7 @@ class RoomsRepository {
     });
     const postRoomsRaw = JSON.stringify(updatedRooms);
     await writeFile(PATH_TO_FILE_WITH_ROOMS, postRoomsRaw);
-    return updatedRooms;
+    return updatedRooms[Number(roomId)];
   }
 
 }

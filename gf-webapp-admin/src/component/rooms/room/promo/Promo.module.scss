@@ -1,10 +1,5 @@
 @import "../../../../Index.scss";
 
-.title {
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
 .container {
   width: 300px;
   display: flex;
@@ -46,13 +41,6 @@
 .imgSrc {
   display: flex;
   z-index: 10;
-
-  input {
-    font-size: 1rem;
-    padding: 2px 10px;
-    outline: none;
-    border: none;
-  }
 }
 
 .addImage {

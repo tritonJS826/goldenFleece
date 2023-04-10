@@ -3,7 +3,7 @@
     "id": "0",
     "apartmentsType": "Single",
     "services": [
-      "Free WiFi",
+      "WiFi",
       "Laundry"
     ],
     "description": "A small room",
@@ -28,9 +28,9 @@
     "id": "1",
     "apartmentsType": "Double",
     "services": [
-      "Free WiFi",
+      "WiFi",
       "Laundry",
-      "Tea/coffee maker",
+      "TeaCoffeeMaker",
       "Heating"
     ],
     "description": "A comfortable room",
@@ -55,9 +55,9 @@
     "id": "2",
     "apartmentsType": "Twin",
     "services": [
-      "Free WiFi",
+      "WiFi",
       "Laundry",
-      "Tea/coffee maker",
+      "TeaCoffeeMaker",
       "Heating"
     ],
     "description": "A beautiful room",

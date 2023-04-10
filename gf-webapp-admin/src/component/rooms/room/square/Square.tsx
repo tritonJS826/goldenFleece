@@ -1,44 +1,28 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/Room";
-import {Button} from "gf-ui-lib/components/Button/Button";
-import {saveRoom} from "src/service/RoomService";
-import styles from "src/component/rooms/room/square/Square.module.scss";
+import {useRoomContext} from "src/component/rooms/room/roomContext";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
 
-interface SquareProps {
-  room:Room;
-}
+export const Square = () => {
+  const {room, setRoom} = useRoomContext();
 
-export const Square = (props: SquareProps) => {
-  const [square, setSquare] = useState(props.room.square);
-  const [isEditFieldDisabled, setIsDisabled] = useState(true);
+  const [square, setSquare] = useState(room.square);
 
-  const saveHandler = () => {
-    setIsDisabled(true);
-    props.room.square = square;
-    saveRoom(props.room);
-  };
-
-  const fieldEditHandler = () => {
-    setIsDisabled(false);
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(e.target.value);
+    setSquare(value);
+    room.square = value;
+    setRoom(room);
   };
 
   return (
-    <div className={styles.square}>
-      <label htmlFor={`square-${props.room.id}`}>
-        Room square
-      </label>
-      <div className={styles.container}>
-        <input type="number"
-          id={`square-${props.room.id}`}
-          value={square}
-          onChange={(e) => setSquare(Number(e.target.value))}
-          disabled={isEditFieldDisabled}
-        />
-        <Button
-          value={isEditFieldDisabled ? "Edit" : "Save"}
-          onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-        />
-      </div>
-    </div>
+    <label>
+      <SmallTitle
+        text="Room square"
+      />
+      <input type="number"
+        value={square}
+        onChange={onChangeValue}
+      />
+    </label>
   );
 };

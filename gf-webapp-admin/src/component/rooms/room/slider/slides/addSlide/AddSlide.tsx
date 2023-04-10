@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Button} from "gf-ui-lib/components/Button/Button";
+import {Button} from "gf-ui-lib/src/components/Button/Button";
 import styles from "src/component/rooms/room/slider/slides/addSlide/AddSlide.module.scss";
 
 interface AddSlideProps {
