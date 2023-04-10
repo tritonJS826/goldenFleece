@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import {Loader} from "gf-ui-lib/components/Loader/Loader";
+import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 import {Room} from "src/model/Room/Room";
 import {getShuffledRooms} from "src/service/rooms";
 import {Rooms} from "src/logic/rooms/roomPage/roomsBlock/roomsList/Rooms";

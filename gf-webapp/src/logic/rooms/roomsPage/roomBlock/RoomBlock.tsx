@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Room} from "src/model/Room/Room";
 import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
-import {Loader} from "gf-ui-lib/components/Loader/Loader";
+import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 
 export const RoomsBlock = () => {
   const [rooms, setRooms] = useState<Room[] | null>(null);
