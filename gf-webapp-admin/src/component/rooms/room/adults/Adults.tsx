@@ -1,45 +1,32 @@
 import {useState} from "react";
-import {Room} from "src/model/Room/Room";
-import {saveRoom} from "src/service/RoomService";
-import {Button} from "gf-ui-lib/components/Button/Button";
-import styles from "src/component/rooms/room/adults/adults.module.scss";
+import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
+import {useRoomContext} from "src/component/rooms/room/roomContext";
 
-interface AdultsProps {
-  room: Room;
-}
 
-export const Adults = (props: AdultsProps) => {
-  const [adults, setAdults] = useState(props.room.adults);
-  const [isEditFieldDisabled, setIsDisabled] = useState(true);
+export const Adults = () => {
 
-  const saveHandler = () => {
-    setIsDisabled(true);
-    props.room.adults = adults;
-    saveRoom(props.room);
-  };
+  const {room, setRoom} = useRoomContext();
 
-  const fieldEditHandler = () => {
-    setIsDisabled(false);
+  const [adults, setAdults] = useState(room.adults);
+
+  // TODO: onChangeValue repeated in many components. It will become universal when the common input component is implemented.
+
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(e.target.value);
+    setAdults(value);
+    room.adults = value;
+    setRoom(room);
   };
 
   return (
-    <div className={styles.adults}>
-      <label>
-        <h4 className={styles.title}>
-          Room adults
-        </h4>
-        <div className={styles.container}>
-          <input type="number"
-            value={adults}
-            onChange={(e) => setAdults(Number(e.target.value))}
-            disabled={isEditFieldDisabled}
-          />
-          <Button
-            value={isEditFieldDisabled ? "Edit" : "Save"}
-            onClick={isEditFieldDisabled ? fieldEditHandler : saveHandler}
-          />
-        </div>
-      </label>
-    </div>
+    <label>
+      <SmallTitle
+        text="Room adults"
+      />
+      <input type="number"
+        value={adults}
+        onChange={onChangeValue}
+      />
+    </label>
   );
 };

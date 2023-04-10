@@ -24,14 +24,11 @@ const roomDTOToBusinessConverter = (roomRaw: RoomDTO) => new Room({
 export const saveRoom = async (room: Room) => {
   const roomDTO: RoomDTO = room.toRoomDTO();
   const roomApi = new RoomApi;
-  try {
-    await roomApi.apiRoomsRoomIdPut({
-      roomId: room.id,
-      room: roomDTO,
-    });
-  } catch (error) {
-    console.log(error);
-  }
+
+  await roomApi.apiRoomsRoomIdPut({
+    roomId: room.id,
+    room: roomDTO,
+  });
 };
 
 export const getRooms = async () => {

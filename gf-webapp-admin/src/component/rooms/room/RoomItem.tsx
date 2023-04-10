@@ -11,9 +11,11 @@ import {Slider} from "src/component/rooms/room/slider/Slider";
 import {Square} from "src/component/rooms/room/square/Square";
 import {Button} from "gf-ui-lib/components/Button/Button";
 import {useNavigate} from "react-router-dom";
-import {deleteRoom} from "src/service/RoomService";
+import {deleteRoom, saveRoom} from "src/service/RoomService";
 import {MAIN_PAGE_ROUTE} from "src/utils/pathes";
-import styles from "src/component/rooms/room/Room.module.scss";
+import {RoomContext} from "src/component/rooms/room/roomContext";
+import {useState} from "react";
+import styles from "src/component/rooms/room/RoomItem.module.scss";
 
 interface RoomProps {
   room:Room;
@@ -22,33 +24,47 @@ interface RoomProps {
 export const RoomItem = (props: RoomProps) => {
 
   const navigate = useNavigate();
+  const [room, setRoom] = useState<Room>(props.room);
 
   const deleteWithRedirect = () => {
-    deleteRoom(props.room.id);
+    deleteRoom(room.id);
+    navigate(MAIN_PAGE_ROUTE);
+  };
+
+  const updateRoom = () => {
+    saveRoom(room);
     navigate(MAIN_PAGE_ROUTE);
   };
 
   return (
-    <div className={styles.room}>
-      <h2 className={styles.title}>
-        {`Room #${Number(props.room.id) + 1}`}
-      </h2>
-      <ApartmentsType room={props.room} />
-      <Description room={props.room} />
-      <LongDescription room={props.room} />
-      <Services room={props.room} />
-      <div className={styles.wrapper}>
-        <Rating room={props.room} />
-        <Price room={props.room} />
-        <Square room={props.room} />
-        <Adults room={props.room} />
+    <RoomContext.Provider value={{room, setRoom}}>
+      <div className={styles.room}>
+        <h2 className={styles.title}>
+          {`Room #${Number(room.id) + 1}`}
+        </h2>
+        <ApartmentsType />
+        <Description />
+        <LongDescription />
+        <Services />
+        <div className={styles.wrapper}>
+          <Rating />
+          <Price />
+          <Square />
+          <Adults />
+        </div>
+        <Promo room={room} />
+        <Slider room={room} />
+        <div className={styles.buttons}>
+          <Button
+            value="Update room"
+            onClick={updateRoom}
+          />
+          <Button
+            value="Delete room"
+            onClick={deleteWithRedirect}
+          />
+        </div>
       </div>
-      <Promo room={props.room} />
-      <Slider room={props.room} />
-      <Button
-        value="Delete room"
-        onClick={deleteWithRedirect}
-      />
-    </div>
+    </RoomContext.Provider>
   );
 };

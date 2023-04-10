@@ -2,9 +2,8 @@ import {Apartments} from "src/model/Room/Apartments";
 import styles from "src/component/rooms/room/apartmentType/apartmentsList/ApartmentsList.module.scss";
 
 interface ApartmentsListProps {
-  apartmentsType: string;
-  isEditFieldDisabled: boolean;
-  onChangeApartmentType: (apartmentType: Apartments) => void;
+  apartmentsType: keyof typeof Apartments;
+  onChangeValue: (value: string) => void;
 }
 
 export const ApartmentsList = (props: ApartmentsListProps) => {
@@ -20,8 +19,7 @@ export const ApartmentsList = (props: ApartmentsListProps) => {
   return (
     <select className={styles.list}
       value={props.apartmentsType}
-      disabled={props.isEditFieldDisabled}
-      onChange={(e) => props.onChangeApartmentType(e.target.value as Apartments)}
+      onChange={(e) => props.onChangeValue(e.target.value)}
     >
       {renderApartments()}
     </select>

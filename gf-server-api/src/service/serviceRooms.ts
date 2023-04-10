@@ -80,8 +80,8 @@ class RoomsService {
       images: req.body.images,
       rating: req.body.rating,
     });
-    const rooms = await roomsRepository.putRoom(updatedRoom, roomId);
-    res.status(200).send(rooms);
+    const room = await roomsRepository.putRoom(updatedRoom, roomId);
+    res.status(200).send(room);
   }
 
 }
