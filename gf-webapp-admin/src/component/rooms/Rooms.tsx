@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Room} from "src/model/Room/Room";
 import {getRooms} from "src/service/RoomService";
-import {Loader} from "gf-ui-lib/components/Loader/Loader";
+import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 import {RoomsList} from "src/component/rooms/roomsList/RoomsList";
 import styles from "src/component/rooms/Rooms.module.scss";
 

@@ -26,7 +26,7 @@
     "baseUrl": "./",
     "paths": {
       "src/*": ["./src/*"],
-      "gf-ui-lib": ["../gf-ui-lib/src/*"]
+      "gf-ui-lib/*": ["../gf-ui-lib/*"]
     }
   },
   "include": ["src", "scripts", "../gf-ui-lib/src/components/Map"],

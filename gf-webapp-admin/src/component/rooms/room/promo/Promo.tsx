@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Button} from "gf-ui-lib/components/Button/Button";
+import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {Room} from "src/model/Room/Room";
 import {NewRoom} from "src/model/Room/NewRoom";
 import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";

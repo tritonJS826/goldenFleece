@@ -5,7 +5,7 @@ import {AddRoomModal} from "src/component/sideMenu/addRoomModal/AddRoomModal";
 import {Registration} from "src/component/registration/Registration";
 import {AppContext} from "src/appContext";
 import {LOGIN_ROUTE, MAIN_PAGE_ROUTE} from "src/utils/pathes";
-import {Button} from "gf-ui-lib/components/Button/Button";
+import {Button} from "gf-ui-lib/src/components/Button/Button";
 import styles from "src/component/sideMenu/SideMenu.module.scss";
 
 export const SideMenu = () => {

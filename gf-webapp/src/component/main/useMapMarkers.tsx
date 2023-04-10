@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import {IMarker} from "gf-ui-lib/components/Map/mapContent/marker/IMarker";
+import {IMarker} from "gf-ui-lib/src/components/Map/mapContent/marker/IMarker";
 import goldenFleeceImg from "src/resources/map/golden-fleece.jpg";
 import cakeClubImg from "src/resources/map/cake-club.jpg";
 import shedevriImg from "src/resources/map/shedevri.jpg";

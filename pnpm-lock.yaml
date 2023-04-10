@@ -342,7 +342,7 @@ importers:
       eslint-config-xo-typescript: ^0.55.1
       eslint-plugin-react: ^7.32.2
       framer-motion: ^9.1.7
-      gf-ui-lib: file:../gf-ui-lib/src
+      gf-ui-lib: workspace:gf-ui-lib
       react: ^18.2.0
       react-app-alias: ^2.2.2
       react-app-alias-ex: ^2.1.0
@@ -369,7 +369,7 @@ importers:
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.11
       framer-motion: 9.1.7_biqbaboplfbrettd7655fr4n2y
-      gf-ui-lib: file:gf-ui-lib/src
+      gf-ui-lib: link:../gf-ui-lib
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-player: 2.12.0_react@18.2.0
@@ -431,7 +431,7 @@ importers:
       eslint-config-xo-typescript: ^0.55.1
       eslint-plugin-react: ^7.32.2
       firebase: ^9.17.2
-      gf-ui-lib: file:../gf-ui-lib/src
+      gf-ui-lib: workspace:gf-ui-lib
       react: ^18.2.0
       react-app-rewired: ^2.2.1
       react-dom: ^18.2.0
@@ -451,7 +451,7 @@ importers:
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.11
       firebase: 9.17.2
-      gf-ui-lib: file:gf-ui-lib/src
+      gf-ui-lib: link:../gf-ui-lib
       react: 18.2.0
       react-app-rewired: 2.2.1_react-scripts@5.0.1
       react-dom: 18.2.0_react@18.2.0
@@ -3136,7 +3136,7 @@ packages:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
     dependencies:
       eslint: 8.36.0
-      eslint-visitor-keys: 3.3.0
+      eslint-visitor-keys: 3.4.0
 
   /@eslint-community/eslint-utils/4.4.0_eslint@8.37.0:
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -10970,7 +10970,6 @@ packages:
   /eslint-visitor-keys/3.4.0:
     resolution: {integrity: sha512-HPpKPUBQcAsZOsHAFwTtIKcYlCje62XB7SEAcxjtmW6TD1WVpkS6i6/hOVtTZIl4zGj/mBqpFVGvaDneik+VoQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dev: true
 
   /eslint-webpack-plugin/3.2.0_gq25nzrc5ulbrewficr3tpmdki:
     resolution: {integrity: sha512-avrKcGncpPbPSUHX6B3stNGzkKFto3eL+DKM4+VyMrVnhPc3vRczVlCq3uhuFOdRvDHTVXuzwk1ZKUrqDQHQ9w==}
