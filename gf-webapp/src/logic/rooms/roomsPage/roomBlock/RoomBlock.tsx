@@ -17,6 +17,7 @@ export const RoomsBlock = (props: RoomsBlockProps) => {
 
   useEffect(() => {
     initRooms();
+    props.setIsNavigationBlockInitTrue();
   }, []);
 
   const renderRoomItem = (roomsList: Room[]) => {
@@ -27,10 +28,6 @@ export const RoomsBlock = (props: RoomsBlockProps) => {
       />
     ));
   };
-
-  useEffect(() => {
-    props.setIsNavigationBlockInitTrue();
-  }, []);
 
   // if data not initialized yet
   if (!rooms) {
