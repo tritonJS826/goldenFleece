@@ -13,10 +13,6 @@ export const RoomsPage = () => {
   const {roomsPage} = useDictionary().dictionary;
   const [isNavigationBlockInit, setIsNavigationBlockInit] = useState(false);
 
-  // function setIsNavigationBlockInitTrue() {
-  //   setIsNavigationBlockInit(true);
-  // }
-
   return (
     <div>
       <PageBorder>
