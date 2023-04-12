@@ -37,8 +37,6 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     styles[props.size ?? DEFAULT_SIZE],
   );
 
-  console.log(123);
-
   return (
     <button
       type={props.type ?? DEFAULT_TYPE}
