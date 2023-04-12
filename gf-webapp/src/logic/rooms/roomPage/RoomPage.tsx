@@ -30,19 +30,22 @@ export const RoomPage = () => {
     setRoom(currentRoom);
   };
 
+  const [isRoomInit, setIsRoomInit] = useState(false);
+
   useEffect(() => {
     if (id) {
       loadRoom(id);
+      setIsRoomInit(true);
     }
   }, [id]);
 
   // if data not initialized yet
   if (!room) {
-    return <Loader />;
+    return null;
   }
 
   return (
-    <PageBorder>
+    <PageBorder isLoader={isRoomInit}>
       <RoomPromo
         promoImgUrl={room.promoImgUrl}
         description={room.description}
