@@ -1,7 +1,7 @@
 import {Information} from "src/logic/rooms/roomPage/roomPromo/information/Information";
 import {Title} from "src/logic/rooms/roomPage/roomPromo/title/Title";
 import {RoomType} from "src/model/Room/RoomType";
-import {Price} from "src/model/Price";
+import {Price} from "src/model/Room/Price";
 import {RoomServices} from "src/model/Room/RoomServices";
 
 interface RoomPromoProps {

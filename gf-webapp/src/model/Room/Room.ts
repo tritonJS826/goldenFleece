@@ -1,6 +1,6 @@
 import {RoomType} from "src/model/Room/RoomType";
 import {RoomServices} from "src/model/Room/RoomServices";
-import {Price} from "src/model/Price";
+import {Price} from "src/model/Room/Price";
 import {RoomBooked} from "src/model/Room/RoomBooked";
 import {RoomPaid} from "src/model/Room/RoomPaid";
 

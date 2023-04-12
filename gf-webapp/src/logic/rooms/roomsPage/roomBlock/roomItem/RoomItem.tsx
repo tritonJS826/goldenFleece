@@ -13,6 +13,7 @@ export const RoomItem = ({room}: {room: Room}) => {
       <PromoImage promoImageUrl={room.promoImgUrl} />
       <Description
         roomId={room.id}
+        roomNumber={room.roomNumber}
         adults={room.adults}
         roomSquare={room.square}
       />

@@ -5,6 +5,7 @@ import {Title} from "src/logic/rooms/roomsPage/roomBlock/roomItem/title/Title";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface DescriptionProps {
+  roomNumber: number;
   roomId: string;
   roomSquare: number;
   adults: number;
@@ -32,7 +33,7 @@ export const Description = (props: DescriptionProps) => {
       viewport={{amount: 0.1, once: true}}
       className={styles.roomAbout}
     >
-      <Title roomId={props.roomId} />
+      <Title roomNumber={props.roomNumber} />
       <Information
         adults={props.adults}
         roomSquare={props.roomSquare}
