@@ -11,7 +11,7 @@ import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 
 interface PageBorderProps {
   children: ReactNode
-  isLoader: boolean
+  isLoader?: boolean
 }
 
 interface Contact {
