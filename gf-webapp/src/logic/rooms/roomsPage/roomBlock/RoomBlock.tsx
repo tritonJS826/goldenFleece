@@ -4,10 +4,10 @@ import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
 
 interface RoomsBlockProps {
-  handleDataLoading: () => void;
+  setIsNavigationBlockInitTrue: () => void;
 }
 
-export const RoomsBlock = ({handleDataLoading}: RoomsBlockProps) => {
+export const RoomsBlock = (props: RoomsBlockProps) => {
   const [rooms, setRooms] = useState<Room[] | null>(null);
 
   const initRooms = async () => {
@@ -28,19 +28,16 @@ export const RoomsBlock = ({handleDataLoading}: RoomsBlockProps) => {
     ));
   };
 
-  // if data not initialized yet
   useEffect(() => {
-    if (!rooms) {
-      handleDataLoading();
-    }
+    props.setIsNavigationBlockInitTrue();
   }, []);
 
+  // if data not initialized yet
   if (!rooms) {
-    return <></>;
+    return null;
   }
 
   // when data initialized
-
   return (
     <div>
       {renderRoomItem(rooms)}

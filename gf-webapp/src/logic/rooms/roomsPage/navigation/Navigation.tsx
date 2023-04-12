@@ -3,10 +3,10 @@ import {RoomsBlock} from "src/logic/rooms/roomsPage/roomBlock/RoomBlock";
 import styles from "src/logic/rooms/roomsPage/navigation/Navigation.module.scss";
 
 interface NavigationProps {
-  handleDataLoading: () => void;
+  setIsNavigationBlockInitTrue : () => void;
 }
 
-export const Navigation = ({handleDataLoading}: NavigationProps) => {
+export const Navigation = (props: NavigationProps) => {
   const {roomInfo} = useDictionary().dictionary;
 
   return (
@@ -46,7 +46,7 @@ export const Navigation = ({handleDataLoading}: NavigationProps) => {
         </ul>
       </nav>
       <RoomsBlock
-        handleDataLoading={handleDataLoading}
+        setIsNavigationBlockInitTrue={props.setIsNavigationBlockInitTrue}
       />
     </div>
   );

@@ -11,22 +11,22 @@ import styles from "src/logic/rooms/roomsPage/RoomsPage.module.scss";
 
 export const RoomsPage = () => {
   const {roomsPage} = useDictionary().dictionary;
-  const [isDataLoading, setIsDataLoading] = useState(false);
+  const [isNavigationBlockInit, setIsNavigationBlockInit] = useState(false);
 
-  function handleDataLoading() {
-    setIsDataLoading(true);
-  }
+  // function setIsNavigationBlockInitTrue() {
+  //   setIsNavigationBlockInit(true);
+  // }
 
   return (
     <div>
       <PageBorder>
-        <Loader isLoading={isDataLoading} />
+        <Loader isLoading={isNavigationBlockInit} />
         <RoomsPromo />
         <div className={styles.about}>
           {roomsPage.description}
         </div>
         <Navigation
-          handleDataLoading={handleDataLoading}
+          setIsNavigationBlockInitTrue={() => setIsNavigationBlockInit(true)}
         />
         <div className={styles.about}>
           {roomsPage.description}
