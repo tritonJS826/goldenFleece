@@ -2,8 +2,11 @@ import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {RoomsBlock} from "src/logic/rooms/roomsPage/roomBlock/RoomBlock";
 import styles from "src/logic/rooms/roomsPage/navigation/Navigation.module.scss";
 
+interface NavigationProps {
+  handleDataLoading: () => void;
+}
 
-export const Navigation = () => {
+export const Navigation = ({handleDataLoading}: NavigationProps) => {
   const {roomInfo} = useDictionary().dictionary;
 
   return (
@@ -42,7 +45,9 @@ export const Navigation = () => {
           </li>
         </ul>
       </nav>
-      <RoomsBlock />
+      <RoomsBlock
+        handleDataLoading={handleDataLoading}
+      />
     </div>
   );
 };

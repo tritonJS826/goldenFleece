@@ -2,9 +2,12 @@ import {useEffect, useState} from "react";
 import {Room} from "src/model/Room/Room";
 import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
-import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 
-export const RoomsBlock = () => {
+interface RoomsBlockProps {
+  handleDataLoading: () => void;
+}
+
+export const RoomsBlock = ({handleDataLoading}: RoomsBlockProps) => {
   const [rooms, setRooms] = useState<Room[] | null>(null);
 
   const initRooms = async () => {
@@ -26,9 +29,17 @@ export const RoomsBlock = () => {
   };
 
   // if data not initialized yet
+  useEffect(() => {
+    if (!rooms) {
+      handleDataLoading();
+    }
+  }, []);
+
   if (!rooms) {
-    return <Loader />;
+    return <></>;
   }
+
+  // when data initialized
 
   return (
     <div>
