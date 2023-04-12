@@ -27,7 +27,7 @@ roomsRouter.get("/api/rooms", roomsService.getRooms);
  * @swagger
  * paths:
  *   /api/rooms:
-*     post:
+ *     post:
  *       tags: [Rooms]
  *       summary: Add new room
  *       description: Add new room

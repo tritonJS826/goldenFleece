@@ -1,9 +1,9 @@
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {RoomServices} from "src/model/Room/RoomServices";
 
 export const changeRoomServices = (
-  roomServices: ApartmentServices[],
+  roomServices: RoomServices[],
 
-  selectedService: ApartmentServices,
+  selectedService: RoomServices,
 
 ) => {
   return roomServices.indexOf(selectedService) === -1 ?

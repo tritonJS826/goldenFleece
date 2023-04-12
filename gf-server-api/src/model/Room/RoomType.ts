@@ -1,9 +1,9 @@
 /**
- * Apartments type
+ * Room type
  * @swagger
  *   components:
  *     schemas:
- *       Apartments:
+ *       RoomType:
  *         type: string
  *         enum:
  *           - Single
@@ -11,17 +11,17 @@
  *           - Twin
  *         example: Single
  */
-export enum Apartments {
+export enum RoomType {
   /**
-   * Apartments for one person
+   * Room for one person
    */
   Single = "Single",
   /**
-   * Apartments for two people
+   * Room for two people
    */
   Double = "Double",
   /**
-   * Apartments for two people with separate beds
+   * Room for two people with separate beds
    */
   Twin = "Twin",
 }

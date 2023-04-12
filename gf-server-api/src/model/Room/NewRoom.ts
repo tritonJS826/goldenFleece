@@ -1,6 +1,8 @@
 import {Price} from "src/model/Room/Price";
-import {Apartments} from "src/model/Room/Apartments";
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {RoomType} from "src/model/Room/RoomType";
+import {RoomServices} from "src/model/Room/RoomServices";
+import {RoomBooked} from "src/model/Room/RoomBooked";
+import {RoomPaid} from "src/model/Room/RoomPaid";
 
 /**
  * NewRoom model
@@ -10,12 +12,12 @@ import {ApartmentServices} from "src/model/Room/ApartmentServices";
  *       NewRoom:
  *         type: object
  *         properties:
- *           apartmentsType:
- *             $ref: '#/components/schemas/Apartments'
+ *           type:
+ *             $ref: '#/components/schemas/RoomType'
  *           services:
  *             type: string[]
  *             items:
- *               $ref: '#/components/schemas/ApartmentServices'
+ *               $ref: '#/components/schemas/RoomServices'
  *             example: [WiFi, Laundry]
  *           description:
  *             type: string
@@ -37,6 +39,10 @@ import {ApartmentServices} from "src/model/Room/ApartmentServices";
  *             type: number
  *             description: Amount of adults who can stay in the room.
  *             example: 1
+ *           children:
+ *             type: number
+ *             description: Amount of children who can stay in the room.
+ *             example: 2
  *           promoImgUrl:
  *             type: string
  *             description: The room's promo image URL.
@@ -57,9 +63,21 @@ import {ApartmentServices} from "src/model/Room/ApartmentServices";
  *             type: number
  *             description: The room's rating.
  *             example: 10
+ *           roomNumber:
+ *             type: number
+ *             description: The room's number.
+ *             example: 215
+ *           booked:
+ *             type: object[]
+ *             items:
+ *               $ref: '#/components/schemas/RoomBooked'
+ *           paid:
+ *             type: object[]
+ *             items:
+ *               $ref: '#/components/schemas/RoomPaid'
  *         required:
  *           - promoImgUrl
- *           - apartmentsType
+ *           - type
  *           - services
  *           - description
  *           - descriptionLong
@@ -67,63 +85,88 @@ import {ApartmentServices} from "src/model/Room/ApartmentServices";
  *           - images
  *           - square
  *           - adults
+ *           - children
  *           - rating
+ *           - roomNumber
+ *           - booked
+ *           - paid
  */
 export class NewRoom {
 
   /**
-     * Url to promo image;
-     */
+   * Url to promo image;
+   */
   public promoImgUrl: string;
 
   /**
-    * Apartment's type
-    */
-  public apartmentsType: Apartments;
+   * Apartment's type
+   */
+  public type: RoomType;
 
   /**
-    * Available services for room
-    */
-  public services: ApartmentServices[];
+   * Available services for room
+   */
+  public services: RoomServices[];
 
   /**
-    * Description about room
-    */
+   * Description about room
+   */
   public description: string;
 
   /**
-    * Long room description
-    */
+   * Long room description
+   */
   public descriptionLong: string;
 
   /**
-    * Room price
-    */
+   * Room price
+   */
   public price: Price;
 
   /**
-    * Array of paths to images of room
-    */
+   * Array of paths to images of room
+   */
   public images: string[];
 
   /**
-    * Max adults amount in room
-    */
+   * Max adults amount in room
+   */
   public adults: number;
 
   /**
-    * Room's square in m^2
-    */
+   * Max children amount in room
+   */
+  public children: number;
+
+  /**
+   * Room's square in m^2
+   */
   public square: number;
 
   /**
-    * Room's rating from 1 to 10
-    */
+   * Room's rating from 1 to 10
+   */
   public rating: number;
+
+  /**
+   * Room's number (from 1 to infinity)
+   */
+  public roomNumber: number;
+
+  /**
+   * Info about whom and for what dates the room is booked
+   */
+  public booked: RoomBooked[];
+
+  /**
+   * Info about whom and for what dates the room is paid
+   */
+  public paid: RoomPaid[];
 
   constructor(arg: NewRoom) {
     this.adults = arg.adults;
-    this.apartmentsType = arg.apartmentsType;
+    this.children = arg.children;
+    this.type = arg.type;
     this.description = arg.description;
     this.descriptionLong = arg.descriptionLong;
     this.images = arg.images;
@@ -132,6 +175,9 @@ export class NewRoom {
     this.rating = arg.rating;
     this.services = arg.services;
     this.square = arg.square;
+    this.roomNumber = arg.roomNumber;
+    this.booked = arg.booked;
+    this.paid = arg.paid;
   }
 
 }

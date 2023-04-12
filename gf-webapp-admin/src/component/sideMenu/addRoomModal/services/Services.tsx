@@ -1,5 +1,5 @@
 import {useContext, useEffect, useState} from "react";
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {RoomServices} from "src/model/Room/RoomServices";
 import {BASE_SERVICES} from "src/utils/roomConstants";
 import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 import {changeRoomServices} from "src/component/sideMenu/addRoomModal/services/roomServices";
@@ -10,7 +10,7 @@ export const Services = () => {
   const [services, setServices] = useState(roomStartState.services);
 
   const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
-    const selectedService = e.target.value as unknown as ApartmentServices;
+    const selectedService = e.target.value as unknown as RoomServices;
     setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
   };
 

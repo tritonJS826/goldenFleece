@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {changeRoomServices} from "./roomServices";
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {RoomServices} from "src/model/Room/RoomServices";
 import {enumToArray} from "src/utils/enumToArray";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
 import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
@@ -10,9 +10,9 @@ export const Services = () => {
 
   const {room, setRoom} = useRoomContext();
   const [services, setServices] = useState(room.services);
-  const validServices: string[] = Object.values(ApartmentServices);
+  const validServices: string[] = Object.values(RoomServices);
 
-  const isValidService = (inputServices: string): inputServices is ApartmentServices => {
+  const isValidService = (inputServices: string): inputServices is RoomServices => {
     return validServices.indexOf(inputServices) !== -1;
   };
 
@@ -31,7 +31,7 @@ export const Services = () => {
   updateRoomServices();
 
   const renderServices = () =>
-    enumToArray(ApartmentServices).map(service => (
+    enumToArray(RoomServices).map(service => (
       <li
         className={styles.service}
         key={service}

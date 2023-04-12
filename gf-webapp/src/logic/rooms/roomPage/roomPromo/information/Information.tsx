@@ -1,14 +1,14 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {Price} from "src/model/Price";
-import {Apartments} from "src/model/Room/Apartments";
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {RoomType} from "src/model/Room/RoomType";
+import {RoomServices} from "src/model/Room/RoomServices";
 import {Services} from "src/logic/rooms/roomPage/roomPromo/information/services/Services";
 import styles from "src/logic/rooms/roomPage/roomPromo/RoomPromo.module.scss";
 
 interface InformationProps {
-  apartmentsType: Apartments;
+  apartmentsType: RoomType;
   price: Price;
-  services: ApartmentServices[];
+  services: RoomServices[];
 }
 
 export const Information = (props: InformationProps) => {

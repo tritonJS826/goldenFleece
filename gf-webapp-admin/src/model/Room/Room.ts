@@ -21,7 +21,7 @@ export class Room extends NewRoom {
    */
   public toRoomDTO(): RoomDTO {
     return {
-      apartmentsType: this.apartmentsType,
+      type: this.type,
       services: this.services,
       description: this.description,
       id: this.id,
@@ -29,9 +29,13 @@ export class Room extends NewRoom {
       price: this.price.toJSON(),
       square: this.square,
       adults: this.adults,
+      children: this.children,
       promoImgUrl: this.promoImgUrl,
       images: this.images,
       rating: this.rating,
+      roomNumber: this.roomNumber,
+      booked: this.booked,
+      paid: this.paid,
     };
   }
 

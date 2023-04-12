@@ -17,23 +17,23 @@
  * 
  * @export
  */
-export const Apartments = {
+export const RoomType = {
     Single: 'Single',
     Double: 'Double',
     Twin: 'Twin'
 } as const;
-export type Apartments = typeof Apartments[keyof typeof Apartments];
+export type RoomType = typeof RoomType[keyof typeof RoomType];
 
 
-export function ApartmentsFromJSON(json: any): Apartments {
-    return ApartmentsFromJSONTyped(json, false);
+export function RoomTypeFromJSON(json: any): RoomType {
+    return RoomTypeFromJSONTyped(json, false);
 }
 
-export function ApartmentsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Apartments {
-    return json as Apartments;
+export function RoomTypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): RoomType {
+    return json as RoomType;
 }
 
-export function ApartmentsToJSON(value?: Apartments | null): any {
+export function RoomTypeToJSON(value?: RoomType | null): any {
     return value as any;
 }
 

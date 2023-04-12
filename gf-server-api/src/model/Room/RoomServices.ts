@@ -1,9 +1,9 @@
 /**
- * Apartment services
+ * Room services
  * @swagger
  *   components:
  *     schemas:
- *       ApartmentServices:
+ *       RoomServices:
  *         type: string
  *         enum:
  *           - WiFi
@@ -13,14 +13,14 @@
  *           - AirportShuttle
  *       example: WiFi
  */
-export enum ApartmentServices {
+export enum RoomServices {
   /**
    * The hotel provides WiFi
    */
   WiFi = "WiFi",
   /**
- * The hotel provides laundry facilities
- */
+   * The hotel provides laundry facilities
+   */
   Laundry = "Laundry",
   /**
    * Room's service includes place to make tea and coffee

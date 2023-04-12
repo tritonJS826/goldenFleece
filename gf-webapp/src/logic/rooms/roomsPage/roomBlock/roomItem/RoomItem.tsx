@@ -7,7 +7,7 @@ export const RoomItem = ({room}: {room: Room}) => {
   return (
     <div
       className={styles.wrap}
-      id={room.apartmentsType.toString()}
+      id={room.type.toString()}
       key={room.id}
     >
       <PromoImage promoImageUrl={room.promoImgUrl} />

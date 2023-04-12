@@ -17,7 +17,7 @@ export const Overlay = (props: OverlayProps) => {
         className={styles.info}
       >
         <h3>
-          {`${props.room.apartmentsType} room`}
+          {`${props.room.type} room`}
         </h3>
         <ServicesList services={props.room.services} />
         <div className={styles.container}>

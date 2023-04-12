@@ -1,12 +1,12 @@
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {RoomServices} from "src/model/Room/RoomServices";
 import styles from "src/logic/rooms/roomPage/roomPromo/information/services/services.module.scss";
 
 interface ServicesProps {
-  services: ApartmentServices[];
+  services: RoomServices[];
 }
 
 export const Services = (props: ServicesProps) => {
-  const renderServicesList = (roomServicesList: ApartmentServices[]) =>
+  const renderServicesList = (roomServicesList: RoomServices[]) =>
     roomServicesList.map(service => (
       <li key={service}>
         {service}
