@@ -10,7 +10,7 @@ import styles from "src/logic/rooms/roomsPage/RoomsPage.module.scss";
 
 export const RoomsPage = () => {
   const {roomsPage} = useDictionary().dictionary;
-  const [isNavigationBlockInitialized, setIsNavigationBlockInitialized] = useState(false);
+  const [isNavigationBlockInitialized, setIsNavigationBlockInitialized] = useState(true);
 
   return (
     <div>
@@ -20,7 +20,7 @@ export const RoomsPage = () => {
           {roomsPage.description}
         </div>
         <Navigation
-          setIsNavigationBlockInitializedTrue={() => setIsNavigationBlockInitialized(true)}
+          setIsNavigationBlockInitializedFalse={() => setIsNavigationBlockInitialized(false)}
         />
         <div className={styles.about}>
           {roomsPage.description}

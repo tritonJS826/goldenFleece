@@ -29,18 +29,20 @@ export const RoomPage = () => {
     setRoom(currentRoom);
   };
 
-  const [isRoomInitialized, setIsRoomInitialized] = useState(false);
+  const [isRoomInitialized, setIsRoomInitialized] = useState(true);
 
   useEffect(() => {
-    if (id) {
-      setIsRoomInitialized(true);
-      loadRoom(id);
-    }
+    (async () => {
+      if (id) {
+        await loadRoom(id);
+        setIsRoomInitialized(false);
+      }
+    })();
   }, [id]);
 
   // if data not initialized yet
   if (!room) {
-    return null;
+    return <PageBorder isLoading={isRoomInitialized} />;
   }
 
   return (

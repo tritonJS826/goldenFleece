@@ -6,7 +6,7 @@ import styles from "./Loader.module.scss";
 interface LoaderProps {
 
   /**
-   * Is Loader visible. True by default.
+   * Is Loader visible. False by default.
    */
   isLoading?: boolean;
 }
@@ -15,8 +15,8 @@ interface LoaderProps {
  * Block loader. Could be used as full Page.
  */
 export const Loader: React.FC<LoaderProps> = (props: LoaderProps) => {
-  // set default as true
-  const isLoading = props.isLoading ?? true;
+  // set default as false
+  const isLoading = props.isLoading ?? false;
 
   if (!isLoading) {
     return null;
