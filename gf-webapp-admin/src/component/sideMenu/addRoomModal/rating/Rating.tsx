@@ -1,33 +1,36 @@
-import {useContext, useEffect, useState} from "react";
-import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {useState} from "react";
+import {useAddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
 
 
 export const Rating = () => {
-  const {roomStartState} = useContext(AddRoomContext);
-  const [rating, setRating] = useState(roomStartState.rating);
+  const {room, setRoom} = useAddRoomContext();
+  const [rating, setRating] = useState(room.rating);
 
-  const onChangeRating = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = Number(e.target.value);
-    if (value >= 10) {
+    if (value > 10) {
       value = 10;
     }
+    if (value < 0) {
+      value = 0;
+    }
     setRating(value);
+    room.rating = value;
+    setRoom(room);
   };
-  useEffect(() => {
-    roomStartState.rating = rating;
-  }, [rating]);
 
   return (
-    <div>
-      <label htmlFor='rating'>
-        Room rating
-      </label>
-      <input type="number"
-        max={10}
-        id='rating'
-        value={rating}
-        onChange={onChangeRating}
+    <label>
+      <SmallTitle
+        text="Room rating"
       />
-    </div>
+      <input
+        type="number"
+        value={rating}
+        onChange={onChangeValue}
+        max={10}
+      />
+    </label>
   );
 };

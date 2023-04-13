@@ -1,28 +1,28 @@
-import {useContext, useEffect, useState} from "react";
-import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {useState} from "react";
+import {useAddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
 
 export const Square = () => {
-  const {roomStartState} = useContext(AddRoomContext);
-  const [square, setSquare] = useState(roomStartState.square);
+  const {room, setRoom} = useAddRoomContext();
 
-  const onChangeSquare = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSquare(Number(e.target.value));
+  const [square, setSquare] = useState(room.square);
+
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(e.target.value);
+    setSquare(value);
+    room.square = value;
+    setRoom(room);
   };
 
-  useEffect(() => {
-    roomStartState.square = square;
-  }, [square]);
-
   return (
-    <div>
-      <label htmlFor='square'>
-        Room square
-      </label>
-      <input type="number"
-        id='square'
-        value={square}
-        onChange={onChangeSquare}
+    <label>
+      <SmallTitle
+        text="Room square"
       />
-    </div>
+      <input type="number"
+        value={square}
+        onChange={onChangeValue}
+      />
+    </label>
   );
 };
