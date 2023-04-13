@@ -12,7 +12,7 @@ export const ApartmentsType = () => {
   const validApartments: string[] = Object.values(Apartments);
 
   const isValidApartment = (inputApartment: string): inputApartment is Apartments => {
-    return validApartments.indexOf(inputApartment) !== -1;
+    return validApartments.includes(inputApartment);
   };
 
   const onChangeValue = (value: string) => {

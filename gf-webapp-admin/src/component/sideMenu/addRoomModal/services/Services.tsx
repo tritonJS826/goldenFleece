@@ -13,7 +13,7 @@ export const Services = () => {
   const validServices: string[] = Object.values(ApartmentServices);
 
   const isValidService = (inputServices: string): inputServices is ApartmentServices => {
-    return validServices.indexOf(inputServices) !== -1;
+    return validServices.includes(inputServices);
   };
 
   const onChangeRoomServices = (e: React.ChangeEvent<HTMLInputElement>) => {
