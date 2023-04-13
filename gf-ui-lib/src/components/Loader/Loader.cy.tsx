@@ -23,13 +23,13 @@ describe("Loader component", () => {
     cy.get(`.${styles.loader}`).should("not.exist");
   });
 
-  it("sets default value of isLoading to true", () => {
+  it("sets default value of isLoading to false", () => {
     mount(<Loader />);
-    cy.get(`.${styles.loader}`).should("be.visible");
+    cy.get(`.${styles.loader}`).should("not.exist");
   });
 
   it("displays correct title", () => {
-    mount(<Loader />);
+    mount(<Loader isLoading={true} />);
     cy.get(`.${styles.loader}`).contains("Golden Fleece");
   });
 
