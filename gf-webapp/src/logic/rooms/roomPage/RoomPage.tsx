@@ -29,12 +29,12 @@ export const RoomPage = () => {
     setRoom(currentRoom);
   };
 
-  const [isRoomInit, setIsRoomInit] = useState(false);
+  const [isRoomInitialized, setIsRoomInitialized] = useState(false);
 
   useEffect(() => {
     if (id) {
+      setIsRoomInitialized(true);
       loadRoom(id);
-      setIsRoomInit(true);
     }
   }, [id]);
 
@@ -44,7 +44,7 @@ export const RoomPage = () => {
   }
 
   return (
-    <PageBorder isLoader={isRoomInit}>
+    <PageBorder isLoading={isRoomInitialized}>
       <RoomPromo
         promoImgUrl={room.promoImgUrl}
         description={room.description}

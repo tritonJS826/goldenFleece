@@ -4,7 +4,7 @@ import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
 
 interface RoomsBlockProps {
-  setIsNavigationBlockInitTrue: () => void;
+  setIsNavigationBlockInitializedTrue: () => void;
 }
 
 export const RoomsBlock = (props: RoomsBlockProps) => {
@@ -16,8 +16,8 @@ export const RoomsBlock = (props: RoomsBlockProps) => {
   };
 
   useEffect(() => {
+    props.setIsNavigationBlockInitializedTrue();
     initRooms();
-    props.setIsNavigationBlockInitTrue();
   }, []);
 
   const renderRoomItem = (roomsList: Room[]) => {

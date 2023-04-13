@@ -3,7 +3,7 @@ import {RoomsBlock} from "src/logic/rooms/roomsPage/roomBlock/RoomBlock";
 import styles from "src/logic/rooms/roomsPage/navigation/Navigation.module.scss";
 
 interface NavigationProps {
-  setIsNavigationBlockInitTrue : () => void;
+  setIsNavigationBlockInitializedTrue : () => void;
 }
 
 export const Navigation = (props: NavigationProps) => {
@@ -46,7 +46,7 @@ export const Navigation = (props: NavigationProps) => {
         </ul>
       </nav>
       <RoomsBlock
-        setIsNavigationBlockInitTrue={props.setIsNavigationBlockInitTrue}
+        setIsNavigationBlockInitializedTrue={props.setIsNavigationBlockInitializedTrue}
       />
     </div>
   );

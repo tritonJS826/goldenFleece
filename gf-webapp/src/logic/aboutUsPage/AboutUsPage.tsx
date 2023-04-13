@@ -9,7 +9,7 @@ export const AboutUsPage = () => {
   const {aboutUsPage} = useDictionary().dictionary;
 
   return (
-    <PageBorder isLoader={false}>
+    <PageBorder>
       <AboutUsPromo />
       <div className={styles.wrap}>
         <h3 className={styles.title}>

@@ -9,9 +9,8 @@ import {useLanguage} from "src/service/Language/useLanguage";
 import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 import styles from "src/component/pageBorder/PageBorder.module.scss";
 
-interface PageBorderProps {
-  children: ReactNode
-  isLoader: boolean
+interface PageBorderProps extends PropsWithChildren{
+  isLoading?: boolean
 }
 
 interface Contact {
@@ -20,7 +19,7 @@ interface Contact {
 }
 
 
-export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElement {
+export const PageBorder = (props: PageBorderProps): ReactElement => {
   const {dictionary, setDictionary} = useDictionary();
   const navigation = dictionary.navigation;
   const [langOpen, setLangOpen] = useState(false);
@@ -103,7 +102,7 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
 
   return (
     <div className={styles.wrapper}>
-      <Loader isLoading={props.isLoader} />
+      <Loader isLoading={props.isLoading} />
       <header className={scrollPosition < 100 ? styles.header : `${styles.header} ${styles.header_scroll}`}>
         <nav className={scrollPosition < 100 ? styles.nav : `${styles.nav} ${styles.nav_scroll}`}>
           <ul className={styles.list}>
@@ -274,4 +273,4 @@ export function PageBorder(props: PropsWithChildren<PageBorderProps>): ReactElem
       </div>
     </div>
   );
-}
+};
