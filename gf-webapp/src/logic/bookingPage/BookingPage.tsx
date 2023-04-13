@@ -6,7 +6,7 @@ import styles from "src/logic/bookingPage/BookingPage.module.scss";
 export const BookingPage = () => {
   return (
     <div>
-      <PageBorder>
+      <PageBorder isLoader={false}>
         <BookingPromo />
         <h2 className={styles.title}>
           Choose one of room
