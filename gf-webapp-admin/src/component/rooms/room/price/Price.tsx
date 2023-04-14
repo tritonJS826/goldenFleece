@@ -1,4 +1,4 @@
-import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
 import {useState} from "react";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
 

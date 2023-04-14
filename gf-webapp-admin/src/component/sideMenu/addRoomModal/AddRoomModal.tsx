@@ -13,7 +13,7 @@ import {Rating} from "src/component/sideMenu/addRoomModal/rating/Rating";
 import {defaultRoom} from "src/component/sideMenu/addRoomModal/roomStartState";
 import {Services} from "src/component/sideMenu/addRoomModal/services/Services";
 import {Square} from "src/component/sideMenu/addRoomModal/square/Square";
-import {Button} from "gf-ui-lib/components/Button/Button";
+import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {postRoom} from "src/service/RoomService";
 import styles from "src/component/sideMenu/addRoomModal/AddRoomModal.module.scss";
 

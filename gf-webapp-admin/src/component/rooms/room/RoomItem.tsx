@@ -9,7 +9,7 @@ import {Rating} from "src/component/rooms/room/rating/Rating";
 import {Services} from "src/component/rooms/room/services/Services";
 import {Slider} from "src/component/rooms/room/slider/Slider";
 import {Square} from "src/component/rooms/room/square/Square";
-import {Button} from "gf-ui-lib/components/Button/Button";
+import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {useNavigate} from "react-router-dom";
 import {deleteRoom, saveRoom} from "src/service/RoomService";
 import {MAIN_PAGE_ROUTE} from "src/utils/pathes";

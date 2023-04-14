@@ -3,7 +3,7 @@ import {changeRoomServices} from "./roomServices";
 import {RoomServices} from "src/model/Room/RoomServices";
 import {enumToArray} from "src/utils/enumToArray";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
-import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
 import styles from "src/component/rooms/room/services/Services.module.scss";
 
 export const Services = () => {

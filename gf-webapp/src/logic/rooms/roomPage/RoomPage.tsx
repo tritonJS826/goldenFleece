@@ -8,7 +8,7 @@ import {ServicesBlock} from "src/component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "src/component/bookBlock/BookingBlock";
 import {Room} from "src/model/Room/Room";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
-import {Loader} from "gf-ui-lib/components/Loader/Loader";
+import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 import styles from "src/logic/rooms/roomPage/RoomPage.module.scss";
 
 /**
