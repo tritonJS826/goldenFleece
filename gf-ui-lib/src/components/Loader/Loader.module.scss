@@ -50,8 +50,12 @@
   border: 10px solid $color-background;
   border-top-color: $color-primary;
   border-radius: 50%;
-  animation: loading 10s ease 5;
+  animation: loading 1s ease infinite;
   animation-fill-mode: forwards;
+}
+
+.hide_loader {
+  animation-delay: 0s;
 }
 
 @keyframes loading {

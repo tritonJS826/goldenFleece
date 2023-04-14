@@ -10,7 +10,8 @@ import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 import styles from "src/component/pageBorder/PageBorder.module.scss";
 
 interface PageBorderProps extends PropsWithChildren{
-  isLoading?: boolean
+  isLoading?: boolean;
+  isShowLoader?: boolean;
 }
 
 interface Contact {
@@ -102,7 +103,10 @@ export const PageBorder = (props: PageBorderProps): ReactElement => {
 
   return (
     <div className={styles.wrapper}>
-      <Loader isLoading={props.isLoading} />
+      <Loader
+        isLoading={props.isLoading}
+        isShowLoader={props.isShowLoader}
+      />
       <header className={scrollPosition < 100 ? styles.header : `${styles.header} ${styles.header_scroll}`}>
         <nav className={scrollPosition < 100 ? styles.nav : `${styles.nav} ${styles.nav_scroll}`}>
           <ul className={styles.list}>

@@ -42,7 +42,11 @@ export const RoomPage = () => {
 
   // if data not initialized yet
   if (!room) {
-    return <PageBorder isLoading={isRoomInitialized} />;
+    return (
+      <PageBorder
+        isLoading={isRoomInitialized}
+        isShowLoader={true}
+      />);
   }
 
   return (

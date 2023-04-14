@@ -14,7 +14,10 @@ export const RoomsPage = () => {
 
   return (
     <div>
-      <PageBorder isLoading={isNavigationBlockInitialized}>
+      <PageBorder
+        isLoading={isNavigationBlockInitialized}
+        isShowLoader={true}
+      >
         <RoomsPromo />
         <div className={styles.about}>
           {roomsPage.description}

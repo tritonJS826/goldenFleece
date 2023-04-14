@@ -1,3 +1,4 @@
+import {useEffect, useState} from "react";
 import styles from "./Loader.module.scss";
 
 /**
@@ -6,9 +7,14 @@ import styles from "./Loader.module.scss";
 interface LoaderProps {
 
   /**
-   * Is Loader visible. False by default.
-   */
+ * Is async Data loading on Page. False by default.
+ */
   isLoading?: boolean;
+
+  /**
+   * Is Loader visible. True by default.
+   */
+  isShowLoader?: boolean;
 }
 
 /**
@@ -17,21 +23,22 @@ interface LoaderProps {
 export const Loader: React.FC<LoaderProps> = (props: LoaderProps) => {
   // set default as false
   const isLoading = props.isLoading ?? false;
+  const isShowLoader = props.isShowLoader ?? true;
 
-  if (!isLoading) {
+  if(!isShowLoader) {
     return null;
   }
 
   return (
-    <div>
-      <div className={styles.loader}>
+    <>
+      <div className={isLoading ? styles.loader : `${styles.loader} ${styles.hide_loader}`}>
         <div className={styles.title}>
           Golden Fleece
         </div>
-        <div className={styles.spinner}>
-          <div className={styles.loading} />
+        <div className={isLoading ? styles.spinner : `${styles.spinner} ${styles.hide_loader}`}>
+          <div className={isLoading ? styles.loading : `${styles.loading} ${styles.hide_loader}`} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
