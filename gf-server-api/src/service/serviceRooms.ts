@@ -47,16 +47,20 @@ class RoomsService {
 
     const room = new Room({
       id: parseInt(sortedRoomsId[sortedRoomsId.length - 1].id) + 1 + "",
-      apartmentsType: req.body.apartmentsType,
+      type: req.body.type,
       services: req.body.services,
       description: req.body.description,
       descriptionLong: req.body.descriptionLong,
       price: req.body.price,
       square: req.body.square,
       adults: req.body.adults,
+      children: req.body.children,
       promoImgUrl: req.body.promoImgUrl,
       images: req.body.images,
       rating: req.body.rating,
+      roomNumber: req.body.roomNumber,
+      booked: req.body.booked,
+      paid: req.body.paid,
     });
     await roomsRepository.postRoom(room);
     res.send(room);
@@ -69,16 +73,20 @@ class RoomsService {
     const roomId: string = req.params.roomId;
     const updatedRoom = new Room({
       id: roomId,
-      apartmentsType: req.body.apartmentsType,
+      type: req.body.type,
       services: req.body.services,
       description: req.body.description,
       descriptionLong: req.body.descriptionLong,
       price: req.body.price,
       square: req.body.square,
       adults: req.body.adults,
+      children: req.body.children,
       promoImgUrl: req.body.promoImgUrl,
       images: req.body.images,
       rating: req.body.rating,
+      roomNumber: req.body.roomNumber,
+      booked: req.body.booked,
+      paid: req.body.paid,
     });
     const room = await roomsRepository.putRoom(updatedRoom, roomId);
     res.status(200).send(room);

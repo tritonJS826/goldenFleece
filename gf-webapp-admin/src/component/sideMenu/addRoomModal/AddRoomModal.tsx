@@ -3,7 +3,7 @@ import {Promo} from "src/component/rooms/room/promo/Promo";
 import {Slider} from "src/component/rooms/room/slider/Slider";
 import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 import {Adults} from "src/component/sideMenu/addRoomModal/adults/Adults";
-import {ApartmentsType} from "src/component/sideMenu/addRoomModal/apartmentsType/ApartmentType";
+import {RoomType} from "src/component/sideMenu/addRoomModal/roomType/RoomType";
 import {CloseBtn} from "src/component/sideMenu/addRoomModal/closeBtn/CloseBtn";
 import {Description} from "src/component/sideMenu/addRoomModal/description/Description";
 import {LongDescription} from "src/component/sideMenu/addRoomModal/longDescription/LongDescription";
@@ -31,7 +31,7 @@ export const AddRoomModal = (props: ShowModalProps) => {
   return (
     <AddRoomContext.Provider value={{roomStartState: defaultRoom}}>
       <div className={styles.addRoomModal}>
-        <ApartmentsType />
+        <RoomType />
         <Description />
         <LongDescription />
         <div className={styles.wrapper}>
