@@ -6,16 +6,21 @@ interface IServices {
 }
 
 export const ServicesList = ({services}: IServices) => {
+
+  const renderServicesList = () => {
+    return services.map((service: RoomServices) => (
+      <li key={service}>
+        {service}
+      </li>
+    ));
+  };
+
   return (
     <ul className={styles.services}>
       <h4>
         Services
       </h4>
-      {services.map((service: RoomServices) => (
-        <li key={service}>
-          {service}
-        </li>
-      ))}
+      {renderServicesList()}
     </ul>
   );
 };

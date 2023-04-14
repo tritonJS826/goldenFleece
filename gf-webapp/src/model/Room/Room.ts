@@ -1,9 +1,12 @@
 import {RoomType} from "src/model/Room/RoomType";
 import {RoomServices} from "src/model/Room/RoomServices";
-import {Price} from "src/model/Room/Price";
+import {Price} from "src/model/Price/Price";
 import {RoomBooked} from "src/model/Room/RoomBooked";
 import {RoomPaid} from "src/model/Room/RoomPaid";
 
+/**
+ * Room with ID
+ */
 export class Room {
 
   /**
@@ -81,22 +84,22 @@ export class Room {
    */
   public id: string;
 
-  constructor(arg: Room) {
-    this.id = arg.id;
-    this.adults = arg.adults;
-    this.children = arg.children;
-    this.type = arg.type;
-    this.description = arg.description;
-    this.descriptionLong = arg.descriptionLong;
-    this.images = arg.images;
-    this.price = arg.price;
-    this.promoImgUrl = arg.promoImgUrl;
-    this.rating = arg.rating;
-    this.services = arg.services;
-    this.square = arg.square;
-    this.roomNumber = arg.roomNumber;
-    this.booked = arg.booked;
-    this.paid = arg.paid;
+  constructor(roomData: Room) {
+    this.id = roomData.id;
+    this.adults = roomData.adults;
+    this.children = roomData.children;
+    this.type = roomData.type;
+    this.description = roomData.description;
+    this.descriptionLong = roomData.descriptionLong;
+    this.images = roomData.images;
+    this.price = roomData.price;
+    this.promoImgUrl = roomData.promoImgUrl;
+    this.rating = roomData.rating;
+    this.services = roomData.services;
+    this.square = roomData.square;
+    this.roomNumber = roomData.roomNumber;
+    this.booked = roomData.booked;
+    this.paid = roomData.paid;
   }
 
 }

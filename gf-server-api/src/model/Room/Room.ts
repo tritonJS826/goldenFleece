@@ -1,5 +1,7 @@
 import {NewRoom} from "src/model/Room/NewRoom";
 
+type RoomWithId = NewRoom & { id: string };
+
 /**
  * Room model
  * @swagger
@@ -92,8 +94,6 @@ import {NewRoom} from "src/model/Room/NewRoom";
  *           - booked
  *           - paid
  */
-type RoomArgs = NewRoom & {id: string};
-
 export class Room extends NewRoom {
 
   /**
@@ -101,9 +101,9 @@ export class Room extends NewRoom {
     */
   public id: string;
 
-  constructor(args: RoomArgs) {
-    super(args);
-    this.id = args.id;
+  constructor(roomWithIdData: RoomWithId) {
+    super(roomWithIdData);
+    this.id = roomWithIdData.id;
   }
 
 }

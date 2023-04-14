@@ -1,3 +1,6 @@
+/**
+ * Customer who was or will be in hotel
+ */
 export class Customer {
 
   /**
@@ -20,11 +23,11 @@ export class Customer {
    */
   public phone: string;
 
-  constructor(arg: Customer) {
-    this.id = arg.id;
-    this.name = arg.name;
-    this.email = arg.email;
-    this.phone = arg.phone;
+  constructor(customerData: Customer) {
+    this.id = customerData.id;
+    this.name = customerData.name;
+    this.email = customerData.email;
+    this.phone = customerData.phone;
   }
 
 }

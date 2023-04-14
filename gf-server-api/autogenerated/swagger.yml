@@ -211,11 +211,6 @@ paths:
             application/json: {}
 components:
   schemas:
-    Currency:
-      type: string
-      enum:
-        - GEL
-    example: WiFi
     Customer:
       properties:
         id:
@@ -239,6 +234,22 @@ components:
         - name
         - email
         - phone
+    Currency:
+      type: string
+      enum:
+        - GEL
+    example: WiFi
+    Price:
+      properties:
+        currency:
+          type: string
+          $ref: "#/components/schemas/Currency"
+        amount:
+          type: number
+      example: 300 GEL
+      required:
+        - currency
+        - amount
     NewRoom:
       type: object
       properties:
@@ -337,17 +348,6 @@ components:
       required:
         - dateIn
         - dateOut
-    Price:
-      properties:
-        currency:
-          type: string
-          $ref: "#/components/schemas/Currency"
-        amount:
-          type: number
-      example: 300 GEL
-      required:
-        - currency
-        - amount
     Room:
       type: object
       properties:

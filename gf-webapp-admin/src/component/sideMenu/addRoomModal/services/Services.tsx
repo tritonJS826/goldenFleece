@@ -8,15 +8,41 @@ import styles from "src/component/sideMenu/addRoomModal/services/Services.module
 export const Services = () => {
   const {roomStartState} = useContext(AddRoomContext);
   const [services, setServices] = useState(roomStartState.services);
+  const validServices: string[] = Object.values(RoomServices);
+
+  const isValidService = (inputServices: string): inputServices is RoomServices => {
+    return validServices.includes(inputServices);
+  };
 
   const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
-    const selectedService = e.target.value as unknown as RoomServices;
-    setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
+    const selectedService = e.target.value;
+    if (isValidService(selectedService)) {
+      setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));
+    }
   };
 
   useEffect(() => {
     roomStartState.services = services;
   }, [services]);
+
+  const renderBaseServicesList = () => {
+    return BASE_SERVICES.map(service => (
+      <li className={styles.service}
+        key={service}
+      >
+        <input id={`${service}-service`}
+          type="checkbox"
+          value={service}
+          onChange={onChangeRoomServices}
+        />
+        <label className={styles.label}
+          htmlFor={`${service}-service`}
+        >
+          {service}
+        </label>
+      </li>
+    ));
+  };
 
   return (
     <div className={styles.services}>
@@ -24,22 +50,7 @@ export const Services = () => {
         Room services
       </p>
       <ul className={styles.servicesContainer}>
-        {BASE_SERVICES.map(service => (
-          <li className={styles.service}
-            key={service}
-          >
-            <input id={`${service}-service`}
-              type="checkbox"
-              value={service}
-              onChange={onChangeRoomServices}
-            />
-            <label className={styles.label}
-              htmlFor={`${service}-service`}
-            >
-              {service}
-            </label>
-          </li>
-        ))}
+        {renderBaseServicesList()}
       </ul>
     </div>
   );

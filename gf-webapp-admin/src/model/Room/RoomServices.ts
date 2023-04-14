@@ -1,7 +1,6 @@
 /**
  * Room services
  */
-
 export enum RoomServices {
   /**
    * The hotel provides WiFi

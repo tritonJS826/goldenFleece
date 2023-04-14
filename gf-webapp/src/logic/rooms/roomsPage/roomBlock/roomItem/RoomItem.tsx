@@ -5,11 +5,7 @@ import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module
 
 export const RoomItem = ({room}: {room: Room}) => {
   return (
-    <div
-      className={styles.wrap}
-      id={room.type.toString()}
-      key={room.id}
-    >
+    <div className={styles.wrap}>
       <PromoImage promoImageUrl={room.promoImgUrl} />
       <Description
         roomId={room.id}

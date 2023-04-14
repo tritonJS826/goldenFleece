@@ -6,12 +6,14 @@ interface ServicesProps {
 }
 
 export const Services = (props: ServicesProps) => {
+
   const renderServicesList = (roomServicesList: RoomServices[]) =>
     roomServicesList.map(service => (
       <li key={service}>
         {service}
       </li>
     ));
+
   return (
     <div className={styles.services}>
       <h3 className={styles.title}>

@@ -1,4 +1,4 @@
-import {Customer} from "src/model/Room/Customer";
+import {Customer} from "src/model/Customer/Customer";
 import {Period} from "src/model/Room/Period";
 
 /**
@@ -30,9 +30,9 @@ export class RoomPaid {
    */
   public period: Period;
 
-  constructor(arg: RoomPaid) {
-    this.customer = arg.customer;
-    this.period = arg.period;
+  constructor(roomPaidData: RoomPaid) {
+    this.customer = roomPaidData.customer;
+    this.period = roomPaidData.period;
   }
 
 }

@@ -33,6 +33,8 @@ export const Description = (props: DescriptionProps) => {
       viewport={{amount: 0.1, once: true}}
       className={styles.roomAbout}
     >
+      {// TODO: Title shouldn't have props. Task # 121
+      }
       <Title roomNumber={props.roomNumber} />
       <Information
         adults={props.adults}

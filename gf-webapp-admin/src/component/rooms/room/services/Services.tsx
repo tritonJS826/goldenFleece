@@ -13,7 +13,7 @@ export const Services = () => {
   const validServices: string[] = Object.values(RoomServices);
 
   const isValidService = (inputServices: string): inputServices is RoomServices => {
-    return validServices.indexOf(inputServices) !== -1;
+    return validServices.includes(inputServices);
   };
 
   const onChangeRoomServices = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,7 +43,7 @@ export const Services = () => {
             defaultChecked={enumToArray(services).includes(service)}
             onChange={onChangeRoomServices}
           />
-          <span className={styles.seviceName}>
+          <span className={styles.serviceName}>
             {service}
           </span>
         </label>

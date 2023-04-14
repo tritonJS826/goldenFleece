@@ -1,3 +1,6 @@
+/**
+ * Period (date range)
+ */
 export class Period {
 
   /**
@@ -10,9 +13,9 @@ export class Period {
    */
   public dateOut: Date;
 
-  constructor(arg: Period) {
-    this.dateIn = arg.dateIn;
-    this.dateOut = arg.dateOut;
+  constructor(periodData: Period) {
+    this.dateIn = periodData.dateIn;
+    this.dateOut = periodData.dateOut;
   }
 
 }

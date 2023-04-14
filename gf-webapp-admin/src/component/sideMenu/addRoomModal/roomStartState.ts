@@ -1,5 +1,5 @@
-import {Currency} from "src/model/Room/Currency";
-import {Price} from "src/model/Room/Price";
+import {Currency} from "src/model/Price/Currency";
+import {Price} from "src/model/Price/Price";
 import {RoomType} from "src/model/Room/RoomType";
 import {NewRoom} from "src/model/Room/NewRoom";
 
