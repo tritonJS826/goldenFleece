@@ -2,7 +2,7 @@ import {useState} from "react";
 import {RoomType} from "src/model/Room/RoomType";
 import {RoomsTypeList} from "src/component/rooms/room/roomType/roomsTypeList/RoomsTypeList";
 import {useRoomContext} from "src/component/rooms/room/roomContext";
-import {SmallTitle} from "gf-ui-lib/components/SmallTitle/SmallTitle";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
 
 export const RoomsType = () => {
   const {room, setRoom} = useRoomContext();
