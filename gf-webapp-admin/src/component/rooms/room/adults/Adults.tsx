@@ -1,31 +1,31 @@
 import {useState} from "react";
 import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
-import {useRoomContext} from "src/component/rooms/room/roomContext";
+interface AdultsProps {
+  adults: number;
+  titleText: string;
+  onChangeValue: (value: number) => void;
+}
 
+export const Adults = (props: AdultsProps) => {
 
-export const Adults = () => {
+  const [adults, setAdults] = useState(props.adults);
 
-  const {room, setRoom} = useRoomContext();
+  // TODO: changeHandler repeated in many components. It will become universal when the common input component is implemented.
 
-  const [adults, setAdults] = useState(room.adults);
-
-  // TODO: onChangeValue repeated in many components. It will become universal when the common input component is implemented.
-
-  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
+    props.onChangeValue(value);
     setAdults(value);
-    room.adults = value;
-    setRoom(room);
   };
 
   return (
     <label>
       <SmallTitle
-        text="Room adults"
+        text={props.titleText}
       />
       <input type="number"
         value={adults}
-        onChange={onChangeValue}
+        onChange={changeHandler}
       />
     </label>
   );

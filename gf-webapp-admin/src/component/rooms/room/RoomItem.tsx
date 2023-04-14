@@ -50,7 +50,14 @@ export const RoomItem = (props: RoomProps) => {
           <Rating />
           <Price />
           <Square />
-          <Adults />
+          <Adults
+            adults={room.adults}
+            titleText='Room adults'
+            onChangeValue={(value:number) => {
+              room.adults = value;
+              setRoom(room);
+            }}
+          />
         </div>
         <Promo room={room} />
         <Slider room={room} />
