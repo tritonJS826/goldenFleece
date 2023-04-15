@@ -17,7 +17,6 @@ import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {postRoom} from "src/service/RoomService";
 import {NewRoom} from "src/model/Room/NewRoom";
 import styles from "src/component/sideMenu/addRoomModal/AddRoomModal.module.scss";
-
 interface ShowModalProps {
   showModal: () => void
 }
@@ -26,8 +25,8 @@ export const AddRoomModal = (props: ShowModalProps) => {
 
   const [room, setRoom] = useState<NewRoom>(defaultRoom);
 
-  const addRoom = async () => {
-    await postRoom(room);
+  const addRoom = () => {
+    postRoom(room);
     location.reload();
   };
 

@@ -8,7 +8,6 @@ export const ApartmentsType = () => {
   const {room, setRoom} = useAddRoomContext();
 
   const [apartmentType, setApartmentType] = useState<Apartments>(room.apartmentsType);
-  console.log("apartmentType", apartmentType);
   const validApartments: string[] = Object.values(Apartments);
 
   const isValidApartment = (inputApartment: string): inputApartment is Apartments => {

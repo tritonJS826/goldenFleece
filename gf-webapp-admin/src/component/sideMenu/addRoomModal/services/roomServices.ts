@@ -4,8 +4,9 @@ export const changeRoomServices = (
   roomServices: ApartmentServices[],
   selectedService: ApartmentServices,
 ) => {
-  return roomServices.includes(selectedService) ?
-    roomServices.filter(value => value !== selectedService)
-    :
-    [...roomServices, selectedService];
+  if (roomServices.includes(selectedService)) {
+    return roomServices.filter(roomService => roomService !== selectedService);
+  }
+
+  return [...roomServices, selectedService];
 };
