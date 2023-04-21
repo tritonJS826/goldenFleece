@@ -32,12 +32,13 @@ export const RoomPage = () => {
   const [isRoomInitialized, setIsRoomInitialized] = useState(true);
 
   useEffect(() => {
-    (async () => {
+    async function onRoomInitialized() {
       if (id) {
         await loadRoom(id);
         setIsRoomInitialized(false);
       }
-    })();
+    }
+    onRoomInitialized();
   }, [id]);
 
   // if data not initialized yet

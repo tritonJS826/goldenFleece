@@ -16,10 +16,11 @@ export const RoomsBlock = (props: RoomsBlockProps) => {
   };
 
   useEffect(() => {
-    (async () => {
+    async function onRoomsInitialized() {
       await initRooms();
       props.setIsNavigationBlockInitializedFalse();
-    })();
+    }
+    onRoomsInitialized();
   }, []);
 
   const renderRoomItem = (roomsList: Room[]) => {
