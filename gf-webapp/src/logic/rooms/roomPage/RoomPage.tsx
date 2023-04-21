@@ -51,7 +51,10 @@ export const RoomPage = () => {
   }
 
   return (
-    <PageBorder isLoading={isRoomInitialized}>
+    <PageBorder
+      isShowLoader={true}
+      isLoading={isRoomInitialized}
+    >
       <RoomPromo
         promoImgUrl={room.promoImgUrl}
         description={room.description}

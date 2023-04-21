@@ -11,7 +11,7 @@ import styles from "src/component/pageBorder/PageBorder.module.scss";
 
 interface PageBorderProps extends PropsWithChildren{
   isLoading?: boolean;
-  isShowLoader?: boolean;
+  isShowLoader: boolean;
 }
 
 interface Contact {
