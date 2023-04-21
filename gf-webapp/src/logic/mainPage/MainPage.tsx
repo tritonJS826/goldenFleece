@@ -5,7 +5,7 @@ import {PageBorder} from "src/component/pageBorder/PageBorder";
 export const MainPage = () => {
   return (
     <div>
-      <PageBorder>
+      <PageBorder isShowLoader={false}>
         <Main />
       </PageBorder>
     </div>

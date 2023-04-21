@@ -31,7 +31,7 @@ export const ContactsPage = () => {
   };
 
   return (
-    <PageBorder>
+    <PageBorder isShowLoader={false}>
       <div className={styles.wrap}>
         <div className={styles.contacts}>
           <h1 className={styles.title}>
