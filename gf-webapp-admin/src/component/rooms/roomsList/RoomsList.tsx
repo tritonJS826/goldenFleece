@@ -7,13 +7,19 @@ interface RoomsListProps {
 }
 
 export const RoomsList = (props: RoomsListProps) => {
+
+  const renderRooms = () => {
+    return props.rooms.map(room => (
+      <RoomSimplified
+        key={room.id}
+        room={room}
+      />
+    ));
+  };
+
   return (
     <div className={styles.container}>
-      {props.rooms.map(room => (
-        <RoomSimplified key={room.id}
-          room={room}
-        />
-      ))}
+      {renderRooms()}
     </div>
   );
 };

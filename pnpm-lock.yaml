@@ -5875,7 +5875,7 @@ packages:
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.10_webpack@5.76.2
       '@storybook/node-logger': 6.5.16
       '@storybook/react': 6.5.16_dufhsi5jhqecbkntwsvno3effq
-      '@storybook/react-docgen-typescript-plugin': 1.0.6--canary.9.630821.0_a37q6j7dwawz22saey2vgkpwqm
+      '@storybook/react-docgen-typescript-plugin': 1.0.6--canary.9.0c3f3b7.0_a37q6j7dwawz22saey2vgkpwqm
       '@types/babel__core': 7.20.0
       babel-plugin-react-docgen: 4.2.1
       pnp-webpack-plugin: 1.7.0_typescript@4.9.5
@@ -5949,7 +5949,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@storybook/react-docgen-typescript-plugin/1.0.6--canary.9.0c3f3b7.0_typescript@4.9.5:
+  /@storybook/react-docgen-typescript-plugin/1.0.6--canary.9.0c3f3b7.0_a37q6j7dwawz22saey2vgkpwqm:
     resolution: {integrity: sha512-KUqXC3oa9JuQ0kZJLBhVdS4lOneKTOopnNBK4tUAgoxWQ3u/IjzdueZjFr7gyBrXMoU6duutk3RQR9u8ZpYJ4Q==}
     peerDependencies:
       typescript: '>= 4.x'
@@ -5967,8 +5967,8 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/react-docgen-typescript-plugin/1.0.6--canary.9.630821.0_a37q6j7dwawz22saey2vgkpwqm:
-    resolution: {integrity: sha512-adrUdN/hb/bzRBmSJtHBEwoPpZzmMbr9WIEp83As69j0hkSa2Rp/Fvp+f97A2FyEx0+skiSX8ENLnwuup+5yuA==}
+  /@storybook/react-docgen-typescript-plugin/1.0.6--canary.9.0c3f3b7.0_typescript@4.9.5:
+    resolution: {integrity: sha512-KUqXC3oa9JuQ0kZJLBhVdS4lOneKTOopnNBK4tUAgoxWQ3u/IjzdueZjFr7gyBrXMoU6duutk3RQR9u8ZpYJ4Q==}
     peerDependencies:
       typescript: '>= 4.x'
       webpack: '>= 4'

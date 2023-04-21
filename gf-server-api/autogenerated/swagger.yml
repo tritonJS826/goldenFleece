@@ -211,35 +211,54 @@ paths:
             application/json: {}
 components:
   schemas:
-    ApartmentServices:
-      type: string
-      enum:
-        - WiFi
-        - Laundry
-        - TeaCoffeeMaker
-        - Heating
-        - AirportShuttle
-    example: GEL
-    Apartments:
-      type: string
-      enum:
-        - Single
-        - Double
-        - Twin
-      example: Single
+    Customer:
+      properties:
+        id:
+          type: string
+          description: Customer's ID.
+          example: 0
+        name:
+          type: string
+          description: Customer's name.
+          example: John
+        email:
+          type: string
+          description: Customer's email.
+          example: something@gmail.com
+        phone:
+          type: string
+          description: Customer's phone.
+          example: 12312312312
+      required:
+        - id
+        - name
+        - email
+        - phone
     Currency:
       type: string
       enum:
         - GEL
+    example: WiFi
+    Price:
+      properties:
+        currency:
+          type: string
+          $ref: "#/components/schemas/Currency"
+        amount:
+          type: number
+      example: 300 GEL
+      required:
+        - currency
+        - amount
     NewRoom:
       type: object
       properties:
-        apartmentsType:
-          $ref: "#/components/schemas/Apartments"
+        type:
+          $ref: "#/components/schemas/RoomType"
         services:
           type: string[]
           items:
-            $ref: "#/components/schemas/ApartmentServices"
+            $ref: "#/components/schemas/RoomServices"
           example:
             - WiFi
             - Laundry
@@ -264,6 +283,10 @@ components:
           type: number
           description: Amount of adults who can stay in the room.
           example: 1
+        children:
+          type: number
+          description: Amount of children who can stay in the room.
+          example: 2
         promoImgUrl:
           type: string
           description: The room's promo image URL.
@@ -283,9 +306,21 @@ components:
           type: number
           description: The room's rating.
           example: 10
+        roomNumber:
+          type: number
+          description: The room's number.
+          example: 215
+        booked:
+          type: object[]
+          items:
+            $ref: "#/components/schemas/RoomBooked"
+        paid:
+          type: object[]
+          items:
+            $ref: "#/components/schemas/RoomPaid"
       required:
         - promoImgUrl
-        - apartmentsType
+        - type
         - services
         - description
         - descriptionLong
@@ -293,27 +328,35 @@ components:
         - images
         - square
         - adults
+        - children
         - rating
-    Price:
+        - roomNumber
+        - booked
+        - paid
+    Period:
       properties:
-        currency:
+        dateIn:
           type: string
-          $ref: "#/components/schemas/Currency"
-        amount:
-          type: number
-      example: 300 GEL
+          format: date
+          description: Day of arrival.
+          example: 2023-04-12
+        dateOut:
+          type: string
+          format: date
+          description: Departure day.
+          example: 2023-04-15
       required:
-        - currency
-        - amount
+        - dateIn
+        - dateOut
     Room:
       type: object
       properties:
-        apartmentsType:
-          $ref: "#/components/schemas/Apartments"
+        type:
+          $ref: "#/components/schemas/RoomType"
         services:
           type: string[]
           items:
-            $ref: "#/components/schemas/ApartmentServices"
+            $ref: "#/components/schemas/RoomServices"
           example:
             - WiFi
             - Laundry
@@ -342,6 +385,10 @@ components:
           type: number
           description: Amount of adults who can stay in the room.
           example: 1
+        children:
+          type: number
+          description: Amount of children who can stay in the room.
+          example: 2
         promoImgUrl:
           type: string
           description: The room's promo image URL.
@@ -361,9 +408,21 @@ components:
           type: number
           description: The room's rating.
           example: 10
+        roomNumber:
+          type: number
+          description: The room's number.
+          example: 215
+        booked:
+          type: object[]
+          items:
+            $ref: "#/components/schemas/RoomBooked"
+        paid:
+          type: object[]
+          items:
+            $ref: "#/components/schemas/RoomPaid"
       required:
         - promoImgUrl
-        - apartmentsType
+        - type
         - services
         - id
         - description
@@ -372,5 +431,46 @@ components:
         - images
         - square
         - adults
+        - children
         - rating
+        - roomNumber
+        - booked
+        - paid
+    RoomBooked:
+      properties:
+        customer:
+          type: object
+          $ref: "#/components/schemas/Customer"
+        period:
+          type: object
+          $ref: "#/components/schemas/Period"
+      required:
+        - customer
+        - period
+    RoomPaid:
+      properties:
+        customer:
+          type: object[]
+          $ref: "#/components/schemas/Customer"
+        period:
+          type: object[]
+          $ref: "#/components/schemas/Period"
+      required:
+        - customer
+        - period
+    RoomServices:
+      type: string
+      enum:
+        - WiFi
+        - Laundry
+        - TeaCoffeeMaker
+        - Heating
+        - AirportShuttle
+    RoomType:
+      type: string
+      enum:
+        - Single
+        - Double
+        - Twin
+      example: Single
 tags: []

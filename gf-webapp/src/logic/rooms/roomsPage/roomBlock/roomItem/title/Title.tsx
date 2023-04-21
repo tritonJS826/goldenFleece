@@ -1,9 +1,8 @@
-import {useDictionary} from "../../../../../DictionaryContext/useDictionary";
-import {getRoomNumber} from "../../../../../../service/rooms";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import styles from "../RoomItem.module.scss";
 
 interface TitleProps {
-  roomId: string;
+  roomNumber: number;
 }
 
 export const Title = (props: TitleProps) => {
@@ -11,8 +10,7 @@ export const Title = (props: TitleProps) => {
   return (
     <div>
       <span className={styles.span}>
-        TODO: ID is not roomNumber, add room Number to Room model
-        {getRoomNumber(props.roomId)}
+        {props.roomNumber}
       </span>
       <h3 className={styles.titleBook}>
         TODO: render right apartmentsType for specific room
