@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import styles from "./Loader.module.scss";
+import clsx from "clsx";
 
 /**
  * Loader props
@@ -31,12 +32,12 @@ export const Loader: React.FC<LoaderProps> = (props: LoaderProps) => {
 
   return (
     <>
-      <div className={isLoading ? styles.loader : `${styles.loader} ${styles.hide_loader}`}>
+      <div className={clsx(styles.loader, {[styles.hide_loader]: !isLoading})}>
         <div className={styles.title}>
           Golden Fleece
         </div>
-        <div className={isLoading ? styles.spinner : `${styles.spinner} ${styles.hide_loader}`}>
-          <div className={isLoading ? styles.loading : `${styles.loading} ${styles.hide_loader}`} />
+        <div className={clsx(styles.spinner, {[styles.hide_loader]: !isLoading})}>
+          <div className={clsx(styles.loading, {[styles.hide_loader]: !isLoading})} />
         </div>
       </div>
     </>
