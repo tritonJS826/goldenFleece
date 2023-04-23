@@ -13,24 +13,36 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { ApartmentServices } from './ApartmentServices';
-import {
-    ApartmentServicesFromJSON,
-    ApartmentServicesFromJSONTyped,
-    ApartmentServicesToJSON,
-} from './ApartmentServices';
-import type { Apartments } from './Apartments';
-import {
-    ApartmentsFromJSON,
-    ApartmentsFromJSONTyped,
-    ApartmentsToJSON,
-} from './Apartments';
 import type { Price } from './Price';
 import {
     PriceFromJSON,
     PriceFromJSONTyped,
     PriceToJSON,
 } from './Price';
+import type { RoomBooked } from './RoomBooked';
+import {
+    RoomBookedFromJSON,
+    RoomBookedFromJSONTyped,
+    RoomBookedToJSON,
+} from './RoomBooked';
+import type { RoomPaid } from './RoomPaid';
+import {
+    RoomPaidFromJSON,
+    RoomPaidFromJSONTyped,
+    RoomPaidToJSON,
+} from './RoomPaid';
+import type { RoomServices } from './RoomServices';
+import {
+    RoomServicesFromJSON,
+    RoomServicesFromJSONTyped,
+    RoomServicesToJSON,
+} from './RoomServices';
+import type { RoomType } from './RoomType';
+import {
+    RoomTypeFromJSON,
+    RoomTypeFromJSONTyped,
+    RoomTypeToJSON,
+} from './RoomType';
 
 /**
  * 
@@ -40,16 +52,16 @@ import {
 export interface Room {
     /**
      * 
-     * @type {Apartments}
+     * @type {RoomType}
      * @memberof Room
      */
-    apartmentsType: Apartments;
+    type: RoomType;
     /**
      * 
-     * @type {Array<ApartmentServices>}
+     * @type {Array<RoomServices>}
      * @memberof Room
      */
-    services: Array<ApartmentServices>;
+    services: Array<RoomServices>;
     /**
      * Short room's description.
      * @type {string}
@@ -87,6 +99,12 @@ export interface Room {
      */
     adults: number;
     /**
+     * Amount of children who can stay in the room.
+     * @type {number}
+     * @memberof Room
+     */
+    children: number;
+    /**
      * The room's promo image URL.
      * @type {string}
      * @memberof Room
@@ -104,6 +122,24 @@ export interface Room {
      * @memberof Room
      */
     rating: number;
+    /**
+     * The room's number.
+     * @type {number}
+     * @memberof Room
+     */
+    roomNumber: number;
+    /**
+     * 
+     * @type {Array<RoomBooked>}
+     * @memberof Room
+     */
+    booked: Array<RoomBooked>;
+    /**
+     * 
+     * @type {Array<RoomPaid>}
+     * @memberof Room
+     */
+    paid: Array<RoomPaid>;
 }
 
 /**
@@ -111,7 +147,7 @@ export interface Room {
  */
 export function instanceOfRoom(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "apartmentsType" in value;
+    isInstance = isInstance && "type" in value;
     isInstance = isInstance && "services" in value;
     isInstance = isInstance && "description" in value;
     isInstance = isInstance && "id" in value;
@@ -119,9 +155,13 @@ export function instanceOfRoom(value: object): boolean {
     isInstance = isInstance && "price" in value;
     isInstance = isInstance && "square" in value;
     isInstance = isInstance && "adults" in value;
+    isInstance = isInstance && "children" in value;
     isInstance = isInstance && "promoImgUrl" in value;
     isInstance = isInstance && "images" in value;
     isInstance = isInstance && "rating" in value;
+    isInstance = isInstance && "roomNumber" in value;
+    isInstance = isInstance && "booked" in value;
+    isInstance = isInstance && "paid" in value;
 
     return isInstance;
 }
@@ -136,17 +176,21 @@ export function RoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): Room
     }
     return {
         
-        'apartmentsType': ApartmentsFromJSON(json['apartmentsType']),
-        'services': ((json['services'] as Array<any>).map(ApartmentServicesFromJSON)),
+        'type': RoomTypeFromJSON(json['type']),
+        'services': ((json['services'] as Array<any>).map(RoomServicesFromJSON)),
         'description': json['description'],
         'id': json['id'],
         'descriptionLong': json['descriptionLong'],
         'price': PriceFromJSON(json['price']),
         'square': json['square'],
         'adults': json['adults'],
+        'children': json['children'],
         'promoImgUrl': json['promoImgUrl'],
         'images': json['images'],
         'rating': json['rating'],
+        'roomNumber': json['roomNumber'],
+        'booked': ((json['booked'] as Array<any>).map(RoomBookedFromJSON)),
+        'paid': ((json['paid'] as Array<any>).map(RoomPaidFromJSON)),
     };
 }
 
@@ -159,17 +203,21 @@ export function RoomToJSON(value?: Room | null): any {
     }
     return {
         
-        'apartmentsType': ApartmentsToJSON(value.apartmentsType),
-        'services': ((value.services as Array<any>).map(ApartmentServicesToJSON)),
+        'type': RoomTypeToJSON(value.type),
+        'services': ((value.services as Array<any>).map(RoomServicesToJSON)),
         'description': value.description,
         'id': value.id,
         'descriptionLong': value.descriptionLong,
         'price': PriceToJSON(value.price),
         'square': value.square,
         'adults': value.adults,
+        'children': value.children,
         'promoImgUrl': value.promoImgUrl,
         'images': value.images,
         'rating': value.rating,
+        'roomNumber': value.roomNumber,
+        'booked': ((value.booked as Array<any>).map(RoomBookedToJSON)),
+        'paid': ((value.paid as Array<any>).map(RoomPaidToJSON)),
     };
 }
 

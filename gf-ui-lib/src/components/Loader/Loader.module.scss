@@ -9,7 +9,7 @@
   padding: 0;
   background-color: rgba($color: $color-secondary, $alpha: 1);
   animation: visibility 1s ease 1;
-  animation-delay: 3.5s;
+  animation-delay: 60s;
   animation-fill-mode: forwards;
 }
 
@@ -27,7 +27,7 @@
   width: 150px;
   height: 150px;
   animation: visibility 1s ease 1;
-  animation-delay: 5.5s;
+  animation-delay: 60s;
   animation-fill-mode: forwards;
 }
 
@@ -35,7 +35,7 @@
   display: flex;
   justify-content: center;
   animation: visibility 1s ease 1;
-  animation-delay: 3.5s;
+  animation-delay: 60s;
   animation-fill-mode: forwards;
 }
 
@@ -50,8 +50,12 @@
   border: 10px solid $color-background;
   border-top-color: $color-primary;
   border-radius: 50%;
-  animation: loading 1s ease 5;
+  animation: loading 1s ease infinite;
   animation-fill-mode: forwards;
+}
+
+.hide_loader {
+  animation-delay: .5s;
 }
 
 @keyframes loading {

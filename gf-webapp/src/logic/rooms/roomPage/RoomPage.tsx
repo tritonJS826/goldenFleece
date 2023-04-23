@@ -8,7 +8,6 @@ import {ServicesBlock} from "src/component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "src/component/bookBlock/BookingBlock";
 import {Room} from "src/model/Room/Room";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
-import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
 import styles from "src/logic/rooms/roomPage/RoomPage.module.scss";
 
 /**
@@ -30,23 +29,36 @@ export const RoomPage = () => {
     setRoom(currentRoom);
   };
 
+  const [isRoomInitialized, setIsRoomInitialized] = useState(true);
+
   useEffect(() => {
-    if (id) {
-      loadRoom(id);
+    async function onRoomInitialized() {
+      if (id) {
+        await loadRoom(id);
+        setIsRoomInitialized(false);
+      }
     }
+    onRoomInitialized();
   }, [id]);
 
   // if data not initialized yet
   if (!room) {
-    return <Loader />;
+    return (
+      <PageBorder
+        isLoading={isRoomInitialized}
+        isShowLoader={true}
+      />);
   }
 
   return (
-    <PageBorder>
+    <PageBorder
+      isShowLoader={true}
+      isLoading={isRoomInitialized}
+    >
       <RoomPromo
         promoImgUrl={room.promoImgUrl}
         description={room.description}
-        apartmentsType={room.apartmentsType}
+        type={room.type}
         price={room.price}
         services={room.services}
       />

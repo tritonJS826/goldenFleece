@@ -1,22 +1,20 @@
-import {useState} from "react";
-import {changeRoomServices} from "./roomServices";
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
-import {enumToArray} from "src/utils/enumToArray";
-import {useAddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
-import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
-import styles from "src/component/rooms/room/services/Services.module.scss";
+import {useContext, useEffect, useState} from "react";
+import {RoomServices} from "src/model/Room/RoomServices";
+import {BASE_SERVICES} from "src/utils/roomConstants";
+import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {changeRoomServices} from "src/component/sideMenu/addRoomModal/services/roomServices";
+import styles from "src/component/sideMenu/addRoomModal/services/Services.module.scss";
 
 export const Services = () => {
+  const {roomStartState} = useContext(AddRoomContext);
+  const [services, setServices] = useState(roomStartState.services);
+  const validServices: string[] = Object.values(RoomServices);
 
-  const {room, setRoom} = useAddRoomContext();
-  const [services, setServices] = useState(room.services);
-  const validServices: string[] = Object.values(ApartmentServices);
-
-  const isValidService = (inputServices: string): inputServices is ApartmentServices => {
+  const isValidService = (inputServices: string): inputServices is RoomServices => {
     return validServices.includes(inputServices);
   };
 
-  const onChangeRoomServices = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeRoomServices = (e:React.ChangeEvent<HTMLInputElement>) => {
     const selectedService = e.target.value;
     if (isValidService(selectedService)) {
       setServices(roomCurrentServices => changeRoomServices(roomCurrentServices, selectedService));

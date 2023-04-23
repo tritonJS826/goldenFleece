@@ -1,18 +1,18 @@
 import {Information} from "src/logic/rooms/roomPage/roomPromo/information/Information";
 import {Title} from "src/logic/rooms/roomPage/roomPromo/title/Title";
-import {Apartments} from "src/model/Room/Apartments";
-import {Price} from "src/model/Price";
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {RoomType} from "src/model/Room/RoomType";
+import {Price} from "src/model/Price/Price";
+import {RoomServices} from "src/model/Room/RoomServices";
 
 interface RoomPromoProps {
   promoImgUrl: string;
   description: string;
-  apartmentsType: Apartments;
+  type: RoomType;
   /**
    * Formatted price
    */
   price: Price;
-  services: ApartmentServices[];
+  services: RoomServices[];
 }
 
 export const RoomPromo = (props: RoomPromoProps) => {
@@ -23,7 +23,7 @@ export const RoomPromo = (props: RoomPromoProps) => {
         promoImgUrl={props.promoImgUrl}
       />
       <Information
-        apartmentsType={props.apartmentsType}
+        type={props.type}
         price={props.price}
         services={props.services}
       />

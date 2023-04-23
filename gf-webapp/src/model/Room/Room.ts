@@ -1,7 +1,12 @@
-import {Apartments} from "src/model/Room/Apartments";
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
-import {Price} from "src/model/Price";
+import {RoomType} from "src/model/Room/RoomType";
+import {RoomServices} from "src/model/Room/RoomServices";
+import {Price} from "src/model/Price/Price";
+import {RoomBooked} from "src/model/Room/RoomBooked";
+import {RoomPaid} from "src/model/Room/RoomPaid";
 
+/**
+ * Room with ID
+ */
 export class Room {
 
   /**
@@ -10,14 +15,14 @@ export class Room {
   public promoImgUrl: string;
 
   /**
-   * Apartment's type
+   * Room's type
    */
-  public apartmentsType: Apartments;
+  public type: RoomType;
 
   /**
    * Available services for room
    */
-  public services: ApartmentServices[];
+  public services: RoomServices[];
 
   /**
    * Description about room
@@ -45,6 +50,11 @@ export class Room {
   public adults: number;
 
   /**
+   * Max adults amount in room
+   */
+  public children: number;
+
+  /**
    * Room's square in m^2
    */
   public square: number;
@@ -55,22 +65,41 @@ export class Room {
   public rating: number;
 
   /**
+   * Room's number (from 1 to infinity)
+   */
+  public roomNumber: number;
+
+  /**
+   * Info about whom and for what dates the room is booked
+   */
+  public booked: RoomBooked[];
+
+  /**
+   * Info about whom and for what dates the room is paid
+   */
+  public paid: RoomPaid[];
+
+  /**
    * Room id
    */
   public id: string;
 
-  constructor(arg: Room) {
-    this.id = arg.id;
-    this.adults = arg.adults;
-    this.apartmentsType = arg.apartmentsType;
-    this.description = arg.description;
-    this.descriptionLong = arg.descriptionLong;
-    this.images = arg.images;
-    this.price = arg.price;
-    this.promoImgUrl = arg.promoImgUrl;
-    this.rating = arg.rating;
-    this.services = arg.services;
-    this.square = arg.square;
+  constructor(roomData: Room) {
+    this.id = roomData.id;
+    this.adults = roomData.adults;
+    this.children = roomData.children;
+    this.type = roomData.type;
+    this.description = roomData.description;
+    this.descriptionLong = roomData.descriptionLong;
+    this.images = roomData.images;
+    this.price = roomData.price;
+    this.promoImgUrl = roomData.promoImgUrl;
+    this.rating = roomData.rating;
+    this.services = roomData.services;
+    this.square = roomData.square;
+    this.roomNumber = roomData.roomNumber;
+    this.booked = roomData.booked;
+    this.paid = roomData.paid;
   }
 
 }
