@@ -1,13 +1,14 @@
-import {useContext, useEffect, useState} from "react";
+import {useState} from "react";
 import {RoomServices} from "src/model/Room/RoomServices";
-import {BASE_SERVICES} from "src/utils/roomConstants";
-import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 import {changeRoomServices} from "src/component/sideMenu/addRoomModal/services/roomServices";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import {enumToArray} from "src/utils/enumToArray";
+import {useAddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 import styles from "src/component/sideMenu/addRoomModal/services/Services.module.scss";
 
 export const Services = () => {
-  const {roomStartState} = useContext(AddRoomContext);
-  const [services, setServices] = useState(roomStartState.services);
+  const {room, setRoom} = useAddRoomContext();
+  const [services, setServices] = useState(room.services);
   const validServices: string[] = Object.values(RoomServices);
 
   const isValidService = (inputServices: string): inputServices is RoomServices => {
@@ -29,7 +30,7 @@ export const Services = () => {
   updateRoomServices();
 
   const renderServices = () =>
-    enumToArray(ApartmentServices).map(service => (
+    enumToArray(RoomServices).map(service => (
       <li
         className={styles.service}
         key={service}
