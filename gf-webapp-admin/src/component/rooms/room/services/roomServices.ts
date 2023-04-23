@@ -2,12 +2,11 @@ import {RoomServices} from "src/model/Room/RoomServices";
 
 export const changeRoomServices = (
   roomServices: RoomServices[],
-
   selectedService: RoomServices,
-
 ) => {
-  return roomServices.includes(selectedService) === false ?
-    [...roomServices, selectedService]
-    :
-    roomServices.filter(value => value !== selectedService);
+  if (roomServices.includes(selectedService)) {
+    return roomServices.filter(roomService => roomService !== selectedService);
+  }
+
+  return [...roomServices, selectedService];
 };

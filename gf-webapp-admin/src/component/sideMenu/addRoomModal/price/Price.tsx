@@ -1,28 +1,29 @@
-import {useContext, useEffect, useState} from "react";
-import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
-
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import {useState} from "react";
+import {useAddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 
 export const Price = () => {
-  const {roomStartState} = useContext(AddRoomContext);
-  const [price, setPrice] = useState(() => roomStartState.price.getPriceAmount());
 
-  const onChangePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPrice(Number(e.target.value));
+  const {room, setRoom} = useAddRoomContext();
+  const [price, setPrice] = useState(room.price.getPriceAmount());
+
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(e.target.value);
+    setPrice(value);
+    room.price.setNewPrice(value);
+    setRoom(room);
   };
-  useEffect(() => {
-    roomStartState.price.setNewPrice(price);
-  }, [price]);
 
   return (
-    <div>
-      <label htmlFor='price'>
-        Room price
-      </label>
-      <input type="number"
-        id='price'
-        value={price}
-        onChange={onChangePrice}
+    <label>
+      <SmallTitle
+        text="Room price"
       />
-    </div>
+
+      <input type="number"
+        value={price}
+        onChange={onChangeValue}
+      />
+    </label>
   );
 };

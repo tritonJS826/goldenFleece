@@ -1,29 +1,29 @@
-import {useContext, useEffect, useState} from "react";
-import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import {useState} from "react";
+import {useAddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 
 
 export const Adults = () => {
-  const {roomStartState} = useContext(AddRoomContext);
-  const [adults, setAdults] = useState(roomStartState.adults);
+  const {room, setRoom} = useAddRoomContext();
+  const [adults, setAdults] = useState(room.adults);
 
   const onChangeAdults = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAdults(Number(e.target.value));
+    const value = Number(e.target.value);
+    setAdults(value);
+    room.adults = value;
+    setRoom(room);
   };
 
-  useEffect(() => {
-    roomStartState.adults = adults;
-  }, [adults]);
-
   return (
-    <div>
-      <label htmlFor='adults'>
-        Room adults
-      </label>
-      <input type="number"
-        id='adults'
+    <label>
+      <SmallTitle
+        text="Room adults"
+      />
+      <input
+        type="number"
         value={adults}
         onChange={onChangeAdults}
       />
-    </div>
+    </label>
   );
 };

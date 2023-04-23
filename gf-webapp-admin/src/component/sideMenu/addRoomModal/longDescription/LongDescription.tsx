@@ -1,30 +1,29 @@
-import {useContext, useEffect, useState} from "react";
-import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
-import styles from "src/component/sideMenu/addRoomModal/longDescription/LongDescription.module.scss";
+import {useState} from "react";
+import {useAddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+
 
 export const LongDescription = () => {
-  const {roomStartState} = useContext(AddRoomContext);
-  const [descriptionLong, setDescriptionLong] = useState(String(roomStartState.descriptionLong));
+  const {room, setRoom} = useAddRoomContext();
 
-  const onChangeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setDescriptionLong(e.target.value);
+  const [longDescription, setLongDescription] = useState(room.descriptionLong);
+
+  const onChangeValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    setLongDescription(value);
+    room.descriptionLong = value;
+    setRoom(room);
   };
-
-  useEffect(() => {
-    roomStartState.descriptionLong = descriptionLong;
-  }, [descriptionLong]);
-
   return (
-    <div className={styles.descriptionLong}>
-      <label htmlFor='descriptionLong'>
-        Room long description
-      </label>
-      <textarea
-        id='descriptionLong'
-        value={descriptionLong}
-        onChange={onChangeDescription}
-        placeholder="Enter full description of the room"
+    <label>
+      <SmallTitle
+        text="Room long description"
       />
-    </div>
+      <textarea
+        value={longDescription}
+        onChange={onChangeValue}
+        placeholder="Enter full longDescription"
+      />
+    </label>
   );
 };
