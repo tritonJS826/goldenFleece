@@ -7,17 +7,19 @@ interface RoomsProps {
 }
 
 export const Rooms = (props: RoomsProps) => {
+
+  const renderRooms = () => {
+    return props.rooms.map((room) => (
+      <RoomItem
+        key={room.id}
+        promoImgUrl={room.promoImgUrl}
+        roomId={room.id}
+      />));
+  };
+
   return (
     <div className={styles.rooms}>
-      {props.rooms.map(room =>
-        (
-          <RoomItem
-            key={room.id}
-            promoImgUrl={room.promoImgUrl}
-            roomId={room.id}
-          />
-        ),
-      )}
+      {renderRooms()}
     </div>
   );
 };

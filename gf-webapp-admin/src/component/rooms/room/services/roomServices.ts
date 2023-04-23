@@ -1,13 +1,12 @@
-import {ApartmentServices} from "src/model/Room/ApartmentServices";
+import {RoomServices} from "src/model/Room/RoomServices";
 
 export const changeRoomServices = (
-  roomServices: ApartmentServices[],
-
-  selectedService: ApartmentServices,
-
+  roomServices: RoomServices[],
+  selectedService: RoomServices,
 ) => {
-  return roomServices.includes(selectedService) ?
-    roomServices.filter(value => value !== selectedService)
-    :
-    [...roomServices, selectedService];
+  if (roomServices.includes(selectedService)) {
+    return roomServices.filter(roomService => roomService !== selectedService);
+  }
+
+  return [...roomServices, selectedService];
 };

@@ -1,5 +1,7 @@
 import {NewRoom} from "src/model/Room/NewRoom";
 
+type RoomWithId = NewRoom & { id: string };
+
 /**
  * Room model
  * @swagger
@@ -8,12 +10,12 @@ import {NewRoom} from "src/model/Room/NewRoom";
  *       Room:
  *         type: object
  *         properties:
- *           apartmentsType:
- *             $ref: '#/components/schemas/Apartments'
+ *           type:
+ *             $ref: '#/components/schemas/RoomType'
  *           services:
  *             type: string[]
  *             items:
- *               $ref: '#/components/schemas/ApartmentServices'
+ *               $ref: '#/components/schemas/RoomServices'
  *             example: [WiFi, Laundry]
  *           description:
  *             type: string
@@ -39,6 +41,10 @@ import {NewRoom} from "src/model/Room/NewRoom";
  *             type: number
  *             description: Amount of adults who can stay in the room.
  *             example: 1
+ *           children:
+ *             type: number
+ *             description: Amount of children who can stay in the room.
+ *             example: 2
  *           promoImgUrl:
  *             type: string
  *             description: The room's promo image URL.
@@ -59,9 +65,21 @@ import {NewRoom} from "src/model/Room/NewRoom";
  *             type: number
  *             description: The room's rating.
  *             example: 10
+ *           roomNumber:
+ *             type: number
+ *             description: The room's number.
+ *             example: 215
+ *           booked:
+ *             type: object[]
+ *             items:
+ *               $ref: '#/components/schemas/RoomBooked'
+ *           paid:
+ *             type: object[]
+ *             items:
+ *               $ref: '#/components/schemas/RoomPaid'
  *         required:
  *           - promoImgUrl
- *           - apartmentsType
+ *           - type
  *           - services
  *           - id
  *           - description
@@ -70,10 +88,12 @@ import {NewRoom} from "src/model/Room/NewRoom";
  *           - images
  *           - square
  *           - adults
+ *           - children
  *           - rating
+ *           - roomNumber
+ *           - booked
+ *           - paid
  */
-type RoomArgs = NewRoom & {id: string};
-
 export class Room extends NewRoom {
 
   /**
@@ -81,9 +101,9 @@ export class Room extends NewRoom {
     */
   public id: string;
 
-  constructor(args: RoomArgs) {
-    super(args);
-    this.id = args.id;
+  constructor(roomWithIdData: RoomWithId) {
+    super(roomWithIdData);
+    this.id = roomWithIdData.id;
   }
 
 }

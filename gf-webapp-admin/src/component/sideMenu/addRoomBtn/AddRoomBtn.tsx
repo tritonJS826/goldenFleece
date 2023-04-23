@@ -1,8 +1,12 @@
 import styles from "src/component/sideMenu/addRoomBtn/AddRoomBtn.module.scss";
 
-export const AddRoomBtn = ({showModal}: {showModal:() => void}) => {
+interface AddRoomBtnProps {
+  toggleModalVisibility: () => void
+}
+
+export const AddRoomBtn = (props: AddRoomBtnProps) => {
   return (
-    <div onClick={showModal}
+    <div onClick={props.toggleModalVisibility}
       className={styles.addRoomBtn}
     >
       <span className={styles.cross} />

@@ -3,7 +3,7 @@ import {Promo} from "src/component/rooms/room/promo/Promo";
 import {Slider} from "src/component/rooms/room/slider/Slider";
 import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 import {Adults} from "src/component/sideMenu/addRoomModal/adults/Adults";
-import {ApartmentsType} from "src/component/sideMenu/addRoomModal/apartmentsType/ApartmentType";
+import {RoomType} from "src/component/sideMenu/addRoomModal/roomType/RoomType";
 import {CloseBtn} from "src/component/sideMenu/addRoomModal/closeBtn/CloseBtn";
 import {Description} from "src/component/sideMenu/addRoomModal/description/Description";
 import {LongDescription} from "src/component/sideMenu/addRoomModal/longDescription/LongDescription";
@@ -17,24 +17,24 @@ import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {postRoom} from "src/service/RoomService";
 import {NewRoom} from "src/model/Room/NewRoom";
 import styles from "src/component/sideMenu/addRoomModal/AddRoomModal.module.scss";
-
-interface ShowModalProps {
-  showModal: () => void
+interface AddRoomModalProps {
+  toggleModalVisibility: () => void
 }
 
-export const AddRoomModal = (props: ShowModalProps) => {
+export const AddRoomModal = (props: AddRoomModalProps) => {
 
   const [room, setRoom] = useState<NewRoom>(defaultRoom);
 
   const addRoom = async () => {
     await postRoom(room);
+    props.toggleModalVisibility();
     location.reload();
   };
 
   return (
     <AddRoomContext.Provider value={{room, setRoom}}>
       <div className={styles.addRoomModal}>
-        <ApartmentsType />
+        <RoomType />
         <Description />
         <LongDescription />
         <div className={styles.wrapper}>
@@ -50,9 +50,9 @@ export const AddRoomModal = (props: ShowModalProps) => {
           onClick={addRoom}
           value="Submit"
         />
-        <CloseBtn showModal={props.showModal} />
+        <CloseBtn toggleModalVisibility={props.toggleModalVisibility} />
       </div>
-      <ModalOverlay showModal={props.showModal} />
+      <ModalOverlay toggleModalVisibility={props.toggleModalVisibility} />
     </AddRoomContext.Provider>
   );
 };

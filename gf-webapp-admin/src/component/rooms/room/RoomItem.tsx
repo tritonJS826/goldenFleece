@@ -1,5 +1,8 @@
 import {Room} from "src/model/Room/Room";
-import {ApartmentsType} from "src/component/rooms/room/apartmentType/ApartmentType";
+import {Adults} from "src/component/rooms/room/adults/Adults";
+import {RoomsType} from "src/component/rooms/room/roomType/RoomsType";
+import {Description} from "src/component/rooms/room/description/Description";
+import {LongDescription} from "src/component/rooms/room/longDescription/LongDescription";
 import {Price} from "src/component/rooms/room/price/Price";
 import {Promo} from "src/component/rooms/room/promo/Promo";
 import {Services} from "src/component/rooms/room/services/Services";
@@ -37,9 +40,9 @@ export const RoomItem = (props: RoomProps) => {
     <RoomContext.Provider value={{room, setRoom}}>
       <div className={styles.room}>
         <h2 className={styles.title}>
-          {`Room #${Number(room.id) + 1}`}
+          {`Room #${room.roomNumber}`}
         </h2>
-        <ApartmentsType />
+        <RoomsType />
         <TextField
           value={room.description}
           titleText='Room description'
