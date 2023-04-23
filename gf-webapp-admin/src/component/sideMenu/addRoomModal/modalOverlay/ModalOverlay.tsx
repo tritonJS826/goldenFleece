@@ -1,8 +1,12 @@
 import styles from "src/component/sideMenu/addRoomModal/modalOverlay/ModalOverlay.module.scss";
 
-export const ModalOverlay = ({showModal}: {showModal: () => void}) => {
+interface ModalOverlayProps {
+  toggleModalVisibility: () => void;
+}
+
+export const ModalOverlay = (props: ModalOverlayProps) => {
   return (
-    <div onClick={showModal}
+    <div onClick={props.toggleModalVisibility}
       className={styles.modalOverlay}
     />);
 };

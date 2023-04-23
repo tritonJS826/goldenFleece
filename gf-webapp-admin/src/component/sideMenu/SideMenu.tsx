@@ -17,7 +17,7 @@ export const SideMenu = () => {
   };
 
   const [isModalShown, setIsModalShown] = useState(false);
-  const showModal = () => {
+  const toggleModalVisibility = () => {
     setIsModalShown(!isModalShown);
     document.body.classList.toggle("notScrollable");
   };
@@ -29,9 +29,9 @@ export const SideMenu = () => {
       >
         Main page
       </Link>
-      <AddRoomBtn showModal={showModal} />
+      <AddRoomBtn toggleModalVisibility={toggleModalVisibility} />
       <Registration />
-      {isModalShown && <AddRoomModal showModal={showModal} />}
+      {isModalShown && <AddRoomModal toggleModalVisibility={toggleModalVisibility} />}
       <Button
         onClick={logOut}
         value="Logout"
