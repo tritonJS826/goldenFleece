@@ -35,6 +35,18 @@
             "dateIn":"2023-04-12",
             "dateOut":"2023-04-15"
           }
+        },
+        {
+          "customer":{
+          "id":"3",
+          "name":"Ekaterina",
+          "email":"6789@gmail.com",
+          "phone":"+989898"
+          },
+          "period":{
+            "dateIn":"2023-04-03",
+            "dateOut":"2023-04-11"
+          }
         }
       ],
       "paid":[

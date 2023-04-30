@@ -2,14 +2,13 @@ import {useEffect, useState} from "react";
 import {Room} from "src/model/Room/Room";
 import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
-import {RoomsList} from "src/logic/rooms/roomPage/roomsBlock/roomsList/RoomsList";
 import {useFilterRooms} from "src/component/filter/FilterContext";
 
-interface RoomsBlockProps {
-  setIsNavigationBlockInitializedFalse: () => void;
-}
+// interface RoomsBlockProps {
+//   setIsNavigationBlockInitializedFalse: () => void;
+// }
 
-export const RoomsBlock = (props: RoomsBlockProps) => {
+export const RoomsBlockWithFilters = () => {
   const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
 
   const [rooms, setRooms] = useState<Room[] | null>(null);
@@ -22,7 +21,7 @@ export const RoomsBlock = (props: RoomsBlockProps) => {
   useEffect(() => {
     async function onRoomsInitialized() {
       await initRooms();
-      props.setIsNavigationBlockInitializedFalse();
+      // props.setIsNavigationBlockInitializedFalse();
     }
     onRoomsInitialized();
   }, []);
@@ -55,14 +54,19 @@ export const RoomsBlock = (props: RoomsBlockProps) => {
     if (new Date(dateInValue).getTime() >= new Date(dateOutValue).getTime()
       || new Date(dateInValue).getTime() < new Date().getTime()
       || new Date(dateOutValue).getTime() < new Date().getTime()) {
-      console.log("Wrong dates!!!");
+      alert("Wrong dates!!!");
       return null;
-    }
-    if (dateInValue !== "yyyy-MM-dd" && dateOutValue !== "yyyy-MM-dd") {
-      return (new Date(roomFiltering.booked[0].period.dateOut).getTime() < new Date(dateInValue).getTime()
-        && new Date(roomFiltering.booked[0].period.dateOut).getTime() < new Date(dateOutValue).getTime()) ||
-        (new Date(roomFiltering.booked[0].period.dateIn).getTime() > new Date(dateInValue).getTime()
-        && new Date(roomFiltering.booked[0].period.dateIn).getTime() > new Date(dateOutValue).getTime());
+    } else if (dateInValue !== "yyyy-MM-dd" && dateOutValue !== "yyyy-MM-dd") {
+      const filteredRooms = roomFiltering.booked
+        .filter(room =>
+          (new Date(room.period.dateOut).getTime() < new Date(dateInValue).getTime()
+        && new Date(room.period.dateOut).getTime() < new Date(dateOutValue).getTime()) ||
+        (new Date(room.period.dateIn).getTime() > new Date(dateInValue).getTime()
+            && new Date(room.period.dateIn).getTime() > new Date(dateOutValue).getTime()));
+
+      if (filteredRooms.length === roomFiltering.booked.length) {
+        return filteredRooms;
+      }
     } else {
       return roomFiltering;
     }

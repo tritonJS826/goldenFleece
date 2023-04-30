@@ -1,13 +1,10 @@
 import {useState} from "react";
 import {PageBorder} from "src/component/pageBorder/PageBorder";
 import {BookingPromo} from "src/logic/bookingPage/bookingPromo/BookingPromo";
-import {HotelPlan} from "src/logic/bookingPage/hotelPlan/HotelPlan";
 import {Filter} from "src/component/filter/Filter";
 import {FilterRoomsContext} from "src/component/filter/FilterContext";
+import {RoomsBlockWithFilters} from "src/component/filter/RoomsBlockWithFilters";
 import styles from "src/logic/bookingPage/BookingPage.module.scss";
-// import {RoomsBlock} from "../rooms/roomsPage/roomBlock/RoomBlock";
-import {useRooms} from "src/component/rooms/useRooms";
-import {RoomsBlock} from "src/component/filter/Rooms";
 
 export const BookingPage = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -15,8 +12,6 @@ export const BookingPage = () => {
   const [dateOutValue, setDateOutValue] = useState("yyyy-MM-dd");
   const [adultsValue, setAdultsValue] = useState(0);
   const [childrenValue, setChildrenValue] = useState(0);
-
-  const [isNavigationBlockInitialized, setIsNavigationBlockInitialized] = useState(true);
 
   return (
     <div>
@@ -40,8 +35,7 @@ export const BookingPage = () => {
           }}
         >
           <Filter />
-          <RoomsBlock setIsNavigationBlockInitializedFalse={() => setIsNavigationBlockInitialized} />
-          {/* <HotelPlan /> */}
+          <RoomsBlockWithFilters />
         </FilterRoomsContext.Provider>
       </PageBorder>
     </div>
