@@ -4,10 +4,6 @@ import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
 import {useFilterRooms} from "src/component/filter/FilterContext";
 
-// interface RoomsBlockProps {
-//   setIsNavigationBlockInitializedFalse: () => void;
-// }
-
 export const RoomsBlockWithFilters = () => {
   const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
 
@@ -21,7 +17,6 @@ export const RoomsBlockWithFilters = () => {
   useEffect(() => {
     async function onRoomsInitialized() {
       await initRooms();
-      // props.setIsNavigationBlockInitializedFalse();
     }
     onRoomsInitialized();
   }, []);
