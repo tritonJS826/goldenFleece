@@ -5,12 +5,13 @@ import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {getCurrentDate, getNextDate} from "src/utils/getDate";
 import styles from "src/component/filter/Filters.module.scss";
 
-const MIN_DATE_IN = getCurrentDate;
-const MIN_DATE_OUT = getNextDate;
 const MIN_ADULTS_VALUE = 1;
 const MIN_CHILDREN_VALUE = 0;
-const defaultAdultsValue: number = MIN_ADULTS_VALUE;
-const defaultChildrenValue: number = MIN_CHILDREN_VALUE;
+export const defaultAdultsValue: number = MIN_ADULTS_VALUE;
+export const defaultChildrenValue: number = MIN_CHILDREN_VALUE;
+export const MIN_DATE_IN = getCurrentDate;
+export const MIN_DATE_OUT = getNextDate;
+export const defaultSearchValue = "";
 
 export const Filters = () => {
   const {filter} = useDictionary().dictionary;
@@ -20,7 +21,7 @@ export const Filters = () => {
     <div className={styles.filters}>
       <Filter
         paramValue={searchValue}
-        defaultParamValue={MIN_DATE_IN}
+        defaultParamValue={defaultSearchValue}
         urlQueryKey={URL_QUERY_KEYS.Search}
         inputName={filter.search}
         inputType="text"

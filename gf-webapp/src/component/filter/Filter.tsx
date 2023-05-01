@@ -17,19 +17,29 @@ export const Filter = (props: FilterProps) => {
 
   const setInputValue = () => {
     if (params.has(props.urlQueryKey)) {
-      const paramValueRaw = params.get(props.urlQueryKey) as string;
-      const paramValueNumber: number = JSON.parse(paramValueRaw);
-
-      if (params.has(props.urlQueryKey)) {
-        setSearchValue(paramValueRaw);
-      } else if (props.urlQueryKey === "dateIn") {
-        setDateInValue(paramValueRaw);
-      } else if (props.urlQueryKey === "dateOut") {
-        setDateOutValue(paramValueRaw);
-      } else if (props.urlQueryKey === "adults") {
-        setAdultsValue(paramValueNumber);
-      } else if (props.urlQueryKey === "children") {
-        setChildrenValue(paramValueNumber);
+      const paramValueRaw = params.get(props.urlQueryKey);
+      const paramValueNumber: number = paramValueRaw ? JSON.parse(paramValueRaw) : 0;
+      const paramValueString: string = paramValueRaw ? paramValueRaw.slice(1, -1) : "";
+      switch(props.urlQueryKey) {
+        case "dateIn": {
+          setDateInValue(paramValueString);
+          break;
+        }
+        case "dateOut": {
+          setDateOutValue(paramValueString);
+          break;
+        }
+        case "adults": {
+          setAdultsValue(paramValueNumber);
+          break;
+        }
+        case "children": {
+          setChildrenValue(paramValueNumber);
+          break;
+        }
+        default: {
+          setSearchValue(paramValueString);
+        }
       }
     }
   };
@@ -39,46 +49,42 @@ export const Filter = (props: FilterProps) => {
   }, []);
 
   const onChangeInput = (event: React.ChangeEvent<InputType>) => {
-    if (props.urlQueryKey === "search") {
-      setSearchValue(event.target.value);
-    } else if (props.urlQueryKey === "dateIn") {
-      setDateInValue(event.target.value);
-    } else if (props.urlQueryKey === "dateOut") {
-      setDateOutValue(event.target.value);
-    } else if (props.urlQueryKey === "adults") {
-      setAdultsValue(Number(event.target.value));
-    } else if (props.urlQueryKey === "children") {
-      setChildrenValue(Number(event.target.value));
+    switch(props.urlQueryKey) {
+      case "dateIn": {
+        setDateInValue(event.target.value);
+        break;
+      }
+      case "dateOut": {
+        setDateOutValue(event.target.value);
+        break;
+      }
+      case "adults": {
+        setAdultsValue(Number(event.target.value));
+        break;
+      }
+      case "children": {
+        setChildrenValue(Number(event.target.value));
+        break;
+      }
+      default: {
+        setSearchValue(event.target.value);
+      }
     }
   };
 
   const addQueryParams = (paramValue: number | string, defaultParamValue: number | string, urlQueryKey: string) => {
-    if (typeof paramValue === "string") {
-      const isValueExist = paramValue !== "";
+    const paramValueStringified = JSON.stringify(paramValue);
+    const defaultParamValueStringified = JSON.stringify(defaultParamValue);
+    const isValueExist = paramValueStringified !== defaultParamValueStringified;
 
-      const allParams = [...params];
-      const paramsWithoutCurrentParam = allParams
-        .filter(param => param[0] !== props.urlQueryKey);
+    const allParams = [...params];
+    const paramsWithoutCurrentParam = allParams
+      .filter(param => param[0] !== urlQueryKey);
 
-      if (isValueExist) {
-        setParams([...paramsWithoutCurrentParam, [props.urlQueryKey, paramValue]]);
-      } else {
-        setParams(paramsWithoutCurrentParam);
-      }
-    } else if (typeof paramValue === "number") {
-      const paramValueStringified = JSON.stringify(paramValue);
-      const defaultParamValueStringified = JSON.stringify(defaultParamValue);
-      const isValueExist = paramValueStringified !== defaultParamValueStringified;
-
-      const allParams = [...params];
-      const paramsWithoutCurrentParam = allParams
-        .filter(param => param[0] !== urlQueryKey);
-
-      if (isValueExist) {
-        setParams([...paramsWithoutCurrentParam, [urlQueryKey, paramValueStringified]]);
-      } else {
-        setParams(paramsWithoutCurrentParam);
-      }
+    if (isValueExist) {
+      setParams([...paramsWithoutCurrentParam, [urlQueryKey, paramValueStringified]]);
+    } else {
+      setParams(paramsWithoutCurrentParam);
     }
   };
 

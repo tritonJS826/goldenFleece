@@ -33,6 +33,6 @@ export const FilterRoomsContext: React.Context<FilterRooms> = createContext<Filt
   setAdultsValue: STUB_FILTER_FUNCTION,
   childrenValue: STUB_CHILDREN_VALUE,
   setChildrenValue: STUB_FILTER_FUNCTION,
-} as FilterRooms);
+});
 
 export const useFilterRooms = () => useContext(FilterRoomsContext);

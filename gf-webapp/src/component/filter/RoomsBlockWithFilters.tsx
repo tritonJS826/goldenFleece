@@ -21,49 +21,58 @@ export const RoomsBlockWithFilters = () => {
     onRoomsInitialized();
   }, []);
 
-  const adultsFilterCondition = (roomFiltering: Room) => {
+  const adultsFilterCondition = (room: Room) => {
     if (adultsValue !== 0) {
-      return roomFiltering.adults === adultsValue;
+      return room.adults === adultsValue;
     } else {
-      return roomFiltering;
+      return room;
     }
   };
 
-  const childrenFilterCondition = (roomFiltering: Room) => {
+  const childrenFilterCondition = (room: Room) => {
     if (childrenValue !== 0) {
-      return roomFiltering.children === childrenValue;
+      return room.children === childrenValue;
     } else {
-      return roomFiltering;
+      return room;
     }
   };
 
-  const searchFilterCondition = (roomFiltering: Room) => {
-    return Object.values(roomFiltering)
+  const searchFilterCondition = (room: Room) => {
+    return Object.values(room)
       .join()
       .toString()
       .toLowerCase()
       .includes(searchValue);
   };
 
-  const dateFilterCondition = (roomFiltering: Room) => {
-    if (new Date(dateInValue).getTime() >= new Date(dateOutValue).getTime()
-      || new Date(dateInValue).getTime() < (new Date().getTime() - 100000000)
-      || new Date(dateOutValue).getTime() < new Date().getTime()) {
+  const getDateValue = (value?: string | Date) => {
+    if (value) {
+      return new Date(value).getTime();
+    } else {
+      return new Date().getTime();
+    }
+  };
+
+  const roomsBookedCondition = (room: Room) => {
+    return room.booked
+      .filter(roomBooked =>
+        (getDateValue(roomBooked.period.dateOut) < getDateValue(dateInValue)
+    && getDateValue(roomBooked.period.dateOut) < getDateValue(dateOutValue)) ||
+    (getDateValue(roomBooked.period.dateIn) > getDateValue(dateInValue)
+        && getDateValue(roomBooked.period.dateIn) > getDateValue(dateOutValue)));
+  };
+
+  const dateFilterCondition = (room: Room) => {
+    if (getDateValue(dateInValue) >= getDateValue(dateOutValue)
+      || getDateValue(dateInValue) < (getDateValue() - 100000000)
+      || getDateValue(dateOutValue) < getDateValue()) {
       alert("Wrong dates!!!");
       return null;
-    } else if (dateInValue !== "yyyy-MM-dd" && dateOutValue !== "yyyy-MM-dd") {
-      const filteredRooms = roomFiltering.booked
-        .filter(room =>
-          (new Date(room.period.dateOut).getTime() < new Date(dateInValue).getTime()
-        && new Date(room.period.dateOut).getTime() < new Date(dateOutValue).getTime()) ||
-        (new Date(room.period.dateIn).getTime() > new Date(dateInValue).getTime()
-            && new Date(room.period.dateIn).getTime() > new Date(dateOutValue).getTime()));
-
-      if (filteredRooms.length === roomFiltering.booked.length) {
-        return filteredRooms;
-      }
     } else {
-      return roomFiltering;
+      const filteredRoom = roomsBookedCondition(room);
+      if (filteredRoom.length === room.booked.length) {
+        return filteredRoom;
+      }
     }
   };
 
