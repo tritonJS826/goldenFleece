@@ -47,7 +47,7 @@ export const RoomsBlockWithFilters = () => {
 
   const dateFilterCondition = (roomFiltering: Room) => {
     if (new Date(dateInValue).getTime() >= new Date(dateOutValue).getTime()
-      || new Date(dateInValue).getTime() < new Date().getTime()
+      || new Date(dateInValue).getTime() < (new Date().getTime() - 100000000)
       || new Date(dateOutValue).getTime() < new Date().getTime()) {
       alert("Wrong dates!!!");
       return null;

@@ -1,106 +1,97 @@
 import {useEffect} from "react";
-import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {useFilterRooms} from "src/component/filter/FilterContext";
 import {useSearchParams} from "react-router-dom";
-import {FilterInput} from "./FilterInput";
-import {SearchFilter} from "src/component/filter/SearchFilter";
-import {DateInFilter} from "src/component/filter/DateInFilter";
-import {DateOutFilter} from "src/component/filter/DateOutFilter";
-import {AdultsFilter} from "src/component/filter/AdultsFilter";
-import {ChildrenFilter} from "src/component/filter/ChildrenFilter";
-import styles from "src/component/filter/Filter.module.scss";
+import {FilterInput, InputType} from "./FilterInput";
 
-// type InputType = HTMLInputElement | HTMLTextAreaElement;
+interface FilterProps {
+  paramValue: number | string,
+  defaultParamValue: number | string,
+  urlQueryKey: string,
+  inputName: string,
+  inputType: "number" | "text" | "date"
+}
 
-// export enum URL_QUERY_KEYS {
-//   Search = "search",
-//   DateIn = "dateIn",
-//   DateOut = "dateOut",
-//   Adults = "adults",
-//   Children = "children",
-// }
+export const Filter = (props: FilterProps) => {
+  const [params, setParams] = useSearchParams();
+  const {setSearchValue, setDateInValue, setDateOutValue, setAdultsValue, setChildrenValue} = useFilterRooms();
 
-export const Filter = () => {
-  const {bookingRoomForm} = useDictionary().dictionary;
+  const setInputValue = () => {
+    if (params.has(props.urlQueryKey)) {
+      const paramValueRaw = params.get(props.urlQueryKey) as string;
+      const paramValueNumber: number = JSON.parse(paramValueRaw);
 
-  // const [params, setParams] = useSearchParams();
+      if (params.has(props.urlQueryKey)) {
+        setSearchValue(paramValueRaw);
+      } else if (props.urlQueryKey === "dateIn") {
+        setDateInValue(paramValueRaw);
+      } else if (props.urlQueryKey === "dateOut") {
+        setDateOutValue(paramValueRaw);
+      } else if (props.urlQueryKey === "adults") {
+        setAdultsValue(paramValueNumber);
+      } else if (props.urlQueryKey === "children") {
+        setChildrenValue(paramValueNumber);
+      }
+    }
+  };
 
-  // const {searchValue, setSearchValue} = useFilterRooms();
-  // const {dateInValue, setDateInValue} = useFilterRooms();
-  // const {dateOutValue, setDateOutValue} = useFilterRooms();
-  // const {adultsValue, setAdultsValue} = useFilterRooms();
-  // const {childrenValue, setChildrenValue} = useFilterRooms();
+  useEffect(() => {
+    setInputValue();
+  }, []);
 
-  // useEffect(() => {
-  //   if (params.has(URL_QUERY_KEYS.Search)) {
-  //     setSearchValue(params.get(URL_QUERY_KEYS.Search) as string);
-  //   }
-  //   if (params.has(URL_QUERY_KEYS.DateIn)) {
-  //     setDateInValue(params.get(URL_QUERY_KEYS.DateIn) as string);
-  //   }
-  //   if (params.has(URL_QUERY_KEYS.DateOut)) {
-  //     setDateOutValue(params.get(URL_QUERY_KEYS.DateOut) as string);
-  //   }
-  //   if (params.has(URL_QUERY_KEYS.Adults)) {
-  //     const adultsValueRaw = params.get(URL_QUERY_KEYS.Adults) as string;
-  //     const adultsValueNumber: number = JSON.parse(adultsValueRaw);
-  //     setAdultsValue(adultsValueNumber);
-  //   }
-  //   if (params.has(URL_QUERY_KEYS.Children)) {
-  //     const childrenValueRaw = params.get(URL_QUERY_KEYS.Children) as string;
-  //     const childrenValueNumber: number = JSON.parse(childrenValueRaw);
-  //     setChildrenValue(childrenValueNumber);
-  //   }
-  // }, []);
+  const onChangeInput = (event: React.ChangeEvent<InputType>) => {
+    if (props.urlQueryKey === "search") {
+      setSearchValue(event.target.value);
+    } else if (props.urlQueryKey === "dateIn") {
+      setDateInValue(event.target.value);
+    } else if (props.urlQueryKey === "dateOut") {
+      setDateOutValue(event.target.value);
+    } else if (props.urlQueryKey === "adults") {
+      setAdultsValue(Number(event.target.value));
+    } else if (props.urlQueryKey === "children") {
+      setChildrenValue(Number(event.target.value));
+    }
+  };
 
-  // const onChangeInput = (event: React.ChangeEvent<InputType>) => {
-  //   setSearchValue(event.target.value);
-  // };
+  const addQueryParams = (paramValue: number | string, defaultParamValue: number | string, urlQueryKey: string) => {
+    if (typeof paramValue === "string") {
+      const isValueExist = paramValue !== "";
 
-  // useEffect(() => {
-  //   const isValueExist = searchValue !== "";
+      const allParams = [...params];
+      const paramsWithoutCurrentParam = allParams
+        .filter(param => param[0] !== props.urlQueryKey);
 
-  //   const allParams = [...params];
-  //   const paramsWithoutSearch = allParams
-  //     .filter(param => param[0] !== URL_QUERY_KEYS.Search);
+      if (isValueExist) {
+        setParams([...paramsWithoutCurrentParam, [props.urlQueryKey, paramValue]]);
+      } else {
+        setParams(paramsWithoutCurrentParam);
+      }
+    } else if (typeof paramValue === "number") {
+      const paramValueStringified = JSON.stringify(paramValue);
+      const defaultParamValueStringified = JSON.stringify(defaultParamValue);
+      const isValueExist = paramValueStringified !== defaultParamValueStringified;
 
-  //   if (isValueExist) {
-  //     setParams([...paramsWithoutSearch, [URL_QUERY_KEYS.Search, searchValue]]);
-  //   } else {
-  //     setParams(paramsWithoutSearch);
-  //   }
-  // }, [searchValue]);
+      const allParams = [...params];
+      const paramsWithoutCurrentParam = allParams
+        .filter(param => param[0] !== urlQueryKey);
 
-  // const minAdultsValue = 0;
-  // const defaultAdultsValue: number = minAdultsValue;
+      if (isValueExist) {
+        setParams([...paramsWithoutCurrentParam, [urlQueryKey, paramValueStringified]]);
+      } else {
+        setParams(paramsWithoutCurrentParam);
+      }
+    }
+  };
 
-  // useEffect(() => {
-  //   const adultsValueStringified = JSON.stringify(adultsValue);
-  //   const defaultAdultsValueStringified = JSON.stringify(defaultAdultsValue);
-  //   const isValueExist = adultsValueStringified !== defaultAdultsValueStringified;
-
-  //   const allParams = [...params];
-  //   const paramsWithoutAdults = allParams
-  //     .filter(param => param[0] !== URL_QUERY_KEYS.Adults);
-
-  //   if (isValueExist) {
-  //     setParams([...paramsWithoutAdults, [URL_QUERY_KEYS.Adults, adultsValueStringified]]);
-  //   } else {
-  //     setParams(paramsWithoutAdults);
-  //   }
-  // }, [adultsValue]);
-
-  // const minDate = new Date().toISOString().split("T")[0];
-  // console.log(minDate);
-
+  useEffect(() => {
+    addQueryParams(props.paramValue, props.defaultParamValue, props.urlQueryKey);
+  }, [props.paramValue]);
 
   return (
-    <div className={styles.filter}>
-      <SearchFilter />
-      <DateInFilter />
-      <DateOutFilter />
-      <AdultsFilter />
-      <ChildrenFilter />
-    </div>
+    <FilterInput
+      type={props.inputType}
+      name={props.inputName}
+      value={props.paramValue}
+      onChange={onChangeInput}
+    />
   );
 };

@@ -1,4 +1,4 @@
-import styles from "src/component/filter/Filter.module.scss";
+import styles from "src/component/filter/FilterInput.module.scss";
 
 export type InputType = HTMLInputElement | HTMLTextAreaElement;
 
@@ -28,6 +28,7 @@ export const FilterInput: React.FC<FilterInputProps> = (props: FilterInputProps)
           className={styles.input}
           name={props.name}
           value={props.value}
+          min="0"
           onChange={props.onChange}
           required
         />

@@ -1,16 +1,18 @@
 import {useState} from "react";
 import {PageBorder} from "src/component/pageBorder/PageBorder";
 import {BookingPromo} from "src/logic/bookingPage/bookingPromo/BookingPromo";
-import {Filter} from "src/component/filter/Filter";
+import {Filters} from "src/component/filter/Filters";
 import {FilterRoomsContext} from "src/component/filter/FilterContext";
 import {RoomsBlockWithFilters} from "src/component/filter/RoomsBlockWithFilters";
+import {getCurrentDate, getNextDate} from "src/utils/getDate";
 import styles from "src/logic/bookingPage/BookingPage.module.scss";
+
 
 export const BookingPage = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [dateInValue, setDateInValue] = useState("yyyy-MM-dd");
-  const [dateOutValue, setDateOutValue] = useState("yyyy-MM-dd");
-  const [adultsValue, setAdultsValue] = useState(0);
+  const [dateInValue, setDateInValue] = useState(getCurrentDate);
+  const [dateOutValue, setDateOutValue] = useState(getNextDate);
+  const [adultsValue, setAdultsValue] = useState(1);
   const [childrenValue, setChildrenValue] = useState(0);
 
   return (
@@ -34,7 +36,7 @@ export const BookingPage = () => {
             setChildrenValue,
           }}
         >
-          <Filter />
+          <Filters />
           <RoomsBlockWithFilters />
         </FilterRoomsContext.Provider>
       </PageBorder>

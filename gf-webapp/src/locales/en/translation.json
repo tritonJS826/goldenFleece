@@ -105,5 +105,12 @@
     "phone": "Your phone number",
     "message": "Message",
     "buttonText": "Submit"
+  },
+  "filter": {
+    "search": "Search",
+    "dateIn": "Date In",
+    "dateOut": "Date Out",
+    "adultsAmount": "Adults",
+    "childrenAmount": "Children"
   }
 }
