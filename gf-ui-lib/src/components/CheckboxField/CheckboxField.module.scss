@@ -1,0 +1,14 @@
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  cursor: pointer;
+}
+
+.input {
+  margin-right: 5px;
+  cursor: pointer;
+}

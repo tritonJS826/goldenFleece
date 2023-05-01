@@ -1,11 +1,5 @@
 import {Room} from "src/model/Room/Room";
-import {Adults} from "src/component/rooms/room/adults/Adults";
-import {RoomsType} from "src/component/rooms/room/roomType/RoomsType";
-import {Description} from "src/component/rooms/room/description/Description";
-import {LongDescription} from "src/component/rooms/room/longDescription/LongDescription";
-import {Price} from "src/component/rooms/room/price/Price";
 import {Promo} from "src/component/rooms/room/promo/Promo";
-import {Services} from "src/component/rooms/room/services/Services";
 import {Slider} from "src/component/rooms/room/slider/Slider";
 import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {useNavigate} from "react-router-dom";
@@ -14,8 +8,14 @@ import {MAIN_PAGE_ROUTE} from "src/utils/pathes";
 import {RoomContext} from "src/component/rooms/room/roomContext";
 import {useState} from "react";
 import {NumberField} from "gf-ui-lib/src/components/NumberField/NumberField";
+import {SelectField} from "gf-ui-lib/src/components/SelectField/SelectField";
+import {CheckboxField} from "gf-ui-lib/src/components/CheckboxField/CheckboxField";
 import {TextField} from "gf-ui-lib/src/components/TextField/TextField";
+import {RoomType} from "src/model/Room/RoomType";
+import {isValidRoomService, isValidRoomType, changeRoomServices} from "src/utils/isValidRoom";
 import styles from "src/component/rooms/room/RoomItem.module.scss";
+import {enumToArray} from "src/utils/enumToArray";
+import {RoomServices} from "src/model/Room/RoomServices";
 
 interface RoomProps {
   room:Room;
@@ -25,6 +25,8 @@ export const RoomItem = (props: RoomProps) => {
 
   const navigate = useNavigate();
   const [room, setRoom] = useState<Room>(props.room);
+  const [roomServices, setRoomServices] = useState(room.services);
+  room.services = roomServices;
 
   const deleteWithRedirect = () => {
     deleteRoom(room.id);
@@ -42,7 +44,18 @@ export const RoomItem = (props: RoomProps) => {
         <h2 className={styles.title}>
           {`Room #${room.roomNumber}`}
         </h2>
-        <RoomsType />
+        <SelectField
+          itemsList={Object.values(RoomType)}
+          selectedItem={room.type}
+          titleText='Room type'
+          onChangeValue={(value: string) => {
+            isValidRoomType(value) ?
+              room.type = value
+              :
+              null;
+            setRoom(room);
+          }}
+        />
         <TextField
           value={room.description}
           titleText='Room description'
@@ -60,7 +73,18 @@ export const RoomItem = (props: RoomProps) => {
             setRoom(room);
           }}
         />
-        <Services />
+        <CheckboxField
+          itemsList={enumToArray(RoomServices)}
+          selectedItems={roomServices}
+          titleText='Room services'
+          onChangeValue={(item: string) => {
+            isValidRoomService(item) ?
+              setRoomServices(roomCurrentServices => changeRoomServices(roomCurrentServices, item))
+              :
+              null;
+            setRoom(room);
+          }}
+        />
         <div className={styles.wrapper}>
           <NumberField
             value={room.rating}
@@ -70,7 +94,13 @@ export const RoomItem = (props: RoomProps) => {
               setRoom(room);
             }}
           />
-          <Price />
+          <NumberField
+            value={room.price.getPriceAmount()}
+            titleText='Room price'
+            onChangeValue={(value: number) => {
+              room.price.setNewPrice(value);
+            }}
+          />
           <NumberField
             value={room.square}
             titleText='Room square'

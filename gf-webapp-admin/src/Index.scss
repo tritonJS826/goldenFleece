@@ -7,6 +7,8 @@
   font-family: Lato Regular, sans-serif, system-ui;
 }
 
+// Color constants
+
 $color-primary: #bda785;
 $color-secondary: #1a4531;
 $color-text: #383838;
@@ -24,6 +26,10 @@ $color-disabled: #ccc;
 $color-error: red;
 $color-overlay: rgba(0,0,0, 0.5);
 $color-light-opacity70: rgba(255,255,255, 0.7);
+
+// Indention constants
+
+$list-mb: 5px;
 
 
 body {

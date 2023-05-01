@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {SmallTitle} from "../SmallTitle/SmallTitle";
+import styles from "./NumberField.module.scss";
 
 /**
  * Input props
@@ -30,11 +31,12 @@ export const NumberField = (props: NumberFieldProps) => {
   };
 
   return (
-    <label>
+    <label className={styles.label}>
       <SmallTitle
         text={props.titleText}
       />
       <input
+        className={styles.input}
         type="number"
         value={value}
         onChange={changeHandler}

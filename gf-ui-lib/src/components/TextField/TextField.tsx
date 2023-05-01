@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {SmallTitle} from "../SmallTitle/SmallTitle";
+import styles from "./TextField.module.scss";
 
 /**
  * Input props
@@ -18,12 +19,17 @@ interface TextFieldProps {
    */
   titleText: string;
   /**
+   * Input's placeholder
+   */
+  placeholder?: string;
+  /**
    * Callback triggered on change input field
    */
   onChangeValue: (value: string) => void;
 }
 
 const DEFAULT_VALUE = "text";
+const DEFAULT_PLACEHOLDER_VALUE = "";
 
 export const TextField = (props: TextFieldProps) => {
 
@@ -38,17 +44,21 @@ export const TextField = (props: TextFieldProps) => {
   const renderTextField = () =>
     (props.type ?? DEFAULT_VALUE) === "text" ?
       <input
+        className={styles.input}
         value={value}
+        placeholder={props.placeholder ?? DEFAULT_PLACEHOLDER_VALUE}
         onChange={changeHandler}
       />
       :
       <textarea
+        className={styles.textarea}
         value={value}
+        placeholder={props.placeholder ?? DEFAULT_PLACEHOLDER_VALUE}
         onChange={changeHandler}
       />;
 
   return (
-    <label>
+    <label className={styles.label}>
       <SmallTitle
         text={props.titleText}
       />

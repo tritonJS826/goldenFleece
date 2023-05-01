@@ -16,26 +16,6 @@
   overflow-y: scroll;
   z-index: 1000;
 
-  label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
-
-  input,
-  textarea,
-  select {
-    border:none;
-    outline: none;
-  }
-
-  input[type=number] {
-      padding: 2px 5px;
-      font-size: 1rem;
-      width: 80px;
-  }
-
   &::-webkit-scrollbar{
     width: 0;
   }
