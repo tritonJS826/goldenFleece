@@ -3,7 +3,7 @@ import styles from "./CheckboxField.module.scss";
 
 interface CheckboxFieldProps {
   /**
-   * itemsList array of select options
+   * Array of select options
    */
   itemsList: string[];
   /**
