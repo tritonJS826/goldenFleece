@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {Room} from "src/model/Room/Room";
-import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
 import {useFilterRooms} from "src/component/filter/FilterContext";
+import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 
 export const RoomsBlockWithFilters = () => {
   const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
@@ -104,5 +104,4 @@ export const RoomsBlockWithFilters = () => {
       {renderRoomItem(rooms)}
     </div>
   );
-
 };

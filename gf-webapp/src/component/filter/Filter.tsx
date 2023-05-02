@@ -1,7 +1,7 @@
 import {useEffect} from "react";
-import {useFilterRooms} from "src/component/filter/FilterContext";
 import {useSearchParams} from "react-router-dom";
-import {FilterInput, InputType} from "./FilterInput";
+import {useFilterRooms} from "src/component/filter/FilterContext";
+import {FilterInput, InputType} from "src/component/filter/FilterInput";
 
 interface FilterProps {
   paramValue: number | string,
@@ -11,6 +11,9 @@ interface FilterProps {
   inputType: "number" | "text" | "date"
 }
 
+export const defaultNumberValue = 0;
+export const defaultStringValue = "";
+
 export const Filter = (props: FilterProps) => {
   const [params, setParams] = useSearchParams();
   const {setSearchValue, setDateInValue, setDateOutValue, setAdultsValue, setChildrenValue} = useFilterRooms();
@@ -18,8 +21,8 @@ export const Filter = (props: FilterProps) => {
   const setInputValue = () => {
     if (params.has(props.urlQueryKey)) {
       const paramValueRaw = params.get(props.urlQueryKey);
-      const paramValueNumber: number = paramValueRaw ? JSON.parse(paramValueRaw) : 0;
-      const paramValueString: string = paramValueRaw ? paramValueRaw.slice(1, -1) : "";
+      const paramValueNumber: number = paramValueRaw ? JSON.parse(paramValueRaw) : defaultNumberValue;
+      const paramValueString: string = paramValueRaw ? paramValueRaw.slice(1, -1) : defaultStringValue;
       switch(props.urlQueryKey) {
         case "dateIn": {
           setDateInValue(paramValueString);

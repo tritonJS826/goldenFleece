@@ -30,6 +30,6 @@ export type Dictionary = {
 export const DictionaryContext: React.Context<Dictionary> = createContext<Dictionary>({
   dictionary: STUB_DICTIONARY_LANGUAGE,
   setDictionary: STUB_SET_DICTIONARY,
-} as Dictionary);
+});
 
 export const useDictionary = () => useContext(DictionaryContext);
