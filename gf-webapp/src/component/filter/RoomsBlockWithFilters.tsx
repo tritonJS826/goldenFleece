@@ -3,6 +3,7 @@ import {Room} from "src/model/Room/Room";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
 import {useFilterRooms} from "src/component/filter/FilterContext";
 import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
+import {getDateValue} from "src/utils/getDateValue";
 
 export const RoomsBlockWithFilters = () => {
   const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
@@ -21,7 +22,7 @@ export const RoomsBlockWithFilters = () => {
     onRoomsInitialized();
   }, []);
 
-  const adultsFilterCondition = (room: Room) => {
+  const filterAdults = (room: Room) => {
     if (adultsValue !== 0) {
       return room.adults === adultsValue;
     } else {
@@ -29,7 +30,7 @@ export const RoomsBlockWithFilters = () => {
     }
   };
 
-  const childrenFilterCondition = (room: Room) => {
+  const filterChildren = (room: Room) => {
     if (childrenValue !== 0) {
       return room.children === childrenValue;
     } else {
@@ -37,7 +38,7 @@ export const RoomsBlockWithFilters = () => {
     }
   };
 
-  const searchFilterCondition = (room: Room) => {
+  const filterSearch = (room: Room) => {
     return Object.values(room)
       .join()
       .toString()
@@ -45,15 +46,7 @@ export const RoomsBlockWithFilters = () => {
       .includes(searchValue);
   };
 
-  const getDateValue = (value?: string | Date) => {
-    if (value) {
-      return new Date(value).getTime();
-    } else {
-      return new Date().getTime();
-    }
-  };
-
-  const roomsBookedCondition = (room: Room) => {
+  const filterRoomsNotBooked = (room: Room) => {
     return room.booked
       .filter(roomBooked =>
         (getDateValue(roomBooked.period.dateOut) < getDateValue(dateInValue)
@@ -66,28 +59,28 @@ export const RoomsBlockWithFilters = () => {
   const dateInBeforeToday = getDateValue(dateInValue) < (getDateValue() - 100000000);
   const wrongDates = dateInAfterDateOut || dateInBeforeToday;
 
-  const dateFilterCondition = (room: Room) => {
+  const filterDate = (room: Room) => {
     if (wrongDates) {
       alert("Wrong dates!!!");
       return null;
     } else {
-      const filteredRoom = roomsBookedCondition(room);
+      const filteredRoom = filterRoomsNotBooked(room);
       if (filteredRoom.length === room.booked.length) {
         return filteredRoom;
       }
     }
   };
 
-  const filterCommonConditions = (roomsList: Room[]) => {
+  const filterRooms = (roomsList: Room[]) => {
     return roomsList
-      .filter((room) => adultsFilterCondition(room))
-      .filter((room) => childrenFilterCondition(room))
-      .filter((room) => searchFilterCondition(room))
-      .filter((room) => dateFilterCondition(room));
+      .filter(filterAdults)
+      .filter(filterChildren)
+      .filter(filterSearch)
+      .filter(filterDate);
   };
 
   const renderRoomItem = (roomsList: Room[]) => {
-    return filterCommonConditions(roomsList).map(room => (
+    return filterRooms(roomsList).map(room => (
       <RoomItem
         key={room.id}
         room={room}
