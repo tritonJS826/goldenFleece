@@ -12,10 +12,10 @@ export type ModalVisibility = {
   setIsModalActive: (modalActive: boolean) => void,
 }
 
-export const ModalVisibilityContext = createContext<ModalVisibility>({
+export const ModalVisibilityContext: React.Context<ModalVisibility> = createContext<ModalVisibility>({
   isModalActive: STUB_MODAL_IS_ACTIVE,
   setIsModalActive: STUB_SET_VISIBILITY,
-} as ModalVisibility);
+});
 
 export const useModalVisibilityContext = () => useContext(ModalVisibilityContext);
 
@@ -27,9 +27,9 @@ export type Dictionary = {
   setDictionary: (dictionary: DictionaryType) => void,
 }
 
-export const DictionaryContext = createContext<Dictionary>({
+export const DictionaryContext: React.Context<Dictionary> = createContext<Dictionary>({
   dictionary: STUB_DICTIONARY_LANGUAGE,
   setDictionary: STUB_SET_DICTIONARY,
-} as Dictionary);
+});
 
 export const useDictionary = () => useContext(DictionaryContext);
