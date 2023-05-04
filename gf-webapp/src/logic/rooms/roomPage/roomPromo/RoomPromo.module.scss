@@ -36,16 +36,18 @@
 .container,
 .services {
   background: $color-primary;
-  height: 50px;
+  min-height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  height: fit-content;
 }
 
 .description {
   color: $color-text;
   text-align: center;
   font-weight: bold;
+  width: 50%;
+  margin: 5px 15px;
 }
 
 .services {

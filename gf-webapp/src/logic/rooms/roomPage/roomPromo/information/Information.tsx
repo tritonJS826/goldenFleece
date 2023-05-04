@@ -17,7 +17,7 @@ export const Information = (props: InformationProps) => {
     <div>
       <div className={styles.container}>
         <div className={styles.description}>
-          TODO: render right description for specific room
+          {dictionary.roomInfo.roomDescription[props.type]}
         </div>
         <div className={styles.description}>
           {`Price: ${props.price.getFullPrice()}`}
