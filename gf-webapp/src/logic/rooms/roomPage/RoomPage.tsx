@@ -8,6 +8,7 @@ import {ServicesBlock} from "src/component/servicesBlock/ServicesBlock";
 import {BookingBlock} from "src/component/bookBlock/BookingBlock";
 import {Room} from "src/model/Room/Room";
 import {RoomApiService} from "src/service/RoomApi/RoomApi";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import styles from "src/logic/rooms/roomPage/RoomPage.module.scss";
 
 /**
@@ -23,6 +24,7 @@ type UrlParams = {
 export const RoomPage = () => {
   const {id} = useParams<UrlParams>();
   const [room, setRoom] = useState<Room | null>(null);
+  const {roomsPage} = useDictionary().dictionary;
 
   const loadRoom = async (roomId: string): Promise<void> => {
     const currentRoom = await RoomApiService.getRoomById(roomId);
@@ -63,7 +65,7 @@ export const RoomPage = () => {
         services={room.services}
       />
       <div className={styles.about}>
-        {room.descriptionLong}
+        {roomsPage.description}
       </div>
       <RoomSlider images={room.images} />
       <RoomsBlock />

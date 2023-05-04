@@ -1,168 +1,169 @@
 [
   {
-    "promoImgUrl":"https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
-    "type":"Single",
-    "services":[
+    "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "type": "Single",
+    "services": [
       "WiFi"
     ],
-    "description":"A small room",
-    "descriptionLong":"Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
-    "price":{
-      "currency":"GEL",
-      "amount":100
+    "description": "A small room",
+    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
+    "price": {
+      "currency": "GEL",
+      "amount": 100
     },
-    "images":[
+    "images": [
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f3402c0f83c81a3cba_drz_grand-forest-metsovo_0120.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f7655107ce9b86c051_drz_grand-forest-metsovo_0151.jpg"
-      ],
-      "adults":1,
-      "children":0,
-      "square":30,
-      "rating":8,
-      "roomNumber":1,
-      "booked":[
-        {
-          "customer":{
-            "id":"0",
-            "name":"John",
-            "email":"123@gmail.com",
-            "phone":"+123123123"
-          },
-          "period":{
-            "dateIn":"2023-04-12",
-            "dateOut":"2023-04-15"
-          }
+    ],
+    "adults": 1,
+    "children": 0,
+    "square": 30,
+    "rating": 8,
+    "roomNumber": 1,
+    "booked": [
+      {
+        "customer": {
+          "id": "0",
+          "name": "John",
+          "email": "123@gmail.com",
+          "phone": "+123123123"
+        },
+        "period": {
+          "dateIn": "2023-04-12",
+          "dateOut": "2023-04-15"
         }
-      ],
-      "paid":[
-        {
-          "customer":{
-            "id":"0",
-            "name":"John",
-            "email":"123@gmail.com",
-            "phone":"+123123123"
-          },
-          "period":{
-            "dateIn":"2023-04-12",
-            "dateOut":"2023-04-15"
-          }
+      }
+    ],
+    "paid": [
+      {
+        "customer": {
+          "id": "0",
+          "name": "John",
+          "email": "123@gmail.com",
+          "phone": "+123123123"
+        },
+        "period": {
+          "dateIn": "2023-04-12",
+          "dateOut": "2023-04-15"
         }
-      ],
-      "id":"0"
+      }
+    ],
+    "id": "0"
   },
   {
-    "type":"Double",
-    "promoImgUrl":"https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
-    "services":[
+    "type": "Double",
+    "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "services": [
       "WiFi",
       "Laundry"
     ],
-    "description":"A comfortable room",
-    "descriptionLong":"Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
-    "price":{
-      "currency":"GEL",
-      "amount":300
+    "description": "A comfortable room",
+    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
+    "price": {
+      "currency": "GEL",
+      "amount": 300
     },
-    "images":[
+    "images": [
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f3402c0f83c81a3cba_drz_grand-forest-metsovo_0120.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f7655107ce9b86c051_drz_grand-forest-metsovo_0151.jpg"
     ],
-    "adults":2,
-    "children":1,
-    "square":40,
-    "rating":10,
-    "id":"1",
-    "roomNumber":2,
-    "booked":[
+    "adults": 2,
+    "children": 1,
+    "square": 40,
+    "rating": 10,
+    "id": "1",
+    "roomNumber": 2,
+    "booked": [
       {
-        "customer":{
-          "id":"1",
-          "name":"Victor",
-          "email":"456@gmail.com",
-          "phone":"+456456456"
+        "customer": {
+          "id": "1",
+          "name": "Victor",
+          "email": "456@gmail.com",
+          "phone": "+456456456"
         },
-        "period":{
-          "dateIn":"2023-04-21",
-          "dateOut":"2023-04-23"
+        "period": {
+          "dateIn": "2023-04-21",
+          "dateOut": "2023-04-23"
         }
       }
     ],
-    "paid":[
+    "paid": [
       {
-        "customer":{
-          "id":"1",
-          "name":"Victor",
-          "email":"456@gmail.com",
-          "phone":"+456456456"
+        "customer": {
+          "id": "1",
+          "name": "Victor",
+          "email": "456@gmail.com",
+          "phone": "+456456456"
         },
-        "period":{
-          "dateIn":"2023-04-21",
-          "dateOut":"2023-04-23"
+        "period": {
+          "dateIn": "2023-04-21",
+          "dateOut": "2023-04-23"
         }
       }
     ]
   },
   {
-    "id":"2",
-    "type":"Twin",
-    "services":[
+    "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
+    "type": "Twin",
+    "services": [
       "WiFi",
       "Laundry",
       "TeaCoffeeMaker",
-      "Heating"
+      "Heating",
+      "AirportShuttle"
     ],
-    "description":"A beautiful room",
-    "descriptionLong":"Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
-    "price":{
-      "currency":"GEL",
-      "amount":500
+    "description": "A beautiful room",
+    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
+    "price": {
+      "currency": "GEL",
+      "amount": 500
     },
-    "square":35,
-    "adults":2,
-    "children":0,
-    "promoImgUrl":"https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
-    "images":[
+    "images": [
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1d40bf7423dabe9b6_506%20(2).jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f3402c0f83c81a3cba_drz_grand-forest-metsovo_0120.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f7655107ce9b86c051_drz_grand-forest-metsovo_0151.jpg"
     ],
-    "rating":9,
-    "roomNumber":3,
-    "booked":[
+    "adults": 2,
+    "children": 0,
+    "square": 35,
+    "rating": 9,
+    "roomNumber": 3,
+    "booked": [
       {
-        "customer":{
-        "id":"2",
-        "name":"Elizabeth",
-        "email":"678@gmail.com",
-        "phone":"+6767667"
+        "customer": {
+          "id": "2",
+          "name": "Elizabeth",
+          "email": "678@gmail.com",
+          "phone": "+6767667"
         },
-        "period":{
-          "dateIn":"2023-05-21",
-          "dateOut":"2023-05-28"
+        "period": {
+          "dateIn": "2023-05-21",
+          "dateOut": "2023-05-28"
         }
       }
     ],
-    "paid":[
+    "paid": [
       {
-        "customer":{
-          "id":"2",
-          "name":"Elizabeth",
-          "email":"678@gmail.com",
-          "phone":"+6767667"
+        "customer": {
+          "id": "2",
+          "name": "Elizabeth",
+          "email": "678@gmail.com",
+          "phone": "+6767667"
         },
-        "period":{
-          "dateIn":"2023-05-21",
-          "dateOut":"2023-05-28"
+        "period": {
+          "dateIn": "2023-05-21",
+          "dateOut": "2023-05-28"
         }
       }
-    ]
+    ],
+    "id": "2"
   }
 ]

@@ -10,7 +10,7 @@ interface RoomItemProps {
 }
 
 export const RoomItem = (props: RoomItemProps) => {
-  const {roomPage} = useDictionary().dictionary;
+  const {roomPage, roomInfo} = useDictionary().dictionary;
   return (
     <div
       key={props.roomId}
@@ -27,7 +27,7 @@ export const RoomItem = (props: RoomItemProps) => {
           alt="room"
         />
         <h3 className={styles.title3}>
-          {props.type}
+          {roomInfo[props.type]}
         </h3>
         <span className={styles.spanLink}>
           {roomPage.buttonText}

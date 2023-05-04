@@ -60,6 +60,20 @@
       "Double": "Wake up to the breathtaking beauty of the Pindus mountains in a double room",
       "Twin": "Wake up to the breathtaking beauty of the Pindus mountains in a twin room"
     },
+    "shortRoomDescription": {
+      "Single": "A small room",
+      "Double": "A comfortable room",
+      "Twin": "A beautiful room"
+    },
+    "price": "Price",
+    "services": "Services",
+    "roomServices": {
+      "WiFi": "WiFi",
+      "Laundry": "Laundry",
+      "TeaCoffeeMaker": "Tea Coffee Maker",
+      "Heating": "Heating",
+      "AirportShuttle": "Airport Shuttle"
+    },
     "dimension": "m",
     "adults": "adults",
     "children": "children",
