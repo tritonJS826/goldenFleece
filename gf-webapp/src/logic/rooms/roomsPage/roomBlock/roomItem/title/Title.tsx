@@ -4,7 +4,7 @@ import styles from "../RoomItem.module.scss";
 
 interface TitleProps {
   roomNumber: number;
-  roomTitle: RoomType;
+  type: RoomType;
 }
 
 export const Title = (props: TitleProps) => {
@@ -15,7 +15,7 @@ export const Title = (props: TitleProps) => {
         {props.roomNumber}
       </span>
       <h3 className={styles.titleBook}>
-        {dictionary.roomInfo[props.roomTitle]}
+        {dictionary.roomInfo[props.type]}
       </h3>
     </div>
   );

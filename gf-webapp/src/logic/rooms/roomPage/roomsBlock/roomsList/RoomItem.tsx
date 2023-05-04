@@ -6,7 +6,7 @@ import {RoomType} from "src/model/Room/RoomType";
 interface RoomItemProps {
   roomId: string;
   promoImgUrl: string;
-  roomTitle: RoomType;
+  type: RoomType;
 }
 
 export const RoomItem = (props: RoomItemProps) => {
@@ -27,7 +27,7 @@ export const RoomItem = (props: RoomItemProps) => {
           alt="room"
         />
         <h3 className={styles.title3}>
-          {props.roomTitle}
+          {props.type}
         </h3>
         <span className={styles.spanLink}>
           {roomPage.buttonText}

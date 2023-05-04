@@ -12,7 +12,7 @@ export const RoomItem = ({room}: {room: Room}) => {
         roomNumber={room.roomNumber}
         adults={room.adults}
         roomSquare={room.square}
-        roomType={room.type}
+        type={room.type}
         roomDescription={room.description}
       />
     </div>

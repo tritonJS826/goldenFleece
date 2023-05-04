@@ -10,7 +10,7 @@ interface DescriptionProps {
   roomId: string;
   roomSquare: number;
   adults: number;
-  roomType: RoomType;
+  type: RoomType;
   roomDescription: string;
 }
 
@@ -40,13 +40,13 @@ export const Description = (props: DescriptionProps) => {
       }
       <Title
         roomNumber={props.roomNumber}
-        roomTitle={props.roomType}
+        type={props.type}
       />
       <Information
         adults={props.adults}
         roomSquare={props.roomSquare}
         roomDescription={props.roomDescription}
-        roomTitle={props.roomType}
+        type={props.type}
       />
       <RoomLink roomId={props.roomId} />
     </motion.div>

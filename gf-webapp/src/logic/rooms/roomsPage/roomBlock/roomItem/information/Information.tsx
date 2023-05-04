@@ -6,7 +6,7 @@ interface InformationProps {
   roomSquare: number;
   adults: number;
   roomDescription: string;
-  roomTitle: RoomType;
+  type: RoomType;
 }
 
 export const Information = (props: InformationProps) => {
@@ -26,7 +26,7 @@ export const Information = (props: InformationProps) => {
         {dictionary.roomInfo.adults}
       </div>
       <div className={styles.description}>
-        {dictionary.roomInfo.roomDescription[props.roomTitle]}
+        {dictionary.roomInfo.roomDescription[props.type]}
       </div>
     </div>
 
