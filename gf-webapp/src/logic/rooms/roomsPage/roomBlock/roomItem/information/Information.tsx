@@ -1,6 +1,6 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 import {RoomType} from "src/model/Room/RoomType";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface InformationProps {
   roomSquare: number;
