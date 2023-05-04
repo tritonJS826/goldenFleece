@@ -17,23 +17,36 @@
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a105af3b509d51f5b2_510.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f3402c0f83c81a3cba_drz_grand-forest-metsovo_0120.jpg",
       "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618174f7655107ce9b86c051_drz_grand-forest-metsovo_0151.jpg"
-    ],
-    "adults": 1,
-    "children": 0,
-    "square": 30,
-    "rating": 8,
-    "roomNumber": 1,
-    "booked": [
-      {
-        "customer": {
-          "id": "0",
-          "name": "John",
-          "email": "123@gmail.com",
-          "phone": "+123123123"
+      ],
+      "adults":1,
+      "children":0,
+      "square":30,
+      "rating":8,
+      "roomNumber":1,
+      "booked":[
+        {
+          "customer":{
+            "id":"0",
+            "name":"John",
+            "email":"123@gmail.com",
+            "phone":"+123123123"
+          },
+          "period":{
+            "dateIn":"2023-04-12",
+            "dateOut":"2023-04-15"
+          }
         },
-        "period": {
-          "dateIn": "2023-04-12",
-          "dateOut": "2023-04-15"
+        {
+          "customer":{
+          "id":"3",
+          "name":"Ekaterina",
+          "email":"6789@gmail.com",
+          "phone":"+989898"
+          },
+          "period":{
+            "dateIn":"2023-04-03",
+            "dateOut":"2023-04-11"
+          }
         }
       }
     ],

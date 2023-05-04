@@ -31,7 +31,7 @@ ___
 
 3. generate code from backend
 
-``` pnpm run swagger:generateAll```
+``` pnpm run swaggerGenerateAll```
 
 4. generate .env by env.example
 

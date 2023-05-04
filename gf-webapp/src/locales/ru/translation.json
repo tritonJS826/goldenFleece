@@ -121,5 +121,12 @@
     "phone": "Ваш номер телефона",
     "message": "Сообщение",
     "buttonText": "Отправить"
+  },
+  "filter": {
+    "search": "Поиск",
+    "dateIn": "Дата заезда",
+    "dateOut": "Дата выезда",
+    "adultsAmount": "Взрослые",
+    "childrenAmount": "Дети"
   }
 }

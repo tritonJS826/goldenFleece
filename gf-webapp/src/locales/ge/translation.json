@@ -121,5 +121,12 @@
     "phone": "Თქვენი ტელეფონის ნომერი",
     "message": "შეტყობინება",
     "buttonText": "გაგზავნა"
+  },
+  "filter": {
+    "search": "ძებნა",
+    "dateIn": "თარიღი",
+    "dateOut": "თარიღი გარეთ",
+    "adultsAmount": "მოზარდები",
+    "childrenAmount": "ბავშვები"
   }
 }
