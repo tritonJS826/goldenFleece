@@ -1,6 +1,6 @@
 import {RoomServices} from "src/model/Room/RoomServices";
-import styles from "src/logic/rooms/roomPage/roomPromo/information/services/services.module.scss";
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import styles from "src/logic/rooms/roomPage/roomPromo/information/services/services.module.scss";
 
 interface ServicesProps {
   services: RoomServices[];
