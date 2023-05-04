@@ -1,0 +1,14 @@
+@import 'src/Index.scss';
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 50px 100px;
+  background-color: $color-primary;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+}
