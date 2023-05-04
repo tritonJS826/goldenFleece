@@ -27,7 +27,6 @@ export const Information = (props: InformationProps) => {
       </div>
       <div className={styles.description}>
         {dictionary.roomInfo.roomDescription[props.roomTitle]}
-        {/* TODO: add room dynamic description from dictionary */}
       </div>
     </div>
 

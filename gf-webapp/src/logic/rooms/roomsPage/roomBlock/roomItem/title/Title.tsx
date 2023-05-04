@@ -16,7 +16,6 @@ export const Title = (props: TitleProps) => {
       </span>
       <h3 className={styles.titleBook}>
         {dictionary.roomInfo[props.roomTitle]}
-        {/* TODO: render right apartmentsType for specific room */}
       </h3>
     </div>
   );

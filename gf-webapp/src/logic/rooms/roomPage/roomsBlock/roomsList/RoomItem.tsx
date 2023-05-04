@@ -28,7 +28,6 @@ export const RoomItem = (props: RoomItemProps) => {
         />
         <h3 className={styles.title3}>
           {props.roomTitle}
-          {/* TODO: render right apartmentsType for specific room */}
         </h3>
         <span className={styles.spanLink}>
           {roomPage.buttonText}
