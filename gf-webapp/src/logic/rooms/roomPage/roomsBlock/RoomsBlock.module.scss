@@ -6,10 +6,8 @@
 }
 
 .title2 {
+  @include room-h2;
   text-align: center;
-  color: $color-text;
-  font-size: 40px;
-  font-family: Montserrat Regular;
   padding-bottom: 50px;
 }
 
@@ -44,12 +42,12 @@
 }
 
 .title3 {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  color: $color-white;
-  font-family: Montserrat Regular;
-  font-size: 32px;
+  position: $room-h3-position;
+  top: $room-h3-top;
+  left: $room-h3-left;
+  color: $room-h3-color;
+  font-family: $font-family;
+  font-size: $room-h3-font-size;
   transition: all 0.6s linear;
 }
 

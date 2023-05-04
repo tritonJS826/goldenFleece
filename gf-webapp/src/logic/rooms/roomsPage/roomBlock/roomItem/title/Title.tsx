@@ -14,9 +14,9 @@ export const Title = (props: TitleProps) => {
       <span className={styles.span}>
         {props.roomNumber}
       </span>
-      <h3 className={styles.titleBook}>
+      <h2 className={styles.titleBook}>
         {dictionary.roomInfo[props.type]}
-      </h3>
+      </h2>
     </div>
   );
 };
