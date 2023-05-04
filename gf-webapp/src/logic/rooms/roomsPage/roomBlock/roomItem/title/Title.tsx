@@ -1,6 +1,6 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {RoomType} from "src/model/Room/RoomType";
-import styles from "../RoomItem.module.scss";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface TitleProps {
   roomNumber: number;
