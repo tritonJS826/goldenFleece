@@ -68,45 +68,50 @@ $input-font-family: Montserrat Regular;
 $input-border: 2px solid $color-primary;
 $input-border-focus: 2px solid $color-secondary;
 
-//room titles styles
-$room-title-font-family: Montserrat Regular;
+//label styles
+$label-font-size: 24px;
+$label-color: $color-text;
+$label-margin-right: 30px;
 
-//room h1 titles styles
-$room-h1-display: flex;
-$room-h1-flex-direction: column;
-$room-h1-align-items: center;
-$room-h1-justify-content: center;
-$room-h1-position: absolute;
-$room-h1-inset: 0 0 0 0;
-$room-h1-color: $color-white;
-$room-h1-font-size: 60px;
+// input styles
+$input-margin: 10px 0 20px;
+$input-width: 100%;
+$input-height: 50px;
+$input-padding: 10px;
+$input-font-size: 18px;
+$input-font-family: Montserrat Regular;
+$input-border: 2px solid $color-primary;
+$input-border-focus: 2px solid $color-secondary;
 
-@mixin room-h1 {
-  display: $room-h1-display;
-  flex-direction: $room-h1-flex-direction;
-  align-items: $room-h1-align-items;
-  justify-content: $room-h1-justify-content;
-  position: $room-h1-position;
-  inset: $room-h1-inset;
-  color: $room-h1-color;
-  font-size: $room-h1-font-size;
-  font-family: $room-title-font-family;
+$title-font-family: Montserrat Regular;
+
+//h1 titles styles
+@mixin h1 {
+  font-size: 60px;
+  font-family: $title-font-family;
+}
+
+@mixin h1-promo {
+  @include h1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0 0 0 0;
 }
 
 //room h2 titles styles
-$room-h2-color: $color-text;
 $room-h2-font-size: 40px;
 
 @mixin room-h2 {
-  font-family: $room-title-font-family;
-  color: $room-h2-color;
+  font-family: $title-font-family;
   font-size: $room-h2-font-size;
 }
 
 //room h3 titles styles
-$font-family: $room-title-font-family;
+$font-family: $title-font-family;
 $room-h3-position: absolute;
 $room-h3-top: 5%;
 $room-h3-left: 5%;
-$room-h3-color: $color-white;
 $room-h3-font-size: 32px;

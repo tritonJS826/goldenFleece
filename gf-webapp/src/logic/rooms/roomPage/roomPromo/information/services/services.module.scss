@@ -1,4 +1,4 @@
-@import '../../../../../../Index.scss';
+@import 'src/Index.scss';
 
 .services {
   color: $color-text;
@@ -15,7 +15,7 @@
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  
+
   li {
     padding: 20px 0;
     text-align: center;

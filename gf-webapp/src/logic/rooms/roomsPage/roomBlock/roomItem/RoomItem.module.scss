@@ -1,4 +1,4 @@
-@import '../../../../../Index.scss';
+@import 'src/Index.scss';
 
 .wrap {
   background-color: $color-background;
@@ -37,6 +37,7 @@
 
 .titleBook {
   @include room-h2;
+  color: $color-text;
   padding-bottom: 30px;
   padding-top: 30px;
 }

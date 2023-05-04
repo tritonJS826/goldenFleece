@@ -1,4 +1,4 @@
-@import "../../../../Index.scss";
+@import "src/Index.scss";
 
 .wrap {
   background-color: $color-background;
@@ -63,7 +63,7 @@
 
 .wrap:nth-child(odd) .backImageWrap {
   margin-left: 25%;
-} 
+}
 
 .wrap:nth-child(odd) .roomAbout {
   left: 10%;
@@ -166,15 +166,15 @@
   .wrap {
     padding: 50px 10%;
   }
-  
+
   .backImageWrap {
     width: 100%;
   }
 
   .wrap:nth-child(odd) .backImageWrap {
     margin-left: 0;
-  } 
-  
+  }
+
   .roomAbout {
     position: static;
     width: 100%;

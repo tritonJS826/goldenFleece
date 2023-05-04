@@ -1,4 +1,4 @@
-@import "../../../Index.scss";
+@import "src/Index.scss";
 
 .wrapper {
   position: relative;
@@ -30,9 +30,8 @@
 }
 
 .titleLeft {
+  @include h1;
   color: $color-white;
-  font-size: 60px;
-  font-family: Montserrat Regular;
   padding-bottom: 50px;
 }
 

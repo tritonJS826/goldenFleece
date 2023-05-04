@@ -1,4 +1,4 @@
-@import '../../../../Index.scss';
+@import 'src/Index.scss';
 
 .roomsWrap {
   padding: 100px 10%;
@@ -45,9 +45,9 @@
   position: $room-h3-position;
   top: $room-h3-top;
   left: $room-h3-left;
-  color: $room-h3-color;
   font-family: $font-family;
   font-size: $room-h3-font-size;
+  color: $color-white;
   transition: all 0.6s linear;
 }
 

@@ -9,6 +9,7 @@ interface TitleProps {
 
 export const Title = (props: TitleProps) => {
   const dictionary = useDictionary().dictionary;
+
   return (
     <div>
       <span className={styles.span}>

@@ -1,4 +1,4 @@
-@import '../../../../Index.scss';
+@import 'src/Index.scss';
 
 .wrapper {
   max-height: 100vh;
@@ -19,7 +19,8 @@
 }
 
 .title {
-  @include room-h1;
+  @include h1-promo;
+  color: $color-white;
 }
 
 .container,

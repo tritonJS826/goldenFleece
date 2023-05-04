@@ -10,6 +10,7 @@ interface TitleProps {
 
 export const Title = (props: TitleProps) => {
   const {roomInfo} = useDictionary().dictionary;
+
   return (
     <div className={styles.wrapper}>
       <img
