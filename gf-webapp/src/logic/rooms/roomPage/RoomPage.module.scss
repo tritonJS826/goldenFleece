@@ -1,4 +1,4 @@
-@import '../../../Index.scss';
+@import 'src/Index.scss';
 
 .about {
   text-align: center;
@@ -9,7 +9,7 @@
 }
 
 .book {
-  background-image: url("../../../resources/rooms/1.jpg");
+  background-image: url("/resources/rooms/1.jpg");
   display: flex;
 }
 

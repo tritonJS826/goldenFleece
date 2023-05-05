@@ -21,6 +21,7 @@ export const RoomPromo = (props: RoomPromoProps) => {
       <Title
         description={props.description}
         promoImgUrl={props.promoImgUrl}
+        type={props.type}
       />
       <Information
         type={props.type}

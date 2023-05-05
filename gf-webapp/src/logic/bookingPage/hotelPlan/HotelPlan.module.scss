@@ -1,4 +1,4 @@
-@import "../../../Index.scss";
+@import "src/Index.scss";
 
 .wrapper {
   position: relative;
@@ -19,7 +19,7 @@
 }
 
 .book {
-  background-image: url("../../../resources/rooms/1.jpg");
+  background-image: url("/resources/rooms/1.jpg");
   display: flex;
 }
 
@@ -30,9 +30,8 @@
 }
 
 .titleLeft {
+  @include h1;
   color: $color-white;
-  font-size: 60px;
-  font-family: Montserrat Regular;
   padding-bottom: 50px;
 }
 

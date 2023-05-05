@@ -1,20 +1,23 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import styles from "../RoomItem.module.scss";
+import {RoomType} from "src/model/Room/RoomType";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface TitleProps {
   roomNumber: number;
+  type: RoomType;
 }
 
 export const Title = (props: TitleProps) => {
   const dictionary = useDictionary().dictionary;
+
   return (
     <div>
       <span className={styles.span}>
         {props.roomNumber}
       </span>
-      <h3 className={styles.titleBook}>
-        TODO: render right apartmentsType for specific room
-      </h3>
+      <h2 className={styles.titleBook}>
+        {dictionary.roomInfo[props.type]}
+      </h2>
     </div>
   );
 };
