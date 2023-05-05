@@ -1,7 +1,7 @@
 import {Filter} from "src/component/filter/Filter";
 import {URL_QUERY_KEYS} from "src/component/filter/FilterInput";
 import {useFilterRooms} from "src/component/filter/FilterContext";
-import {getCurrentDate, getNextDate} from "src/utils/getDate";
+import {getCurrentDate, getNextDate, getNewDateOut} from "src/utils/getDate";
 import styles from "src/component/filter/Filters.module.scss";
 
 const MIN_ADULTS_VALUE = 0;
@@ -38,7 +38,7 @@ export const Filters = () => {
         urlQueryKey={URL_QUERY_KEYS.DateOut}
         inputName="Date out"
         inputType="date"
-        min={dateOutValue}
+        min={getNewDateOut(dateInValue)}
       />
       <Filter
         paramValue={adultsValue}

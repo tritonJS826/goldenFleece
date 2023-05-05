@@ -2,7 +2,7 @@ import {Filter} from "src/component/filter/Filter";
 import {URL_QUERY_KEYS} from "src/component/filter/FilterInput";
 import {useFilterRooms} from "src/component/filter/FilterContext";
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import {getCurrentDate, getNextDate} from "src/utils/getDate";
+import {getCurrentDate, getNextDate, getNewDateOut} from "src/utils/getDate";
 import styles from "src/component/filter/Filters.module.scss";
 
 const MIN_ADULTS_VALUE = 1;
@@ -40,7 +40,7 @@ export const Filters = () => {
         urlQueryKey={URL_QUERY_KEYS.DateOut}
         inputName={filter.dateOut}
         inputType="date"
-        min={dateOutValue}
+        min={getNewDateOut(dateInValue)}
       />
       <Filter
         paramValue={adultsValue}

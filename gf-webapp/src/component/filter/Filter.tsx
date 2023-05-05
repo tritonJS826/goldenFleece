@@ -39,7 +39,7 @@ export const defaultStringValue = "";
 
 export const Filter = (props: FilterProps) => {
   const [params, setParams] = useSearchParams();
-  const {setSearchValue, setDateInValue, setDateOutValue, setAdultsValue, setChildrenValue} = useFilterRooms();
+  const {setSearchValue, dateInValue, setDateInValue, setDateOutValue, setAdultsValue, setChildrenValue} = useFilterRooms();
 
   const setInputValue = () => {
     if (params.has(props.urlQueryKey)) {
@@ -74,13 +74,16 @@ export const Filter = (props: FilterProps) => {
     setInputValue();
   }, []);
 
-  const onChangeInput = (event: React.ChangeEvent<InputType>) => {
-    const actualDateOut = getNewDateOut(event.target.value);
+  const actualDateOut = getNewDateOut(dateInValue);
 
+  useEffect(() => {
+    setDateOutValue(actualDateOut);
+  }, [dateInValue]);
+
+  const onChangeInput = (event: React.ChangeEvent<InputType>) => {
     switch(props.urlQueryKey) {
       case "dateIn": {
         setDateInValue(event.target.value);
-        setDateOutValue(actualDateOut);
         break;
       }
       case "dateOut": {
