@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {Room} from "src/model/Room/Room";
 import {getRooms} from "src/service/RoomService";
 import {Loader} from "gf-ui-lib/src/components/Loader/Loader";
+import {RoomsList} from "./roomsList/RoomsList";
 import {RoomsBlockWithFilters} from "src/component/filter/RoomsBlockWithFilters";
 import {
   Filters,
@@ -36,6 +37,15 @@ export const Rooms = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>
         Rooms
+      </h2>
+      {
+        rooms ?
+          <RoomsList rooms={rooms} />
+          :
+          <Loader />
+      }
+      <h2 className={styles.title}>
+        Rooms with filters
       </h2>
       <FilterRoomsContext.Provider
         value={{
