@@ -31,3 +31,11 @@ export const getCurrentDate = `${currentYear}-${currentMonth}-${currentDay}`;
  */
 export const getNextDate = `${currentYear}-${currentMonth}-${nextDay}`;
 
+/**
+ * Return date after date in enter yyyy-mm-dd
+ */
+export const getNewDateOut = (value: string) => {
+  const getDateOut = "" + (new Date(currentDate.setDate(new Date(value).getDate() + 1)).toISOString().split("T")[0]);
+  return getDateOut;
+};
+

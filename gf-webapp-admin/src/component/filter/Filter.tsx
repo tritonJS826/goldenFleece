@@ -1,13 +1,36 @@
 import {useEffect} from "react";
 import {useSearchParams} from "react-router-dom";
 import {useFilterRooms} from "src/component/filter/FilterContext";
-import {FilterInput, InputType} from "src/component/filter/FilterInput";
+import {FilterInput, InputType, URL_QUERY_KEYS} from "src/component/filter/FilterInput";
+import {getNewDateOut} from "src/utils/getDate";
 
+/**
+ * Filter props
+ */
 interface FilterProps {
+  /**
+   * Value of query param in the url path
+   */
   paramValue: number | string,
+  /**
+   * Default value of filter's input
+   */
   defaultParamValue: number | string,
-  urlQueryKey: string,
+  /**
+   * Keys for query params in the url path
+   */
+  urlQueryKey: URL_QUERY_KEYS,
+  /**
+   * Filter title
+   */
   inputName: string,
+  /**
+   * Minimum value
+   */
+  min?: number | string,
+  /**
+   * Input type
+   */
   inputType: "number" | "text" | "date"
 }
 
@@ -52,9 +75,12 @@ export const Filter = (props: FilterProps) => {
   }, []);
 
   const onChangeInput = (event: React.ChangeEvent<InputType>) => {
+    const actualDateOut = getNewDateOut(event.target.value);
+
     switch(props.urlQueryKey) {
       case "dateIn": {
         setDateInValue(event.target.value);
+        setDateOutValue(actualDateOut);
         break;
       }
       case "dateOut": {
@@ -75,7 +101,7 @@ export const Filter = (props: FilterProps) => {
     }
   };
 
-  const addQueryParams = (paramValue: number | string, defaultParamValue: number | string, urlQueryKey: string) => {
+  const addQueryParams = (paramValue: number | string, defaultParamValue: number | string, urlQueryKey: URL_QUERY_KEYS) => {
     const paramValueStringified = JSON.stringify(paramValue);
     const defaultParamValueStringified = JSON.stringify(defaultParamValue);
     const isValueExist = paramValueStringified !== defaultParamValueStringified;
@@ -100,6 +126,7 @@ export const Filter = (props: FilterProps) => {
       type={props.inputType}
       name={props.inputName}
       value={props.paramValue}
+      min={props.min}
       onChange={onChangeInput}
     />
   );

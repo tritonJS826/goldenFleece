@@ -44,19 +44,10 @@ export const RoomsBlockWithFilters = (props: RoomsListProps) => {
         && getDateValue(roomBooked.period.dateIn) > getDateValue(dateOutValue)));
   };
 
-  const dateInAfterDateOut = getDateValue(dateInValue) >= getDateValue(dateOutValue);
-  const dateInBeforeToday = getDateValue(dateInValue) < (getDateValue() - 100000000);
-  const wrongDates = dateInAfterDateOut || dateInBeforeToday;
-
   const filterDate = (room: Room) => {
-    if (wrongDates) {
-      alert("Wrong dates!!!");
-      return null;
-    } else {
-      const filteredRoom = filterRoomsNotBooked(room);
-      if (filteredRoom.length === room.booked.length) {
-        return filteredRoom;
-      }
+    const filteredRoom = filterRoomsNotBooked(room);
+    if (filteredRoom.length === room.booked.length) {
+      return filteredRoom;
     }
   };
 

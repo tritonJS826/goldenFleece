@@ -32,6 +32,7 @@ export const Filters = () => {
         urlQueryKey={URL_QUERY_KEYS.DateIn}
         inputName={filter.dateIn}
         inputType="date"
+        min={MIN_DATE_IN}
       />
       <Filter
         paramValue={dateOutValue}
@@ -39,6 +40,7 @@ export const Filters = () => {
         urlQueryKey={URL_QUERY_KEYS.DateOut}
         inputName={filter.dateOut}
         inputType="date"
+        min={dateOutValue}
       />
       <Filter
         paramValue={adultsValue}
@@ -46,6 +48,7 @@ export const Filters = () => {
         urlQueryKey={URL_QUERY_KEYS.Adults}
         inputName={filter.adultsAmount}
         inputType="number"
+        min={MIN_ADULTS_VALUE}
       />
       <Filter
         paramValue={childrenValue}
@@ -53,6 +56,7 @@ export const Filters = () => {
         urlQueryKey={URL_QUERY_KEYS.Children}
         inputName={filter.childrenAmount}
         inputType="number"
+        min={MIN_CHILDREN_VALUE}
       />
     </div>
   );
