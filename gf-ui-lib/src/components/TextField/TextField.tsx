@@ -3,7 +3,7 @@ import {SmallTitle} from "../SmallTitle/SmallTitle";
 import styles from "./TextField.module.scss";
 
 /**
- * Input props
+ * Props for field with text in it
  */
 interface TextFieldProps {
   /**

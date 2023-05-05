@@ -2,6 +2,9 @@ import {useState} from "react";
 import {SmallTitle} from "../SmallTitle/SmallTitle";
 import styles from "./SelectField.module.scss";
 
+/**
+ * Select field props
+ */
 interface SelectFieldProps {
   /**
    * itemsList array of select options

@@ -1,14 +1,16 @@
+@import "../scss/constants.scss";
+
 .itemsList {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: $checkbox-gap;
 }
 
 .label {
-  cursor: pointer;
+  cursor: $cursor-hover;
 }
 
 .input {
-  margin-right: 5px;
-  cursor: pointer;
+  margin-right: $checkbox-margin-right;
+  cursor: $cursor-hover;
 }

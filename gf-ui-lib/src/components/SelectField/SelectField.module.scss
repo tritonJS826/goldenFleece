@@ -1,5 +1,6 @@
+@import "../scss/constants.scss";
+
 .list {
-  font-size: 1rem;
-  margin-right: 10px;
-  padding: 2px 10px;
+  font-size: $input-text-size;
+  padding: $input-padding;
 }

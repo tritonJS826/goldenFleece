@@ -19,6 +19,7 @@ import {RoomServices} from "src/model/Room/RoomServices";
 import {useNavigate} from "react-router-dom";
 import {MAIN_PAGE_ROUTE} from "src/utils/pathes";
 import styles from "src/component/sideMenu/addRoomModal/AddRoomModal.module.scss";
+
 interface AddRoomModalProps {
   toggleModalVisibility: () => void
 }
@@ -26,8 +27,6 @@ interface AddRoomModalProps {
 export const AddRoomModal = (props: AddRoomModalProps) => {
 
   const [room, setRoom] = useState<NewRoom>(defaultRoom);
-  const [roomServices, setRoomServices] = useState(room.services);
-  room.services = roomServices;
   const navigate = useNavigate();
 
   const addRoom = async () => {
@@ -107,11 +106,11 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
         </div>
         <CheckboxField
           itemsList={enumToArray(RoomServices)}
-          selectedItems={roomServices}
+          selectedItems={room.services}
           titleText='Room services'
           onChangeValue={(item: string) => {
             isValidRoomService(item) ?
-              setRoomServices(roomCurrentServices => changeRoomServices(roomCurrentServices, item))
+              room.services = changeRoomServices(room.services, item)
               :
               null;
             setRoom(room);

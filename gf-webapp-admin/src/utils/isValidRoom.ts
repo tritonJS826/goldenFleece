@@ -6,18 +6,16 @@ import {RoomType} from "src/model/Room/RoomType";
  * @param inputRoom - value from select field
  * @returns boolean
  */
-
 export const isValidRoomType = (inputRoom: string): inputRoom is RoomType => {
   const itemsList: string[] = Object.values(RoomType);
   return itemsList.includes(inputRoom);
 };
 
 /**
- * @description - checks if the given type exists in the RoomServices
+ * @description - checks if the given service exists in the RoomServices
  * @param inputServices - value from checkbox field
  * @returns boolean
  */
-
 export const isValidRoomService = (inputServices: string): inputServices is RoomServices => {
   const validServices: string[] = Object.values(RoomServices);
   return validServices.includes(inputServices);
@@ -28,7 +26,6 @@ export const isValidRoomService = (inputServices: string): inputServices is Room
  * @param roomServices - array of RoomServices
  * @returns updated array of RoomServices
  */
-
 export const changeRoomServices = (
   roomServices: RoomServices[],
   selectedService: RoomServices,

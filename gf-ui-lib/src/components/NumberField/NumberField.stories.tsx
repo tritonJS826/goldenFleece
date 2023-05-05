@@ -1,5 +1,4 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-
 import {NumberField as NumberComponent} from "./NumberField";
 
 export default {

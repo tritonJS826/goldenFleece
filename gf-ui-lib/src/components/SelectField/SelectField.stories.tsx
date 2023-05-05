@@ -1,5 +1,4 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-
 import {SelectField as SelectComponent} from "./SelectField";
 
 export default {

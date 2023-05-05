@@ -30,7 +30,11 @@ $color-light-opacity70: rgba(255,255,255, 0.7);
 // Indention constants
 
 $list-mb: 5px;
-
+$normal-gap: 10px;
+$high-gap: 20px;
+$high-border-radius: 10px;
+$max-z-index: 1000;
+$add-room-top: 20px;
 
 body {
   overflow: overlay;

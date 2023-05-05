@@ -13,9 +13,9 @@ import {CheckboxField} from "gf-ui-lib/src/components/CheckboxField/CheckboxFiel
 import {TextField} from "gf-ui-lib/src/components/TextField/TextField";
 import {RoomType} from "src/model/Room/RoomType";
 import {isValidRoomService, isValidRoomType, changeRoomServices} from "src/utils/isValidRoom";
-import styles from "src/component/rooms/room/RoomItem.module.scss";
 import {enumToArray} from "src/utils/enumToArray";
 import {RoomServices} from "src/model/Room/RoomServices";
+import styles from "src/component/rooms/room/RoomItem.module.scss";
 
 interface RoomProps {
   room:Room;
@@ -25,8 +25,6 @@ export const RoomItem = (props: RoomProps) => {
 
   const navigate = useNavigate();
   const [room, setRoom] = useState<Room>(props.room);
-  const [roomServices, setRoomServices] = useState(room.services);
-  room.services = roomServices;
 
   const deleteWithRedirect = () => {
     deleteRoom(room.id);
@@ -75,11 +73,11 @@ export const RoomItem = (props: RoomProps) => {
         />
         <CheckboxField
           itemsList={enumToArray(RoomServices)}
-          selectedItems={roomServices}
+          selectedItems={room.services}
           titleText='Room services'
-          onChangeValue={(item: string) => {
-            isValidRoomService(item) ?
-              setRoomServices(roomCurrentServices => changeRoomServices(roomCurrentServices, item))
+          onChangeValue={(service: string) => {
+            isValidRoomService(service) ?
+              room.services = changeRoomServices(room.services, service)
               :
               null;
             setRoom(room);

@@ -1,6 +1,9 @@
 import {SmallTitle} from "../SmallTitle/SmallTitle";
 import styles from "./CheckboxField.module.scss";
 
+/**
+ * Checkbox field props
+ */
 interface CheckboxFieldProps {
   /**
    * Array of select options

@@ -3,7 +3,7 @@ import {SmallTitle} from "../SmallTitle/SmallTitle";
 import styles from "./NumberField.module.scss";
 
 /**
- * Input props
+ * Props for input with type number
  */
 interface NumberFieldProps {
   /**
