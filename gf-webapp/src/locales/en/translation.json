@@ -8,15 +8,15 @@
   "contacts": "Contacts",
   "bookButtonText": "Book now",
   "map": {
-      "foodTitle": "Food and drink",
-      "parkTitle": "Park areas",
-      "goldenFleeceDescription": "Located in Kutaisi, 4.9 km from WhiteBridge, Hotel Golden Fleece provides accommodation with a seasonal outdoor swimming pool, free private parking, a terrace and a bar.",
-      "cakeClubDescription": "Сonfectionery Cake club is the best taste of traditional pastries made only from natural ingredients.",
-      "shedevriDescription": "Shedevri offers you Georgian, traditional dishes, high quality, and guarantees the best taste!",
-      "tomasDescription": "This is family winery, where already 50 year we are doing wine by our family technologies.",
-      "youthParkDescription": "Youth park is 3.5 km south from Colchis fountain along Chavchavadze avenue. Circumference is 1.4 km. Large by Kutaisi standards and excellent for running and to some extent cycling.",
-      "tennisCourtDescription": "A modern sports complex for adults and children (4+), where all the necessary conditions for a full-fledged training process of a tennis player are created.",
-      "shengeliaStadiumDescription": "It is a multi-use stadium in Kutaisi, used mostly for football matches. It is the home stadium of FC Torpedo Kutaisi. The stadium is able to hold 12,000 people."
+    "foodTitle": "Food and drink",
+    "parkTitle": "Park areas",
+    "goldenFleeceDescription": "Located in Kutaisi, 4.9 km from WhiteBridge, Hotel Golden Fleece provides accommodation with a seasonal outdoor swimming pool, free private parking, a terrace and a bar.",
+    "cakeClubDescription": "Сonfectionery Cake club is the best taste of traditional pastries made only from natural ingredients.",
+    "shedevriDescription": "Shedevri offers you Georgian, traditional dishes, high quality, and guarantees the best taste!",
+    "tomasDescription": "This is family winery, where already 50 year we are doing wine by our family technologies.",
+    "youthParkDescription": "Youth park is 3.5 km south from Colchis fountain along Chavchavadze avenue. Circumference is 1.4 km. Large by Kutaisi standards and excellent for running and to some extent cycling.",
+    "tennisCourtDescription": "A modern sports complex for adults and children (4+), where all the necessary conditions for a full-fledged training process of a tennis player are created.",
+    "shengeliaStadiumDescription": "It is a multi-use stadium in Kutaisi, used mostly for football matches. It is the home stadium of FC Torpedo Kutaisi. The stadium is able to hold 12,000 people."
   },
   "servicesBlock": {
     "gastronomy": "Gastronomy",
@@ -27,7 +27,7 @@
   "bookingBlock": {
     "subTitle": "Reservations",
     "description": "Book your escape to Grand Forest Metsovo today",
-    "text":  "Book direct for the best price, exclusive offers and no hidden fees.",
+    "text": "Book direct for the best price, exclusive offers and no hidden fees.",
     "buttonText": "More",
     "bookingTitle": "Why book direct?",
     "bestPriceGuarantee": "Best price guarantee",
@@ -52,12 +52,28 @@
     "buttonText": "More"
   },
   "roomInfo": {
-    "singleRoomTitle": "Single room",
-    "singleRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
-    "doubleRoomTitle": "Double room",
-    "doubleRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
-    "twinRoomTitle": "Twin room",
-    "twinRoomDescription": "Wake up to the breathtaking beauty of the Pindus mountains.",
+    "Single": "Single room",
+    "Double": "Double room",
+    "Twin": "Twin room",
+    "roomDescription": {
+      "Single": "Wake up to the breathtaking beauty of the Pindus mountains in a single room",
+      "Double": "Wake up to the breathtaking beauty of the Pindus mountains in a double room",
+      "Twin": "Wake up to the breathtaking beauty of the Pindus mountains in a twin room"
+    },
+    "shortRoomDescription": {
+      "Single": "A small room",
+      "Double": "A comfortable room",
+      "Twin": "A beautiful room"
+    },
+    "price": "Price",
+    "services": "Services",
+    "roomServices": {
+      "WiFi": "WiFi",
+      "Laundry": "Laundry",
+      "TeaCoffeeMaker": "Tea Coffee Maker",
+      "Heating": "Heating",
+      "AirportShuttle": "Airport Shuttle"
+    },
     "dimension": "m",
     "adults": "adults",
     "children": "children",
@@ -85,7 +101,7 @@
   },
   "bookingPage": {
     "title": "Booking",
-    "bookingText":  "Book direct for the best price, exclusive offers and no hidden fees."
+    "bookingText": "Book direct for the best price, exclusive offers and no hidden fees."
   },
   "bookingRoomForm": {
     "name": "Your name",
@@ -105,5 +121,12 @@
     "phone": "Your phone number",
     "message": "Message",
     "buttonText": "Submit"
+  },
+  "filter": {
+    "search": "Search",
+    "dateIn": "Date In",
+    "dateOut": "Date Out",
+    "adultsAmount": "Adults",
+    "childrenAmount": "Children"
   }
 }

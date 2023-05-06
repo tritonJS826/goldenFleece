@@ -1,7 +1,7 @@
-@import '../../Index.scss';
+@import 'src/Index.scss';
 
 .book {
-  background-image: url("../../resources/rooms/1.jpg");
+  background-image: url("/resources/rooms/1.jpg");
   display: flex;
 }
 
@@ -130,7 +130,7 @@
   .leftSide {
     padding: 50px 5%;
   }
-  
+
   .titleLeft {
     font-size: 40px;
     padding-bottom: 30px;
@@ -158,11 +158,11 @@
     font-size: 18px;
     padding-bottom: 20px;
   }
-  
+
   .text {
     padding-top: 10px;
   }
-  
+
   .bookLink {
     display: block;
     text-decoration: none;
@@ -193,5 +193,5 @@
   .rightSide {
     width: 90%;
     margin: 50px 5%;
-  } 
+  }
 }

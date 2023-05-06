@@ -3,8 +3,7 @@
     "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
     "type": "Single",
     "services": [
-      "WiFi",
-      "Laundry"
+      "WiFi"
     ],
     "description": "A small room",
     "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
@@ -55,8 +54,8 @@
     "id": "0"
   },
   {
-    "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
     "type": "Double",
+    "promoImgUrl": "https://uploads-ssl.webflow.com/5e38379f9141a20d42ea7ab3/618177a1165e33f6ca935321_506.jpg",
     "services": [
       "WiFi",
       "Laundry"
@@ -78,6 +77,7 @@
     "children": 1,
     "square": 40,
     "rating": 10,
+    "id": "1",
     "roomNumber": 2,
     "booked": [
       {
@@ -115,7 +115,9 @@
     "services": [
       "WiFi",
       "Laundry",
-      "TeaCoffeeMaker"
+      "TeaCoffeeMaker",
+      "Heating",
+      "AirportShuttle"
     ],
     "description": "A beautiful room",
     "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",

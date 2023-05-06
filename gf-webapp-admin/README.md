@@ -15,3 +15,11 @@
 
 ```pnpm run build```
 
+### Run autogenerate swagger file from server-api locally
+
+```pnpm run swagger:generate_gf-server-api```
+
+### Run autogenerate swagger file from server-resources locally
+
+```pnpm run swagger:generate_gf-server-resources```
+

@@ -18,7 +18,7 @@ export const Navigation = (props: NavigationProps) => {
               href="#single"
               className={styles.link}
             >
-              {roomInfo.singleRoomTitle}
+              {roomInfo.Single}
             </a>
           </li>
           <p className={styles.line}>
@@ -29,7 +29,7 @@ export const Navigation = (props: NavigationProps) => {
               href="#double"
               className={styles.link}
             >
-              {roomInfo.doubleRoomTitle}
+              {roomInfo.Double}
             </a>
           </li>
           <p className={styles.line}>
@@ -40,7 +40,7 @@ export const Navigation = (props: NavigationProps) => {
               href="#twin"
               className={styles.link}
             >
-              {roomInfo.twinRoomTitle}
+              {roomInfo.Twin}
             </a>
           </li>
         </ul>
