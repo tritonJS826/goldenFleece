@@ -7,31 +7,6 @@
   gap: 10px;
   padding: 20px;
   background-color: $color-background;
-
-  label {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
-
-  input,
-  textarea {
-    font-size: 1rem;
-    padding: 2px 10px;
-  }
-
-  h4 {
-    margin-bottom: 5px;
-  }
-
-  textarea {
-    min-width: 300px;
-    min-height: 100px;
-  }
-
 }
 
 .title {

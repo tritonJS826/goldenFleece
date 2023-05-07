@@ -1,0 +1,17 @@
+@import "../scss/constants.scss";
+
+.label {
+  display: flex;
+  flex-direction: column;
+  max-width: $label-field-width;
+}
+
+.input,
+.textarea {
+  font-size: $input-text-size;
+  padding: $input-padding;
+}
+
+.textarea {
+  min-height: $textarea-heigth;
+}

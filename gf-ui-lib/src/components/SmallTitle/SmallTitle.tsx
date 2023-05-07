@@ -1,3 +1,5 @@
+import styles from "./SmallTitle.module.scss";
+
 interface SmallTitleProps {
   /**
    * Text of the title
@@ -11,7 +13,7 @@ interface SmallTitleProps {
 
 export const SmallTitle = (props: SmallTitleProps) => {
   return (
-    <h4>
+    <h4 className={styles.title}>
       {props.text}
     </h4>
   );

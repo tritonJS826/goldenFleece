@@ -1,5 +1,4 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-
 import {SmallTitle as SmallTitleComponent} from "./SmallTitle";
 
 export default {

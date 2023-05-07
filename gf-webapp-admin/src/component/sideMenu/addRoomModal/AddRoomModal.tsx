@@ -2,21 +2,24 @@ import {useState} from "react";
 import {Promo} from "src/component/rooms/room/promo/Promo";
 import {Slider} from "src/component/rooms/room/slider/Slider";
 import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
-import {Adults} from "src/component/sideMenu/addRoomModal/adults/Adults";
-import {RoomType} from "src/component/sideMenu/addRoomModal/roomType/RoomType";
 import {CloseBtn} from "src/component/sideMenu/addRoomModal/closeBtn/CloseBtn";
-import {Description} from "src/component/sideMenu/addRoomModal/description/Description";
-import {LongDescription} from "src/component/sideMenu/addRoomModal/longDescription/LongDescription";
 import {ModalOverlay} from "src/component/sideMenu/addRoomModal/modalOverlay/ModalOverlay";
-import {Price} from "src/component/sideMenu/addRoomModal/price/Price";
-import {Rating} from "src/component/sideMenu/addRoomModal/rating/Rating";
 import {defaultRoom} from "src/component/sideMenu/addRoomModal/roomStartState";
-import {Services} from "src/component/sideMenu/addRoomModal/services/Services";
-import {Square} from "src/component/sideMenu/addRoomModal/square/Square";
 import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {postRoom} from "src/service/RoomService";
 import {NewRoom} from "src/model/Room/NewRoom";
+import {TextField} from "gf-ui-lib/src/components/TextField/TextField";
+import {NumberField} from "gf-ui-lib/src/components/NumberField/NumberField";
+import {SelectField} from "gf-ui-lib/src/components/SelectField/SelectField";
+import {changeRoomServices, isValidRoomService, isValidRoomType} from "src/utils/isValidRoom";
+import {RoomType} from "src/model/Room/RoomType";
+import {CheckboxField} from "gf-ui-lib/src/components/CheckboxField/CheckboxField";
+import {enumToArray} from "src/utils/enumToArray";
+import {RoomServices} from "src/model/Room/RoomServices";
+import {useNavigate} from "react-router-dom";
+import {MAIN_PAGE_ROUTE} from "src/utils/pathes";
 import styles from "src/component/sideMenu/addRoomModal/AddRoomModal.module.scss";
+
 interface AddRoomModalProps {
   toggleModalVisibility: () => void
 }
@@ -24,26 +27,95 @@ interface AddRoomModalProps {
 export const AddRoomModal = (props: AddRoomModalProps) => {
 
   const [room, setRoom] = useState<NewRoom>(defaultRoom);
+  const navigate = useNavigate();
 
   const addRoom = async () => {
     await postRoom(room);
     props.toggleModalVisibility();
+    navigate(MAIN_PAGE_ROUTE);
+    // TODO: need to update page without reload
     location.reload();
   };
 
   return (
     <AddRoomContext.Provider value={{room, setRoom}}>
       <div className={styles.addRoomModal}>
-        <RoomType />
-        <Description />
-        <LongDescription />
+        <SelectField
+          itemsList={Object.values(RoomType)}
+          selectedItem={room.type}
+          titleText='Room type'
+          onChangeValue={(value: string) => {
+            isValidRoomType(value) ?
+              room.type = value
+              :
+              null;
+            setRoom(room);
+          }}
+        />
+        <TextField
+          value={room.description}
+          placeholder='Enter room description'
+          titleText='Room description'
+          onChangeValue={(value: string) => {
+            room.description = value;
+            setRoom(room);
+          }}
+        />
+        <TextField
+          type="textarea"
+          value={room.descriptionLong}
+          placeholder='Enter room long description'
+          titleText='Room Long description'
+          onChangeValue={(value: string) => {
+            room.descriptionLong = value;
+            setRoom(room);
+          }}
+        />
         <div className={styles.wrapper}>
-          <Price />
-          <Rating />
-          <Square />
-          <Adults />
+          <NumberField
+            value={room.price.getPriceAmount()}
+            titleText='Room price'
+            onChangeValue={(value: number) => {
+              room.price.setNewPrice(value);
+            }}
+          />
+          <NumberField
+            value={room.rating}
+            titleText='Room rating'
+            onChangeValue={(value: number) => {
+              room.rating = value;
+              setRoom(room);
+            }}
+          />
+          <NumberField
+            value={room.square}
+            titleText='Room square'
+            onChangeValue={(value: number) => {
+              room.square = value;
+              setRoom(room);
+            }}
+          />
+          <NumberField
+            value={room.adults}
+            titleText='Room adults'
+            onChangeValue={(value: number) => {
+              room.adults = value;
+              setRoom(room);
+            }}
+          />
         </div>
-        <Services />
+        <CheckboxField
+          itemsList={enumToArray(RoomServices)}
+          selectedItems={room.services}
+          titleText='Room services'
+          onChangeValue={(item: string) => {
+            isValidRoomService(item) ?
+              room.services = changeRoomServices(room.services, item)
+              :
+              null;
+            setRoom(room);
+          }}
+        />
         <Promo room={room} />
         <Slider room={room} />
         <Button
