@@ -1,26 +1,15 @@
-import {useEffect, useState} from "react";
 import {Room} from "src/model/Room/Room";
-import {RoomApiService} from "src/service/RoomApi/RoomApi";
 import {useFilterRooms} from "src/component/filter/FilterContext";
-import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
+import {RoomSimplified} from "src/component/rooms/roomSimplified/RoomSimplified";
 import {getDateValue} from "src/utils/getDateValue";
+import styles from "src/component/filter/Filters.module.scss";
 
-export const RoomsBlockWithFilters = () => {
+interface RoomsListProps {
+  rooms:Room[]
+}
+
+export const RoomsBlockWithFilters = (props: RoomsListProps) => {
   const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
-
-  const [rooms, setRooms] = useState<Room[] | null>(null);
-
-  const initRooms = async () => {
-    const roomsList = await RoomApiService.getAllRooms();
-    setRooms(roomsList);
-  };
-
-  useEffect(() => {
-    async function onRoomsInitialized() {
-      await initRooms();
-    }
-    onRoomsInitialized();
-  }, []);
 
   const filterAdults = (room: Room) => {
     if (adultsValue !== 0) {
@@ -59,6 +48,8 @@ export const RoomsBlockWithFilters = () => {
     const filteredRoom = filterRoomsNotBooked(room);
     if (filteredRoom.length === room.booked.length) {
       return filteredRoom;
+    } else if (dateInValue === "") {
+      return room;
     }
   };
 
@@ -72,7 +63,7 @@ export const RoomsBlockWithFilters = () => {
 
   const renderRoomItem = (roomsList: Room[]) => {
     return filterRooms(roomsList).map(room => (
-      <RoomItem
+      <RoomSimplified
         key={room.id}
         room={room}
       />
@@ -80,14 +71,14 @@ export const RoomsBlockWithFilters = () => {
   };
 
   // if data not initialized yet
-  if (!rooms) {
+  if (!props.rooms) {
     return null;
   }
 
   // when data initialized
   return (
-    <div>
-      {renderRoomItem(rooms)}
+    <div className={styles.container}>
+      {renderRoomItem(props.rooms)}
     </div>
   );
 };

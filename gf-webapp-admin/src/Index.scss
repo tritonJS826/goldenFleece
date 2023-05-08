@@ -64,3 +64,18 @@ a {
   color: $color-back;
   text-decoration: none;
 }
+
+//label styles
+$label-font-size: 24px;
+$label-color: $color-text;
+$label-margin-right: 30px;
+
+// input styles
+$input-margin: 10px 0 20px;
+$input-width: 100%;
+$input-height: 50px;
+$input-padding: 10px;
+$input-font-size: 18px;
+$input-font-family: Montserrat Regular;
+$input-border: 2px solid $color-primary;
+$input-border-focus: 2px solid $color-secondary;

@@ -1,4 +1,4 @@
-@import "src/Index.scss";
+@import 'src/Index.scss';
 
 .filters {
   display: flex;
@@ -6,6 +6,12 @@
   width: 100%;
   padding: 50px 100px;
   background-color: $color-primary;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 10px;
 }
 
 @media (max-width: 1130px) {
