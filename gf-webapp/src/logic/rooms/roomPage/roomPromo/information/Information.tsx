@@ -12,15 +12,15 @@ interface InformationProps {
 }
 
 export const Information = (props: InformationProps) => {
-  const dictionary = useDictionary().dictionary;
+  const {roomInfo} = useDictionary().dictionary;
   return (
     <div>
       <div className={styles.container}>
         <div className={styles.description}>
-          TODO: render right description for specific room
+          {roomInfo.roomDescription[props.type]}
         </div>
         <div className={styles.description}>
-          {`Price: ${props.price.getFullPrice()}`}
+          {`${roomInfo.price}: ${props.price.getFullPrice()}`}
         </div>
       </div>
       <Services services={props.services} />

@@ -1,4 +1,4 @@
-@import '../../Index.scss';
+@import 'src/Index.scss';
 
 .swiper {
   user-select: none;
@@ -32,12 +32,12 @@
   position: absolute;
   border-bottom: 1px solid $color-white;
   top:50%;
-  left: 110px; 
+  left: 110px;
 }
 
 @media (max-width: 768px) {
   .swiper {
-  
+
     .image {
       height: auto;
     }

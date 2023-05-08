@@ -1,4 +1,4 @@
-@import '../../../../Index.scss';
+@import 'src/Index.scss';
 
 .swiper {
   background-color: $color-white;
@@ -39,7 +39,7 @@
   position: absolute;
   border-bottom: 1px solid $color-white;
   top:50%;
-  left: 110px; 
+  left: 110px;
 }
 
 .wrap:active .span:after {

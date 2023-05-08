@@ -1,9 +1,12 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import {RoomType} from "src/model/Room/RoomType";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface InformationProps {
   roomSquare: number;
   adults: number;
+  roomDescription: string;
+  type: RoomType;
 }
 
 export const Information = (props: InformationProps) => {
@@ -23,7 +26,7 @@ export const Information = (props: InformationProps) => {
         {dictionary.roomInfo.adults}
       </div>
       <div className={styles.description}>
-        TODO: add room dynamic description from dictionary
+        {dictionary.roomInfo.roomDescription[props.type]}
       </div>
     </div>
 

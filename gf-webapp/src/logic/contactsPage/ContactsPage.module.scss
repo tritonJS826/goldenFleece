@@ -1,4 +1,4 @@
-@import '../../Index.scss';
+@import 'src/Index.scss';
 
 
 .wrap {
@@ -15,9 +15,8 @@
 }
 
 .title {
+  @include h1;
   color: $color-text;
-  font-size: 60px;
-  font-family: Montserrat Regular;
   padding-bottom: 20px;
 }
 
@@ -115,7 +114,7 @@ option:hover {
   background-color: #fff !important;
 }
 
-option:checked { 
+option:checked {
   font-family: Montserrat Regular;
 }
 

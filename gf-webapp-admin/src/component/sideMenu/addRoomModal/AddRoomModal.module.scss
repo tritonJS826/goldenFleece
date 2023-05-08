@@ -3,38 +3,17 @@
 .addRoomModal {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: $normal-gap;
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   background-color: $color-primary;
-  z-index: 10;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: $high-border-radius;
   max-height: 95vh;
   overflow-y: scroll;
-  z-index: 1000;
-
-  label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
-
-  input,
-  textarea,
-  select {
-    border:none;
-    outline: none;
-  }
-
-  input[type=number] {
-      padding: 2px 5px;
-      font-size: 1rem;
-      width: 80px;
-  }
+  z-index: $max-z-index;
 
   &::-webkit-scrollbar{
     width: 0;
@@ -44,5 +23,5 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 120px);
-  gap: 20px;
+  gap: $high-gap;
 }
