@@ -9,6 +9,20 @@
 }
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 10px;
+}
+
+@media (max-width: 1130px) {
+  .filters {
+    flex-wrap: wrap;
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
 }

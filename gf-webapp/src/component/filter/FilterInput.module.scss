@@ -24,3 +24,18 @@
   outline: none;
   border: $input-border-focus;
 }
+
+@media (max-width: 1130px) {
+  .formGroup {
+    width: 50%;
+  }
+  .formGroup:first-child {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .formGroup {
+    width: 100%;
+  }
+}

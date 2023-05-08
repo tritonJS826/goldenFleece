@@ -48,6 +48,8 @@ export const RoomsBlockWithFilters = (props: RoomsListProps) => {
     const filteredRoom = filterRoomsNotBooked(room);
     if (filteredRoom.length === room.booked.length) {
       return filteredRoom;
+    } else if (dateInValue === "") {
+      return room;
     }
   };
 

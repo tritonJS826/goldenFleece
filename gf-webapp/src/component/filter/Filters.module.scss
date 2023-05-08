@@ -7,3 +7,16 @@
   padding: 50px 100px;
   background-color: $color-primary;
 }
+
+@media (max-width: 1130px) {
+  .filters {
+    flex-wrap: wrap;
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+}

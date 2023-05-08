@@ -1,4 +1,10 @@
+// .container {
+//   display: flex;
+//   gap: 10px;
+// }
+
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 10px;
 }
