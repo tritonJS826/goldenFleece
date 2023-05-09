@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {SmallTitle} from "../SmallTitle/SmallTitle";
+import {Title} from "../Title/Title";
 import styles from "./SelectField.module.scss";
 
 /**
@@ -47,7 +47,8 @@ export const SelectField = (props: SelectFieldProps) => {
 
   return (
     <div>
-      <SmallTitle
+      <Title
+        size="h4"
         text="Room type"
       />
       <select

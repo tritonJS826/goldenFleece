@@ -1,4 +1,4 @@
-import {SmallTitle} from "../SmallTitle/SmallTitle";
+import {Title} from "../Title/Title";
 import styles from "./CheckboxField.module.scss";
 
 /**
@@ -50,7 +50,8 @@ export const CheckboxField = (props: CheckboxFieldProps) => {
 
   return (
     <div className={styles.container}>
-      <SmallTitle
+      <Title
+        size="h4"
         text={props.titleText}
       />
       <ul className={styles.itemsList}>

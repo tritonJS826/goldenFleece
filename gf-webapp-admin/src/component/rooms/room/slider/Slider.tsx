@@ -1,7 +1,7 @@
 import {Room} from "src/model/Room/Room";
 import {NewRoom} from "src/model/Room/NewRoom";
 import {Slides} from "src/component/rooms/room/slider/slides/Slides";
-import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
 
 
 interface SliderProps {
@@ -11,7 +11,8 @@ interface SliderProps {
 export const Slider = (props: SliderProps) => {
   return (
     <div>
-      <SmallTitle
+      <Title
+        size="h4"
         text="Room slider"
       />
       <Slides room={props.room} />

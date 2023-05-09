@@ -2,7 +2,7 @@ import {useState} from "react";
 import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {Room} from "src/model/Room/Room";
 import {NewRoom} from "src/model/Room/NewRoom";
-import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
 import styles from "src/component/rooms/room/promo/Promo.module.scss";
 
 interface PromoProps {
@@ -34,7 +34,8 @@ export const Promo = (props: PromoProps) => {
 
   return (
     <div className={styles.promo}>
-      <SmallTitle
+      <Title
+        size="h4"
         text="Promo"
       />
       <div className={styles.container}>

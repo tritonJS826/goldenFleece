@@ -1,4 +1,4 @@
-import {SmallTitle} from "./SmallTitle";
+import {Title} from "./Title";
 import {mount} from "cypress/react";
 
 const TITLE_VALUE = "Title text";
@@ -7,7 +7,8 @@ describe("<SmallTitle />", () => {
   it("renders", () => {
     // see: https://on.cypress.io/mounting-react
     mount(
-      <SmallTitle
+      <Title
+        size="h4"
         text={TITLE_VALUE}
       />,
     );
