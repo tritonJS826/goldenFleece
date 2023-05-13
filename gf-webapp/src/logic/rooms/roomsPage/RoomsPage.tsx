@@ -12,7 +12,7 @@ import styles from "src/logic/rooms/roomsPage/RoomsPage.module.scss";
 
 export const RoomsPage = () => {
   const {roomsPage} = useDictionary().dictionary;
-  const [isNavigationBlockInitialized, setIsNavigationBlockInitialized] = useState(false);
+  const [isNavigationBlockInitialized, setIsNavigationBlockInitialized] = useState(true);
 
   return (
     <div>
