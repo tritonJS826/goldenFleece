@@ -9,7 +9,6 @@ interface PromoProps {
   room: Room | NewRoom;
 }
 
-
 export const Promo = (props: PromoProps) => {
   const [isHover, setIsHover] = useState(false);
   const [isImgModalShow, setIsImgModalShow] = useState(false);
@@ -35,8 +34,8 @@ export const Promo = (props: PromoProps) => {
   return (
     <div className={styles.promo}>
       <Title
-        size="h4"
-        text="Promo"
+        level="h4"
+        text="Room promo"
       />
       <div className={styles.container}>
         <div className={styles.imgContainer}

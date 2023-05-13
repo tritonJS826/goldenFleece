@@ -8,7 +8,7 @@ describe("<SmallTitle />", () => {
     // see: https://on.cypress.io/mounting-react
     mount(
       <Title
-        size="h4"
+        level="h4"
         text={TITLE_VALUE}
       />,
     );

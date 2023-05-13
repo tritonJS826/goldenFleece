@@ -43,7 +43,7 @@ export const Description = (props: DescriptionProps) => {
           {props.roomNumber}
         </span>
         <Title
-          size="h1"
+          level="h1"
           text={dictionary.roomInfo[props.type]}
         />
       </div>

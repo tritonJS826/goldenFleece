@@ -16,4 +16,8 @@ Title.args = {
    * Title text
    */
   text: "Title text",
+  /**
+   * Title level
+   */
+  level: "h4",
 };

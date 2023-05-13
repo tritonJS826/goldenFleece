@@ -60,7 +60,7 @@ export const TextField = (props: TextFieldProps) => {
   return (
     <label className={styles.label}>
       <Title
-        size="h4"
+        level="h4"
         text={props.titleText}
       />
       {renderTextField()}

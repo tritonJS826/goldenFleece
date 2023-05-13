@@ -11,9 +11,9 @@ interface TitleProps {
   text: string;
 
   /**
-   * Title's size
+   * Title's level
    */
-  size: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 
 /**
@@ -22,8 +22,8 @@ interface TitleProps {
 
 export const Title = (props: TitleProps) => {
   return (
-    <props.size className={styles.title}>
+    <props.level className={styles.title}>
       {props.text}
-    </props.size>
+    </props.level>
   );
 };

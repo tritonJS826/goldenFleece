@@ -33,7 +33,7 @@ export const NumberField = (props: NumberFieldProps) => {
   return (
     <label className={styles.label}>
       <Title
-        size="h4"
+        level="h4"
         text={props.titleText}
       />
       <input

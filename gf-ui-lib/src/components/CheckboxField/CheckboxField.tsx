@@ -51,7 +51,7 @@ export const CheckboxField = (props: CheckboxFieldProps) => {
   return (
     <div className={styles.container}>
       <Title
-        size="h4"
+        level="h4"
         text={props.titleText}
       />
       <ul className={styles.itemsList}>

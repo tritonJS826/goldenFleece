@@ -12,7 +12,7 @@ export const Slider = (props: SliderProps) => {
   return (
     <div>
       <Title
-        size="h4"
+        level="h4"
         text="Room slider"
       />
       <Slides room={props.room} />

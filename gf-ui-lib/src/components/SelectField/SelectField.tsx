@@ -48,8 +48,8 @@ export const SelectField = (props: SelectFieldProps) => {
   return (
     <div>
       <Title
-        size="h4"
-        text="Room type"
+        level="h4"
+        text={props.titleText}
       />
       <select
         className={styles.list}
