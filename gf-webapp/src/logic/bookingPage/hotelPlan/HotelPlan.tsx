@@ -6,11 +6,11 @@ import {RoomsPlan} from "src/logic/bookingPage/hotelPlan/roomsPlan/RoomsPlan";
 import hotelPlan from "src/resources/hotelPlan/hotelPlan.jpg";
 import styles from "src/logic/bookingPage/hotelPlan/HotelPlan.module.scss";
 
-
 export const HotelPlan = () => {
   const {bookingPage} = useDictionary().dictionary;
 
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
+  const [isModalCheckMailActive, setIsModalCheckMailActive] = useState<boolean>(false);
   const [roomNumber, setRoomNumber] = useState<string | null>(null);
 
   const isBooking = (event: React.MouseEvent): void => {
@@ -26,10 +26,9 @@ export const HotelPlan = () => {
     }
   };
 
-
   return (
     <ModalVisibilityContext.Provider
-      value={{isModalActive, setIsModalActive}}
+      value={{isModalActive, setIsModalActive, isModalCheckMailActive, setIsModalCheckMailActive}}
     >
       <div className={styles.wrapper}>
         <Modal

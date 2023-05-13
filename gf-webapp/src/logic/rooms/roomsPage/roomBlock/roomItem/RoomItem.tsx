@@ -3,17 +3,22 @@ import {Description} from "src/logic/rooms/roomsPage/roomBlock/roomItem/descript
 import {PromoImage} from "src/logic/rooms/roomsPage/roomBlock/roomItem/promoImage/PromoImage";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
-export const RoomItem = ({room}: {room: Room}) => {
+interface RoomItemProps {
+  room: Room;
+}
+
+export const RoomItem = (props: RoomItemProps) => {
   return (
     <div className={styles.wrap}>
-      <PromoImage promoImageUrl={room.promoImgUrl} />
+      <PromoImage promoImageUrl={props.room.promoImgUrl} />
       <Description
-        roomId={room.id}
-        roomNumber={room.roomNumber}
-        adults={room.adults}
-        roomSquare={room.square}
-        type={room.type}
-        roomDescription={room.description}
+        roomId={props.room.id}
+        roomNumber={props.room.roomNumber}
+        adults={props.room.adults}
+        roomSquare={props.room.square}
+        type={props.room.type}
+        roomDescription={props.room.description}
+        childrenValue={props.room.children}
       />
     </div>
   );
