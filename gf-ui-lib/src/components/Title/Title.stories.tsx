@@ -1,5 +1,6 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 import {Title as TitleComponent} from "./Title";
+import {TitleLevel} from "./TitleLevel";
 
 export default {
   title: "Component/Title",
@@ -19,5 +20,5 @@ Title.args = {
   /**
    * Title level
    */
-  level: "h4",
+  level: TitleLevel.h4,
 };
