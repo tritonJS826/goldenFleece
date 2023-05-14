@@ -20,9 +20,18 @@ import styles from "src/component/rooms/room/RoomItem.module.scss";
 interface RoomProps {
   room:Room;
 }
-
-const PROMO_TITLE_TEXT = "Room promo";
-const SLIDER_TITLE_TEXT = "Room slider";
+enum roomTitleText {
+  type="Room type",
+  dscription="Room description",
+  longDescription="Room long description",
+  price="Room price",
+  rating="Room rating",
+  square="Room square",
+  adults="Room adults",
+  services="Room services",
+  promo="Room promo",
+  slider="Room slider",
+}
 
 export const RoomItem = (props: RoomProps) => {
 
@@ -48,7 +57,7 @@ export const RoomItem = (props: RoomProps) => {
         <SelectField
           itemsList={Object.values(RoomType)}
           selectedItem={room.type}
-          titleText='Room type'
+          titleText={roomTitleText.type}
           onChangeValue={(value: string) => {
             isValidRoomType(value) ?
               room.type = value
@@ -59,7 +68,7 @@ export const RoomItem = (props: RoomProps) => {
         />
         <TextField
           value={room.description}
-          titleText='Room description'
+          titleText={roomTitleText.dscription}
           onChangeValue={(value: string) => {
             room.description = value;
             setRoom(room);
@@ -68,7 +77,7 @@ export const RoomItem = (props: RoomProps) => {
         <TextField
           type="textarea"
           value={room.descriptionLong}
-          titleText='Room Long description'
+          titleText={roomTitleText.longDescription}
           onChangeValue={(value: string) => {
             room.descriptionLong = value;
             setRoom(room);
@@ -77,7 +86,7 @@ export const RoomItem = (props: RoomProps) => {
         <CheckboxField
           itemsList={enumToArray(RoomServices)}
           selectedItems={room.services}
-          titleText='Room services'
+          titleText={roomTitleText.services}
           onChangeValue={(service: string) => {
             isValidRoomService(service) ?
               room.services = changeRoomServices(room.services, service)
@@ -89,7 +98,7 @@ export const RoomItem = (props: RoomProps) => {
         <div className={styles.wrapper}>
           <NumberField
             value={room.rating}
-            titleText='Room rating'
+            titleText={roomTitleText.rating}
             onChangeValue={(value: number) => {
               room.rating = value;
               setRoom(room);
@@ -97,14 +106,14 @@ export const RoomItem = (props: RoomProps) => {
           />
           <NumberField
             value={room.price.getPriceAmount()}
-            titleText='Room price'
+            titleText={roomTitleText.price}
             onChangeValue={(value: number) => {
               room.price.setNewPrice(value);
             }}
           />
           <NumberField
             value={room.square}
-            titleText='Room square'
+            titleText={roomTitleText.square}
             onChangeValue={(value: number) => {
               room.square = value;
               setRoom(room);
@@ -112,7 +121,7 @@ export const RoomItem = (props: RoomProps) => {
           />
           <NumberField
             value={room.adults}
-            titleText='Room adults'
+            titleText={roomTitleText.adults}
             onChangeValue={(value: number) => {
               room.adults = value;
               setRoom(room);
@@ -121,11 +130,11 @@ export const RoomItem = (props: RoomProps) => {
         </div>
         <Promo
           room={room}
-          titleText={PROMO_TITLE_TEXT}
+          titleText={roomTitleText.promo}
         />
         <Slider
           room={room}
-          titleText={SLIDER_TITLE_TEXT}
+          titleText={roomTitleText.slider}
         />
         <div className={styles.buttons}>
           <Button
