@@ -1,20 +1,20 @@
 import {useState} from "react";
 import {Button} from "gf-ui-lib/src/components/Button/Button";
-import {Room} from "src/model/Room/Room";
-import {NewRoom} from "src/model/Room/NewRoom";
 import {Title} from "gf-ui-lib/src/components/Title/Title";
 import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 import styles from "src/component/rooms/room/promo/Promo.module.scss";
 
 interface PromoProps {
-  room: Room | NewRoom;
+  promoImageUrl: string;
   titleText: string;
+  updatePromoImageUrl: (promoImageUrl: string) => void;
 }
 
 export const Promo = (props: PromoProps) => {
   const [isHover, setIsHover] = useState(false);
   const [isImgModalShow, setIsImgModalShow] = useState(false);
   const [newPromoImageUrl, setNewPromoImageUrl] = useState("");
+  const [promoImageUrl, setPromoImageUrl] = useState(props.promoImageUrl);
 
   const hoverHandler = () => {
     setIsHover(!isHover);
@@ -22,7 +22,8 @@ export const Promo = (props: PromoProps) => {
 
   const saveHandler = () => {
     setIsImgModalShow(!isImgModalShow);
-    props.room.promoImgUrl = newPromoImageUrl;
+    props.updatePromoImageUrl(newPromoImageUrl);
+    setPromoImageUrl(newPromoImageUrl);
     setNewPromoImageUrl("");
   };
 
@@ -44,13 +45,15 @@ export const Promo = (props: PromoProps) => {
           onMouseEnter={hoverHandler}
           onMouseLeave={hoverHandler}
         >
-          {props.room.promoImgUrl ?
+          {promoImageUrl ?
             (
               <img className={styles.image}
-                src={props.room.promoImgUrl}
+                src={promoImageUrl}
                 alt="room-promo"
               />
-            ) : (
+            )
+            :
+            (
               <p className={styles.addImage}>
                 Add Image
               </p>

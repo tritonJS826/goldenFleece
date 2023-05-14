@@ -1,12 +1,11 @@
-import {Room} from "src/model/Room/Room";
-import {NewRoom} from "src/model/Room/NewRoom";
 import {Slides} from "src/component/rooms/room/slider/slides/Slides";
 import {Title} from "gf-ui-lib/src/components/Title/Title";
 import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 
 interface SliderProps {
-  room: Room | NewRoom;
+  slides: string[];
   titleText: string;
+  updateSlides: (slides: string[]) => void;
 }
 
 export const Slider = (props: SliderProps) => {
@@ -16,7 +15,10 @@ export const Slider = (props: SliderProps) => {
         level={TitleLevel.h4}
         text={props.titleText}
       />
-      <Slides room={props.room} />
+      <Slides
+        slides={props.slides}
+        updateSlides={props.updateSlides}
+      />
     </div>
   );
 };

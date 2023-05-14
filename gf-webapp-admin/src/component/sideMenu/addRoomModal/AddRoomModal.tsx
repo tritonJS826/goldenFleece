@@ -129,12 +129,20 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
           }}
         />
         <Promo
-          room={room}
+          promoImageUrl={room.promoImgUrl}
           titleText={roomTitleText.promo}
+          updatePromoImageUrl={(imageUrl:string) => {
+            room.promoImgUrl = imageUrl;
+            setRoom(room);
+          }}
         />
         <Slider
-          room={room}
+          slides={room.images}
           titleText={roomTitleText.slider}
+          updateSlides={(slides) => {
+            room.images = slides;
+            setRoom(room);
+          }}
         />
         <Button
           onClick={addRoom}
