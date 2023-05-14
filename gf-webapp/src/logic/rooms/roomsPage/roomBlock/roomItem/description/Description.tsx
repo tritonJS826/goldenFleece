@@ -5,6 +5,7 @@ import {RoomType} from "src/model/Room/RoomType";
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
 import {Title} from "gf-ui-lib/src/components/Title/Title";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 
 interface DescriptionProps {
   roomNumber: number;
@@ -43,7 +44,7 @@ export const Description = (props: DescriptionProps) => {
           {props.roomNumber}
         </span>
         <Title
-          level="h1"
+          level={TitleLevel.h1}
           text={dictionary.roomInfo[props.type]}
         />
       </div>

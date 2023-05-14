@@ -21,6 +21,9 @@ interface RoomProps {
   room:Room;
 }
 
+const PROMO_TITLE_TEXT = "Room promo";
+const SLIDER_TITLE_TEXT = "Room slider";
+
 export const RoomItem = (props: RoomProps) => {
 
   const navigate = useNavigate();
@@ -116,8 +119,14 @@ export const RoomItem = (props: RoomProps) => {
             }}
           />
         </div>
-        <Promo room={room} />
-        <Slider room={room} />
+        <Promo
+          room={room}
+          titleText={PROMO_TITLE_TEXT}
+        />
+        <Slider
+          room={room}
+          titleText={SLIDER_TITLE_TEXT}
+        />
         <div className={styles.buttons}>
           <Button
             value="Update room"

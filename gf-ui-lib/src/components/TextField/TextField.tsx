@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {Title} from "../Title/Title";
+import {TitleLevel} from "../Title/TitleLevel";
 import styles from "./TextField.module.scss";
 
 /**
@@ -60,7 +61,7 @@ export const TextField = (props: TextFieldProps) => {
   return (
     <label className={styles.label}>
       <Title
-        level="h4"
+        level={TitleLevel.h4}
         text={props.titleText}
       />
       {renderTextField()}

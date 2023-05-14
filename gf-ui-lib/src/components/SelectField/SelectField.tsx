@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {Title} from "../Title/Title";
+import {TitleLevel} from "../Title/TitleLevel";
 import styles from "./SelectField.module.scss";
 
 /**
@@ -48,7 +49,7 @@ export const SelectField = (props: SelectFieldProps) => {
   return (
     <div>
       <Title
-        level="h4"
+        level={TitleLevel.h4}
         text={props.titleText}
       />
       <select

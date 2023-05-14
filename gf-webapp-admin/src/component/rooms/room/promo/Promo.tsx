@@ -3,10 +3,12 @@ import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {Room} from "src/model/Room/Room";
 import {NewRoom} from "src/model/Room/NewRoom";
 import {Title} from "gf-ui-lib/src/components/Title/Title";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 import styles from "src/component/rooms/room/promo/Promo.module.scss";
 
 interface PromoProps {
   room: Room | NewRoom;
+  titleText: string;
 }
 
 export const Promo = (props: PromoProps) => {
@@ -34,8 +36,8 @@ export const Promo = (props: PromoProps) => {
   return (
     <div className={styles.promo}>
       <Title
-        level="h4"
-        text="Room promo"
+        level={TitleLevel.h4}
+        text={props.titleText}
       />
       <div className={styles.container}>
         <div className={styles.imgContainer}

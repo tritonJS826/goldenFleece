@@ -1,3 +1,4 @@
+import {TitleLevel} from "./TitleLevel";
 import styles from "./Title.module.scss";
 
 /**
@@ -13,7 +14,7 @@ interface TitleProps {
   /**
    * Title's level
    */
-  level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  level: TitleLevel;
 }
 
 /**
