@@ -13,15 +13,20 @@ import {RoomsBlockWithFilters} from "src/component/filter/RoomsBlockWithFilters"
 import styles from "src/logic/bookingPage/BookingPage.module.scss";
 
 export const BookingPage = () => {
+  const [isNavigationBlockInitialized, setIsNavigationBlockInitialized] = useState(true);
+
   return (
     <div>
-      <PageBorder isShowLoader={false}>
+      <PageBorder
+        isLoading={isNavigationBlockInitialized}
+        isShowLoader={true}
+      >
         <BookingPromo />
         <h2 className={styles.title}>
           Choose one of room
         </h2>
         <Filters />
-        <RoomsBlockWithFilters />
+        <RoomsBlockWithFilters setIsNavigationBlockInitializedFalse={() => setIsNavigationBlockInitialized(false)} />
       </PageBorder>
     </div>
   );

@@ -24,11 +24,11 @@ export const RoomsPage = () => {
         <div className={styles.about}>
           {roomsPage.description}
         </div>
-        <Navigation
+        {/* <Navigation
           setIsNavigationBlockInitializedFalse={() => setIsNavigationBlockInitialized(false)}
-        />
+        /> */}
         <Filters />
-        <RoomsBlockWithFilters />
+        <RoomsBlockWithFilters setIsNavigationBlockInitializedFalse={() => setIsNavigationBlockInitialized(false)} />
         <div className={styles.about}>
           {roomsPage.description}
         </div>
