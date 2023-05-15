@@ -1,9 +1,11 @@
 import {motion} from "framer-motion";
 import {RoomLink} from "src/logic/rooms/roomsPage/roomBlock/roomItem/roomLink/RoomLink";
 import {Information} from "src/logic/rooms/roomsPage/roomBlock/roomItem/information/Information";
-import {Title} from "src/logic/rooms/roomsPage/roomBlock/roomItem/title/Title";
 import {RoomType} from "src/model/Room/RoomType";
+import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 
 interface DescriptionProps {
   roomNumber: number;
@@ -27,6 +29,7 @@ const textAnimation = {
 };
 
 export const Description = (props: DescriptionProps) => {
+  const dictionary = useDictionary().dictionary;
 
   return (
     <motion.div
@@ -36,12 +39,15 @@ export const Description = (props: DescriptionProps) => {
       viewport={{amount: 0.1, once: true}}
       className={styles.roomAbout}
     >
-      {// TODO: Title shouldn't have props. Task # 121
-      }
-      <Title
-        roomNumber={props.roomNumber}
-        type={props.type}
-      />
+      <div className={styles.titleContainer}>
+        <span className={styles.span}>
+          {props.roomNumber}
+        </span>
+        <Title
+          level={TitleLevel.h1}
+          text={dictionary.roomInfo[props.type]}
+        />
+      </div>
       <Information
         adults={props.adults}
         roomSquare={props.roomSquare}

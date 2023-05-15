@@ -1,5 +1,6 @@
 import {useState} from "react";
-import {SmallTitle} from "../SmallTitle/SmallTitle";
+import {Title} from "../Title/Title";
+import {TitleLevel} from "../Title/TitleLevel";
 import styles from "./NumberField.module.scss";
 
 /**
@@ -32,7 +33,8 @@ export const NumberField = (props: NumberFieldProps) => {
 
   return (
     <label className={styles.label}>
-      <SmallTitle
+      <Title
+        level={TitleLevel.h4}
         text={props.titleText}
       />
       <input

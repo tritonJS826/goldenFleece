@@ -1,5 +1,6 @@
 import {useState} from "react";
-import {SmallTitle} from "../SmallTitle/SmallTitle";
+import {Title} from "../Title/Title";
+import {TitleLevel} from "../Title/TitleLevel";
 import styles from "./SelectField.module.scss";
 
 /**
@@ -47,8 +48,9 @@ export const SelectField = (props: SelectFieldProps) => {
 
   return (
     <div>
-      <SmallTitle
-        text="Room type"
+      <Title
+        level={TitleLevel.h4}
+        text={props.titleText}
       />
       <select
         className={styles.list}

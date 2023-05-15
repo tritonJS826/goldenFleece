@@ -89,7 +89,6 @@
     "children": 1,
     "square": 40,
     "rating": 10,
-    "id": "1",
     "roomNumber": 2,
     "booked": [
       {
