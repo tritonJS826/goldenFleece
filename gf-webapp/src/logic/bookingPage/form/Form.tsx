@@ -26,7 +26,7 @@ const defaultBookingFormData: ApiBookingRequestPostRequest = {
 export const Form = (props: RoomProps) => {
   const {adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
   const {bookingRoomForm} = useDictionary().dictionary;
-  const {isModalActive, setIsModalActive, isModalCheckMailActive, setIsModalCheckMailActive} = useModalVisibilityContext();
+  const {setIsModalActive, setIsModalCheckMailActive} = useModalVisibilityContext();
   const [bookingFormData, setBookingFormData] = useState<ApiBookingRequestPostRequest>(defaultBookingFormData);
 
   const sendMail = async () => {
@@ -61,7 +61,7 @@ export const Form = (props: RoomProps) => {
               type="email"
               className={styles.input}
               placeholder={bookingRoomForm.email}
-              name="email"
+              name={bookingRoomForm.email}
               value={bookingFormData.email}
               onChange={handleChange}
               required
@@ -75,7 +75,7 @@ export const Form = (props: RoomProps) => {
               type="text"
               className={styles.input}
               placeholder={bookingRoomForm.name}
-              name="name"
+              name={bookingRoomForm.name}
               value={bookingFormData.name}
               onChange={handleChange}
               required
@@ -89,7 +89,7 @@ export const Form = (props: RoomProps) => {
               <input
                 type="date"
                 className={styles.input2}
-                name="dateIn"
+                name={bookingRoomForm.dateIn}
                 value={dateInValue}
                 onChange={handleChange}
                 required
@@ -102,7 +102,7 @@ export const Form = (props: RoomProps) => {
               <input
                 type="date"
                 className={styles.input2}
-                name="dateOut"
+                name={bookingRoomForm.dateOut}
                 value={dateOutValue}
                 onChange={handleChange}
               />
@@ -116,7 +116,7 @@ export const Form = (props: RoomProps) => {
               <input
                 type="text"
                 className={styles.input}
-                name="roomNumber"
+                name={bookingRoomForm.roomNumber}
                 value={props.roomNumber ?? undefined}
                 onChange={handleChangeRoom}
                 required
@@ -130,7 +130,7 @@ export const Form = (props: RoomProps) => {
                 <input
                   type="text"
                   className={styles.input}
-                  name="adultsAmount"
+                  name={bookingRoomForm.adultsAmount}
                   value={adultsValue}
                   onChange={handleChange}
                   required
@@ -145,7 +145,7 @@ export const Form = (props: RoomProps) => {
                 <input
                   type="text"
                   className={styles.input}
-                  name="childrenAmount"
+                  name={bookingRoomForm.childrenAmount}
                   value={childrenValue}
                   onChange={handleChange}
                   required
