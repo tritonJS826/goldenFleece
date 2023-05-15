@@ -35,11 +35,13 @@
   background-color: $color-white;
 }
 
-.titleBook {
-  @include room-h2;
-  color: $color-text;
+.titleContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-bottom: 30px;
-  padding-top: 30px;
+  gap: 20px;
 }
 
 .list {
@@ -127,7 +129,7 @@
 
 .span {
   position: relative;
-  margin-left: 80px;
+  padding-left: 80px;
   font-size: 18px;
   color: $color-text;
   font-family: Montserrat Regular;
@@ -140,6 +142,7 @@
   position: absolute;
   border-bottom: 1px solid $color-primary;
   top: 50%;
+  left: 0;
 }
 
 @media (max-width: 768px) {
@@ -181,10 +184,6 @@
     margin-left: 0;
     margin-top: 30px;
     padding: 20px 30px;
-  }
-
-  .titleBook {
-    font-size: 32px;
   }
 
   .roomLink {

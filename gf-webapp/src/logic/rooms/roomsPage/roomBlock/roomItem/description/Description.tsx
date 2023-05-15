@@ -2,14 +2,15 @@ import {useState} from "react";
 import {motion} from "framer-motion";
 import {RoomLink} from "src/logic/rooms/roomsPage/roomBlock/roomItem/roomLink/RoomLink";
 import {Information} from "src/logic/rooms/roomsPage/roomBlock/roomItem/information/Information";
-import {Title} from "src/logic/rooms/roomsPage/roomBlock/roomItem/title/Title";
 import {RoomType} from "src/model/Room/RoomType";
 import {useDictionary, ModalVisibilityContext} from "src/logic/DictionaryContext/useDictionary";
-import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {useFilterRooms} from "src/component/filter/FilterContext";
 import {Modal} from "src/logic/bookingPage/modal/Modal";
 import {Form} from "src/logic/bookingPage/form/Form";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
+import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface DescriptionProps {
   roomNumber: number;
@@ -36,6 +37,7 @@ const textAnimation = {
 const EMPTY_INPUT_STRING = "";
 
 export const Description = (props: DescriptionProps) => {
+  const dictionary = useDictionary().dictionary;
   const {bookButtonText, closeButtonText, bookingPage} = useDictionary().dictionary;
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [isModalCheckMailActive, setIsModalCheckMailActive] = useState<boolean>(false);
@@ -62,12 +64,15 @@ export const Description = (props: DescriptionProps) => {
       viewport={{amount: 0.1, once: true}}
       className={styles.roomAbout}
     >
-      {// TODO: Title shouldn't have props. Task # 121
-      }
-      <Title
-        roomNumber={props.roomNumber}
-        type={props.type}
-      />
+      <div className={styles.titleContainer}>
+        <span className={styles.span}>
+          {props.roomNumber}
+        </span>
+        <Title
+          level={TitleLevel.h1}
+          text={dictionary.roomInfo[props.type]}
+        />
+      </div>
       <Information
         adults={props.adults}
         roomSquare={props.roomSquare}

@@ -24,8 +24,20 @@ interface AddRoomModalProps {
   toggleModalVisibility: () => void
 }
 
-export const AddRoomModal = (props: AddRoomModalProps) => {
+enum roomTitleText {
+  type="Room type",
+  dscription="Room description",
+  longDescription="Room long description",
+  price="Room price",
+  rating="Room rating",
+  square="Room square",
+  adults="Room adults",
+  services="Room services",
+  promo="Room promo",
+  slider="Room slider",
+}
 
+export const AddRoomModal = (props: AddRoomModalProps) => {
   const [room, setRoom] = useState<NewRoom>(defaultRoom);
   const navigate = useNavigate();
 
@@ -43,7 +55,7 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
         <SelectField
           itemsList={Object.values(RoomType)}
           selectedItem={room.type}
-          titleText='Room type'
+          titleText={roomTitleText.type}
           onChangeValue={(value: string) => {
             isValidRoomType(value) ?
               room.type = value
@@ -54,8 +66,8 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
         />
         <TextField
           value={room.description}
-          placeholder='Enter room description'
-          titleText='Room description'
+          placeholder={roomTitleText.dscription}
+          titleText={roomTitleText.dscription}
           onChangeValue={(value: string) => {
             room.description = value;
             setRoom(room);
@@ -65,7 +77,7 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
           type="textarea"
           value={room.descriptionLong}
           placeholder='Enter room long description'
-          titleText='Room Long description'
+          titleText={roomTitleText.longDescription}
           onChangeValue={(value: string) => {
             room.descriptionLong = value;
             setRoom(room);
@@ -74,14 +86,14 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
         <div className={styles.wrapper}>
           <NumberField
             value={room.price.getPriceAmount()}
-            titleText='Room price'
+            titleText={roomTitleText.price}
             onChangeValue={(value: number) => {
               room.price.setNewPrice(value);
             }}
           />
           <NumberField
             value={room.rating}
-            titleText='Room rating'
+            titleText={roomTitleText.rating}
             onChangeValue={(value: number) => {
               room.rating = value;
               setRoom(room);
@@ -89,7 +101,7 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
           />
           <NumberField
             value={room.square}
-            titleText='Room square'
+            titleText={roomTitleText.square}
             onChangeValue={(value: number) => {
               room.square = value;
               setRoom(room);
@@ -97,7 +109,7 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
           />
           <NumberField
             value={room.adults}
-            titleText='Room adults'
+            titleText={roomTitleText.adults}
             onChangeValue={(value: number) => {
               room.adults = value;
               setRoom(room);
@@ -107,7 +119,7 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
         <CheckboxField
           itemsList={enumToArray(RoomServices)}
           selectedItems={room.services}
-          titleText='Room services'
+          titleText={roomTitleText.services}
           onChangeValue={(item: string) => {
             isValidRoomService(item) ?
               room.services = changeRoomServices(room.services, item)
@@ -116,8 +128,22 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
             setRoom(room);
           }}
         />
-        <Promo room={room} />
-        <Slider room={room} />
+        <Promo
+          promoImageUrl={room.promoImgUrl}
+          titleText={roomTitleText.promo}
+          updatePromoImageUrl={(imageUrl:string) => {
+            room.promoImgUrl = imageUrl;
+            setRoom(room);
+          }}
+        />
+        <Slider
+          slides={room.images}
+          titleText={roomTitleText.slider}
+          updateSlides={(slides) => {
+            room.images = slides;
+            setRoom(room);
+          }}
+        />
         <Button
           onClick={addRoom}
           value="Submit"

@@ -1,4 +1,5 @@
-import {SmallTitle} from "../SmallTitle/SmallTitle";
+import {Title} from "../Title/Title";
+import {TitleLevel} from "../Title/TitleLevel";
 import styles from "./CheckboxField.module.scss";
 
 /**
@@ -50,7 +51,8 @@ export const CheckboxField = (props: CheckboxFieldProps) => {
 
   return (
     <div className={styles.container}>
-      <SmallTitle
+      <Title
+        level={TitleLevel.h4}
         text={props.titleText}
       />
       <ul className={styles.itemsList}>

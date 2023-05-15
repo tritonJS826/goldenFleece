@@ -1,17 +1,16 @@
-import {useEffect, useState} from "react";
-import {Room} from "src/model/Room/Room";
-import {NewRoom} from "src/model/Room/NewRoom";
+import {useState} from "react";
 import {AddSlide} from "src/component/rooms/room/slider/slides/addSlide/AddSlide";
 import {Slide} from "src/component/rooms/room/slider/slides/slide/Slide";
 import styles from "src/component/rooms/room/slider/slides/Slides.module.scss";
 
 interface SlidesProps {
-  room: Room | NewRoom;
+  slides: string[];
+  updateSlides: (slides: string[]) => void;
 }
 
 export const Slides = (props: SlidesProps) => {
 
-  const [slides, setSlides] = useState(props.room.images);
+  const [slides, setSlides] = useState(props.slides);
 
   const deleteSlide = (slideIndex: number) => {
     setSlides(slides.filter((_, index) => index !== slideIndex));
@@ -32,9 +31,7 @@ export const Slides = (props: SlidesProps) => {
       />
     ));
 
-  useEffect(() => {
-    props.room.images = slides;
-  }, [slides]);
+  props.updateSlides(slides);
 
   return (
     <ul className={styles.slides}>
