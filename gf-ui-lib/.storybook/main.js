@@ -21,10 +21,6 @@ module.exports = {
     "builder": "@storybook/builder-webpack5"
   },
   webpackFinal: async (config, { configType }) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'gf-ui-lib/*': path.resolve(__dirname, "gf-ui-lib/*"),
-    };
     config.resolve.modules = [
       path.resolve(__dirname, "..", "../"),
       "node_modules",
