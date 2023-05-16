@@ -20,12 +20,13 @@
     "noEmit": true,
     "types": ["cypress"],
     "jsx": "react-jsx",
-    "baseUrl": "../",
+    // "baseUrl": "../",
     // "paths": {
     //   "src/*": ["src/*"]
     // },
   },
   "include": [
     "src"
-  ]
+  ],
+  "extends": "./tsconfig.paths.json",
 }
