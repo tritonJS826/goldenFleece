@@ -1,6 +1,6 @@
 import {useState} from "react";
-import {SmallTitle} from "../SmallTitle/SmallTitle";
-import styles from "./TextField.module.scss";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import styles from "gf-ui-lib/src/components/TextField/TextField.module.scss";
 
 /**
  * Props for field with text in it

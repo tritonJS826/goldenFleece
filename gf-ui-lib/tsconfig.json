@@ -19,7 +19,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "types": ["cypress"],
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "../",
+    // "paths": {
+    //   "src/*": ["src/*"]
+    // },
   },
   "include": [
     "src"

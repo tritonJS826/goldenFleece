@@ -1,6 +1,6 @@
 import {mount} from "cypress/react";
-import {Map} from "./Map";
-import {markers} from "./Map.fixtures";
+import {Map} from "gf-ui-lib/src/components/Map/Map";
+import {markers} from "gf-ui-lib/src/components/Map/Map.fixtures";
 
 describe("<Map />", () => {
   it("renders", () => {

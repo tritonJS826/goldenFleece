@@ -17,5 +17,16 @@ module.exports = {
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-webpack5"
-  }
+  },
+  // webpackFinal: async (config, { configType }) => {
+  //   config.resolve.alias = {
+  //     ...config.resolve.alias,
+  //     '@/src': path.resolve(__dirname, "gf-ui-lib/src"),
+  //   };
+  //   config.resolve.modules = [
+  //     path.resolve(__dirname, "..", "src"),
+  //     "node_modules",
+  //   ];
+  //   return config;
+  // },
 }

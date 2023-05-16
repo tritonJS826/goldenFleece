@@ -1,5 +1,5 @@
 import {createContext} from "react";
-import {IMarker} from "./mapContent/marker/IMarker";
+import {IMarker} from "gf-ui-lib/src/components/Map/mapContent/marker/IMarker";
 
 export interface IMapContext {
   markers: IMarker[];

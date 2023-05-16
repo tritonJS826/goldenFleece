@@ -1,5 +1,5 @@
-import {SmallTitle} from "../SmallTitle/SmallTitle";
-import styles from "./CheckboxField.module.scss";
+import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import styles from "gf-ui-lib/src/components/CheckboxField/CheckboxField.module.scss";
 
 /**
  * Checkbox field props

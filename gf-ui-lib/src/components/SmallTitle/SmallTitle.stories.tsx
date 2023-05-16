@@ -1,5 +1,5 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-import {SmallTitle as SmallTitleComponent} from "./SmallTitle";
+import {SmallTitle as SmallTitleComponent} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
 
 export default {
   title: "Component/SmallTitle",

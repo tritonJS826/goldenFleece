@@ -1,5 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
+import logo from "gf-ui-lib/src/logo.svg";
+import "gf-ui-lib/src/App.css";
 
 function App() {
   return (

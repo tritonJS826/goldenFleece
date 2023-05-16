@@ -1,6 +1,6 @@
-import {Button} from "./Button";
+import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {mount} from "cypress/react";
-import styles from "./Button.module.scss";
+import styles from "gf-ui-lib/src/components/Button/Button.module.scss";
 
 const STUB_BUTTON_VALUE = "TEST BUTTON";
 

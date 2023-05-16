@@ -1,4 +1,4 @@
-import styles from "./SmallTitle.module.scss";
+import styles from "gf-ui-lib/src/components/SmallTitle/SmallTitle.module.scss";
 
 interface SmallTitleProps {
   /**
