@@ -1,8 +1,8 @@
 import {FC, useContext, useState} from "react";
 import {IMarker} from "./IMarker";
-import {MapContext} from "../../MapContext";
-import marker from "../../resources/marker-sprite.svg";
-import styleMarker from "./Marker.module.scss";
+import {MapContext} from "src/components/Map/MapContext";
+import marker from "src/components/Map/resources/marker-sprite.svg";
+import styleMarker from "src/components/Map/mapContent/marker/Marker.module.scss";
 
 
 export const Marker: FC<IMarker> = (props) => {

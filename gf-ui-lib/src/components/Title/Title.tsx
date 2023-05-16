@@ -1,5 +1,5 @@
-import {TitleLevel} from "./TitleLevel";
-import styles from "./Title.module.scss";
+import {TitleLevel} from "src/components/Title/TitleLevel";
+import styles from "src/components/Title/Title.module.scss";
 
 /**
  * Title props

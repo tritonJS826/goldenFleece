@@ -1,6 +1,6 @@
 import {useContext} from "react";
-import {MapContext} from "../MapContext";
-import styles from "./ItemDescription.module.scss";
+import {MapContext} from "src/components/Map/MapContext";
+import styles from "src/components/Map/itemDescription/ItemDescription.module.scss";
 
 
 export const ItemDescription = () => {

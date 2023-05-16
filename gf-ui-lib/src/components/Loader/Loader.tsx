@@ -1,6 +1,5 @@
-import {useEffect, useState} from "react";
-import styles from "./Loader.module.scss";
 import clsx from "clsx";
+import styles from "src/components/Loader/Loader.module.scss";
 
 /**
  * Loader props

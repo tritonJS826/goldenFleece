@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import styles from "./Button.module.scss";
+import styles from "src/components/Button/Button.module.scss";
 
 /**
  * Button props

@@ -1,6 +1,6 @@
-import {Title} from "../Title/Title";
-import {TitleLevel} from "../Title/TitleLevel";
-import styles from "./CheckboxField.module.scss";
+import {Title} from "src/components/Title/Title";
+import {TitleLevel} from "src/components/Title/TitleLevel";
+import styles from "src/components/CheckboxField/CheckboxField.module.scss";
 
 /**
  * Checkbox field props

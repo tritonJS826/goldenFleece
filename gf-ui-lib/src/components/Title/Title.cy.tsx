@@ -1,6 +1,6 @@
-import {Title} from "./Title";
+import {Title} from "src/components/Title/Title";
 import {mount} from "cypress/react";
-import {TitleLevel} from "./TitleLevel";
+import {TitleLevel} from "src/components/Title/TitleLevel";
 
 const TITLE_VALUE = "Title text";
 

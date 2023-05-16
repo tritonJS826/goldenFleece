@@ -1,6 +1,6 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-import {Map as MapComponent} from "./Map";
-import {markers} from "./Map.fixtures";
+import {Map as MapComponent} from "src/components/Map/Map";
+import {markers} from "src/components/Map/Map.fixtures";
 
 export default {
   title: "Component/Map",

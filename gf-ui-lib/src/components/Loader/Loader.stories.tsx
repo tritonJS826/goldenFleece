@@ -1,6 +1,5 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-
-import {Loader as LoaderComponent} from "./Loader";
+import {Loader as LoaderComponent} from "src/components/Loader/Loader";
 
 export default {
   title: "Component/Loader",

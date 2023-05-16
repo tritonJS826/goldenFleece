@@ -1,5 +1,5 @@
-import goldenFleeceImg from "./resources/golden-fleece.jpg";
-import cakeClubImg from "./resources/cake-club.jpg";
+import goldenFleeceImg from "src/components/Map/resources/golden-fleece.jpg";
+import cakeClubImg from "src/components/Map/resources/cake-club.jpg";
 
 /**
  * Map markers example
@@ -21,7 +21,7 @@ export const markers = [
     y: 110,
     markerType: "food",
     imgUrl: cakeClubImg,
-    description: `Map cakeClubImg from dictionary example long. 
+    description: `Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
@@ -35,7 +35,7 @@ export const markers = [
     y: 110,
     markerType: "food",
     imgUrl: cakeClubImg,
-    description: `Map cakeClubImg from dictionary example long. 
+    description: `Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
@@ -49,7 +49,7 @@ export const markers = [
     y: 110,
     markerType: "food",
     imgUrl: cakeClubImg,
-    description: `Map cakeClubImg from dictionary example long. 
+    description: `Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
@@ -63,7 +63,7 @@ export const markers = [
     y: 110,
     markerType: "food",
     imgUrl: cakeClubImg,
-    description: `Map cakeClubImg from dictionary example long. 
+    description: `Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
@@ -77,7 +77,7 @@ export const markers = [
     y: 110,
     markerType: "food",
     imgUrl: cakeClubImg,
-    description: `Map cakeClubImg from dictionary example long. 
+    description: `Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
@@ -91,7 +91,7 @@ export const markers = [
     y: 110,
     markerType: "sport",
     imgUrl: cakeClubImg,
-    description: `Map cakeClubImg from dictionary example long. 
+    description: `Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.

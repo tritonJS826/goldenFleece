@@ -1,7 +1,7 @@
 import {useState} from "react";
-import {Title} from "../Title/Title";
-import {TitleLevel} from "../Title/TitleLevel";
-import styles from "./TextField.module.scss";
+import {Title} from "src/components/Title/Title";
+import {TitleLevel} from "src/components/Title/TitleLevel";
+import styles from "src/components/TextField/TextField.module.scss";
 
 /**
  * Props for field with text in it

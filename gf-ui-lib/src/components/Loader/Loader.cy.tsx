@@ -1,6 +1,6 @@
 import {mount} from "cypress/react18";
-import {Loader} from "./Loader";
-import styles from "./Loader.module.scss";
+import {Loader} from "src/components/Loader/Loader";
+import styles from "src/components/Loader/Loader.module.scss";
 
 
 describe("Loader component", () => {

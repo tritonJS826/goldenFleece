@@ -1,6 +1,6 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-import {Title as TitleComponent} from "./Title";
-import {TitleLevel} from "./TitleLevel";
+import {Title as TitleComponent} from "src/components/Title/Title";
+import {TitleLevel} from "src/components/Title/TitleLevel";
 
 export default {
   title: "Component/Title",

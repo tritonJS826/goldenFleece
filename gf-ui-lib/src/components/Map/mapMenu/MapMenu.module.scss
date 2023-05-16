@@ -1,4 +1,4 @@
-@import "../../../styles/GlobalTokens.scss";
+@import "src/styles/GlobalTokens.scss";
 
 .menu {
   position: absolute;
@@ -15,9 +15,9 @@
   li {
     color: $color-white;
   }
-  
+
   li:first-child {
-    font-weight: 600; 
+    font-weight: 600;
     font-size: 32px;
   }
 

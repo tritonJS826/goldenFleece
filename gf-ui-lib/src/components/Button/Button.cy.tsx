@@ -1,6 +1,6 @@
-import {Button} from "./Button";
 import {mount} from "cypress/react";
-import styles from "./Button.module.scss";
+import {Button} from "src/components/Button/Button";
+import styles from "src/components/Button/Button.module.scss";
 
 const STUB_BUTTON_VALUE = "TEST BUTTON";
 

@@ -1,5 +1,5 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-import {CheckboxField as CheckboxComponent} from "./CheckboxField";
+import {CheckboxField as CheckboxComponent} from "src/components/CheckboxField/CheckboxField";
 
 export default {
   title: "Component/Checkbox",
