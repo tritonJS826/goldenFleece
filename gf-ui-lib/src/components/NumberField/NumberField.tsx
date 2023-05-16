@@ -1,5 +1,6 @@
 import {useState} from "react";
-import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 import styles from "gf-ui-lib/src/components/NumberField/NumberField.module.scss";
 
 /**
@@ -32,7 +33,8 @@ export const NumberField = (props: NumberFieldProps) => {
 
   return (
     <label className={styles.label}>
-      <SmallTitle
+      <Title
+        level={TitleLevel.h4}
         text={props.titleText}
       />
       <input

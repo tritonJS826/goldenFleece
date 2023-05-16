@@ -12,7 +12,7 @@ interface ButtonProps {
   /**
    * Callback triggered on button click
    */
-  onClick: () => void;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /**
    * Button type
    * If type is undefined, then the button type will be

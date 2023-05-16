@@ -1,5 +1,6 @@
 import {useState} from "react";
-import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 import styles from "gf-ui-lib/src/components/SelectField/SelectField.module.scss";
 
 /**
@@ -47,8 +48,9 @@ export const SelectField = (props: SelectFieldProps) => {
 
   return (
     <div>
-      <SmallTitle
-        text="Room type"
+      <Title
+        level={TitleLevel.h4}
+        text={props.titleText}
       />
       <select
         className={styles.list}

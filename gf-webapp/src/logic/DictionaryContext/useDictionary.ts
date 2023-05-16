@@ -10,11 +10,15 @@ const STUB_DICTIONARY_LANGUAGE = en;
 export type ModalVisibility = {
   isModalActive: boolean,
   setIsModalActive: (modalActive: boolean) => void,
+  isModalCheckMailActive: boolean,
+  setIsModalCheckMailActive: (modalActive: boolean) => void,
 }
 
 export const ModalVisibilityContext: React.Context<ModalVisibility> = createContext<ModalVisibility>({
   isModalActive: STUB_MODAL_IS_ACTIVE,
   setIsModalActive: STUB_SET_VISIBILITY,
+  isModalCheckMailActive: STUB_MODAL_IS_ACTIVE,
+  setIsModalCheckMailActive: STUB_SET_VISIBILITY,
 });
 
 export const useModalVisibilityContext = () => useContext(ModalVisibilityContext);

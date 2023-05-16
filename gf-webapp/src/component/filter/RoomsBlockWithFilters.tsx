@@ -5,7 +5,11 @@ import {useFilterRooms} from "src/component/filter/FilterContext";
 import {RoomItem} from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem";
 import {getDateValue} from "src/utils/getDateValue";
 
-export const RoomsBlockWithFilters = () => {
+interface RoomsBlockProps {
+  setIsNavigationBlockInitializedFalse: () => void;
+}
+
+export const RoomsBlockWithFilters = (props: RoomsBlockProps) => {
   const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
 
   const [rooms, setRooms] = useState<Room[] | null>(null);
@@ -18,6 +22,7 @@ export const RoomsBlockWithFilters = () => {
   useEffect(() => {
     async function onRoomsInitialized() {
       await initRooms();
+      props.setIsNavigationBlockInitializedFalse();
     }
     onRoomsInitialized();
   }, []);

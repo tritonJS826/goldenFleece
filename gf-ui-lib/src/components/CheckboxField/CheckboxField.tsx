@@ -1,4 +1,5 @@
-import {SmallTitle} from "gf-ui-lib/src/components/SmallTitle/SmallTitle";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 import styles from "gf-ui-lib/src/components/CheckboxField/CheckboxField.module.scss";
 
 /**
@@ -50,7 +51,8 @@ export const CheckboxField = (props: CheckboxFieldProps) => {
 
   return (
     <div className={styles.container}>
-      <SmallTitle
+      <Title
+        level={TitleLevel.h4}
         text={props.titleText}
       />
       <ul className={styles.itemsList}>
