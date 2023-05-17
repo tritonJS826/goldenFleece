@@ -1,8 +1,8 @@
 import {StrictMode} from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import "./index.css";
+import App from "gf-ui-lib/src/App";
+import reportWebVitals from "gf-ui-lib/src/reportWebVitals";
+import "gf-ui-lib/src/index.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,

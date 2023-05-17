@@ -1,6 +1,6 @@
-import {Title} from "../Title/Title";
-import {TitleLevel} from "../Title/TitleLevel";
-import styles from "./CheckboxField.module.scss";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
+import styles from "gf-ui-lib/src/components/CheckboxField/CheckboxField.module.scss";
 
 /**
  * Checkbox field props

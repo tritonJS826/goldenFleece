@@ -1,9 +1,9 @@
 import {useContext} from "react";
-import {MapContext} from "../MapContext";
-import {Marker} from "./marker/Marker";
-import {useZoom} from "../useZoom";
-import {Button} from "../../Button/Button";
-import styles from "./MapContent.module.scss";
+import {MapContext} from "gf-ui-lib/src/components/Map/MapContext";
+import {Marker} from "gf-ui-lib/src/components/Map/mapContent/marker/Marker";
+import {useZoom} from "gf-ui-lib/src/components/Map/useZoom";
+import {Button} from "gf-ui-lib/src/components//Button/Button";
+import styles from "gf-ui-lib/src/components/Map/mapContent/MapContent.module.scss";
 
 type MapContentProps = {
   mouseDownHandler: (e: React.MouseEvent) => void;

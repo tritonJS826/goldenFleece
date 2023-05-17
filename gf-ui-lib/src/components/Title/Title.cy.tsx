@@ -1,4 +1,4 @@
-import {Title} from "./Title";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
 import {mount} from "cypress/react";
 import {TitleLevel} from "./TitleLevel";
 

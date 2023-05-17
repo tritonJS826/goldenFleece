@@ -1,5 +1,5 @@
-import {TitleLevel} from "./TitleLevel";
-import styles from "./Title.module.scss";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
+import styles from "gf-ui-lib/src/components/Title/Title.module.scss";
 
 /**
  * Title props

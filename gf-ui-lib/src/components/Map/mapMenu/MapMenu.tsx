@@ -1,7 +1,7 @@
 import {useContext} from "react";
-import {IMapMenuProps} from "./IMapMenuProps";
-import {MapContext} from "../MapContext";
-import styles from "./MapMenu.module.scss";
+import {IMapMenuProps} from "gf-ui-lib/src/components/Map/mapMenu/IMapMenuProps";
+import {MapContext} from "gf-ui-lib/src/components/Map/MapContext";
+import styles from "gf-ui-lib/src/components/Map/mapMenu/MapMenu.module.scss";
 
 
 export const MapMenu = (props: IMapMenuProps) => {

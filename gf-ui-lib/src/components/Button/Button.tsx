@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import styles from "./Button.module.scss";
+import styles from "gf-ui-lib/src/components/Button/Button.module.scss";
 
 /**
  * Button props

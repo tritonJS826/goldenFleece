@@ -1,5 +1,5 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
-import {NumberField as NumberComponent} from "./NumberField";
+import {NumberField as NumberComponent} from "gf-ui-lib/src/components/NumberField/NumberField";
 
 export default {
   title: "Component/Input",

@@ -1,5 +1,5 @@
-import goldenFleeceImg from "./resources/golden-fleece.jpg";
-import cakeClubImg from "./resources/cake-club.jpg";
+import goldenFleeceImg from "gf-ui-lib/src/components/Map/resources/golden-fleece.jpg";
+import cakeClubImg from "gf-ui-lib/src/components/Map/resources/cake-club.jpg";
 
 /**
  * Map markers example

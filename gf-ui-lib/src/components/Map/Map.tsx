@@ -1,10 +1,10 @@
 import {useState} from "react";
-import {MapContent} from "./mapContent/MapContent";
-import {MapMenu} from "./mapMenu/MapMenu";
-import {MapContext} from "./MapContext";
-import {IMarker} from "./mapContent/marker/IMarker";
-import {ItemDescription} from "./itemDescription/ItemDescription";
-import styles from "./Map.module.scss";
+import {MapContent} from "gf-ui-lib/src/components/Map/mapContent/MapContent";
+import {MapMenu} from "gf-ui-lib/src/components/Map/mapMenu/MapMenu";
+import {MapContext} from "gf-ui-lib/src/components/Map/MapContext";
+import {IMarker} from "gf-ui-lib/src/components/Map/mapContent/marker/IMarker";
+import {ItemDescription} from "gf-ui-lib/src/components/Map/itemDescription/ItemDescription";
+import styles from "gf-ui-lib/src/components/Map/Map.module.scss";
 
 export interface MarkerProps {
   markers: IMarker[];

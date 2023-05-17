@@ -1,6 +1,6 @@
 import {FC, useContext, useState} from "react";
-import {IMarker} from "./IMarker";
-import {MapContext} from "../../MapContext";
+import {IMarker} from "gf-ui-lib/src/components/Map/mapContent/marker/IMarker";
+import {MapContext} from "gf-ui-lib/src/components/Map/MapContext";
 import marker from "../../resources/marker-sprite.svg";
 import styleMarker from "./Marker.module.scss";
 

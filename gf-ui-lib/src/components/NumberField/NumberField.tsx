@@ -1,7 +1,7 @@
 import {useState} from "react";
-import {Title} from "../Title/Title";
-import {TitleLevel} from "../Title/TitleLevel";
-import styles from "./NumberField.module.scss";
+import {Title} from "gf-ui-lib/src/components/Title/Title";
+import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
+import styles from "gf-ui-lib/src/components/NumberField/NumberField.module.scss";
 
 /**
  * Props for input with type number
