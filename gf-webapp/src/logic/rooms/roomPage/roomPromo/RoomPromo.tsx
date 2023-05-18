@@ -1,13 +1,12 @@
 import {Information} from "src/logic/rooms/roomPage/roomPromo/information/Information";
 import {Title} from "src/logic/rooms/roomPage/roomPromo/title/Title";
-import {RoomType} from "src/model/Room/RoomType";
 import {Price} from "src/model/Price/Price";
 import {RoomServices} from "src/model/Room/RoomServices";
 
 interface RoomPromoProps {
   promoImgUrl: string;
   description: string;
-  type: RoomType;
+  roomNumber: number;
   /**
    * Formatted price
    */
@@ -21,10 +20,10 @@ export const RoomPromo = (props: RoomPromoProps) => {
       <Title
         description={props.description}
         promoImgUrl={props.promoImgUrl}
-        type={props.type}
+        roomNumber={props.roomNumber}
       />
       <Information
-        type={props.type}
+        roomNumber={props.roomNumber}
         price={props.price}
         services={props.services}
       />

@@ -53,22 +53,33 @@
     "buttonText": "More"
   },
   "roomInfo": {
-    "Single": "Single room",
-    "Double": "Double room",
-    "Twin": "Twin room",
-    "roomDescription": {
-      "Single": "Wake up to the breathtaking beauty of the Pindus mountains in a single room",
-      "Double": "Wake up to the breathtaking beauty of the Pindus mountains in a double room",
-      "Twin": "Wake up to the breathtaking beauty of the Pindus mountains in a twin room"
+    "type": {
+      "1": "Single room",
+      "2": "Double room",
+      "3": "Twin room",
+      "4": "Single room"
     },
-    "shortRoomDescription": {
-      "Single": "A small room",
-      "Double": "A comfortable room",
-      "Twin": "A beautiful room"
+    "title": {
+      "1": "Single room",
+      "2": "Double room",
+      "3": "Twin room",
+      "4": "Single room"
+    },
+    "description": {
+      "1": "Wake up to the breathtaking beauty of the Pindus mountains in a single room",
+      "2": "Wake up to the breathtaking beauty of the Pindus mountains in a double room",
+      "3": "Wake up to the breathtaking beauty of the Pindus mountains in a twin room",
+      "4": "Wake up to the breathtaking beauty of the Pindus mountains"
+    },
+    "descriptionShort": {
+      "1": "A small room",
+      "2": "A comfortable room",
+      "3": "A beautiful room",
+      "4": "A good room"
     },
     "price": "Price",
-    "services": "Services",
-    "roomServices": {
+    "servicesTitle": "Services",
+    "services": {
       "WiFi": "WiFi",
       "Laundry": "Laundry",
       "TeaCoffeeMaker": "Tea Coffee Maker",

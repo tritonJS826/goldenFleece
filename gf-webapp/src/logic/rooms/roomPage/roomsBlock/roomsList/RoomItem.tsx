@@ -1,12 +1,11 @@
 import {NavLink} from "react-router-dom";
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import {RoomType} from "src/model/Room/RoomType";
 import styles from "src/logic/rooms/roomPage/roomsBlock/RoomsBlock.module.scss";
 
 interface RoomItemProps {
+  roomNumber: number;
   roomId: string;
   promoImgUrl: string;
-  type: RoomType;
 }
 
 export const RoomItem = (props: RoomItemProps) => {
@@ -27,7 +26,7 @@ export const RoomItem = (props: RoomItemProps) => {
           alt="room"
         />
         <h3 className={styles.title3}>
-          {roomInfo[props.type]}
+          {roomInfo.title[`${props.roomNumber}` as keyof typeof roomInfo.title]}
         </h3>
         <span className={styles.spanLink}>
           {roomPage.buttonText}

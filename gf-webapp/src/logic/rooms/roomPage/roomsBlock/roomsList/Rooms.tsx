@@ -14,7 +14,7 @@ export const Rooms = (props: RoomsProps) => {
         key={room.id}
         promoImgUrl={room.promoImgUrl}
         roomId={room.id}
-        type={room.type}
+        roomNumber={room.roomNumber}
       />));
   };
 
