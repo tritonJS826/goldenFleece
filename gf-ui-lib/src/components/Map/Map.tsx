@@ -4,6 +4,7 @@ import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
 import {IMarker} from "./mapContent/marker/IMarker";
 import {ItemDescription} from "./itemDescription/ItemDescription";
+import {MapLeaflet} from "./mapLeaflet/MapLeaflet";
 import styles from "./Map.module.scss";
 
 export interface MarkerProps {
@@ -84,7 +85,8 @@ export const Map: React.FC<MarkerProps> = (props: MarkerProps) => {
         onMouseUp={mouseUpHandler}
         className={styles.map}
       >
-        <MapContent mouseDownHandler={mouseDownHandler} />
+        {/* <MapContent mouseDownHandler={mouseDownHandler} /> */}
+        <MapLeaflet />
       </div>
     </MapContext.Provider>
   );
