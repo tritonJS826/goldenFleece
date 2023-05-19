@@ -18,16 +18,19 @@ export const MapLeaflet = () => {
       />
       {/* <TileLayer
         attribution='&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-        url="https://{s}.api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=bDAt2jsIEABcBH1rvymlbhjoTKUoWEXs&language=en-GB"
+        url="https://{s}.api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=bDAt2jsIEABcBH1rvymlbhjoTKUoWEXs&language=en-US"
       /> */}
+      {/* <TileLayer
+        attribution='&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+        url="https://maptiles.p.rapidapi.com/en/map/v1/{z}/{x}/{y}.png"
+      /> */}
+
       <Marker
-        position={[42.2466, 42.6803]}
-        icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [0, 0]})}
+        position={[42.2463, 42.6802]}
+        icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}
       >
-        <Popup>
-          A pretty CSS3 popup.
-          <br />
-          Easily customizable.
+        <Popup offset={[0, -30]}>
+          Golden Fleece Hotel
         </Popup>
       </Marker>
     </MapContainer>
