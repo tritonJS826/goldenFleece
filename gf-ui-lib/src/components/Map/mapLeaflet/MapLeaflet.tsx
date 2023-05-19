@@ -1,5 +1,5 @@
 import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
-import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import markerIconPng from "../../Map/resources/pin-hotel.svg";
 import {Icon} from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./MapLeaflet.module.scss";
@@ -27,9 +27,9 @@ export const MapLeaflet = () => {
 
       <Marker
         position={[42.2463, 42.6802]}
-        icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}
+        icon={new Icon({iconUrl: markerIconPng, iconSize: [60, 60], iconAnchor: [29, 50]})}
       >
-        <Popup offset={[0, -30]}>
+        <Popup offset={[0, -40]}>
           Golden Fleece Hotel
         </Popup>
       </Marker>
