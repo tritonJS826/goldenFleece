@@ -9,10 +9,11 @@ import {Modal} from "src/logic/bookingPage/modal/Modal";
 import {Form} from "src/logic/bookingPage/form/Form";
 import {Title} from "gf-ui-lib/src/components/Title/Title";
 import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
+import {RoomNumber} from "src/model/Room/RoomNumbers";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface DescriptionProps {
-  roomNumber: number;
+  roomNumber: RoomNumber;
   roomId: string;
   roomSquare: number;
   adults: number;
@@ -68,7 +69,7 @@ export const Description = (props: DescriptionProps) => {
         </span>
         <Title
           level={TitleLevel.h1}
-          text={dictionary.title[`${props.roomNumber}` as keyof typeof dictionary.title]}
+          text={dictionary.title[props.roomNumber]}
         />
       </div>
       <Information

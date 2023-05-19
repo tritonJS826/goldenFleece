@@ -1,11 +1,12 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import {RoomNumber} from "src/model/Room/RoomNumbers";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface InformationProps {
   roomSquare: number;
   adults: number;
   roomDescription: string;
-  roomNumber: number;
+  roomNumber: RoomNumber;
 }
 
 export const Information = (props: InformationProps) => {
@@ -26,7 +27,7 @@ export const Information = (props: InformationProps) => {
         {dictionary.adults}
       </div>
       <div className={styles.description}>
-        {dictionary.description[`${props.roomNumber}` as keyof typeof dictionary.description]}
+        {dictionary.description[props.roomNumber]}
       </div>
     </div>
 

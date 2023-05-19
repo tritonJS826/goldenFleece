@@ -1,10 +1,11 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
+import {RoomNumber} from "src/model/Room/RoomNumbers";
 import styles from "src/logic/rooms/roomPage/roomPromo/RoomPromo.module.scss";
 
 interface TitleProps {
   description: string;
   promoImgUrl: string;
-  roomNumber: number;
+  roomNumber: RoomNumber;
 }
 
 export const Title = (props: TitleProps) => {
@@ -18,7 +19,7 @@ export const Title = (props: TitleProps) => {
         alt="Promo image"
       />
       <h1 className={styles.title}>
-        {roomInfo.title[`${props.roomNumber}` as keyof typeof roomInfo.title]}
+        {roomInfo.title[props.roomNumber]}
       </h1>
     </div>
   );
