@@ -4,7 +4,7 @@ import {Slider} from "src/component/rooms/room/slider/Slider";
 import {AddRoomContext} from "src/component/sideMenu/addRoomModal/addRoomContext";
 import {CloseBtn} from "src/component/sideMenu/addRoomModal/closeBtn/CloseBtn";
 import {ModalOverlay} from "src/component/sideMenu/addRoomModal/modalOverlay/ModalOverlay";
-import {defaultRoom} from "src/component/sideMenu/addRoomModal/roomStartState";
+import {defaultRoom} from "src/component/sideMenu/addRoomModal/defaultRoom";
 import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {postRoom} from "src/service/RoomService";
 import {NewRoom} from "src/model/Room/NewRoom";
@@ -26,7 +26,7 @@ interface AddRoomModalProps {
 
 enum roomTitleText {
   type="Room type",
-  dscription="Room description",
+  description="Room description",
   longDescription="Room long description",
   price="Room price",
   rating="Room rating",
@@ -66,8 +66,8 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
         />
         <TextField
           value={room.description}
-          placeholder={roomTitleText.dscription}
-          titleText={roomTitleText.dscription}
+          placeholder={roomTitleText.description}
+          titleText={roomTitleText.description}
           onChangeValue={(value: string) => {
             room.description = value;
             setRoom(room);

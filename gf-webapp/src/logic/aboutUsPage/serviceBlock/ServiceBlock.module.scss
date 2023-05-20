@@ -26,6 +26,15 @@
   overflow-y: scroll;
 }
 
+.textLeft {
+  color: $color-text;
+  font-size: 18px;
+  font-family: Montserrat Regular;
+  margin-bottom: 30px;
+  margin-left: 0;
+  overflow-y: scroll;
+}
+
 .title {
   display: flex;
   flex-direction: column;
@@ -44,14 +53,6 @@
   padding: 0 30px 50px;
 }
 
-.textLeft {
-  color: $color-text;
-  font-size: 18px;
-  font-family: Montserrat Regular;
-  margin-bottom: 30px;
-  overflow-y: scroll;
-}
-
 .span {
   position: relative;
   margin-left: 70px;
@@ -64,8 +65,7 @@
   content: '';
   position: absolute;
   border-bottom: 1px solid $color-text;
-  top: 50%;
-  margin-left: 0;
+  top:50%;
 }
 
 .about::-webkit-scrollbar-thumb {
