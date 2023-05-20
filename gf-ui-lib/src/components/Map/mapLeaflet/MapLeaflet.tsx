@@ -1,17 +1,35 @@
-import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
+import {FC, useContext, useState} from "react";
+import {MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents} from "react-leaflet";
+import {IMarker} from "../mapContent/marker/IMarker";
+import {MapContext} from "../MapContext";
 import markerIconPng from "../../Map/resources/pin-hotel.svg";
 import {Icon} from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./MapLeaflet.module.scss";
+import {MarkerLeaflet} from "./markerLeaflet/MarkerLeaflet";
+
+const MAP_CENTER_X = 42.247;
+const MAP_CENTER_Y = 42.68;
+const MAP_DEFAULT_ZOOM = 15;
 
 export const MapLeaflet = () => {
+  const LocationFinderDummy = () => {
+    const map = useMapEvents({
+      click(e) {
+        console.log(e.latlng);
+      },
+    });
+    return null;
+  };
+
   return (
     <MapContainer
       className={styles.map_container}
-      center={[42.245, 42.685]}
-      zoom={15}
+      center={[MAP_CENTER_X, MAP_CENTER_Y]}
+      zoom={MAP_DEFAULT_ZOOM}
       scrollWheelZoom={true}
     >
+      <LocationFinderDummy />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -24,15 +42,7 @@ export const MapLeaflet = () => {
         attribution='&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
         url="https://maptiles.p.rapidapi.com/en/map/v1/{z}/{x}/{y}.png"
       /> */}
-
-      <Marker
-        position={[42.2463, 42.6802]}
-        icon={new Icon({iconUrl: markerIconPng, iconSize: [60, 60], iconAnchor: [29, 50]})}
-      >
-        <Popup offset={[0, -40]}>
-          Golden Fleece Hotel
-        </Popup>
-      </Marker>
+      <MarkerLeaflet />
     </MapContainer>
   );
 };

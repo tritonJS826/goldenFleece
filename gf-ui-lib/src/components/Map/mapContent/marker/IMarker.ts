@@ -6,4 +6,5 @@ export interface IMarker {
   markerType: string;
   imgUrl: string;
   description: string;
+  markerIconUrl: string;
 }

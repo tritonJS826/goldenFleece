@@ -24,6 +24,7 @@ export const MapContent = (props: MapContentProps) => {
         description={marker.description}
         markerType={marker.markerType}
         key={marker.id}
+        markerIconUrl={marker.markerIconUrl}
       />));
   };
 
