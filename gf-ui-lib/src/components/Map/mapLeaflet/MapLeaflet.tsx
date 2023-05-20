@@ -32,7 +32,7 @@ export const MapLeaflet = () => {
       className={styles.map_container}
       center={[MAP_CENTER_X, MAP_CENTER_Y]}
       zoom={MAP_DEFAULT_ZOOM}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       zoomControl={false}
     >
       <ZoomControl position="topright" />
