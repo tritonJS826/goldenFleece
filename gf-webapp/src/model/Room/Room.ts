@@ -3,6 +3,7 @@ import {RoomServices} from "src/model/Room/RoomServices";
 import {Price} from "src/model/Price/Price";
 import {RoomBooked} from "src/model/Room/RoomBooked";
 import {RoomPaid} from "src/model/Room/RoomPaid";
+import {Dictionary} from "src/model/Dictionary/Dictionary";
 
 /**
  * Room with ID
@@ -84,6 +85,11 @@ export class Room {
    */
   public id: string;
 
+  /**
+   * Dictionary with all possible languages on site
+   */
+  public dictionary: Dictionary;
+
   constructor(roomData: Room) {
     this.id = roomData.id;
     this.adults = roomData.adults;
@@ -100,6 +106,7 @@ export class Room {
     this.roomNumber = roomData.roomNumber;
     this.booked = roomData.booked;
     this.paid = roomData.paid;
+    this.dictionary = roomData.dictionary;
   }
 
 }

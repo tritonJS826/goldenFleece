@@ -8,6 +8,9 @@ models/ApiAskAdminPostRequest.ts
 models/ApiBookingRequestPostRequest.ts
 models/Currency.ts
 models/Customer.ts
+models/Dictionary.ts
+models/English.ts
+models/Georgian.ts
 models/NewRoom.ts
 models/Period.ts
 models/Price.ts
@@ -16,5 +19,6 @@ models/RoomBooked.ts
 models/RoomPaid.ts
 models/RoomServices.ts
 models/RoomType.ts
+models/Russian.ts
 models/index.ts
 runtime.ts

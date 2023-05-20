@@ -10,6 +10,8 @@ import {Form} from "src/logic/bookingPage/form/Form";
 import {Title} from "gf-ui-lib/src/components/Title/Title";
 import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
 import {RoomNumber} from "src/model/Room/RoomNumbers";
+import {Dictionary} from "src/model/Dictionary/Dictionary";
+import {languageService} from "src/service/Language/LanguageService";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface DescriptionProps {
@@ -18,7 +20,7 @@ interface DescriptionProps {
   roomSquare: number;
   adults: number;
   childrenValue: number;
-  roomDescription: string;
+  roomDescription: Dictionary;
 }
 
 const textAnimation = {
@@ -69,14 +71,13 @@ export const Description = (props: DescriptionProps) => {
         </span>
         <Title
           level={TitleLevel.h1}
-          text={dictionary.title[props.roomNumber]}
+          text={props.roomDescription[languageService.getCurrentLanguage()].title}
         />
       </div>
       <Information
         adults={props.adults}
         roomSquare={props.roomSquare}
         roomDescription={props.roomDescription}
-        roomNumber={props.roomNumber}
       />
       <RoomLink roomId={props.roomId} />
       <Button

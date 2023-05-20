@@ -1,12 +1,12 @@
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import {RoomNumber} from "src/model/Room/RoomNumbers";
+import {languageService} from "src/service/Language/LanguageService";
+import {Dictionary} from "src/model/Dictionary/Dictionary";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface InformationProps {
   roomSquare: number;
   adults: number;
-  roomDescription: string;
-  roomNumber: RoomNumber;
+  roomDescription: Dictionary;
 }
 
 export const Information = (props: InformationProps) => {
@@ -27,7 +27,7 @@ export const Information = (props: InformationProps) => {
         {dictionary.adults}
       </div>
       <div className={styles.description}>
-        {dictionary.description[props.roomNumber]}
+        {props.roomDescription[languageService.getCurrentLanguage()].descriptionLong}
       </div>
     </div>
 

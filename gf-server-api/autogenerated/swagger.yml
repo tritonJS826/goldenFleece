@@ -234,6 +234,75 @@ components:
         - name
         - email
         - phone
+    Dictionary:
+      properties:
+        en:
+          $ref: "#/components/schemas/English"
+        ru:
+          $ref: "#/components/schemas/Russian"
+        ge:
+          $ref: "#/components/schemas/Georgian"
+      required:
+        - en
+        - ru
+        - ge
+    English:
+      properties:
+        title:
+          type: string
+          description: title of room.
+          example: Single room
+        description:
+          type: string
+          description: short description of room.
+          example: A comfortable room
+        descriptionLong:
+          type: string
+          description: long description of room.
+          example: Wake up to the breathtaking beauty of the Pindus mountains in a double
+            room
+      required:
+        - title
+        - description
+        - descriptionLong
+    Georgian:
+      properties:
+        title:
+          type: string
+          description: title of room.
+          example: Single room
+        description:
+          type: string
+          description: short description of room.
+          example: A comfortable room
+        descriptionLong:
+          type: string
+          description: long description of room.
+          example: Wake up to the breathtaking beauty of the Pindus mountains in a double
+            room
+      required:
+        - title
+        - description
+        - descriptionLong
+    Russian:
+      properties:
+        title:
+          type: string
+          description: title of room.
+          example: Single room
+        description:
+          type: string
+          description: short description of room.
+          example: A comfortable room
+        descriptionLong:
+          type: string
+          description: long description of room.
+          example: Wake up to the breathtaking beauty of the Pindus mountains in a double
+            room
+      required:
+        - title
+        - description
+        - descriptionLong
     Currency:
       type: string
       enum:
@@ -318,6 +387,8 @@ components:
           type: object[]
           items:
             $ref: "#/components/schemas/RoomPaid"
+        dictionary:
+          $ref: "#/components/schemas/Dictionary"
       required:
         - promoImgUrl
         - type
@@ -333,6 +404,7 @@ components:
         - roomNumber
         - booked
         - paid
+        - dictionary
     Period:
       properties:
         dateIn:
@@ -420,6 +492,8 @@ components:
           type: object[]
           items:
             $ref: "#/components/schemas/RoomPaid"
+        dictionary:
+          $ref: "#/components/schemas/Dictionary"
       required:
         - promoImgUrl
         - type
@@ -436,6 +510,7 @@ components:
         - roomNumber
         - booked
         - paid
+        - dictionary
     RoomBooked:
       properties:
         customer:

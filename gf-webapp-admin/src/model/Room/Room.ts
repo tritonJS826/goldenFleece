@@ -39,6 +39,7 @@ export class Room extends NewRoom {
       roomNumber: this.roomNumber,
       booked: this.booked,
       paid: this.paid,
+      dictionary: this.dictionary,
     };
   }
 

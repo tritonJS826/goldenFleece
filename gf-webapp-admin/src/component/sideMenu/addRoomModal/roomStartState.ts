@@ -46,4 +46,21 @@ export const defaultRoom = new NewRoom({
       },
     },
   ],
+  dictionary: {
+    en: {
+      title: "",
+      description: "",
+      descriptionLong: "",
+    },
+    ru: {
+      title: "",
+      description: "",
+      descriptionLong: "",
+    },
+    ge: {
+      title: "",
+      description: "",
+      descriptionLong: "",
+    },
+  },
 });

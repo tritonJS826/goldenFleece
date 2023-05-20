@@ -1,16 +1,13 @@
-import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import {RoomNumber} from "src/model/Room/RoomNumbers";
+import {languageService} from "src/service/Language/LanguageService";
+import {Dictionary} from "src/model/Dictionary/Dictionary";
 import styles from "src/logic/rooms/roomPage/roomPromo/RoomPromo.module.scss";
 
 interface TitleProps {
-  description: string;
   promoImgUrl: string;
-  roomNumber: RoomNumber;
+  roomDescription: Dictionary;
 }
 
 export const Title = (props: TitleProps) => {
-  const {roomInfo} = useDictionary().dictionary;
-
   return (
     <div className={styles.wrapper}>
       <img
@@ -19,7 +16,7 @@ export const Title = (props: TitleProps) => {
         alt="Promo image"
       />
       <h1 className={styles.title}>
-        {roomInfo.title[props.roomNumber]}
+        {props.roomDescription[languageService.getCurrentLanguage()].title}
       </h1>
     </div>
   );

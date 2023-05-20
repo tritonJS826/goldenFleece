@@ -59,8 +59,7 @@ export const RoomPage = () => {
     >
       <RoomPromo
         promoImgUrl={room.promoImgUrl}
-        description={room.description}
-        roomNumber={room.roomNumber}
+        roomDescription={room.dictionary}
         price={room.price}
         services={room.services}
       />

@@ -77,6 +77,8 @@ type RoomWithId = NewRoom & { id: string };
  *             type: object[]
  *             items:
  *               $ref: '#/components/schemas/RoomPaid'
+ *           dictionary:
+ *             $ref: '#/components/schemas/Dictionary'
  *         required:
  *           - promoImgUrl
  *           - type
@@ -93,6 +95,7 @@ type RoomWithId = NewRoom & { id: string };
  *           - roomNumber
  *           - booked
  *           - paid
+ *           - dictionary
  */
 export class Room extends NewRoom {
 

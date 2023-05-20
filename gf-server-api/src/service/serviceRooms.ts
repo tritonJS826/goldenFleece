@@ -61,6 +61,7 @@ class RoomsService {
       roomNumber: req.body.roomNumber,
       booked: req.body.booked,
       paid: req.body.paid,
+      dictionary: req.body.dictionary,
     });
     await roomsRepository.postRoom(room);
     res.send(room);
@@ -87,6 +88,7 @@ class RoomsService {
       roomNumber: req.body.roomNumber,
       booked: req.body.booked,
       paid: req.body.paid,
+      dictionary: req.body.dictionary,
     });
     const room = await roomsRepository.putRoom(updatedRoom, roomId);
     res.status(200).send(room);

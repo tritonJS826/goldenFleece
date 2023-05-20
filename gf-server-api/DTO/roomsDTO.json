@@ -5,8 +5,23 @@
     "services": [
       "WiFi"
     ],
-    "description": "A small room",
-    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
+    "dictionary": {
+      "en": {
+        "title": "Single room",
+        "description": "A small room",
+        "descriptionLong": "Wake up to the breathtaking beauty of the Pindus mountains in a single room"
+      },
+      "ru": {
+        "title": "Одноместный номер",
+        "description": "Небольшой номер",
+        "descriptionLong": "Просыпайтесь от захватывающей дух красоты гор Пинд в одноместном номере"
+      },
+      "ge": {
+        "title": "Ერთსაწოლიანი ოთახი",
+        "description": "პატარა ოთახი",
+        "descriptionLong": "გაიღვიძეთ პინდუსის მთების თვალწარმტაცი სილამაზით ერთ ოთახში"
+      }
+    },
     "price": {
       "currency": "GEL",
       "amount": 100
@@ -72,8 +87,23 @@
       "WiFi",
       "Laundry"
     ],
-    "description": "A comfortable room",
-    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
+    "dictionary": {
+      "en": {
+        "title": "Double room",
+        "description": "A comfortable room",
+        "descriptionLong": "Wake up to the breathtaking beauty of the Pindus mountains in a double room"
+      },
+      "ru": {
+        "title": "Двухместный номер",
+        "description": "Комфортабельный номер",
+        "descriptionLong": "Просыпайтесь от захватывающей дух красоты гор Пинд в двухместном номере"
+      },
+      "ge": {
+        "title": "Ორადგილიანი ოთახი",
+        "description": "კომფორტული ოთახი",
+        "descriptionLong": "გაიღვიძეთ პინდუსის მთების თვალწარმტაცი სილამაზით ორადგილიან ოთახში"
+      }
+    },
     "price": {
       "currency": "GEL",
       "amount": 300
@@ -130,8 +160,23 @@
       "Heating",
       "AirportShuttle"
     ],
-    "description": "A beautiful room",
-    "descriptionLong": "Dressed in soothing natural colour palettes with designs inspired by the natural landscape, our garden view suites are a warm and relaxing oasis overlooking the Grand Forest Metsovo garden and surrounding pine forest.",
+    "dictionary": {
+      "en": {
+        "title": "Twin room",
+        "description": "A beautiful room",
+        "descriptionLong": "Wake up to the breathtaking beauty of the Pindus mountains in a twin room"
+      },
+      "ru": {
+        "title": "Двухместный номер c раздельными кроватями",
+        "description": "Прекрасный номер",
+        "descriptionLong": "Просыпайтесь от захватывающей дух красоты гор Пинд в двухместном номере с раздельными кроватями"
+      },
+      "ge": {
+        "title": "Ტყუპი ოთახი",
+        "description": "საყვარელი ოთახი",
+        "descriptionLong": "გაიღვიძეთ პინდუსის მთების თვალწარმტაცი სილამაზით ორადგილიან ოთახში"
+      }
+    },
     "price": {
       "currency": "GEL",
       "amount": 500
@@ -184,8 +229,23 @@
     "services": [
       "AirportShuttle"
     ],
-    "description": "A new room",
-    "descriptionLong": "1111",
+    "dictionary": {
+      "en": {
+        "title": "Single comfortable room",
+        "description": "A good room",
+        "descriptionLong": "Wake up to the breathtaking beauty of the Pindus mountains"
+      },
+      "ru": {
+        "title": "Изумительный одноместный номер",
+        "description": "Уютная комната",
+        "descriptionLong": "Просыпайтесь от захватывающей дух красоты гор Пинд"
+      },
+      "ge": {
+        "title": "Ერთსაწოლიანი ოთახი",
+        "description": "პატარა ოთახი",
+        "descriptionLong": "გაიღვიძეთ პინდუსის მთების"
+      }
+    },
     "price": {
       "currency": "GEL",
       "amount": 150

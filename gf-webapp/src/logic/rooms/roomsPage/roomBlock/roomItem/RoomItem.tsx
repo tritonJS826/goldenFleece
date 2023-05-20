@@ -16,7 +16,7 @@ export const RoomItem = (props: RoomItemProps) => {
         roomNumber={props.room.roomNumber}
         adults={props.room.adults}
         roomSquare={props.room.square}
-        roomDescription={props.room.description}
+        roomDescription={props.room.dictionary}
         childrenValue={props.room.children}
       />
     </div>

@@ -13,6 +13,12 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import type { Dictionary } from './Dictionary';
+import {
+    DictionaryFromJSON,
+    DictionaryFromJSONTyped,
+    DictionaryToJSON,
+} from './Dictionary';
 import type { Price } from './Price';
 import {
     PriceFromJSON,
@@ -134,6 +140,12 @@ export interface NewRoom {
      * @memberof NewRoom
      */
     paid: Array<RoomPaid>;
+    /**
+     * 
+     * @type {Dictionary}
+     * @memberof NewRoom
+     */
+    dictionary: Dictionary;
 }
 
 /**
@@ -155,6 +167,7 @@ export function instanceOfNewRoom(value: object): boolean {
     isInstance = isInstance && "roomNumber" in value;
     isInstance = isInstance && "booked" in value;
     isInstance = isInstance && "paid" in value;
+    isInstance = isInstance && "dictionary" in value;
 
     return isInstance;
 }
@@ -183,6 +196,7 @@ export function NewRoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): N
         'roomNumber': json['roomNumber'],
         'booked': ((json['booked'] as Array<any>).map(RoomBookedFromJSON)),
         'paid': ((json['paid'] as Array<any>).map(RoomPaidFromJSON)),
+        'dictionary': DictionaryFromJSON(json['dictionary']),
     };
 }
 
@@ -209,6 +223,7 @@ export function NewRoomToJSON(value?: NewRoom | null): any {
         'roomNumber': value.roomNumber,
         'booked': ((value.booked as Array<any>).map(RoomBookedToJSON)),
         'paid': ((value.paid as Array<any>).map(RoomPaidToJSON)),
+        'dictionary': DictionaryToJSON(value.dictionary),
     };
 }
 
