@@ -1,18 +1,10 @@
-import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
+import {Marker, Popup} from "react-leaflet";
 import {Icon} from "leaflet";
-import {FC, useContext, useState} from "react";
+import {useContext} from "react";
 import {MapContext} from "../../MapContext";
-import {IMarker} from "../../mapContent/marker/IMarker";
-import markerIconPng from "../../../Map/resources/markerIcons/pin-hotel.svg";
-
 
 export const MarkerLeaflet = () => {
   const {menuItem, setMenuItem, markers} = useContext(MapContext);
-  // const clickHandler = () => {
-  //   setMenuItem(props);
-  //   console.log("sgeg");
-  // };
-  // console.log(markers);
 
   const renderMarkers = () => {
     return markers.map((marker) => (

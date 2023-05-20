@@ -1,24 +1,30 @@
-import {FC, useContext, useState} from "react";
-import {MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents} from "react-leaflet";
+import {useContext, useEffect} from "react";
+import {MapContainer, Marker, Popup, TileLayer, ZoomControl, useMap, useMapEvent, useMapEvents} from "react-leaflet";
+import {MarkerLeaflet} from "./markerLeaflet/MarkerLeaflet";
 import {IMarker} from "../mapContent/marker/IMarker";
 import {MapContext} from "../MapContext";
-import markerIconPng from "../../Map/resources/pin-hotel.svg";
-import {Icon} from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./MapLeaflet.module.scss";
-import {MarkerLeaflet} from "./markerLeaflet/MarkerLeaflet";
 
-const MAP_CENTER_X = 42.247;
-const MAP_CENTER_Y = 42.68;
+const MAP_CENTER_X = 42.24625;
+const MAP_CENTER_Y = 42.68017;
 const MAP_DEFAULT_ZOOM = 15;
 
+interface ICenterOnMarkerProps {
+  latitude?: number
+  longitude?: number
+}
+
 export const MapLeaflet = () => {
-  const LocationFinderDummy = () => {
-    const map = useMapEvents({
-      click(e) {
-        console.log(e.latlng);
-      },
-    });
+  const {menuItem} = useContext(MapContext);
+
+  const CenterOnMarker = (props: ICenterOnMarkerProps) => {
+    const map = useMap();
+    useEffect(() => {
+      if (props.latitude && props.longitude) {
+        map.setView([props.latitude, props.longitude]);
+      }
+    }, [props.latitude, props.longitude]);
     return null;
   };
 
@@ -27,9 +33,14 @@ export const MapLeaflet = () => {
       className={styles.map_container}
       center={[MAP_CENTER_X, MAP_CENTER_Y]}
       zoom={MAP_DEFAULT_ZOOM}
-      scrollWheelZoom={true}
+      scrollWheelZoom={false}
+      zoomControl={false}
     >
-      <LocationFinderDummy />
+      <ZoomControl position="topright" />
+      <CenterOnMarker
+        latitude={menuItem?.x}
+        longitude={menuItem?.y}
+      />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
