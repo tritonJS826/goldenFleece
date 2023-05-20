@@ -1,7 +1,6 @@
 import {useContext, useEffect} from "react";
-import {MapContainer, Marker, Popup, TileLayer, ZoomControl, useMap, useMapEvent, useMapEvents} from "react-leaflet";
+import {MapContainer, TileLayer, ZoomControl, useMap} from "react-leaflet";
 import {MarkerLeaflet} from "./markerLeaflet/MarkerLeaflet";
-import {IMarker} from "../mapContent/marker/IMarker";
 import {MapContext} from "../MapContext";
 import "leaflet/dist/leaflet.css";
 import styles from "./MapLeaflet.module.scss";
@@ -45,14 +44,6 @@ export const MapLeaflet = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {/* <TileLayer
-        attribution='&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-        url="https://{s}.api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=bDAt2jsIEABcBH1rvymlbhjoTKUoWEXs&language=en-US"
-      /> */}
-      {/* <TileLayer
-        attribution='&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-        url="https://maptiles.p.rapidapi.com/en/map/v1/{z}/{x}/{y}.png"
-      /> */}
       <MarkerLeaflet />
     </MapContainer>
   );

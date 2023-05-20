@@ -1,10 +1,10 @@
 import {Marker, Popup} from "react-leaflet";
 import {Icon} from "leaflet";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {MapContext} from "../../MapContext";
 
 export const MarkerLeaflet = () => {
-  const {menuItem, setMenuItem, markers} = useContext(MapContext);
+  const {setMenuItem, markers} = useContext(MapContext);
 
   const renderMarkers = () => {
     return markers.map((marker) => (
