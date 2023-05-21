@@ -2,6 +2,7 @@ import {Icon} from "leaflet";
 import {useContext} from "react";
 import {MapContext} from "../../MapContext";
 import {MarkerLeaflet} from "./markerLeaflet/MarkerLeaflet";
+import markerIconPng from "../../resources/markerIcons/location.svg";
 
 const ICON_WIDTH = 60;
 const ICON_HEIGHT = 60;
@@ -19,7 +20,7 @@ export const MarkersLeaflet = () => {
         key={marker.id}
         markerPosition={[marker.x, marker.y]}
         markerIcon={new Icon({
-          iconUrl: marker.markerIconUrl,
+          iconUrl: markerIconPng,
           iconSize: [ICON_WIDTH, ICON_HEIGHT],
           iconAnchor: [ICON_ANCHOR_X, ICON_ANCHOR_Y],
         })}
