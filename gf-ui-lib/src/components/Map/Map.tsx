@@ -1,19 +1,19 @@
 import {useState} from "react";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
-import {IMarker} from "./mapContent/marker/IMarker";
+import {Marker} from "./mapContent/marker/Marker";
 import {ItemDescription} from "./itemDescription/ItemDescription";
 import {MapLeaflet} from "./mapLeaflet/MapLeaflet";
 import styles from "./Map.module.scss";
 
 export interface MarkerProps {
-  markers: IMarker[];
+  markers: Marker[];
 }
 
 export const Map: React.FC<MarkerProps> = (props: MarkerProps) => {
-  const [menuItem, setMenuItem] = useState<IMarker | null>(null);
+  const [menuItem, setMenuItem] = useState<Marker | null>(null);
 
-  const menuItemHandler = (marker: IMarker) => {
+  const menuItemHandler = (marker: Marker) => {
     setMenuItem(marker);
   };
 

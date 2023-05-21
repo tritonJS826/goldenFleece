@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import {MapContext} from "../MapContext";
-import {Marker} from "./marker/Marker";
+import {MapMarker} from "./marker/MapMarker";
 import {useZoom} from "../useZoom";
 import {Button} from "../../Button/Button";
 import styles from "./MapContent.module.scss";
@@ -15,7 +15,7 @@ export const MapContent = (props: MapContentProps) => {
 
   const renderMarkers = () => {
     return markers.map((marker) => (
-      <Marker
+      <MapMarker
         id={marker.id}
         name={marker.name}
         x={marker.x}

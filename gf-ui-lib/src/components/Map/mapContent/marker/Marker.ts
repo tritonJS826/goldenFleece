@@ -1,4 +1,4 @@
-export interface IMarker {
+export interface Marker {
   id: number;
   name: string;
   x: number;

@@ -1,10 +1,10 @@
 import {useContext} from "react";
-import {IMapMenuProps} from "./IMapMenuProps";
+import {MapMenuProps} from "./MapMenuProps";
 import {MapContext} from "../MapContext";
 import styles from "./MapMenu.module.scss";
 
 
-export const MapMenu = (props: IMapMenuProps) => {
+export const MapMenu = (props: MapMenuProps) => {
   const {markers, menuItem} = useContext(MapContext);
   const markerTypes = Array.from(new Set(markers.map(marker => marker.markerType)));
 

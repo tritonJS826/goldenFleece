@@ -1,11 +1,11 @@
 import {FC, useContext, useState} from "react";
-import {IMarker} from "./IMarker";
+import {Marker} from "./Marker";
 import {MapContext} from "../../MapContext";
 import marker from "../../resources/marker-sprite.svg";
 import styleMarker from "./Marker.module.scss";
 
 
-export const Marker: FC<IMarker> = (props) => {
+export const MapMarker: FC<Marker> = (props) => {
   const [isMouseOver, setIsMouseOver] = useState(false);
   const {menuItem, setMenuItem} = useContext(MapContext);
 

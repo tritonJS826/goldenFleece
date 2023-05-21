@@ -9,7 +9,7 @@ const MAP_CENTER_X = 42.24625;
 const MAP_CENTER_Y = 42.68017;
 const MAP_DEFAULT_ZOOM = 15;
 
-interface ICenterOnMarkerProps {
+interface CenterOnMarkerProps {
   latitude?: number
   longitude?: number
 }
@@ -17,7 +17,7 @@ interface ICenterOnMarkerProps {
 export const MapLeaflet = () => {
   const {menuItem} = useContext(MapContext);
 
-  const CenterOnMarker = (props: ICenterOnMarkerProps) => {
+  const CenterOnMarker = (props: CenterOnMarkerProps) => {
     const map = useMap();
     useEffect(() => {
       if (props.latitude && props.longitude) {
