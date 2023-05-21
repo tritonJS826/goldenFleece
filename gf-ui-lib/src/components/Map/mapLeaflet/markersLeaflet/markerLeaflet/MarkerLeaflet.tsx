@@ -4,9 +4,9 @@ import {Marker, Popup} from "react-leaflet";
 
 interface MarkerLeafletProps {
   markerPosition: LatLngExpression
-  markerIcon: Icon<IconOptions> | DivIcon | undefined
+  markerIcon: Icon<IconOptions> | DivIcon
   eventHandlers: object
-  popupOffset: PointExpression | undefined
+  popupOffset: PointExpression
   popupText: string
   openPopup: boolean
 }
