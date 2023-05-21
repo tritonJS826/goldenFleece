@@ -2,7 +2,6 @@ import {Icon} from "leaflet";
 import {useContext} from "react";
 import {MapContext} from "../../MapContext";
 import {MarkerLeaflet} from "./markerLeaflet/MarkerLeaflet";
-import markerIconPng from "../../resources/markerIcons/location.svg";
 
 const ICON_WIDTH = 60;
 const ICON_HEIGHT = 60;
