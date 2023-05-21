@@ -2,7 +2,6 @@ import {useState} from "react";
 import {motion} from "framer-motion";
 import {RoomLink} from "src/logic/rooms/roomsPage/roomBlock/roomItem/roomLink/RoomLink";
 import {Information} from "src/logic/rooms/roomsPage/roomBlock/roomItem/information/Information";
-import {RoomType} from "src/model/Room/RoomType";
 import {useDictionary, ModalVisibilityContext} from "src/logic/DictionaryContext/useDictionary";
 import {Button} from "gf-ui-lib/src/components/Button/Button";
 import {useFilterRooms} from "src/component/filter/FilterContext";
@@ -10,16 +9,18 @@ import {Modal} from "src/logic/bookingPage/modal/Modal";
 import {Form} from "src/logic/bookingPage/form/Form";
 import {Title} from "gf-ui-lib/src/components/Title/Title";
 import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
+import {RoomNumber} from "src/model/Room/RoomNumbers";
+import {Dictionary} from "src/model/Dictionary/Dictionary";
+import {languageService} from "src/service/Language/LanguageService";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface DescriptionProps {
-  roomNumber: number;
+  roomNumber: RoomNumber;
   roomId: string;
   roomSquare: number;
   adults: number;
   childrenValue: number;
-  type: RoomType;
-  roomDescription: string;
+  roomDescription: Dictionary;
 }
 
 const textAnimation = {
@@ -37,7 +38,7 @@ const textAnimation = {
 const EMPTY_INPUT_STRING = "";
 
 export const Description = (props: DescriptionProps) => {
-  const dictionary = useDictionary().dictionary;
+  const dictionary = useDictionary().dictionary.roomInfo;
   const {bookButtonText, closeButtonText, bookingPage} = useDictionary().dictionary;
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [isModalCheckMailActive, setIsModalCheckMailActive] = useState<boolean>(false);
@@ -70,14 +71,13 @@ export const Description = (props: DescriptionProps) => {
         </span>
         <Title
           level={TitleLevel.h1}
-          text={dictionary.roomInfo[props.type]}
+          text={props.roomDescription[languageService.getCurrentLanguage()].title}
         />
       </div>
       <Information
         adults={props.adults}
         roomSquare={props.roomSquare}
         roomDescription={props.roomDescription}
-        type={props.type}
       />
       <RoomLink roomId={props.roomId} />
       <Button

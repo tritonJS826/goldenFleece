@@ -3,6 +3,7 @@ import {RoomType} from "src/model/Room/RoomType";
 import {RoomServices} from "src/model/Room/RoomServices";
 import {RoomBooked} from "src/model/Room/RoomBooked";
 import {RoomPaid} from "src/model/Room/RoomPaid";
+import {Dictionary} from "src/model/Dictionary/Dictionary";
 
 /**
  * NewRoom model
@@ -75,6 +76,8 @@ import {RoomPaid} from "src/model/Room/RoomPaid";
  *             type: object[]
  *             items:
  *               $ref: '#/components/schemas/RoomPaid'
+ *           dictionary:
+ *             $ref: '#/components/schemas/Dictionary'
  *         required:
  *           - promoImgUrl
  *           - type
@@ -90,6 +93,7 @@ import {RoomPaid} from "src/model/Room/RoomPaid";
  *           - roomNumber
  *           - booked
  *           - paid
+ *           - dictionary
  */
 export class NewRoom {
 
@@ -163,6 +167,11 @@ export class NewRoom {
    */
   public paid: RoomPaid[];
 
+  /**
+   * Dictionary with all possible languages on site
+   */
+  public dictionary: Dictionary;
+
   constructor(newRoomData: NewRoom) {
     this.adults = newRoomData.adults;
     this.children = newRoomData.children;
@@ -178,6 +187,7 @@ export class NewRoom {
     this.roomNumber = newRoomData.roomNumber;
     this.booked = newRoomData.booked;
     this.paid = newRoomData.paid;
+    this.dictionary = newRoomData.dictionary;
   }
 
 }

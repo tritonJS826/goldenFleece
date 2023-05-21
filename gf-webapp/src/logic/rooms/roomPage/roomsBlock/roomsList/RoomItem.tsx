@@ -1,16 +1,18 @@
 import {NavLink} from "react-router-dom";
 import {useDictionary} from "src/logic/DictionaryContext/useDictionary";
-import {RoomType} from "src/model/Room/RoomType";
+import {Dictionary} from "src/model/Dictionary/Dictionary";
+import {languageService} from "src/service/Language/LanguageService";
 import styles from "src/logic/rooms/roomPage/roomsBlock/RoomsBlock.module.scss";
 
 interface RoomItemProps {
   roomId: string;
   promoImgUrl: string;
-  type: RoomType;
+  roomDescription: Dictionary;
 }
 
 export const RoomItem = (props: RoomItemProps) => {
-  const {roomPage, roomInfo} = useDictionary().dictionary;
+  const {roomPage} = useDictionary().dictionary;
+
   return (
     <div
       key={props.roomId}
@@ -27,7 +29,7 @@ export const RoomItem = (props: RoomItemProps) => {
           alt="room"
         />
         <h3 className={styles.title3}>
-          {roomInfo[props.type]}
+          {props.roomDescription[languageService.getCurrentLanguage()].title}
         </h3>
         <span className={styles.spanLink}>
           {roomPage.buttonText}

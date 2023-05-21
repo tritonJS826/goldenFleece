@@ -11,14 +11,14 @@ export const Services = (props: ServicesProps) => {
   const renderServicesList = (roomServicesList: RoomServices[]) =>
     roomServicesList.map(service => (
       <li key={service}>
-        {roomInfo.roomServices[service]}
+        {roomInfo.services[service]}
       </li>
     ));
 
   return (
     <div className={styles.services}>
       <h3 className={styles.title}>
-        {roomInfo.services}
+        {roomInfo.servicesTitle}
         :
       </h3>
       <ul className={styles.list}>

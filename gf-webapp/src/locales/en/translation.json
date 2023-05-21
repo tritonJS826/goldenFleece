@@ -53,22 +53,9 @@
     "buttonText": "More"
   },
   "roomInfo": {
-    "Single": "Single room",
-    "Double": "Double room",
-    "Twin": "Twin room",
-    "roomDescription": {
-      "Single": "Wake up to the breathtaking beauty of the Pindus mountains in a single room",
-      "Double": "Wake up to the breathtaking beauty of the Pindus mountains in a double room",
-      "Twin": "Wake up to the breathtaking beauty of the Pindus mountains in a twin room"
-    },
-    "shortRoomDescription": {
-      "Single": "A small room",
-      "Double": "A comfortable room",
-      "Twin": "A beautiful room"
-    },
     "price": "Price",
-    "services": "Services",
-    "roomServices": {
+    "servicesTitle": "Services",
+    "services": {
       "WiFi": "WiFi",
       "Laundry": "Laundry",
       "TeaCoffeeMaker": "Tea Coffee Maker",

@@ -1,13 +1,12 @@
 import {Information} from "src/logic/rooms/roomPage/roomPromo/information/Information";
 import {Title} from "src/logic/rooms/roomPage/roomPromo/title/Title";
-import {RoomType} from "src/model/Room/RoomType";
 import {Price} from "src/model/Price/Price";
+import {Dictionary} from "src/model/Dictionary/Dictionary";
 import {RoomServices} from "src/model/Room/RoomServices";
 
 interface RoomPromoProps {
   promoImgUrl: string;
-  description: string;
-  type: RoomType;
+  roomDescription: Dictionary;
   /**
    * Formatted price
    */
@@ -19,12 +18,11 @@ export const RoomPromo = (props: RoomPromoProps) => {
   return (
     <div>
       <Title
-        description={props.description}
         promoImgUrl={props.promoImgUrl}
-        type={props.type}
+        roomDescription={props.roomDescription}
       />
       <Information
-        type={props.type}
+        roomDescription={props.roomDescription}
         price={props.price}
         services={props.services}
       />
