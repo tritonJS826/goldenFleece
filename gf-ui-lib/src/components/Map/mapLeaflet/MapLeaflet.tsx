@@ -19,6 +19,7 @@ export const MapLeaflet = () => {
 
   const CenterOnMarker = (props: CenterOnMarkerProps) => {
     const map = useMap();
+
     useEffect(() => {
       if (props.latitude && props.longitude) {
         map.setView([props.latitude, props.longitude]);
