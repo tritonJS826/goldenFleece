@@ -1,6 +1,6 @@
 import goldenFleeceImg from "./resources/golden-fleece.jpg";
 import cakeClubImg from "./resources/cake-club.jpg";
-import mapLocationIcon from "./resources/markerIcons/location.svg"
+import mapLocationIcon from "./resources/markerIcons/location.svg";
 
 /**
  * Map markers example
