@@ -8,12 +8,7 @@ import tomasWineCellarImg from "src/resources/map/tomas-wine-cellar.jpg";
 import youthParkImg from "src/resources/map/youth-park.jpg";
 import tennisCourtImg from "src/resources/map/tennis-court.jpg";
 import stadiumImg from "src/resources/map/ramaz-shengelia-stadium.jpg";
-import hotelIcon from "src/resources/map/markerIcons/pin-hotel.svg";
-import foodIcon from "src/resources/map/markerIcons/restaurant-pin.svg";
-import parkIcon from "src/resources/map/markerIcons/park-location.svg";
-import tennisCourtIcon from "src/resources/map/markerIcons/tennis-court.svg";
-import footballStadiumIcon from "src/resources/map/markerIcons/soccer-stadium.svg";
-
+import mapLocationIcon from "../../resources/map/markerIcons/location.svg";
 
 export const useMapMarkers = () => {
   const {map} = useDictionary().dictionary;
@@ -27,7 +22,7 @@ export const useMapMarkers = () => {
       markerType: "main",
       imgUrl: goldenFleeceImg,
       description: map.goldenFleeceDescription,
-      markerIconUrl: hotelIcon,
+      markerIconUrl: mapLocationIcon,
     },
     {
       id: 2,
@@ -37,7 +32,7 @@ export const useMapMarkers = () => {
       markerType: "food",
       imgUrl: cakeClubImg,
       description: map.cakeClubDescription,
-      markerIconUrl: foodIcon,
+      markerIconUrl: mapLocationIcon,
     },
     {
       id: 3,
@@ -47,7 +42,7 @@ export const useMapMarkers = () => {
       markerType: "food",
       imgUrl: shedevriImg,
       description: map.shedevriDescription,
-      markerIconUrl: foodIcon,
+      markerIconUrl: mapLocationIcon,
     },
     {
       id: 4,
@@ -57,7 +52,7 @@ export const useMapMarkers = () => {
       markerType: "food",
       imgUrl: tomasWineCellarImg,
       description: map.tomasDescription,
-      markerIconUrl: foodIcon,
+      markerIconUrl: mapLocationIcon,
     },
     {
       id: 5,
@@ -67,7 +62,7 @@ export const useMapMarkers = () => {
       markerType: "park",
       imgUrl: youthParkImg,
       description: map.youthParkDescription,
-      markerIconUrl: parkIcon,
+      markerIconUrl: mapLocationIcon,
     },
     {
       id: 6,
@@ -77,7 +72,7 @@ export const useMapMarkers = () => {
       markerType: "park",
       imgUrl: tennisCourtImg,
       description: map.tennisCourtDescription,
-      markerIconUrl: tennisCourtIcon,
+      markerIconUrl: mapLocationIcon,
     },
     {
       id: 7,
@@ -87,7 +82,7 @@ export const useMapMarkers = () => {
       markerType: "park",
       imgUrl: stadiumImg,
       description: map.shengeliaStadiumDescription,
-      markerIconUrl: footballStadiumIcon,
+      markerIconUrl: mapLocationIcon,
     },
   ]);
 

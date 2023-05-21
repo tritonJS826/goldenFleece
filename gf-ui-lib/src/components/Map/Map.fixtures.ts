@@ -1,10 +1,6 @@
 import goldenFleeceImg from "./resources/golden-fleece.jpg";
 import cakeClubImg from "./resources/cake-club.jpg";
-import hotelIcon from "./resources/markerIcons/pin-hotel.svg";
-import foodIcon from "./resources/markerIcons/restaurant-pin.svg";
-import parkIcon from "./resources/markerIcons/park-location.svg";
-import tennisCourtIcon from "./resources/markerIcons/tennis-court.svg";
-import footballStadiumIcon from "./resources/markerIcons/soccer-stadium.svg";
+import mapLocationIcon from "./resources/markerIcons/location.svg"
 
 /**
  * Map markers example
@@ -18,7 +14,7 @@ export const markers = [
     markerType: "main",
     imgUrl: goldenFleeceImg,
     description: "Map goldenFleeceDescription from dictionary example",
-    markerIconUrl: hotelIcon,
+    markerIconUrl: mapLocationIcon,
   },
   {
     id: 2,
@@ -33,7 +29,7 @@ export const markers = [
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         `,
-    markerIconUrl: foodIcon,
+    markerIconUrl: mapLocationIcon,
   },
   {
     id: 3,
@@ -48,7 +44,7 @@ export const markers = [
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         `,
-    markerIconUrl: foodIcon,
+    markerIconUrl: mapLocationIcon,
   },
   {
     id: 4,
@@ -63,7 +59,7 @@ export const markers = [
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         `,
-    markerIconUrl: foodIcon,
+    markerIconUrl: mapLocationIcon,
   },
   {
     id: 5,
@@ -78,7 +74,7 @@ export const markers = [
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         `,
-    markerIconUrl: parkIcon,
+    markerIconUrl: mapLocationIcon,
   },
   {
     id: 6,
@@ -93,7 +89,7 @@ export const markers = [
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         `,
-    markerIconUrl: tennisCourtIcon,
+    markerIconUrl: mapLocationIcon,
   },
   {
     id: 7,
@@ -108,6 +104,6 @@ export const markers = [
         Map cakeClubImg from dictionary example long.
         Map cakeClubImg from dictionary example long.
         `,
-    markerIconUrl: footballStadiumIcon,
+    markerIconUrl: mapLocationIcon,
   },
 ];

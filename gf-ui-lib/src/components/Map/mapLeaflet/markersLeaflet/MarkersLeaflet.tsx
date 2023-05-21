@@ -20,7 +20,7 @@ export const MarkersLeaflet = () => {
         key={marker.id}
         markerPosition={[marker.x, marker.y]}
         markerIcon={new Icon({
-          iconUrl: markerIconPng,
+          iconUrl: marker.markerIconUrl,
           iconSize: [ICON_WIDTH, ICON_HEIGHT],
           iconAnchor: [ICON_ANCHOR_X, ICON_ANCHOR_Y],
         })}
