@@ -1,6 +1,6 @@
 import {useContext, useEffect} from "react";
 import {MapContainer, TileLayer, ZoomControl, useMap} from "react-leaflet";
-import {MarkerLeaflet} from "./markerLeaflet/MarkerLeaflet";
+import {MarkersLeaflet} from "./markersLeaflet/MarkersLeaflet";
 import {MapContext} from "../MapContext";
 import "leaflet/dist/leaflet.css";
 import styles from "./MapLeaflet.module.scss";
@@ -44,7 +44,7 @@ export const MapLeaflet = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <MarkerLeaflet />
+      <MarkersLeaflet />
     </MapContainer>
   );
 };
