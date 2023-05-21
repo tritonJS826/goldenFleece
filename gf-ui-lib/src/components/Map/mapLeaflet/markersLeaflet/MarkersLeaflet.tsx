@@ -27,7 +27,7 @@ export const MarkersLeaflet = () => {
         eventHandlers={{click: () => setMenuItem(marker)}}
         popupOffset={[POPUP_OFFSET_X, POPUP_OFFSET_Y]}
         popupText={marker.name}
-        openPopup={menuItem?.id === marker.id}
+        popupOpen={menuItem?.id === marker.id}
       />
     ));
   };

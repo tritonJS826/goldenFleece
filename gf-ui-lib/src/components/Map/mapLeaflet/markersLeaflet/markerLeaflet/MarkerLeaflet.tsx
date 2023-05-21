@@ -8,7 +8,7 @@ interface MarkerLeafletProps {
   eventHandlers: object
   popupOffset: PointExpression
   popupText: string
-  openPopup: boolean
+  popupOpen: boolean
 }
 
 export const MarkerLeaflet = (props: MarkerLeafletProps) => {
@@ -16,13 +16,13 @@ export const MarkerLeaflet = (props: MarkerLeafletProps) => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (props.openPopup) {
+      if (props.popupOpen) {
         if (markerRef.current) {
           markerRef.current.openPopup();
         }
       }
     }, 300);
-  }, [props.openPopup]);
+  }, [props.popupOpen]);
 
   return (
     <Marker
