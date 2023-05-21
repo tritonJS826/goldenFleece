@@ -11,8 +11,8 @@ interface RoomItemProps {
 }
 
 export const RoomItem = (props: RoomItemProps) => {
-  console.log(props.roomDescription);
   const {roomPage} = useDictionary().dictionary;
+
   return (
     <div
       key={props.roomId}
