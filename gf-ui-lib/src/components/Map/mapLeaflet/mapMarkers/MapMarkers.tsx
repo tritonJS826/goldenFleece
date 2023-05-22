@@ -1,7 +1,7 @@
 import {Icon} from "leaflet";
 import {useContext} from "react";
 import {MapContext} from "../../MapContext";
-import {MarkerLeaflet} from "./markerLeaflet/MarkerLeaflet";
+import {MapMarker} from "./mapMarker/MapMarker";
 
 const ICON_WIDTH = 60;
 const ICON_HEIGHT = 60;
@@ -10,12 +10,15 @@ const ICON_ANCHOR_Y = 50;
 const POPUP_OFFSET_X = 0;
 const POPUP_OFFSET_Y = -40;
 
-export const MarkersLeaflet = () => {
+/**
+ * Component that renders markers
+ */
+export const MapMarkers = () => {
   const {setMenuItem, markers, menuItem} = useContext(MapContext);
 
-  const renderMarkers = () => {
+  const renderMapMarkers = () => {
     return markers.map((marker) => (
-      <MarkerLeaflet
+      <MapMarker
         key={marker.id}
         markerPosition={[marker.x, marker.y]}
         markerIcon={new Icon({
@@ -33,7 +36,7 @@ export const MarkersLeaflet = () => {
 
   return (
     <>
-      {renderMarkers()}
+      {renderMapMarkers()}
     </>
   );
 };

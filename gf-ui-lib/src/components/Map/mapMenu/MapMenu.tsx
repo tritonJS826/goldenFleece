@@ -1,9 +1,21 @@
 import {useContext} from "react";
-import {MapMenuProps} from "./MapMenuProps";
 import {MapContext} from "../MapContext";
+import {Marker} from "../mapLeaflet/mapMarkers/mapMarker/Marker";
 import styles from "./MapMenu.module.scss";
 
+/**
+ * Map Menu props
+ */
+interface MapMenuProps {
+  /**
+   * Callback triggered on map menu item click, sets which item was clicked on
+   */
+  menuItemHandler: (marker: Marker) => void;
+}
 
+/**
+ * Menu with locations marked with markers on the map
+ */
 export const MapMenu = (props: MapMenuProps) => {
   const {markers, menuItem} = useContext(MapContext);
   const markerTypes = Array.from(new Set(markers.map(marker => marker.markerType)));

@@ -36,7 +36,7 @@ importers:
       craco-ts-loader: ^0.1.0
       css-loader: 6.5.1
       customize-cra: ^1.0.0
-      cypress: ^12.8.1
+      cypress: ^12.9.0
       dotenv: ^16.0.3
       eslint: ^8.36.0
       eslint-config-xo: ^0.43.1
@@ -84,7 +84,7 @@ importers:
       craco-ts-loader: 0.1.0_react-scripts@5.0.1
       css-loader: 6.5.1
       customize-cra: 1.0.0
-      cypress: 12.8.1
+      cypress: 12.9.0
       dotenv: 16.0.3
       eslint: 8.36.0
       eslint-config-xo: 0.43.1_eslint@8.36.0
@@ -261,7 +261,7 @@ importers:
       '@typescript-eslint/parser': ^5.55.0
       babel-plugin-named-exports-order: ^0.0.2
       clsx: ^1.2.1
-      cypress: ^12.8.1
+      cypress: ^12.9.0
       eslint: ^8.36.0
       eslint-config-xo: ^0.43.1
       eslint-config-xo-typescript: ^0.55.1
@@ -306,7 +306,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.55.0_342y7v4tc7ytrrysmit6jo4wri
       '@typescript-eslint/parser': 5.55.0_vgl77cfdswitgr47lm5swmv43m
       babel-plugin-named-exports-order: 0.0.2
-      cypress: 12.8.1
+      cypress: 12.9.0
       eslint: 8.36.0
       eslint-config-xo: 0.43.1_eslint@8.36.0
       eslint-config-xo-typescript: 0.55.1_haq6ulc3vui3hbw2ow7npojefi
@@ -6649,10 +6649,6 @@ packages:
       '@types/node': 18.15.9
       form-data: 3.0.1
 
-  /@types/node/14.18.40:
-    resolution: {integrity: sha512-pGteXO/JQX7wPxGR8lyT+doqjMa7XvlVowwrDwLfX92k5SdLkk4cwC7CYSLBxrenw/R5oQwKioVIak7ZgplM3g==}
-    dev: true
-
   /@types/node/14.18.42:
     resolution: {integrity: sha512-xefu+RBie4xWlK8hwAzGh3npDz/4VhF6icY/shU+zv/1fNn+ZVG7T7CRwe9LId9sAYRPxI+59QBPuKL3WpyGRg==}
     dev: true
@@ -9869,56 +9865,6 @@ packages:
 
   /cyclist/1.0.1:
     resolution: {integrity: sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A==}
-
-  /cypress/12.8.1:
-    resolution: {integrity: sha512-lIFbKdaSYAOarNLHNFa2aPZu6YSF+8UY4VRXMxJrFUnk6RvfG0AWsZ7/qle/aIz30TNUD4aOihz2ZgS4vuQVSA==}
-    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      '@cypress/request': 2.88.11
-      '@cypress/xvfb': 1.2.4_supports-color@8.1.1
-      '@types/node': 14.18.40
-      '@types/sinonjs__fake-timers': 8.1.1
-      '@types/sizzle': 2.3.3
-      arch: 2.2.0
-      blob-util: 2.0.2
-      bluebird: 3.7.2
-      buffer: 5.7.1
-      cachedir: 2.3.0
-      chalk: 4.1.2
-      check-more-types: 2.24.0
-      cli-cursor: 3.1.0
-      cli-table3: 0.6.3
-      commander: 5.1.0
-      common-tags: 1.8.2
-      dayjs: 1.11.7
-      debug: 4.3.4_supports-color@8.1.1
-      enquirer: 2.3.6
-      eventemitter2: 6.4.7
-      execa: 4.1.0
-      executable: 4.1.1
-      extract-zip: 2.0.1_supports-color@8.1.1
-      figures: 3.2.0
-      fs-extra: 9.1.0
-      getos: 3.2.1
-      is-ci: 3.0.1
-      is-installed-globally: 0.4.0
-      lazy-ass: 1.6.0
-      listr2: 3.14.0_enquirer@2.3.6
-      lodash: 4.17.21
-      log-symbols: 4.1.0
-      minimist: 1.2.8
-      ospath: 1.2.2
-      pretty-bytes: 5.6.0
-      proxy-from-env: 1.0.0
-      request-progress: 3.0.0
-      semver: 7.3.8
-      supports-color: 8.1.1
-      tmp: 0.2.1
-      untildify: 4.0.0
-      yauzl: 2.10.0
-    dev: true
 
   /cypress/12.9.0:
     resolution: {integrity: sha512-Ofe09LbHKgSqX89Iy1xen2WvpgbvNxDzsWx3mgU1mfILouELeXYGwIib3ItCwoRrRifoQwcBFmY54Vs0zw7QCg==}
