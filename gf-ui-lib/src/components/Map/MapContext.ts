@@ -19,4 +19,13 @@ export interface MapContext {
   setMenuItem: React.Dispatch<React.SetStateAction<Marker | null>>;
 }
 
-export const MapContext = createContext<MapContext>({} as MapContext);
+/**
+ * Default map context
+ */
+const mapDefaultContext: MapContext = {
+  markers: [],
+  menuItem: null,
+  setMenuItem: () => null,
+};
+
+export const MapContext = createContext<MapContext>(mapDefaultContext);
