@@ -47,7 +47,6 @@ class RoomsService {
 
     const room = new Room({
       id: parseInt(sortedRoomsId[sortedRoomsId.length - 1].id) + 1 + "",
-      type: req.body.type,
       services: req.body.services,
       description: req.body.description,
       descriptionLong: req.body.descriptionLong,
@@ -74,7 +73,6 @@ class RoomsService {
     const roomId: string = req.params.roomId;
     const updatedRoom = new Room({
       id: roomId,
-      type: req.body.type,
       services: req.body.services,
       description: req.body.description,
       descriptionLong: req.body.descriptionLong,
