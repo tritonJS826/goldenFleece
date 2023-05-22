@@ -1,5 +1,4 @@
 import {Price} from "src/model/Price/Price";
-import {RoomType} from "src/model/Room/RoomType";
 import {RoomServices} from "src/model/Room/RoomServices";
 import {RoomBooked} from "src/model/Room/RoomBooked";
 import {RoomPaid} from "src/model/Room/RoomPaid";
@@ -13,8 +12,6 @@ import {Dictionary} from "src/model/Dictionary/Dictionary";
  *       NewRoom:
  *         type: object
  *         properties:
- *           type:
- *             $ref: '#/components/schemas/RoomType'
  *           services:
  *             type: string[]
  *             items:
@@ -80,7 +77,6 @@ import {Dictionary} from "src/model/Dictionary/Dictionary";
  *             $ref: '#/components/schemas/Dictionary'
  *         required:
  *           - promoImgUrl
- *           - type
  *           - services
  *           - description
  *           - descriptionLong
@@ -101,11 +97,6 @@ export class NewRoom {
    * Url to promo image;
    */
   public promoImgUrl: string;
-
-  /**
-   * Apartment's type
-   */
-  public type: RoomType;
 
   /**
    * Available services for room
@@ -175,7 +166,6 @@ export class NewRoom {
   constructor(newRoomData: NewRoom) {
     this.adults = newRoomData.adults;
     this.children = newRoomData.children;
-    this.type = newRoomData.type;
     this.description = newRoomData.description;
     this.descriptionLong = newRoomData.descriptionLong;
     this.images = newRoomData.images;

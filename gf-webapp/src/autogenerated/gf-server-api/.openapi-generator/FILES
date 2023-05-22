@@ -18,7 +18,6 @@ models/Room.ts
 models/RoomBooked.ts
 models/RoomPaid.ts
 models/RoomServices.ts
-models/RoomType.ts
 models/Russian.ts
 models/index.ts
 runtime.ts

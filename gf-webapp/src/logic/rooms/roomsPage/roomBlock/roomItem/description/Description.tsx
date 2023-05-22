@@ -9,13 +9,12 @@ import {Modal} from "src/logic/bookingPage/modal/Modal";
 import {Form} from "src/logic/bookingPage/form/Form";
 import {Title} from "gf-ui-lib/src/components/Title/Title";
 import {TitleLevel} from "gf-ui-lib/src/components/Title/TitleLevel";
-import {RoomNumber} from "src/model/Room/RoomNumbers";
 import {Dictionary} from "src/model/Dictionary/Dictionary";
 import {languageService} from "src/service/Language/LanguageService";
 import styles from "src/logic/rooms/roomsPage/roomBlock/roomItem/RoomItem.module.scss";
 
 interface DescriptionProps {
-  roomNumber: RoomNumber;
+  roomNumber: number;
   roomId: string;
   roomSquare: number;
   adults: number;

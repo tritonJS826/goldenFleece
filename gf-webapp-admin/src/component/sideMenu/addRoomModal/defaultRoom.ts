@@ -1,6 +1,5 @@
 import {Currency} from "src/model/Price/Currency";
 import {Price} from "src/model/Price/Price";
-import {RoomType} from "src/model/Room/RoomType";
 import {NewRoom} from "src/model/Room/NewRoom";
 import {RoomServices} from "src/model/Room/RoomServices";
 
@@ -9,13 +8,11 @@ const DEFAULT_NUMBER_VALUE = 0;
 const DEFAULT_PRICE = new Price(Currency.GEL, 0);
 const DEFAULT_IMAGES: Array<string> = [];
 const DEFAULT_SERVICES: Array<RoomServices> = [];
-const DEFAULT_TYPE = RoomType.Single;
 const DEFAULT_DATE = new Date();
 
 export const defaultRoom = new NewRoom({
   adults: DEFAULT_NUMBER_VALUE,
   children: DEFAULT_NUMBER_VALUE,
-  type: DEFAULT_TYPE,
   description: DEFAULT_STRING_VALUE,
   descriptionLong: DEFAULT_STRING_VALUE,
   images: DEFAULT_IMAGES,

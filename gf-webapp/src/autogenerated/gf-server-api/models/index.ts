@@ -14,5 +14,4 @@ export * from './Room';
 export * from './RoomBooked';
 export * from './RoomPaid';
 export * from './RoomServices';
-export * from './RoomType';
 export * from './Russian';

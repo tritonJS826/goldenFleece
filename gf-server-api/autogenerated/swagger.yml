@@ -322,8 +322,6 @@ components:
     NewRoom:
       type: object
       properties:
-        type:
-          $ref: "#/components/schemas/RoomType"
         services:
           type: string[]
           items:
@@ -391,7 +389,6 @@ components:
           $ref: "#/components/schemas/Dictionary"
       required:
         - promoImgUrl
-        - type
         - services
         - description
         - descriptionLong
@@ -423,8 +420,6 @@ components:
     Room:
       type: object
       properties:
-        type:
-          $ref: "#/components/schemas/RoomType"
         services:
           type: string[]
           items:
@@ -496,7 +491,6 @@ components:
           $ref: "#/components/schemas/Dictionary"
       required:
         - promoImgUrl
-        - type
         - services
         - id
         - description
@@ -541,11 +535,4 @@ components:
         - TeaCoffeeMaker
         - Heating
         - AirportShuttle
-    RoomType:
-      type: string
-      enum:
-        - Single
-        - Double
-        - Twin
-      example: Single
 tags: []
