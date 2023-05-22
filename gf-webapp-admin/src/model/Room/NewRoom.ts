@@ -75,6 +75,9 @@ export class NewRoom {
    */
   public paid: RoomPaid[];
 
+  /**
+   * Dictionary with all possible languages on site
+   */
   public dictionary: Dictionary;
 
   constructor(newRoomData: NewRoom) {

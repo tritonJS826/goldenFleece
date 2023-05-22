@@ -1,6 +1,4 @@
-import {English} from "src/model/Dictionary/English";
-import {Russian} from "src/model/Dictionary/Russian";
-import {Georgian} from "src/model/Dictionary/Georgian";
+import {RoomInfo} from "src/model/Dictionary/RoomInfo";
 
 /**
  * Dictionary with all possible languages on site
@@ -10,11 +8,11 @@ import {Georgian} from "src/model/Dictionary/Georgian";
  *       Dictionary:
  *         properties:
  *           en:
- *             $ref: '#/components/schemas/English'
+ *             $ref: '#/components/schemas/RoomInfo'
  *           ru:
- *             $ref: '#/components/schemas/Russian'
+ *             $ref: '#/components/schemas/RoomInfo'
  *           ge:
- *             $ref: '#/components/schemas/Georgian'
+ *             $ref: '#/components/schemas/RoomInfo'
  *         required:
  *           - en
  *           - ru
@@ -25,17 +23,17 @@ export class Dictionary {
   /**
    * English language
    */
-  public en: English;
+  public en: RoomInfo;
 
   /**
    *  Russian languages
    */
-  public ru: Russian;
+  public ru: RoomInfo;
 
   /**
    *  Georgian languages
    */
-  public ge: Georgian;
+  public ge: RoomInfo;
 
   constructor(language: Dictionary) {
     this.en = language.en;

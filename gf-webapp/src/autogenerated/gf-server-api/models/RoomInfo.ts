@@ -16,33 +16,33 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface Russian
+ * @interface RoomInfo
  */
-export interface Russian {
+export interface RoomInfo {
     /**
      * title of room.
      * @type {string}
-     * @memberof Russian
+     * @memberof RoomInfo
      */
     title: string;
     /**
      * short description of room.
      * @type {string}
-     * @memberof Russian
+     * @memberof RoomInfo
      */
     description: string;
     /**
      * long description of room.
      * @type {string}
-     * @memberof Russian
+     * @memberof RoomInfo
      */
     descriptionLong: string;
 }
 
 /**
- * Check if a given object implements the Russian interface.
+ * Check if a given object implements the RoomInfo interface.
  */
-export function instanceOfRussian(value: object): boolean {
+export function instanceOfRoomInfo(value: object): boolean {
     let isInstance = true;
     isInstance = isInstance && "title" in value;
     isInstance = isInstance && "description" in value;
@@ -51,11 +51,11 @@ export function instanceOfRussian(value: object): boolean {
     return isInstance;
 }
 
-export function RussianFromJSON(json: any): Russian {
-    return RussianFromJSONTyped(json, false);
+export function RoomInfoFromJSON(json: any): RoomInfo {
+    return RoomInfoFromJSONTyped(json, false);
 }
 
-export function RussianFromJSONTyped(json: any, ignoreDiscriminator: boolean): Russian {
+export function RoomInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): RoomInfo {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -67,7 +67,7 @@ export function RussianFromJSONTyped(json: any, ignoreDiscriminator: boolean): R
     };
 }
 
-export function RussianToJSON(value?: Russian | null): any {
+export function RoomInfoToJSON(value?: RoomInfo | null): any {
     if (value === undefined) {
         return undefined;
     }
