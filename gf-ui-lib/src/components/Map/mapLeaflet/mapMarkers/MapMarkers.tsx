@@ -29,7 +29,7 @@ export const MapMarkers = () => {
         eventHandlers={{click: () => setMenuItem(marker)}}
         popupOffset={[POPUP_OFFSET_X, POPUP_OFFSET_Y]}
         popupText={marker.name}
-        popupOpen={menuItem?.id === marker.id}
+        popupOpen={menuItem ? menuItem?.id === marker.id : false}
       />
     ));
   };

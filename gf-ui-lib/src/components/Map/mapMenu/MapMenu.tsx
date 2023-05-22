@@ -30,7 +30,7 @@ export const MapMenu = (props: MapMenuProps) => {
           markerType === marker.markerType &&
           <span
             onClick={() => props.menuItemHandler(marker)}
-            className={`${styles.menuItem} ${marker.id === menuItem?.id ? styles.checked : ""}`}
+            className={`${styles.menuItem} ${menuItem && marker.id === menuItem.id ? styles.checked : ""}`}
             key={marker.id}
           >
             {marker.name}
@@ -40,7 +40,9 @@ export const MapMenu = (props: MapMenuProps) => {
     ));
   };
 
-  return (<ul className={styles.menu}>
-    {renderMarkersList()}
-  </ul>);
+  return (
+    <ul className={styles.menu}>
+      {renderMarkersList()}
+    </ul>
+  );
 };
