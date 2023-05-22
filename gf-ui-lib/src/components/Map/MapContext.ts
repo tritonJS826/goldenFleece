@@ -6,16 +6,16 @@ import {Marker} from "./mapLeaflet/mapMarkers/mapMarker/Marker";
  */
 export interface MapContext {
   /**
-  * Markers list
-  */
+   * Markers list
+   */
   markers: Marker[];
   /**
-  * Selected menu item
-  */
+   * Selected menu item
+   */
   menuItem: Marker | null;
   /**
-  * Sets the selected menu item
-  */
+   * Sets the selected menu item
+   */
   setMenuItem: React.Dispatch<React.SetStateAction<Marker | null>>;
 }
 

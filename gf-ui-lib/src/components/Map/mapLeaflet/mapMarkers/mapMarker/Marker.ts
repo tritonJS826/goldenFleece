@@ -3,35 +3,35 @@
  */
 export interface Marker {
   /**
- * Marker id
- */
+   * Marker id
+   */
   id: number;
   /**
- * Marker name (location name)
- */
+   * Marker name (location name)
+   */
   name: string;
   /**
- * Marker latitude
- */
+   * Marker latitude
+   */
   x: number;
   /**
- * Marker longitude
- */
+   * Marker longitude
+   */
   y: number;
   /**
- * Marker type (type of location)
- */
+   * Marker type (type of location)
+   */
   markerType: string;
   /**
- * Location image
- */
+   * Location image
+   */
   imgUrl: string;
   /**
- * Location description
- */
+   * Location description
+   */
   description: string;
   /**
- * Marker icon
- */
+   * Marker icon
+   */
   markerIconUrl: string;
 }

@@ -6,12 +6,12 @@ import {Popup} from "react-leaflet";
  */
 interface MarkerPopupProps {
   /**
- * Sets popup position
- */
+   * Sets popup position
+   */
   popupOffset: PointExpression
   /**
- * Marker Popup text
- */
+   * Marker Popup text
+   */
   popupText: string
 }
 

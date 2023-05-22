@@ -8,28 +8,28 @@ import {MarkerPopup} from "./markerPopup/MarkerPopup";
  */
 interface MapMarkerProps {
   /**
- * Sets map marker position on the map
- */
+   * Sets map marker position on the map
+   */
   markerPosition: LatLngExpression
   /**
- * Sets map marker icon
- */
+   * Sets map marker icon
+   */
   markerIcon: Icon<IconOptions>
   /**
- * Callback triggered on interaction with marker
- */
+   * Callback triggered on interaction with marker
+   */
   eventHandlers: object
   /**
- * Sets popup position
- */
+   * Sets popup position
+   */
   popupOffset: PointExpression
   /**
- * Marker Popup text
- */
+   * Marker Popup text
+   */
   popupText: string
   /**
- * Sets which popup should be open
- */
+   * Sets which popup should be open
+   */
   popupOpen: boolean
 }
 

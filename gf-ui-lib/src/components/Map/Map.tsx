@@ -11,8 +11,8 @@ import styles from "./Map.module.scss";
  */
 export interface MarkerProps {
   /**
- * List of markers
- */
+   * List of markers
+   */
   markers: Marker[];
 }
 
@@ -23,8 +23,8 @@ export const Map: React.FC<MarkerProps> = (props: MarkerProps) => {
   const [menuItem, setMenuItem] = useState<Marker | null>(null);
 
   /**
-  * Sets the selected menu item
-  */
+   * Sets the selected menu item
+   */
   const menuItemHandler = (marker: Marker) => {
     setMenuItem(marker);
   };
