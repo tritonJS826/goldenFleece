@@ -20,7 +20,7 @@ export const MapMarkers = () => {
     return markers.map((marker) => (
       <MapMarker
         key={marker.id}
-        markerPosition={[marker.x, marker.y]}
+        markerPosition={[marker.latitude, marker.longitude]}
         markerIcon={new Icon({
           iconUrl: marker.markerIconUrl,
           iconSize: [ICON_WIDTH, ICON_HEIGHT],

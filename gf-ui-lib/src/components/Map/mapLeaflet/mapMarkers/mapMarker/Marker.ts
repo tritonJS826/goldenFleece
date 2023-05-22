@@ -13,11 +13,11 @@ export interface Marker {
   /**
    * Marker latitude
    */
-  x: number;
+  latitude: number;
   /**
    * Marker longitude
    */
-  y: number;
+  longitude: number;
   /**
    * Marker type (type of location)
    */

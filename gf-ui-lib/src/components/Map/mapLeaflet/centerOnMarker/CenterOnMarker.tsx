@@ -15,10 +15,10 @@ export const CenterOnMarker = () => {
   useEffect(() => {
     setTimeout(() => {
       if (menuItem) {
-        map.setView([menuItem.x, menuItem.y]);
+        map.setView([menuItem.latitude, menuItem.longitude]);
       }
     }, 10);
-  }, [menuItem?.x, menuItem?.y]);
+  }, [menuItem?.latitude, menuItem?.longitude]);
 
   return null;
 };
