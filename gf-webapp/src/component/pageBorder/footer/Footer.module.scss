@@ -1,0 +1,46 @@
+@import "src/Index.scss";
+
+.footer {
+  width: 100%;
+  max-width: 1980px;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 50px 0;
+
+  .footerList {
+    width: 100%;
+    max-width: 1980px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+.footer_link {
+  color: $color-text;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.footer_link_active {
+  color: $color-text;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: default;
+}
+
+@media (max-width: 550px) {
+  .footerList {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer_link {
+    padding: 10px;
+  }
+}

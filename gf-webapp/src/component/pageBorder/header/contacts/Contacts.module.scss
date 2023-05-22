@@ -1,0 +1,68 @@
+@import "src/Index.scss";
+
+.contacts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  text-align: center;
+  border: 1px solid $color-white;
+  padding: 5px;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: $color-secondary;
+    cursor: pointer;
+  }
+
+  .contact {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact_links {
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    z-index: 100;
+  }
+
+  .expand_arrow {
+    margin-bottom: 5px;
+    scale: 0.6;
+    path {
+      fill: $color-white;
+    }
+  }
+
+  .expand_arrow_scroll {
+    margin-bottom: 5px;
+    scale: 0.6;
+    path {
+      fill: $color-text;
+    }
+  }
+}
+
+.contactsScroll {
+  border: 1px solid $color-text;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+}
+
+@media (max-width: 800px) {
+  .contacts,
+  .contactsScroll {
+    display: none;
+  }
+}

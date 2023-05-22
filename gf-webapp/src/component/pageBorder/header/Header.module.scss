@@ -1,0 +1,138 @@
+@import "src/Index.scss";
+
+.header {
+  position: fixed;
+  z-index: 100;
+  justify-self: flex-start;
+  display: flex;
+  justify-content: center;
+  background-color: rgba($color: $color-black, $alpha: 0.25);
+  color: $color-white;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+
+  .list {
+    display: flex;
+    list-style: none;
+    height: 8vh;
+  }
+
+  .list .logoItem {
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid $color-white;
+    border-left: none;
+    border-right: none;
+    padding: 5px;
+    transition: background 0.3s;
+
+    .logo {
+      font-family: Montserrat Regular;
+      font-size: 32px;
+    }
+
+    img {
+      width: 45px;
+      height: 50px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      cursor: default;
+    }
+  }
+
+  .linkToBooking {
+    width: 15vw;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    text-decoration: none;
+    color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $color-white;
+    border-left: none;
+    border-right: none;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: $color-secondary;
+      cursor: pointer;
+    }
+  }
+}
+
+.header_scroll {
+  background-color: $color-white;
+  color: $color-text;
+
+  .list {
+    .logoItem,
+    .linkToBooking {
+      border: 1px solid $color-text;
+      border-left: none;
+      border-right: none;
+
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  .linkToBooking {
+    color: $color-text;
+  }
+}
+
+.nav {
+  max-width: 1980px;
+  z-index: 100;
+}
+
+.nav_scroll {
+  background-color: $color-white;
+}
+
+.main {
+  position: relative;
+  background-color: $color-white;
+  z-index: 1;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+@media (max-width: 800px) {
+  .header {
+    font-size: 1rem;
+
+    .list .logoItem {
+      width: 80vw;
+      border-right: none;
+
+      .logo {
+        font-size: 1.7rem;
+      }
+
+      img {
+        width: 45px;
+        height: 50px;
+      }
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+
+    .linkToBooking {
+      display: none;
+    }
+  }
+}
