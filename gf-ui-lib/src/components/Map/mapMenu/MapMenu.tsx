@@ -1,10 +1,22 @@
 import {useContext} from "react";
-import {IMapMenuProps} from "./IMapMenuProps";
 import {MapContext} from "../MapContext";
+import {Marker} from "../mapLeaflet/mapMarkers/mapMarker/Marker";
 import styles from "./MapMenu.module.scss";
 
+/**
+ * Map Menu props
+ */
+interface MapMenuProps {
+  /**
+   * Callback triggered on map menu item click, sets which item was clicked on
+   */
+  menuItemHandler: (marker: Marker) => void;
+}
 
-export const MapMenu = (props: IMapMenuProps) => {
+/**
+ * Menu with locations marked with markers on the map
+ */
+export const MapMenu = (props: MapMenuProps) => {
   const {markers, menuItem} = useContext(MapContext);
   const markerTypes = Array.from(new Set(markers.map(marker => marker.markerType)));
 
@@ -18,7 +30,7 @@ export const MapMenu = (props: IMapMenuProps) => {
           markerType === marker.markerType &&
           <span
             onClick={() => props.menuItemHandler(marker)}
-            className={`${styles.menuItem} ${marker.id === menuItem?.id ? styles.checked : ""}`}
+            className={`${styles.menuItem} ${menuItem && marker.id === menuItem.id ? styles.checked : ""}`}
             key={marker.id}
           >
             {marker.name}
@@ -28,7 +40,9 @@ export const MapMenu = (props: IMapMenuProps) => {
     ));
   };
 
-  return (<ul className={styles.menu}>
-    {renderMarkersList()}
-  </ul>);
+  return (
+    <ul className={styles.menu}>
+      {renderMarkersList()}
+    </ul>
+  );
 };

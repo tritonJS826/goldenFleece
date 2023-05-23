@@ -1,0 +1,11 @@
+.map_container {
+  height: 100%;
+  width: 100%;
+  padding-left: 35%;
+}
+
+@media (max-width: 768px) {
+  .map_container {
+    padding-left: 0;
+  }
+}

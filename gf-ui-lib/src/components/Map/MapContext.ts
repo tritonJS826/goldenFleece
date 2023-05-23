@@ -1,10 +1,31 @@
 import {createContext} from "react";
-import {IMarker} from "./mapContent/marker/IMarker";
+import {Marker} from "./mapLeaflet/mapMarkers/mapMarker/Marker";
 
-export interface IMapContext {
-  markers: IMarker[];
-  menuItem: IMarker | null;
-  setMenuItem: React.Dispatch<React.SetStateAction<IMarker | null>>;
+/**
+ * Map context
+ */
+export interface MapContext {
+  /**
+   * Markers list
+   */
+  markers: Marker[];
+  /**
+   * Selected menu item
+   */
+  menuItem: Marker | null;
+  /**
+   * Sets the selected menu item
+   */
+  setMenuItem: React.Dispatch<React.SetStateAction<Marker | null>>;
 }
 
-export const MapContext = createContext<IMapContext>({} as IMapContext);
+/**
+ * Default map context
+ */
+const mapDefaultContext: MapContext = {
+  markers: [],
+  menuItem: null,
+  setMenuItem: () => null,
+};
+
+export const MapContext = createContext<MapContext>(mapDefaultContext);
