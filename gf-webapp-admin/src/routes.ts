@@ -3,12 +3,12 @@ import {MainPage} from "src/logic/mainPage/MainPage";
 import {RoomPage} from "src/logic/roomPage/RoomPage";
 import {LOGIN_ROUTE, MAIN_PAGE_ROUTE, ROOM_PAGE_ROUTE} from "src/utils/pathes";
 
-interface IRoute {
+interface Route {
   path:string;
   component: () => JSX.Element;
 }
 
-export const publicRoutes:IRoute[] = [
+export const publicRoutes:Route[] = [
   {
     /** path: path to page*/
     path: LOGIN_ROUTE,
@@ -17,7 +17,7 @@ export const publicRoutes:IRoute[] = [
   },
 ];
 
-export const privateRoutes:IRoute[] = [
+export const privateRoutes:Route[] = [
   {
     path: MAIN_PAGE_ROUTE,
     component: MainPage,

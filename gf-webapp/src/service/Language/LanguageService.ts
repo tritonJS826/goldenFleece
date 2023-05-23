@@ -1,13 +1,13 @@
 import {Language} from "src/model/Language";
-import {IStorage} from "src/service/Storage/IStorage";
+import {Storage} from "src/service/Storage/Storage";
 import {ILocalStorageSchema} from "src/service/Storage/LocalStorageSchema";
 import {LocalStorageService} from "src/service/Storage/LocalStorageService";
 
 class LanguageService {
 
-  private storageService: IStorage<ILocalStorageSchema>;
+  private storageService: Storage<ILocalStorageSchema>;
 
-  constructor(storageService: IStorage<ILocalStorageSchema>) {
+  constructor(storageService: Storage<ILocalStorageSchema>) {
     this.storageService = storageService;
   }
 

@@ -3,10 +3,10 @@ import firebase from "firebase/compat/app";
 import {Auth} from "firebase/auth";
 import {Firestore} from "firebase/firestore";
 
-interface IAppContext {
+interface AppContext {
   firebase: typeof firebase,
   auth: Auth,
   firestore: Firestore
 }
 
-export const AppContext = createContext<IAppContext>({} as IAppContext);
+export const AppContext = createContext<AppContext>({} as AppContext);

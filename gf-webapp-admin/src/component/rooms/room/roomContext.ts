@@ -1,12 +1,12 @@
 import {createContext, useContext} from "react";
 import {Room} from "src/model/Room/Room";
 
-interface IRoomContext {
+interface RoomContext {
   room: Room;
   setRoom: (room:Room) => void;
 }
 
-export const RoomContext = createContext<IRoomContext | null>(null);
+export const RoomContext = createContext<RoomContext | null>(null);
 
 export const useRoomContext = () => {
   const roomContext = useContext(RoomContext);
