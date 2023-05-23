@@ -10,8 +10,6 @@ type RoomWithId = NewRoom & { id: string };
  *       Room:
  *         type: object
  *         properties:
- *           type:
- *             $ref: '#/components/schemas/RoomType'
  *           services:
  *             type: string[]
  *             items:
@@ -81,7 +79,6 @@ type RoomWithId = NewRoom & { id: string };
  *             $ref: '#/components/schemas/Dictionary'
  *         required:
  *           - promoImgUrl
- *           - type
  *           - services
  *           - id
  *           - description

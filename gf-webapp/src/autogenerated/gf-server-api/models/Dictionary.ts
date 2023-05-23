@@ -13,24 +13,12 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { English } from './English';
+import type { RoomInfo } from './RoomInfo';
 import {
-    EnglishFromJSON,
-    EnglishFromJSONTyped,
-    EnglishToJSON,
-} from './English';
-import type { Georgian } from './Georgian';
-import {
-    GeorgianFromJSON,
-    GeorgianFromJSONTyped,
-    GeorgianToJSON,
-} from './Georgian';
-import type { Russian } from './Russian';
-import {
-    RussianFromJSON,
-    RussianFromJSONTyped,
-    RussianToJSON,
-} from './Russian';
+    RoomInfoFromJSON,
+    RoomInfoFromJSONTyped,
+    RoomInfoToJSON,
+} from './RoomInfo';
 
 /**
  * 
@@ -40,22 +28,22 @@ import {
 export interface Dictionary {
     /**
      * 
-     * @type {English}
+     * @type {RoomInfo}
      * @memberof Dictionary
      */
-    en: English;
+    en: RoomInfo;
     /**
      * 
-     * @type {Russian}
+     * @type {RoomInfo}
      * @memberof Dictionary
      */
-    ru: Russian;
+    ru: RoomInfo;
     /**
      * 
-     * @type {Georgian}
+     * @type {RoomInfo}
      * @memberof Dictionary
      */
-    ge: Georgian;
+    ge: RoomInfo;
 }
 
 /**
@@ -80,9 +68,9 @@ export function DictionaryFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     }
     return {
         
-        'en': EnglishFromJSON(json['en']),
-        'ru': RussianFromJSON(json['ru']),
-        'ge': GeorgianFromJSON(json['ge']),
+        'en': RoomInfoFromJSON(json['en']),
+        'ru': RoomInfoFromJSON(json['ru']),
+        'ge': RoomInfoFromJSON(json['ge']),
     };
 }
 
@@ -95,9 +83,9 @@ export function DictionaryToJSON(value?: Dictionary | null): any {
     }
     return {
         
-        'en': EnglishToJSON(value.en),
-        'ru': RussianToJSON(value.ru),
-        'ge': GeorgianToJSON(value.ge),
+        'en': RoomInfoToJSON(value.en),
+        'ru': RoomInfoToJSON(value.ru),
+        'ge': RoomInfoToJSON(value.ge),
     };
 }
 

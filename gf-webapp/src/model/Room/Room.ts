@@ -1,4 +1,3 @@
-import {RoomType} from "src/model/Room/RoomType";
 import {RoomServices} from "src/model/Room/RoomServices";
 import {Price} from "src/model/Price/Price";
 import {RoomBooked} from "src/model/Room/RoomBooked";
@@ -14,11 +13,6 @@ export class Room {
    * Url to promo image;
    */
   public promoImgUrl: string;
-
-  /**
-   * Room's type
-   */
-  public type: RoomType;
 
   /**
    * Available services for room
@@ -94,7 +88,6 @@ export class Room {
     this.id = roomData.id;
     this.adults = roomData.adults;
     this.children = roomData.children;
-    this.type = roomData.type;
     this.description = roomData.description;
     this.descriptionLong = roomData.descriptionLong;
     this.images = roomData.images;

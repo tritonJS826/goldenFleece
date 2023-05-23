@@ -1,9 +1,9 @@
 /**
- * Room properties which possible to use on English language
+ * Room properties which possible to use on each language
  * @swagger
  *   components:
  *     schemas:
- *       English:
+ *       RoomInfo:
  *         properties:
  *           title:
  *             type: string
@@ -22,7 +22,7 @@
  *           - description
  *           - descriptionLong
  */
-export class English {
+export class RoomInfo {
 
   /**
    * Room's title
@@ -39,7 +39,7 @@ export class English {
    */
   public descriptionLong: string;
 
-  constructor(roomData: English) {
+  constructor(roomData: RoomInfo) {
     this.title = roomData.title;
     this.description = roomData.description;
     this.descriptionLong = roomData.descriptionLong;

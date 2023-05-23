@@ -237,54 +237,16 @@ components:
     Dictionary:
       properties:
         en:
-          $ref: "#/components/schemas/English"
+          $ref: "#/components/schemas/RoomInfo"
         ru:
-          $ref: "#/components/schemas/Russian"
+          $ref: "#/components/schemas/RoomInfo"
         ge:
-          $ref: "#/components/schemas/Georgian"
+          $ref: "#/components/schemas/RoomInfo"
       required:
         - en
         - ru
         - ge
-    English:
-      properties:
-        title:
-          type: string
-          description: title of room.
-          example: Single room
-        description:
-          type: string
-          description: short description of room.
-          example: A comfortable room
-        descriptionLong:
-          type: string
-          description: long description of room.
-          example: Wake up to the breathtaking beauty of the Pindus mountains in a double
-            room
-      required:
-        - title
-        - description
-        - descriptionLong
-    Georgian:
-      properties:
-        title:
-          type: string
-          description: title of room.
-          example: Single room
-        description:
-          type: string
-          description: short description of room.
-          example: A comfortable room
-        descriptionLong:
-          type: string
-          description: long description of room.
-          example: Wake up to the breathtaking beauty of the Pindus mountains in a double
-            room
-      required:
-        - title
-        - description
-        - descriptionLong
-    Russian:
+    RoomInfo:
       properties:
         title:
           type: string
@@ -322,8 +284,6 @@ components:
     NewRoom:
       type: object
       properties:
-        type:
-          $ref: "#/components/schemas/RoomType"
         services:
           type: string[]
           items:
@@ -391,7 +351,6 @@ components:
           $ref: "#/components/schemas/Dictionary"
       required:
         - promoImgUrl
-        - type
         - services
         - description
         - descriptionLong
@@ -423,8 +382,6 @@ components:
     Room:
       type: object
       properties:
-        type:
-          $ref: "#/components/schemas/RoomType"
         services:
           type: string[]
           items:
@@ -496,7 +453,6 @@ components:
           $ref: "#/components/schemas/Dictionary"
       required:
         - promoImgUrl
-        - type
         - services
         - id
         - description
@@ -541,11 +497,4 @@ components:
         - TeaCoffeeMaker
         - Heating
         - AirportShuttle
-    RoomType:
-      type: string
-      enum:
-        - Single
-        - Double
-        - Twin
-      example: Single
 tags: []

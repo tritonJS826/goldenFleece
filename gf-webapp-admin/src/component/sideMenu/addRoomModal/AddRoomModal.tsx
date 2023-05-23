@@ -10,9 +10,7 @@ import {postRoom} from "src/service/RoomService";
 import {NewRoom} from "src/model/Room/NewRoom";
 import {TextField} from "gf-ui-lib/src/components/TextField/TextField";
 import {NumberField} from "gf-ui-lib/src/components/NumberField/NumberField";
-import {SelectField} from "gf-ui-lib/src/components/SelectField/SelectField";
-import {changeRoomServices, isValidRoomService, isValidRoomType} from "src/utils/isValidRoom";
-import {RoomType} from "src/model/Room/RoomType";
+import {changeRoomServices, isValidRoomService} from "src/utils/isValidRoom";
 import {CheckboxField} from "gf-ui-lib/src/components/CheckboxField/CheckboxField";
 import {enumToArray} from "src/utils/enumToArray";
 import {RoomServices} from "src/model/Room/RoomServices";
@@ -52,18 +50,6 @@ export const AddRoomModal = (props: AddRoomModalProps) => {
   return (
     <AddRoomContext.Provider value={{room, setRoom}}>
       <div className={styles.addRoomModal}>
-        <SelectField
-          itemsList={Object.values(RoomType)}
-          selectedItem={room.type}
-          titleText={roomTitleText.type}
-          onChangeValue={(value: string) => {
-            isValidRoomType(value) ?
-              room.type = value
-              :
-              null;
-            setRoom(room);
-          }}
-        />
         <TextField
           value={room.description}
           placeholder={roomTitleText.description}

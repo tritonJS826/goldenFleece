@@ -43,12 +43,6 @@ import {
     RoomServicesFromJSONTyped,
     RoomServicesToJSON,
 } from './RoomServices';
-import type { RoomType } from './RoomType';
-import {
-    RoomTypeFromJSON,
-    RoomTypeFromJSONTyped,
-    RoomTypeToJSON,
-} from './RoomType';
 
 /**
  * 
@@ -56,12 +50,6 @@ import {
  * @interface Room
  */
 export interface Room {
-    /**
-     * 
-     * @type {RoomType}
-     * @memberof Room
-     */
-    type: RoomType;
     /**
      * 
      * @type {Array<RoomServices>}
@@ -159,7 +147,6 @@ export interface Room {
  */
 export function instanceOfRoom(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "type" in value;
     isInstance = isInstance && "services" in value;
     isInstance = isInstance && "description" in value;
     isInstance = isInstance && "id" in value;
@@ -189,7 +176,6 @@ export function RoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): Room
     }
     return {
         
-        'type': RoomTypeFromJSON(json['type']),
         'services': ((json['services'] as Array<any>).map(RoomServicesFromJSON)),
         'description': json['description'],
         'id': json['id'],
@@ -217,7 +203,6 @@ export function RoomToJSON(value?: Room | null): any {
     }
     return {
         
-        'type': RoomTypeToJSON(value.type),
         'services': ((value.services as Array<any>).map(RoomServicesToJSON)),
         'description': value.description,
         'id': value.id,

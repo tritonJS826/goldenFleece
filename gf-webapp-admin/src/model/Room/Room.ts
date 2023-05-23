@@ -24,7 +24,6 @@ export class Room extends NewRoom {
    */
   public toRoomDTO(): RoomDTO {
     return {
-      type: this.type,
       services: this.services,
       description: this.description,
       id: this.id,

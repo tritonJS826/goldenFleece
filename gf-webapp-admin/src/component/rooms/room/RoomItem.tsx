@@ -8,11 +8,9 @@ import {MAIN_PAGE_ROUTE} from "src/utils/pathes";
 import {RoomContext} from "src/component/rooms/room/roomContext";
 import {useState} from "react";
 import {NumberField} from "gf-ui-lib/src/components/NumberField/NumberField";
-import {SelectField} from "gf-ui-lib/src/components/SelectField/SelectField";
 import {CheckboxField} from "gf-ui-lib/src/components/CheckboxField/CheckboxField";
 import {TextField} from "gf-ui-lib/src/components/TextField/TextField";
-import {RoomType} from "src/model/Room/RoomType";
-import {isValidRoomService, isValidRoomType, changeRoomServices} from "src/utils/isValidRoom";
+import {isValidRoomService, changeRoomServices} from "src/utils/isValidRoom";
 import {enumToArray} from "src/utils/enumToArray";
 import {RoomServices} from "src/model/Room/RoomServices";
 import styles from "src/component/rooms/room/RoomItem.module.scss";
@@ -22,7 +20,7 @@ interface RoomProps {
 }
 enum roomTitleText {
   type="Room type",
-  dscription="Room description",
+  description="Room description",
   longDescription="Room long description",
   price="Room price",
   rating="Room rating",
@@ -54,21 +52,9 @@ export const RoomItem = (props: RoomProps) => {
         <h2 className={styles.title}>
           {`Room #${room.roomNumber}`}
         </h2>
-        <SelectField
-          itemsList={Object.values(RoomType)}
-          selectedItem={room.type}
-          titleText={roomTitleText.type}
-          onChangeValue={(value: string) => {
-            isValidRoomType(value) ?
-              room.type = value
-              :
-              null;
-            setRoom(room);
-          }}
-        />
         <TextField
           value={room.description}
-          titleText={roomTitleText.dscription}
+          titleText={roomTitleText.description}
           onChangeValue={(value: string) => {
             room.description = value;
             setRoom(room);
