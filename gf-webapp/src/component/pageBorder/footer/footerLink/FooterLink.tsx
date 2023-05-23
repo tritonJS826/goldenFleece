@@ -24,7 +24,6 @@ export const FooterLink: React.FC<FooterLinkProps> = (props: FooterLinkProps) =>
     return isActive ? styles.footer_link_active : styles.footer_link;
   };
 
-
   return (
     <NavLink
       to={props.to}

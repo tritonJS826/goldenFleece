@@ -24,7 +24,6 @@ export const BurgerLink: React.FC<BurgerLinkProps> = (props: BurgerLinkProps) =>
     return isActive ? styles.burger_item_active : styles.burger_item;
   };
 
-
   return (
     <NavLink
       to={props.to}

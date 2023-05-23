@@ -10,9 +10,7 @@ import styles from "src/component/pageBorder/header/Header.module.scss";
 
 export const Header = () => {
   const dictionary = useDictionary().dictionary;
-
   const scrollPosition = useScrollPosition();
-
   const location = useLocation();
 
   useEffect(() => {

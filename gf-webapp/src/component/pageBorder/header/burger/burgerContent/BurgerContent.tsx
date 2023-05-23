@@ -10,11 +10,11 @@ export const BurgerContent = () => {
       <ul>
         <BurgerLink
           to="/"
-          value={navigation.rooms}
+          value={navigation.main}
         />
         <BurgerLink
           to="/rooms"
-          value={navigation.main}
+          value={navigation.rooms}
         />
         <BurgerLink
           to="/contacts"

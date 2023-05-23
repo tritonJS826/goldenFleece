@@ -1,17 +1,16 @@
 import {useState} from "react";
 import {useScrollPosition} from "src/utils/domEventsUtils/useScrollPosition";
-import styles from "src/component/pageBorder/header/burger/Burger.module.scss";
 import {BurgerContent} from "./burgerContent/BurgerContent";
+import styles from "src/component/pageBorder/header/burger/Burger.module.scss";
 
 export const Burger = () => {
+  const scrollPosition = useScrollPosition();
   const [burgerActive, setBurgerActive] = useState(false);
 
   const burgerOpenHandler = () => {
     setBurgerActive(prev => !prev);
     document.body.classList.toggle("notScrollable");
   };
-
-  const scrollPosition = useScrollPosition();
 
   return (
     <div className={scrollPosition < 100 ? styles.wrap : `${styles.wrap} ${styles.wrapScroll}`}>

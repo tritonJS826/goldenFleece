@@ -17,16 +17,16 @@ const contactsList: Contact[] = [
 ];
 
 export const renderContacts = (callback: () => void) => (
-  contactsList.map((item, index) => (
+  contactsList.map((contact, index) => (
     <li
       key={index}
       onClick={callback}
     >
       <a
         className={styles.link}
-        href={item.type + item.contact}
+        href={contact.type + contact.contact}
       >
-        {item.contact}
+        {contact.contact}
       </a>
     </li>
   )));

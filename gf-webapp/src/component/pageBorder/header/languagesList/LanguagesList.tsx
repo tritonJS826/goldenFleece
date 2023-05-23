@@ -7,7 +7,7 @@ import {Language, languageList} from "src/model/Language";
 import styles from "src/component/pageBorder/header/languagesList/LanguagesList.module.scss";
 
 export const LanguagesList = () => {
-  const {dictionary, setDictionary} = useDictionary();
+  const {setDictionary} = useDictionary();
   const [langOpen, setLangOpen] = useState(false);
   const {lang, setCurrentLang} = useLanguage();
 
