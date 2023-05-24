@@ -28,13 +28,23 @@ export const MapMenu = (props: MapMenuProps) => {
         </p>
         {markers.map((marker) => (
           markerType === marker.markerType &&
-          <span
-            onClick={() => props.menuItemHandler(marker)}
-            className={`${styles.menuItem} ${menuItem && marker.id === menuItem.id ? styles.checked : ""}`}
-            key={marker.id}
-          >
-            {marker.name}
-          </span>
+            <div
+              onClick={() => props.menuItemHandler(marker)}
+              className={`${styles.menuItem} ${menuItem && marker.id === menuItem.id ? styles.checked : ""}`}
+              key={marker.id}
+            >
+              <div className={styles.title}>
+                {marker.name}
+              </div>
+              <img
+                className={styles.image}
+                src={marker.imgUrl}
+                alt={marker.name}
+              />
+              <div>
+                {marker.description}
+              </div>
+            </div>
         ))}
       </li>
     ));

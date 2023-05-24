@@ -2,7 +2,6 @@ import {useState} from "react";
 import {MapMenu} from "./mapMenu/MapMenu";
 import {MapContext} from "./MapContext";
 import {Marker} from "./mapLeaflet/mapMarkers/mapMarker/Marker";
-import {ItemDescription} from "./itemDescription/ItemDescription";
 import {MapLeaflet} from "./mapLeaflet/MapLeaflet";
 import styles from "./Map.module.scss";
 
@@ -38,7 +37,6 @@ export const Map: React.FC<MarkerProps> = (props: MarkerProps) => {
       }}
     >
       <MapMenu menuItemHandler={menuItemHandler} />
-      <ItemDescription />
       <div className={styles.map}>
         <MapLeaflet />
       </div>
