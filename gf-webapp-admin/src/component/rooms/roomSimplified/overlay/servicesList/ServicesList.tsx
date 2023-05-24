@@ -5,10 +5,10 @@ interface Services {
   services: RoomServices[]
 }
 
-export const ServicesList = ({services}: Services) => {
+export const ServicesList = (props: Services) => {
 
   const renderServicesList = () => {
-    return services.map((service: RoomServices) => (
+    return props.services.map((service: RoomServices) => (
       <li key={service}>
         {service}
       </li>
