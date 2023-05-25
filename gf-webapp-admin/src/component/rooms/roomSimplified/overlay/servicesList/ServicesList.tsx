@@ -1,14 +1,14 @@
 import {RoomServices} from "src/model/Room/RoomServices";
 import styles from "src/component/rooms/roomSimplified/overlay/servicesList/ServicesList.module.scss";
 
-interface IServices {
+interface Services {
   services: RoomServices[]
 }
 
-export const ServicesList = ({services}: IServices) => {
+export const ServicesList = (props: Services) => {
 
   const renderServicesList = () => {
-    return services.map((service: RoomServices) => (
+    return props.services.map((service: RoomServices) => (
       <li key={service}>
         {service}
       </li>

@@ -1,11 +1,11 @@
-import {IStorage} from "src/service/Storage/IStorage";
+import {Storage} from "src/service/Storage/Storage";
 
-export class LocalStorageService<Schema> implements IStorage<Schema> {
+export class LocalStorageService<Schema> implements Storage<Schema> {
 
-  private readonly storage!: IStorage<Schema>;
+  private readonly storage!: Storage<Schema>;
 
   constructor() {
-    this.storage = window.localStorage as IStorage<Schema>;
+    this.storage = window.localStorage as Storage<Schema>;
   }
 
   public getItem(key: keyof Schema): Schema[keyof Schema] | null {
