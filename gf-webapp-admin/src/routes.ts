@@ -10,9 +10,13 @@ interface Route {
 
 export const publicRoutes:Route[] = [
   {
-    /** path: path to page*/
+    /**
+     * path: path to page
+     */
     path: LOGIN_ROUTE,
-    /** component: the component that will be displayed when navigating to the path */
+    /**
+     * component: the component that will be displayed when navigating to the path
+     */
     component: LoginPage,
   },
 ];
