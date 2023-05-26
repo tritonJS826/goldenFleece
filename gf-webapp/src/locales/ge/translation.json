@@ -115,6 +115,14 @@
     "dateIn": "თარიღი",
     "dateOut": "თარიღი გარეთ",
     "adultsAmount": "მოზარდები",
-    "childrenAmount": "ბავშვები"
+    "childrenAmount": "ბავშვები",
+    "services": "მომსახურება",
+    "serviceList": {
+      "WiFi": "Wi-Fi",
+      "Laundry": "სამრეცხაო",
+      "TeaCoffeeMaker": "ჩაი/ყავა",
+      "Heating": "გათბობა",
+      "AirportShuttle": "აეროპორტის შატლი"
+    }
   }
 }

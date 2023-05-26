@@ -10,7 +10,7 @@ interface RoomsBlockProps {
 }
 
 export const RoomsBlockWithFilters = (props: RoomsBlockProps) => {
-  const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
+  const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue, serviceValues} = useFilterRooms();
 
   const [rooms, setRooms] = useState<Room[] | null>(null);
 
@@ -67,7 +67,24 @@ export const RoomsBlockWithFilters = (props: RoomsBlockProps) => {
     }
   };
 
-  const filterRooms = (roomsList: Room[]) => {
+  const filterServices = (room: Room) => {
+    const serviceValuesArray = serviceValues.map((item) => {
+      return item.replace(/\s/g, "");
+    });
+    for (let i = 0; i < serviceValuesArray.length; i++) {
+      for (let j = 0; j < room.services.length; j++) {
+        if (serviceValuesArray[i] === room.services[j]) {
+          break;
+        }
+        if (j === room.services.length - 1) {
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
+  const filterRoomsCommon = (roomsList: Room[]) => {
     return roomsList
       .filter(filterAdults)
       .filter(filterChildren)
@@ -75,8 +92,18 @@ export const RoomsBlockWithFilters = (props: RoomsBlockProps) => {
       .filter(filterDate);
   };
 
+  const filterRooms = (roomsList: Room[]) => {
+    if (serviceValues.length === 0) {
+      return filterRoomsCommon(roomsList);
+    }
+    if (serviceValues.length !== 0) {
+      return filterRoomsCommon(roomsList)
+        .filter((room: Room) => filterServices(room));
+    }
+  };
+
   const renderRoomItem = (roomsList: Room[]) => {
-    return filterRooms(roomsList).map(room => (
+    return filterRooms(roomsList)?.map(room => (
       <RoomItem
         key={room.id}
         room={room}

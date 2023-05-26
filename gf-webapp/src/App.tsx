@@ -20,6 +20,7 @@ function App() {
   const [dateOutValue, setDateOutValue] = useState(MIN_DATE_OUT);
   const [adultsValue, setAdultsValue] = useState(defaultAdultsValue);
   const [childrenValue, setChildrenValue] = useState(defaultChildrenValue);
+  const [serviceValues, setServiceValues] = useState<string[]>([]);
 
   return (
     <div className="app">
@@ -38,6 +39,8 @@ function App() {
             setAdultsValue,
             childrenValue,
             setChildrenValue,
+            serviceValues,
+            setServiceValues,
           }}
         >
           <ScrollToTop />
