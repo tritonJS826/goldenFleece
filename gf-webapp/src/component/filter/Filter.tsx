@@ -60,9 +60,29 @@ export const Filter = (props: FilterProps) => {
   const setInputValue = () => {
     if (params.has(props.urlQueryKey)) {
       const paramValueRaw = params.get(props.urlQueryKey);
-      const paramValueNumber: number = paramValueRaw ? JSON.parse(paramValueRaw) : defaultNumberValue;
+      if (props.urlQueryKey === "Adults" || props.urlQueryKey === "Children") {
+        const paramValueNumber: number = paramValueRaw ? JSON.parse(paramValueRaw.slice(1, -1)) : defaultNumberValue;
+        switch (props.urlQueryKey) {
+          case "Adults": {
+            setAdultsValue(paramValueNumber);
+            break;
+          }
+          case "Children": {
+            setChildrenValue(paramValueNumber);
+            break;
+          }
+          default: {
+            break;
+          }
+        }
+      }
+      // const paramValueNumber: number = paramValueRaw ? JSON.parse(paramValueRaw.slice(1, -1)) : defaultNumberValue;
+      const paramArray = params.getAll("Services");
+      const paramArr = paramArray.map((item => {
+        return item.slice(1, -1);
+      }));
       const paramValueString: string = paramValueRaw ? paramValueRaw.slice(1, -1) : defaultStringValue;
-      const paramValueStringArray: string[] = paramValueRaw ? paramValueRaw.slice(1, -1).split(", ") : defaultStringArrayValue;
+      const paramValueStringArray: string[] = paramArray ? paramArr : defaultStringArrayValue;
       switch (props.urlQueryKey) {
         case "DateIn": {
           setDateInValue(paramValueString);
@@ -72,20 +92,12 @@ export const Filter = (props: FilterProps) => {
           setDateOutValue(paramValueString);
           break;
         }
-        case "Adults": {
-          setAdultsValue(paramValueNumber);
-          break;
-        }
-        case "Взрослые": {
-          setAdultsValue(paramValueNumber);
-          break;
-        }
-        case "Children": {
-          setChildrenValue(paramValueNumber);
-          break;
-        }
-        // case "WiFi": {
-        //   // setServiceValues(paramValueStringArray);
+        // case "Adults": {
+        //   setAdultsValue(paramValueNumber);
+        //   break;
+        // }
+        // case "Children": {
+        //   setChildrenValue(paramValueNumber);
         //   break;
         // }
         case "Services": {
@@ -96,6 +108,11 @@ export const Filter = (props: FilterProps) => {
           setSearchValue(paramValueString);
         }
       }
+    } else if (params) {
+      const paramValueRaw = params.get(props.urlQueryKey);
+      const paramValueString: string = paramValueRaw ? paramValueRaw.slice(1, -1) : defaultStringValue;
+      // const paramArray = params
+
     }
   };
 
@@ -115,7 +132,9 @@ export const Filter = (props: FilterProps) => {
     const queryValue = `"${event.target.value}"`;
     const isValueExist = params.get(queryName) ? true : false;
     if (isValueExist) {
-      if (params.get(queryName) === queryValue) {
+      if (params.has("Services")) {
+        setParams([...params, [queryName, queryValue]]);
+      } else if (params.get(queryName) === queryValue) {
         params.delete(queryName);
         setParams(params);
       } else {
@@ -136,10 +155,6 @@ export const Filter = (props: FilterProps) => {
         break;
       }
       case "Adults": {
-        setAdultsValue(Number(event.target.value));
-        break;
-      }
-      case "Взрослые": {
         setAdultsValue(Number(event.target.value));
         break;
       }

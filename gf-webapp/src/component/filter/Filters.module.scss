@@ -51,7 +51,7 @@
   display: none;
 }
 
-.labelNone span:nth-child(2) {
+.labelNone span:first-child {
   display: none;
 }
 
@@ -120,12 +120,6 @@ label [type="checkbox"] {
 
 span {
   white-space: nowrap;
-  font-size: $label-font-size;
-  color: $label-color;
-}
-
-span:nth-child(2) {
-  color: red;
 }
 
 @media (max-width: 1130px) {

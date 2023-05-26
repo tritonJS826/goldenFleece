@@ -58,7 +58,6 @@ export enum URL_QUERY_KEYS {
    * Key for filter by adults amount
    */
   Adults = "Adults",
-  Взрослые = "Взрослые",
   /**
    * Key for filter by children amount
    */
@@ -67,7 +66,11 @@ export enum URL_QUERY_KEYS {
    * Key for filter by services
    */
   Services = "Services",
-  WiFI = "WiFi"
+  WiFI = "WiFi",
+  Laundry = "Laundry",
+  TeaCoffeeMaker = "TeaCoffeeMaker",
+  Heating = "Heating",
+  AirportShuttle = "AirportShuttle"
 }
 
 export const FilterInput: React.FC<FilterInputProps> = (props: FilterInputProps) => {
@@ -90,7 +93,7 @@ export const FilterInput: React.FC<FilterInputProps> = (props: FilterInputProps)
           checked={props.checked}
           required
         />
-        <span>
+        <span className={styles.spanCheckbox}>
           {props.textCheckbox}
         </span>
       </label>

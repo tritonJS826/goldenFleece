@@ -47,9 +47,17 @@ export const Filters = () => {
   };
 
   const isChecked = (service: string) => {
-    if (params.has(service)) {
+    const paramArray = params.getAll("Services");
+    const paramArr = paramArray.map((item => {
+      return item.slice(1, -1);
+    }));
+    console.log(paramArr.includes(`${service}`));
+    if (paramArr.includes(service)) {
       return true;
     }
+    // if (params.has(service)) {
+    //   return true;
+    // }
     return false;
   };
 
@@ -65,7 +73,7 @@ export const Filters = () => {
             inputType="text"
             styles={styles.input}
             styleLabel={styles.label}
-            text={filter.adultsAmount}
+            text={filter.search}
           />
           <Filter
             paramValue={dateInValue}
@@ -76,7 +84,7 @@ export const Filters = () => {
             min={MIN_DATE_IN}
             styles={styles.input}
             styleLabel={styles.label}
-            text={filter.adultsAmount}
+            text={filter.dateIn}
           />
           <Filter
             paramValue={dateOutValue}
@@ -87,13 +95,13 @@ export const Filters = () => {
             min={getNewDateOut(dateInValue)}
             styles={styles.input}
             styleLabel={styles.label}
-            text={filter.adultsAmount}
+            text={filter.dateOut}
           />
           <Filter
             paramValue={adultsValue}
             defaultParamValue={defaultAdultsValue}
             urlQueryKey={URL_QUERY_KEYS.Adults}
-            inputName="Adults"
+            inputName={URL_QUERY_KEYS.Adults}
             inputType="number"
             min={MIN_ADULTS_VALUE}
             styles={styles.input}
@@ -109,7 +117,7 @@ export const Filters = () => {
             min={MIN_CHILDREN_VALUE}
             styles={styles.input}
             styleLabel={styles.label}
-            text="1"
+            text={filter.childrenAmount}
           />
         </div>
         <div className={styles.servicesWrap}>
@@ -127,7 +135,8 @@ export const Filters = () => {
                   defaultParamValue={defaultServiceValue}
                   urlQueryKey={URL_QUERY_KEYS.Services}
                   inputType="checkbox"
-                  inputName={service}
+                  // inputName={service}
+                  inputName={URL_QUERY_KEYS.Services}
                   styles={styles.checkbox}
                   styleLabel={styles.labelNone}
                   textCheckbox={service}
