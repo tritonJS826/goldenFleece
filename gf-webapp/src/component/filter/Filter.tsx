@@ -128,15 +128,14 @@ export const Filter = (props: FilterProps) => {
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const queryName = event.target.name;
-    // console.log(event.target);
     const queryValue = `"${event.target.value}"`;
     const isValueExist = params.get(queryName) ? true : false;
-    const servicesArray = params.getAll(queryName);
+    const servicesArray = params.getAll(URL_QUERY_KEYS.Services);
     console.log(queryName);
     if (isValueExist) {
       console.log(servicesArray);
       console.log(queryValue.slice(1, -1));
-      if (servicesArray.includes(queryValue)) {
+      if (queryName === "Services" && servicesArray.includes(queryValue)) {
         console.log(111);
         const paramValueStringified = JSON.stringify(queryValue);
         const defaultParamValueStringified = JSON.stringify("");
@@ -152,19 +151,18 @@ export const Filter = (props: FilterProps) => {
         } else {
           setParams([...paramsWithoutCurrentParam, [queryName, paramValueStringified]]);
         }
-        // const newParam = servicesArray.filter((item) => item !== queryValue);
-        // console.log(newParam);
-        // params.delete(queryName);
-        // newParam.map((item) => {
-        //   return setParams([...params, [queryName, item]]);
-        // });
-        // setServiceValues(newParam);
-        // setParams([...params, [queryName, newParam.toString()]]);
+      // } else if (params.has("Services")) {
+      } else if (params.has("Services") && queryName === "Services") {
+        setParams([...params, [queryName, queryValue]]);
+      } else if (params.get(queryName)) {
+        params.delete(queryName);
+        // setParams(params);
+        setParams([...params, [queryName, queryValue]]);
       } else if (params.get(queryName) === queryValue) {
         params.delete(queryName);
         setParams(params);
-      } else if (params.has("Services")) {
-        setParams([...params, [queryName, queryValue]]);
+      // } else if (params.has("Services")) {
+      //   setParams([...params, [queryName, queryValue]]);
       // } else if (params.get(queryName) === queryValue) {
       //   params.delete(queryName);
       //   setParams(params);
