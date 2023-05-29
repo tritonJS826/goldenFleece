@@ -48,11 +48,14 @@ export const Filters = () => {
 
   const isChecked = (service: string) => {
     const paramArray = params.getAll("Services");
+    // console.log(paramArray);
     const paramArr = paramArray.map((item => {
       return item.slice(1, -1);
     }));
-    console.log(paramArr.includes(`${service}`));
-    if (paramArr.includes(service)) {
+    console.log(paramArray.toString());
+    console.log(service);
+    if (paramArray.toString().includes(service)) {
+      console.log(123);
       return true;
     }
     // if (params.has(service)) {

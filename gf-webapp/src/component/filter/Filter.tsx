@@ -128,15 +128,46 @@ export const Filter = (props: FilterProps) => {
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const queryName = event.target.name;
-    console.log(event.target);
+    // console.log(event.target);
     const queryValue = `"${event.target.value}"`;
     const isValueExist = params.get(queryName) ? true : false;
+    const servicesArray = params.getAll(queryName);
+    console.log(queryName);
     if (isValueExist) {
-      if (params.has("Services")) {
-        setParams([...params, [queryName, queryValue]]);
+      console.log(servicesArray);
+      console.log(queryValue.slice(1, -1));
+      if (servicesArray.includes(queryValue)) {
+        console.log(111);
+        const paramValueStringified = JSON.stringify(queryValue);
+        const defaultParamValueStringified = JSON.stringify("");
+        const isValuesExist = paramValueStringified !== defaultParamValueStringified;
+
+        const allParams = [...params];
+        console.log(allParams);
+        const paramsWithoutCurrentParam = allParams
+          .filter(param => param[1] !== queryValue);
+
+        if (isValuesExist) {
+          setParams(paramsWithoutCurrentParam);
+        } else {
+          setParams([...paramsWithoutCurrentParam, [queryName, paramValueStringified]]);
+        }
+        // const newParam = servicesArray.filter((item) => item !== queryValue);
+        // console.log(newParam);
+        // params.delete(queryName);
+        // newParam.map((item) => {
+        //   return setParams([...params, [queryName, item]]);
+        // });
+        // setServiceValues(newParam);
+        // setParams([...params, [queryName, newParam.toString()]]);
       } else if (params.get(queryName) === queryValue) {
         params.delete(queryName);
         setParams(params);
+      } else if (params.has("Services")) {
+        setParams([...params, [queryName, queryValue]]);
+      // } else if (params.get(queryName) === queryValue) {
+      //   params.delete(queryName);
+      //   setParams(params);
       } else {
         params.delete(queryName);
         setParams([...params, [queryName, queryValue]]);
