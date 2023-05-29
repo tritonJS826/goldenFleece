@@ -1,7 +1,6 @@
 import {createContext, useContext} from "react";
 
 const STUB_FILTER_FUNCTION = () => undefined;
-const STUB_SEARCH_VALUE = "";
 const STUB_SERVICE_VALUE = "";
 const STUB_ADULTS_VALUE = 0;
 const STUB_CHILDREN_VALUE = 0;
@@ -10,8 +9,6 @@ const STUB_DATE_OUT_VALUE = "";
 
 
 export type FilterRooms = {
-  searchValue: string,
-  setSearchValue: (search: string) => void,
   dateInValue: string,
   setDateInValue: (dateInValue: string) => void,
   dateOutValue: string,
@@ -26,8 +23,6 @@ export type FilterRooms = {
 
 
 export const FilterRoomsContext: React.Context<FilterRooms> = createContext<FilterRooms>({
-  searchValue: STUB_SEARCH_VALUE,
-  setSearchValue: STUB_FILTER_FUNCTION,
   dateInValue: STUB_DATE_IN_VALUE,
   setDateInValue: STUB_FILTER_FUNCTION,
   dateOutValue: STUB_DATE_OUT_VALUE,

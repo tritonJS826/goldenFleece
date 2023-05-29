@@ -47,7 +47,6 @@ export const defaultStringArrayValue = [];
 export const Filter = (props: FilterProps) => {
   const [params, setParams] = useSearchParams();
   const {
-    setSearchValue,
     dateInValue,
     setDateInValue,
     setDateOutValue,
@@ -60,7 +59,7 @@ export const Filter = (props: FilterProps) => {
   const setInputValue = () => {
     if (params.has(props.urlQueryKey)) {
       const paramValueRaw = params.get(props.urlQueryKey);
-      if (props.urlQueryKey === "Adults" || props.urlQueryKey === "Children") {
+      if (props.urlQueryKey === URL_QUERY_KEYS.Adults || props.urlQueryKey === URL_QUERY_KEYS.Children) {
         const paramValueNumber: number = paramValueRaw ? JSON.parse(paramValueRaw.slice(1, -1)) : defaultNumberValue;
         switch (props.urlQueryKey) {
           case "Adults": {
@@ -76,13 +75,12 @@ export const Filter = (props: FilterProps) => {
           }
         }
       }
-      // const paramValueNumber: number = paramValueRaw ? JSON.parse(paramValueRaw.slice(1, -1)) : defaultNumberValue;
-      const paramArray = params.getAll("Services");
-      const paramArr = paramArray.map((item => {
-        return item.slice(1, -1);
-      }));
       const paramValueString: string = paramValueRaw ? paramValueRaw.slice(1, -1) : defaultStringValue;
-      const paramValueStringArray: string[] = paramArray ? paramArr : defaultStringArrayValue;
+      const paramValuesArray = params.getAll(props.urlQueryKey);
+      const paramValuesArrayWithoutQuotes = paramValuesArray.map((item) => {
+        return item.slice(1, -1);
+      });
+      const paramValueStringArray: string[] = paramValuesArray ? paramValuesArrayWithoutQuotes : defaultStringArrayValue;
       switch (props.urlQueryKey) {
         case "DateIn": {
           setDateInValue(paramValueString);
@@ -92,27 +90,14 @@ export const Filter = (props: FilterProps) => {
           setDateOutValue(paramValueString);
           break;
         }
-        // case "Adults": {
-        //   setAdultsValue(paramValueNumber);
-        //   break;
-        // }
-        // case "Children": {
-        //   setChildrenValue(paramValueNumber);
-        //   break;
-        // }
         case "Services": {
           setServiceValues(paramValueStringArray);
           break;
         }
         default: {
-          setSearchValue(paramValueString);
+          break;
         }
       }
-    } else if (params) {
-      const paramValueRaw = params.get(props.urlQueryKey);
-      const paramValueString: string = paramValueRaw ? paramValueRaw.slice(1, -1) : defaultStringValue;
-      // const paramArray = params
-
     }
   };
 
@@ -131,18 +116,14 @@ export const Filter = (props: FilterProps) => {
     const queryValue = `"${event.target.value}"`;
     const isValueExist = params.get(queryName) ? true : false;
     const servicesArray = params.getAll(URL_QUERY_KEYS.Services);
-    console.log(queryName);
+
     if (isValueExist) {
-      console.log(servicesArray);
-      console.log(queryValue.slice(1, -1));
-      if (queryName === "Services" && servicesArray.includes(queryValue)) {
-        console.log(111);
+      if (queryName === URL_QUERY_KEYS.Services && servicesArray.includes(queryValue)) {
         const paramValueStringified = JSON.stringify(queryValue);
         const defaultParamValueStringified = JSON.stringify("");
         const isValuesExist = paramValueStringified !== defaultParamValueStringified;
 
         const allParams = [...params];
-        console.log(allParams);
         const paramsWithoutCurrentParam = allParams
           .filter(param => param[1] !== queryValue);
 
@@ -151,21 +132,14 @@ export const Filter = (props: FilterProps) => {
         } else {
           setParams([...paramsWithoutCurrentParam, [queryName, paramValueStringified]]);
         }
-      // } else if (params.has("Services")) {
-      } else if (params.has("Services") && queryName === "Services") {
+      } else if (params.has(URL_QUERY_KEYS.Services) && queryName === URL_QUERY_KEYS.Services) {
         setParams([...params, [queryName, queryValue]]);
       } else if (params.get(queryName)) {
         params.delete(queryName);
-        // setParams(params);
         setParams([...params, [queryName, queryValue]]);
       } else if (params.get(queryName) === queryValue) {
         params.delete(queryName);
         setParams(params);
-      // } else if (params.has("Services")) {
-      //   setParams([...params, [queryName, queryValue]]);
-      // } else if (params.get(queryName) === queryValue) {
-      //   params.delete(queryName);
-      //   setParams(params);
       } else {
         params.delete(queryName);
         setParams([...params, [queryName, queryValue]]);
@@ -199,51 +173,10 @@ export const Filter = (props: FilterProps) => {
         break;
       }
       default: {
-        setSearchValue(event.target.value);
+        break;
       }
     }
   };
-
-  const isChecked = () => {
-    if (params.has(props.urlQueryKey)) {
-      return true;
-    }
-    return false;
-  };
-
-  // const addQueryParams = (
-  //   paramValue: number | string | string[],
-  //   defaultParamValue: number | string | string[],
-  //   urlQueryKey: URL_QUERY_KEYS,
-  // ) => {
-  //   const paramValueStringified = JSON.stringify(paramValue);
-  //   const defaultParamValueStringified = JSON.stringify(defaultParamValue);
-  //   const isValueExist = paramValueStringified !== defaultParamValueStringified;
-
-  //   const allParams = [...params];
-  //   const paramsWithoutCurrentParam = allParams
-  //     .filter(param => param[0] !== urlQueryKey);
-
-  //   if (isValueExist) {
-  //     setParams([...paramsWithoutCurrentParam, [urlQueryKey, paramValueStringified]]);
-  //   } else {
-  //     setParams(paramsWithoutCurrentParam);
-  //   }
-  // };
-
-  // const updateQueryParams = (
-  //   name: string,
-  //   event: React.ChangeEvent<HTMLInputElement>,
-  //   paramValue: number | string | string[],
-  //   defaultParamValue: number | string | string[],
-  //   urlQueryKey: URL_QUERY_KEYS) => {
-  //   setParams({[name]: event.target.value});
-  // };
-
-  // useEffect(() => {
-  //   // addQueryParams(props.inputName, props.paramValue, props.defaultParamValue, props.urlQueryKey);
-  //   // updateQueryParams(props.inputName, props.paramValue, props.defaultParamValue, props.urlQueryKey);
-  // }, [props.paramValue]);
 
   return (
     <FilterInput

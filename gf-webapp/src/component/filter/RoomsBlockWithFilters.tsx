@@ -10,7 +10,7 @@ interface RoomsBlockProps {
 }
 
 export const RoomsBlockWithFilters = (props: RoomsBlockProps) => {
-  const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue, serviceValues} = useFilterRooms();
+  const {adultsValue, childrenValue, dateInValue, dateOutValue, serviceValues} = useFilterRooms();
 
   const [rooms, setRooms] = useState<Room[] | null>(null);
 
@@ -41,14 +41,6 @@ export const RoomsBlockWithFilters = (props: RoomsBlockProps) => {
     } else {
       return room;
     }
-  };
-
-  const filterSearch = (room: Room) => {
-    return Object.values(room)
-      .join()
-      .toString()
-      .toLowerCase()
-      .includes(searchValue);
   };
 
   const filterRoomsNotBooked = (room: Room) => {
@@ -88,7 +80,6 @@ export const RoomsBlockWithFilters = (props: RoomsBlockProps) => {
     return roomsList
       .filter(filterAdults)
       .filter(filterChildren)
-      .filter(filterSearch)
       .filter(filterDate);
   };
 
@@ -98,7 +89,7 @@ export const RoomsBlockWithFilters = (props: RoomsBlockProps) => {
     }
     if (serviceValues.length !== 0) {
       return filterRoomsCommon(roomsList)
-        .filter((room: Room) => filterServices(room));
+        .filter(filterServices);
     }
   };
 

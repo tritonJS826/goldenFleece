@@ -11,7 +11,6 @@ const MIN_ADULTS_VALUE = 0;
 const MIN_CHILDREN_VALUE = 0;
 export const defaultAdultsValue: number = MIN_ADULTS_VALUE;
 export const defaultChildrenValue: number = MIN_CHILDREN_VALUE;
-export const defaultSearchValue = "";
 export const defaultServiceValue = [];
 export const MIN_DATE_IN = getCurrentDate;
 export const MIN_DATE_OUT = getNextDate;
@@ -22,8 +21,6 @@ export const Filters = () => {
   const {filter, roomInfo} = useDictionary().dictionary;
   const servicesArray = Object.values(roomInfo.services);
   const {
-    searchValue,
-    setSearchValue,
     dateInValue,
     setDateInValue,
     dateOutValue,
@@ -32,12 +29,10 @@ export const Filters = () => {
     setAdultsValue,
     childrenValue,
     setChildrenValue,
-    serviceValues,
     setServiceValues,
   } = useFilterRooms();
 
   const setDefaultFilters = () => {
-    setSearchValue(defaultSearchValue);
     setDateInValue(defaultDateValue);
     setDateOutValue(defaultDateValue);
     setAdultsValue(defaultAdultsValue);
@@ -47,20 +42,10 @@ export const Filters = () => {
   };
 
   const isChecked = (service: string) => {
-    const paramArray = params.getAll("Services");
-    // console.log(paramArray);
-    const paramArr = paramArray.map((item => {
-      return item.slice(1, -1);
-    }));
-    console.log(paramArray.toString());
-    console.log(service);
-    if (paramArray.toString().includes(service)) {
-      console.log(123);
+    const paramValuesArray = params.getAll("Services");
+    if (paramValuesArray.toString().includes(service)) {
       return true;
     }
-    // if (params.has(service)) {
-    //   return true;
-    // }
     return false;
   };
 
@@ -68,16 +53,6 @@ export const Filters = () => {
     <div>
       <div className={styles.filters}>
         <div className={styles.filtersRaw}>
-          <Filter
-            paramValue={searchValue}
-            defaultParamValue={defaultSearchValue}
-            urlQueryKey={URL_QUERY_KEYS.Search}
-            inputName={filter.search}
-            inputType="text"
-            styles={styles.input}
-            styleLabel={styles.label}
-            text={filter.search}
-          />
           <Filter
             paramValue={dateInValue}
             defaultParamValue={MIN_DATE_IN}
@@ -138,7 +113,6 @@ export const Filters = () => {
                   defaultParamValue={defaultServiceValue}
                   urlQueryKey={URL_QUERY_KEYS.Services}
                   inputType="checkbox"
-                  // inputName={service}
                   inputName={URL_QUERY_KEYS.Services}
                   styles={styles.checkbox}
                   styleLabel={styles.labelNone}

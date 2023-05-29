@@ -5,17 +5,10 @@ import ScrollToTop from "src/utils/scrollToTop";
 import en from "src/locales/en/translation.json";
 import {pages} from "src/pages";
 import {FilterRoomsContext} from "src/component/filter/FilterContext";
-import {
-  defaultSearchValue,
-  defaultAdultsValue,
-  defaultChildrenValue,
-  MIN_DATE_IN,
-  MIN_DATE_OUT,
-} from "src/component/filter/Filters";
+import {defaultAdultsValue, defaultChildrenValue, MIN_DATE_IN, MIN_DATE_OUT} from "src/component/filter/Filters";
 
 function App() {
   const [dictionary, setDictionary] = useState<DictionaryType>(en);
-  const [searchValue, setSearchValue] = useState(defaultSearchValue);
   const [dateInValue, setDateInValue] = useState(MIN_DATE_IN);
   const [dateOutValue, setDateOutValue] = useState(MIN_DATE_OUT);
   const [adultsValue, setAdultsValue] = useState(defaultAdultsValue);
@@ -29,8 +22,6 @@ function App() {
       >
         <FilterRoomsContext.Provider
           value={{
-            searchValue,
-            setSearchValue,
             dateInValue,
             setDateInValue,
             dateOutValue,

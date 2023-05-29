@@ -66,11 +66,6 @@ export enum URL_QUERY_KEYS {
    * Key for filter by services
    */
   Services = "Services",
-  WiFI = "WiFi",
-  Laundry = "Laundry",
-  TeaCoffeeMaker = "TeaCoffeeMaker",
-  Heating = "Heating",
-  AirportShuttle = "AirportShuttle"
 }
 
 export const FilterInput: React.FC<FilterInputProps> = (props: FilterInputProps) => {
