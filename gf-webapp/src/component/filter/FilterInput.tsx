@@ -30,11 +30,21 @@ interface FilterInputProps {
    * Parameter for input type checkbox
    */
   checked?: boolean;
-
+  /**
+   * INput className
+   */
   stylesName: string;
-
+  /**
+   * Text for input (type is not checkbox)
+   */
   text?: string;
+  /**
+   * Text for checkbox
+   */
   textCheckbox?: string;
+  /**
+   * className for label
+   */
   styleLabel?: string;
 }
 

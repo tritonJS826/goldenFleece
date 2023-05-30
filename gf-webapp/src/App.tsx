@@ -5,7 +5,7 @@ import ScrollToTop from "src/utils/scrollToTop";
 import en from "src/locales/en/translation.json";
 import {pages} from "src/pages";
 import {FilterRoomsContext} from "src/component/filter/FilterContext";
-import {defaultAdultsValue, defaultChildrenValue, MIN_DATE_IN, MIN_DATE_OUT} from "src/component/filter/Filters";
+import {defaultAdultsValue, defaultChildrenValue, MIN_DATE_IN, MIN_DATE_OUT, defaultServiceValue} from "src/component/filter/Filters";
 
 function App() {
   const [dictionary, setDictionary] = useState<DictionaryType>(en);
@@ -13,7 +13,7 @@ function App() {
   const [dateOutValue, setDateOutValue] = useState(MIN_DATE_OUT);
   const [adultsValue, setAdultsValue] = useState(defaultAdultsValue);
   const [childrenValue, setChildrenValue] = useState(defaultChildrenValue);
-  const [serviceValues, setServiceValues] = useState<string[]>([]);
+  const [serviceValues, setServiceValues] = useState<string[]>(defaultServiceValue);
 
   return (
     <div className="app">

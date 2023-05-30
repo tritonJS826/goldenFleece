@@ -33,10 +33,25 @@ interface FilterProps {
    * Input type
    */
   inputType: "number" | "text" | "date" | "checkbox",
+  /**
+   * Input className
+   */
   styles: string;
+  /**
+   * Text for input (type is not checkbox)
+   */
   text?: string;
+  /**
+   * Text for checkbox
+   */
   textCheckbox?: string;
+  /**
+   * className for label
+   */
   styleLabel?: string;
+  /**
+   * True if checkbox checked and false if not
+   */
   isChecked?: boolean;
 }
 
