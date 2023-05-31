@@ -1,0 +1,51 @@
+@import "src/Index.scss";
+
+.burger_content {
+  width: 100%;
+  height: 100%;
+  background-color: $color-secondary;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+
+    .burger_item {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      list-style: none;
+      font-size: 32px;
+      font-family: Montserrat Regular;
+      transition: color 0.3s linear;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    .burger_item_active {
+      text-decoration: none;
+      color: $color-primary;
+      cursor: default;
+      padding: 10px 15px;
+      font-size: 32px;
+      font-family: Montserrat Regular;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .burger_content {
+    ul {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

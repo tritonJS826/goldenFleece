@@ -1,0 +1,126 @@
+@import "src/Index.scss";
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-white;
+  border-right: none;
+  border-left: none;
+  padding: 5px;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: $color-secondary;
+    cursor: pointer;
+  }
+}
+
+.wrapScroll {
+  border: 1px solid $color-text;
+  border-right: none;
+  border-left: none;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+}
+
+.burgerWrap {
+  width: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 5px;
+  flex-direction: column;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: $color-secondary;
+    cursor: pointer;
+  }
+
+  div {
+    border-top: 1px solid $color-white;
+    width: 30px;
+  }
+
+  div:first-child {
+    margin-bottom: 10px;
+  }
+
+  div:nth-child(2) {
+    width: 15px;
+    transition: width 0.3s;
+  }
+
+  div:last-child {
+    margin-top: 10px;
+  }
+
+  &:hover {
+    div:nth-child(2) {
+      width: 30px;
+    }
+  }
+}
+
+.burgerWrapScroll {
+  &:hover {
+    background-color: $color-primary;
+  }
+
+  div {
+    border-top: 1px solid $color-text;
+    width: 30px;
+  }
+
+  div:first-child {
+    margin-bottom: 10px;
+  }
+
+  div:nth-child(2) {
+    width: 15px;
+    transition: width 0.3s;
+  }
+
+  div:last-child {
+    margin-top: 10px;
+  }
+
+  &:hover {
+    div:nth-child(2) {
+      width: 30px;
+    }
+  }
+}
+
+.burger {
+  position: fixed;
+  left: 0;
+  top: 8vh;
+  width: 100vw;
+  height: 92vh;
+  transform: translateX(-100%);
+  transition: 0.3s;
+  border-top: 1px solid white;
+}
+
+.burger.active {
+  transform: translateX(0);
+}
+
+@media (max-width: 800px) {
+  .wrap {
+    border-right: 1px solid $color-white;
+  }
+
+  .wrapScroll {
+    border-right: 1px solid $color-text;
+  }
+
+  .burgerWrap {
+    width: 10vw;
+  }
+}

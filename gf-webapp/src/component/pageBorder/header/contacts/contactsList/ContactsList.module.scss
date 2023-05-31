@@ -1,0 +1,17 @@
+@import "src/Index.scss";
+
+.link {
+  display: block;
+  width: 100%;
+  background-color: white;
+  text-decoration: none;
+  color: $color-text;
+  font-size: 0.8rem;
+  padding: 10px;
+  word-wrap: break-word;
+  border-bottom: 1px solid $color-disabled;
+
+  &:hover {
+    background-color: $color-background;
+  }
+}
