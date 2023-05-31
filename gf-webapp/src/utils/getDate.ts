@@ -38,8 +38,8 @@ export const getNewDateOut = (value: string) => {
   if (value === "") {
     return "";
   } else {
-    const getDateOut = "" + (new Date(currentDate.setDate(new Date(value).getDate() + 1)).toISOString().split("T")[0]);
-    return getDateOut;
+    const today = new Date(value);
+    today.setDate(today.getDate() + 1);
+    return today.toISOString().split("T")[0];
   }
 };
-

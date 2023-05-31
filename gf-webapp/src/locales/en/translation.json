@@ -85,8 +85,8 @@
     "email": "Your email address",
     "phone": "Your phone number",
     "message": "Message",
-    "dateIn": "Date In",
-    "dateOut": "Date Out",
+    "dateIn": "DateIn",
+    "dateOut": "DateOut",
     "roomNumber": "Room",
     "adultsAmount": "Adults",
     "childrenAmount": "Children",
@@ -101,9 +101,17 @@
   },
   "filter": {
     "search": "Search",
-    "dateIn": "Date In",
-    "dateOut": "Date Out",
+    "dateIn": "DateIn",
+    "dateOut": "DateOut",
     "adultsAmount": "Adults",
-    "childrenAmount": "Children"
+    "childrenAmount": "Children",
+    "services": "Services",
+    "serviceList": {
+      "WiFi": "Wi-Fi",
+      "Laundry": "Laundry",
+      "TeaCoffeeMaker": "Tea/Coffee",
+      "Heating": "Heating",
+      "AirportShuttle": "Airport shuttle"
+    }
   }
 }

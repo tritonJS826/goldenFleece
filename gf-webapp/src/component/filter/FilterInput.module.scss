@@ -25,6 +25,11 @@
   border: $input-border-focus;
 }
 
+.spanCheckbox {
+  font-size: $label-font-size;
+  color: $label-color;
+}
+
 @media (max-width: 1130px) {
   .formGroup {
     width: 50%;

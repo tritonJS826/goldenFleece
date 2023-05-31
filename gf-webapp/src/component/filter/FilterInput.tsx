@@ -9,15 +9,15 @@ interface FilterInputProps {
   /**
    * Input type
    */
-  type: "text" | "number" | "date",
+  type: "text" | "number" | "date" | "checkbox",
   /**
    * Input (filter) title
    */
-  name: string,
+  name?: string,
   /**
    * Input value
    */
-  value: string | number,
+  value: string | number | string[],
   /**
    * Minimum value (string for date input and number for number input)
    */
@@ -25,7 +25,27 @@ interface FilterInputProps {
   /**
    * Callback triggered on change input
    */
-  onChange: (event: React.ChangeEvent<InputType>) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Parameter for input type checkbox
+   */
+  checked?: boolean;
+  /**
+   * INput className
+   */
+  stylesName: string;
+  /**
+   * Text for input (type is not checkbox)
+   */
+  text?: string;
+  /**
+   * Text for checkbox
+   */
+  textCheckbox?: string;
+  /**
+   * className for label
+   */
+  styleLabel?: string;
 }
 
 /**
@@ -35,39 +55,52 @@ export enum URL_QUERY_KEYS {
   /**
    * Key for filter by any text
    */
-  Search = "search",
+  Search = "Search",
   /**
    * Key for filter by date in
    */
-  DateIn = "dateIn",
+  DateIn = "DateIn",
   /**
    * Key for filter by date out
    */
-  DateOut = "dateOut",
+  DateOut = "DateOut",
   /**
    * Key for filter by adults amount
    */
-  Adults = "adults",
+  Adults = "Adults",
   /**
    * Key for filter by children amount
    */
-  Children = "children",
+  Children = "Children",
+  /**
+   * Key for filter by services
+   */
+  Services = "Services",
 }
 
 export const FilterInput: React.FC<FilterInputProps> = (props: FilterInputProps) => {
   return (
     <div className={styles.formGroup}>
-      <label className={styles.label}>
-        {props.name}
+      <label className={props.styleLabel}>
+        <span className={styles.span}>
+          {props.name}
+        </span>
+        <span className={styles.span}>
+          {props.text}
+        </span>
         <input
           type={props.type}
-          className={styles.input}
+          className={props.stylesName}
           name={props.name}
           value={props.value}
           min={props.min}
           onChange={props.onChange}
+          checked={props.checked}
           required
         />
+        <span className={styles.spanCheckbox}>
+          {props.textCheckbox}
+        </span>
       </label>
     </div>
   );

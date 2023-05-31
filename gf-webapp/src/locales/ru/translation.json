@@ -104,6 +104,14 @@
     "dateIn": "Дата заезда",
     "dateOut": "Дата выезда",
     "adultsAmount": "Взрослые",
-    "childrenAmount": "Дети"
+    "childrenAmount": "Дети",
+    "services": "Услуги",
+    "serviceList": {
+      "WiFi": "Wi-Fi",
+      "Laundry": "Прачечная",
+      "TeaCoffeeMaker": "Чай/Кофе",
+      "Heating": "Отопление",
+      "AirportShuttle": "Трансфер до аэропорта"
+    }
   }
 }
