@@ -15,6 +15,8 @@ interface MapMenuProps {
   menuItemHandler: (marker: Marker) => void;
 }
 
+const defaultIndex = -1;
+
 /**
  * Menu with locations marked with markers on the map
  */
@@ -22,17 +24,17 @@ export const MapMenu = (props: MapMenuProps) => {
   const {markers, menuItem} = useContext(MapContext);
   const markerTypes = Array.from(new Set(markers.map(marker => marker.markerType)));
 
-  const [currentIdx, setCurrentIdx] = useState(-1);
-  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(defaultIndex);
+  const [isMenuItemOpen, setIsMenuItemOpen] = useState(false);
 
-  const btnOnClick = (id: number) => {
-    setCurrentIdx(id ? id : -1);
-    setIsOpen(true);
-    if (id === currentIdx) {
-      if (isOpen === false) {
-        setIsOpen(true);
+  const menuItemOnClick = (id: number) => {
+    setCurrentIndex(id ? id : defaultIndex);
+    setIsMenuItemOpen(true);
+    if (id === currentIndex) {
+      if (isMenuItemOpen === false) {
+        setIsMenuItemOpen(true);
       } else {
-        setIsOpen(false);
+        setIsMenuItemOpen(false);
       }
     }
   };
@@ -47,11 +49,11 @@ export const MapMenu = (props: MapMenuProps) => {
           markerType === marker.markerType &&
             <div
               onClick={() => props.menuItemHandler(marker)}
-              className={`${styles.menuItem} ${menuItem && marker.id === menuItem.id && isOpen === true ? styles.checked : ""}`}
+              className={`${styles.menuItem} ${menuItem && marker.id === menuItem.id && isMenuItemOpen === true ? styles.checked : ""}`}
               key={marker.id}
             >
               <div
-                onClick={() => btnOnClick(marker.id)}
+                onClick={() => menuItemOnClick(marker.id)}
                 className={styles.accordion}
               >
                 <Title
@@ -60,7 +62,7 @@ export const MapMenu = (props: MapMenuProps) => {
                   style={styles.title}
                 />
                 <div
-                  className={`${menuItem && marker.id === menuItem.id && isOpen === true ? styles.panelChecked : styles.panel}`}
+                  className={`${menuItem && marker.id === menuItem.id && isMenuItemOpen === true ? styles.panelChecked : styles.panel}`}
                 >
                   <img
                     className={styles.image}
