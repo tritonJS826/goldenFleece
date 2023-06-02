@@ -83,7 +83,6 @@ label [type="checkbox"] {
 [type="checkbox"]:not(:checked) + span:before {
   content: "";
   margin-left: -24px;
-  // margin-top: -24px;
   position: absolute;
   left: 0px;
   top: 0px;
