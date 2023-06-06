@@ -9,7 +9,7 @@ interface RoomsListProps {
 }
 
 export const RoomsBlockWithFilters = (props: RoomsListProps) => {
-  const {searchValue, adultsValue, childrenValue, dateInValue, dateOutValue} = useFilterRooms();
+  const {adultsValue, childrenValue, dateInValue, dateOutValue, serviceValues} = useFilterRooms();
 
   const filterAdults = (room: Room) => {
     if (adultsValue !== 0) {
@@ -25,14 +25,6 @@ export const RoomsBlockWithFilters = (props: RoomsListProps) => {
     } else {
       return room;
     }
-  };
-
-  const filterSearch = (room: Room) => {
-    return Object.values(room)
-      .join()
-      .toString()
-      .toLowerCase()
-      .includes(searchValue);
   };
 
   const filterRoomsNotBooked = (room: Room) => {
@@ -53,16 +45,42 @@ export const RoomsBlockWithFilters = (props: RoomsListProps) => {
     }
   };
 
-  const filterRooms = (roomsList: Room[]) => {
+  const filterServices = (room: Room) => {
+    const serviceValuesArray = serviceValues.map((item) => {
+      return item.replace(/\s/g, "");
+    });
+    for (let i = 0; i < serviceValuesArray.length; i++) {
+      for (let j = 0; j < room.services.length; j++) {
+        if (serviceValuesArray[i] === room.services[j]) {
+          break;
+        }
+        if (j === room.services.length - 1) {
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
+  const filterRoomsCommon = (roomsList: Room[]) => {
     return roomsList
       .filter(filterAdults)
       .filter(filterChildren)
-      .filter(filterSearch)
       .filter(filterDate);
   };
 
+  const filterRooms = (roomsList: Room[]) => {
+    if (serviceValues.length === 0) {
+      return filterRoomsCommon(roomsList);
+    }
+    if (serviceValues.length !== 0) {
+      return filterRoomsCommon(roomsList)
+        .filter(filterServices);
+    }
+  };
+
   const renderRoomItem = (roomsList: Room[]) => {
-    return filterRooms(roomsList).map(room => (
+    return filterRooms(roomsList)?.map(room => (
       <RoomSimplified
         key={room.id}
         room={room}
