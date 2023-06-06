@@ -1,6 +1,8 @@
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {MapContext} from "../MapContext";
 import {Marker} from "../mapLeaflet/mapMarkers/mapMarker/Marker";
+import {Title} from "../../Title/Title";
+import {TitleLevel} from "../../Title/TitleLevel";
 import styles from "./MapMenu.module.scss";
 
 /**
@@ -13,12 +15,29 @@ interface MapMenuProps {
   menuItemHandler: (marker: Marker) => void;
 }
 
+const defaultIndex = -1;
+
 /**
  * Menu with locations marked with markers on the map
  */
 export const MapMenu = (props: MapMenuProps) => {
   const {markers, menuItem} = useContext(MapContext);
   const markerTypes = Array.from(new Set(markers.map(marker => marker.markerType)));
+
+  const [currentIndex, setCurrentIndex] = useState(defaultIndex);
+  const [isMenuItemOpen, setIsMenuItemOpen] = useState(false);
+
+  const menuItemOnClick = (id: number) => {
+    setCurrentIndex(id ? id : defaultIndex);
+    setIsMenuItemOpen(true);
+    if (id === currentIndex) {
+      if (isMenuItemOpen === false) {
+        setIsMenuItemOpen(true);
+      } else {
+        setIsMenuItemOpen(false);
+      }
+    }
+  };
 
   const renderMarkersList = () => {
     return markerTypes.map((markerType) => (
@@ -30,19 +49,30 @@ export const MapMenu = (props: MapMenuProps) => {
           markerType === marker.markerType &&
             <div
               onClick={() => props.menuItemHandler(marker)}
-              className={`${styles.menuItem} ${menuItem && marker.id === menuItem.id ? styles.checked : ""}`}
+              className={`${styles.menuItem} ${menuItem && marker.id === menuItem.id && isMenuItemOpen === true ? styles.checked : ""}`}
               key={marker.id}
             >
-              <div className={styles.title}>
-                {marker.name}
-              </div>
-              <img
-                className={styles.image}
-                src={marker.imgUrl}
-                alt={marker.name}
-              />
-              <div>
-                {marker.description}
+              <div
+                onClick={() => menuItemOnClick(marker.id)}
+                className={styles.accordion}
+              >
+                <Title
+                  text={marker.name}
+                  level={TitleLevel.h3}
+                  style={styles.title}
+                />
+                <div
+                  className={`${menuItem && marker.id === menuItem.id && isMenuItemOpen === true ? styles.panelChecked : styles.panel}`}
+                >
+                  <img
+                    className={styles.image}
+                    src={marker.imgUrl}
+                    alt={marker.name}
+                  />
+                  <div>
+                    {marker.description}
+                  </div>
+                </div>
               </div>
             </div>
         ))}

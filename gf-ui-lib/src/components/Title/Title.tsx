@@ -4,17 +4,19 @@ import styles from "./Title.module.scss";
 /**
  * Title props
  */
-
 interface TitleProps {
   /**
    * Text of the title
    */
   text: string;
-
   /**
    * Title's level
    */
   level: TitleLevel;
+  /**
+   * className for title
+   */
+  style?: string;
 }
 
 /**
@@ -23,7 +25,7 @@ interface TitleProps {
 
 export const Title = (props: TitleProps) => {
   return (
-    <props.level className={styles.title}>
+    <props.level className={props.style ?? styles.title}>
       {props.text}
     </props.level>
   );
